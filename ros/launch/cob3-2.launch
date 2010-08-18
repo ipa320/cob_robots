@@ -9,9 +9,9 @@
 
 	<!-- startup hardware -->
 	<!-- base -->
-	<!--include file="$(find cob_platform)/ros/launch/platform.launch" /-->
-	<!--include file="$(find cob_sick_s300)/ros/launch/front.launch" /-->
-	<!--include file="$(find cob_sick_s300)/ros/launch/rear.launch" /-->
+	<include file="$(find cob_platform)/ros/launch/platform.launch" />
+	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
+	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
 	
 	<!-- upper robot -->
 	<include file="$(find cob_tray)/ros/launch/tray.launch" />
