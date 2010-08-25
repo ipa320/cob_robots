@@ -8,10 +8,19 @@
 	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub" />
 
 	<!-- startup hardware -->
+	<!-- base -->
+	<include file="$(find cob_platform)/ros/launch/platform.launch" />
+	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
+	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
+	
+	<!-- upper robot -->
 	<include file="$(find cob_tray)/ros/launch/tray.launch" />
 	<include file="$(find cob_torso)/ros/launch/torso.launch" />
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
 	<!--include file="$(find cob_camera_axis)/ros/launch/camera_axis.launch" /-->
 	<include file="$(find cob_java)/launch/cob3-1.launch" />
+	
+	<!-- start teleoperation package-->
+	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
 	
 </launch>
