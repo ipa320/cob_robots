@@ -13,5 +13,7 @@
 
 	<!-- start teleoperation package-->
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
-	
+       
+        <!-- a cup -->
+	<include file="$(find cob_gazebo)/ros/launch/coffee_cup.launch" />
 </launch>
