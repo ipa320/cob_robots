@@ -11,6 +11,12 @@
 	<include file="$(find cob_gazebo_worlds)/ros/launch/ipa_kitchen.launch" />
 	<include file="$(find cob_gazebo)/ros/launch/cob3.launch" />
 
+	<!-- start ik_solver for arm -->
+	<node pkg="cob_manipulator" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
+
+	<!-- start cartesian interface -->
+	<!--node pkg="cob_manipulator" type="move_cart.py" name="move_cart" ns="arm_controller" cwd="node" respawn="false" output="screen"/-->
+
 	<!-- start teleoperation package-->
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
 	
