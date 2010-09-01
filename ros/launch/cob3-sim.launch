@@ -15,7 +15,7 @@
 	<node pkg="cob_manipulator" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 
 	<!-- start cartesian interface -->
-	<!--node pkg="cob_manipulator" type="move_cart.py" name="move_cart" ns="arm_controller" cwd="node" respawn="false" output="screen"/-->
+	<node pkg="cob_manipulator" type="move_cart.py" name="move_cart" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 
 	<!-- start teleoperation package-->
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
