@@ -15,13 +15,12 @@
   <depend package="cob_arm"/>
   <depend package="cob_sdh"/>
   <depend package="cob_camera_axis"/>
-  <!--depend package="cob_camera_sensors"/-->
+  <depend package="cob_camera_sensors"/>
   <depend package="cob_platform"/>
   <depend package="cob_sick_s300"/>
   <depend package="cob_teleop"/>
+  <depend package="cob_gazebo"/>
 
   <depend package="cob_gazebo"/>
 
 </package>
-
-
