@@ -3,9 +3,6 @@
 
 	<include file="$(find cob_machine)/cob3-sim.machine" />
 	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/$(env ROBOT).urdf.xacro'" />
-	
-	<!-- start robot_state_publisher -->
-	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub" />
 
 	<!-- startup simulation -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/ipa_kitchen_no_x.launch" />
@@ -15,7 +12,7 @@
 	<node pkg="cob_manipulator" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 
 	<!-- start cartesian interface -->
-	<!--node pkg="cob_manipulator" type="move_cart.py" name="move_cart" ns="arm_controller" cwd="node" respawn="false" output="screen"/-->
+	<node pkg="cob_manipulator" type="move_cart.py" name="move_cart" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 
 	<!-- start teleoperation package-->
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
