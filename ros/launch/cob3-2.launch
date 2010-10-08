@@ -9,7 +9,8 @@
 
 	<!-- startup hardware -->
 	<!-- base -->
-	<include file="$(find cob_platform)/ros/launch/platform.launch" />
+	<include file="$(find cob_base)/ros/launch/base.launch" />
+	<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
 	
@@ -17,7 +18,7 @@
 	<include file="$(find cob_tray)/ros/launch/tray.launch" />
 	<include file="$(find cob_torso)/ros/launch/torso.launch" />
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
-	<!--include file="$(find cob_camera_axis)/ros/launch/camera_axis.launch" /-->
+	<!--include file="$(find cob_head_axis)/ros/launch/head_axis.launch" /-->
 	<include file="$(find cob_arm)/ros/launch/arm.launch" />
 	
 	<!-- start teleoperation package-->
