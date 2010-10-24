@@ -13,6 +13,7 @@
 	<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
+	<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />
 	
 	<!-- upper robot -->
 	<include file="$(find cob_tray)/ros/launch/tray.launch" />
