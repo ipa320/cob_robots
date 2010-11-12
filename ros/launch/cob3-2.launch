@@ -21,6 +21,7 @@
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
 	<!--include file="$(find cob_head_axis)/ros/launch/head_axis.launch" /-->
 	<include file="$(find cob_arm)/ros/launch/arm.launch" />
+	<node pkg="cob_manipulator" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 	
 	<!-- start teleoperation package-->
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
