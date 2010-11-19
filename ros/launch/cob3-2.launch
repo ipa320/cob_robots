@@ -25,5 +25,17 @@
 	
 	<!-- start teleoperation package-->
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
+
+	<group>
+		<machine name="pc2" address="192.168.0.102" user="fmw" password="fme" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true"/>
+		
+		<!-- start cameras -->
+		<!--include file="$(find cob_camera_sensors)/ros/launch/$(env ROBOT)_color_cameras.launch" /-->
+		<!--include file="$(find cob_camera_sensors)/ros/launch/$(env ROBOT)_tof.launch" /-->
+		<!-- include file="$(find cob_sensor_fusion)/ros/launch/$(env ROBOT)_sensor_fusion_shared.launch" /-->
+		<node pkg="sound_play" type="soundplay_node.py" name="soundplay" respawn="false" output="screen"/>
+		<include file="$(find cob_light)/ros/launch/light.launch" />
+		
+	</group>
 	
 </launch>
