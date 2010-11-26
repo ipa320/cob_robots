@@ -12,7 +12,7 @@
 	<!-- startup hardware -->
 	<!-- base -->
 	<include file="$(find cob_base)/ros/launch/base.launch" />
-	<!--<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />-->
+	<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
 	<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />
