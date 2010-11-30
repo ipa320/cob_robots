@@ -28,11 +28,11 @@
 	<include file="$(find cob_joint_state_aggregator)/ros/launch/joint_state_aggregator.launch" />
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
 	
-<!--
-	<machine name="cob3-1-pc2" address="192.168.0.102" user="aub"/>
-	<group machine="cob3-1-pc2">
+
+	<group>
+		<machine name="pc2" address="192.168.0.102" default="true"/>
 		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" />
 	</group>
--->	
+	
 
 </launch>
