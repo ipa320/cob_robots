@@ -8,7 +8,7 @@
 	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
 		<remap from="/joint_states" to="/joint_states_combined"/>
 	</node>
-	<include file="$(find cob_jointstate_combined)/launch/cob_jointstate_combined.launch" />
+
 	<!-- startup hardware -->
 	<!-- base -->
 	<include file="$(find cob_base)/ros/launch/base.launch" />
@@ -23,11 +23,16 @@
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
 	<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
 
+
+	<!-- start additional packages -->
+	<include file="$(find cob_joint_state_aggregator)/ros/launch/joint_state_aggregator.launch" />
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
+	
 <!--
-<machine name="cob3-1-pc2" address="192.168.0.102" user="aub"/>
-<group machine="cob3-1-pc2">
-	<include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" />
-</group>
+	<machine name="cob3-1-pc2" address="192.168.0.102" user="aub"/>
+	<group machine="cob3-1-pc2">
+		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" />
+	</group>
 -->	
+
 </launch>
