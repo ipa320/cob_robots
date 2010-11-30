@@ -27,7 +27,7 @@
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
 
 	<group>
-		<machine name="pc2" address="192.168.0.102" user="fmw" password="fme" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true"/>
+		<machine name="pc2" address="192.168.0.102" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true"/>
 		
 		<!-- start cameras -->
 		<!--include file="$(find cob_camera_sensors)/ros/launch/$(env ROBOT)_color_cameras.launch" /-->
