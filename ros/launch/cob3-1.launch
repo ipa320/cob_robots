@@ -5,7 +5,9 @@
 	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/$(env ROBOT).urdf.xacro'" />
 	
 	<!-- start robot_state_publisher -->
-	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub" />
+	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
+		<remap from="/joint_states" to="/joint_states_combined"/>
+	</node>
 
 	<!-- startup hardware -->
 	<!-- base -->
@@ -19,9 +21,18 @@
 	<include file="$(find cob_tray)/ros/launch/tray.launch" />
 	<include file="$(find cob_torso)/ros/launch/torso.launch" />
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
-	<!--include file="$(find cob_head_axis)/ros/launch/head_axis.launch" /-->
-	
-	<!-- start teleoperation package-->
+	<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
+
+
+	<!-- start additional packages -->
+	<include file="$(find cob_joint_state_aggregator)/ros/launch/joint_state_aggregator.launch" />
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
 	
+
+	<group>
+		<machine name="pc2" address="192.168.0.102" default="true"/>
+		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" />
+	</group>
+	
+
 </launch>
