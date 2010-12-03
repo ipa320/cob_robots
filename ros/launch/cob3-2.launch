@@ -1,33 +1,38 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
-	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/$(env ROBOT).urdf.xacro'" />
-	
-	<!-- start robot_state_publisher -->
-	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub" />
+	<group>
+		<machine name="pc1" address="192.168.0.101" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true"/>
 
-	<!-- startup hardware -->
-	<!-- base -->
-	<include file="$(find cob_base)/ros/launch/base.launch" />
-	<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
-	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
-	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
-	<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />
+		<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
+		<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/$(env ROBOT).urdf.xacro'" />
 	
-	<!-- upper robot -->
-	<include file="$(find cob_tray)/ros/launch/tray.launch" />
-	<include file="$(find cob_torso)/ros/launch/torso.launch" />
-	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
-	<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
-	<include file="$(find cob_arm)/ros/launch/arm.launch" />
-	<node pkg="cob_manipulator" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub" />
+
+		<!-- startup hardware -->
+		<!-- base -->
+		<include file="$(find cob_base)/ros/launch/base.launch" />
+		<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
+		<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
+		<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
+		<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />
 	
-	<!-- start teleoperation package-->
-	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
+		<!-- upper robot -->
+		<include file="$(find cob_tray)/ros/launch/tray.launch" />
+		<include file="$(find cob_torso)/ros/launch/torso.launch" />
+		<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
+		<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
+		<include file="$(find cob_arm)/ros/launch/arm.launch" />
+		<node pkg="cob_manipulator" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
+	
+		<!-- start teleoperation package-->
+		<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
+	</group>
+	
 
 	<group>
-		<machine name="pc2" address="192.168.0.102" user="fmw" password="fme" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true"/>
+		<machine name="pc2" address="192.168.0.102" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true"/>
 		
 		<!-- start cameras -->
 		<!--include file="$(find cob_camera_sensors)/ros/launch/$(env ROBOT)_color_cameras.launch" /-->
