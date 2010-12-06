@@ -17,8 +17,4 @@
 	<!-- start teleoperation package-->
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
 
-	<!-- provides get_fk, get_ik_solver_info WITH limits -->
-	<!-- remember to have safety controller in cob_description/../lbr.urdf.xacro -->
-	<!--include file="$(find pr2_arm_kinematics)/launch/cob3_arm_kinematics.launch" /-->
-
 </launch>
