@@ -4,7 +4,7 @@
      This package launches all nodes for operating either a real Care-O-bot or a simulated one.
 
   </description>
-  <author>Florian Weisshardt, email:florian.weisshardt@ipa.fhg.de</author>
+  <author>Florian Weisshardt</author>
   <license>LGPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_bringup</url>
