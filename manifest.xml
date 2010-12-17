@@ -22,5 +22,6 @@
   <depend package="cob_teleop"/>
   <depend package="cob_joint_state_aggregator"/>
   <depend package="cob_gazebo"/>
+  <depend package="sound_play"/>
 
 </package>
