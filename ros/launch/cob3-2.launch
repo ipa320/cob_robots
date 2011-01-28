@@ -5,7 +5,7 @@
 		<machine name="pc1" address="192.168.0.101" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true"/>
 
 		<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
-		<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/$(env ROBOT).urdf.xacro'" />
+		<include file="$(find cob_description)/ros/robot/upload_robot.launch" />
 	
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub" />

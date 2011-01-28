@@ -2,8 +2,10 @@
 <launch>
 
 	<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
-	<include file="$(find cob_description)/ros/robots/upload_robot.launch" />
-	
+<!-- DIRTY HACK
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find desire_description)/ros/robots/$(env ROBOT).urdf.xacro'" />
+-->	
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/cob3-1.urdf.xacro'" />
 	<!-- start robot_state_publisher -->
 	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
 		<remap from="/joint_states" to="/joint_states_combined"/>
@@ -15,13 +17,15 @@
 	<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
-	<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />
+	<!--<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />-->
 	
 	<!-- upper robot -->
+	<!--
 	<include file="$(find cob_tray)/ros/launch/tray.launch" />
-	<include file="$(find cob_torso)/ros/launch/torso.launch" />
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
 	<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
+	-->
+	<include file="$(find cob_torso)/ros/launch/torso.launch" />
 
 
 	<!-- start additional packages -->
@@ -29,7 +33,7 @@
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
 
 	<group>
-		<machine name="pc2" address="192.168.0.102" default="true"/>
+		<machine name="pc2" address="desire-pc2" default="true"/>
 		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" />
 	</group>
 
