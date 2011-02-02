@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
-<!-- DIRTY HACK
-	<param name="robot_description" command="$(find xacro)/xacro.py '$(find desire_description)/ros/robots/$(env ROBOT).urdf.xacro'" />
--->	
-	<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/cob3-1.urdf.xacro'" />
+	<!--create robot description -->
+	<!--<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/$(env ROBOT).urdf.xacro'" />-->
+
+	<!--upload robot-->
+	<include file="$(find desire_description)/ros/robots/upload_desire.launch" />
+
 	<!-- start robot_state_publisher -->
 	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
 		<remap from="/joint_states" to="/joint_states_combined"/>
@@ -25,7 +26,7 @@
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
 	<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
 	-->
-	<include file="$(find cob_torso)/ros/launch/torso.launch" />
+	<include file="$(find cob_torso)/ros/launch/head_desire.launch" />
 
 
 	<!-- start additional packages -->
