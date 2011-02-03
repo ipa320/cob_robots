@@ -7,9 +7,6 @@
 	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
 	<include file="$(find cob_gazebo)/ros/launch/robot.launch" />
 	
-	<!-- include cob_teleop -->
-	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
-
 	<!-- start ik_solver for arm -->
 	<node pkg="cob_manipulator" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 
