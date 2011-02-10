@@ -20,7 +20,6 @@
   <depend package="cob_relayboard"/>
   <depend package="cob_sick_s300"/>
   <depend package="cob_hokuyo"/>
-  <depend package="cob_teleop"/>
   <depend package="cob_joint_state_aggregator"/>
   <depend package="cob_gazebo"/>
   <depend package="cob_light"/>
