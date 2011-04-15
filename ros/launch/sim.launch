@@ -1,12 +1,18 @@
 <?xml version="1.0"?>
 <launch>
 
+	
 	<include file="$(find cob_machine)/cob3-sim.machine" />
 	
 	<!-- startup simulation -->
 	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
 	<include file="$(find cob_gazebo)/ros/launch/robot.launch" />
+
+	<include file="$(find cob_base)/ros/launch/sim.launch" />
 	
+	<!-- start nodelet manager -->
+  	<node pkg="nodelet" type="nodelet" name="nodelet_manager"  args="manager" output="screen"/>
+
 	<!-- start ik_solver for arm -->
 	<node pkg="cob_manipulator" type="cob_ik_solver_kdl" name="cob_ik_solver" ns="arm_controller" cwd="node" respawn="false" output="screen"/>
 
