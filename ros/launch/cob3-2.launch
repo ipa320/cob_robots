@@ -38,7 +38,7 @@
 		<!--include file="$(find cob_camera_sensors)/ros/launch/$(env ROBOT)_color_cameras.launch" /-->
 		<!--include file="$(find cob_camera_sensors)/ros/launch/$(env ROBOT)_tof.launch" /-->
 		<!-- include file="$(find cob_sensor_fusion)/ros/launch/$(env ROBOT)_sensor_fusion_shared.launch" /-->
-		<node pkg="sound_play" type="soundplay_node.py" name="soundplay" respawn="false" output="screen"/>
+		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 		<include file="$(find cob_light)/ros/launch/light.launch" />
 		
 	</group>
