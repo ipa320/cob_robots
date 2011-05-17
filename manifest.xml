@@ -25,6 +25,6 @@
   <depend package="cob_light"/>
   <depend package="cob_manipulator"/>
   <depend package="cob_teleop"/>
-  <depend package="sound_play"/>
+  <depend package="cob_sound"/>
 
 </package>
