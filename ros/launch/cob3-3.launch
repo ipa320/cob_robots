@@ -10,7 +10,7 @@
 	</node>
 
 	<!-- start nodelet manager -->
-  	<!--node pkg="nodelet" type="nodelet" name="nodelet_manager"  args="manager" output="screen"/-->
+  	<node pkg="nodelet" type="nodelet" name="nodelet_manager1"  args="manager" output="screen"/>
 
 	<!-- startup hardware -->
 	<!-- base -->
