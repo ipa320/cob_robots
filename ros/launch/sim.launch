@@ -8,8 +8,6 @@
 	<include file="$(find cob_gazebo_worlds)/ros/launch/$(env ROBOT_ENV).launch" />
 	<include file="$(find cob_gazebo)/ros/launch/robot.launch" />
 
-	<include file="$(find cob_base)/ros/launch/sim.launch" />
-	
 	<!-- start nodelet manager -->
   	<node pkg="nodelet" type="nodelet" name="nodelet_manager"  args="manager" output="screen"/>
 
