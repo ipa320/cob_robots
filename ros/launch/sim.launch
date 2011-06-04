@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-	
 	<include file="$(find cob_machine)/cob3-sim.machine" />
 	
 	<!-- startup simulation -->
