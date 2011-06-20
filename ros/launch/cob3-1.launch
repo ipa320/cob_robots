@@ -1,36 +1,44 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
-	<include file="$(find cob_description)/ros/robots/upload_robot.launch" />
+	<group>
+		<machine name="pc1" address="cob3-1-pc1" default="true"/>
+
+		<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
+		<include file="$(find cob_description)/ros/robots/upload_robot.launch" />
 	
-	<!-- start robot_state_publisher -->
-	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
-		<remap from="/joint_states" to="/joint_states_combined"/>
-	</node>
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
+			<remap from="/joint_states" to="/joint_states_combined"/>
+		</node>
 
-	<!-- startup hardware -->
-	<!-- base -->
-	<include file="$(find cob_base)/ros/launch/base.launch" />
-	<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
-	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
-	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
-	<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />
+		<!-- startup hardware -->
+		<!-- base -->
+		<include file="$(find cob_base)/ros/launch/base.launch" />
+		<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
+		<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
+		<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
+		<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />
 	
-	<!-- upper robot -->
-	<include file="$(find cob_tray)/ros/launch/tray.launch" />
-	<include file="$(find cob_torso)/ros/launch/torso.launch" />
-	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
-	<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
+		<!-- upper robot -->
+		<include file="$(find cob_tray)/ros/launch/tray.launch" />
+		<include file="$(find cob_torso)/ros/launch/torso.launch" />
+		<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
+		<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
+		<!-- <include file="$(find cob_lbr)/launch/lbr.launch"/> -->
+		<!-- <include file="$(find cob_arm)/launch/arm.launch"/> -->
 
 
-	<!-- start additional packages -->
-	<include file="$(find cob_joint_state_aggregator)/ros/launch/joint_state_aggregator.launch" />
-	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
+		<!-- start additional packages -->
+		<include file="$(find cob_joint_state_aggregator)/ros/launch/joint_state_aggregator.launch" />
+		<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
+	</group>
 
 	<group>
 		<machine name="pc2" address="cob3-1-pc2" default="true"/>
-		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" />
+		<include file="$(find cob_camera_sensors)/ros/launch/cam3d.launch" />
+		<include file="$(find cob_camera_sensors)/ros/launch/left.launch" />
+		<!--include file="$(find cob_camera_sensors)/ros/launch/right.launch" /-->
 	</group>
 
 </launch>
