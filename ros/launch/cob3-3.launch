@@ -18,23 +18,26 @@
 	<include file="$(find cob_relayboard)/ros/launch/relayboard.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/front.launch" />
 	<include file="$(find cob_sick_s300)/ros/launch/rear.launch" />
-	<!--include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" /-->
+	<include file="$(find cob_hokuyo)/ros/launch/hokuyo.launch" />
 
 	<!-- upper robot -->
 	<include file="$(find cob_lbr)/launch/lbr.launch" />
 	<include file="$(find cob_tray)/ros/launch/tray.launch" />
+	<include file="$(find cob_tray_sensors)/ros/launch/tray_sensors.launch" />
 	<include file="$(find cob_torso)/ros/launch/torso.launch" />
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
-	<!--include file="$(find cob_head_axis)/ros/launch/head_axis.launch" /-->
-
+	<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
+	<!--node pkg="cob_head_axis" type="dummy_head.py" name="dummy_head"/-->
 
 	<!-- start additional packages -->
 	<include file="$(find cob_joint_state_aggregator)/ros/launch/joint_state_aggregator.launch" />
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
+	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+
 <!--
 	<group>
-		<machine name="pc2" address="192.168.0.102" default="true"/>
-		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" />
+		<machine name="pc2" address="cob3-3-pc2" default="true"/>
+		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras.launch" />
 	</group>
 -->
 </launch>
