@@ -33,11 +33,11 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rospack_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-rosbuild_add_roslaunch_check(ros/launch/cob3-1.launch ROBOT=cob3-1)
-rosbuild_add_roslaunch_check(ros/launch/cob3-2.launch ROBOT=cob3-2)
-rosbuild_add_roslaunch_check(ros/launch/cob3-3.launch ROBOT=cob3-3)
+#rosbuild_add_roslaunch_check(ros/launch/cob3-1.launch ROBOT=cob3-1)
+#rosbuild_add_roslaunch_check(ros/launch/cob3-2.launch ROBOT=cob3-2)
+#rosbuild_add_roslaunch_check(ros/launch/cob3-3.launch ROBOT=cob3-3)
 
-rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 
 # Check whether there's an X display.  Intended to use in gating tests that
 # require a display.
