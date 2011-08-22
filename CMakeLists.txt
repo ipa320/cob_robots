@@ -33,6 +33,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rospack_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
+# rostest
 #rosbuild_add_roslaunch_check(ros/launch/cob3-1.launch ROBOT=cob3-1)
 #rosbuild_add_roslaunch_check(ros/launch/cob3-2.launch ROBOT=cob3-2)
 #rosbuild_add_roslaunch_check(ros/launch/cob3-3.launch ROBOT=cob3-3)
