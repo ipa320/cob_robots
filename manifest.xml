@@ -8,7 +8,10 @@
   <license>LGPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_bringup</url>
-  
+
+  <depend package="robot_state_publisher"/>
+  <depend package="robot_state_publisher"/>  
+  <depend package="cob_description"/>
   <depend package="cob_machine"/>
   <depend package="cob_tray"/>
   <depend package="cob_tray_sensors"/>
@@ -23,6 +26,7 @@
   <depend package="cob_hokuyo"/>
   <depend package="cob_joint_state_aggregator"/>
   <depend package="cob_gazebo"/>
+  <depend package="cob_gazebo_worlds"/>
   <depend package="cob_light"/>
   <depend package="cob_manipulator"/>
   <depend package="cob_teleop"/>
