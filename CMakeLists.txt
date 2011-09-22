@@ -45,7 +45,7 @@ rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-ki
 rosbuild_check_for_display(disp)
 
 if(disp)
-  rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 10.0)
+  rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 100.0)
 endif(disp)
 
 
