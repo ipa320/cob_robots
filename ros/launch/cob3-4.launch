@@ -5,9 +5,7 @@
 	<include file="$(find cob_description)/ros/robots/upload_robot.launch" />
 	
 	<!-- start robot_state_publisher -->
-	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
-		<remap from="/joint_states" to="/joint_states_combined"/>
-	</node>
+	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 	<!-- startup hardware -->
 	<!-- base -->
@@ -24,16 +22,14 @@
 	<include file="$(find cob_torso)/ros/launch/torso.launch" />
 	<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
 	<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
-	<!--node pkg="cob_head_axis" type="dummy_head.py" name="dummy_head"/-->
 
 	<!-- start additional packages -->
-	<include file="$(find cob_joint_state_aggregator)/ros/launch/joint_state_aggregator.launch" />
 	<include file="$(find cob_teleop)/ros/launch/teleop.launch" />
 	<include file="$(find cob_sound)/ros/launch/sound.launch" />
 
 <!--
 	<group>
-		<machine name="pc2" address="cob3-3-pc2" default="true"/>
+		<machine name="pc2" address="cob3-4-pc2" default="true"/>
 		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras.launch" />
 	</group>
 -->
