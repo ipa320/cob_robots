@@ -9,7 +9,6 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_bringup</url>
 
-  <depend package="robot_state_publisher"/>
   <depend package="robot_state_publisher"/>  
   <depend package="cob_description"/>
   <depend package="cob_machine"/>
