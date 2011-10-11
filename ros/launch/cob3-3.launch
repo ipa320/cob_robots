@@ -39,5 +39,7 @@
 		<!-- start camera sensors -->
 		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras.launch" />
 	</group>
--->
+
+	<machine name="pc1" address="cob3-3-pc1" default="true"/>
+
 </launch>
