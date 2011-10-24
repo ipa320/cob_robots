@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
+
+	<group>
+		<machine name="pc1" address="cob3-3-pc1" default="true"/>
+
+		<!-- upload robot description -->
+		<include file="$(find cob_config)/common/upload_robot.launch" />
+	
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+
+		<!-- lower robot -->
+		<!-- laser front -->
+		<node name="laser_front" pkg="cob_sick_s300" type="cob_sick_s300" respawn="false" output="screen" >
+			<rosparam command="load" file="$(find cob_config)/$(env ROBOT)/config/laser_front.yaml"/>
+			<remap from="laser_front/scan" to="/scan_front_raw"/>
+		</node>
+		<node name="laser_front_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" >
+			<remap from="laser_front_filter/scan" to="/scan_front_raw"/>
+			<remap from="laser_front_filter/scan_filtered" to="/scan_front"/>
+		</node>
+		
+		<!-- laser rear -->
+		<node name="laser_rear" pkg="cob_sick_s300" type="cob_sick_s300" respawn="false" output="screen" >
+			<rosparam command="load" file="$(find cob_config)/$(env ROBOT)/config/laser_rear.yaml"/>
+			<remap from="laser_rear/scan" to="/scan_rear_raw"/>
+		</node>
+		<node name="laser_rear_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" >
+			<remap from="laser_rear_filter/scan" to="/scan_rear_raw"/>
+			<remap from="laser_rear_filter/scan_filtered" to="/scan_rear"/>
+		</node>
+		
+		<!-- laser top -->
+		<node name="laser_top" pkg="hokuyo_node" type="hokuyo_node" respawn="false" output="screen">
+			<param name="calibrate_time" type="bool" value="false"/>
+			<param name="frame_id" value="/base_laser_top_link"/>
+			<param name="min_ang" value="-2.0923497676849365"/>
+			<param name="max_ang" value="2.0923497676849365"/>
+			<remap from="scan" to="scan_top"/>
+		</node>
+		<node name="laser_top_filter" pkg="cob_hokuyo" type="cob_hokuyo_filter" respawn="false" output="screen"/>
+
+		<!-- relayboard -->
+		<node name="relayboard" pkg="cob_relayboard" type="cob_relayboard_node" respawn="false" output="screen">
+			<rosparam command="load" file="$(find cob_config)/$(env ROBOT)/config/relayboard.yaml"/>
+		</node>
+		
+		<!-- base -->
+		<group ns="base_controller">
+			<arg name="sim" default="false" />
+			<param name="IniDirectory" value="$(find cob_base)/ros/bin/Platform/IniFiles/$(env ROBOT)/"/>
+			<param name="PublishEffort" value="false"/>
+			<include file="$(find cob_base_drive_chain)/ros/launch/base_drive_chain.launch" >
+				<arg name="sim" value="$(arg sim)" />
+			</include>
+			<include file="$(find cob_undercarriage_ctrl)/ros/launch/undercarriage_ctrl.launch" />
+		</group>
+
+		<!-- upper robot -->
+		<!-- torso -->
+		<node name="torso_controller" pkg="schunk_powercube_chain" type="schunk_powercube_chain" cwd="node" respawn="false" output="screen" >
+			<rosparam command="load" file="$(find cob_config)/$(env ROBOT)/config/torso.yaml"/>
+		</node>
+		
+		<!-- tray -->
+		<node name="tray_controller" pkg="schunk_powercube_chain" type="schunk_powercube_chain" cwd="node" respawn="false" output="screen" >
+			<rosparam command="load" file="$(find cob_config)/$(env ROBOT)/config/tray.yaml"/>
+		</node>
+		<node name="tray_sensors" pkg="cob_tray_sensors" type="cob_tray_sensors" cwd="node" respawn="true" output="screen" />
+		
+		<!-- arm -->
+		<!--include file="$(find cob_lbr)/launch/lbr.launch" /-->
+
+		<!-- sdh -->
+		<node name="sdh_controller" pkg="schunk_sdh" type="schunk_sdh" cwd="node" respawn="false" output="screen" >
+			<rosparam command="load" file="$(find cob_config)/$(env ROBOT)/config/sdh.yaml"/>
+		</node>
+
+		<!-- head -->
+		<node name="head_controller" pkg="cob_head_axis" type="cob_head_axis_node" cwd="node" respawn="false" output="screen" >
+			<param name="CanIniFile" value="$(find cob_head_axis)/ros/bin/IniFiles/$(env ROBOT)_CanCtrlCamAxis.ini" />
+			<rosparam command="load" file="$(find cob_head_axis)/ros/launch/$(env ROBOT).yaml"/>
+		</node>
+		
+		<!-- start additional packages -->
+        <!-- teleop -->
+        <node pkg="cob_teleop" type="cob_teleop" name="teleop_node" ns="teleop" output="screen">
+			<rosparam command="load" ns="robot_config" file="$(find cob_default_config)/robots/$(env ROBOT)/robot_modules.yaml"/>
+			<rosparam command="load" ns="teleop/joy" file="$(find cob_teleop)/ros/launch/teleop.yaml"/>
+        </node>
+		<!-- sound -->
+		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		
+	</group>
+
+	<group>
+		<machine name="pc2" address="cob3-3-pc2" default="true"/>
+
+		<!-- start camera sensors -->
+		<!--include file="$(find cob_camera_sensors)/ros/launch/all_cameras.launch" /-->
+	</group>
+
+	<machine name="pc1" address="cob3-3-pc1" default="true"/>
+
+</launch>

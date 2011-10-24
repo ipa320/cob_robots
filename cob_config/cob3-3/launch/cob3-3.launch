@@ -7,7 +7,7 @@
 		<machine name="pc1" address="cob3-3-pc1" default="true"/>
 
 		<!-- upload robot description -->
-		<include file="$(find cob_description)/ros/robots/upload_robot.launch" />
+		<include file="$(find cob_config)/common/upload_robot.launch" />
 	
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
@@ -24,7 +24,7 @@
 		<include file="$(find cob_torso)/ros/launch/torso.launch" />
 		<include file="$(find cob_tray)/ros/launch/tray.launch" />
 		<include file="$(find cob_tray_sensors)/ros/launch/tray_sensors.launch" />
-		<include file="$(find cob_lbr)/launch/lbr.launch" />
+		<!--include file="$(find cob_lbr)/launch/lbr.launch" /-->
 		<include file="$(find cob_sdh)/ros/launch/sdh.launch" />
 		<include file="$(find cob_head_axis)/ros/launch/head_axis.launch" />
 
