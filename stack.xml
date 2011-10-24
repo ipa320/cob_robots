@@ -1,0 +1,11 @@
+<stack>
+  <description brief="cob_robots">cob_robots</description>
+  <author>Maintained by Florian Weisshardt</author>
+  <license>LGPL</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cob_robots</url>
+  <depend stack="cob_common" /> <!-- cob_description -->
+  <depend stack="ros" />
+  <depend stack="schunk_modular_robotics" /> <!-- schunk_description -->
+
+</stack>
