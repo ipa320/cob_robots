@@ -10,25 +10,28 @@
   <url>http://ros.org/wiki/cob_bringup</url>
 
   <depend package="robot_state_publisher"/>  
+
   <depend package="cob_description"/>
   <depend package="cob_machine"/>
-  <depend package="cob_tray"/>
-  <depend package="cob_tray_sensors"/>
-  <depend package="cob_torso"/>
-  <depend package="cob_arm"/>
-  <depend package="cob_sdh"/>
-  <depend package="cob_head_axis"/>
-  <depend package="cob_camera_sensors"/>
-  <depend package="cob_base"/>
+
+  <depend package="cob_undercarriage_ctrl"/>
+  <depend package="cob_base_drive_chain"/>
+
   <depend package="cob_relayboard"/>
   <depend package="cob_sick_s300"/>
   <depend package="cob_hokuyo"/>
-  <depend package="cob_joint_state_aggregator"/>
-  <depend package="cob_gazebo"/>
-  <depend package="cob_gazebo_worlds"/>
+  <depend package="hokuyo_node"/>
+
+  <depend package="cob_tray_sensors"/>
+  <depend package="schunk_powercube_chain"/>
+  <depend package="schunk_sdh"/>
+  <depend package="cob_head_axis"/>
+  <depend package="cob_camera_sensors"/>
+
   <depend package="cob_light"/>
-  <depend package="cob_manipulator"/>
   <depend package="cob_teleop"/>
   <depend package="cob_sound"/>
+
+  <depend package="cob_hardware_config"/>
 
 </package>

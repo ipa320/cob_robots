@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="cob_teleop" type="cob_teleop" name="teleop_node" ns="teleop" output="screen">
+		<rosparam command="load" ns="robot_config" file="$(find cob_default_config)/$(env ROBOT)/robot_modules.yaml"/>
+		<rosparam command="load" ns="teleop/joy" file="$(find cob_teleop)/ros/launch/teleop.yaml"/>
+    </node>
+
+</launch>

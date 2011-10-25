@@ -34,18 +34,18 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 # rostest
-#rosbuild_add_roslaunch_check(ros/launch/cob3-1.launch ROBOT=cob3-1)
-#rosbuild_add_roslaunch_check(ros/launch/cob3-2.launch ROBOT=cob3-2)
-#rosbuild_add_roslaunch_check(ros/launch/cob3-3.launch ROBOT=cob3-3)
+#rosbuild_add_roslaunch_check(robots/cob3-1.launch ROBOT=cob3-1)
+#rosbuild_add_roslaunch_check(robots/cob3-2.launch ROBOT=cob3-2)
+rosbuild_add_roslaunch_check(robots/cob3-3.launch ROBOT=cob3-3)
 
-rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
+#rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 
 # Check whether there's an X display.  Intended to use in gating tests that
 # require a display.
-rosbuild_check_for_display(disp)
+#rosbuild_check_for_display(disp)
 
-if(disp)
-  rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 100.0)
-endif(disp)
+#if(disp)
+#  rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 100.0)
+#endif(disp)
 
 
