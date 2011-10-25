@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+  <test test-name="$(env ROBOT)_test" pkg="cob_description" type="test_urdf" args="$(find cob_hardware_config)/$(env ROBOT)/urdf/$(env ROBOT).urdf.xacro"/>
+
+</launch> 
