@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-	<group ns="base_controller">
+	<arg name="sim" default="false" />
 
-		<arg name="sim" default="false" />
+	<group ns="base_controller">
 		
 		<!-- upload parameters -->
 		<param name="IniDirectory" value="$(find cob_base)/ros/bin/Platform/IniFiles/$(env ROBOT)/"/>

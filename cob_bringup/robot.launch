@@ -3,6 +3,6 @@
 	
 	<param name="/use_sim_time" value="false"/>
 
-	<include file="$(find cob_bringup)/ros/launch/$(env ROBOT).launch" />
+	<include file="$(find cob_bringup)/robots/$(env ROBOT).launch" />
 
 </launch>
