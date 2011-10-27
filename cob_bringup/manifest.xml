@@ -28,6 +28,11 @@
   <depend package="cob_head_axis"/>
   <depend package="cob_camera_sensors"/>
 
+  <depend package="pr2_dashboard_aggregator"/>
+  <depend package="pr2_computer_monitor"/>
+  <depend package="diagnostic_aggregator"/>
+  <depend package="wifi_ddwrt"/>
+
   <depend package="cob_light"/>
   <depend package="cob_teleop"/>
   <depend package="cob_sound"/>

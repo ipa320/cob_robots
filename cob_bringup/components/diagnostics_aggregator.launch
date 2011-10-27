@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- all of this should be moved to bringup -->
+  
+  
+  <include file="$(find cob_machine)/$(env ROBOT).machine" />
+  
+  
+  <!-- NTP monitoring script reports clock sync on diagnostics -->
+  <node pkg="pr2_computer_monitor" name="ntp_pc1" type="ntp_monitor.py" args="pc1 --offset-tolerance 50000 --diag-hostname=pc1" machine="pc1" />
+  <node pkg="pr2_computer_monitor" name="ntp_pc2" type="ntp_monitor.py" args="pc1 --diag-hostname=pc2" machine="pc2"/>
+  <node pkg="pr2_computer_monitor" name="ntp_pc3" type="ntp_monitor.py" args="pc1 --diag-hostname=pc3" machine="pc3"/>
+
+  <!-- Disk usage monitoring script monitors HD temperature, usage on diagnostics -->
+  <node pkg="pr2_computer_monitor" name="hd_monitor_pc1" type="hd_monitor.py" args="$(optenv HOME /home) --diag-hostname=pc1" machine="pc1">
+    <param name="no_hd_temp_warn" type="bool" value="True" />
+  </node>
+  <node pkg="pr2_computer_monitor" name="hd_monitor_pc2" type="hd_monitor.py" args="$(optenv HOME /home) --diag-hostname=pc2" machine="pc2">
+    <param name="no_hd_temp_warn" type="bool" value="True" />
+  </node>
+  <node pkg="pr2_computer_monitor" name="hd_monitor_pc3" type="hd_monitor.py" args="$(optenv HOME /home) --diag-hostname=pc3" machine="pc3">
+    <param name="no_hd_temp_warn" type="bool" value="True" />
+  </node>
+
+  <!-- Monitor CPU temp, usage -->
+  <node pkg="pr2_computer_monitor" name="cpu_monitor_pc1" type="cpu_monitor.py" args="--diag-hostname=pc1" machine="pc1" >
+    <param name="check_impi_tool" type="bool" value="False" />
+    <param name="enforce_clock_speed" type="bool" value="False" />
+    <param name="num_cores" type="int" value="2" />
+  </node>
+  <node pkg="pr2_computer_monitor" name="cpu_monitor_pc2" type="cpu_monitor.py" args="--diag-hostname=pc2" machine="pc2" >
+    <param name="check_impi_tool" type="bool" value="False" />
+    <param name="enforce_clock_speed" type="bool" value="False" />
+    <param name="num_cores" type="int" value="2" />
+  </node>
+  <node pkg="pr2_computer_monitor" name="cpu_monitor_pc3" type="cpu_monitor.py" args="--diag-hostname=pc3" machine="pc3" >
+    <param name="check_impi_tool" type="bool" value="False" />
+    <param name="enforce_clock_speed" type="bool" value="False" />
+    <param name="num_cores" type="int" value="2" />
+  </node>
+
+  <!-- Monitor Wifi/ddwrt -->
+  <node pkg="pr2_computer_monitor" name="ddwrt_diag" type="wifi_monitor.py" machine="pc1" />
+  <node name="wifi_ddwrt" pkg="wifi_ddwrt" type="ddwrt.py">
+    <param name="username" type="string" value="root" />
+    <param name="password" type="string" value="admin" />
+    <param name="router" type="string" value="$(env ROBOT)" />
+   </node>
+
+
+
+
+
+
+  <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" >
+    <!-- Load the configuration -->
+    <rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/diagnostics_analyzers.yaml" />
+  </node>
+  
+    <node pkg="pr2_dashboard_aggregator" type="dashboard_aggregator.py" name="dashboard_aggregator" />
+</launch>
