@@ -12,6 +12,7 @@
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
+		<!-- startup hardware -->
 		<!-- lower robot -->
 		<include file="$(find cob_bringup)/components/laser_front.launch" />
 		<include file="$(find cob_bringup)/components/laser_rear.launch" />
