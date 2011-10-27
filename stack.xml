@@ -7,9 +7,13 @@
   <depend stack="cob_command_tools" /> <!-- cob_teleop -->
   <depend stack="cob_common" /> <!-- cob_description -->
   <depend stack="cob_driver" /> <!-- cob_relayboard, cob_sick_s300, cob_hokuyo, cob_tray_sensors, cob_undercarriage_ctrl, cob_head_axis, cob_camera_sensors, cob_base_drive_chain, cob_light, cob_sound -->
+  <depend stack="diagnostics" /> <!-- diagnostic_aggregator -->
   <depend stack="laser_drivers" /> <!-- hokuyo_node -->
+  <depend stack="pr2_common" /> <!-- pr2_dashboard_aggregator -->
+  <depend stack="pr2_robot" /> <!-- pr2_computer_monitor -->
   <depend stack="robot_model" /> <!-- robot_state_publisher -->
   <depend stack="ros" />
   <depend stack="schunk_modular_robotics" /> <!-- schunk_powercube_chain, schunk_sdh, schunk_description -->
+  <depend stack="wifi_drivers" /> <!-- wifi_ddwrt -->
 
 </stack>
