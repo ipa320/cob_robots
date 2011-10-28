@@ -38,5 +38,8 @@
   <depend package="cob_sound"/>
 
   <depend package="cob_hardware_config"/>
+  <depend package="cob_default_config"/>
+  <depend package="cob_script_server"/>
+  <depend package="cob_dashboard"/>
 
 </package>

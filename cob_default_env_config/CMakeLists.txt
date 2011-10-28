@@ -9,10 +9,6 @@ include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 #  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
 #set(ROS_BUILD_TYPE RelWithDebInfo)
 
-#rosbuild_find_ros_package(actionlib_msgs)
-#include(${actionlib_msgs_PACKAGE_PATH}/cmake/actionbuild.cmake)
-#genaction()
-
 rosbuild_init()
 
 #set the default path for built executables to the "bin" directory
@@ -26,28 +22,12 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_gensrv()
 
 #common commands for building c++ executables and libraries
-#rospack_add_library(${PROJECT_NAME} src/example.cpp)
+#rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
 #target_link_libraries(${PROJECT_NAME} another_library)
-#rospack_add_boost_directories()
-#rospack_link_boost(${PROJECT_NAME} thread)
-#rospack_add_executable(example examples/example.cpp)
+#rosbuild_add_boost_directories()
+#rosbuild_link_boost(${PROJECT_NAME} thread)
+#rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
 # rostest
-#rosbuild_add_roslaunch_check(robots/cob3-1.launch ROBOT=cob3-1)
-#rosbuild_add_roslaunch_check(robots/cob3-2.launch ROBOT=cob3-2)
-rosbuild_add_roslaunch_check(robots/cob3-3.launch ROBOT=cob3-3)
-
-rosbuild_add_roslaunch_check(components/dashboard.launch ROBOT=cob3-3)
-
-#rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
-
-# Check whether there's an X display.  Intended to use in gating tests that
-# require a display.
-#rosbuild_check_for_display(disp)
-
-#if(disp)
-#  rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 100.0)
-#endif(disp)
-
-
+rosbuild_add_roslaunch_check(upload_param.launch ROBOT=ipa-kitchen)
