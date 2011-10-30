@@ -36,7 +36,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 # rostest
 #rosbuild_add_roslaunch_check(robots/cob3-1.launch ROBOT=cob3-1)
 #rosbuild_add_roslaunch_check(robots/cob3-2.launch ROBOT=cob3-2)
-rosbuild_add_roslaunch_check(robots/cob3-3.launch ROBOT=cob3-3)
+#rosbuild_add_roslaunch_check(robots/cob3-3.launch ROBOT=cob3-3)
 
 rosbuild_add_roslaunch_check(components/dashboard.launch ROBOT=cob3-3)
 
