@@ -31,4 +31,4 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 # rostest
 rosbuild_add_roslaunch_check(common/upload_robot.launch ROBOT=cob3-3)
-rosbuild_add_rostest(common/urdf.test ROBOT=cob3-3)
+rosbuild_add_rostest(test/urdf_cob3-3.test)
