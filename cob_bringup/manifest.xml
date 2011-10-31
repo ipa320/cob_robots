@@ -39,6 +39,7 @@
 
   <depend package="cob_hardware_config"/>
   <depend package="cob_default_robot_config"/>
+  <depend package="cob_default_env_config"/>
   <depend package="cob_script_server"/>
   <depend package="cob_dashboard"/>
 
