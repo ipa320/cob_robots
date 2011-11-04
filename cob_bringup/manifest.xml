@@ -10,6 +10,7 @@
   <url>http://ros.org/wiki/cob_bringup</url>
 
   <depend package="robot_state_publisher"/>  
+  <depend package="joy"/>  
 
   <depend package="cob_description"/>
   <depend package="cob_machine"/>
@@ -23,6 +24,7 @@
   <depend package="hokuyo_node"/>
 
   <depend package="cob_tray_sensors"/>
+  <depend package="cob_trajectory_controller"/>
   <depend package="schunk_powercube_chain"/>
   <depend package="schunk_sdh"/>
   <depend package="cob_head_axis"/>
