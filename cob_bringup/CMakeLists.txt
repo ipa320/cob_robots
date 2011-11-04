@@ -38,7 +38,8 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_roslaunch_check(robots/cob3-2.launch ROBOT=cob3-2)
 #rosbuild_add_roslaunch_check(robots/cob3-3.launch ROBOT=cob3-3)
 
-rosbuild_add_roslaunch_check(components/dashboard.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools/dashboard.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools/teleop.launch ROBOT=cob3-3)
 
 #rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 
