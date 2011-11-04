@@ -37,6 +37,9 @@
 		<machine name="pc2" address="cob3-3-pc2" default="true"/>
 
 		<!-- start camera sensors -->
+		<include file="$(find cob_bringup)/components/cameras/left_prosilica.launch" />
+		<include file="$(find cob_bringup)/components/cameras/right_prosilica.launch" />
+		<include file="$(find cob_bringup)/components/cameras/kinect.launch" />
 		<!--include file="$(find cob_camera_sensors)/ros/launch/all_cameras.launch" /-->
 	</group>
 
