@@ -33,13 +33,30 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rospack_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-# rostest
+# rostest for robots
 #rosbuild_add_roslaunch_check(robots/cob3-1.launch ROBOT=cob3-1)
 #rosbuild_add_roslaunch_check(robots/cob3-2.launch ROBOT=cob3-2)
 #rosbuild_add_roslaunch_check(robots/cob3-3.launch ROBOT=cob3-3)
 
+# rostest for components
+rosbuild_add_roslaunch_check(components/base.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/head.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/joy.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/laser_front.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/laser_rear.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/laser_top.launch ROBOT=cob3-3)
+#rosbuild_add_roslaunch_check(components/lbr.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/lwa.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/relayboard.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/sdh.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/torso.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/tray.launch ROBOT=cob3-3)
+
+
+# rostest for tools
 rosbuild_add_roslaunch_check(tools/dashboard.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools/teleop.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(tools/diagnostics_aggregator.launch ROBOT=cob3-3)
 
 #rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 
