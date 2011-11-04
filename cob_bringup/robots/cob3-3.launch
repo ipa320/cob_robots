@@ -29,7 +29,7 @@
 		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/components/diagnostics_aggregator.launch" />
-		<include file="$(find cob_bringup)/components/teleop.launch" />
+		<include file="$(find cob_bringup)/tools/teleop.launch" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
