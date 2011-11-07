@@ -28,8 +28,8 @@
 		<include file="$(find cob_bringup)/components/head.launch" />
 		
 		<!-- start additional packages -->
-		<include file="$(find cob_bringup)/components/diagnostics_aggregator.launch" />
-		<include file="$(find cob_bringup)/components/teleop.launch" />
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" />
+		<include file="$(find cob_bringup)/tools/teleop.launch" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
@@ -40,7 +40,6 @@
 		<include file="$(find cob_bringup)/components/cameras/left_prosilica.launch" />
 		<include file="$(find cob_bringup)/components/cameras/right_prosilica.launch" />
 		<include file="$(find cob_bringup)/components/cameras/kinect.launch" />
-		<!--include file="$(find cob_camera_sensors)/ros/launch/all_cameras.launch" /-->
 	</group>
 
 	<machine name="pc1" address="cob3-3-pc1" default="true"/>
