@@ -4,13 +4,16 @@
   <license>LGPL</license>  
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_robots</url>
+  <depend stack="camera_drivers" /> <!-- prosilica_camera -->
   <depend stack="cob_command_tools" /> <!-- cob_dashboard, cob_teleop, cob_script_server -->
   <depend stack="cob_common" /> <!-- cob_description -->
   <depend stack="cob_driver" /> <!-- cob_relayboard, cob_sick_s300, cob_hokuyo, cob_tray_sensors, cob_undercarriage_ctrl, cob_head_axis, cob_camera_sensors, cob_base_drive_chain, cob_light, cob_trajectory_controller, cob_sound -->
   <depend stack="cob_environments" /> <!-- cob_default_env_config -->
   <depend stack="diagnostics" /> <!-- diagnostic_aggregator -->
+  <depend stack="image_pipeline" /> <!-- image_proc -->
   <depend stack="joystick_drivers" /> <!-- joy -->
   <depend stack="laser_drivers" /> <!-- hokuyo_node -->
+  <depend stack="openni_kinect" /> <!-- openni_launch, openni_camera -->
   <depend stack="pr2_common" /> <!-- pr2_dashboard_aggregator -->
   <depend stack="pr2_robot" /> <!-- pr2_computer_monitor -->
   <depend stack="robot_model" /> <!-- robot_state_publisher -->
