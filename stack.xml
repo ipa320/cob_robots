@@ -15,6 +15,7 @@
   <depend stack="pr2_robot" /> <!-- pr2_computer_monitor -->
   <depend stack="robot_model" /> <!-- robot_state_publisher -->
   <depend stack="ros" />
+  <depend stack="ros_comm" /> <!-- rostest -->
   <depend stack="schunk_modular_robotics" /> <!-- schunk_powercube_chain, schunk_sdh, schunk_description -->
   <depend stack="wifi_drivers" /> <!-- wifi_ddwrt -->
 
