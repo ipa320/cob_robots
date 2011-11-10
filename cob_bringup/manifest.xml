@@ -29,6 +29,10 @@
   <depend package="schunk_sdh"/>
   <depend package="cob_head_axis"/>
   <depend package="cob_camera_sensors"/>
+  <depend package="openni_launch"/>
+  <depend package="openni_camera"/>
+  <depend package="image_proc"/>
+  <depend package="prosilica_camera"/>
 
   <depend package="pr2_dashboard_aggregator"/>
   <depend package="pr2_computer_monitor"/>

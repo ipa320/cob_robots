@@ -8,6 +8,8 @@
   <license>LGPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_hardware_config</url>
+
+  <depend package="rostest"/>
   <depend package="cob_description"/>
   <depend package="schunk_description"/>
 

@@ -40,6 +40,9 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 # rostest for components
 rosbuild_add_roslaunch_check(components/base.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/cameras/kinect.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/cameras/left_prosilica.launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(components/cameras/right_prosilica.launch ROBOT=cob3-3)
 rosbuild_add_roslaunch_check(components/head.launch ROBOT=cob3-3)
 rosbuild_add_roslaunch_check(components/joy.launch ROBOT=cob3-3)
 rosbuild_add_roslaunch_check(components/laser_front.launch ROBOT=cob3-3)
