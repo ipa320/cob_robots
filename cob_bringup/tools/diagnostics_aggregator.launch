@@ -1,10 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-  <!-- all of this should be moved to bringup -->
-  
-  
-  <include file="$(find cob_machine)/$(env ROBOT).machine" />
-  
   
   <!-- NTP monitoring script reports clock sync on diagnostics -->
   <node pkg="pr2_computer_monitor" name="ntp_pc1" type="ntp_monitor.py" args="pc1 --offset-tolerance 50000 --diag-hostname=pc1" machine="pc1" />
