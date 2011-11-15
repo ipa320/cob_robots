@@ -1,49 +1,49 @@
 pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
-  computers:
-    type: diagnostic_aggregator/AnalyzerGroup
-    path: Computers
-    analyzers:
-      cpu:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: CPU
-        expected: ['pc1 CPU Usage',
-                   'pc1 HD Usage',
-                   'pc2 CPU Usage',
-                   'pc2 HD Usage',
-                   'pc3 CPU Usage',
-                   'pc3 HD Usage']
-      clocks:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Clocks
-        expected: ['NTP offset from pc1 to pc1',
-                   'NTP offset from pc2 to pc1',
-                   'NTP offset from pc3 to pc1',
-                   'NTP self-offset for pc1',
-                   'NTP self-offset for pc2',
-                   'NTP self-offset for pc3']
-      network:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Network
-        num_items: 1
-        expected: ['Wifi Status (ddwrt)']
-        #num_items: 5
-        #find_and_remove_prefix: 'multi_interface_roam: '
+  # computers:
+  #   type: diagnostic_aggregator/AnalyzerGroup
+  #   path: Computers
+  #   # analyzers:
+    #   cpu:
+    #     type: diagnostic_aggregator/GenericAnalyzer
+    #     path: CPU
+    #     expected: ['pc1 CPU Usage',
+    #                'pc1 HD Usage',
+    #                'pc2 CPU Usage',
+    #                'pc2 HD Usage',
+    #                'pc3 CPU Usage',
+    #                'pc3 HD Usage']
+    #   clocks:
+    #     type: diagnostic_aggregator/GenericAnalyzer
+    #     path: Clocks
+    #     expected: ['NTP offset from pc1 to pc1',
+    #                'NTP offset from pc2 to pc1',
+    #                'NTP offset from pc3 to pc1',
+    #                'NTP self-offset for pc1',
+    #                'NTP self-offset for pc2',
+    #                'NTP self-offset for pc3']
+    #   network:
+    #     type: diagnostic_aggregator/GenericAnalyzer
+    #     path: Network
+    #     num_items: 1
+    #     expected: ['Wifi Status (ddwrt)']
+    #     #num_items: 5
+    #     #find_and_remove_prefix: 'multi_interface_roam: '
 
-  devices:
-    type: diagnostic_aggregator/AnalyzerGroup
-    path: Devices
-    analyzers:
-      joystick:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Joystick
-        expected: 'joy_node: Joystick Driver Status'
+  # devices:
+  #   type: diagnostic_aggregator/AnalyzerGroup
+  #   path: Devices
+  #   analyzers:
+  #     joystick:
+  #       type: diagnostic_aggregator/GenericAnalyzer
+  #       path: Joystick
+  #       expected: 'joy_node: Joystick Driver Status'
 
-  power:
-    type: diagnostic_aggregator/GenericAnalyzer
-    path: 'Power System'
-    startswith: 'battery'
+  # power:
+  #   type: diagnostic_aggregator/GenericAnalyzer
+  #   path: 'Power System'
+  #   startswith: 'battery'
 
   sensors:
     type: AnalyzerGroup
@@ -65,17 +65,25 @@ analyzers:
 
   motors:
     type: AnalyzerGroup
-    path: Motors
+    path: Actuators
     analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        find_and_remove_prefix: torso_controller
+        contains: 'torso_controller'
       tray:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray
-        find_and_remove_prefix: tray_controller
+        contains: 'torso_controller'
       sdh:
         type: diagnostic_aggregator/GenericAnalyzer
         path: SDH
-        find_and_remove_prefix: sdh_controller
+        contains: 'sdh_controller'
+      head:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Head
+        contains: 'head_controller'
+      base:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Base
+        contains: 'base_controller'
