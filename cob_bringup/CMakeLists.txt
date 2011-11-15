@@ -59,7 +59,7 @@ rosbuild_add_roslaunch_check(components/tray.launch ROBOT=cob3-3)
 # rostest for tools
 rosbuild_add_roslaunch_check(tools/dashboard.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools/teleop.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(tools/diagnostics_aggregator.launch ROBOT=cob3-3)
+#rosbuild_add_roslaunch_check(tools/diagnostics_aggregator.launch ROBOT=cob3-3)
 
 #rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 
