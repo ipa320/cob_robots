@@ -74,7 +74,7 @@ analyzers:
       tray:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray
-        contains: 'torso_controller'
+        contains: 'tray_controller'
       sdh:
         type: diagnostic_aggregator/GenericAnalyzer
         path: SDH

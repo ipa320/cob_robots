@@ -48,5 +48,6 @@
   <depend package="cob_default_env_config"/>
   <depend package="cob_script_server"/>
   <depend package="cob_dashboard"/>
+  <depend package="cob_command_gui"/>
 
 </package>
