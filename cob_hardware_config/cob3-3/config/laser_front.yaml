@@ -1,6 +1,6 @@
 port: /dev/ttyScan1
 baud: 500000
-laser_frequency: 25
+scan_duration: 0.040
 inverted: true
 scan_id: 7
 frame_id: /base_laser_front_link
