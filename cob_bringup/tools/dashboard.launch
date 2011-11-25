@@ -7,7 +7,7 @@
 	<rosparam command="load" ns="command_gui/nav_buttons" file="$(find cob_default_env_config)/$(env ROBOT_ENV)/command_gui_buttons.yaml"/>
 	
 	<!-- upload script server parameters -->
-	<include file="$(find cob_default_robot_config)/$(env ROBOT)/upload_param_$(env ROBOT).launch"/>
+	<include file="$(find cob_default_robot_config)/upload_param.launch"/>
 	
 	<!-- start dashboards -->
 	<node pkg="cob_dashboard" type="cob_dashboard" name="$(anon dashboard_node)" cwd="node" respawn="false" output="screen" />
