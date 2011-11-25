@@ -23,9 +23,9 @@
 
 	<!-- camera calibration properties -->
 	<!-- hand eye calibration -->
-	<property name="cam_l_x"     value="0" />
-	<property name="cam_l_y"     value="0" />
-	<property name="cam_l_z"     value="0" />
+	<property name="cam_l_x"     value="-0.05" />
+	<property name="cam_l_y"     value="-0.1" />
+	<property name="cam_l_z"     value="0.05" />
 	<property name="cam_l_roll"  value="0" />
 	<property name="cam_l_pitch" value="0" />
 	<property name="cam_l_yaw"   value="0.05" />
