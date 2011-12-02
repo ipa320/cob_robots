@@ -9,8 +9,8 @@
 	
 	<!-- laser filter -->
 	<node name="laser_front_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" ns="laser_front" >
-		<remap from="laser_front_filter/scan" to="/scan_front_raw"/>
-		<remap from="laser_front_filter/scan_filtered" to="/scan_front"/>
+		<remap from="scan" to="/scan_front_raw"/>
+		<remap from="scan_filtered" to="/scan_front"/>
 	</node>
 
 </launch>
