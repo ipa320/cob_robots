@@ -34,11 +34,11 @@
   <xacro:cob_base name="base"/>
 
   <xacro:cob_torso_v1 name="torso" parent="base_link">
-    <origin xyz="0.155 0 0.892" rpy="1.5708 0 0" />
+    <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:cob_torso_v1>
   
   <xacro:cob_lbr name="arm" parent="base_link">
-    <origin xyz="-0.015982 -0.080992 0.875995" rpy="0.7854 0.0 -0.2618" />
+    <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:cob_lbr>
   
   <xacro:cob_head_v3 name="head" parent="torso_upper_neck_tilt_link">

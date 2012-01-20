@@ -1,5 +1,22 @@
-<?xml version="1.0"?>
-<robot>
+<?xml version="1.0" ?><robot>
+	<!-- ***************** -->
+	<!-- robot calibration -->
+	<!-- ***************** -->
+	<!-- torso mount positions | relative to base_link -->
+	<property name="torso_x" value="0.155"/>
+	<property name="torso_y" value="0.0"/>
+	<property name="torso_z" value="0.892"/>
+	<property name="torso_roll" value="1.5708"/>
+	<property name="torso_pitch" value="0.0"/>
+	<property name="torso_yaw" value="0.0"/>
+
+	<!-- arm mount positions | relative to base_link -->
+	<property name="arm_x" value="-0.015982"/>
+	<property name="arm_y" value="-0.080992"/>
+	<property name="arm_z" value="0.875995"/>
+	<property name="arm_roll" value="0.7854"/>
+	<property name="arm_pitch" value="0.0"/>
+	<property name="arm_yaw" value="-0.2618"/>
 
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
