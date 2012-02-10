@@ -6,8 +6,8 @@
        name="icob" >
   
   <!-- common stuff -->
-  <include filename="$(find icob_description)/urdf/common.xacro" />
-  <include filename="$(find icob_description)/urdf/materials.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/common.xacro" />
+  <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
   <!-- icob calibration -->
   <!-- FXM: add again if needed -->
@@ -15,7 +15,7 @@
   
   <!-- icob base -->
   <!--include filename="$(find icob_description)/ros/urdf/base_v1/base.urdf.xacro" /-->	<!-- fxm: old	-->
-  <include filename="$(find icob_description)/urdf/base_icob/base_icob.urdf.xacro" />  
+  <include filename="$(find icob_description)/urdf/base/base.urdf.xacro" />  
  
   <!-- torso --> 
   <!--include filename="$(find cob_description)/ros/urdf/torso_v0/torso.urdf.xacro" /-->
@@ -30,11 +30,11 @@
   <!--<include filename="$(find cob_description)/ros/urdf/sdh_v0/sdh.urdf.xacro" /-->
 
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
-  <include filename="$(find icob_description)/gazebo/gazebo.urdf.xacro" />
+  <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
 
   <!--<xacro:cob_base_v0 name="base"/-->
-  <xacro:base_icob name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
+  <xacro:icob_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
   <!--
   <xacro:cob_torso_v0 name="torso" parent="base_link">
