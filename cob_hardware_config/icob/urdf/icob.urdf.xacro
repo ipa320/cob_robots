@@ -15,7 +15,7 @@
   
   <!-- icob base -->
   <!--include filename="$(find icob_description)/ros/urdf/base_v1/base.urdf.xacro" /-->	<!-- fxm: old	-->
-  <include filename="$(find icob_description)/urdf/base/base.urdf.xacro" />  
+  <include filename="$(find icob_description)/urdf/base_icob/base_icob.urdf.xacro" />  
  
   <!-- torso --> 
   <!--include filename="$(find cob_description)/ros/urdf/torso_v0/torso.urdf.xacro" /-->
@@ -34,7 +34,7 @@
 
 
   <!--<xacro:cob_base_v0 name="base"/-->
-  <xacro:icob_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
+  <xacro:base_icob name="base_icob"/>	<!--with new collision_model, but no platform_controller available yet-->
 
   <!--
   <xacro:cob_torso_v0 name="torso" parent="base_link">
