@@ -5,7 +5,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_robots</url>
   <depend stack="camera_drivers" /> <!-- prosilica_camera -->
-  <depend stack="cob_command_tools" /> <!-- cob_dashboard, cob_teleop, cob_script_server -->
+  <depend stack="cob_command_tools" /> <!-- cob_dashboard, cob_teleop, cob_script_server, cob_command_gui -->
   <depend stack="cob_common" /> <!-- cob_description -->
   <depend stack="cob_driver" /> <!-- cob_relayboard, cob_sick_s300, cob_hokuyo, cob_tray_sensors, cob_undercarriage_ctrl, cob_head_axis, cob_camera_sensors, cob_base_drive_chain, cob_light, cob_trajectory_controller, cob_sound -->
   <depend stack="cob_environments" /> <!-- cob_default_env_config -->
