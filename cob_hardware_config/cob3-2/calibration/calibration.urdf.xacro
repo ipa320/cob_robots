@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><robot>
+<?xml version="1.0"?>
+<robot>
+
 	<!-- ***************** -->
 	<!-- robot calibration -->
 	<!-- ***************** -->
@@ -6,7 +8,7 @@
 	<property name="torso_x" value="0.155"/>
 	<property name="torso_y" value="0.0"/>
 	<property name="torso_z" value="0.892"/>
-	<property name="torso_roll" value="1.5708"/>
+	<property name="torso_roll" value="3.1415926"/>
 	<property name="torso_pitch" value="0.0"/>
 	<property name="torso_yaw" value="0.0"/>
 
@@ -18,61 +20,54 @@
 	<property name="arm_pitch" value="0.0"/>
 	<property name="arm_yaw" value="-0.2618"/>
 
-	<!-- *********************************** -->
-	<!-- kinematic chain reference positions -->
-	<!-- *********************************** -->
-	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
-	<!-- not used right now
-	<property name="torso_lower_neck_tilt_cal_offset" value="0.0"/>
-	<property name="torso_pan_cal_offset" value="0.0"/>
-	<property name="torso_upper_neck_tilt_cal_offset" value="0.0"/>
-	-->
 
-	<!-- torso reference positions | used as calibration_rising for torso chain -->
-	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
-	<property name="torso_lower_neck_tilt_ref" value="-0.24501037"/>
-	<property name="torso_pan_ref" value="-0.0146"/>
-	<property name="torso_upper_neck_tilt_ref" value="+0.14419551"/>
+	<!-- common properties -->
+	<property name="M_PI" value="3.1415926535897931" />
 
-	<!-- tray reference position | used as calibration_rising for tray chain -->
-	<property name="torso_tray_ref" value="3.14"/>
+	<!-- torso reference positions -->
+	<property name="torso_lower_neck_pan_ref" value="-0.5470" />
+	<property name="torso_lower_neck_tilt_ref" value="0.0344" />
+	<property name="torso_upper_neck_pan_ref" value="0.0247" />
+	<property name="torso_upper_neck_tilt_ref" value="0.02201" />
 
-	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
-	<property name="head_axis_ref" value="-0.1"/>
+	<!-- tray reference position -->
+	<property name="torso_tray_ref" value="4.1451" />
 
-	<!-- arm reference positions | used as calibration_rising for arm chain-->
-	<property name="arm_1_ref" value="0.0"/>
-	<property name="arm_2_ref" value="0.0"/>
-	<property name="arm_3_ref" value="0.0"/>
-	<property name="arm_4_ref" value="0.0"/>
-	<property name="arm_5_ref" value="0.0"/>
-	<property name="arm_6_ref" value="0.0"/>
-	<property name="arm_7_ref" value="0.0"/>
+	<!-- head camera axis reference position -->
+	<property name="head_axis_ref" value="+3.14" />
 
-	<!-- ***************************** -->
+	<!-- arm reference positions -->
+	<property name="arm_1_ref" value="-2.8761" />
+	<property name="arm_2_ref" value="-0.1687" />
+	<property name="arm_3_ref" value="-0.0274" />
+	<property name="arm_4_ref" value="-1.7193" />
+	<property name="arm_5_ref" value="0.0342" />
+	<property name="arm_6_ref" value="-1.6959" />
+	<property name="arm_7_ref" value="1.8707" />
+
 	<!-- camera calibration properties -->
-	<!-- ***************************** -->
-	<!-- left | handeye calibration | relative to head_axis_link -->
-	<property name="cam_l_x" value="-0.035"/>
-	<property name="cam_l_y" value="-0.0065"/>
-	<property name="cam_l_z" value="-0.06"/>
-	<property name="cam_l_roll" value="0.0"/>
-	<property name="cam_l_pitch" value="-1.5708"/>
-	<property name="cam_l_yaw" value="0.0"/>
+	<!-- hand eye calibration -->
+	<property name="cam_l_x" value="0.0" />
+	<property name="cam_l_y" value="0.0" />
+	<property name="cam_l_z" value="0.0" />
+	<property name="cam_l_roll" value="0.0" />
+	<property name="cam_l_pitch" value="0.0" />
+	<property name="cam_l_yaw" value="0.0" />
 
-	<!-- right | stereo baseline calibration | relative to left camera -->
-	<property name="cam_r_x" value="0.12"/>
-	<property name="cam_r_y" value="0.0"/>
-	<property name="cam_r_z" value="0.0"/>
-	<property name="cam_r_roll" value="0.0"/>
-	<property name="cam_r_pitch" value="0.0"/>
-	<property name="cam_r_yaw" value="0.0"/>
+	<!-- right to left calibration -->
+	<property name="cam_r_x" value="0.0" />
+	<property name="cam_r_y" value="0.0" />
+	<property name="cam_r_z" value="0.0" />
+	<property name="cam_r_roll" value="0.0" />
+	<property name="cam_r_pitch" value="0.0" />
+	<property name="cam_r_yaw" value="0.0" />
 
-	<!-- cam3d | handeye calibration | relative to head_axis_link -->
-	<property name="cam3d_x" value="-0.05"/>
-	<property name="cam3d_y" value="-0.04"/>
-	<property name="cam3d_z" value="-0.01"/>
-	<property name="cam3d_roll" value="0.0"/>
-	<property name="cam3d_pitch" value="-1.5708"/>
-	<property name="cam3d_yaw" value="0.0"/>
+	<!-- cam3d to left calibration -->
+	<property name="cam3d_x" value="0.0" />
+	<property name="cam3d_y" value="0.0" />
+	<property name="cam3d_z" value="0.0" />
+	<property name="cam3d_roll" value="0.0" />
+	<property name="cam3d_pitch" value="0.0" />
+	<property name="cam3d_yaw" value="0.0" />
+  
 </robot>
