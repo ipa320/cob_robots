@@ -1,9 +1,14 @@
 <?xml version="1.0"?>
 <launch>
-
+	<arg name="loadDrives" default="false" /> 
+	<!-- upload parameters -->
+	<rosparam command="load" ns="relayboard" file="$(find cob_hardware_config)/$(env ROBOT)/config/relayboard.yaml"/>
+	<group if="$(arg loadDrives)">
+		<rosparam command="load" ns="relayboard/drive1" file="$(find cob_hardware_config)/$(env ROBOT)/config/drive1.yaml"/>
+		<rosparam command="load" ns="relayboard/drive2" file="$(find cob_hardware_config)/$(env ROBOT)/config/drive2.yaml"/>
+	</group>
 	<!-- start relayboard node -->
-	<node name="relayboard_controller" pkg="cob_relayboard" type="cob_relayboard_node" respawn="false" output="screen">
-		<rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/relayboard.yaml"/>
-	</node>
+	<node pkg="cob_relayboard" type="neo_relayboard_node" ns="relayboard" name="relayboard_node" respawn="false" output="screen"/>
+
 
 </launch>
