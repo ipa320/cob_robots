@@ -61,12 +61,12 @@
 	<property name="cam_l_yaw" value="-0.9246703056"/>
 
 	<!-- right | stereo baseline calibration | relative to left camera -->
-	<property name="cam_r_x" value="0.120625576659"/>
-	<property name="cam_r_y" value="0.00069791469442"/>
-	<property name="cam_r_z" value="-0.000529628535957"/>
-	<property name="cam_r_roll" value="0.00400056610075"/>
-	<property name="cam_r_pitch" value="0.0120185944721"/>
-	<property name="cam_r_yaw" value="0.0118234806514"/>
+	<property name="cam_r_x" value="0.120701946138"/>
+	<property name="cam_r_y" value="0.000663824989577"/>
+	<property name="cam_r_z" value="-0.000585704618711"/>
+	<property name="cam_r_roll" value="0.00537309851257"/>
+	<property name="cam_r_pitch" value="0.00958828040689"/>
+	<property name="cam_r_yaw" value="0.0117182932732"/>
 
 	<!-- cam3d | handeye calibration | relative to head_axis_link -->
 	<property name="cam3d_x" value="-0.037555729"/>
