@@ -1,17 +1,20 @@
 #Parameters for left drive
 control_type: velocity_control
-joint_name: fr_caster_joint
+joint_name: fr_caster_r_wheel_joint
 
-EncIncrPerRevMot: 10000
+EncIncrPerRevMot: 4096
 VelMeasFrqHz: 1
-GearRatio: 25
+GearRatio: 12.66666666
+GearEfficiency: 0.7
 BeltRatio: 1
 Sign: -1.0
-VelMaxEncIncrS: 300000
-AccIncrS: 500000
-DecIncrS: 500000
-Homing: false
-HomePos: 0
+VelMaxEncIncrS: 240000
+AccIncrS: 1000000
+DecIncrS: 1000000
+Homing: true
+HomeCoupleID: 8
+HomeCoupleVel: 0.2
+HomePos: 26831
 HomeVel: 10000
 HomeEvent: 9
 HomeDigIn: 0x0001
@@ -19,4 +22,4 @@ HomeTimeOut: 1000
 VelPModeEncIncrS: 10
 CurrentContLimit: 4.4
 CurrentToTorque: 1 #todo
-CANId: 4
+CANId: 7

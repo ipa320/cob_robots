@@ -5,12 +5,12 @@
 	<rosparam command="load"  file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/conf.yaml"/>
 	<rosparam command="load" ns="drive0" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fl_caster.yaml"/>
 	<rosparam command="load" ns="drive1" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fl_wheel.yaml"/>
-	<rosparam command="load" ns="drive2" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fr_caster.yaml"/>
-	<rosparam command="load" ns="drive3" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fr_wheel.yaml"/>
-	<rosparam command="load" ns="drive4" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_bl_caster.yaml"/>
-	<rosparam command="load" ns="drive5" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_bl_wheel.yaml"/>
-	<rosparam command="load" ns="drive6" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_br_caster.yaml"/>
-	<rosparam command="load" ns="drive7" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_br_wheel.yaml"/>
+	<rosparam command="load" ns="drive2" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_bl_caster.yaml"/>
+	<rosparam command="load" ns="drive3" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_bl_wheel.yaml"/>
+	<rosparam command="load" ns="drive4" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_br_caster.yaml"/>
+	<rosparam command="load" ns="drive5" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_br_wheel.yaml"/>
+	<rosparam command="load" ns="drive6" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fr_caster.yaml"/>
+	<rosparam command="load" ns="drive7" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fr_wheel.yaml"/>
 
   	<!-- start base_drive_chain and locate IniFiles -->
 	<group if="$(arg sim)">
