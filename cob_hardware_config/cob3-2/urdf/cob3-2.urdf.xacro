@@ -3,26 +3,26 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="cob3-4" >
+       name="cob3-2" >
   
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
   <!-- calibration -->
-  <include filename="$(find cob_hardware_config)/cob3-4/calibration/calibration.urdf.xacro" />
+  <include filename="$(find cob_hardware_config)/cob3-2/calibration/calibration.urdf.xacro" />
   
   <!-- base -->
   <include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
  
   <!-- torso -->
-  <include filename="$(find cob_description)/urdf/torso_v1/torso.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/torso_v0/torso.urdf.xacro" />
 
   <!-- head -->
-  <include filename="$(find cob_description)/urdf/head_v3/head.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/head_v2/head.urdf.xacro" />
 
   <!-- arm -->
-  <include filename="$(find cob_description)/urdf/lbr/lbr.urdf.xacro" />
+  <include filename="$(find schunk_description)/urdf/lwa/lwa.urdf.xacro" />
 
   <!-- sdh -->
   <include filename="$(find schunk_description)/urdf/sdh/sdh.urdf.xacro" />
@@ -33,20 +33,20 @@
   <!-- composition of the robot -->
   <xacro:cob_base name="base"/>
 
-  <xacro:cob_torso_v1 name="torso" parent="base_link">
+  <xacro:cob_torso_v0 name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
-  </xacro:cob_torso_v1>
+  </xacro:cob_torso_v0>
   
-  <xacro:cob_lbr name="arm" parent="base_link">
+  <xacro:schunk_lwa name="arm" parent="base_link">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-  </xacro:cob_lbr>
+  </xacro:schunk_lwa>
   
-  <xacro:cob_head_v3 name="head" parent="torso_upper_neck_tilt_link">
-    <origin xyz="0 0.173 0" rpy="0 0 0" />
-  </xacro:cob_head_v3>
+  <xacro:cob_head_v2 name="head" parent="torso_upper_neck_tilt_link">
+    <origin xyz="0 -0.154 0" rpy="3.14159 0 0" />
+  </xacro:cob_head_v2>
   
   <xacro:schunk_sdh name="sdh" parent="arm_7_link">
-    <origin xyz="0 0 0.032" rpy="0 0 1.5708" />
+    <origin xyz="0 0 0" rpy="0 3.1415926 0" />
   </xacro:schunk_sdh>
   
 </robot>
