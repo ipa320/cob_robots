@@ -3,7 +3,7 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="cob3-3" >
+       name="cob3_3" >
   
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
