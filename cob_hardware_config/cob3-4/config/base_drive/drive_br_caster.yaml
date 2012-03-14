@@ -13,9 +13,9 @@ AccIncrS: 1000000
 DecIncrS: 1000000
 Homing: true
 HomeCoupleID: 6
-HomeCoupleVel: 0.2
+HomeCoupleVelRadS: 0.2
 HomePos: 25459
-HomeVel: 10000
+HomeVelRadS: 10000
 HomeEvent: 9
 HomeDigIn: 0x0001
 HomeTimeOut: 1000

@@ -13,9 +13,9 @@ AccIncrS: 1000000
 DecIncrS: 1000000
 Homing: true
 HomeCoupleID: 4 #couple homing with can-device (canid): 4
-HomeCoupleVel: 0.2
+HomeCoupleVelRadS: 0.2
 HomePos: 26771
-HomeVel: 10000
+HomeVelRadS: 0.375
 HomeEvent: 9
 HomeDigIn: 0x0001
 HomeTimeOut: 1000

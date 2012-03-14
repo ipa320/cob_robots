@@ -13,7 +13,7 @@ AccIncrS: 500000
 DecIncrS: 500000
 Homing: false
 HomePos: 0
-HomeVel: 10000
+HomeVelRadS: 10000
 HomeEvent: 9
 HomeDigIn: 0x0001
 HomeTimeOut: 1000
