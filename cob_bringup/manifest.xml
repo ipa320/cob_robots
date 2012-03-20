@@ -1,7 +1,7 @@
 <package>
   <description brief="cob_bringup">
 
-     This package launches all nodes for operating either a real Care-O-bot or a simulated one.
+     This package provides launch files for operating Care-O-bot.
 
   </description>
   <author>Florian Weisshardt</author>
