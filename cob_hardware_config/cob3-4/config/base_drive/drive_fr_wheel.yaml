@@ -1,6 +1,6 @@
 #Parameters for left drive
-control_type: velocity_control
-joint_name: fr_caster_rotation_joint
+control_type: 2
+joint_name: fr_caster_r_wheel_joint
 
 EncIncrPerRevMot: 4096
 VelMeasFrqHz: 1

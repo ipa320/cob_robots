@@ -1,21 +1,21 @@
 #Parameters for left drive
-control_type: velocity_control
-joint_name: fl_caster_r_wheel_joint
+control_type: 2
+joint_name: fl_caster_rotation_joint
 
 EncIncrPerRevMot: 4096
 VelMeasFrqHz: 1
 GearRatio: 12.66666666
 GearEfficiency: 0.7
 BeltRatio: 1
-Sign: 1.0
+Sign: -1.0
 VelMaxEncIncrS: 240000
 AccIncrS: 1000000
 DecIncrS: 1000000
 Homing: true
-HomeCoupleID: 2
-HomeCoupleVelRadS: 0.2
-HomePos: 25412
-HomeVelRadS: 10000
+#HomeCoupleID: 2
+HomeCoupleVelRadS: 0.0
+HomePos: 0
+HomeVelRadS: 0.375
 HomeEvent: 9
 HomeDigIn: 0x0001
 HomeTimeOut: 1000

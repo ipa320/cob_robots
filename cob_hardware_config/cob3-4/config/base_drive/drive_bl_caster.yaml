@@ -1,6 +1,6 @@
 #Parameters for left drive
-control_type: velocity_control
-joint_name: bl_caster_r_wheel_joint
+control_type: 2
+joint_name: bl_caster_rotation_joint
 
 EncIncrPerRevMot: 4096
 VelMeasFrqHz: 1
@@ -12,9 +12,9 @@ VelMaxEncIncrS: 240000
 AccIncrS: 1000000
 DecIncrS: 1000000
 Homing: true
-HomeCoupleID: 4 #couple homing with can-device (canid): 4
+#HomeCoupleID: 4 #couple homing with can-device (canid): 4
 HomeCoupleVelRadS: 0.2
-HomePos: 26771
+HomePos: 0
 HomeVelRadS: 0.375
 HomeEvent: 9
 HomeDigIn: 0x0001

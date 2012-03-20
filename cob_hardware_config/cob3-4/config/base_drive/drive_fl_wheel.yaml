@@ -1,13 +1,13 @@
 #Parameters for left drive
-control_type: velocity_control
-joint_name: fl_caster_rotation_joint
+control_type: 2
+joint_name: fl_caster_r_wheel_joint
 
 EncIncrPerRevMot: 4096
 VelMeasFrqHz: 1
 GearRatio: 15
 GearEfficiency: 0.7
 BeltRatio: 2
-Sign: 1.0
+Sign: -1.0
 VelMaxEncIncrS: 240000
 AccIncrS: 500000
 DecIncrS: 500000

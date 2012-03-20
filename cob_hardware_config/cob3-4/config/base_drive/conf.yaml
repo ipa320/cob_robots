@@ -1,5 +1,6 @@
 #drive
 AutoInit: false
+CheckJointNames: true
 cycleRate: 75
 numberOfMotors: 8
 #can:
@@ -8,7 +9,7 @@ numberOfMotors: 8
 #// 1 = Can Peak USB 
 #// 2 = Can Card ESD
 can: 1
-devicePath: /dev/pcanepp24
+devicePath: /dev/pcan32
 
 #[CanCtrl]
 #// network of esd card (0 or 1)
