@@ -2,28 +2,29 @@
 <launch>
 
 	<arg name="sim" default="false"/>
+	<arg name="topicJointName" default="/joint_states"/>
+	<arg name="topicJointCmd" default="joint_command"/>
+	<arg name="configDir" default="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive"/>
 
-	<rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/conf.yaml"/>
-	<rosparam command="load" ns="drive0" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fl_caster.yaml"/>
-
-	<rosparam command="load" ns="drive1" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fl_wheel.yaml"/>
-
-	<rosparam command="load" ns="drive2" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_bl_caster.yaml"/>
-	<rosparam command="load" ns="drive3" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_bl_wheel.yaml"/>
-	<rosparam command="load" ns="drive4" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_br_caster.yaml"/>
-	<rosparam command="load" ns="drive5" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_br_wheel.yaml"/>
-	<rosparam command="load" ns="drive6" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fr_caster.yaml"/>
-	<rosparam command="load" ns="drive7" file="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive/drive_fr_wheel.yaml"/>
+	<rosparam command="load" file="$(arg configDir)/conf.yaml"/>
+	<rosparam command="load" ns="drive0" file="$(arg configDir)/drive_fl_caster.yaml"/>
+	<rosparam command="load" ns="drive1" file="$(arg configDir)/drive_fl_wheel.yaml"/>
+	<rosparam command="load" ns="drive2" file="$(arg configDir)/drive_bl_caster.yaml"/>
+	<rosparam command="load" ns="drive3" file="$(arg configDir)/drive_bl_wheel.yaml"/>
+	<rosparam command="load" ns="drive4" file="$(arg configDir)/drive_br_caster.yaml"/>
+	<rosparam command="load" ns="drive5" file="$(arg configDir)/drive_br_wheel.yaml"/>
+	<rosparam command="load" ns="drive6" file="$(arg configDir)/drive_fr_caster.yaml"/>
+	<rosparam command="load" ns="drive7" file="$(arg configDir)/drive_fr_wheel.yaml"/>
 	<group if="$(arg sim)">
 		<node pkg="cob_base_drive_chain" type="cob_base_drive_chain_sim_node" name="base_drive_can_node" respawn="false" output="screen" >
-			<remap from="joint_states" to="/joint_states"/>
-			<remap from="cmd_joint_traj" to="joint_command"/>
+			<remap from="joint_states" to="$(arg topicJointName)"/>
+			<remap from="cmd_joint_traj" to="$(arg topicJointCmd)"/>
 		</node>
 	</group>
 	<group unless="$(arg sim)">
 		<node pkg="cob_base_drive_chain" type="cob_base_drive_chain_node" name="base_drive_can_node" respawn="false" output="screen" >
-			<remap from="joint_states" to="/joint_states"/>
-			<remap from="cmd_joint_traj" to="joint_command"/>
+			<remap from="joint_states" to="$(arg topicJointName)"/>
+			<remap from="cmd_joint_traj" to="$(arg topicJointCmd)"/>
 		</node>
 	</group>
 
