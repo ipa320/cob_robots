@@ -3,6 +3,7 @@ AutoInit: false
 CheckJointNames: true
 cycleRate: 75
 numberOfMotors: 8
+HomeAllAtOnce: true
 #can:
 #[TypeCan]
 #// 0 = Can Peak Dongle
