@@ -1,5 +1,9 @@
 <stack>
-  <description brief="cob_robots">cob_robots</description>
+  <description brief="cob_robots">
+  
+    This stack holds packages for hardware configuration as well as launch files for starting up the basic layer for operating Care-O-bot.
+
+  </description>
   <author>Maintained by Florian Weisshardt</author>
   <license>LGPL</license>  
   <review status="unreviewed" notes=""/>

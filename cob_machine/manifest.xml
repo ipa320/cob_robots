@@ -1,7 +1,7 @@
 <package>
   <description brief="cob_machine">
 
-     This package contains the xxx.machine files that describe the different hosts a node can be spawned on. Currently there are machine files for each Care-O-bot, and one for the simulated Care-O-bot.
+     This package contains the machine files that describe the different hosts a node can be spawned on. Currently there are machine files for each Care-O-bot, and one for the simulated Care-O-bot.
 
   </description>
   <author>Florian Weisshardt</author>
