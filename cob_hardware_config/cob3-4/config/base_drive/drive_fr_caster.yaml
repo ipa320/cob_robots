@@ -12,7 +12,7 @@ VelMaxEncIncrS: 240000
 AccIncrS: 1000000
 DecIncrS: 1000000
 Homing: true
-#HomeCoupleID: 8
+HomeCoupleID: 8
 HomeCoupleVelRadS: 0.2
 HomePos: 0
 HomeVelRadS: 0.375

@@ -1,5 +1,5 @@
 #drive
-AutoInit: false
+AutoInit: true
 CheckJointNames: true
 cycleRate: 75
 numberOfMotors: 8

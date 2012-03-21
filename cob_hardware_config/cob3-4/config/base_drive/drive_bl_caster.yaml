@@ -12,10 +12,10 @@ VelMaxEncIncrS: 240000
 AccIncrS: 1000000
 DecIncrS: 1000000
 Homing: true
-#HomeCoupleID: 4 #couple homing with can-device (canid): 4
+HomeCoupleID: 4
 HomeCoupleVelRadS: 0.2
 HomePos: 0
-HomeVelRadS: 0.375
+HomeVelRadS: -0.375
 HomeEvent: 9
 HomeDigIn: 0x0001
 HomeTimeOut: 1000
