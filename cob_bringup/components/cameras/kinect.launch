@@ -37,7 +37,9 @@
     <remap from="camera/rgb/image_raw" to="rgb/image_raw"/>
     <remap from="camera/rgb/points" to="rgb/points"/>
   </node>
-  <include file="$(find openni_launch)/launch/kinect_frames.launch"/>
+  <include file="$(find openni_launch)/launch/kinect_frames.launch">
+    <arg name="camera" value="head_cam3d" />
+  </include>
 </group>
 </launch>
 
