@@ -32,7 +32,7 @@
 	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
 	<property name="torso_lower_neck_tilt_ref" value="-0.24501037"/>
 	<property name="torso_pan_ref" value="-0.0146"/>
-	<property name="torso_upper_neck_tilt_ref" value="4.693"/>
+	<property name="torso_upper_neck_tilt_ref" value="5.0744"/>
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
 	<property name="torso_tray_ref" value="-0.2"/>
