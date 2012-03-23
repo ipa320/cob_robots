@@ -9,7 +9,7 @@
 	<arg name="topicCmdVel" default="command" />
 	<arg name="topicEmergencyState" default="/emergency_stop_state" />
 	<arg name="iniDir" default="$(find cob_hardware_config)/$(env ROBOT)/config/base/" />
-	<arg name="configBaseDriveChain" default="$(find cob_hardware_config)/$(env ROBOT)/config/base_drive"/>
+	<arg name="configBaseDriveChain" default="$(find cob_hardware_config)/$(env ROBOT)/config"/>
 
 	<group ns="$(arg namespace)">
 		
