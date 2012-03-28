@@ -2,9 +2,10 @@
 <launch>
 
 	<!-- load cob controllers -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/cob_default_controllers.launch" />
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/default_controllers_cob.launch" />
 
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_v1_controller.launch"/>
 
+	
 </launch>
