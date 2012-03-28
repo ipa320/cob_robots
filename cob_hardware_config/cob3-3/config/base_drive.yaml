@@ -40,9 +40,9 @@ drive0: #front left steer
   DecIncrS: 1000000
   Homing: true
   HomeCoupleID: 2
-  HomeCoupleVelRadS: 0.2
-  HomePos: -529
-  HomeVelRadS: 0.375
+  HomeCoupleVelRadS: -0.05
+  HomePos: -25412
+  HomeVelRadS: 0.4
   HomeEvent: 9
   HomeDigIn: 0x0001
   HomeTimeOut: 1000
@@ -87,9 +87,9 @@ drive2: #back left steer
   DecIncrS: 1000000
   Homing: true
   HomeCoupleID: 4
-  HomeCoupleVelRadS: 0.2
-  HomePos: 830
-  HomeVelRadS: 0.375
+  HomeCoupleVelRadS: -0.05
+  HomePos: -26771
+  HomeVelRadS: 0.4
   HomeEvent: 9
   HomeDigIn: 0x0001
   HomeTimeOut: 1000
@@ -135,9 +135,9 @@ drive4: #back right steer
   DecIncrS: 1000000
   Homing: true
   HomeCoupleID: 6
-  HomeCoupleVelRadS: 0.2
-  HomePos: −482
-  HomeVelRadS: 0.375
+  HomeCoupleVelRadS: -0.05
+  HomePos: -25459
+  HomeVelRadS: 0.4
   HomeEvent: 9
   HomeDigIn: 0x0001
   HomeTimeOut: 1000
@@ -183,9 +183,9 @@ drive6: #front right steer
   DecIncrS: 1000000
   Homing: true
   HomeCoupleID: 8
-  HomeCoupleVelRadS: 0.2
-  HomePos: 890
-  HomeVelRadS: 0.375
+  HomeCoupleVelRadS: -0.05
+  HomePos: -26831
+  HomeVelRadS: 0.4
   HomeEvent: 9
   HomeDigIn: 0x0001
   HomeTimeOut: 1000
