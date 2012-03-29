@@ -9,17 +9,24 @@
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
-  
+  <include filename="$(find cob_hardware_config)/raw3-1/calibration/calibration.urdf.xacro" />   
   
   <!-- icob base -->
   <!--include filename="$(find icob_description)/ros/urdf/base_v1/base.urdf.xacro" /-->	<!-- fxm: old	-->
-  <include filename="$(find icob_description)/urdf/base/base.urdf.xacro" />  
+  <include filename="$(find raw_description)/urdf/base/base.urdf.xacro" />  
  
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
+  <!-- ur_arm -->
+ <include filename="$(find raw_description)/urdf/arm_ur/arm.urdf.xacro" />   
+ 
+
 
   <xacro:icob_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
+  <xacro:cob_arm_ur name="arm" parent="base_link">
+    <origin xyz="-0.33 0.16 0.6" rpy="0 1.57 0" />
+  </xacro:cob_arm_ur> 
 
 </robot>
