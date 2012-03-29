@@ -30,20 +30,20 @@
 	<!-- robot calibration -->
 	<!-- ***************** -->
 	<!-- torso mount positions | relative to base_link -->
-	<property name="torso_x" value="0.1535525935"/>
-	<property name="torso_y" value="0.0"/>
-	<property name="torso_z" value="0.8743916288"/>
-	<property name="torso_roll" value="1.5968312791"/>
-	<property name="torso_pitch" value="-0.0587251265"/>
-	<property name="torso_yaw" value="0.0660275925"/>
+	<property name="torso_x" value="0.1480178603"/>
+	<property name="torso_y" value="-0.0310067514"/>
+	<property name="torso_z" value="0.8737439863"/>
+	<property name="torso_roll" value="1.5643696362"/>
+	<property name="torso_pitch" value="0.0086500587"/>
+	<property name="torso_yaw" value="0.0567617324"/>
 
 	<!-- arm mount positions | relative to base_link -->
-	<property name="arm_x" value="-0.0135247781"/>
-	<property name="arm_y" value="-0.0461165405"/>
-	<property name="arm_z" value="0.8737003446"/>
-	<property name="arm_roll" value="0.8188441679"/>
-	<property name="arm_pitch" value="0.0073986966"/>
-	<property name="arm_yaw" value="-0.2545901695"/>
+	<property name="arm_x" value="-0.015586288"/>
+	<property name="arm_y" value="-0.0815770011"/>
+	<property name="arm_z" value="0.8759994888"/>
+	<property name="arm_roll" value="0.788374894"/>
+	<property name="arm_pitch" value="0.001687836"/>
+	<property name="arm_yaw" value="-0.2631029869"/>
 
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
@@ -57,9 +57,9 @@
 
 	<!-- torso reference positions | used as calibration_rising for torso chain -->
 	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
-	<property name="torso_lower_neck_tilt_ref" value="-0.24501037"/>
+	<property name="torso_lower_neck_tilt_ref" value="-0.2994"/>
 	<property name="torso_pan_ref" value="-0.0146"/>
-	<property name="torso_upper_neck_tilt_ref" value="+0.14419551"/>
+	<property name="torso_upper_neck_tilt_ref" value="5.8956"/>
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
 	<property name="torso_tray_ref" value="-0.2"/>
@@ -80,26 +80,26 @@
 	<!-- camera calibration properties -->
 	<!-- ***************************** -->
 	<!-- left | handeye calibration | relative to head_axis_link -->
-	<property name="cam_l_x" value="-0.0168918076"/>
-	<property name="cam_l_y" value="-0.0331605618"/>
-	<property name="cam_l_z" value="-0.1227576067"/>
-	<property name="cam_l_roll" value="0.8665791516"/>
-	<property name="cam_l_pitch" value="-1.5610273707"/>
-	<property name="cam_l_yaw" value="-0.9246703056"/>
+	<property name="cam_l_x" value="-0.0258119756"/>
+	<property name="cam_l_y" value="-0.0309783876"/>
+	<property name="cam_l_z" value="-0.1131744259"/>
+	<property name="cam_l_roll" value="2.7300093598"/>
+	<property name="cam_l_pitch" value="-1.5306647319"/>
+	<property name="cam_l_yaw" value="-2.7149269911"/>
 
 	<!-- right | stereo baseline calibration | relative to left camera -->
-	<property name="cam_r_x" value="0.120701946138"/>
-	<property name="cam_r_y" value="0.000663824989577"/>
-	<property name="cam_r_z" value="-0.000585704618711"/>
-	<property name="cam_r_roll" value="0.00537309851257"/>
-	<property name="cam_r_pitch" value="0.00958828040689"/>
-	<property name="cam_r_yaw" value="0.0117182932732"/>
+	<property name="cam_r_x" value="0.121275001505"/>
+	<property name="cam_r_y" value="0.00156529255244"/>
+	<property name="cam_r_z" value="-0.00194055736761"/>
+	<property name="cam_r_roll" value="0.00494623053968"/>
+	<property name="cam_r_pitch" value="0.0180219198137"/>
+	<property name="cam_r_yaw" value="0.0109704642674"/>
 
 	<!-- cam3d | handeye calibration | relative to head_axis_link -->
-	<property name="cam3d_x" value="-0.037555729"/>
-	<property name="cam3d_y" value="-0.0651598868"/>
-	<property name="cam3d_z" value="-0.0442883082"/>
-	<property name="cam3d_roll" value="-0.0652253986"/>
-	<property name="cam3d_pitch" value="-1.5552469375"/>
-	<property name="cam3d_yaw" value="0.0523406338"/>
+	<property name="cam3d_x" value="-0.0444851295"/>
+	<property name="cam3d_y" value="-0.0663745609"/>
+	<property name="cam3d_z" value="-0.0344641764"/>
+	<property name="cam3d_roll" value="0.0989790938"/>
+	<property name="cam3d_pitch" value="-1.54292535"/>
+	<property name="cam3d_yaw" value="-0.0379436627"/>
 </robot>
