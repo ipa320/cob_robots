@@ -12,7 +12,6 @@
   <depend package="robot_state_publisher"/>  
   <depend package="joy"/>  
 
-  <depend package="cob_description"/>
   <depend package="cob_machine"/>
 
   <depend package="cob_undercarriage_ctrl"/>

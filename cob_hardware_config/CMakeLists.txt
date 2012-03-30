@@ -37,6 +37,6 @@ rosbuild_add_rostest(test/urdf_cob3-3.test)
 rosbuild_add_roslaunch_check(common/upload_robot.launch ROBOT=cob3-4)
 rosbuild_add_rostest(test/urdf_cob3-4.test)
 
-# rostest for icob
-rosbuild_add_roslaunch_check(common/upload_robot.launch ROBOT=icob)
-rosbuild_add_rostest(test/urdf_icob.test)
+# rostest for raw3-1
+rosbuild_add_roslaunch_check(common/upload_robot.launch ROBOT=raw3-1)
+rosbuild_add_rostest(test/urdf_raw3-1.test)
