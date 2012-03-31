@@ -16,6 +16,6 @@
   <depend package="cob_sick_s300"/>
   <depend package="cob_relayboard"/>
   <depend package="image_proc"/>
-  <depend package="cob_simulated_tactile_sensors"/>
+  <depend package="schunk_simulated_tactile_sensors"/>
 
 </package>
