@@ -27,6 +27,7 @@
   <depend stack="ros" />
   <depend stack="ros_comm" /> <!-- rostest, rostopic -->
   <depend stack="schunk_modular_robotics" /> <!-- schunk_powercube_chain, schunk_sdh, schunk_description -->
+  <depend stack="visualization" /> <!-- rviz -->
   <depend stack="wifi_drivers" /> <!-- wifi_ddwrt -->
 
 </stack>
