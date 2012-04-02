@@ -10,6 +10,6 @@
     </group>
 
     <!-- sdh simulated tactile sensors -->
-    <include file="$(find cob_simulated_tactile_sensors)/ros/launch/simulated_tactile_sensors.launch" />
+    <include file="$(find schunk_simulated_tactile_sensors)/ros/launch/simulated_tactile_sensors.launch" />
 
 </launch>
