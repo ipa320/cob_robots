@@ -19,6 +19,12 @@
 		<include file="$(find cob_bringup)/components/base.launch" />
 		<include file="$(find cob_bringup)/components/relayboard_sim.launch" />
 
+
+		<!-- universal robot arm -->
+  		<node name="ur5_driver" ns="arm_controller" pkg="ur5_driver" type="driver.py" args="ur5" output="screen">
+        		<remap from="/arm_controller/joint_states" to="/joint_states"/>
+  		</node>
+
 		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/teleop.launch" />
