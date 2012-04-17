@@ -1,18 +1,24 @@
 <?xml version="1.0"?>
 <launch>
 
-
-    <!--include file="$(find cob_experimentation_days)/launch/experimentation_days_sim.launch" /-->
-      
+  <group>
+    <machine name="pc1" address="cob3-3-pc1" default="true"/>     
 <!--scan hztest-->
     <include file="$(find cob_bringup)/test/laser_front.test" />
     <include file="$(find cob_bringup)/test/laser_rear.test" />    
     <include file="$(find cob_bringup)/test/laser_top.test" />
-        
+  </group>         
+
 <!-- image hztest-->  
+  <group>
+    <machine name="pc2" address="cob3-3-pc2" default="true"/>
     <include file="$(find cob_bringup)/test/right_prosilica.test" />
     <include file="$(find cob_bringup)/test/left_prosilica.test" />
     <include file="$(find cob_bringup)/test/kinect.test" />
+  </group>
+
+  <machine name="pc1" address="cob3-3-pc1" default="true"/>
+
         
 <!--say test via sss (not direct service call)>
     <test test-name="test_say_hello" pkg="cob_script_server" type="test_say.py" time-limit="10.0" /-->
