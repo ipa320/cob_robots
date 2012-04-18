@@ -28,7 +28,7 @@
 
 
   <xacro:ur5 name="arm" parent="base_link">
-    <origin xyz="-0.32 -0.03 0.48" rpy="0 0 2.35" />
+    <origin xyz="0.32 0.03 0.48" rpy="0 0 -0.79" />
   </xacro:ur5> 
 
 </robot>
