@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-	<include file="$(find cob_machine)/$(env ROBOT).machine" />
-
 	<group>
 		<machine name="pc1" address="cob3-3-pc1" default="true"/>
 
@@ -44,6 +42,7 @@
 	<group>
 		<machine name="pc3" address="cob3-3-pc3" default="true"/>
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<include file="$(find cob_light)/ros/launch/light.launch" />
 	</group>
 
 	<machine name="pc1" address="cob3-3-pc1" default="true"/>

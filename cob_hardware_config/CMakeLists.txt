@@ -29,6 +29,10 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
+# rostest for cob3-1
+rosbuild_add_roslaunch_check(common ROBOT=cob3-1)
+rosbuild_add_rostest(test/urdf_cob3-1.test)
+
 # rostest for cob3-2
 rosbuild_add_roslaunch_check(common ROBOT=cob3-2)
 rosbuild_add_rostest(test/urdf_cob3-2.test)
