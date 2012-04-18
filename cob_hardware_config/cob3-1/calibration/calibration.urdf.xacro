@@ -27,9 +27,17 @@
 	<property name="laser_top_pitch" value="0"/>
 	<property name="laser_top_yaw" value="0"/>
 
-	<!-- ***************** -->
-	<!-- robot calibration -->
-	<!-- ***************** -->
+	<!-- *********************** -->
+	<!-- upper robot calibration -->
+	<!-- *********************** -->
+	<!-- tray mount positions | relative to base_link -->"0.2406 0.1900 0.7320" rpy="2.3561 0 0" />
+	<property name="tray_x" value="0.2406"/>
+	<property name="tray_y" value="0.1900"/>
+	<property name="tray_z" value="0.7320"/>
+	<property name="tray_roll" value="2.3561"/>
+	<property name="tray_pitch" value="0"/>
+	<property name="tray_yaw" value="0"/>
+
 	<!-- torso mount positions | relative to base_link -->
 	<property name="torso_x" value="0.1523087993"/>
 	<property name="torso_y" value="-0.0441619833"/>
@@ -56,13 +64,15 @@
 	<property name="torso_upper_neck_tilt_cal_offset" value="0.0"/>
 	-->
 
+	<!-- torso reference positions | used as calibration_rising for torso chain -->
+	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
 	<property name="torso_lower_neck_pan_ref" value="-0.5470" />
 	<property name="torso_lower_neck_tilt_ref" value="0.0344" />
 	<property name="torso_upper_neck_pan_ref" value="0.0247" />
 	<property name="torso_upper_neck_tilt_ref" value="0.02201" />
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
-	<property name="torso_tray_ref" value="-0.2"/>
+	<property name="tray_ref" value="-0.2"/>
 
 	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
 	<property name="head_axis_ref" value="-0.1"/>
