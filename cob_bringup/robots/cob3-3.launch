@@ -42,7 +42,7 @@
 	<group>
 		<machine name="pc3" address="cob3-3-pc3" default="true"/>
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
-		<include file="$(find cob_light)/ros/launch/light.launch" />
+		<include file="$(find cob_bringup)/components/light.launch" />
 	</group>
 
 	<machine name="pc1" address="cob3-3-pc1" default="true"/>
