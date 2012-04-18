@@ -9,22 +9,22 @@ arm_controller:
     - wrist_3_joint
   gains:
     shoulder_pan_joint:
-      p: 4000.0
+      p: 2000.0
       d: 0.0
     shoulder_lift_joint:
-      p: 4000.0
+      p: 2000.0
       d: 0.0
     elbow_joint:
-      p: 4000.0
+      p: 2000.0
       d: 0.0
     wrist_1_joint:
-      p: 4020.0
+      p: 2020.0
       d: 0.0
     wrist_2_joint:
-      p: 4030.0
+      p: 2030.0
       d: 0.0
     wrist_3_joint:
-      p: 4050.0
+      p: 2050.0
       d: 0.0
 
   arm_joint_trajectory_action_node:
