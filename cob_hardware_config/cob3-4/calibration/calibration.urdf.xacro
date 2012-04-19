@@ -30,7 +30,7 @@
 	<!-- *********************** -->
 	<!-- upper robot calibration -->
 	<!-- *********************** -->
-	<!-- tray mount positions | relative to base_link -->"0.2406 0.1900 0.7320" rpy="2.3561 0 0" />
+	<!-- tray mount positions | relative to base_link -->
 	<property name="tray_x" value="0.2406"/>
 	<property name="tray_y" value="0.1900"/>
 	<property name="tray_z" value="0.7320"/>
