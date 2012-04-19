@@ -40,7 +40,7 @@
     <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
   </xacro:cob_tray>
 
-  <xacro:cob_torso_v1 name="torso" parent="base_link">
+  <xacro:cob_torso_v0 name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:cob_torso_v0>
   
