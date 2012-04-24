@@ -3,7 +3,7 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="cob3-4" >
+       name="cob3_4" >
   
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
@@ -14,6 +14,9 @@
   
   <!-- base -->
   <include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
+
+  <!-- tray -->
+  <include filename="$(find cob_description)/urdf/tray/tray.urdf.xacro" />
  
   <!-- torso -->
   <include filename="$(find cob_description)/urdf/torso_v1/torso.urdf.xacro" />
@@ -32,6 +35,10 @@
   
   <!-- composition of the robot -->
   <xacro:cob_base name="base"/>
+
+  <xacro:cob_tray name="tray" parent="base_link">
+    <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
+  </xacro:cob_tray>
 
   <xacro:cob_torso_v1 name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />

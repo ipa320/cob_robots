@@ -1,0 +1,19 @@
+tray_controller:
+  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  joints:
+    - tray_joint 
+  gains:
+    tray_joint:
+      p: 100.0
+      i: 12.0
+      d: 0.5
+      i_clamp: 0.5 
+    
+  tray_joint_trajectory_action_node:
+    joints:
+    - tray_joint 
+    constraints:
+      goal_time: 0.6
+      tray_joint:
+        goal: 0.1
+
