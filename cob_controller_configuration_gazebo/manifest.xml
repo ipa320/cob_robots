@@ -15,6 +15,9 @@
   <depend package="cob_bringup"/>
   <depend package="cob_sick_s300"/>
   <depend package="cob_relayboard"/>
+  <!--depend package="cob_collision_velocity_filter"/>
+  <depend package="cob_footprint_observer"/>
+  <depend package="costmap_2d"/-->
   <depend package="image_proc"/>
   <depend package="schunk_simulated_tactile_sensors"/>
 
