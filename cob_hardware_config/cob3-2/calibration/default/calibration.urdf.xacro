@@ -29,7 +29,7 @@
 	<property name="torso_upper_neck_tilt_ref" value="0" />
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
-	<property name="torso_tray_ref" value="3.14"/>
+	<property name="tray_ref" value="3.14"/>
 
 	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
 	<property name="head_axis_ref" value="-0.1"/>
