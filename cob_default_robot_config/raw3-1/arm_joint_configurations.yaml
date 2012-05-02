@@ -3,5 +3,5 @@ joint_names: ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint','wrist_
 # back side positions
 home: [[0.797, -1.54, -2.016, 0.475, 1.568, -1.542]]
 ablegen: [[0.828, -2.55, -2.248, 1.747, 1.571, -1.542]]
-regal: [[0.336, -1.768, -1.115, -0.222, 0.508, -1.48]]
+regal: [[2.47, -1.379, -1.408, -0.286, 1.503, -1.49]]
 
