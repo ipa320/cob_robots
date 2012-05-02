@@ -24,7 +24,7 @@
  
 
 
-  <xacro:icob_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
+  <xacro:icob_base name="base"/>
 
 
   <xacro:ur5 name="arm" parent="base_link">
