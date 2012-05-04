@@ -15,6 +15,7 @@ group2:
   component_name: arm
   buttons: [[stop,trigger,stop],
     [home,move,home],
+    [neutral, move, neutral],
     [ablegen,move,ablegen],
     [regal,move,regal]]
 group3:
