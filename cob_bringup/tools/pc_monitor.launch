@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="pc" />
+  <arg name="pc" default="localhost"/>
 
   <!-- Monitor CPU temp, usage -->
   <node pkg="pr2_computer_monitor" name="realtime_cpu_monitor_$(arg pc)" type="cpu_monitor.py" args="--diag-hostname=$(arg pc)">
