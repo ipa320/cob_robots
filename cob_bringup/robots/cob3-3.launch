@@ -4,6 +4,11 @@
 	<group>
 		<machine name="pc1" address="cob3-3-pc1" default="true"/>
 
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="pc1" />
+		</include>
+
 		<!-- upload robot description -->
 		<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
 	
@@ -33,6 +38,11 @@
 	<group>
 		<machine name="pc2" address="cob3-3-pc2" default="true"/>
 
+                <!-- pc monitor -->
+                <include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+                        <arg name="pc" value="pc2" />
+                </include>
+
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/components/cameras/left_prosilica.launch" />
 		<include file="$(find cob_bringup)/components/cameras/right_prosilica.launch" />
@@ -41,6 +51,12 @@
 
 	<group>
 		<machine name="pc3" address="cob3-3-pc3" default="true"/>
+
+                <!-- pc monitor -->
+                <include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+                        <arg name="pc" value="pc3" />
+                </include>
+
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 		<include file="$(find cob_bringup)/components/light.launch" />
 	</group>
