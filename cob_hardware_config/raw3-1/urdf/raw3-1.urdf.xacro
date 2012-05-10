@@ -18,6 +18,9 @@
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
+  <!-- torso -->
+  <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
+
   <!-- ur_arm -->
  <!--include filename="$(find raw_description)/urdf/arm_ur/arm.urdf.xacro" /-->   
  <include filename="$(find ur5_description)/urdf/model.urdf.xacro" />   
@@ -31,9 +34,15 @@
     <origin xyz="0.62 0.00 0.88" rpy="0 0 0" />
   </xacro:frida-->
 
+  <xacro:cob_torso_v1 name="torso" parent="base_link">
+    <origin xyz="0 0 1.0" rpy="0 0 0" />
+  </xacro:cob_torso_v1>
+
+
+
   <xacro:ur5_robot prefix="arm_"/>
   <joint name="arm_base_joint" type="fixed" >
-		 <origin xyz="0.32 0.03 0.48" rpy="0 0 -0.79" />
+		 <origin xyz="0.3235 -0.191 0.58" rpy="0 0 -0.79" />
 		<parent link="base_link" />
 		<child link="arm_base_link" />
   </joint>

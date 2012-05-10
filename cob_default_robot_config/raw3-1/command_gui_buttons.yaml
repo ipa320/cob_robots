@@ -26,3 +26,10 @@ group3:
     [grasp-to-tray,move,grasp-to-tray],
     [tray-to-folded,move,tray-to-folded],
     [wave,move,wave]]
+group4:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,trigger,stop],
+    [home,move,home],
+    [left,move,left],
+    [right,move,right]]

@@ -28,6 +28,11 @@
 		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/teleop.launch" />
+		
+		<!-- start camera sensors -->
+		<!--include file="$(find cob_bringup)/components/cameras/left_prosilica.launch" /-->
+		<!--include file="$(find cob_bringup)/components/cameras/right_prosilica.launch" /-->
+		<include file="$(find cob_bringup)/components/cameras/kinect.launch" />
 	</group>
 
 
