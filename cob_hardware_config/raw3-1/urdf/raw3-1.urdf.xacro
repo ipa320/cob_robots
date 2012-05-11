@@ -31,7 +31,7 @@
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
   <xacro:cob_torso_v1 name="torso" parent="base_link">
-    <origin xyz="0 0 1.0" rpy="0 0 0" />
+    <origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" />
   </xacro:cob_torso_v1>
 
 
