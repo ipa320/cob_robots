@@ -18,17 +18,36 @@
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
+  <!-- torso -->
+  <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
+
   <!-- ur_arm -->
-  <include filename="$(find raw_description)/urdf/arm_ur/arm.urdf.xacro" />   
+ <!--include filename="$(find raw_description)/urdf/arm_ur/arm.urdf.xacro" /-->   
+ <include filename="$(find ur5_description)/urdf/model.urdf.xacro" />   
 
   <!-- frida --> 
   <!--include filename="$(find frida_description)/urdf/frida/frida.urdf.xacro" /-->   
 
-
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
-  <xacro:cob_arm_ur name="arm" parent="base_link">
+  <xacro:cob_torso_v1 name="torso" parent="base_link">
+    <origin xyz="0 0 1.0" rpy="0 0 0" />
+  </xacro:cob_torso_v1>
+
+
+  <!--xacro:cob_arm_ur name="arm" parent="base_link">
     <origin xyz="-0.33 0.16 0.6" rpy="0 ${M_PI/2} 0" />
-  </xacro:cob_arm_ur> 
+  </xacro:cob_arm_ur--> 
+
+  <xacro:ur5_robot prefix="arm_"/>
+  <joint name="arm_base_joint" type="fixed" >
+		 <origin xyz="0.3235 -0.191 0.58" rpy="0 0 -0.79" />
+		<parent link="base_link" />
+		<child link="arm_base_link" />
+  </joint>
+
+  <!--xacro:frida name="arm" parent="base_link">
+    <origin xyz="0.62 0.00 0.88" rpy="0 0 0" />
+  </xacro:frida-->
 
 </robot>
