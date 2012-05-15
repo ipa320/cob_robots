@@ -17,4 +17,3 @@ influence_radius: 2.0 #[m] distance from robot_center
 obstacle_damping_dist: 0.3 # used as slow-down dist
 stop_threshold: 0.05 #[m]
 use_circumscribed_threshold: 0.2 #[rad/s] scan for obstacles in circumscribed radius of robot even when tube filter is enabled during fast rotations
-

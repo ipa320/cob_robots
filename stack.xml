@@ -11,12 +11,13 @@
   <depend stack="camera_drivers" /> <!-- prosilica_camera -->
   <depend stack="cob_command_tools" /> <!-- cob_dashboard, cob_teleop, cob_script_server, cob_command_gui -->
   <depend stack="cob_common" /> <!-- raw_description, cob_description -->
-  <depend stack="cob_driver" /> <!-- cob_relayboard, cob_sick_s300, cob_hokuyo, cob_tray_sensors, cob_undercarriage_ctrl, cob_head_axis, cob_collision_velocity_filter, cob_camera_sensors, cob_base_drive_chain, cob_light, cob_trajectory_controller, cob_sound -->
+  <depend stack="cob_driver" /> <!-- cob_relayboard, cob_sick_s300, cob_hokuyo, cob_tray_sensors, cob_footprint_observer, cob_undercarriage_ctrl, cob_head_axis, cob_collision_velocity_filter, cob_camera_sensors, cob_base_drive_chain, cob_light, cob_trajectory_controller, cob_sound -->
   <depend stack="cob_environments" /> <!-- cob_default_env_config -->
   <depend stack="diagnostics" /> <!-- diagnostic_aggregator -->
   <depend stack="image_pipeline" /> <!-- image_proc -->
   <depend stack="joystick_drivers" /> <!-- joy -->
   <depend stack="laser_drivers" /> <!-- hokuyo_node -->
+  <depend stack="navigation" /> <!-- costmap_2d -->
   <depend stack="openni_kinect" /> <!-- openni_launch, openni_camera -->
   <depend stack="pr2_common" /> <!-- pr2_dashboard_aggregator -->
   <depend stack="pr2_controllers" /> <!-- joint_trajectory_action -->
