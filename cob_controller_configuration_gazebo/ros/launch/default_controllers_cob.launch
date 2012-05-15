@@ -6,7 +6,7 @@
 
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch"/>
-	<include file="$(find cob_relayboard)/ros/launch/relayboard_sim.launch"/>
+	<include file="$(find cob_bringup)/components/relayboard_sim.launch"/>
   <include file="$(find cob_bringup)/tools/base_collision_observer.launch"/>
 
 	<!-- Tray -->
