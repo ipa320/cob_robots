@@ -1,9 +1,25 @@
 #Parameters for Relayboard
 
 #Device on which relayboard is attached
-ComPort: /dev/ttyRelais
+ComPort: /dev/ttyUSB1
 relayboard_timeout: 2.0
-relayboard_voltage_offset: 2.6
+requestRate: 25
 
-#Define the version of the protocol used by the Relayboard
-protocol_version: 2
+#Define the version of the protocol used by the Relayboard (the type of lcd interface)
+protocol_version: 1
+
+#relayboard
+hasIRSensors: 0
+hasKeyPad: 0
+hasLCDOut: 0
+
+#optional modules:
+hasMotorRight: 0
+hasMotorLeft: 0
+hasIOBoard: 0
+hasUSBoard: 0
+hasRadarBoard: 0
+hasGyroBoard: 0
+
+#TODO: relayboard_voltage_offset: 2.6
+

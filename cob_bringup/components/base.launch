@@ -2,21 +2,35 @@
 <launch>
 
 	<arg name="sim" default="false" />
+	<arg name="namespace" default="base_controller"/>
+	<arg name="topicJointName" default="/joint_states"/>
+	<arg name="topicJointCmd" default="joint_command"/>
+	<arg name="topicOdom" default="odometry"/>
+	<arg name="topicCmdVel" default="command" />
+	<arg name="topicEmergencyState" default="/emergency_stop_state" />
+	<arg name="iniDir" default="$(find cob_hardware_config)/$(env ROBOT)/config/base/" />
+	<arg name="configBaseDriveChain" default="$(find cob_hardware_config)/$(env ROBOT)/config"/>
 
-	<group ns="base_controller">
+	<group ns="$(arg namespace)">
 		
 		<!-- upload parameters -->
-		<param name="IniDirectory" value="$(find cob_hardware_config)/$(env ROBOT)/config/base/"/>
-		<param name="PublishEffort" value="false"/>
+		<param name="IniDirectory" value="$(arg iniDir)"/>
 		
 		<!-- start underlying components - base_drive_chain -->
-		<include file="$(find cob_base_drive_chain)/ros/launch/base_drive_chain.launch" >
+		<include file="$(find cob_bringup)/components/base_drive_chain.launch" >
 			<arg name="sim" value="$(arg sim)" />
+			<arg name="topicJointName" value="$(arg topicJointName)" />
+			<arg name="topicJointCmd" value="$(arg topicJointCmd)" />
+			<arg name="configDir" value="$(arg configBaseDriveChain)" />
 		</include>
-		
 		<!-- start undercarriage ctrl -->
-		<include file="$(find cob_undercarriage_ctrl)/ros/launch/undercarriage_ctrl.launch" />
-		
+		<include file="$(find cob_undercarriage_ctrl)/ros/launch/undercarriage_ctrl.launch" >
+			<arg name="topicOdom" value="$(arg topicOdom)" />
+			<arg name="topicCmdVel" value="$(arg topicCmdVel)" />
+			<arg name="topicJointName" value="$(arg topicJointName)" />
+			<arg name="topicJointCmd" value="$(arg topicJointCmd)"/>
+			<arg name="topicEmergencyState" value="/emergency_stop_state" />
+		</include>
 	</group>
 
 </launch>

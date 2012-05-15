@@ -1,0 +1,219 @@
+#drive
+AutoInit: true
+CheckJointNames: true
+cycleRate: 75
+numberOfMotors: 8 #for each motor a 'drive*:' configuration section must exist.
+HomeAllAtOnce: true
+#can:
+#[TypeCan]
+#// 0 = Can Peak Dongle
+#// 1 = Can Peak USB 
+#// 2 = Can Card ESD
+can: 1
+devicePath: /dev/pcan32
+
+#[CanCtrl]
+#// network of esd card (0 or 1)
+NetESD: 0 
+#// Baudrate values: 
+#0 = 1000 kbit/s
+#1 = 500 kbit/s
+#2 = 250 kbit/s
+#3 = 125 kbit/s
+#4 = 50 kbit/s
+#5 = 20 kbit/s
+#6 = 10 kbit/s
+BaudrateVal: 0
+GenericBufferLen: 2000
+
+drive0: #front left steer
+  control_type: 2
+  joint_name: fl_caster_rotation_joint
+  EncIncrPerRevMot: 4096
+  VelMeasFrqHz: 1
+  GearRatio: 12.66666666
+  GearEfficiency: 0.7
+  BeltRatio: 1
+  Sign: -1.0
+  VelMaxEncIncrS: 240000
+  AccIncrS: 1000000
+  DecIncrS: 1000000
+  Homing: true
+  HomeCoupleID: 2
+  HomeCoupleVelRadS: -0.05
+  HomePos: -25412
+  HomeVelRadS: 0.4
+  HomeEvent: 9
+  HomeDigIn: 0x0001
+  HomeTimeOut: 1000
+  VelPModeEncIncrS: 10
+  CurrentContLimit: 4.4
+  CurrentToTorque: 1 #todo
+  CANId: 1
+drive1: #front left wheel
+  control_type: 2
+  joint_name: fl_caster_r_wheel_joint
+  EncIncrPerRevMot: 4096
+  VelMeasFrqHz: 1
+  GearRatio: 15
+  GearEfficiency: 0.7
+  BeltRatio: 2
+  Sign: -1.0
+  VelMaxEncIncrS: 240000
+  AccIncrS: 500000
+  DecIncrS: 500000
+  Homing: false
+  HomePos: 0
+  HomeVelRadS: 10000
+  HomeEvent: 9
+  HomeDigIn: 0x0001
+  HomeTimeOut: 1000
+  VelPModeEncIncrS: 10
+  CurrentContLimit: 4.4
+  CurrentToTorque: 1 #todo
+  CANId: 2
+
+drive2: #back left steer
+  control_type: 2
+  joint_name: bl_caster_rotation_joint
+  EncIncrPerRevMot: 4096
+  VelMeasFrqHz: 1
+  GearRatio: 12.66666666
+  GearEfficiency: 0.7
+  BeltRatio: 1
+  Sign: 1.0
+  VelMaxEncIncrS: 240000
+  AccIncrS: 1000000
+  DecIncrS: 1000000
+  Homing: true
+  HomeCoupleID: 4
+  HomeCoupleVelRadS: -0.05
+  HomePos: -26771
+  HomeVelRadS: 0.4
+  HomeEvent: 9
+  HomeDigIn: 0x0001
+  HomeTimeOut: 1000
+  VelPModeEncIncrS: 10
+  CurrentContLimit: 4.4
+  CurrentToTorque: 1 #todo
+  CANId: 3
+
+drive3: #back left wheel
+  control_type: 2
+  joint_name: bl_caster_r_wheel_joint
+  EncIncrPerRevMot: 4096
+  VelMeasFrqHz: 1
+  GearRatio: 15
+  GearEfficiency: 0.7
+  BeltRatio: 2
+  Sign: 1.0
+  VelMaxEncIncrS: 240000
+  AccIncrS: 500000
+  DecIncrS: 500000
+  Homing: false
+  HomePos: 0
+  HomeVelRadS: 10000
+  HomeEvent: 9
+  HomeDigIn: 0x0001
+  HomeTimeOut: 1000
+  VelPModeEncIncrS: 10
+  CurrentContLimit: 4.4
+  CurrentToTorque: 1 #todo
+  CANId: 4
+
+drive4: #back right steer
+  control_type: 2
+  joint_name: br_caster_rotation_joint
+  EncIncrPerRevMot: 4096
+  VelMeasFrqHz: 1
+  GearRatio: 12.66666666
+  GearEfficiency: 0.7
+  BeltRatio: 1
+  Sign: -1.0
+  VelMaxEncIncrS: 240000
+  AccIncrS: 1000000
+  DecIncrS: 1000000
+  Homing: true
+  HomeCoupleID: 6
+  HomeCoupleVelRadS: -0.05
+  HomePos: -25459
+  HomeVelRadS: 0.4
+  HomeEvent: 9
+  HomeDigIn: 0x0001
+  HomeTimeOut: 1000
+  VelPModeEncIncrS: 10
+  CurrentContLimit: 4.4
+  CurrentToTorque: 1 #todo
+  CANId: 5
+
+drive5: #back right wheel
+  control_type: 2
+  joint_name: br_caster_r_wheel_joint
+  EncIncrPerRevMot: 4096
+  VelMeasFrqHz: 1
+  GearRatio: 15
+  GearEfficiency: 0.7
+  BeltRatio: 2
+  Sign: 1.0
+  VelMaxEncIncrS: 240000
+  AccIncrS: 500000
+  DecIncrS: 500000
+  Homing: false
+  HomePos: 0
+  HomeVelRadS: 10000
+  HomeEvent: 9
+  HomeDigIn: 0x0001
+  HomeTimeOut: 1000
+  VelPModeEncIncrS: 10
+  CurrentContLimit: 4.4
+  CurrentToTorque: 1 #todo
+  CANId: 6
+
+drive6: #front right steer
+  control_type: 2
+  joint_name: fr_caster_rotation_joint
+  EncIncrPerRevMot: 4096
+  VelMeasFrqHz: 1
+  GearRatio: 12.66666666
+  GearEfficiency: 0.7
+  BeltRatio: 1
+  Sign: 1.0
+  VelMaxEncIncrS: 240000
+  AccIncrS: 1000000
+  DecIncrS: 1000000
+  Homing: true
+  HomeCoupleID: 8
+  HomeCoupleVelRadS: -0.05
+  HomePos: -26831
+  HomeVelRadS: 0.4
+  HomeEvent: 9
+  HomeDigIn: 0x0001
+  HomeTimeOut: 1000
+  VelPModeEncIncrS: 10
+  CurrentContLimit: 4.4
+  CurrentToTorque: 1 #todo
+  CANId: 7
+
+drive7: #front right wheel
+  control_type: 2
+  joint_name: fr_caster_r_wheel_joint
+  EncIncrPerRevMot: 4096
+  VelMeasFrqHz: 1
+  GearRatio: 15
+  GearEfficiency: 0.7
+  BeltRatio: 2
+  Sign: -1.0
+  VelMaxEncIncrS: 240000
+  AccIncrS: 500000
+  DecIncrS: 500000
+  Homing: false
+  HomePos: 0
+  HomeVelRadS: 10000
+  HomeEvent: 9
+  HomeDigIn: 0x0001
+  HomeTimeOut: 1000
+  VelPModeEncIncrS: 10
+  CurrentContLimit: 4.4
+  CurrentToTorque: 1 #todo
+  CANId: 8
+
