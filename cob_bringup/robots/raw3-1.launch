@@ -28,6 +28,7 @@
 		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/teleop.launch" />
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
 		
 		<!-- start camera sensors -->
 		<!--include file="$(find cob_bringup)/components/cameras/left_prosilica.launch" /-->
