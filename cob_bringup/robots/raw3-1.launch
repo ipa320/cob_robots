@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find cob_machine)/$(env ROBOT).machine" />
+
+	<group>
+		<machine name="pc1" address="raw3-1-pc1" default="true"/>
+
+		<!-- upload robot description -->
+		<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+	
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+		<!-- startup hardware -->
+		<!-- lower robot -->
+		<include file="$(find cob_bringup)/components/laser_front.launch" />
+		<include file="$(find cob_bringup)/components/laser_rear.launch" />
+		<include file="$(find cob_bringup)/components/base.launch" />
+		<include file="$(find cob_bringup)/components/relayboard_sim.launch" />
+
+
+		<!-- universal robot arm -->
+  		<node name="ur5_driver" ns="arm_controller" pkg="ur5_driver" type="driver.py" args="ur5" output="screen">
+        		<remap from="/arm_controller/joint_states" to="/joint_states"/>
+  		</node>
+
+		
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/teleop.launch" />
+		
+		<!-- start camera sensors -->
+		<!--include file="$(find cob_bringup)/components/cameras/left_prosilica.launch" /-->
+		<!--include file="$(find cob_bringup)/components/cameras/right_prosilica.launch" /-->
+		<include file="$(find cob_bringup)/components/cameras/kinect.launch" />
+	</group>
+
+
+	<machine name="pc1" address="raw3-1-pc1" default="true"/>
+
+</launch>
