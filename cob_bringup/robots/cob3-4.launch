@@ -30,6 +30,7 @@
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" />
 		<include file="$(find cob_bringup)/tools/teleop.launch" />
+	  <include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
 	</group>
 
 	<group>
