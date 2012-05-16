@@ -29,6 +29,7 @@
   <depend package="schunk_sdh"/>
   <depend package="cob_head_axis"/>
   <depend package="cob_lbr"/>
+  <depend package="ur5_driver"/>
   <depend package="cob_camera_sensors"/>
   <depend package="openni_launch"/>
   <depend package="openni_camera"/>

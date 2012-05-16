@@ -29,7 +29,7 @@
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/components/torso.launch" />
 		<include file="$(find cob_bringup)/components/tray.launch" />
-		<include file="$(find cob_bringup)/components/lbr.launch" />
+		<include file="$(find cob_bringup)/components/lwa.launch" />
 		<include file="$(find cob_bringup)/components/sdh.launch" />
 		<include file="$(find cob_bringup)/components/head.launch" />
 		
@@ -50,7 +50,6 @@
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" />
 		<include file="$(find cob_bringup)/components/prosilica_right.launch" />
-		<include file="$(find cob_bringup)/components/kinect.launch" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
