@@ -45,29 +45,38 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-apartment)
 
 # rostest for components for cob3-2
-rosbuild_add_roslaunch_check(components ROBOT=cob3-2)
-rosbuild_add_roslaunch_check(components/cameras ROBOT=cob3-2)
-rosbuild_add_roslaunch_check(tools ROBOT=cob3-2 ROBOT_ENV=ipa-kitchen)
-rosbuild_add_roslaunch_check(tools ROBOT=cob3-2 ROBOT_ENV=ipa-apartment)
+#rosbuild_add_roslaunch_check(components ROBOT=cob3-2)
+#rosbuild_add_roslaunch_check(components/cameras ROBOT=cob3-2)
+#rosbuild_add_roslaunch_check(tools ROBOT=cob3-2 ROBOT_ENV=ipa-kitchen)
+#rosbuild_add_roslaunch_check(tools ROBOT=cob3-2 ROBOT_ENV=ipa-apartment)
 
 # rostest for components for cob3-3
-rosbuild_add_roslaunch_check(components ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/cameras ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(robots/cob3-3.xml ROBOT=cob3-3)
+#rosbuild_add_roslaunch_check(components ROBOT=cob3-3)
+#rosbuild_add_roslaunch_check(components/cameras ROBOT=cob3-3)
 #rosbuild_add_roslaunch_check(components/lbr ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(tools ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
-rosbuild_add_roslaunch_check(tools ROBOT=cob3-3 ROBOT_ENV=ipa-apartment)
+#rosbuild_add_roslaunch_check(tools ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
+#rosbuild_add_roslaunch_check(tools ROBOT=cob3-3 ROBOT_ENV=ipa-apartment)
 
 # rostest for components for cob3-4
-rosbuild_add_roslaunch_check(components ROBOT=cob3-4)
-rosbuild_add_roslaunch_check(components/cameras ROBOT=cob3-4)
+#rosbuild_add_roslaunch_check(components ROBOT=cob3-4)
+#rosbuild_add_roslaunch_check(components/cameras ROBOT=cob3-4)
 #rosbuild_add_roslaunch_check(components/lbr ROBOT=cob3-4)
-rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-kitchen)
-rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-apartment)
+#rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-kitchen)
+#rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-apartment)
 
+# rostest for components for raw3-1
+#rosbuild_add_roslaunch_check(components ROBOT=raw3-1)
+#rosbuild_add_roslaunch_check(components/cameras ROBOT=raw3-1)
+#rosbuild_add_roslaunch_check(tools ROBOT=raw3-1 ROBOT_ENV=ipa-kitchen)
+#rosbuild_add_roslaunch_check(tools ROBOT=raw3-1 ROBOT_ENV=ipa-apartment)
 
-# rostest for robots
-#rosbuild_add_roslaunch_check(robots/cob3-3.launch ROBOT=cob3-3)
-#rosbuild_add_roslaunch_check(robots/cob3-4.launch ROBOT=cob3-4)
+# rostest for components for raw3-2
+#rosbuild_add_roslaunch_check(components ROBOT=raw3-2)
+#rosbuild_add_roslaunch_check(components/cameras ROBOT=raw3-2)
+#rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-kitchen)
+#rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-apartment)
+
 
 #rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 
