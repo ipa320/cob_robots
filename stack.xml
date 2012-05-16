@@ -27,6 +27,7 @@
   <depend stack="ros" />
   <depend stack="ros_comm" /> <!-- rostest, rostopic -->
   <depend stack="schunk_modular_robotics" /> <!-- schunk_simulated_tactile_sensors, schunk_powercube_chain, schunk_sdh, schunk_description -->
+  <depend stack="universal_robot" /> <!-- ur5_description -->
   <depend stack="visualization" /> <!-- rviz -->
   <depend stack="wifi_drivers" /> <!-- wifi_ddwrt -->
 
