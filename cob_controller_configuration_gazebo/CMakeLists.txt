@@ -24,3 +24,4 @@ rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-4.launch ROBOT=
 
 # rostest raw
 rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-1.launch ROBOT=raw3-1)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-2.launch ROBOT=raw3-2)
