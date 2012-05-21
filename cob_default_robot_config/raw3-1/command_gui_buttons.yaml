@@ -7,7 +7,7 @@
 group1:
   group_name: base
   component_name: base
-  buttons: [[stop,trigger,stop],
+  buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
 group2:
