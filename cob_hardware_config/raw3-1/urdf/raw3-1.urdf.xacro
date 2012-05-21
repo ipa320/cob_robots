@@ -30,14 +30,19 @@
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
+ <!--origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" /-->
+
 
   <xacro:cob_torso_v1 name="torso" parent="base_link">
-    <origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" />
+   
+    <origin xyz="-0.36 -0.099 0.488" rpy="${M_PI} 0 0" />
   </xacro:cob_torso_v1>
 
 
   <xacro:cob_arm_ur name="arm" parent="base_link">
-    <origin xyz="-0.33 0.16 0.6" rpy="0 ${M_PI/2} 0" />
+    <!--origin xyz="-0.33 0.16 0.6" rpy="0 ${M_PI/2} 0" /-->
+    <origin xyz="-0.324 0.22 0.565" rpy="0 ${M_PI/2} 0" />
+	<!--in cad model z = 0.587  - fxmlc-->
   </xacro:cob_arm_ur> 
 
   <!--xacro:ur5_robot prefix="arm_"/>
