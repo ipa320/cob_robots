@@ -50,5 +50,7 @@
   <depend package="cob_dashboard"/>
   <depend package="cob_command_gui"/>
   <depend package="cob_collision_velocity_filter"/>
+  <depend package="cob_footprint_observer"/>
+  <depend package="costmap_2d"/>
 
 </package>
