@@ -7,32 +7,17 @@
 group1:
   group_name: base
   component_name: base
-  buttons: [[stop,trigger,stop],
+  buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
 group2:
-  group_name: arm settings
-  component_name: arm
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
-    [undefined mode,mode,undefined],
-    [position mode,mode,position],
-    [velocity mode,mode,velocity],
-    [gravcomp mode,mode,gravcomp]]
-group3:
   group_name: arm pos
   component_name: arm
   buttons: [[stop,trigger,stop],
     [home,move,home],
-    [folded,move,folded],
-    [pregrasp,move,pregrasp],
-    [hold,move,hold],
-    [overtray,move,overtray],
-    [tray,move,tray],
-    [wave in,move,wavein],
-    [wave out,move,waveout]]
-group4:
+    [ablegen,move,ablegen],
+    [regal,move,regal]]
+group3:
   group_name: arm traj
   component_name: arm
   buttons: [[stop,trigger,stop],
@@ -41,3 +26,10 @@ group4:
     [grasp-to-tray,move,grasp-to-tray],
     [tray-to-folded,move,tray-to-folded],
     [wave,move,wave]]
+group4:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,trigger,stop],
+    [home,move,home],
+    [left,move,left],
+    [right,move,right]]

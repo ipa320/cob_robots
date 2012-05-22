@@ -1,3 +1,4 @@
+ip_address: 192.168.21.101
 auto_exposure:     True
 exposure_auto_max: 25000
 exposure_auto_target: 40
