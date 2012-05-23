@@ -11,7 +11,6 @@ http://www.ros.org/wiki/prosilica_camera/Tutorials.
 
   <!-- The camera node -->
   <node ns="stereo/right" name="color_camera" pkg="prosilica_camera" type="prosilica_node" output="screen">
-	<param name="ip_address" type="str" value="192.168.21.101"/>
 	<rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/cameras/parameters_right.yaml"/>
 
 	<remap from="camera/image_raw" to="image_raw"/>

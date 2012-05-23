@@ -9,45 +9,51 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_bringup</url>
 
-  <depend package="robot_state_publisher"/>
-  <depend package="joy"/>
-  <depend package="rviz"/>
-
-  <depend package="cob_machine"/>
-
+  <!-- components: actuators -->
   <depend package="cob_undercarriage_ctrl"/>
   <depend package="cob_base_drive_chain"/>
+  <depend package="cob_trajectory_controller"/>
+  <depend package="cob_lbr"/>
+  <depend package="cob_head_axis"/>
+  <depend package="cob_sound"/>
+  <depend package="cob_light"/>
 
+  <depend package="schunk_sdh"/>
+  <depend package="schunk_powercube_chain"/>
+
+  <depend package="robot_state_publisher"/>
+  <depend package="ur5_driver"/>
+
+  <!-- components: sensors -->
   <depend package="cob_relayboard"/>
   <depend package="cob_sick_s300"/>
   <depend package="cob_hokuyo"/>
-  <depend package="hokuyo_node"/>
-
-  <depend package="cob_tray_sensors"/>
-  <depend package="cob_trajectory_controller"/>
-  <depend package="schunk_powercube_chain"/>
-  <depend package="schunk_sdh"/>
-  <depend package="cob_head_axis"/>
   <depend package="cob_camera_sensors"/>
-  <depend package="openni_launch"/>
+
   <depend package="openni_camera"/>
+  <depend package="openni_launch"/>
   <depend package="image_proc"/>
+  <depend package="hokuyo_node"/>
   <depend package="prosilica_camera"/>
 
+  <!-- tools -->
+  <depend package="cob_command_gui"/>
+  <depend package="cob_dashboard"/>
+  <depend package="cob_teleop"/>
+  <depend package="cob_collision_velocity_filter"/>
+  <depend package="cob_footprint_observer"/>
+  
+  <depend package="joy"/>
+  <depend package="rviz"/>
+  <depend package="diagnostic_aggregator"/>
   <depend package="pr2_dashboard_aggregator"/>
   <depend package="pr2_computer_monitor"/>
-  <depend package="diagnostic_aggregator"/>
-  <depend package="wifi_ddwrt"/>
+  <depend package="costmap_2d"/>
 
-  <depend package="cob_light"/>
-  <depend package="cob_teleop"/>
-  <depend package="cob_sound"/>
-
+  <!-- configuration -->
   <depend package="cob_hardware_config"/>
   <depend package="cob_default_robot_config"/>
   <depend package="cob_default_env_config"/>
-  <depend package="cob_script_server"/>
-  <depend package="cob_dashboard"/>
-  <depend package="cob_command_gui"/>
+
 
 </package>
