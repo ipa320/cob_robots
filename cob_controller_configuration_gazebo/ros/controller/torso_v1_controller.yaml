@@ -1,5 +1,5 @@
 torso_controller:
-  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
   joints:
     - torso_lower_neck_tilt_joint
     - torso_pan_joint
