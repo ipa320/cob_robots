@@ -53,6 +53,11 @@ rosbuild_add_roslaunch_check(robots/cob3-4.xml ROBOT=cob3-4)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-apartment)
 
+# rostest for cob3-6
+rosbuild_add_roslaunch_check(robots/cob3-6.xml ROBOT=cob3-6)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-6 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-6 ROBOT_ENV=ipa-apartment)
+
 # rostest for raw3-1
 rosbuild_add_roslaunch_check(robots/raw3-1.xml ROBOT=raw3-1)
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-1 ROBOT_ENV=ipa-kitchen)
