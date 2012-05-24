@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<machine name="pc1" address="cob3-4-pc1" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)"  default="true" />
-	<machine name="pc2" address="cob3-4-pc2" ros-root="$(env ROS_ROOT)" ros-package-path="$(env ROS_PACKAGE_PATH)"/>
-
-</launch>
