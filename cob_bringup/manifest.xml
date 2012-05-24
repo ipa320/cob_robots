@@ -55,5 +55,4 @@
   <depend package="cob_default_robot_config"/>
   <depend package="cob_default_env_config"/>
 
-
 </package>
