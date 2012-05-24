@@ -3,7 +3,7 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="cob3_4" >
+       name="cob3_6" >
   
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
@@ -53,7 +53,7 @@
   </xacro:cob_head_v3>
   
   <xacro:schunk_sdh name="sdh" parent="arm_7_link">
-    <origin xyz="0 0 0.032" rpy="0 0 1.5708" />
+    <origin xyz="0 0 0" rpy="0 3.1415926 0" />
   </xacro:schunk_sdh>
   
 </robot>
