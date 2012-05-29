@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="pc1" default="localhost"/>
+
+	<group>
+		<machine name="pc1" address="$(arg pc1)" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc1)" />
+		</include>
+
+		<!-- upload robot description -->
+		<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+	
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+		<!-- startup hardware -->
+		<!-- lower robot -->
+		<include file="$(find cob_bringup)/components/laser_front.launch" />
+		<include file="$(find cob_bringup)/components/laser_rear.launch" />
+		<include file="$(find cob_bringup)/components/base.launch" />
+		<include file="$(find cob_bringup)/components/relayboard_sim.launch" />
+
+
+		
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/teleop.launch" />
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
+	</group>
+
+
+	<machine name="pc1" address="$(arg pc1)" default="true"/>
+
+</launch>

@@ -7,7 +7,7 @@
 group1:
   group_name: base
   component_name: base
-  buttons: [[stop,trigger,stop],
+  buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
 group2:
@@ -27,3 +27,10 @@ group3:
     [grasp-to-tray,move,grasp-to-tray],
     [tray-to-folded,move,tray-to-folded],
     [wave,move,wave]]
+group4:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,trigger,stop],
+    [home,move,home],
+    [left,move,left],
+    [right,move,right]]
