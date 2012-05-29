@@ -4,7 +4,6 @@
 	<include file="$(find cob_bringup)/robots/cob3-6.xml" >
 		<arg name="pc1" value="cob3-6-pc1"/>
 		<arg name="pc2" value="cob3-6-pc2"/>
-		<arg name="pc3" value="cob3-3-pc3"/>
 	</include>
 
 </launch>
