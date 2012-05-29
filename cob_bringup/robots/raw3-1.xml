@@ -4,7 +4,7 @@
 	<arg name="pc1" default="localhost"/>
 
 	<group>
-		<machine name="$(arg pc1)" address="$(arg pc1)" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -42,6 +42,6 @@
 	</group>
 
 
-	<machine name="$(arg pc1)" address="$(arg pc1)" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" default="true"/>
 
 </launch>
