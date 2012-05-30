@@ -47,34 +47,33 @@
 	<property name="torso_yaw" value="0.0660275925"/>
 
 	<!-- arm mount positions | relative to base_link -->
-	<property name="arm_x" value="-0.0135247781"/>
-	<property name="arm_y" value="-0.0461165405"/>
-	<property name="arm_z" value="0.8737003446"/>
-	<property name="arm_roll" value="0.8188441679"/>
-	<property name="arm_pitch" value="0.0073986966"/>
-	<property name="arm_yaw" value="-0.2545901695"/>
+	<property name="arm_x" value="0.040"/>
+	<property name="arm_y" value="-0.005"/>
+	<property name="arm_z" value="0.83637"/>
+	<property name="arm_roll" value="3.1415926"/>
+	<property name="arm_pitch" value="0.7854"/>
+	<property name="arm_yaw" value="-1.8326"/>
 
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
 	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
-	<!-- not used right now
-	<property name="torso_lower_neck_tilt_cal_offset" value="0.0"/>
-	<property name="torso_pan_cal_offset" value="0.0"/>
-	<property name="torso_upper_neck_tilt_cal_offset" value="0.0"/>
-	-->
+	<property name="torso_lower_neck_tilt_ref" value="0.0"/>
+	<property name="torso_pan_ref" value="0.0"/>
+	<property name="torso_upper_neck_tilt_ref" value="0.0"/>
+	
 
 	<!-- torso reference positions | used as calibration_rising for torso chain -->
 	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
-	<property name="torso_lower_neck_tilt_ref" value="-0.24501037"/>
+	<!--property name="torso_lower_neck_tilt_ref" value="-0.24501037"/>
 	<property name="torso_pan_ref" value="-0.0146"/>
-	<property name="torso_upper_neck_tilt_ref" value="+0.14419551"/>
+	<property name="torso_upper_neck_tilt_ref" value="+0.14419551"/-->
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
-	<property name="tray_ref" value="-0.2"/>
+	<property name="tray_ref" value="0"/>
 
 	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
-	<property name="head_axis_ref" value="-0.1"/>
+	<property name="head_axis_ref" value="0.15"/>
 
 	<!-- arm reference positions | used as calibration_rising for arm chain-->
 	<property name="arm_1_ref" value="0.0"/>
