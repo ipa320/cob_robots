@@ -34,9 +34,9 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 # rostest for cob3-1
-#rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT=cob3-1)
-#rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-kitchen)
-#rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT=cob3-1 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-apartment)
 
 # rostest for cob3-2
 rosbuild_add_roslaunch_check(robots/cob3-2.xml ROBOT=cob3-2 ROBOT_ENV=ipa-apartment)
