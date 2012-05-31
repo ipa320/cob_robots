@@ -1,5 +1,5 @@
 tray_controller:
-  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
   joints:
     - tray_joint 
   gains:

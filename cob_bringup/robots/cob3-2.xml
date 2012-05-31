@@ -5,7 +5,7 @@
 	<arg name="pc2" default="localhost"/>
 
 	<group>
-		<machine name="$(arg pc1)" address="$(arg pc1)" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -40,7 +40,7 @@
 	</group>
 
 	<group>
-		<machine name="$(arg pc2)" address="$(arg pc2)" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" default="true"/>
 
                 <!-- pc monitor -->
                 <include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -53,6 +53,6 @@
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
-	<machine name="$(arg pc1)" address="$(arg pc1)" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" default="true"/>
 
 </launch>
