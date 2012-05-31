@@ -3,6 +3,13 @@
 
 	<arg name="pc1" default="localhost"/>
 
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch"/>
+	<include file="$(find cob_default_env_config)/upload_param.launch"/>
+
 	<group>
 		<machine name="pc1" address="$(arg pc1)" default="true"/>
 
@@ -11,9 +18,6 @@
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
 
-		<!-- upload robot description -->
-		<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
-	
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
