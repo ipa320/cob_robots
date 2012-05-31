@@ -1,5 +1,5 @@
 sdh_controller:
-  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
   joints:
     - sdh_knuckle_joint
     - sdh_finger_12_joint
