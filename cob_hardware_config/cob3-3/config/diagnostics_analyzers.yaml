@@ -17,6 +17,12 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc3
         contains: 'pc3'
+      network:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Network
+        num_items: 1
+        expected: ['Wifi Status (ddwrt)']
+ 
 
 #  computers:
 #     type: diagnostic_aggregator/AnalyzerGroup
