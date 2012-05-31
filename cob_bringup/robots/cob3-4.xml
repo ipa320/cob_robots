@@ -46,10 +46,10 @@
 	<group>
 		<machine name="pc2" address="$(arg pc2)" default="true"/>
 
-                <!-- pc monitor -->
-                <include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-                        <arg name="pc" value="$(arg pc2)" />
-                </include>
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc2)" />
+		</include>
 
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" />
