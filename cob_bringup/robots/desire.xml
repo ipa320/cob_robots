@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!--create robot description -->
+	<!--<param name="robot_description" command="$(find xacro)/xacro.py '$(find cob_description)/ros/robots/$(env ROBOT).urdf.xacro'" />-->
+
+	<!--upload robot-->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+
+	<!-- start robot_state_publisher -->
+	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
+		<remap from="/joint_states" to="/joint_states_combined"/>
+	</node>
+
+	<!-- startup hardware -->
+	<!-- base -->
+	<include file="$(find cob_bringup)/components/base.launch" />
+	<include file="$(find cob_bringup)/components/relayboard.launch" />
+	<include file="$(find cob_bringup)/components/laser_front.launch" />
+	<include file="$(find cob_bringup)/components/laser_rear.launch" />
+	<include file="$(find cob_bringup)/components/head_desire.launch" />
+
+
+	<!-- start additional packages -->
+	<include file="$(find cob_joint_state_aggregator)/ros/launch/joint_state_aggregator.launch" />
+	<include file="$(find cob_bringup)/tools/teleop.launch" />
+
+	<group>
+		<machine name="pc2" address="desire-pc2" default="true"/>
+		<include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" />
+	</group>
+
+</launch>
