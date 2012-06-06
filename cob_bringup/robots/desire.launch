@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find cob_bringup)/robots/desire.xml" >
+		<arg name="pc1" value="desire-pc1"/>
+		<arg name="pc2" value="desire-pc2"/>
+	</include>
+
+</launch>
