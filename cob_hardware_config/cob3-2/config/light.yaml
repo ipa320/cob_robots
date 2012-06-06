@@ -1,2 +1,6 @@
 devicestring: /dev/ttyUSB0
 baudrate: 230400
+<<<<<<< HEAD
+
+=======
+>>>>>>> df52bb56f28df212a053d4fe0a6cadb5b87f6197
