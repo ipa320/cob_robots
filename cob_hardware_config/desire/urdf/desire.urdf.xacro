@@ -39,18 +39,18 @@
        the origin block defines where the component is w.r.t its parent (in this case the parent 
        is the world frame). For more, see http://www.ros.org/wiki/xacro -->
 
-  <xacro:desire_base name="desire_base"/>
+  <xacro:desire_base name="base"/>
   
-  <xacro:cob_lbr name="arm_left" parent="desire_base_link">
+  <xacro:cob_lbr name="arm_left" parent="base_link">
     <!--origin xyz="0.35 0.0 1.25239" rpy="3.1415926 0.7854 -1.8326" /-->
     <origin xyz="0.3 -0.2 1.36" rpy="0.82 0 0" />
   </xacro:cob_lbr>
   
-  <xacro:cob_lbr name="arm_right" parent="desire_base_link">
+  <xacro:cob_lbr name="arm_right" parent="base_link">
     <origin xyz="0.3 0.2 1.36" rpy="-0.82 0 0" />
   </xacro:cob_lbr>
   
-  <xacro:head_desire name="head" parent="desire_base_link">
+  <xacro:head_desire name="head" parent="base_link">
     <origin xyz="0.40 0 1.4246" rpy="3.14159 0 0" />
   </xacro:head_desire>
   
