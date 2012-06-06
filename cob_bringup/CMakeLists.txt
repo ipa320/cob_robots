@@ -33,33 +33,41 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rospack_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-# rostest for robots
-#rosbuild_add_roslaunch_check(robots/cob3-1.launch ROBOT=cob3-1)
-#rosbuild_add_roslaunch_check(robots/cob3-2.launch ROBOT=cob3-2)
-#rosbuild_add_roslaunch_check(robots/cob3-3.launch ROBOT=cob3-3)
+# rostest for cob3-1
+rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT=cob3-1 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-apartment)
 
-# rostest for components
-rosbuild_add_roslaunch_check(components/base.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/cameras/kinect.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/cameras/left_prosilica.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/cameras/right_prosilica.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/head.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/joy.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/laser_front.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/laser_rear.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/laser_top.launch ROBOT=cob3-3)
-#rosbuild_add_roslaunch_check(components/lbr.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/lwa.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/relayboard.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/sdh.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/torso.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(components/tray.launch ROBOT=cob3-3)
+# rostest for cob3-2
+rosbuild_add_roslaunch_check(robots/cob3-2.xml ROBOT=cob3-2 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-2 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-2 ROBOT_ENV=ipa-apartment)
 
+# rostest for cob3-3
+rosbuild_add_roslaunch_check(robots/cob3-3.xml ROBOT=cob3-3 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-3 ROBOT_ENV=ipa-apartment)
 
-# rostest for tools
-rosbuild_add_roslaunch_check(tools/dashboard.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
-rosbuild_add_roslaunch_check(tools/teleop.launch ROBOT=cob3-3)
-#rosbuild_add_roslaunch_check(tools/diagnostics_aggregator.launch ROBOT=cob3-3)
+# rostest for cob3-4
+rosbuild_add_roslaunch_check(robots/cob3-4.xml ROBOT=cob3-4 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-apartment)
+
+# rostest for cob3-6
+rosbuild_add_roslaunch_check(robots/cob3-6.xml ROBOT=cob3-6 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-6 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=cob3-6 ROBOT_ENV=ipa-apartment)
+
+# rostest for raw3-1
+rosbuild_add_roslaunch_check(robots/raw3-1.xml ROBOT=raw3-1 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=raw3-1 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=raw3-1 ROBOT_ENV=ipa-apartment)
+
+# rostest for raw3-2
+rosbuild_add_roslaunch_check(robots/raw3-2.xml ROBOT=raw3-2 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-apartment)
+
 
 #rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 

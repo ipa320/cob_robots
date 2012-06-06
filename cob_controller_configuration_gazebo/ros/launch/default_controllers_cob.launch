@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch"/>
+	<include file="$(find cob_bringup)/components/relayboard_sim.launch"/>
+
+	<!-- Tray -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/tray_controller.launch"/>
+
+	<!-- Head -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller.launch"/>
+
+	<!-- Arm -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_cob.launch"/>
+
+	<!-- SDH -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
+
+	<!-- start additional components -->
+	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
+
+</launch>
