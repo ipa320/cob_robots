@@ -55,8 +55,14 @@
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" />
 		<include file="$(find cob_bringup)/components/prosilica_right.launch" />
-		<include file="$(find cob_bringup)/components/kinect.launch" />
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+                <include file="$(find cob_bringup)/components/kinect.launch" />
+
+
+	</group>
+
+	<group>
+		<machine name="pc1" address="$(arg pc1)" default="true"/>
+                <include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" default="true"/>
