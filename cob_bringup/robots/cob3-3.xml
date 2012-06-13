@@ -5,6 +5,13 @@
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
 
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch"/>
+	<include file="$(find cob_default_env_config)/upload_param.launch"/>
+
 	<group>
 		<machine name="pc1" address="$(arg pc1)" default="true"/>
 
@@ -46,10 +53,10 @@
 	<group>
 		<machine name="pc2" address="$(arg pc2)" default="true"/>
 
-                <!-- pc monitor -->
-                <include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-                        <arg name="pc" value="$(arg pc2)" />
-                </include>
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc2)" />
+		</include>
 
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" />
@@ -60,10 +67,10 @@
 	<group>
 		<machine name="pc3" address="$(arg pc3)" default="true"/>
 
-                <!-- pc monitor -->
-                <include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-                        <arg name="pc" value="$(arg pc3)" />
-                </include>
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc3)" />
+		</include>
 
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 		<include file="$(find cob_bringup)/components/light.launch" />

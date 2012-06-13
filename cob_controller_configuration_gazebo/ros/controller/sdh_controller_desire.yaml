@@ -1,8 +1,7 @@
 sdh_right_controller:
   type: robot_mechanism_controllers/JointSplineTrajectoryController
   joints:
-    - sdh_right_finger_11_joint
-    - sdh_right_finger_21_joint
+    - sdh_right_knuckle_joint
     - sdh_right_finger_12_joint
     - sdh_right_finger_13_joint
     - sdh_right_finger_22_joint
@@ -10,10 +9,7 @@ sdh_right_controller:
     - sdh_right_thumb_2_joint
     - sdh_right_thumb_3_joint
   gains:
-    sdh_right_finger_11_joint:
-      p: 80.0
-      d: 1.0
-    sdh_right_finger_21_joint:
+    sdh_right_knuckle_joint:
       p: 80.0
       d: 1.0
     sdh_right_finger_12_joint: 
@@ -37,8 +33,7 @@ sdh_right_controller:
 
   sdh_joint_trajectory_action_node:
     joints:
-      - sdh_right_finger_11_joint
-      - sdh_right_finger_21_joint
+      - sdh_right_knuckle_joint
       - sdh_right_finger_12_joint
       - sdh_right_finger_13_joint
       - sdh_right_finger_22_joint
@@ -47,9 +42,7 @@ sdh_right_controller:
       - sdh_right_thumb_3_joint
     constraints:
       goal_time: 0.6
-      sdh_right_finger_11_joint:
-        goal: 0.2
-      sdh_right_finger_21_joint:
+      sdh_right_knuckle_joint:
         goal: 0.2
       sdh_right_finger_12_joint:
         goal: 0.2
@@ -67,8 +60,7 @@ sdh_right_controller:
 sdh_left_controller:
   type: robot_mechanism_controllers/JointSplineTrajectoryController
   joints:
-    - sdh_left_finger_11_joint
-    - sdh_left_finger_21_joint
+    - sdh_left_knuckle_joint
     - sdh_left_finger_12_joint
     - sdh_left_finger_13_joint
     - sdh_left_finger_22_joint
@@ -76,10 +68,7 @@ sdh_left_controller:
     - sdh_left_thumb_2_joint
     - sdh_left_thumb_3_joint
   gains:
-    sdh_left_finger_11_joint:
-      p: 80.0
-      d: 1.0
-    sdh_left_finger_21_joint:
+    sdh_left_knuckle_joint:
       p: 80.0
       d: 1.0
     sdh_left_finger_12_joint: 
@@ -103,8 +92,7 @@ sdh_left_controller:
 
   sdh_joint_trajectory_action_node:
     joints:
-      - sdh_left_finger_11_joint
-      - sdh_left_finger_21_joint
+      - sdh_left_knuckle_joint
       - sdh_left_finger_12_joint
       - sdh_left_finger_13_joint
       - sdh_left_finger_22_joint
@@ -113,9 +101,7 @@ sdh_left_controller:
       - sdh_left_thumb_3_joint
     constraints:
       goal_time: 0.6
-      sdh_left_finger_11_joint:
-        goal: 0.2
-      sdh_left_finger_21_joint:
+      sdh_left_knuckle_joint:
         goal: 0.2
       sdh_left_finger_12_joint:
         goal: 0.2
