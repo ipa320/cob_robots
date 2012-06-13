@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
+
+	<group>
+		<machine name="pc1" address="$(arg pc1)" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc1)" />
+		</include>
+
+		<!--upload robot-->
+		<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
+			<remap from="/joint_states" to="/joint_states_combined"/>
+		</node>
+
+		<!-- startup hardware -->
+		<!-- base -->
+		<include file="$(find cob_bringup)/components/base.launch" />
+		<include file="$(find cob_bringup)/components/relayboard.launch" />
+		<include file="$(find cob_bringup)/components/laser_front.launch" />
+		<include file="$(find cob_bringup)/components/laser_rear.launch" />
+		<!--include file="$(find cob_bringup)/components/head_desire.launch" /-->
+
+
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" />
+		<include file="$(find cob_bringup)/tools/teleop.launch" />
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
+	</group>
+
+	<group>
+		<machine name="pc2" address="$(arg pc2)" default="true"/>
+
+                <!-- pc monitor -->
+                <include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+                        <arg name="pc" value="$(arg pc2)" />
+                </include>
+
+		<!-- start camera sensors -->
+		<!--include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" /-->
+	</group>
+
+	<machine name="pc1" address="$(arg pc1)" default="true"/>
+
+</launch>
