@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+	<!-- perform test -->
+	<test test-name="test_sdh" pkg="cob_bringup" type="component_test_aio.py" name="cob_sdh" > 	
+	 <param name="component"  value="sdh" />
+	 <param name="test_target" value="fist" />
+	 <param name="default_target" value="home" />
+	 <param name="wait_time" value="30.0" />
+	 <param name="error_range" value="0.1" />  
+    </test>  
+
+</launch>

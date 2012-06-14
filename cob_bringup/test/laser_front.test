@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find cob_bringup)/components/laser_front.launch" />
+    <include file="$(find cob_bringup)/test/laser_front.test.xml" />
+
+</launch>

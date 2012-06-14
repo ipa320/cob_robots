@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+	<!-- perform test -->
+	<test test-name="test_head" pkg="cob_bringup" type="component_test_aio.py" name="cob_head" > 	
+	 <param name="component"  value="head" />
+	 <param name="test_target" value="back" />
+	 <param name="default_target" value="front" />
+	 <param name="wait_time" value="30.0" />
+	 <param name="error_range" value="0.1" />  
+    </test>  
+
+</launch>

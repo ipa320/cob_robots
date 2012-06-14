@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- hztest scan_front_raw -->
+   <test test-name="hz_scan_front_raw" pkg="rostest" type="hztest" name="hztest_scan_front_raw">
+    <param name="topic" value="scan_front_raw" />  
+    <param name="hz" value= "55.25" />
+    <param name="hzerror" value="54.75" />
+    <param name="test_duration" value="2.0" />  
+   </test>
+
+	<!-- hztest scan_front -->	
+   <test test-name="hz_scan_front" pkg="rostest" type="hztest" name="hztest_scan_front">
+    <param name="topic" value="scan_front" />  
+    <param name="hz" value="55.25" />
+    <param name="hzerror" value="54.75" />
+    <param name="test_duration" value="2.0" />  
+   </test>
+
+</launch>
