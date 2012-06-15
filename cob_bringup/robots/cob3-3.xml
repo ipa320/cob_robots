@@ -23,9 +23,6 @@
 		<!-- wifi monitor -->
 		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
 
-		<!-- upload robot description -->
-		<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
-	
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
@@ -36,7 +33,7 @@
 		<include file="$(find cob_bringup)/components/laser_top.launch" />
 		<include file="$(find cob_bringup)/components/relayboard.launch" />
 		<include file="$(find cob_bringup)/components/base.launch" />
-		
+
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/components/torso.launch" />
 		<include file="$(find cob_bringup)/components/tray.launch" />
