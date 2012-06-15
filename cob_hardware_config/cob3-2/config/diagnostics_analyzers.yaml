@@ -93,8 +93,8 @@ analyzers:
         contains: 'head_controller'
       arm:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: LBR
-        contains: 'cob_lbr'
+        path: LWA
+        contains: 'arm_controller'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
