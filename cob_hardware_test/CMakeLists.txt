@@ -30,4 +30,4 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 # rostest for current robot
-rosbuild_add_roslaunch_check(launch ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(launch)
