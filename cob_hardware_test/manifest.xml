@@ -1,0 +1,15 @@
+<package>
+  <description brief="cob_hardware_test">
+
+     This stack supports for automated hardware testing of the bringup layer.
+
+  </description>
+  <author>Florian Weisshardt</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cob_hardware_test</url>
+  <depend package="cob_bringup"/>
+
+</package>
+
+
