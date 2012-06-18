@@ -29,5 +29,17 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
+
 # rostest for current robot
-rosbuild_add_roslaunch_check(launch)
+SET(TRIGGER $ENV{MANUAL_TEST})
+
+# run MANUAL tests if environment variable MANUAL_TEST is set and not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
+IF(TRIGGER)
+ MESSAGE("Manual testing. MANUAL_TEST is set to $ENV{MANUAL_TEST}")
+
+# run fully automated tests if environment variable MANUAL_TEST is not set or set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
+ELSE(TRIGGER)
+ MESSAGE("Fully automated testing. MANUAL_TEST is set to $ENV{MANUAL_TEST}")
+ rosbuild_add_roslaunch_check(launch)
+
+ENDIF(TRIGGER)
