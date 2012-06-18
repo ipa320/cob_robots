@@ -31,15 +31,17 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 
 # rostest for current robot
-SET(TRIGGER $ENV{MANUAL_TEST})
+SET(TRIGGER_AUTO $ENV{TEST_AUTO})
+SET(TRIGGER_MANUAL $ENV{TEST_MANUAL})
 
-# run MANUAL tests if environment variable MANUAL_TEST is set and not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
-IF(TRIGGER)
- MESSAGE("Manual testing. MANUAL_TEST is set to $ENV{MANUAL_TEST}")
-
-# run fully automated tests if environment variable MANUAL_TEST is not set or set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
-ELSE(TRIGGER)
- MESSAGE("Fully automated testing. MANUAL_TEST is set to $ENV{MANUAL_TEST}")
+# run AUTO tests if environment variable TEST_AUTO is set, but not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
+IF(TRIGGER_AUTO)
+ MESSAGE("Fully automated testing. TEST_AUTO is set to $ENV{TEST_AUTO}")
  rosbuild_add_roslaunch_check(launch)
+ENDIF(TRIGGER_AUTO)
 
-ENDIF(TRIGGER)
+# run MANUAL tests if environment variable TEST_MANUAL is set, but not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
+IF(TRIGGER_MANUAL)
+ MESSAGE("Manual testing. TEST_MANUAL is set to $ENV{TEST_MANUAL}")
+ rosbuild_add_roslaunch_check(launch)
+ENDIF(TRIGGER_MANUAL)
