@@ -2,7 +2,8 @@ can_module: PCAN
 can_device: /dev/pcan1
 can_baudrate: 500
 modul_ids: [10]
-joint_names: [torso_tray_joint]
+module_types: [PRL]
+joint_names: [tray_joint]
 max_accelerations: [0.8]
 min_publish_duration: 0.1
 horizon: 0.1

@@ -30,7 +30,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 # rostest for cob3-1
-#rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-1)
+rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-1)
 
 # rostest for cob3-2
 rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-2)
@@ -41,5 +41,11 @@ rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-3)
 # rostest for cob3-4
 rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-4)
 
+# rostest for cob3-6
+rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-6)
+
 # rostest for raw3-1
 rosbuild_add_roslaunch_check(upload_param.launch ROBOT=raw3-1)
+
+# rostest for raw3-2
+rosbuild_add_roslaunch_check(upload_param.launch ROBOT=raw3-2)
