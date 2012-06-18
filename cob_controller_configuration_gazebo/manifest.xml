@@ -15,7 +15,9 @@
   <depend package="cob_bringup"/>
   <depend package="cob_sick_s300"/>
   <depend package="cob_relayboard"/>
+  <depend package="cob_sound"/>
   <depend package="image_proc"/>
   <depend package="schunk_simulated_tactile_sensors"/>
+  <depend package="cob_phidgets"/>
 
 </package>

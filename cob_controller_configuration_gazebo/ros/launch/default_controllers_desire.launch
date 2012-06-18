@@ -5,7 +5,7 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
 
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch"/>
 
 	<!-- Head -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller_desire.launch"/>
@@ -16,8 +16,5 @@
 	<!-- SDH -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller_desire.launch"/>
 
-	<!-- additional gazebo test -->
-	<include file="$(find cob_sick_s300)/ros/launch/front.test"/>
-	<include file="$(find cob_sick_s300)/ros/launch/rear.test"/>
 
 </launch>

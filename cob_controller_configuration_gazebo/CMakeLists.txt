@@ -21,6 +21,8 @@ rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-1.launch ROBOT=
 rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-2.launch ROBOT=cob3-2)
 rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-3.launch ROBOT=cob3-3)
 rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-4.launch ROBOT=cob3-4)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-6.launch ROBOT=cob3-6)
 
 # rostest raw
 rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-1.launch ROBOT=raw3-1)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-2.launch ROBOT=raw3-2)
