@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<include file="$(find cob_bringup)/components/head.launch" />
+    <include file="$(find cob_hardware_test)/components/head.test.xml" />
+
+</launch>
