@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+
+<!--start simulation (for every single test)-->
+    <!--include file="$(find cob_experimentation_days)/launch/experimentation_days_sim.launch" /-->    
+    <include file="$(find cob_bringup_sim)/launch/robot.launch" /> 
+	<!-- upload script server parameter -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch" />    
+    <!--start prompt service-->
+	<node pkg="cob_bringup" type="dialog.py" name="dialog_server"/>
+	
+<!--actuator test -->
+    <include file="$(find cob_bringup)/test/tray.test.xml" />
+    <include file="$(find cob_bringup)/test/torso.test.xml" />
+    <include file="$(find cob_bringup)/test/arm.test.xml" />  
+    <include file="$(find cob_bringup)/test/head.test.xml" />
+    <include file="$(find cob_bringup)/test/sdh.test.xml" />
+    <!--include file="$(find cob_bringup)/test/base.test.xml" /-->
+
+    
+<!--execute sensor hztests (very long in simulation!)>
+
+    <include file="$(find cob_bringup)/test/right_prosilica.test.xml" />
+    <include file="$(find cob_bringup)/test/left_prosilica.test.xml" />
+    <include file="$(find cob_bringup)/test/laser_front.test.xml" />
+    <include file="$(find cob_bringup)/test/laser_rear.test.xml" />    
+    <include file="$(find cob_bringup)/test/laser_top.test.xml" /-->
+    
+    <!--include file="$(find cob_bringup)/test/kinect.test.xml" /-->
+
+
+</launch>

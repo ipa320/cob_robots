@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<include file="$(find cob_bringup)/components/sdh.launch" />
+    <include file="$(find cob_bringup)/test/sdh.test.xml" />
+
+</launch>

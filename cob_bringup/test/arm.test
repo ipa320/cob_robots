@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<include file="$(find cob_bringup)/components/lbr.launch" />
+    <include file="$(find cob_bringup)/test/arm.test.xml" />
+
+</launch>
