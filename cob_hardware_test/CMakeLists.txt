@@ -19,7 +19,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #uncomment if you have defined messages
 #rosbuild_genmsg()
 #uncomment if you have defined services
-#rosbuild_gensrv()
+rosbuild_gensrv()
 
 #common commands for building c++ executables and libraries
 #rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
@@ -29,15 +29,18 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
+# check test files (offline)
+rosbuild_add_roslaunch_check(robots/cob3-3.test.xml ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(robots/desire.test.xml ROBOT=desire)
 
-# rostest for current robot
+# rostest for current robot (online)
 SET(TRIGGER_AUTO $ENV{TEST_AUTO})
 SET(TRIGGER_MANUAL $ENV{TEST_MANUAL})
 
 # run AUTO tests if environment variable TEST_AUTO is set, but not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
 IF(TRIGGER_AUTO)
  MESSAGE("Fully automated testing. TEST_AUTO is set to $ENV{TEST_AUTO}")
- rosbuild_add_roslaunch_check(launch)
+ rosbuild_add_rostest(robots/robot.test)
 ENDIF(TRIGGER_AUTO)
 
 # run MANUAL tests if environment variable TEST_MANUAL is set, but not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html

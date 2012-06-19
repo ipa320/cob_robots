@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- hztest /ddwrt/accesspoint -->
+   <test test-name="hz_ddwrt_accesspoint" pkg="rostest" type="hztest" name="hztest_ddwrt">
+    <param name="topic" value="/ddwrt/accesspoint" />  
+    <param name="hz" value= "55.25" />
+    <param name="hzerror" value="54.75" />
+    <param name="test_duration" value="2.0" />  
+   </test>
+
+</launch>
