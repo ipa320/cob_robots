@@ -11,7 +11,7 @@
   <depend stack="camera_drivers" /> <!-- prosilica_camera -->
   <depend stack="cob_command_tools" /> <!-- cob_teleop, cob_command_gui, cob_dashboard -->
   <depend stack="cob_common" /> <!-- raw_description, cob_description -->
-  <depend stack="cob_driver" /> <!-- cob_relayboard, cob_sick_s300, cob_hokuyo, cob_collision_velocity_filter, cob_footprint_observer, cob_base_velocity_smoother, cob_undercarriage_ctrl, cob_head_axis, cob_light, cob_base_drive_chain, cob_camera_sensors, cob_trajectory_controller, cob_sound -->
+  <depend stack="cob_driver" /> <!-- cob_relayboard, cob_sick_s300, cob_hokuyo, cob_collision_velocity_filter, cob_footprint_observer, cob_base_velocity_smoother, cob_undercarriage_ctrl, cob_head_axis, cob_light, cob_base_drive_chain, cob_camera_sensors, cob_trajectory_controller, cob_phidgets, cob_sound -->
   <depend stack="cob_environments" /> <!-- cob_default_env_config -->
   <depend stack="cob_substitute" /> <!-- cob_lbr -->
   <depend stack="diagnostics" /> <!-- diagnostic_aggregator -->
@@ -30,5 +30,6 @@
   <depend stack="schunk_modular_robotics" /> <!-- schunk_simulated_tactile_sensors, schunk_powercube_chain, schunk_sdh, schunk_description -->
   <depend stack="universal_robot" /> <!-- ur5_driver, ur5_description -->
   <depend stack="visualization" /> <!-- rviz -->
+  <depend stack="wifi_drivers" /> <!-- wifi_ddwrt -->
 
 </stack>

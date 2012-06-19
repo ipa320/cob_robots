@@ -4,6 +4,13 @@
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch"/>
+	<include file="$(find cob_default_env_config)/upload_param.launch"/>
+
 	<group>
 		<machine name="pc1" address="$(arg pc1)" default="true"/>
 
@@ -12,22 +19,21 @@
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
 
-		<!--upload robot-->
-		<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+		<!-- wifi monitor -->
+		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
 
 		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
-			<remap from="/joint_states" to="/joint_states_combined"/>
-		</node>
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
-		<!-- base -->
-		<include file="$(find cob_bringup)/components/base.launch" />
-		<include file="$(find cob_bringup)/components/relayboard.launch" />
+		<!-- lower robot -->
 		<include file="$(find cob_bringup)/components/laser_front.launch" />
 		<include file="$(find cob_bringup)/components/laser_rear.launch" />
-		<!--include file="$(find cob_bringup)/components/head_desire.launch" /-->
+		<include file="$(find cob_bringup)/components/relayboard.launch" />
+		<include file="$(find cob_bringup)/components/base.launch" />
 
+		<!-- upper robot -->
+		<!-- tbd -->
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" />
@@ -38,13 +44,13 @@
 	<group>
 		<machine name="pc2" address="$(arg pc2)" default="true"/>
 
-                <!-- pc monitor -->
-                <include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-                        <arg name="pc" value="$(arg pc2)" />
-                </include>
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc2)" />
+		</include>
 
 		<!-- start camera sensors -->
-		<!--include file="$(find cob_camera_sensors)/ros/launch/all_cameras_ros.launch" /-->
+		<!-- tbd -->
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" default="true"/>

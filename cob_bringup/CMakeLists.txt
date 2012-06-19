@@ -23,7 +23,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #uncomment if you have defined messages
 #rosbuild_genmsg()
 #uncomment if you have defined services
-rosbuild_gensrv()
+#rosbuild_gensrv()
 
 #common commands for building c++ executables and libraries
 #rospack_add_library(${PROJECT_NAME} src/example.cpp)
@@ -68,6 +68,10 @@ rosbuild_add_roslaunch_check(robots/raw3-2.xml ROBOT=raw3-2 ROBOT_ENV=ipa-apartm
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-apartment)
 
+# rostest for desire
+rosbuild_add_roslaunch_check(robots/desire.xml ROBOT=desire ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=desire ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=desire ROBOT_ENV=ipa-apartment)
 
 #rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 

@@ -56,3 +56,7 @@ rosbuild_add_rostest(test/urdf_raw3-1.test)
 # rostest for raw3-2
 rosbuild_add_roslaunch_check(common ROBOT=raw3-2)
 rosbuild_add_rostest(test/urdf_raw3-2.test)
+
+# rostest for desire
+rosbuild_add_roslaunch_check(common ROBOT=desire)
+rosbuild_add_rostest(test/urdf_desire.test)

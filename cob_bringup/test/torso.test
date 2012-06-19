@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-	
-	<include file="$(find cob_bringup)/components/torso.launch" />
-    <include file="$(find cob_bringup)/test/torso.test.xml" />
-
-</launch>
