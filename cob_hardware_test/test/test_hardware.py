@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 import roslib
-roslib.load_manifest('cob_bringup')
+roslib.load_manifest('cob_hardware_test')
 
 import sys
 import unittest
 import rospy
 import rostest
 
-from cob_bringup.srv import *
+from cob_hardware_test.srv import *
 from std_msgs.msg import String
 from simple_script_server import *
 from pr2_controllers_msgs.msg import *

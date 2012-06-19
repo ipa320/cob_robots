@@ -3,7 +3,7 @@
     <include file="$(find cob_bringup)/components/cameras/right_prosilica.launch" />
     <include file="$(find cob_bringup)/components/cameras/left_prosilica.launch" />
  
-    <include file="$(find cob_bringup)/test/right_prosilica.test.xml" />
-    <include file="$(find cob_bringup)/test/left_prosilica.test.xml" />
+    <include file="$(find cob_hardware_test)/test/right_prosilica.test.xml" />
+    <include file="$(find cob_hardware_test)/test/left_prosilica.test.xml" />
     
 </launch>

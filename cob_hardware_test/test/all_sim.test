@@ -7,26 +7,26 @@
 	<!-- upload script server parameter -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch" />    
     <!--start prompt service-->
-	<node pkg="cob_bringup" type="dialog.py" name="dialog_server"/>
+	<node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
 	
 <!--actuator test -->
-    <include file="$(find cob_bringup)/test/tray.test.xml" />
-    <include file="$(find cob_bringup)/test/torso.test.xml" />
-    <include file="$(find cob_bringup)/test/arm.test.xml" />  
-    <include file="$(find cob_bringup)/test/head.test.xml" />
-    <include file="$(find cob_bringup)/test/sdh.test.xml" />
-    <!--include file="$(find cob_bringup)/test/base.test.xml" /-->
+    <include file="$(find cob_hardware_test)/test/tray.test.xml" />
+    <include file="$(find cob_hardware_test)/test/torso.test.xml" />
+    <include file="$(find cob_hardware_test)/test/arm.test.xml" />  
+    <include file="$(find cob_hardware_test)/test/head.test.xml" />
+    <include file="$(find cob_hardware_test)/test/sdh.test.xml" />
+    <!--include file="$(find cob_hardware_test)/test/base.test.xml" /-->
 
     
 <!--execute sensor hztests (very long in simulation!)>
 
-    <include file="$(find cob_bringup)/test/right_prosilica.test.xml" />
-    <include file="$(find cob_bringup)/test/left_prosilica.test.xml" />
-    <include file="$(find cob_bringup)/test/laser_front.test.xml" />
-    <include file="$(find cob_bringup)/test/laser_rear.test.xml" />    
-    <include file="$(find cob_bringup)/test/laser_top.test.xml" /-->
+    <include file="$(find cob_hardware_test)/test/right_prosilica.test.xml" />
+    <include file="$(find cob_hardware_test)/test/left_prosilica.test.xml" />
+    <include file="$(find cob_hardware_test)/test/laser_front.test.xml" />
+    <include file="$(find cob_hardware_test)/test/laser_rear.test.xml" />    
+    <include file="$(find cob_hardware_test)/test/laser_top.test.xml" /-->
     
-    <!--include file="$(find cob_bringup)/test/kinect.test.xml" /-->
+    <!--include file="$(find cob_hardware_test)/test/kinect.test.xml" /-->
 
 
 </launch>

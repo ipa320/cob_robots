@@ -2,6 +2,6 @@
 <launch>
 	
 	<include file="$(find cob_bringup)/components/sdh.launch" />
-    <include file="$(find cob_bringup)/test/sdh.test.xml" />
+    <include file="$(find cob_hardware_test)/test/sdh.test.xml" />
 
 </launch>

@@ -2,6 +2,6 @@
 <launch>
 	
 	<include file="$(find cob_bringup)/components/laser_top.launch" />
-    <include file="$(find cob_bringup)/test/laser_top.test.xml" />
+    <include file="$(find cob_hardware_test)/test/laser_top.test.xml" />
 
 </launch>

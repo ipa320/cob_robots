@@ -4,17 +4,17 @@
   <group>
     <machine name="pc1" address="cob3-3-pc1" default="true"/>     
 <!--scan hztest-->
-    <include file="$(find cob_bringup)/test/laser_front.test" />
-    <include file="$(find cob_bringup)/test/laser_rear.test" />    
-    <include file="$(find cob_bringup)/test/laser_top.test" />
+    <include file="$(find cob_hardware_test)/test/laser_front.test" />
+    <include file="$(find cob_hardware_test)/test/laser_rear.test" />    
+    <include file="$(find cob_hardware_test)/test/laser_top.test" />
   </group>         
 
 <!-- image hztest-->  
   <group>
     <machine name="pc2" address="cob3-3-pc2" default="true"/>
-    <include file="$(find cob_bringup)/test/right_prosilica.test" />
-    <include file="$(find cob_bringup)/test/left_prosilica.test" />
-    <include file="$(find cob_bringup)/test/kinect.test" />
+    <include file="$(find cob_hardware_test)/test/right_prosilica.test" />
+    <include file="$(find cob_hardware_test)/test/left_prosilica.test" />
+    <include file="$(find cob_hardware_test)/test/kinect.test" />
   </group>
 
   <machine name="pc1" address="cob3-3-pc1" default="true"/>

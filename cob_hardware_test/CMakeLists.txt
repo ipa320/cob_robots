@@ -37,7 +37,7 @@ SET(TRIGGER_MANUAL $ENV{TEST_MANUAL})
 # run AUTO tests if environment variable TEST_AUTO is set, but not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
 IF(TRIGGER_AUTO)
  MESSAGE("Fully automated testing. TEST_AUTO is set to $ENV{TEST_AUTO}")
- rosbuild_add_roslaunch_check(launch)
+ rosbuild_add_rostest(test/robot_desire.test)
 ENDIF(TRIGGER_AUTO)
 
 # run MANUAL tests if environment variable TEST_MANUAL is set, but not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
