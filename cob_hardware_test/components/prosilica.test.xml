@@ -4,7 +4,7 @@
 	<arg name="camera_namespace"/>
 
 	<!-- hztest camera_info -->	
-   <test test-name="hz_stereo_camera_info" pkg="rostest" type="hztest" name="hztest_stereo_camera_info">
+   <test test-name="hz_$(arg camera_namespace)_camera_info" pkg="rostest" type="hztest" name="hztest_stereo_camera_info">
     <param name="topic" value="$(arg camera_namespace)/camera_info" />  
     <param name="hz" value="55.25" />
     <param name="hzerror" value="54.75" />
@@ -12,7 +12,7 @@
    </test>
    
 	<!-- hztest stereo_image_color -->	
-   <test test-name="hz_stereo_image_color" pkg="rostest" type="hztest" name="hztest_stereo_image_color">
+   <test test-name="hz_$(arg camera_namespace)_image_color" pkg="rostest" type="hztest" name="hztest_stereo_image_color">
     <param name="topic" value="$(arg camera_namespace)/image_color" />  
     <param name="hz" value="55.25" />
     <param name="hzerror" value="54.75" />
@@ -20,7 +20,7 @@
    </test>
    
 	<!-- hztest stereo_image_mono -->	
-   <test test-name="hz_stereo_image_mono" pkg="rostest" type="hztest" name="hztest_stereo_image_mono">
+   <test test-name="hz_$(arg camera_namespace)_image_mono" pkg="rostest" type="hztest" name="hztest_stereo_image_mono">
     <param name="topic" value="$(arg camera_namespace)/image_mono" />  
     <param name="hz" value="55.25" />
     <param name="hzerror" value="54.75" />
@@ -28,7 +28,7 @@
    </test>
    
 	<!-- hztest stereo_image_raw -->	
-   <test test-name="hz_stereo_image_raw" pkg="rostest" type="hztest" name="hztest_stereo_image_raw">
+   <test test-name="hz_$(arg camera_namespace)_image_raw" pkg="rostest" type="hztest" name="hztest_stereo_image_raw">
     <param name="topic" value="$(arg camera_namespace)/image_raw" />  
     <param name="hz" value="55.25" />
     <param name="hzerror" value="54.75" />
@@ -36,7 +36,7 @@
    </test>
 
 	<!-- hztest stereo_image_rect -->	
-   <test test-name="hz_stereo_image_rect" pkg="rostest" type="hztest" name="hztest_stereo_rect">
+   <test test-name="hz_$(arg camera_namespace)_image_rect" pkg="rostest" type="hztest" name="hztest_stereo_rect">
     <param name="topic" value="$(arg camera_namespace)/image_rect" />  
     <param name="hz" value="55.25" />
     <param name="hzerror" value="54.75" />
@@ -44,7 +44,7 @@
    </test>
 
 	<!-- hztest stereo_image_rect_color -->	
-   <test test-name="hz_stereo_image_rect_color" pkg="rostest" type="hztest" name="hztest_stereo_rect_color">
+   <test test-name="hz_$(arg camera_namespace)_image_rect_color" pkg="rostest" type="hztest" name="hztest_stereo_rect_color">
     <param name="topic" value="$(arg camera_namespace)/image_rect_color" />  
     <param name="hz" value="55.25" />
     <param name="hzerror" value="54.75" />
