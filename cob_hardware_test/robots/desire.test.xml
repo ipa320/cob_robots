@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- lower robot -->
+	<!-- test lower robot -->
 	<include file="$(find cob_hardware_test)/components/laser.test.xml" >
 		<arg name="laser_namespace" value="scan_front" />
 	</include>
@@ -10,4 +10,8 @@
 	</include>
 	<include file="$(find cob_hardware_test)/components/relayboard.test.xml" />
 
+
+	<!-- test additional packages -->
+	<include file="$(find cob_hardware_test)/tools/wifi_monitor.test.xml" />
+	<include file="$(find cob_hardware_test)/tools/diagnostics_aggregator.test.xml" />
 </launch>
