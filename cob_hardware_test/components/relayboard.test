@@ -2,6 +2,6 @@
 <launch>
 
     <include file="$(find cob_bringup)/components/relayboard.launch" />   
-    <include file="$(find cob_hardware_test)/test/relayboard.test.xml" />
+    <include file="$(find cob_hardware_test)/components/relayboard.test.xml" />
   
 </launch>

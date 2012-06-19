@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- lower robot -->
+	<include file="$(find cob_hardware_test)/components/laser_front.test.xml" />
+	<include file="$(find cob_hardware_test)/components/laser_rear.test.xml" />
+	<include file="$(find cob_hardware_test)/components/relayboard.test.xml" />
+
+	<!-- upper robot -->
+	<include file="$(find cob_hardware_test)/components/prosilica_left.test.xml" />
+	<include file="$(find cob_hardware_test)/components/prosilica_right.test.xml" />
+	<include file="$(find cob_hardware_test)/components/kinect.test.xml" />
+
+</launch>

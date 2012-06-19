@@ -2,6 +2,6 @@
 <launch>
 
     <include file="$(find cob_bringup)/components/cameras/kinect.launch" />
-    <include file="$(find cob_hardware_test)/test/kinect.test.xml" />
+    <include file="$(find cob_hardware_test)/components/kinect.test.xml" />
            
 </launch>

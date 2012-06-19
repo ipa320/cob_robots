@@ -2,6 +2,6 @@
 <launch>
 	
 	<include file="$(find cob_bringup)/components/head.launch" />
-    <include file="$(find cob_hardware_test)/test/head.test.xml" />
+    <include file="$(find cob_hardware_test)/components/head.test.xml" />
 
 </launch>
