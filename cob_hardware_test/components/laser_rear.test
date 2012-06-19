@@ -2,6 +2,8 @@
 <launch>
 
     <include file="$(find cob_bringup)/components/laser_rear.launch" />
-    <include file="$(find cob_hardware_test)/components/laser_rear.test.xml" />
+	<include file="$(find cob_hardware_test)/components/laser.test.xml" >
+		<arg name="laser_namespace" value="scan_rear" />
+	</include>
 
 </launch>
