@@ -1,3 +1,4 @@
+ip_address: 192.168.21.102
 auto_exposure:     True
 exposure_auto_max: 100000
 exposure_auto_target: 40
@@ -9,5 +10,7 @@ auto_whitebalance: True
 frame_id: head_color_camera_r_link
 stream_bytes_per_second: 55000000
 auto_adjust_stream_bytes_per_second: False
-trigger_mode: syncin1
+trigger_mode: streaming
+#trigger_mode: syncin1
 packet_size: 9000
+trig_rate: 1

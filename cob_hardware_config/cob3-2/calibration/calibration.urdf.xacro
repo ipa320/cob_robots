@@ -76,7 +76,9 @@
 	<property name="tray_ref" value="4.1451" />
 
 	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
-	<property name="head_axis_ref" value="+3.14" />
+	<property name="head_axis_ref" value="0.8" />
+        <!--property name="head_axis_ref" value="0.75" /-->
+
 
 	<!-- arm reference positions | used as calibration_rising for arm chain-->
 	<property name="arm_1_ref" value="-2.8761" />

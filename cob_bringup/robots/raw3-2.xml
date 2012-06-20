@@ -18,6 +18,9 @@
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
 
+		<!-- wifi monitor -->
+		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
+
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
@@ -25,14 +28,16 @@
 		<!-- lower robot -->
 		<include file="$(find cob_bringup)/components/laser_front.launch" />
 		<include file="$(find cob_bringup)/components/laser_rear.launch" />
-		<include file="$(find cob_bringup)/components/base.launch" />
 		<include file="$(find cob_bringup)/components/relayboard_sim.launch" />
+		<include file="$(find cob_bringup)/components/base.launch" />
+
+		<!-- upper robot -->
+		<!-- tbd -->
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/teleop.launch" />
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
 	</group>
-
 
 	<machine name="pc1" address="$(arg pc1)" default="true"/>
 
