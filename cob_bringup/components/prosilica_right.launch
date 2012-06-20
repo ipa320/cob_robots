@@ -18,7 +18,7 @@ http://www.ros.org/wiki/prosilica_camera/Tutorials.
   </node>
 
   <node ns="stereo/right" name="set_camera_info" pkg="cob_camera_sensors" type="set_camera_info.py" output="screen">
-	<rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/calibration/cameras/right.yaml"/>
+	<rosparam command="load" file="$(find cob_calibration_data)/$(env ROBOT)/calibration/cameras/right.yaml"/>
   </node>
   
   <node ns="stereo/right" pkg="image_proc" type="image_proc" respawn="false" name="prosilica_image_proc" />
