@@ -9,6 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_hardware_config</url>
 
+  <depend package="cob_calibration_data"/>
   <depend package="cob_description"/>
   <depend package="raw_description"/>
   <depend package="schunk_description"/>
