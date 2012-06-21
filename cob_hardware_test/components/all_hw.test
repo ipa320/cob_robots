@@ -12,11 +12,14 @@
 		
 	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 	
-    <!--include file="$(find cob_hardware_test)/test/torso.test" /-->	
-    <include file="$(find cob_hardware_test)/test/tray.test" />
-    <!--include file="$(find cob_hardware_test)/test/head.test" /-->
+	<include file="$(find cob_hardware_test)/components/light.test.xml" />
+    <!--include file="$(find cob_hardware_test)/components/say.test.xml" />
+    <include file="$(find cob_hardware_test)/components/base.test.xml" /-->
+    <!--include file="$(find cob_hardware_test)/test/torso.test" />	
+    <include file="$(find cob_hardware_test)/test/tray.test" /-->
+    <!--include file="$(find cob_hardware_test)/test/head.test" />
     <include file="$(find cob_hardware_test)/test/arm.test" />
-    <include file="$(find cob_hardware_test)/test/sdh.test" /> 
+    <include file="$(find cob_hardware_test)/test/sdh.test" /--> 
     
 
 
