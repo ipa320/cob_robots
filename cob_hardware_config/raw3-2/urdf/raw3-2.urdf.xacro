@@ -9,7 +9,7 @@
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
-  <include filename="$(find cob_hardware_config)/raw3-2/calibration/calibration.urdf.xacro" />   
+  <include filename="$(find cob_calibration_data)/raw3-2/calibration/calibration.urdf.xacro" />   
   
   <!-- icob base -->
   <!--include filename="$(find icob_description)/ros/urdf/base_v1/base.urdf.xacro" /-->	<!-- fxm: old	-->
