@@ -13,8 +13,8 @@
 	
 <!--actuator test -->
     <include file="$(find cob_hardware_test)/components/light.test.xml" />
-    <!--include file="$(find cob_hardware_test)/components/say.test.xml" />
-    <include file="$(find cob_hardware_test)/components/base.test.xml" /-->
+    <include file="$(find cob_hardware_test)/components/sound.test.xml" />
+    <include file="$(find cob_hardware_test)/components/base.test.xml" />
     <!--include file="$(find cob_hardware_test)/components/torso.test.xml" /-->
     <!--include file="$(find cob_hardware_test)/components/arm.test.xml" />  
     <include file="$(find cob_hardware_test)/components/head.test.xml" />
