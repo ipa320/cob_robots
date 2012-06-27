@@ -31,6 +31,7 @@ rosbuild_gensrv()
 
 # check test files (offline)
 rosbuild_add_roslaunch_check(robots/cob3-3.test.xml ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(robots/cob3-6.test.xml ROBOT=cob3-6)
 rosbuild_add_roslaunch_check(robots/desire.test.xml ROBOT=desire)
 
 # rostest for current robot (online)
