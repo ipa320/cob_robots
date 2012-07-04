@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <launch>
-	
-    <include file="$(find cob_bringup)/components/torso.launch" />
-    <include file="$(find cob_hardware_test)/test/torso.test.xml" />
+
+	<node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
+    <include file="$(find cob_default_robot_config)/upload_param.launch" />    	
+    <include file="$(find cob_bringup)/components/torso_solo.launch" />
+    <include file="$(find cob_hardware_test)/components/torso.test.xml" />
 
 </launch>

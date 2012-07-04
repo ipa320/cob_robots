@@ -6,6 +6,5 @@
 
 	<!-- include components to test -->
 	<include file="$(find cob_hardware_test)/robots/$(env ROBOT).test_manual.xml" />
-	<include file="$(find cob_hardware_test)/robots/$(env ROBOT).test_auto.xml" />
 
 </launch>
