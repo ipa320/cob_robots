@@ -12,5 +12,5 @@ OperationMode: position
 # trajectory controller parameters
 ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.2 # rad/sec^2
-max_error: 0.5 # rad
+max_error: 0.1 # rad
 frequency: 50
