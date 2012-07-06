@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_raw.launch"/>
+	<include file="$(find cob_relayboard)/ros/launch/relayboard_sim.launch"/>
+  <include file="$(find cob_bringup)/tools/base_collision_observer.launch"/>
+
+	<!-- Arm -->
+  <include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_$(env ROBOT).launch"/>
+
+
+	
+
+</launch>
