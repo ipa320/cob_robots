@@ -17,9 +17,14 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc3
         contains: 'pc3'
-      network:
+
+  network:
+    type: AnalyzerGroup
+    path: Network
+    analyzers:
+      wifi:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: Network
+        path: wifi
         num_items: 1
         expected: ['Wifi Status (ddwrt)']
  
@@ -72,6 +77,10 @@ analyzers:
     type: AnalyzerGroup
     path: Sensors
     analyzers:
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
       laser_top:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Top

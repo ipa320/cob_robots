@@ -18,4 +18,7 @@
 	<!-- start teleop -->
 	<include file="$(find cob_bringup)/tools/teleop.launch" />
 
+	<!-- start safe base controller -->
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
+
 </launch>
