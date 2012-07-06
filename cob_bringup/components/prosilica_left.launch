@@ -9,9 +9,11 @@ http://www.ros.org/wiki/prosilica_camera/Tutorials.
 
 <launch>
 
+  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
   <!-- The camera node -->
   <node ns="stereo/left" name="color_camera" pkg="prosilica_camera" type="prosilica_node" output="screen">
-    <rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/cameras/parameters_left.yaml"/>
+    <rosparam command="load" file="$(arg pkg_hardware_config)/$(env ROBOT)/config/cameras/parameters_left.yaml"/>
 	
 	<remap from="camera/image_raw" to="image_raw"/>
 	<remap from="camera/camera_info" to="camera_info"/>
