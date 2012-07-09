@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find cob_bringup)/robots/cob3-5.xml" >
+		<arg name="pc1" value="cob3-5-pc1"/>
+		<arg name="pc2" value="cob3-5-pc2"/>
+		<arg name="pc3" value="cob3-5-pc3"/>
+		<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
+	</include>
+
+</launch>
