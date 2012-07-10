@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-
 <launch>
+
 	<!-- perform test -->
-	<test test-name="test_head" pkg="cob_hardware_test" type="component_test_aio.py" name="cob_head" > 	
+	<test test-name="test_head" pkg="cob_hardware_test" type="component_test.py" name="cob_head" > 	
 	 <param name="component"  value="head" />
-	 <param name="test_target" value="back" />
-	 <param name="default_target" value="front" />
-	 <param name="wait_time" value="30.0" />
+	 <param name="test_target" value="front" />
+	 <param name="default_target" value="back" />
+	 <param name="wait_time" value="10.0" />
 	 <param name="error_range" value="0.1" />  
     </test>  
 

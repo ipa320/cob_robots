@@ -11,5 +11,6 @@
 
   <depend package="rostest"/>
   <depend package="cob_bringup"/>
+  <depend package="cob_default_robot_config"/>
 
 </package>
