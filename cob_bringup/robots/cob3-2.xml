@@ -21,7 +21,7 @@
 		</include>
 
 		<!-- wifi monitor -->
-		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
+		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" /-->
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>

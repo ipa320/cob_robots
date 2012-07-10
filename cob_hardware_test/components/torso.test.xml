@@ -2,7 +2,7 @@
 
 <launch>
 	<!-- perform test -->
-	<test test-name="test_torso" pkg="cob_hardware_test" type="component_test_aio.py" name="cob_torso" > 	
+	<test test-name="test_torso" pkg="cob_hardware_test" type="component_test.py" name="cob_torso" > 	
 	 <param name="component"  value="torso" />
 	 <param name="test_target" value="front" />
 	 <param name="default_target" value="home" />

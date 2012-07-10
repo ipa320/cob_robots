@@ -82,16 +82,15 @@ class UnitTest(unittest.TestCase):
 
         # start actual test
         print "Waiting for messages"
-         #give the topics some seconds to receive messages
-        #wallclock_timeout_t = time.time() + self.wait_time
-        while not self.message_received:# and time.time() < wallclock_timeout_t:
+        #give the topics some seconds to receive messages
+        abort_time = rospy.Time.now() + rospy.Duration(self.wait_time)
+        while not self.message_received and rospy.get_rostime() < abort_time:
          #   print "###debug here###"
-            time.sleep(0.1)
-        rospy.sleep(1.0)
+            rospy.sleep(0.1)
+                        
         if not self.message_received:
-            self.fail('No state message received within wait_time')
-        #move_component()
-#move start
+            self.fail('No state message received within wait_time(%s) from /%s_controller/state' % (self.wait_time, self.component))
+
         self.assertTrue(dialog_client(0, 'Ready to move my %s %s ?' % (self.component, self.test_target)))
 
         # send commands to component
@@ -106,7 +105,7 @@ class UnitTest(unittest.TestCase):
         self.check_target_reached(self.test_target)
 #move end
 
-        self.assertTrue(dialog_client(1, 'EM Pressed and Released ? Can %s move %s ?' % (self.component, self.default_target)))
+        self.assertTrue(dialog_client(1, ' EM Pressed and Released? \n Ready to move my %s %s ?' % (self.component, self.default_target)))
 
         recover_handle = self.sss.recover(self.component)
         if recover_handle.get_error_code() != 0 :
@@ -114,8 +113,6 @@ class UnitTest(unittest.TestCase):
            self.fail(error_msg)
 
 #move start
-        self.assertTrue(dialog_client(0, 'Ready to move my %s %s ?' % (self.component, self.default_target)))
-
         # send commands to component
         move_handle = self.sss.move(self.component, self.default_target)
         self.assertEqual(move_handle.get_state(), 3)
@@ -126,7 +123,6 @@ class UnitTest(unittest.TestCase):
 
         self.check_target_reached(self.default_target)
 
-        self.assertTrue(dialog_client(1, 'Did my %s move %s and %s ?' % (self.component, self.test_target, self.default_target)))
 #move end
 
     def check_target_reached(self,target):
@@ -138,11 +134,6 @@ class UnitTest(unittest.TestCase):
         traj_endpoint = command_traj[len(command_traj) - 1]
         print traj_endpoint
 
-        # Start evaluation
-        #timeout_t = traj_endpoint.time_from_start.to_sec() * 1.5 # movement should already be finished, but let wait with an additional buffer of 50% times the desired time
-        #rospy.sleep(timeout_t)
-        #time.sleep(timeout_t)
-        #print "Done waiting, validating results"
         actual_pos = self.actual_pos # fix current position configuration for later evaluation
 
         # checking if target position is really reached
