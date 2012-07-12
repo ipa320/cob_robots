@@ -7,23 +7,36 @@ import sys
 from simple_script_server import *
 sss = simple_script_server()
 
-c1 = [["torso","nod"],
-     ["head","front"],
-     ["sdh","cylclosed"]]
-c2 = [["torso","shake"],
+c1 = [["tray","up"],
      ["head","back"],
      ["sdh","cylopen"]]
+c2 = [["tray","down"],
+     ["head","front"],
+     ["sdh","cylclosed"]]
 
+def init(config_list):
+	for config in config_list:
+		sss.init(config[0])
 
 def move_single_component(config):
+	# recover
+	sss.recover(config[0])
+	
+	# move
 	handle = sss.move(config[0],config[1])
+	
+	# check result
 	if handle.get_state() != 3:
 		print "something went wrong"
 		sss.set_light("red")
-		sys.exit()
+		#sys.exit()
 
 def move_all_component(config_list):
 	handles = []
+
+	# recover
+	for config in config_list:
+		sss.recover(config[0])
 	
 	# move all components non-blocking
 	for config in config_list:
@@ -38,17 +51,13 @@ def move_all_component(config_list):
 		if handle.get_state() != 3:
 			print "something went wrong"
 			sss.set_light("red")
-			sys.exit()
+			#sys.exit()
 
 if __name__ == "__main__":
 	rospy.init_node("life_test")
 
-	# prepare
-	sss.move("torso","home")
-	sss.move("head","front")
-	sss.move("sdh","home")
-	sss.move("arm","folded")
-	
+	init(c1)
+
 	# do life test
 	while not rospy.is_shutdown():
 		print "================================"
@@ -65,5 +74,6 @@ if __name__ == "__main__":
 		print "*****************************"
 		sss.set_light("yellow")
 		move_all_component(c1)
+		move_all_component(c2)
 			
 
