@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+	<test test-name="test_say" pkg="cob_hardware_test" type="sound_test.py" name="cob_say" />
+	
+</launch> 	

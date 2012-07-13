@@ -49,6 +49,7 @@
   <depend package="diagnostic_aggregator"/>
   <depend package="pr2_dashboard_aggregator"/>
   <depend package="pr2_computer_monitor"/>
+  <depend package="wifi_ddwrt"/>
   <depend package="costmap_2d"/>
 
   <!-- configuration -->

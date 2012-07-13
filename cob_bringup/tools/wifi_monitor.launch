@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- Monitor Wifi/ddwrt -->
+	<node pkg="pr2_computer_monitor" name="ddwrt_diag" type="wifi_monitor.py"/>
+	<node name="wifi_ddwrt" pkg="wifi_ddwrt" type="ddwrt.py">
+		<param name="router_ip" type="string" value="$(env ROBOT)" />
+		<param name="router" type="string" value="$(env ROBOT)" />
+		<param name="username" type="string" value="root" />
+		<param name="password" type="string" value="admin" />
+	</node>
+
+</launch>
