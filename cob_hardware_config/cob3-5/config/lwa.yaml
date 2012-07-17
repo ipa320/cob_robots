@@ -7,7 +7,8 @@ max_accelerations: [0.8,0.8,0.8,0.8,0.8,0.8,0.8]
 min_publish_duration: 0.1
 frequency: 68
 OperationMode: position
+
+# trajectory controller parameters
 ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.1 # rad/sec^2
 max_error: 0.2 # rad
-
