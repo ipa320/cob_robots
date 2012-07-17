@@ -7,12 +7,18 @@ import sys
 from simple_script_server import *
 sss = simple_script_server()
 
-c1 = [["tray","up"],
-     ["head","back"],
-     ["sdh","cylopen"]]
-c2 = [["tray","down"],
-     ["head","front"],
-     ["sdh","cylclosed"]]
+c1 = [["torso","shake"],
+     ["tray","up"],
+     ["arm","pregrasp"],
+     ["sdh","cylopen"],
+     ["head","back"]]
+
+# c2 should be "navigationable" configuration
+c2 = [["torso","nod"],
+     ["tray","down"],
+     ["arm","folded"],
+     ["sdh","cylclosed"],
+     ["head","front"]]
 
 def init(config_list):
 	for config in config_list:
@@ -27,9 +33,9 @@ def move_single_component(config):
 	
 	# check result
 	if handle.get_state() != 3:
-		print "something went wrong"
+		print "something with " + config[0] + "went wrong"
 		sss.set_light("red")
-		#sys.exit()
+		sys.exit()
 
 def move_all_component(config_list):
 	handles = []
@@ -51,28 +57,37 @@ def move_all_component(config_list):
 		if handle.get_state() != 3:
 			print "something went wrong"
 			sss.set_light("red")
-			#sys.exit()
+			sys.exit()
 
 if __name__ == "__main__":
 	rospy.init_node("life_test")
 
 	init(c1)
+	sss.init("base")
 
 	# do life test
 	while not rospy.is_shutdown():
 		print "================================"
 		print "=== moving single components ==="
 		print "================================"
+		sss.set_light("yellow")
+		sss.recover("base")
+		sss.move("base",[0,0,0])
 		sss.set_light("blue")
+
 		for config in c1:
 			move_single_component(config)
 		for config in c2:
 			move_single_component(config)
-			
+
 		print "*****************************"
 		print "*** moving all components ***"
 		print "*****************************"
 		sss.set_light("yellow")
+		sss.recover("base")
+		sss.move("base",[1,0,0])
+		sss.set_light("blue")
+
 		move_all_component(c1)
 		move_all_component(c2)
 			
