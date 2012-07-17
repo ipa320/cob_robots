@@ -58,6 +58,7 @@
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" />
 		<include file="$(find cob_bringup)/components/prosilica_right.launch" />
+		<include file="$(find cob_bringup)/components/kinect.launch" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 		<include file="$(find cob_bringup)/components/light.launch" />
 	</group>
