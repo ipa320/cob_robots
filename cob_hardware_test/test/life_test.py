@@ -22,7 +22,10 @@ c2 = [["torso","nod"],
 
 def init(config_list):
 	for config in config_list:
-		sss.init(config[0])
+		handle = sss.init(config[0])
+		if handle.get_error_code() < 0:
+			sss.set_light("red")
+			raise NameError('could not initialize ' + config[0])
 
 def move_single_component(config):
 	# recover
@@ -33,9 +36,9 @@ def move_single_component(config):
 	
 	# check result
 	if handle.get_state() != 3:
-		print "something with " + config[0] + "went wrong"
 		sss.set_light("red")
-		sys.exit()
+		raise NameError('something went wrong')
+		#sys.exit()
 
 def move_all_component(config_list):
 	handles = []
@@ -55,9 +58,9 @@ def move_all_component(config_list):
 	# check result
 	for handle in handles:
 		if handle.get_state() != 3:
-			print "something went wrong"
 			sss.set_light("red")
-			sys.exit()
+			raise NameError('something went wrong')
+			#sys.exit()
 
 if __name__ == "__main__":
 	rospy.init_node("life_test")
@@ -66,29 +69,35 @@ if __name__ == "__main__":
 	sss.init("base")
 
 	# do life test
+	counter = 0
 	while not rospy.is_shutdown():
-		print "================================"
-		print "=== moving single components ==="
-		print "================================"
-		sss.set_light("yellow")
-		sss.recover("base")
-		sss.move("base",[0,0,0])
-		sss.set_light("blue")
+		counter += 1
+		try:
+			sss.say(["This is round " + str(counter)])
+			print "================================"
+			print "=== moving single components ==="
+			print "================================"
+			sss.set_light("yellow")
+			sss.recover("base")
+			sss.move("base",[1,0,0])
+			sss.set_light("blue")
 
-		for config in c1:
-			move_single_component(config)
-		for config in c2:
-			move_single_component(config)
+			for config in c1:
+				move_single_component(config)
+			for config in c2:
+				move_single_component(config)
 
-		print "*****************************"
-		print "*** moving all components ***"
-		print "*****************************"
-		sss.set_light("yellow")
-		sss.recover("base")
-		sss.move("base",[1,0,0])
-		sss.set_light("blue")
+			print "*****************************"
+			print "*** moving all components ***"
+			print "*****************************"
+			sss.set_light("yellow")
+			sss.recover("base")
+			sss.move("base",[0,0,0])
+			sss.set_light("blue")
 
-		move_all_component(c1)
-		move_all_component(c2)
-			
-
+			move_all_component(c1)
+			move_all_component(c2)
+		except NameError:
+			print "Error after " + str(counter) + " successfull round(s): press <return> to continue"
+			sss.wait_for_input()
+			counter = 0
