@@ -80,7 +80,7 @@ if __name__ == "__main__":
 			sss.set_light("yellow")
 			sss.recover("base")
 			sss.move("base",[1,0,0])
-			sss.set_light("blue")
+			sss.set_light("green")
 
 			for config in c1:
 				move_single_component(config)
@@ -93,7 +93,7 @@ if __name__ == "__main__":
 			sss.set_light("yellow")
 			sss.recover("base")
 			sss.move("base",[0,0,0])
-			sss.set_light("blue")
+			sss.set_light("green")
 
 			move_all_component(c1)
 			move_all_component(c2)
