@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
+	<!-- upload default configurations -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch" />
+
 	<!-- test lower robot -->
 	<include file="$(find cob_hardware_test)/components/laser.test.xml" >
 		<arg name="laser_namespace" value="scan_front" />
