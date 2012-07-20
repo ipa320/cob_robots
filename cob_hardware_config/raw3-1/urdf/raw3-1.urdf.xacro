@@ -38,7 +38,7 @@
 
   <xacro:ur5_robot prefix="arm_"/>
   <joint name="arm_base_joint" type="fixed" >
-		<origin xyz="-0.324 0.22 0.565" rpy="0 0 0" />
+		<origin xyz="-0.324 0.191 0.565" rpy="0 0 0" />
 		<parent link="base_link" />
 		<child link="arm_base_link" />
   </joint>
