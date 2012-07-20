@@ -7,10 +7,9 @@ joint_names: [torso_lower_neck_tilt_joint, torso_pan_joint, torso_upper_neck_til
 max_accelerations: [0.8,0.8,0.8]
 min_publish_duration: 0.1
 horizon: 0.1 # [s]
-OperationMode: position
+frequency: 68
 
 # trajectory controller parameters
 ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.2 # rad/sec^2
 max_error: 0.1 # rad
-frequency: 50
