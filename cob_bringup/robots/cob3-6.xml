@@ -4,7 +4,6 @@
 	<!-- args -->
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
-	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
