@@ -1,17 +1,16 @@
 <?xml version="1.0"?>
 <launch>
 
+	<!-- args -->
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
-	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
 
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch"/>
-	<include file="$(arg pkg_env_config)/upload_param.launch"/>
 
 	<group>
 		<machine name="pc1" address="$(arg pc1)" default="true"/>
