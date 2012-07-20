@@ -3,9 +3,8 @@
 
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 
-	<include file="$(find cob_bringup)/robots/cob3-4.xml" >
-		<arg name="pc1" value="cob3-4-pc1"/>
-		<arg name="pc2" value="cob3-4-pc2"/>
+	<include file="$(find cob_bringup)/robots/raw3-2.xml" >
+		<arg name="pc1" value="raw3-2-pc1"/>
 	</include>
 	
 	<!-- upload default configuration parameters -->
