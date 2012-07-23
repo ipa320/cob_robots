@@ -43,5 +43,9 @@
 		<child link="arm_base_link" />
   </joint>
 
+  <!--ToDo: find correct transformation-->	
+  <!--xacro:raw_torso name="torso" parent="base_tower">
+    <origin xyz="0 0 0.7" rpy="0 0 0"/>	
+  </xacro:raw_torso-->
 
 </robot>
