@@ -41,7 +41,7 @@ def move_single_component(config):
 	# check result
 	if handle.get_state() != 3:
 		sss.set_light("red")
-		raise NameError('something went wrong')
+		raise NameError('something went wrong with ' + str(config[0]))
 		#sys.exit()
 
 def move_all_component(config_list):
@@ -59,7 +59,7 @@ def move_all_component(config_list):
 	for handle in handles:
 		if handle.get_state() != 3:
 			sss.set_light("red")
-			raise NameError('something went wrong')
+			raise NameError('something went wrong in move all')
 			#sys.exit()
 
 if __name__ == "__main__":
@@ -90,8 +90,10 @@ if __name__ == "__main__":
 			move_all_component(c1)
 			move_all_component(c2)
 			sss.set_light("green")
-		except NameError:
-			print "Error after " + str(counter) + " successfull round(s): press <return> to continue"
+		except NameError, e:
+			print "Error: %s"%e
+			print "Successfull round(s): <<" + str(counter) + ">>"
+			print "press <return> to continue"
 			sss.wait_for_input()
 			counter = 0
 			recover(c1)
