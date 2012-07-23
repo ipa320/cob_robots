@@ -7,16 +7,14 @@ import sys
 from simple_script_server import *
 sss = simple_script_server()
 
-c1 = [["base",[1,0,0]],
-     ["torso","shake"],
+c1 = [["torso","shake"],
      ["tray","up"],
      ["arm","pregrasp"],
      ["sdh","cylopen"],
      ["head","back"]]
 
 # c2 should be "navigationable" configuration
-c2 = [["base",[0,0,0]],
-     ["torso","nod"],
+c2 = [["torso","nod"],
      ["tray","down"],
      ["arm","folded"],
      ["sdh","cylclosed"],
