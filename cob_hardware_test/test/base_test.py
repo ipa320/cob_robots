@@ -56,6 +56,13 @@ class HardwareTest(unittest.TestCase):
 		handle = self.sss.move_base_rel("base", [self.move_x, self.move_y, self.move_theta])
 		self.assertEqual(handle.get_state(), 3)
 		self.assertTrue(dialog_client(1, 'Did I move?'))
+		self.assertTrue(dialog_client(0, 'EM Pressed and Released? \n Ready to move my Base ?' ))
+		self.sss.recover("base")
+		handle = self.sss.move_base_rel("base", [self.move_x, self.move_y, self.move_theta])
+
+		
+
+		
 
 if __name__ == '__main__':
 
