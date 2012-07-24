@@ -24,17 +24,9 @@
   <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
 
   <!-- ur_arm -->
- <include filename="$(find raw_description)/urdf/arm_ur/arm.urdf.xacro" />
  <include filename="$(find ur5_description)/urdf/model.urdf.xacro" />   
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
-
-  
-  <!--origin xyz="-0.33 0.16 0.6" rpy="0 ${M_PI/2} 0" /-->
-  <!--in cad model z = 0.587  - fxmlc-->
-  <!--xacro:cob_arm_ur name="arm" parent="base_link">
-    <origin xyz="-0.324 0.22 0.565" rpy="0 ${M_PI/2} 0" />
-  </xacro:cob_arm_ur--> 
 
   <xacro:ur5_robot prefix="arm_"/>
   <joint name="arm_base_joint" type="fixed" >
