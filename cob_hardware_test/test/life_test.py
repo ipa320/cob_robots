@@ -23,14 +23,14 @@ c2 = [["torso","nod"],
 def init(config_list):
 	for config in config_list:
 		handle = sss.init(config[0])
-		if handle.get_error_code() < 0:
+		if handle.get_error_code() > 0:
 			sss.set_light("red")
 			raise NameError('could not initialize ' + config[0])
 
 def recover(config_list):
 	for config in config_list:
 		handle = sss.recover(config[0])
-		if handle.get_error_code() < 0:
+		if handle.get_error_code() > 0:
 			sss.set_light("red")
 			raise NameError('could not recover ' + config[0])
 
