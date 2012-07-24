@@ -59,6 +59,7 @@ group7:
   component_name: sdh
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
+    [recover,trigger,recover],
     [home,move,home],
     [cyl. closed,move,cylclosed],
     [cyl. open,move,cylopen],
