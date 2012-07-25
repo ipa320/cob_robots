@@ -1,10 +1,15 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!--include file="$(find cob_machine)/$(env ROBOT).machine" /-->
+	<arg name="pc1" default="localhost"/>
 
 	<group>
-		<!--machine name="pc1" address="raw3-2-pc1" default="true"/-->
+		<machine name="$(arg pc1)" address="$(arg pc1)" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc1)" />
+		</include>
 
 		<!-- upload robot description -->
 		<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
@@ -23,9 +28,10 @@
 		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/teleop.launch" />
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
 	</group>
 
 
-	<!--machine name="pc1" address="raw3-2-pc1" default="true"/-->
+	<machine name="$(arg pc1)" address="$(arg pc1)" default="true"/>
 
 </launch>

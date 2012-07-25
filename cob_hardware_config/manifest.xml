@@ -9,9 +9,9 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_hardware_config</url>
 
-  <depend package="rostest"/>
   <depend package="cob_description"/>
   <depend package="raw_description"/>
   <depend package="schunk_description"/>
+  <depend package="ur5_description"/>
 
 </package>
