@@ -23,14 +23,14 @@ c2 = [["torso","nod"],
 def init(config_list):
 	for config in config_list:
 		handle = sss.init(config[0])
-		if handle.get_error_code() < 0:
+		if handle.get_error_code() > 0:
 			sss.set_light("red")
 			raise NameError('could not initialize ' + config[0])
 
 def recover(config_list):
 	for config in config_list:
 		handle = sss.recover(config[0])
-		if handle.get_error_code() < 0:
+		if handle.get_error_code() > 0:
 			sss.set_light("red")
 			raise NameError('could not recover ' + config[0])
 
@@ -41,7 +41,7 @@ def move_single_component(config):
 	# check result
 	if handle.get_state() != 3:
 		sss.set_light("red")
-		raise NameError('something went wrong with ' + str(config[0]))
+		raise NameError('something went wrong with ' + str(config[0]) + '. Action state = ' + str(handle.get_state()))
 		#sys.exit()
 
 def move_all_component(config_list):
@@ -59,7 +59,7 @@ def move_all_component(config_list):
 	for handle in handles:
 		if handle.get_state() != 3:
 			sss.set_light("red")
-			raise NameError('something went wrong in move all')
+			raise NameError('something went wrong in move all. Action state = ' + str(handle.get_state()))
 			#sys.exit()
 
 if __name__ == "__main__":
