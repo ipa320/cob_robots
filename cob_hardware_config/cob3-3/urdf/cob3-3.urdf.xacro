@@ -10,7 +10,7 @@
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
   <!-- calibration -->
-  <include filename="$(find cob_hardware_config)/cob3-3/calibration/calibration.urdf.xacro" />
+  <include filename="$(find cob_calibration_data)/cob3-3/calibration/calibration.urdf.xacro" />
   
   <!-- base -->
   <include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
@@ -53,7 +53,7 @@
   </xacro:cob_head_v3>
   
   <xacro:schunk_sdh name="sdh" parent="arm_7_link">
-    <origin xyz="0 0 0.032" rpy="0 0 1.5708" />
+    <origin xyz="0 0 0.032" rpy="0 0 ${M_PI/2}" />
   </xacro:schunk_sdh>
   
 </robot>

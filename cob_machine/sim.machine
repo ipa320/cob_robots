@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<machine name="pc1" address="localhost" default="true" />
-	<machine name="pc2" address="localhost" />
-	<machine name="pc3" address="localhost" />
-
-</launch>
