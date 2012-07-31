@@ -1,19 +1,47 @@
 pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
-  # computers:
-  #   type: diagnostic_aggregator/AnalyzerGroup
-  #   path: Computers
-  #   # analyzers:
-    #   cpu:
-    #     type: diagnostic_aggregator/GenericAnalyzer
-    #     path: CPU
-    #     expected: ['pc1 CPU Usage',
-    #                'pc1 HD Usage',
-    #                'pc2 CPU Usage',
-    #                'pc2 HD Usage',
-    #                'pc3 CPU Usage',
-    #                'pc3 HD Usage']
+  computers:
+    type: AnalyzerGroup
+    path: Computers
+    analyzers:
+      pc1:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc1
+        contains: 'pc1'
+      pc2:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc2
+        contains: 'pc2'
+      pc3:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc3
+        contains: 'pc3'
+
+  network:
+    type: AnalyzerGroup
+    path: Network
+    analyzers:
+      wifi:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: wifi
+        num_items: 1
+        expected: ['Wifi Status (ddwrt)']
+ 
+
+#  computers:
+#     type: diagnostic_aggregator/AnalyzerGroup
+#     path: Computers
+#     analyzers:
+#      cpu:
+#         type: diagnostic_aggregator/GenericAnalyzer
+#         path: CPU
+#         expected: ['pc1 CPU Usage',
+#                    'pc1 HD Usage',
+#                    'pc2 CPU Usage',
+#                    'pc2 HD Usage',
+#                    'pc3 CPU Usage',
+#                    'pc3 HD Usage']
     #   clocks:
     #     type: diagnostic_aggregator/GenericAnalyzer
     #     path: Clocks
@@ -49,6 +77,10 @@ analyzers:
     type: AnalyzerGroup
     path: Sensors
     analyzers:
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
       laser_top:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Top
