@@ -137,8 +137,8 @@ class UnitTest(unittest.TestCase):
         actual_pos = self.actual_pos # fix current position configuration for later evaluation
 
         # checking if target position is really reached
-        print actual_pos
-        print traj_endpoint
+        print "actual_pos = ", actual_pos
+        print "traj_endpoint = ", traj_endpoint
         for i in range(len(traj_endpoint)):
             self.assert_(((math.fabs(traj_endpoint[i] - actual_pos[i])) < self.error_range), "Target position out of error_range")
 
