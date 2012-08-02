@@ -91,7 +91,7 @@ class UnitTest(unittest.TestCase):
         if not self.message_received:
             self.fail('No state message received within wait_time(%s) from /%s_controller/state' % (self.wait_time, self.component))
 
-        self.assertTrue(dialog_client(0, 'Ready to move my %s %s ?' % (self.component, self.test_target)))
+        self.assertTrue(dialog_client(0, 'Ready to move %s to %s ?' % (self.component, self.test_target)))
 
         # send commands to component
         move_handle = self.sss.move(self.component, self.test_target)
@@ -105,7 +105,7 @@ class UnitTest(unittest.TestCase):
         self.check_target_reached(self.test_target)
 #move end
 
-        self.assertTrue(dialog_client(1, ' EM Pressed and Released? \n Ready to move my %s %s ?' % (self.component, self.default_target)))
+        self.assertTrue(dialog_client(1, ' EM Pressed and Released? \n Ready to move %s to %s ?' % (self.component, self.default_target)))
 
         recover_handle = self.sss.recover(self.component)
         if recover_handle.get_error_code() != 0 :
@@ -142,7 +142,7 @@ class UnitTest(unittest.TestCase):
         for i in range(len(traj_endpoint)):
             self.assert_(((math.fabs(traj_endpoint[i] - actual_pos[i])) < self.error_range), "Target position out of error_range")
 
-        self.assertTrue(dialog_client(1, 'Did my %s move %s ?' % (self.component, target)))
+        self.assertTrue(dialog_client(1, 'Did %s move to %s ?' % (self.component, target)))
 
     # callback functions
 
