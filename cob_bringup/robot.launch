@@ -3,7 +3,10 @@
 	
 	<param name="/use_sim_time" value="false"/>
 	<arg name="robot" default="$(env ROBOT)"/>
+	<arg name="robot_env" default="$(env ROBOT_ENV)"/>
 
-	<include file="$(find cob_bringup)/robots/$(arg robot).launch" />
+	<include file="$(find cob_bringup)/robots/$(arg robot).launch" >
+		<arg name="robot_env" value="$(arg robot_env)" />
+	</include>
 
 </launch>
