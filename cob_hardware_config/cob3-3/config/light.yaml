@@ -1,3 +1,3 @@
-devicestring: /dev/ttyUSB0
+devicestring: /dev/ttyUSB4
 baudrate: 230400
 
