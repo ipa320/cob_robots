@@ -9,7 +9,7 @@ http://www.ros.org/wiki/prosilica_camera/Tutorials.
 
 <launch>
 
-  <arg name="robot" default="$(env ROBOT)"/>
+  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
   <!-- The camera node -->
