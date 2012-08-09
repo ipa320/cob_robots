@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 
+	<arg name="robot" default="$(env ROBOT)"/>
 	<arg name="sim" default="false" />
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<group ns="base_controller">
 		
 		<!-- upload parameters -->
-		<param name="IniDirectory" value="$(arg pkg_hardware_config)/$(env ROBOT)/config/base/"/>
+		<param name="IniDirectory" value="$(arg pkg_hardware_config)/$(arg robot)/config/base/"/>
 		<param name="PublishEffort" value="false"/>
 		
 		<!-- start underlying components - base_drive_chain -->
@@ -26,7 +27,7 @@
 
 		</node>
 
-		<rosparam ns="cob_base_velocity_smoother" file="$(arg pkg_hardware_config)/$(env ROBOT)/config/base_velocity_smoother_params.yaml" command="load"/>
+		<rosparam ns="cob_base_velocity_smoother" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_velocity_smoother_params.yaml" command="load"/>
 
 	</group>
 
