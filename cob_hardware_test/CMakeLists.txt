@@ -30,28 +30,62 @@ rosbuild_gensrv()
 #target_link_libraries(example ${PROJECT_NAME})
 
 # check test files (offline)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=cob3-1)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=cob3-2)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=cob3-4)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=cob3-5)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=cob3-6)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=raw3-1)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=raw3-2)
-rosbuild_add_roslaunch_check(robots/robot.test.xml ROBOT=desire)
+# cob3-1
+rosbuild_add_roslaunch_check(robots/cob3-1_manual.test.xml robot:=cob3-1)
+rosbuild_add_roslaunch_check(robots/cob3-1_auto.test.xml robot:=cob3-1)
+rosbuild_add_roslaunch_check(robots/cob3-1_manual.test.xml ROBOT=cob3-1)
+rosbuild_add_roslaunch_check(robots/cob3-1_auto.test.xml ROBOT=cob3-1)
+
+# cob3-2
+rosbuild_add_roslaunch_check(robots/cob3-2_manual.test.xml robot:=cob3-2)
+rosbuild_add_roslaunch_check(robots/cob3-2_auto.test.xml robot:=cob3-2)
+rosbuild_add_roslaunch_check(robots/cob3-2_manual.test.xml ROBOT=cob3-2)
+rosbuild_add_roslaunch_check(robots/cob3-2_auto.test.xml ROBOT=cob3-2)
+
+# cob3-3
+rosbuild_add_roslaunch_check(robots/cob3-3_manual.test.xml robot:=cob3-3)
+rosbuild_add_roslaunch_check(robots/cob3-3_auto.test.xml robot:=cob3-3)
+rosbuild_add_roslaunch_check(robots/cob3-3_manual.test.xml ROBOT=cob3-3)
+rosbuild_add_roslaunch_check(robots/cob3-3_auto.test.xml ROBOT=cob3-3)
+
+# cob3-4
+rosbuild_add_roslaunch_check(robots/cob3-4_manual.test.xml robot:=cob3-4)
+rosbuild_add_roslaunch_check(robots/cob3-4_auto.test.xml robot:=cob3-4)
+rosbuild_add_roslaunch_check(robots/cob3-4_manual.test.xml ROBOT=cob3-4)
+rosbuild_add_roslaunch_check(robots/cob3-4_auto.test.xml ROBOT=cob3-4)
+
+# cob3-5
+rosbuild_add_roslaunch_check(robots/cob3-5_manual.test.xml robot:=cob3-5)
+rosbuild_add_roslaunch_check(robots/cob3-5_auto.test.xml robot:=cob3-5)
+rosbuild_add_roslaunch_check(robots/cob3-5_manual.test.xml ROBOT=cob3-5)
+rosbuild_add_roslaunch_check(robots/cob3-5_auto.test.xml ROBOT=cob3-5)
+
+# cob3-6
+rosbuild_add_roslaunch_check(robots/cob3-6_manual.test.xml robot:=cob3-6)
+rosbuild_add_roslaunch_check(robots/cob3-6_auto.test.xml robot:=cob3-6)
+rosbuild_add_roslaunch_check(robots/cob3-6_manual.test.xml ROBOT=cob3-6)
+rosbuild_add_roslaunch_check(robots/cob3-6_auto.test.xml ROBOT=cob3-6)
+
+# raw3-1
+rosbuild_add_roslaunch_check(robots/raw3-1_manual.test.xml robot:=raw3-1)
+rosbuild_add_roslaunch_check(robots/raw3-1_auto.test.xml robot:=raw3-1)
+rosbuild_add_roslaunch_check(robots/raw3-1_manual.test.xml ROBOT=raw3-1)
+rosbuild_add_roslaunch_check(robots/raw3-1_auto.test.xml ROBOT=raw3-1)
+
+# raw3-2
+rosbuild_add_roslaunch_check(robots/raw3-2_manual.test.xml robot:=raw3-2)
+rosbuild_add_roslaunch_check(robots/raw3-2_auto.test.xml robot:=raw3-2)
+rosbuild_add_roslaunch_check(robots/raw3-2_manual.test.xml ROBOT=raw3-2)
+rosbuild_add_roslaunch_check(robots/raw3-2_auto.test.xml ROBOT=raw3-2)
+
+# desire
+rosbuild_add_roslaunch_check(robots/desire_manual.test.xml robot:=desire)
+rosbuild_add_roslaunch_check(robots/desire_auto.test.xml robot:=desire)
+rosbuild_add_roslaunch_check(robots/desire_manual.test.xml ROBOT=desire)
+rosbuild_add_roslaunch_check(robots/desire_auto.test.xml ROBOT=desire)
 
 # rostest for current robot (online)
-SET(TRIGGER_AUTO $ENV{TEST_AUTO})
-SET(TRIGGER_MANUAL $ENV{TEST_MANUAL})
-
-# run AUTO tests if environment variable TEST_AUTO is set, but not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
-IF(TRIGGER_AUTO)
- MESSAGE("Fully automated testing. TEST_AUTO is set to $ENV{TEST_AUTO}")
- rosbuild_add_rostest(robots/robot_auto.test)
-ENDIF(TRIGGER_AUTO)
-
-# run MANUAL tests if environment variable TEST_MANUAL is set, but not set to [false, False, FALSE,OFF,...], see http://www.cmake.org/cmake/help/syntax.html
-IF(TRIGGER_MANUAL)
- MESSAGE("Manual testing. TEST_MANUAL is set to $ENV{TEST_MANUAL}")
- rosbuild_add_rostest(robots/robot_manual.test)
-ENDIF(TRIGGER_MANUAL)
+# start tests with 
+# "rostest cob_hardware_test robot.test test_auto=true"
+# or
+# "rostest cob_hardware_test robot.test test_manual=true"

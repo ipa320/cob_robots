@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="robot" default="$(env ROBOT)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-  <!-- send parameters to parameter server -->
-  <rosparam command="load" ns="light_controller" file="$(arg pkg_hardware_config)/$(env ROBOT)/config/light.yaml"/>
+	<!-- send parameters to parameter server -->
+	<rosparam command="load" ns="light_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/light.yaml"/>
 
-  <!-- start light -->
-  <node pkg="cob_light" type="cob_light.py" name="light_node" ns="light_controller" cwd="node" respawn="false" output="screen" />
+	<!-- start light -->
+	<node pkg="cob_light" type="cob_light.py" name="light_node" ns="light_controller" cwd="node" respawn="false" output="screen" />
 
 </launch>

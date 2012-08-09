@@ -3,9 +3,7 @@
 
     <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
 
-	<include file="$(find cob_default_robot_config)/upload_param.launch" />
-		    
-
+	<!-- start manual tests -->
     <include file="$(find cob_hardware_test)/components/light.test.xml" />
     <include file="$(find cob_hardware_test)/components/sound.test.xml" />
     <!--include file="$(find cob_hardware_test)/components/base.test.xml" /-->
@@ -14,5 +12,5 @@
     <include file="$(find cob_hardware_test)/components/arm.test.xml" />  
     <include file="$(find cob_hardware_test)/components/head.test.xml" />
     <include file="$(find cob_hardware_test)/components/sdh.test.xml" />
-	
+
 </launch>

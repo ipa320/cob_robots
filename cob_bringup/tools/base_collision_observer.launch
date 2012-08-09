@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
 <launch>
 
+  <arg name="robot" default="$(env ROBOT)"/>
   <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
   <!-- start local costmap -->
   <node name="local_costmap_node" pkg="costmap_2d" type="costmap_2d_node" output="screen">
-    <rosparam file="$(arg pkg_hardware_config)/$(env ROBOT)/config/local_costmap_params.yaml" command="load" ns="costmap" />
+    <rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/local_costmap_params.yaml" command="load" ns="costmap" />
   </node>
 
   <!-- start footprint observer node -->
   <node pkg="cob_footprint_observer" type="footprint_observer" name="footprint_observer" output="screen">
     <!-- load parameter file -->
-    <rosparam file="$(arg pkg_hardware_config)/$(env ROBOT)/config/footprint_observer_params.yaml" command="load" />
+    <rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/footprint_observer_params.yaml" command="load" />
   </node>
 
   <!-- start collision velocity filter node -->
@@ -23,7 +24,7 @@
     <remap from="~command" to="/base_controller/command" />
     <remap from="~relevant_obstacles" to="/collision_velocity_filter/relevant_obstacles" />
     <!-- load parameter file -->
-    <rosparam file="$(arg pkg_hardware_config)/$(env ROBOT)/config/collision_velocity_filter_params.yaml" command="load" />
+    <rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/collision_velocity_filter_params.yaml" command="load" />
   </node>
 
 </launch>

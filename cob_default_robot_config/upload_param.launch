@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
+	<arg name="robot" default="$(env ROBOT)"/>
+
 	<!-- include robot specific launch file -->
-	<include file="$(find cob_default_robot_config)/$(env ROBOT)/upload_param_$(env ROBOT).launch" />
+	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
 
 </launch>
