@@ -1,11 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" />
-
 	<!-- load cob controllers -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/default_controllers_cob.launch" >
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="robot" value="cob3-1"/>
 	</include>
 
 	<!-- Torso -->

@@ -6,7 +6,7 @@
 
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch">
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="robot" value="desire"/>
 	</include>
 
 	<!-- Head -->
@@ -14,7 +14,7 @@
 
 	<!-- Arm -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_desire.launch">
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="robot" value="desire"/>
 	</include>
 
 	<!-- SDH -->
