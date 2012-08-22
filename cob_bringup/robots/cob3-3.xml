@@ -108,7 +108,6 @@
 
 		<!-- start additional packages -->
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
-		
 		<include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>

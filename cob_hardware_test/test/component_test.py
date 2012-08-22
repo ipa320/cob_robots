@@ -91,39 +91,37 @@ class UnitTest(unittest.TestCase):
         if not self.message_received:
             self.fail('No state message received within wait_time(%s) from /%s_controller/state' % (self.wait_time, self.component))
 
-        self.assertTrue(dialog_client(0, 'Ready to move %s to %s ?' % (self.component, self.test_target)))
+        self.assertTrue(dialog_client(0, 'Ready to move <<%s>> to \n <<%s>> and <<%s>>?' % (self.component, self.test_target, self.default_target)))
 
-        # send commands to component
-        move_handle = self.sss.move(self.component, self.test_target)
+        # execute movement to test_target and back to default_target
+        self.execute_movement()
 
-        self.assertEqual(move_handle.get_state(), 3)
-        #state 3 equals errorcode 0 therefore the following will never be executed
-        if move_handle.get_error_code() != 0:
-            error_msg = 'Could not move ' + self.component
-            self.fail(error_msg + "; errorCode: " + str(move_handle.get_error_code()))
-
-        self.check_target_reached(self.test_target)
-#move end
-
-        self.assertTrue(dialog_client(1, ' EM Pressed and Released? \n Ready to move %s to %s ?' % (self.component, self.default_target)))
+        self.assertTrue(dialog_client(1, ' Please press emergency stop and release it again.\n\n Ready to move <<%s>> to \n <<%s>> and <<%s>>?' % (self.component, self.test_target, self.default_target)))
 
         recover_handle = self.sss.recover(self.component)
         if recover_handle.get_error_code() != 0 :
            error_msg = 'Could not recover ' + self.component
            self.fail(error_msg)
 
-#move start
-        # send commands to component
-        move_handle = self.sss.move(self.component, self.default_target)
-        self.assertEqual(move_handle.get_state(), 3)
+        # execute movement to test_target and back to default_target
+        self.execute_movement()
 
+    def execute_movement(self):
+        # test_target: send commands to component 
+        move_handle = self.sss.move(self.component, self.test_target)
+        self.assertEqual(move_handle.get_state(), 3) # state 3 equals errorcode 0 therefore the following will never be executed
         if move_handle.get_error_code() != 0:
             error_msg = 'Could not move ' + self.component
             self.fail(error_msg + "; errorCode: " + str(move_handle.get_error_code()))
+        self.check_target_reached(self.test_target)
 
+        # default_target: send commands to component 
+        move_handle = self.sss.move(self.component, self.default_target)
+        self.assertEqual(move_handle.get_state(), 3) # state 3 equals errorcode 0 therefore the following will never be executed
+        if move_handle.get_error_code() != 0:
+            error_msg = 'Could not move ' + self.component
+            self.fail(error_msg + "; errorCode: " + str(move_handle.get_error_code()))
         self.check_target_reached(self.default_target)
-
-#move end
 
     def check_target_reached(self,target):
         # get commanded trajectory
@@ -142,10 +140,9 @@ class UnitTest(unittest.TestCase):
         for i in range(len(traj_endpoint)):
             self.assert_(((math.fabs(traj_endpoint[i] - actual_pos[i])) < self.error_range), "Target position out of error_range")
 
-        self.assertTrue(dialog_client(1, 'Did %s move to %s ?' % (self.component, target)))
+        self.assertTrue(dialog_client(1, 'Did <<%s>> reach <<%s>>?' % (self.component, target)))
 
     # callback functions
-
     def cb_state(self, msg):
         self.actual_pos = msg.actual.positions
         self.message_received = True
