@@ -37,9 +37,9 @@
 	<property name="cam_r_yaw" value="-1.57"/>
 
 	<!-- cam3d | handeye calibration | relative to head_axis_link -->
-	<property name="cam3d_x" value="0.0"/>
+	<property name="cam3d_x" value="0.015"/>
 	<property name="cam3d_y" value="0.0"/>
-	<property name="cam3d_z" value="0.0"/>
+	<property name="cam3d_z" value="0.12"/>
 	<property name="cam3d_roll" value="-1.57"/>
 	<property name="cam3d_pitch" value="0.0"/>
 	<property name="cam3d_yaw" value="-1.57"/>
