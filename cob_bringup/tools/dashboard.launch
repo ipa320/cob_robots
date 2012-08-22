@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- upload button parameters, but delete the old ones before -->
-	<rosparam command="delete" param="command_gui"/>
-	<rosparam command="load" ns="command_gui/control_buttons" file="$(find cob_default_robot_config)/$(env ROBOT)/command_gui_buttons.yaml"/>
-	<rosparam command="load" ns="command_gui/nav_buttons" file="$(find cob_default_env_config)/$(env ROBOT_ENV)/command_gui_buttons.yaml"/>
-	
-	<!-- upload script server parameters -->
-	<include file="$(find cob_default_robot_config)/upload_param.launch"/>
-	<include file="$(find cob_default_env_config)/upload_param.launch"/>
-	
-	<!-- start dashboards -->
+	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
+	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
+
+	<!-- start dashboard -->
 	<node pkg="cob_dashboard" type="cob_dashboard" name="$(anon dashboard_node)" cwd="node" respawn="false" output="screen" />
-	<node pkg="cob_command_gui" type="knoeppkes.py" name="$(anon command_gui_node)" ns="dashboard" cwd="node" respawn="false" output="screen" />
+	
+	<!-- start command_gui -->
+	<node ns="command_gui" pkg="cob_command_gui" type="knoeppkes.py" name="$(anon command_gui_node)" cwd="node" respawn="false" output="screen" >
+		<!-- upload button parameters, but delete the old ones before -->
+		<rosparam command="load" ns="control_buttons" file="$(arg pkg_robot_config)/$(env ROBOT)/command_gui_buttons.yaml"/>
+		<rosparam command="load" ns="nav_buttons" file="$(arg pkg_env_config)/$(env ROBOT_ENV)/command_gui_buttons.yaml"/>
+	</node>
 	
 </launch>

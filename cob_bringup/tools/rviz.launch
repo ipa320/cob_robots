@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 
-        <!-- start rviz with configuration -->
-        <node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(find cob_bringup)/tools/config/rviz_config.vcg" respawn="false" output="screen" />
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<!-- start rviz with configuration -->
+	<node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(arg pkg_hardware_config)/common/rviz_config.vcg" respawn="false" output="screen" />
 
 </launch>
 

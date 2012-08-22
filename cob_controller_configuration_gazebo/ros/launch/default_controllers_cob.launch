@@ -7,7 +7,6 @@
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch"/>
 	<include file="$(find cob_bringup)/components/relayboard_sim.launch"/>
-	<include file="$(find cob_bringup)/tools/base_collision_observer.launch"/>
 
 	<!-- Tray -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/tray_controller.launch"/>
@@ -21,5 +20,9 @@
 	<!-- SDH -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
 
+	<!-- start additional components -->
+	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	<include file="$(find cob_bringup)/components/light.launch" />
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
 
 </launch>

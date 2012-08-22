@@ -1,0 +1,17 @@
+# powercube_chain parameters
+can_module: PCAN
+can_device: /dev/pcan0
+can_baudrate: 500
+modul_ids: [16,15]
+module_types: [PW, PW]
+joint_names: [torso_tilt_joint, head_axis_joint]
+max_accelerations: [0.8,0.8]
+min_publish_duration: 0.1
+horizon: 0.1
+OperationMode: position
+
+# trajectory controller parameters
+ptp_vel: 0.4 # rad/sec
+ptp_acc: 0.2 # rad/sec^2
+max_error: 0.1 # rad
+frequency: 80
