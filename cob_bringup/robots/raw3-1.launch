@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find cob_bringup)/robots/raw3-1.xml" >
+	</include>
+
+</launch>
