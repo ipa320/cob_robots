@@ -2,6 +2,9 @@
 <launch>
 
 	<include file="$(find cob_bringup)/robots/raw3-1.xml" >
+		<arg name="pc1" value="raw3-1-pc1"/>
+                <arg name="pc2" value="raw3-1-pc2"/>
+                <arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 	</include>
 
 </launch>
