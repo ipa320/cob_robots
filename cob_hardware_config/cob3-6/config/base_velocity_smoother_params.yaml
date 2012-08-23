@@ -7,4 +7,4 @@ circular_buffer_capacity: 12 #default value: 12
 maximal_time_delay: 4.0 #default value: 4.0
 
 #Parameter specifying the threshold for the maximal allowed acceleration in meters per second
-thresh_max_acc: 0.02 #default value: 0.02
+thresh_max_acc: 0.3 #default value: 0.3

@@ -16,7 +16,6 @@ group2:
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],
-    [enable joystick,mode,velocity],
     [home,move,home],
     [front,move,front],
     [back,move,back],
@@ -30,7 +29,6 @@ group3:
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],
-    [enable joystick,mode,velocity],
     [up,move,up],
     [down,move,down]]
 group4:
@@ -38,11 +36,7 @@ group4:
   component_name: arm
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
-    [recover,trigger,recover],
-    [undefined mode,mode,undefined],
-    [position mode,mode,position],
-    [velocity mode,mode,velocity],
-    [gravcomp mode,mode,gravcomp]]
+    [recover,trigger,recover]]
 group5:
   group_name: arm pos
   component_name: arm
@@ -69,6 +63,7 @@ group7:
   component_name: sdh
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
+    [recover,trigger,recover],
     [home,move,home],
     [cyl. closed,move,cylclosed],
     [cyl. open,move,cylopen],
