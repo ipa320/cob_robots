@@ -48,7 +48,6 @@ group5:
     [pregrasp,move,pregrasp],
     [hold,move,hold],
     [overtray,move,overtray],
-    [tray,move,tray],
     [wave in,move,wavein],
     [wave out,move,waveout]]
 group6:

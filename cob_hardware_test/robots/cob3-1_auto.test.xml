@@ -20,10 +20,10 @@
 	<include file="$(find cob_hardware_test)/components/prosilica.test.xml" >
 		<arg name="camera_namespace" value="/stereo/right" />
 	</include>
-	<!-- tbd: add test for swissranger -->
+	<include file="$(find cob_hardware_test)/components/kinect.test.xml" />
 
 	<!-- test additional packages -->
-	<!--include file="$(find cob_hardware_test)/tools/wifi_monitor.test.xml" /-->
+	<include file="$(find cob_hardware_test)/tools/wifi_monitor.test.xml" />
 	<include file="$(find cob_hardware_test)/tools/diagnostics_aggregator.test.xml" />
 
 </launch>

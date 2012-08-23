@@ -5,13 +5,17 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
 
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch">
+		<arg name="robot" value="desire"/>
+	</include>
 
 	<!-- Head -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller_desire.launch"/>
 
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_desire.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_desire.launch">
+		<arg name="robot" value="desire"/>
+	</include>
 
 	<!-- SDH -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller_desire.launch"/>
