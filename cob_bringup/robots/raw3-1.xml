@@ -4,6 +4,7 @@
 	<!-- args -->
 	<arg name="robot" value="raw3-1"/>
 	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -55,6 +56,8 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
+	<group>
+		<machine name="pc2" address="$(arg pc2)" default="true"/>
 		<!-- start camera sensors -->
 		<!--include file="$(find cob_bringup)/components/prosilica_left.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -66,6 +69,7 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
+
 
 	<machine name="pc1" address="$(arg pc1)" default="true"/>
 
