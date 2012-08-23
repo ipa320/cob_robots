@@ -35,8 +35,8 @@
 		<child link="arm_base_link" />
   </joint>
 
-  <xacro:cob_torso_v1 name="torso" parent="base_link">
+  <xacro:raw_torso name="torso" parent="base_link">
     <origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" />
-  </xacro:cob_torso_v1>
+  </xacro:raw_torso>
 
 </robot>
