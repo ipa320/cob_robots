@@ -9,11 +9,19 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc1
         contains: 'pc1'
+      pc2:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc2
+        contains: 'pc2'
 
   sensors:
     type: AnalyzerGroup
     path: Sensors
     analyzers:
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
       laser_rear:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Rear
@@ -22,15 +30,15 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Front
         contains: 'laser_front'
-      stereo_left:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Stereo (Left)
-        startswith: ['stereo/left/color_camera']
-      stereo_right:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Stereo (Right)
-        contains: right
-        startswith: ['stereo/right/color_camera']
+#      stereo_left:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Stereo (Left)
+#        startswith: ['stereo/left/color_camera']
+#      stereo_right:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Stereo (Right)
+#        contains: right
+#        startswith: ['stereo/right/color_camera']
 
   motors:
     type: AnalyzerGroup

@@ -63,7 +63,6 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
