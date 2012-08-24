@@ -4,6 +4,8 @@
 	<!-- args -->
 	<arg name="robot" value="raw3-1"/>
 	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
+	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -48,11 +50,24 @@
 		<include file="$(find cob_bringup)/components/ur5.launch" />
 
 		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
+
+	<group>
+		<machine name="pc2" address="$(arg pc2)" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg pc2)" />
 		</include>
 
 		<!-- start camera sensors -->
@@ -66,6 +81,7 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
+
 
 	<machine name="pc1" address="$(arg pc1)" default="true"/>
 
