@@ -47,8 +47,8 @@ group5:
     [folded,move,folded],
     [pregrasp,move,pregrasp],
     [hold,move,hold],
+    [sdhmount, move, sdhmount],
     [overtray,move,overtray],
-    [tray,move,tray],
     [wave in,move,wavein],
     [wave out,move,waveout]]
 group6:
