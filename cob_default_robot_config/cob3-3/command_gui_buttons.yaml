@@ -49,7 +49,8 @@ group5:
     [hold,move,hold],
     [overtray,move,overtray],
     [wave in,move,wavein],
-    [wave out,move,waveout]]
+    [wave out,move,waveout],
+    [sdhmount, move, sdhmount]]
 group6:
   group_name: arm traj
   component_name: arm
