@@ -47,10 +47,10 @@ group5:
     [folded,move,folded],
     [pregrasp,move,pregrasp],
     [hold,move,hold],
+    [sdhmount, move, sdhmount],
     [overtray,move,overtray],
     [wave in,move,wavein],
-    [wave out,move,waveout],
-    [sdhmount, move, sdhmount]]
+    [wave out,move,waveout]]
 group6:
   group_name: arm traj
   component_name: arm
