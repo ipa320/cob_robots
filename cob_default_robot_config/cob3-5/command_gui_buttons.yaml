@@ -68,7 +68,7 @@ group7:
     [point,move,point],
     [fist,move,fist]]
 group8:
-  group_name: eyes
+  group_name: head
   component_name: head
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
