@@ -38,7 +38,9 @@
 		<include file="$(find cob_bringup)/components/laser_rear.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_top.launch" />
+		<include file="$(find cob_bringup)/components/laser_top.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/components/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -63,7 +65,6 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -108,7 +109,6 @@
 
 		<!-- start additional packages -->
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
-		
 		<include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
