@@ -66,6 +66,9 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
+		<include file="$(find cob_bringup)/components/voltage_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
