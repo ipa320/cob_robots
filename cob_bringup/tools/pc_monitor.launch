@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="pc" default="localhost"/>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pc" default="localhost"/>
 
-  <!-- Monitor CPU temp, usage -->
-  <node pkg="pr2_computer_monitor" name="$(anon realtime_cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg pc)" output="log" >
-    <param name="check_core_temps" type="bool" value="False" />
-    <param name="check_ipmi_tool" type="bool" value="False" />
-    <param name="enforce_clock_speed" type="bool" value="False" />
-    <param name="num_cores" type="int" value="2" />
-  </node>
+	<!-- Monitor CPU temp, usage -->
+	<node pkg="pr2_computer_monitor" name="$(anon realtime_cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg pc)" output="log" >
+		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/pc_monitor_$(arg pc).yaml"/>
+	</node>
 
 </launch>

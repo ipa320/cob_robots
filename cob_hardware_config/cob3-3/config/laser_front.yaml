@@ -5,4 +5,4 @@ scan_cycle_time: 0.040 #SICK-docu says S300 scans every 40ms
 inverted: true
 scan_id: 7
 frame_id: /base_laser_front_link
-scan_intervals: [[-1.3526, 1.361357]] #[rad] these intervals are included to the scan
+scan_intervals: [[-1.35, 1.35]] #[rad] these intervals are included to the scan

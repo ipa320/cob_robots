@@ -34,58 +34,103 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 # rostest for cob3-1
-rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT=cob3-1 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-1.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-1.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=cob3-1 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=cob3-1 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-apartment)
 
 # rostest for cob3-2
-rosbuild_add_roslaunch_check(robots/cob3-2.xml ROBOT=cob3-2 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-2.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-2.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-2.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-2.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=cob3-2 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=cob3-2 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-2 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-2 ROBOT_ENV=ipa-apartment)
 
 # rostest for cob3-3
-rosbuild_add_roslaunch_check(robots/cob3-3.xml ROBOT=cob3-3 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-3.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-3.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-3.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-3.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=cob3-3 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=cob3-3 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-3 ROBOT_ENV=ipa-apartment)
 
 # rostest for cob3-4
-rosbuild_add_roslaunch_check(robots/cob3-4.xml ROBOT=cob3-4 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-4.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-4.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-4.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-4.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=cob3-4 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=cob3-4 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-4 ROBOT_ENV=ipa-apartment)
 
 # rostest for cob3-5
-rosbuild_add_roslaunch_check(robots/cob3-5.xml ROBOT=cob3-5 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-5.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-5.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-5.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-5.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=cob3-5 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=cob3-5 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-5 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-5 ROBOT_ENV=ipa-apartment)
 
 # rostest for cob3-6
-rosbuild_add_roslaunch_check(robots/cob3-6.xml ROBOT=cob3-6 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-6.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-6.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/cob3-6.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/cob3-6.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=cob3-6 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=cob3-6 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-6 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-6 ROBOT_ENV=ipa-apartment)
 
 # rostest for raw3-1
-rosbuild_add_roslaunch_check(robots/raw3-1.xml ROBOT=raw3-1 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/raw3-1.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/raw3-1.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/raw3-1.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/raw3-1.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=raw3-1 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=raw3-1 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-1 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-1 ROBOT_ENV=ipa-apartment)
 
 # rostest for raw3-2
-rosbuild_add_roslaunch_check(robots/raw3-2.xml ROBOT=raw3-2 ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/raw3-2.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/raw3-2.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/raw3-2.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/raw3-2.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=raw3-2 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=raw3-2 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-apartment)
 
 # rostest for desire
-rosbuild_add_roslaunch_check(robots/desire.xml ROBOT=desire ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/desire.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/desire.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/desire.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/desire.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=desire robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=desire robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=desire ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=desire ROBOT_ENV=ipa-apartment)
 
-#rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
+##rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
 
 # Check whether there's an X display.  Intended to use in gating tests that
 # require a display.
 #rosbuild_check_for_display(disp)
 
 #if(disp)
-#  rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 100.0)
+#  #rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 100.0)
 #endif(disp)
 
 
