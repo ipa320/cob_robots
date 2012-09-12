@@ -31,7 +31,7 @@
 
   <xacro:ur5_robot prefix="arm_"/>
   <joint name="arm_base_joint" type="fixed" >
-		<origin xyz="0.324 -0.191 0.565" rpy="0 0 3.14" />
+		<origin xyz="0.324 -0.191 0.565" rpy="0 0 -0.79" />
 		<parent link="base_link" />
 		<child link="arm_base_link" />
   </joint>
@@ -41,7 +41,7 @@
   </xacro:raw_torso>
 
   <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
-    <origin xyz="0.025 0 -0.08" rpy="0 0 0" />
+    <origin xyz="0.04 0.122 0" rpy="1.570796 0 0.12" />
   </xacro:raw_boxgripper>
 
 
