@@ -37,7 +37,7 @@
   <xacro:cob_base name="base"/>
 
   <xacro:cob_tray_powerball name="tray" parent="base_link">
-    <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
+    <origin xyz="${tray_x+0.2406} ${tray_y+0.1} ${tray_z+0.7320}" rpy="${tray_roll+M_PI/2} ${tray_pitch} ${tray_yaw}" />
   </xacro:cob_tray_powerball>
 
   <xacro:cob_torso_v1 name="torso" parent="base_link">
