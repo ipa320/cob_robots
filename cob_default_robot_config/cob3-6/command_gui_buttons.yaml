@@ -30,7 +30,22 @@ group3:
     [init,trigger,init],
     [recover,trigger,recover],
     [up,move,up],
-    [down,move,down]]
+    [down,move,down],
+    [at0,move,at0],
+    [deliverup,move,deliverup],
+    [displayup,move,displayup],
+    [deliverdown,move,deliverdown],
+    [displaydown,move,displaydown],
+    [storetray,move,storetray],
+    [upright,move,upright],
+    [to-back,move,to-back],
+    [back,move,back],
+    [down1,move,down1],
+    [up1,move,up1],
+    [down2,move,down2],
+    [up2,move,up2],
+    [down3,move,down3],
+    [up3,move,up3]]
 group4:
   group_name: arm settings
   component_name: arm
