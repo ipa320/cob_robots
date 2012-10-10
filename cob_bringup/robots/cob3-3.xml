@@ -38,8 +38,7 @@
 		<include file="$(find cob_bringup)/components/laser_rear.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_top.launch" />
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
+		<include file="$(find cob_bringup)/components/laser_top.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/base.launch" >
@@ -63,7 +62,10 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
+<<<<<<< HEAD
 		
+=======
+>>>>>>> review-ipa320
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -86,6 +88,12 @@
 		</include>
 
 		<!-- start camera sensors -->
+<<<<<<< HEAD
+=======
+		<include file="$(find cob_bringup)/components/relayboard.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+>>>>>>> review-ipa320
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
