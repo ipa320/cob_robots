@@ -63,11 +63,7 @@
 		<include file="$(find cob_bringup)/components/head.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> review-ipa320
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />

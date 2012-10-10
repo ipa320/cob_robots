@@ -62,10 +62,6 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-<<<<<<< HEAD
-		
-=======
->>>>>>> review-ipa320
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -89,11 +85,17 @@
 
 		<!-- start camera sensors -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		<include file="$(find cob_bringup)/components/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 >>>>>>> review-ipa320
+=======
+		<include file="$(find cob_bringup)/components/relayboard.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+>>>>>>> 54ab3a01fca50a8b16bb36e92e6dd65ce33e4fb7
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
