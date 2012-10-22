@@ -8,6 +8,6 @@
 	<rosparam command="load" ns="light_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/light.yaml"/>
 
 	<!-- start light -->
-	<node pkg="cob_light" type="cob_light_node" name="light_node" ns="light_controller" cwd="node" respawn="false" output="screen" />
+	<node pkg="cob_light" type="cob_light" name="light_node" ns="light_controller" cwd="node" respawn="false" output="screen" />
 
 </launch>
