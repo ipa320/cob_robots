@@ -27,7 +27,7 @@ class shutdown_robot():
         
         for pc in self.computers:
             
-            command = subprocess.Popen(['ssh', "-t",  self.username+"@"+pc, 'sudo', 'shutdown', '-r', 'now'])
+            command = subprocess.Popen(['ssh', "-t",  self.username+"@"+pc, 'sudo', 'shutdown', '-h', 'now'])
             time.sleep(5)
             msg = "Shutting down " + pc
 	    print msg
