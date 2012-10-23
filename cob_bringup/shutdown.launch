@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+	<rosparam file="$(find cob_bringup)/shutdown.yaml" command="load" />
+	
+	<node name="shutdown" pkg="cob_bringup" type="cob_shutdown.py" output="screen"/>
+
+</launch>
