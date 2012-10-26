@@ -1,9 +1,4 @@
-#Parameters for HwBoard
-
-#Device hwboard is attached to
 devicestring: /dev/ttyHwBoard
-
-#Define temperature sensor ids
 head_sensor: 0x103AEE7A
 eye_sensor: 0x1089D07A
 torso_module_sensor: 0x102BA47D

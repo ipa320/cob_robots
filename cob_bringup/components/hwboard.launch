@@ -4,7 +4,7 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-	<node name="hwboard" pkg="cob_hwboard" type="cob_hwboard.py" cwd="node" respawn="true" output="screen" >
+	<node name="hwboard" pkg="cob_hwboard" type="cob_hwboard.py" ns="hwboard" cwd="node" respawn="true" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/hwboard.yaml"/>
 	</node>
 
