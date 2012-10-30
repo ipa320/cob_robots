@@ -6,7 +6,7 @@ import sys
 import unittest
 import rospy
 import rostest
-
+import time
 from cob_hardware_test.srv import *
 from std_msgs.msg import String
 from simple_script_server import *
