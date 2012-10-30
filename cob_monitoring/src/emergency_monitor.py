@@ -11,6 +11,13 @@ sss = simple_script_server()
 
 status = None
 
+
+##################
+### TODO: add battery monitoring (flashing led! sound!)
+### TODO: add general diagnostics (flashing led! sound?)
+### TODO: add special diagnostics for base, arm, torso... this need to be configurable (flashing led! and sound?)
+### which color and flashing code assign to battery or diagnostics?
+##################
 def em_callback(em_status):
 	global status
 	if status != em_status.emergency_state:
