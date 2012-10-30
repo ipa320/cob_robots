@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import roslib
 roslib.load_manifest('cob_hardware_test')
-
+import time
 import sys
 import unittest
 import rospy
