@@ -44,7 +44,10 @@ class HardwareTest(unittest.TestCase):
 		self.assertTrue(dialog_client(1, 'Did I light up in red green and blue?'))
 
 if __name__ == '__main__':
-
+    	# Copied from hztest: A dirty hack to work around an apparent race condition at startup
+    	# that causes some hztests to fail.  Most evident in the tests of
+    	# rosstage.
+    	time.sleep(0.75)
 	try:
 		rostest.run('rostest', 'test_hardware_test', HardwareTest, sys.argv)
 	except KeyboardInterrupt, e:
