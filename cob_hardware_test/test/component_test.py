@@ -152,6 +152,10 @@ class UnitTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    # Copied from hztest: A dirty hack to work around an apparent race condition at startup
+    # that causes some hztests to fail.  Most evident in the tests of
+    # rosstage.
+    time.sleep(0.75)
     try:
         rostest.run('rostest', 'component_test', UnitTest, sys.argv)
     except KeyboardInterrupt, e:
