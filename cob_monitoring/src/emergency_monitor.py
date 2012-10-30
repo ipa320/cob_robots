@@ -21,7 +21,12 @@ def em_callback(em_status):
 			sss.set_light("green")
 		elif status == 1: # em stop
 			sss.set_light("red")
-			sss.say(["emergency stop executed"])
+			if em_status.scanner_stop and not em_status.emergency_button_stop:
+				sss.say(["laser emergency stop issued"])
+			elif not em_status.scanner_stop and em_status.emergency_button_stop:
+				sss.say(["emergency stop button pressed"])
+			else:
+				sss.say(["emergency stop issued"])
 		elif status == 2: # release
 			sss.set_light("yellow")
 			sss.say(["emergency stop released"])
