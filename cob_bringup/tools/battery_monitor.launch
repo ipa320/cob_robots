@@ -5,8 +5,8 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<!-- start relayboard node -->
-	<node name="monitor" pkg="cob_monitoring" type="emergency_monitor.py" respawn="false" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/bringup_monitor.yaml"/>
+	<node name="battery_monitor" pkg="cob_monitoring" type="battery_monitor.py" respawn="false" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/battery_monitor.yaml"/>
 	</node>
 
 </launch>
