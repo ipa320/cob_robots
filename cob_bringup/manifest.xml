@@ -29,6 +29,7 @@
   <depend package="cob_sick_s300"/>
   <depend package="cob_hokuyo"/>
   <depend package="cob_camera_sensors"/>
+  <depend package="cob_hwboard"/>
 
   <depend package="openni_camera"/>
   <depend package="openni_launch"/>
