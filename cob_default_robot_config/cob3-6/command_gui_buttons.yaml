@@ -29,8 +29,13 @@ group3:
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],
-    [up,move,up],
-    [down,move,down]]
+    [at0,move,at0],
+    [deliverup,move,deliverup],
+    [displayup,move,displayup],
+    [deliverdown,move,deliverdown],
+    [displaydown,move,displaydown],
+    [storetray,move,storetray],
+    ]
 group4:
   group_name: arm settings
   component_name: arm
