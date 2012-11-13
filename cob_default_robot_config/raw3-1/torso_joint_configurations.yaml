@@ -1,4 +1,5 @@
 joint_names: ["torso_lower_neck_tilt_joint","torso_pan_joint"]
-home: [[-0.48,0.0]]
+home: [[0.0,0.0]]
 right: [[0.2,0.0]]
 down: [[-0.48,0.0]]
+exhibition: [[0.48,0.0]]
