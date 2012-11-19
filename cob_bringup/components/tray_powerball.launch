@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<node name="canopenmaster" pkg="ros_canopen" type="ros_canopenmasternode" respawn="false" output="screen" >
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/canopenmaster.yaml"/>
+	</node>
+	<rosparam ns="tray_controller" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/tray.yaml"/>
+	<node ns="tray_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller" cwd="node" respawn="false" output="screen" />
+
+</launch>

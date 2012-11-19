@@ -24,8 +24,16 @@
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
 
-		<!-- wifi monitor -->
-		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
+		<!-- monitoring -->
+		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
@@ -112,7 +120,9 @@
 		</include>
 
 		<!-- start additional packages -->
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+
 		<include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
