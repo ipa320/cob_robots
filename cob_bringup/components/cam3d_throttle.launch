@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+
+<node pkg="nodelet" type="nodelet" name="cam3d_throttle"  args="standalone cob_camera_sensors/Cam3DThrottle" output="screen">
+	<remap from="rgb_cloud_in" to="/cam3d/rgb/points"/>
+	<remap from="rgb_image_in" to="/cam3d/rgb/image_raw"/>
+	<remap from="rgb_caminfo_in" to="/cam3d/rgb/camera_info"/>
+	<remap from="depth_image_in" to="/cam3d/depth/image_raw"/>
+	<remap from="cloud_in" to="/cam3d/depth/points"/>
+	<remap from="rgb_cloud_out" to="/cam3d/rgb/points_throttled"/>
+	<remap from="rgb_image_out" to="/cam3d/rgb/image_raw_throttled"/>
+	<remap from="rgb_caminfo_out" to="/cam3d/rgb/camera_info_throttled"/>
+	<remap from="depth_image_out" to="/cam3d/depth/image_raw_throttled"/>
+	<remap from="cloud_out" to="/cam3d/depth/points_throttled"/>
+	<param name="max_rate" value="5.0"/>
+</node>
+</launch>
+

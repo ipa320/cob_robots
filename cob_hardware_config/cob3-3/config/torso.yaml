@@ -9,6 +9,8 @@ min_publish_duration: 0.1
 horizon: 0.1 # [s]
 frequency: 68
 
+force_use_movevel: true
+
 # trajectory controller parameters
 ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.2 # rad/sec^2

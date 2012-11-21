@@ -31,14 +31,14 @@ group3:
     [recover,trigger,recover],
     [up,move,up],
     [down,move,down]]
-group4:
-  group_name: arm settings
-  component_name: arm
-  buttons: [[stop,trigger,stop],
-    [undefined mode,mode,undefined],
-    [position mode,mode,position],
-    [velocity mode,mode,velocity],
-    [gravcomp mode,mode,gravcomp]]
+#group4:
+#  group_name: arm settings
+#  component_name: arm
+#  buttons: [[stop,trigger,stop],
+#    [undefined mode,mode,undefined],
+#    [position mode,mode,position],
+#    [velocity mode,mode,velocity],
+#    [gravcomp mode,mode,gravcomp]]
 group5:
   group_name: arm pos
   component_name: arm
@@ -74,7 +74,7 @@ group7:
     [point,move,point],
     [fist,move,fist]]
 group8:
-  group_name: eyes
+  group_name: head
   component_name: head
   buttons: [[stop,trigger,stop],
     [init,trigger,init],

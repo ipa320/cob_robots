@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<!-- start relayboard node -->
+	<node name="voltage_controller" pkg="cob_voltage_control" type="cob_voltage_control" respawn="false" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/voltage_controller.yaml"/>
+		<remap from="pub_powerstate_" to="power_state"/>
+		<remap from="pub_em_stop_state_" to="power_board/state"/>
+		<remap from="pub_relayboard_state_" to="/emergency_stop_state"/>
+	</node>
+
+</launch>
