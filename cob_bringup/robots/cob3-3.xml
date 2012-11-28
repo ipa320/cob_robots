@@ -105,7 +105,8 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/cam3d_throttle.launch" >
-			<arg name="robot" value="$(arg robot)" />
+			<arg name="namespace" value="/cam3d" />
+			<arg name="rate" value="5.0" />
 		</include>
 	</group>
 
