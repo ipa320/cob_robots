@@ -69,6 +69,16 @@ rosbuild_add_roslaunch_check(common robot:=raw3-2)
 rosbuild_add_roslaunch_check(common ROBOT=raw3-2)
 rosbuild_add_rostest(test/urdf_raw3-2.test)
 
+# rostest for raw3-3
+rosbuild_add_roslaunch_check(common robot:=raw3-3)
+rosbuild_add_roslaunch_check(common ROBOT=raw3-3)
+rosbuild_add_rostest(test/urdf_raw3-3.test)
+
+# rostest for raw3-4
+rosbuild_add_roslaunch_check(common robot:=raw3-4)
+rosbuild_add_roslaunch_check(common ROBOT=raw3-4)
+rosbuild_add_rostest(test/urdf_raw3-4.test)
+
 # rostest for desire
 rosbuild_add_roslaunch_check(common robot:=desire)
 rosbuild_add_roslaunch_check(common ROBOT=desire)
