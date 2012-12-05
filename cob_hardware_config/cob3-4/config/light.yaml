@@ -1,3 +1,0 @@
-devicestring: /dev/ttyLed
-baudrate: 230400
-invert_output: false

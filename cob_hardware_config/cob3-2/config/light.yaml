@@ -1,3 +1,2 @@
 devicestring: /dev/ttyUSB0
 baudrate: 230400
-invert_output: false
