@@ -18,9 +18,16 @@ class emergency_stop_monitor():
 	def __init__(self):
 		rospy.Subscriber("/emergency_stop_state", EmergencyStopState, self.emergency_callback)
 		self.em_status = EmergencyStopState()
+		self.first_time = True
 
 	## Emergency stop monitoring
 	def emergency_callback(self,msg):
+		# skip first message to avoid speach output on startup
+		if self.first_time:
+			self.first_time = False
+			self.em_status = msg
+			return
+	
 		if self.em_status.emergency_state != msg.emergency_state:
 			self.em_status = msg
 			rospy.loginfo("Emergency change to "+ str(self.em_status.emergency_state))
