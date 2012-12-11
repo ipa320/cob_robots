@@ -4,7 +4,7 @@
 	<!-- perform test -->
 	<test test-name="test_arm" pkg="cob_hardware_test" type="component_test.py" name="cob_arm" > 	
 	 <param name="component"  value="arm" />
-	 <param name="test_target" value="home" />
+	 <param name="test_target" value="pregrasp" />
 	 <param name="default_target" value="folded" />
 	 <param name="wait_time" value="30.0" />
 	 <param name="error_range" value="0.1" />  

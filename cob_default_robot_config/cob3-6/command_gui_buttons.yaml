@@ -35,12 +35,12 @@ group3:
     [displaydown,move,displaydown],
     [storetray,move,storetray],
     ]
-#group4:
-#  group_name: arm settings
-#  component_name: arm
-#  buttons: [[stop,trigger,stop],
-#    [init,trigger,init],
-#    [recover,trigger,recover]]
+group4:
+  group_name: arm settings
+  component_name: arm
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover]]
 group5:
   group_name: arm pos
   component_name: arm
