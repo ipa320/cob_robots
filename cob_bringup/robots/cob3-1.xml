@@ -5,6 +5,7 @@
 	<arg name="robot" value="cob3-1"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
+	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -18,27 +19,84 @@
 		<machine name="pc1" address="$(arg pc1)" default="true"/>
 
 		<!-- pc monitor -->
-<!--		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
--->
-	<!-- tbd -->
 
+		<!-- wifi monitor -->
+		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" /-->
+
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+		<!-- startup hardware -->
+		<!-- lower robot -->
+		<include file="$(find cob_bringup)/components/relayboard.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/light.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/laser_front.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/laser_rear.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/laser_top.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/base.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- upper robot -->
+		<include file="$(find cob_bringup)/components/torso.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/tray.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<!--include file="$(find cob_bringup)/components/lbr.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
+		<include file="$(find cob_bringup)/components/sdh.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/head.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/teleop.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
-	<group>
+	<!--group>
 		<machine name="pc2" address="$(arg pc2)" default="true"/>
 
-		<!-- pc monitor -->
-<!--		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
--->
-		<!-- tbd -->
-
-	</group>
+		<include file="$(find cob_bringup)/components/left_pike.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/right_pike.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/kinect.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group-->
 
 	<machine name="pc1" address="$(arg pc1)" default="true"/>
 
