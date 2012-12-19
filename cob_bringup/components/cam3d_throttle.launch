@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="namespace"/>
-	<arg name="rate"/>
+	<arg name="namespace" default="/cam3d"/>
+	<arg name="rate" default="5.0"/>
 
 	<node pkg="nodelet" type="nodelet" name="$(anon cam3d_throttler)"  args="standalone cob_camera_sensors/Cam3DThrottle" output="screen">
 		<remap from="rgb_cloud_in" to="$(arg namespace)/rgb/points"/>
