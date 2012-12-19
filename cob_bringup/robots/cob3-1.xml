@@ -3,9 +3,9 @@
 
 	<!-- args -->
 	<arg name="robot" value="cob3-1"/>
-	<arg name="pc1" default="cob3-1-pc1"/>
-	<arg name="pc2" default="cob3-1-pc2"/>
-	<arg name="pc3" default="cob3-1-pc3"/>
+	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
+	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -24,7 +24,7 @@
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
 
-		<!-- wifi monitor -->
+		<!-- monitoring -->
 		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" /-->
 
 		<!-- start robot_state_publisher -->
@@ -83,14 +83,17 @@
 	<group>
 		<machine name="pc2" address="$(arg pc2)" default="true"/>
 
+		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
-		<include file="$(find cob_bringup)/components/left_pike.launch" >
+
+		<!-- start camera sensors -->
+		<include file="$(find cob_bringup)/components/pike_left.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/components/right_pike.launch" >
+		<!--include file="$(find cob_bringup)/components/pike_right.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
 		<include file="$(find cob_bringup)/components/kinect.launch" >

@@ -36,6 +36,7 @@
   <depend package="image_proc"/>
   <depend package="hokuyo_node"/>
   <depend package="prosilica_camera"/>
+  <depend package="camera1394"/>
   <depend package="nodelet"/>
 
   <!-- tools -->
