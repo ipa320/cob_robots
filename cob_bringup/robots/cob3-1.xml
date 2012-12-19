@@ -3,7 +3,7 @@
 
 	<!-- args -->
 	<arg name="robot" value="cob3-1"/>
-	<arg name="pc1" default="localhost"/>
+	<arg name="pc1" default="cob3-1-pc1"/>
 	<arg name="pc2" default="cob3-1-pc2"/>
 	<arg name="pc3" default="cob3-1-pc3"/>
 
@@ -58,9 +58,9 @@
 		<include file="$(find cob_bringup)/components/tray.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/components/lbr.launch" >
+		<include file="$(find cob_bringup)/components/lbr.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 		<include file="$(find cob_bringup)/components/sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -83,10 +83,10 @@
 	<group>
 		<machine name="pc2" address="$(arg pc2)" default="true"/>
 
-		<!--include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
-		</include-->
+		</include>
 		<include file="$(find cob_bringup)/components/left_pike.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
