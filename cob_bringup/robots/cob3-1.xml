@@ -81,7 +81,7 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" default="true"/>
+		<machine name="pc2" address="$(arg pc2)"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
