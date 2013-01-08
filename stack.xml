@@ -8,7 +8,7 @@
   <license>LGPL</license>  
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_robots</url>
-  <depend stack="camera_drivers" /> <!-- prosilica_camera -->
+  <depend stack="camera_drivers" /> <!-- camera1394, prosilica_camera -->
   <depend stack="cob_calibration_data" /> <!-- cob_calibration_data -->
   <depend stack="cob_command_tools" /> <!-- cob_teleop, cob_command_gui, cob_dashboard, cob_script_server -->
   <depend stack="cob_common" /> <!-- raw_description, cob_description -->
