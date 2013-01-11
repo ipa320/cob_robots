@@ -113,6 +113,26 @@ rosbuild_add_roslaunch_check(tools robot:=raw3-2 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools ROBOT=raw3-2 ROBOT_ENV=ipa-apartment)
 
+# rostest for raw3-3
+rosbuild_add_roslaunch_check(robots/raw3-3.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/raw3-3.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/raw3-3.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/raw3-3.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=raw3-3 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=raw3-3 robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=raw3-3 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=raw3-3 ROBOT_ENV=ipa-apartment)
+
+# rostest for raw3-4
+rosbuild_add_roslaunch_check(robots/raw3-4.xml robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/raw3-4.xml robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(robots/raw3-4.xml ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(robots/raw3-4.xml ROBOT_ENV=ipa-apartment)
+rosbuild_add_roslaunch_check(tools robot:=raw3-4 robot_env:=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools robot:=raw3-4 robot_env:=ipa-apartment)
+rosbuild_add_roslaunch_check(tools ROBOT=raw3-4 ROBOT_ENV=ipa-kitchen)
+rosbuild_add_roslaunch_check(tools ROBOT=raw3-4 ROBOT_ENV=ipa-apartment)
+
 # rostest for desire
 rosbuild_add_roslaunch_check(robots/desire.xml robot_env:=ipa-kitchen)
 rosbuild_add_roslaunch_check(robots/desire.xml robot_env:=ipa-apartment)
