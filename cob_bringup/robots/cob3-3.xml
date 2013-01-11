@@ -106,7 +106,7 @@
 		</include>
 		<include file="$(find cob_bringup)/components/cam3d_throttle.launch" >
 			<arg name="namespace" value="/cam3d" />
-			<arg name="rate" value="5.0" />
+			<arg name="rate" value="1.0" />
 		</include>
 	</group>
 
