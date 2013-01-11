@@ -27,6 +27,8 @@ rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-6.launch robot:
 # rostest raw
 rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-1.launch robot:=raw3-1)
 rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-2.launch robot:=raw3-2)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-3.launch robot:=raw3-3)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-4.launch robot:=raw3-4)
 
 # rostest desire
 rosbuild_add_roslaunch_check(ros/launch/default_controllers_desire.launch robot:=desire)
