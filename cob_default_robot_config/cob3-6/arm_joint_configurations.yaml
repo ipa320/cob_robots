@@ -12,8 +12,8 @@ look_at_table: [[2.9914090633392334, -0.51343035697937012, 2.984553337097168, 0.
 overtray: [[-1.1030212640762329, -1.1273938417434692, 2.1312966346740723, 1.2573401927947998, 0.041005752980709076, 1.3575664758682251, -0.091713562607765198]]
 intermediateback: [[2.2222137451171875, -0.99453413486480713, 1.8660991191864014, 1.8985495567321777, -0.82216966152191162, 1.7891656160354614, 1.1136631965637207]]
 intermediatefront: [[-0.16980814933776855, -0.43355348706245422, 1.7840240001678467, 1.8985545635223389, -0.48893314599990845, 0.84258431196212769, 0.28832489252090454]]
-#wavein: [[-0.1, 0.5, 0.0, 0.5, 0.0, 0.5, -1.5708]]
-#waveout: [[-0.1, 0.5, 0.0, -0.5, 0.0, -0.5, -1.5708]]
+wavein: [[-0.1, 0.5, 0.0, 0.5, 0.0, 0.5, -1.5708]]
+waveout: [[-0.1, 0.5, 0.0, -0.5, 0.0, -0.5, -1.5708]]
 
 
 
@@ -22,4 +22,4 @@ folded-to-look_at_table: [pre_look_at_table,look_at_table]
 look_at_table-to-folded: [pre_look_at_table,folded]
 grasp-to-tray: [intermediateback, intermediatefront, overtray]
 tray-to-folded: [intermediatefront, intermediateback, folded]
-#wave: [waveout, wavein, waveout, wavein]
+wave: [waveout, wavein, waveout, wavein]
