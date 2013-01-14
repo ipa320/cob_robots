@@ -34,10 +34,10 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 # rostest for cob3-1
-rosbuild_add_roslaunch_check(robots/cob3-1.xml robot_env:=ipa-kitchen)
-rosbuild_add_roslaunch_check(robots/cob3-1.xml robot_env:=ipa-apartment)
-rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT_ENV=ipa-kitchen)
-rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT_ENV=ipa-apartment)
+#rosbuild_add_roslaunch_check(robots/cob3-1.xml robot_env:=ipa-kitchen)   # disabled due to electric incompatible machine tag attribute "env-loader"
+#rosbuild_add_roslaunch_check(robots/cob3-1.xml robot_env:=ipa-apartment) # disabled due to electric incompatible machine tag attribute "env-loader"
+#rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT_ENV=ipa-kitchen)    # disabled due to electric incompatible machine tag attribute "env-loader"
+#rosbuild_add_roslaunch_check(robots/cob3-1.xml ROBOT_ENV=ipa-apartment)  # disabled due to electric incompatible machine tag attribute "env-loader"
 rosbuild_add_roslaunch_check(tools robot:=cob3-1 robot_env:=ipa-kitchen)
 rosbuild_add_roslaunch_check(tools robot:=cob3-1 robot_env:=ipa-apartment)
 rosbuild_add_roslaunch_check(tools ROBOT=cob3-1 ROBOT_ENV=ipa-kitchen)
