@@ -26,6 +26,7 @@
 
   <!-- components: sensors -->
   <depend package="cob_relayboard"/>
+  <depend package="cob_voltage_control"/>
   <depend package="cob_sick_s300"/>
   <depend package="cob_hokuyo"/>
   <depend package="cob_camera_sensors"/>
