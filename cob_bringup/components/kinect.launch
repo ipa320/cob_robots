@@ -3,7 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 
-	<param name="/cam3d/driver/data_skip" type="int" value="10"/>
+	<param name="/cam3d/driver/data_skip" type="int" value="2"/>
 
 	<include file="$(find openni_launch)/launch/openni.launch">
 		<arg name="camera" value="cam3d"/>
