@@ -106,6 +106,8 @@
 		</include>
 		<include file="$(find cob_image_flip)/ros/launch/image_flip_nodelet.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="start_manager" value="false"/>
+			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
 		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
 			<arg name="namespace" value="/cam3d" />
