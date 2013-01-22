@@ -49,7 +49,7 @@
   </xacro:cob_lbr>
   
   <xacro:cob_head_v3 name="head" parent="head_cover_link">
-    <origin xyz="0 -0.173 0" rpy="0 0 0" />
+    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:cob_head_v3>
   
   <xacro:schunk_sdh name="sdh" parent="arm_7_link">
