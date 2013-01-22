@@ -7,6 +7,8 @@ Axes\ map\ origin.Enabled=1
 Axes\ map\ origin.Length=1
 Axes\ map\ origin.Radius=0,1
 Axes\ map\ origin.Reference\ Frame=/map
+Base\ Collision\ Marker.Enabled=1
+Base\ Collision\ Marker.Marker\ Topic=/collision_velocity_filter/velocity_limited_marker
 Grid.Alpha=0,5
 Grid.Cell\ Size=1
 Grid.ColorR=0,5
@@ -28,6 +30,11 @@ Inflated\ Obstacles.ColorG=0
 Inflated\ Obstacles.ColorB=1
 Inflated\ Obstacles.Enabled=1
 Inflated\ Obstacles.Topic=/move_base/local_costmap/inflated_obstacles
+Interactive\ Teleop.Enabled=1
+Interactive\ Teleop.Show\ Axes=0
+Interactive\ Teleop.Show\ Descriptions=1
+Interactive\ Teleop.Show\ Tool\ Tips=1
+Interactive\ Teleop.Update\ Topic=/cob_interactive_teleop/update
 Laser\ Scan\ Front.Alpha=1
 Laser\ Scan\ Front.Billboard\ Size=0,01
 Laser\ Scan\ Front.Color\ Transformer=Intensity
@@ -84,13 +91,12 @@ Laser\ Scan\ Rear..IntensityMin\ ColorG=1
 Laser\ Scan\ Rear..IntensityMin\ ColorB=0
 Laser\ Scan\ Rear..IntensityMin\ Intensity=101
 Laser\ Scan\ Rear..IntensityUse\ full\ RGB\ spectrum=0
+Light\ Marker.Enabled=1
+Light\ Marker.Marker\ Topic=/light_controller/marker
 Map.Alpha=0,7
 Map.Draw\ Behind=0
 Map.Enabled=1
 Map.Topic=/map
-Marker.Enabled=1
-Marker.Marker\ Topic=/light_controller/marker
-Marker.color=1
 Obstacles.Alpha=1
 Obstacles.ColorR=1
 Obstacles.ColorG=0
@@ -245,7 +251,7 @@ Tool\ 2D\ Nav\ GoalTopic=move_base_simple/goal
 Tool\ 2D\ Pose\ EstimateTopic=initialpose
 Camera\ Type=rviz::OrbitViewController
 Camera\ Config=0.727792 5.57213 9.63598 -0.539383 -0.367984 -0.783275
-Property\ Grid\ State=selection=;expanded=.Global Options,TF.Enabled.TF.StatusTopStatus,TF.Enabled.TF.Tree,Marker.Enabled.Marker.Namespaces;scrollpos=0,0;splitterpos=150,301;ispageselected=1
+Property\ Grid\ State=selection=Base Collision Marker.Enabled;expanded=.Global Options,TF.Enabled.TF.StatusTopStatus,TF.Enabled.TF.Tree,Base Collision Marker.Enabled.Base Collision Marker.Namespaces,Light Marker.Enabled.Light Marker.Namespaces;scrollpos=0,0;splitterpos=171,358;ispageselected=1
 [Display0]
 Name=Grid
 Package=rviz
@@ -283,26 +289,34 @@ Name=Inflated Obstacles
 Package=rviz
 ClassName=rviz::GridCellsDisplay
 [Display9]
+Name=Interactive Teleop
+Package=rviz
+ClassName=rviz::InteractiveMarkerDisplay
+[Display10]
+Name=Base Collision Marker
+Package=rviz
+ClassName=rviz::MarkerDisplay
+[Display11]
 Name=Axes map origin
 Package=rviz
 ClassName=rviz::AxesDisplay
-[Display10]
+[Display12]
 Name=Path dwa global
 Package=rviz
 ClassName=rviz::PathDisplay
-[Display11]
+[Display13]
 Name=Path dwa local
 Package=rviz
 ClassName=rviz::PathDisplay
-[Display12]
+[Display14]
 Name=Path tr global
 Package=rviz
 ClassName=rviz::PathDisplay
-[Display13]
+[Display15]
 Name=Path tr local
 Package=rviz
 ClassName=rviz::PathDisplay
-[Display14]
-Name=Marker
+[Display16]
+Name=Light Marker
 Package=rviz
 ClassName=rviz::MarkerDisplay

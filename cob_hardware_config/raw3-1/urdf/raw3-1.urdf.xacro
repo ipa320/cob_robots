@@ -17,7 +17,6 @@
   <!-- raw boxgripper -->
   <include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
 
- 
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
@@ -25,7 +24,7 @@
   <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
 
   <!-- ur_arm -->
- <include filename="$(find ur5_description)/urdf/model.urdf.xacro" />   
+  <include filename="$(find ur5_description)/urdf/model.urdf.xacro" />
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
@@ -43,6 +42,5 @@
   <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
     <origin xyz="0.04 0.122 0" rpy="1.570796 0 0.12" />
   </xacro:raw_boxgripper>
-
 
 </robot>

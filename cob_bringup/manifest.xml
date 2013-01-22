@@ -36,6 +36,8 @@
   <depend package="image_proc"/>
   <depend package="hokuyo_node"/>
   <depend package="prosilica_camera"/>
+  <depend package="camera1394"/>
+  <depend package="nodelet"/>
 
   <!-- tools -->
   <depend package="cob_command_gui"/>
@@ -44,6 +46,7 @@
   <depend package="cob_collision_velocity_filter"/>
   <depend package="cob_footprint_observer"/>
   <depend package="cob_base_velocity_smoother"/>
+  <depend package="cob_monitoring"/>
   
   <depend package="joy"/>
   <depend package="rviz"/>
