@@ -10,8 +10,8 @@
 	</include>
 	
 	<!-- upload default configuration parameters -->
-	<include file="$(arg pkg_env_config)/upload_param.launch">
+	<!--include file="$(arg pkg_env_config)/upload_param.launch">
 		<arg name="robot_env" value="$(arg robot_env)" />
-	</include>
+	</include-->
 
 </launch>

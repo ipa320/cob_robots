@@ -68,6 +68,9 @@
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
 
+		<include file="$(find cob_bringup)/components/kinect.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<!-- start camera sensors -->
 		<!-- tbd -->
 	</group>
