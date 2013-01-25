@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
- 
-	<!-- include file="$(find cob_bringup_sim)/launch/robot.launch" /-->
-	<node pkg="joy" type="joy" name="joy"/>	
-	<include file="$(find cob_hardware_test)/components/joy.test.xml" />
-
-</launch>
