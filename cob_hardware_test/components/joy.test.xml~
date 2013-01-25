@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+   <test test-name="hz_joy" pkg="cob_hardware_test" type="joy_test.py" name="hztest_joy">
+    <param name="topic" value="/joy" />  
+    <param name="hz" value= "2500.25" />
+    <param name="hzerror" value="2500" />
+    <param name="test_duration" value="2.0" />  
+   </test>
+        
+</launch>

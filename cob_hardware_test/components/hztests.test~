@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+	   	
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" />	
+	<include file="$(find cob_default_robot_config)/upload_param.launch" /> 
+	<param name="time-limit" type="double" value="6.0" /> <!-- doesn't work (neither time_limit) therefore changed in $(find ros_comm)/tools/rostest/src/rostest/baretest.py:124 -->
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/hztests_list.yaml" command="load"/>
+	
+	<test test-name="cob_hardware_test" pkg="cob_hardware_test" type="hztests" name="cob_hardware_test" time-limit="1000.0" /> 	
+	
+	
+
+</launch>

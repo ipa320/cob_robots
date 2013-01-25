@@ -1,0 +1,224 @@
+cam3d_rgb_camera_info: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/rgb/camera_info,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_depth_camera_info: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/depth/camera_info,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_depth_image_raw: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/depth/image_raw,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_depth_image: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/depth/image,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_depth_disparity: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/depth/disparity,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_depth_points: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/depth/points,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_rgb_image_color: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/rgb/image_color,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_rgb_image_mono: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/rgb/image_mono,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_rgb_image_raw: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/rgb/image_raw,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+cam3d_rgb_points: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /cam3d/rgb/points,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_left_camera_info: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/left/camera_info,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_left_image_color: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/left/image_color,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_left_image_mono: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/left/image_mono,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_left_image_raw: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/left/image_raw,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_left_image_rect: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/left/image_rect,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_left_image_rect_color: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/left/image_rect_color,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_right_camera_info: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/right/camera_info,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_right_image_color: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/right/image_color,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_right_image_mono: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/right/image_mono,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_right_image_raw: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/right/image_raw,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_right_image_rect: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/right/image_rect,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+prosilica_right_image__rect_color: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /stereo/right/image_rect_color,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+laser_top: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /scan_top,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+laser_front: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /scan_front,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+laser_rear: {
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /scan_rear,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+tray_sensor_1: {
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /tray_sensors/range_1,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+tray_sensor_2: {
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /tray_sensors/range_2,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+tray_sensor_3: {
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /tray_sensors/range_3,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+tray_sensor_4: {
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /tray_sensors/range_4,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+power_board_state: {
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /power_board/state,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+power_state: {
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /power_state,
+  test_duration: 2.0,
+  wait_time: 30.0
+}
+emergency_stop_state: {
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /emergency_stop_state,
+  test_duration: 2.0,
+  wait_time: 30.0
+}

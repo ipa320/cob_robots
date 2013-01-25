@@ -14,7 +14,7 @@ from pr2_controllers_msgs.msg import *
 
 
 def dialog_client(dialog_type, message):
-    #dialog type: 0=confirm 1=question
+	#dialog type: 0=confirm 1=question
 	rospy.wait_for_service('dialog')
 	try:
 		dialog = rospy.ServiceProxy('dialog', Dialog)
@@ -33,21 +33,22 @@ class HardwareTest(unittest.TestCase):
 		self.sss = simple_script_server()
 
 	def test_play(self):
-		dialog_client(0, 'Listen up for the Sound' )
+		dialog_client(0, 'Listen up for the sound' )
 		rospy.set_param("script_server/sound/language","de")
 		handle = self.sss.play("grasp_tutorial_01")
 		self.assertEqual(handle.get_state(), 3)
-		self.assertTrue(dialog_client(1, 'Did you hear File?'))		
-		
+		self.assertTrue(dialog_client(1, 'Did you hear some audio file?'))
 		
 	def test_say(self):
-		dialog_client(0, 'Listen up for the Sound' )
+		dialog_client(0, 'Listen up for the sound' )
 		handle = self.sss.say(["Hello"])
 		self.assertEqual(handle.get_state(), 3)
-		self.assertTrue(dialog_client(1, 'Did you hear Hello?'))
+		if handle.get_error_code() != 0:
+			error_msg = 'Could say something'
+			self.fail(error_msg + "; errorCode: " + str(handle.get_error_code()))
+		self.assertTrue(dialog_client(1, 'Did you hear <<Hello>>?'))
 
 if __name__ == '__main__':
-
 	try:
 		rostest.run('rostest', 'test_hardware_test', HardwareTest, sys.argv)
 	except KeyboardInterrupt, e:

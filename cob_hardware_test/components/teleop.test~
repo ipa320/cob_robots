@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+	
+   <include file="$(find cob_bringup)/tools/teleop.launch" />
+   
+   <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
+   
+   <test test-name="hz_teleop" pkg="cob_hardware_test" type="teleop_test.py" name="hztest_teleop">
+    <param name="topic" value="/base_controller/command_safe" />  
+    <param name="min_target_x" value= "0.05" />
+    <param name="min_target_y" value="0.05" />
+    <param name="wait_time" value="10.0" />
+    <param name="user_time" value="5.5" />
+    <param name="user_message" value="Move the left base controller stick to the left top and hold the deadmans button after confirm" />
+   </test>
+</launch>

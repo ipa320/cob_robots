@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+ <!-- hztest wrench -->
+   <test test-name="hz_wrench" pkg="rostest" type="hztest" name="hztest_wrench">
+    <param name="topic" value="/wrench" />  
+    <param name="hz" value= "55.25" />
+    <param name="hzerror" value="54.75" />
+    <param name="test_duration" value="2.0" />  
+   </test>
+</launch>   
+   

@@ -12,9 +12,8 @@ from std_msgs.msg import String
 from simple_script_server import *
 from pr2_controllers_msgs.msg import *
 
-
 def dialog_client(dialog_type, message):
-    #dialog type: 0=confirm 1=question
+	#dialog type: 0=confirm 1=question
 	rospy.wait_for_service('dialog')
 	try:
 		dialog = rospy.ServiceProxy('dialog', Dialog)
@@ -34,14 +33,22 @@ class HardwareTest(unittest.TestCase):
 
 	def test_set_light(self):
 		self.assertTrue(dialog_client(0, 'Watch out for the Light' ))
-		self.sss.set_light("red")
-		rospy.sleep(1.0)
-		self.sss.set_light("green")
-		rospy.sleep(1.0)
-		self.sss.set_light("blue")
-		rospy.sleep(1.0)
-		self.sss.set_light([ 0.0, 0.0, 0.0 ])#turn light off
-		self.assertTrue(dialog_client(1, 'Did I light up in red green and blue?'))
+		self.change_light("red")
+		rospy.sleep(3.0)
+		self.change_light("green")
+		rospy.sleep(3.0)
+		self.change_light("blue")
+		rospy.sleep(3.0)
+		self.change_light("black")
+		self.assertTrue(dialog_client(1, 'Did I light up in red, green and blue?'))
+
+	def change_light(self,color):
+		handle_light = self.sss.set_light(color)
+		self.assertEqual(handle_light.get_state(), 3) # state 3 equals errorcode 0 therefore the following will never be executed
+		if handle_light.get_error_code() != 0:
+			error_msg = 'Could not set lights'
+			self.fail(error_msg + "; errorCode: " + str(handle_light.get_error_code()))
+
 
 if __name__ == '__main__':
 
