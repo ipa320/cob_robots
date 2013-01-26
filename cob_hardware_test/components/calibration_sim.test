@@ -7,7 +7,7 @@
 
     <include file="$(find cob_hardware_test)/components/calibration.test.xml" />
     <!-- start rviz with configuration -->
-    <machine name="rviz_machine" address="$(env RVIZ_MACHINE)" ros-root="/opt/ros/electric/ros" ros-package-path="$(env ROS_PACKAGE_PATH)" user="fmw-ms" />
+    <machine name="rviz_machine" address="localhost" ros-root="/opt/ros/electric/ros" ros-package-path="$(env ROS_PACKAGE_PATH)" user="fmw-ms" />
      
     <node machine="rviz_machine" pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(find cob_hardware_test)/config/calibration.vcg" respawn="false" output="screen" />
 
