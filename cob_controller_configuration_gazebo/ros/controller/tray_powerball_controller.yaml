@@ -1,0 +1,48 @@
+tray_controller:
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - tray_1_joint 
+    - tray_2_joint 
+    - tray_3_joint 
+  gains:
+    tray_1_joint:
+      p: 100.0
+      i: 12.0
+      d: 0.5
+      i_clamp: 0.5 
+    tray_2_joint:
+      p: 100.0
+      i: 12.0
+      d: 0.5
+      i_clamp: 0.5 
+    tray_3_joint:
+      p: 100.0
+      i: 12.0
+      d: 0.5
+      i_clamp: 0.5 
+
+    
+  tray_joint_trajectory_action_node:
+    joints:
+    - tray_1_joint 
+    - tray_2_joint 
+    - tray_3_joint 
+    constraints:
+      goal_time: 0.6
+      tray_1_joint:
+        goal: 0.1
+      tray_2_joint:
+        goal: 0.1
+      tray_3_joint:
+        goal: 0.1
+
+tray_sensors: 
+  sensors:
+    - laser_topic: "range_1_sim"
+      range_topic: "range_1"
+    - laser_topic: "range_2_sim"
+      range_topic: "range_2"
+    - laser_topic: "range_3_sim"
+      range_topic: "range_3"
+    - laser_topic: "range_4_sim"
+      range_topic: "range_4"

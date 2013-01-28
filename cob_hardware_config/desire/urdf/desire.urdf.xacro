@@ -9,6 +9,7 @@
   <!-- misc common stuff? -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+  <include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- desire calibration -->
   <include filename="$(find cob_calibration_data)/desire/calibration/calibration.urdf.xacro" />
