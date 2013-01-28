@@ -1,6 +1,11 @@
 pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
+  scenarios:
+    type: GenericAnalyzer
+    path: Scenarios_Nodes
+    find_and_remove_prefix: brsu_node_status_
+
   computers:
     type: AnalyzerGroup
     path: Computers
