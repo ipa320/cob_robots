@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-    <include file="$(find cob_bringup)/components/prosilica_right.launch" />
-    <include file="$(find cob_hardware_test)/components/prosilica.test.xml" >
-    	<arg name="camera_namespace" value="/stereo/right" />
-    </include>
-
-</launch>

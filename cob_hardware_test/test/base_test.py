@@ -52,7 +52,7 @@ class HardwareTest(unittest.TestCase):
 
 	def test_base(self):
 		self.sss.init("base")
-		self.assertTrue(dialog_client(0, 'Ready to move my base ?' ))
+		self.assertTrue(dialog_client(0, 'Ready to move base?' ))
 		handle = self.sss.move_base_rel("base", [self.move_x, self.move_y, self.move_theta])
 		self.assertEqual(handle.get_state(), 3)
 		self.assertTrue(dialog_client(1, 'Did I move?'))

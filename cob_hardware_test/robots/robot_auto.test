@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 	
-	<!-- bringup all robot components -->
+
 	<include file="$(find cob_bringup)/robot.launch" />
-
-	<!-- include components to test -->
-	<include file="$(find cob_hardware_test)/robots/$(env ROBOT)_auto.test.xml" />
-
+	<include file="$(find cob_default_robot_config)/upload_param.launch" />
+	<!-- hztests -->	
+	<include file="$(find cob_hardware_test)/components/hztest.test.xml" />
+	
+	<!-- test additional packages -->
+	<include file="$(find cob_hardware_test)/tools/wifi_monitor.test.xml" />
+	<include file="$(find cob_hardware_test)/tools/diagnostics_aggregator.test.xml" />
 </launch>

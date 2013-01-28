@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	   	
+	<include file="$(find cob_bringup)/robots/cob3-3.launch" />	
+	<include file="$(find cob_default_robot_config)/upload_param.launch" /> 
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/hztests_list.yaml" command="load"/>
+	
+	<test test-name="cob_hardware_test" pkg="cob_hardware_test" type="hztests" name="cob_hardware_test" time-limit="1000.0" /> 	
+	
+	
+
+</launch>
