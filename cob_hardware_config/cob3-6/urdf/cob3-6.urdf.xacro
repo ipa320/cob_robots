@@ -48,8 +48,8 @@
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:schunk_lwa>
   
-  <xacro:cob_head_v3 name="head" parent="head_cover_link">
-    <origin xyz="0 -0.173 0" rpy="0 0 0" />
+  <xacro:cob_head_v3 name="head" parent="torso_upper_neck_tilt_link">
+    <origin xyz="0 0.173 0" rpy="0 0 0" />
   </xacro:cob_head_v3>
   
   <xacro:schunk_sdh name="sdh" parent="arm_7_link">

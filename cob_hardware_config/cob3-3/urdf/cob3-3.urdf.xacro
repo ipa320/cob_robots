@@ -48,7 +48,7 @@
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:cob_lbr>
   
-  <xacro:cob_head_v3 name="head" parent="head_cover_link">
+  <xacro:cob_head_v3 name="head" parent="torso_upper_neck_tilt_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:cob_head_v3>
   
