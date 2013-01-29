@@ -53,5 +53,11 @@ rosbuild_add_roslaunch_check(raw3-1/upload_param_raw3-1.launch)
 # rostest for raw3-2
 rosbuild_add_roslaunch_check(raw3-2/upload_param_raw3-2.launch)
 
+# rostest for raw3-3
+rosbuild_add_roslaunch_check(raw3-3/upload_param_raw3-3.launch)
+
+# rostest for raw3-4
+rosbuild_add_roslaunch_check(raw3-4/upload_param_raw3-4.launch)
+
 # rostest for desire
 rosbuild_add_roslaunch_check(desire/upload_param_desire.launch)

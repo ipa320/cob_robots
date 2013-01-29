@@ -8,7 +8,7 @@
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 
-	<node pkg="cob_teleop" type="cob_teleop" name="teleop_node" ns="teleop" output="screen">
+	<node pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" ns="teleop" output="screen">
 		<remap from="/cmd_vel" to="/base_controller/command" />
 		<remap from="/cmd_vel_safety" to="/base_controller/command_safe" />
 		<rosparam command="load" ns="/robot_config" file="$(arg pkg_hardware_config)/$(arg robot)/config/robot_modules.yaml"/>
