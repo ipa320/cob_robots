@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+	
+   <include file="$(find cob_bringup)/components/sdh_solo.launch" />
+   
+   <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
+   
+   <test test-name="hz_tactile" pkg="cob_hardware_test" type="tactile_test.py" name="hztest_tactile">
+    <param name="topic" value="/sdh_controller/tactile_data" />  
+    <param name="min_tactile_value" value="30" />
+    <param name="wait_time" value="10.0" />
+    <param name="user_time" value="10.0" />
+    <param name="user_message" value="Press one of the tactile sensors within 10 seconds" />
+   </test>
+</launch>
