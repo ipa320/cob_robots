@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- launch component -->    	   	
+	<include file="$(find cob_bringup_sim)/launch/laser_front.launch" />	
+	<!-- upload testparameters -->  
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_front.test.yaml" command="load"/>
+	<!-- start test -->  	
+	<test test-name="cob_hardware_test" pkg="cob_hardware_test" type="hztests" name="cob_hardware_test" time-limit="60.0" />	
+
+</launch>
