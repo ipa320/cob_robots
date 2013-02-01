@@ -5,7 +5,7 @@
 	<include file="$(find cob_bringup)/robot.launch" />
 
 	<!-- include components to test -->
-	<include file="$(find cob_hardware_test)/robots/$(env ROBOT).test_manual.xml" />
-	<include file="$(find cob_hardware_test)/robots/robot_auto.test" />
+	<include file="$(find cob_hardware_test)/robots/$(env ROBOT)_manual.test.xml" />
+	<include file="$(find cob_hardware_test)/robots/$(env ROBOT)_auto.test.xml" />
 
 </launch>

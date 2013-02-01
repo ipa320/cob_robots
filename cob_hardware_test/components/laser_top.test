@@ -2,7 +2,7 @@
 <launch>
 
 	<!-- launch component -->    	   	
-	<include file="$(find cob_bringup_sim)/components/laser_top.launch" />	
+	<include file="$(find cob_bringup)/components/laser_top.launch" />	
 	<!-- upload testparameters -->  
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_top.test.yaml" command="load"/>
 	<!-- start test -->  	
