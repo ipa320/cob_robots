@@ -2,7 +2,7 @@
 <launch>
 
 	<!-- launch component -->    	   	
-	<include file="$(find cob_bringup_sim)/launch/kinect.launch" />	
+	<include file="$(find cob_bringup)/components/kinect.launch" />	
 	<!-- upload testparameters -->  
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/kinect.test.yaml" command="load"/>
 	<!-- start test -->  	
