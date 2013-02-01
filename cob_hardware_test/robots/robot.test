@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 	
-	<include file="$(find cob_default_robot_config)/upload_param.launch" />
-	
 	<!-- bringup all robot components -->
 	<include file="$(find cob_bringup)/robot.launch" />
-
+	<include file="$(find cob_default_robot_config)/upload_param.launch" />
 	<!-- include manual and auto test -->
 	<include file="$(find cob_hardware_test)/robots/robot.test.xml" />
-
 
 </launch>
