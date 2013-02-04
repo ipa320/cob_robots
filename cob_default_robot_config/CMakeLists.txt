@@ -41,6 +41,9 @@ rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-3)
 # rostest for cob3-4
 rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-4)
 
+# rostest for cob3-5
+rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-5)
+
 # rostest for cob3-6
 rosbuild_add_roslaunch_check(upload_param.launch ROBOT=cob3-6)
 
@@ -49,3 +52,6 @@ rosbuild_add_roslaunch_check(upload_param.launch ROBOT=raw3-1)
 
 # rostest for raw3-2
 rosbuild_add_roslaunch_check(upload_param.launch ROBOT=raw3-2)
+
+# rostest for desire
+rosbuild_add_roslaunch_check(upload_param.launch ROBOT=desire)

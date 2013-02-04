@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- args -->
+	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
+	<arg name="pc3" default="localhost"/>
+
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" />
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch"/>
+
+	<group>
+		<machine name="pc1" address="$(arg pc1)" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc1)" />
+		</include>
+
+		<!-- wifi monitor -->
+		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
+
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+		<!-- startup hardware -->
+		<!-- lower robot -->
+		<include file="$(find cob_bringup)/components/laser_front.launch" />
+		<include file="$(find cob_bringup)/components/laser_rear.launch" />
+		<include file="$(find cob_bringup)/components/laser_top.launch" />
+		<include file="$(find cob_bringup)/components/relayboard.launch" />
+		<include file="$(find cob_bringup)/components/base.launch" />
+
+		<!-- upper robot -->
+		<include file="$(find cob_bringup)/components/torso.launch" />
+		<include file="$(find cob_bringup)/components/tray.launch" />
+		<include file="$(find cob_bringup)/components/lwa.launch" />
+		<include file="$(find cob_bringup)/components/sdh.launch" />
+		<include file="$(find cob_bringup)/components/head.launch" />
+		
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" />
+		<include file="$(find cob_bringup)/tools/teleop.launch" />
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" />
+	</group>
+
+	<group>
+		<machine name="pc2" address="$(arg pc2)" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc2)" />
+		</include>
+
+		<!-- start camera sensors -->
+		<include file="$(find cob_bringup)/components/prosilica_left.launch" />
+		<include file="$(find cob_bringup)/components/prosilica_right.launch" />
+		<include file="$(find cob_bringup)/components/kinect.launch" />
+	</group>
+
+	<group>
+		<machine name="pc3" address="$(arg pc3)" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="pc" value="$(arg pc3)" />
+		</include>
+
+		<!-- start components -->
+		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<include file="$(find cob_bringup)/components/light.launch" />
+	</group>
+
+	<machine name="pc1" address="$(arg pc1)" default="true"/>
+
+</launch>

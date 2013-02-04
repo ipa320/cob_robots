@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- include auto test -->
+	<include file="$(find cob_hardware_test)/robots/$(env ROBOT)_auto.test.xml" />
+
+	<!-- include manual test -->
+	<include file="$(find cob_hardware_test)/robots/$(env ROBOT)_manual.test.xml" />
+
+</launch>

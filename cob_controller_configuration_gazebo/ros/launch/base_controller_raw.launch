@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
+  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
   <!-- cob Base Control -->
   <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/base_controller.yaml" command="load" />
 
@@ -13,12 +15,12 @@
   </include>
 
   <!-- scan filters-->
-	<rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/laser_front.yaml" ns="laser_front" />
+	<rosparam command="load" file="$(arg pkg_hardware_config)/$(env ROBOT)/config/laser_front.yaml" ns="laser_front" />
 	<node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_front_filter" respawn="false" output="screen" ns="laser_front" >
 		<remap from="scan" to="/scan_front_raw"/>
 		<remap from="scan_filtered" to="/scan_front"/>
 	</node>
-	<rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/laser_rear.yaml" ns="laser_rear" />
+	<rosparam command="load" file="$(arg pkg_hardware_config)/$(env ROBOT)/config/laser_rear.yaml" ns="laser_rear" />
 	<node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_rear_filter" respawn="false" output="screen" ns="laser_rear" >
 		<remap from="scan" to="/scan_rear_raw"/>
 		<remap from="scan_filtered" to="/scan_rear"/>
