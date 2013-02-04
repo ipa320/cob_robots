@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- launch component -->    	   	
-	<include file="$(find cob_bringup)/components/prosilica_left.launch" />	
+	<!-- launch robot -->    	   	
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" />	
 	<!-- start test -->  	
 	<include file="$(find cob_hardware_test)/components/prosilica_left.test.xml" />	
 

@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
-
 <launch>
+
+    <!-- upload parameter -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch" />
 	<!-- perform test -->
 	<test test-name="test_sdh" pkg="cob_hardware_test" type="component_test.py" name="cob_sdh" > 	
 	 <param name="component"  value="sdh" />
