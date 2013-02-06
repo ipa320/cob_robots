@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
+    <machine name="local" address="localhost"/>
     <!-- start dialog service -->
     <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
     <!-- start robot -->

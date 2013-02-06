@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-
+    
     <!-- start dialog service -->
     <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
-    <!-- start robot -->
-    <include file="$(find cob_bringup_sim)/launch/robot.launch" />    
+    <!-- start robot (automaticaly on ROBOT)-->
+    <include file="$(find cob_bringup)/robot.launch" />    
     <!-- start rviz with configuration -->
-    <machine name="rviz_machine" address="$(env RVIZ_MACHINE)"/>   
-    <node machine="rviz_machine" pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(find cob_hardware_test)/config/calibration.vcg" respawn="false" output="screen" />
+    <machine name="local" address="localhost"/>       
+    <node machine="local" pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(find cob_hardware_test)/config/calibration.vcg" respawn="false" output="screen" />
     <!-- include test -->
     <include file="$(find cob_hardware_test)/components/calibration.test.xml" />
     
