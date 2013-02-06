@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+	
+
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" />
+	<!-- hztests -->	
+	<include file="$(find cob_hardware_test)/robots/$(env ROBOT)_auto.test.xml" />
+	
+
+</launch>
