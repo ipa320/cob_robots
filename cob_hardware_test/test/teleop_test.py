@@ -1,15 +1,13 @@
 #!/usr/bin/env python
 import roslib
 roslib.load_manifest('cob_hardware_test')
-#from mpmath.functions.functions import fabs
 import sys
 import time
 import unittest
-import math
-
 import rospy
 import rostest
 from cob_hardware_test.srv import *
+#importing test specific messages
 from geometry_msgs.msg import Twist
 
 def dialog_client(dialog_type, message):
@@ -33,11 +31,10 @@ class UnitTest(unittest.TestCase):
             if not rospy.has_param('~topic'):
                 self.fail('Parameter topic does not exist on ROS Parameter Server')
             self.topic = rospy.get_param('~topic')
-            # movement command
+            # desired movement commands
             if not rospy.has_param('~min_target_x'):
                 self.fail('Parameter min_target_x does not exist on ROS Parameter Server')
             self.min_target_x = rospy.get_param('~min_target_x')
-            # movement command
             if not rospy.has_param('~min_target_y'):
                  self.fail('Parameter min_test_target_y does not exist on ROS Parameter Server')
             self.min_target_y = rospy.get_param('~min_target_y')
@@ -45,7 +42,7 @@ class UnitTest(unittest.TestCase):
             if not rospy.has_param('~user_time'):
                  self.fail('Parameter user_time does not exist on ROS Parameter Server')
             self.user_time = rospy.get_param('~user_time')
-            #test time after confirm
+            #message at confirm
             if not rospy.has_param('~user_message'):
                  self.fail('Parameter user_message does not exist on ROS Parameter Server')
             self.user_message = rospy.get_param('~user_message')
@@ -62,12 +59,12 @@ class UnitTest(unittest.TestCase):
         while (not self.message_received) and time.time() < abort_time:
             time.sleep(0.1)          
         if not self.message_received:
-            self.fail('No state message received within %s seconds' % (self.user_time))
+            self.fail('No valid state message received within %s seconds' % (self.user_time))
 
     # callback functions
     def cb_state(self, msg):
         self.actual_value = msg
-        if (self.actual_value.linear.x > self.min_target_y) and (self.actual_value.linear.y > self.min_target_y):
+        if (self.actual_value.linear.x > self.min_target_x) and (self.actual_value.linear.y > self.min_target_y):
             self.message_received = True
 
 

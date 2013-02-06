@@ -5,7 +5,6 @@ roslib.load_manifest('cob_hardware_test')
 import sys
 import time
 import unittest
-import math
 
 import rospy
 import rostest
