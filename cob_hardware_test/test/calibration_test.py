@@ -39,7 +39,7 @@ class UnitTest(unittest.TestCase):
             if not rospy.has_param('~test_target_torso'):
                 self.fail('Parameter test_target_torso does not exist on ROS Parameter Server')
             self.test_target_torso = rospy.get_param('~test_target_torso')
-            # movement command
+
             if not rospy.has_param('~test_target_head'):
                  self.fail('Parameter test_target_head does not exist on ROS Parameter Server')
             self.test_target_head = rospy.get_param('~test_target_head')
@@ -47,9 +47,6 @@ class UnitTest(unittest.TestCase):
             if not rospy.has_param('~test_target_arm'):
                  self.fail('Parameter test_target_arm does not exist on ROS Parameter Server')
             self.test_target_arm = rospy.get_param('~test_target_arm')            
-            # time to wait before
-            self.wait_time = rospy.get_param('~wait_time', 5)
-
 
         except KeyError, e:
             self.fail('Parameters not set properly')
@@ -71,7 +68,7 @@ class UnitTest(unittest.TestCase):
         self.sss.move('torso', self.test_target_torso)
         self.sss.move('head', self.test_target_head)        
         
-        self.assertTrue(dialog_client(1, ' now check rviz. is the calibration good?'))
+        self.assertTrue(dialog_client(1, ' now check rviz. Is the calibration good?'))
 
 
 
