@@ -118,8 +118,7 @@
 	</group>
 
 	<group>
-		<machine name="pc3" address="$(arg pc3)" default="true"/>
-
+		<machine name="pc3" address="$(arg pc3)" env-loader="/opt/ros/groovy/env.sh" default="true"/>
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
