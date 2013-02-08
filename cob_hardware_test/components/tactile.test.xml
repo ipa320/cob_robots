@@ -2,8 +2,8 @@
 <launch>
 
     <!-- upload parameter -->
-	<include file="$(find cob_default_robot_config)/upload_param.launch" /> 
-	<!-- perform test -->   
+    <include file="$(find cob_default_robot_config)/upload_param.launch" /> 
+    <!-- perform test -->
     <test test-name="hz_tactile" pkg="cob_hardware_test" type="tactile_test.py" name="hztest_tactile">
      <param name="topic" value="/sdh_controller/tactile_data" />  
      <param name="min_tactile_value" value="1000" />
@@ -11,5 +11,5 @@
      <param name="user_time" value="10.0" />
      <param name="user_message" value="Press one of the tactile sensors within 10 seconds" />
     </test>
-   
+
 </launch>

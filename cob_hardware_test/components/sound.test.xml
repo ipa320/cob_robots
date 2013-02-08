@@ -2,8 +2,8 @@
 <launch>
 
     <!-- upload parameter -->
-	<include file="$(find cob_default_robot_config)/upload_param.launch" />
-	<!-- perform test -->
-	<test test-name="test_say" pkg="cob_hardware_test" type="sound_test.py" name="cob_say" />
-	
-</launch> 	
+    <include file="$(find cob_default_robot_config)/upload_param.launch" />
+    <!-- perform test -->
+    <test test-name="test_say" pkg="cob_hardware_test" type="sound_test.py" name="cob_say" />
+
+</launch>

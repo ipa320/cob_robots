@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- launch component -->    	   	
-	<include file="$(find cob_bringup)/components/prosilica_right.launch" />	
-	<!-- start test -->  	
-	<include file="$(find cob_hardware_test)/components/prosilica_right.test.xml" />	
+    <!-- launch component -->
+    <include file="$(find cob_bringup)/components/prosilica_right.launch" />
+    <!-- include test -->
+    <include file="$(find cob_hardware_test)/components/prosilica_right.test.xml" />
 
 </launch>

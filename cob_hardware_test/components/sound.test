@@ -2,10 +2,10 @@
 <launch>
 
     <!-- start dialog service -->
-	<node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
-	<!-- start component -->
+    <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
+    <!-- launch component -->
     <include file="$(find cob_sound)/ros/launch/sound.launch" />
-	<!-- start test -->
-	<include file="$(find cob_hardware_test)/components/sound.test.xml" />
+    <!-- include test -->
+    <include file="$(find cob_hardware_test)/components/sound.test.xml" />
 
 </launch>

@@ -2,10 +2,10 @@
 <launch>
 
     <!-- start dialog service -->
-	<node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
-	<!-- start component -->
-	<include file="$(find cob_bringup_sim)/launch/robot.launch" />
-	<!-- start test -->
-	<include file="$(find cob_hardware_test)/components/light.test.xml" />  
+    <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
+    <!-- launch component -->
+    <include file="$(find cob_bringup_sim)/launch/robot.launch" />
+    <!-- include test -->
+    <include file="$(find cob_hardware_test)/components/light.test.xml" />
 
 </launch>
