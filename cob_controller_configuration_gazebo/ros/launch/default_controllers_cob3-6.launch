@@ -1,12 +1,46 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- load cob controllers -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/default_controllers_cob.launch" >
-		<arg name="robot" value="cob3-6"/>
+	<arg name="robot" value="cob3-3"/>
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	<include file="$(find cob_bringup)/components/relayboard.launch">
+		<arg name="sim" value="true"/>
+	</include>
+
+	<!-- Head -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller.launch"/>
+
+	<!-- Arm -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_cob.launch">
+		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_v1_controller.launch"/>
 
+	<!-- Tray -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/tray_powerball_controller.launch"/>
+
+	<!-- SDH -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
+
+	<!-- start additional components -->
+	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	<include file="$(find cob_bringup)/components/light.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="sim" value="true"/>
+	</include>
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+
 </launch>
+
+
