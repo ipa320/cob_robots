@@ -15,8 +15,8 @@ group2:
   component_name: arm
   buttons: [[stop,trigger,stop],
     [home,move,home],
-    [ablegen,move,ablegen],
-    [regal,move,regal]]
+    [place,move,place],
+    [rack,move,rack]]
 group3:
   group_name: arm traj
   component_name: arm

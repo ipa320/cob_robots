@@ -17,16 +17,18 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
 # rostest cob
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-1.launch ROBOT=cob3-1)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-2.launch ROBOT=cob3-2)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-3.launch ROBOT=cob3-3)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-4.launch ROBOT=cob3-4)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-5.launch ROBOT=cob3-5)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-6.launch ROBOT=cob3-6)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-1.launch robot:=cob3-1)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-2.launch robot:=cob3-2)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-3.launch robot:=cob3-3)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-4.launch robot:=cob3-4)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-5.launch robot:=cob3-5)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-6.launch robot:=cob3-6)
 
 # rostest raw
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-1.launch ROBOT=raw3-1)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-2.launch ROBOT=raw3-2)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-1.launch robot:=raw3-1)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-2.launch robot:=raw3-2)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-3.launch robot:=raw3-3)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-4.launch robot:=raw3-4)
 
 # rostest desire
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_desire.launch ROBOT=desire)
+rosbuild_add_roslaunch_check(ros/launch/default_controllers_desire.launch robot:=desire)

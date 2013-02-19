@@ -1,0 +1,5 @@
+calibrate_time: false
+frame_id: /base_laser_top_link
+min_ang: -2.0923
+max_ang: 2.0923
+scan_intervals: [[-2.09, -0.7],[0.7, 2.09]]

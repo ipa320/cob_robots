@@ -8,6 +8,7 @@
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+  <include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- calibration -->
   <include filename="$(find cob_calibration_data)/cob3-1/calibration/calibration.urdf.xacro" />
@@ -49,7 +50,7 @@
   </xacro:cob_lbr>
   
   <xacro:cob_head_v1 name="head" parent="torso_upper_neck_tilt_link">
-    <origin xyz="0 -0.154 0" rpy="3.1415926 0 0" />
+    <origin xyz="0 -0.154 0" rpy="3.1415926 3.1415926 0" />
   </xacro:cob_head_v1>
   
   <xacro:schunk_sdh name="sdh" parent="arm_7_link">

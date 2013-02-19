@@ -21,7 +21,7 @@
  
 
 
-  <xacro:icob_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
+  <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
 
 </robot>

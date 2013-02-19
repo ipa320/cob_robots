@@ -47,8 +47,8 @@ group5:
     [folded,move,folded],
     [pregrasp,move,pregrasp],
     [hold,move,hold],
+    [sdhmount, move, sdhmount],
     [overtray,move,overtray],
-    [tray,move,tray],
     [wave in,move,wavein],
     [wave out,move,waveout]]
 group6:
@@ -74,7 +74,7 @@ group7:
     [point,move,point],
     [fist,move,fist]]
 group8:
-  group_name: eyes
+  group_name: head
   component_name: head
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
