@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+ 	<!-- universal robot arm -->
+        <node name="ur5_driver" ns="arm_controller" pkg="ur5_driver" type="driver.py" args="ur5" output="screen">
+                <remap from="/arm_controller/joint_states" to="/joint_states"/>
+        </node>
+</launch>

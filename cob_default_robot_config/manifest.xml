@@ -1,0 +1,12 @@
+<package>
+  <description brief="cob_default_robot_config">
+
+     Default configuration of the different robots supported by the Care-O-bot stacks. Configuration is e.g. preconfigured joint positions.
+
+  </description>
+  <author>Florian Weisshardt</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cob_default_robot_config</url>
+
+</package>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="pc" default="localhost"/>
+
+  <!-- Monitor CPU temp, usage -->
+  <node pkg="pr2_computer_monitor" name="$(anon realtime_cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg pc)" output="log" >
+    <rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/pc_monitor_$(arg pc).yaml"/>
+  </node>
+
+</launch>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<!-- upload robot_description -->
+    <include file="$(arg pkg_hardware_config)/common/upload_robot.launch" />
+
+	<!-- start robot_state_publisher -->
+	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+    <!-- start arm -->
+    <include file="$(find cob_bringup)/components/lbr.launch" />
+
+</launch>

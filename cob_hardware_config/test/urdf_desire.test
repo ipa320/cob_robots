@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+  <test test-name="desire_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_hardware_config)/desire/urdf/desire.urdf.xacro"/>
+
+</launch> 

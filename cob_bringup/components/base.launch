@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="sim" default="false" />
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<group ns="base_controller">
+		
+		<!-- upload parameters -->
+		<param name="IniDirectory" value="$(arg pkg_hardware_config)/$(env ROBOT)/config/base/"/>
+		<param name="PublishEffort" value="false"/>
+		
+		<!-- start underlying components - base_drive_chain -->
+		<include file="$(find cob_base_drive_chain)/ros/launch/base_drive_chain.launch" >
+			<arg name="sim" value="$(arg sim)" />
+		</include>
+		
+		<!-- start undercarriage ctrl -->
+		<include file="$(find cob_undercarriage_ctrl)/ros/launch/undercarriage_ctrl.launch" />
+
+		<!-- start cob_base_velocity_smoother-->
+		<node ns="cob_base_velocity_smoother" pkg="cob_base_velocity_smoother" type="cob_base_velocity_smoother" name="cob_base_velocity_smoother" respawn="false" output="screen">
+
+			<remap from="input" to="/base_controller/command"/>
+			<remap from="output" to="/base_controller/command_direct"/>
+
+		</node>
+
+		<rosparam ns="cob_base_velocity_smoother" file="$(arg pkg_hardware_config)/$(env ROBOT)/config/base_velocity_smoother_params.yaml" command="load"/>
+
+	</group>
+
+
+
+</launch>
