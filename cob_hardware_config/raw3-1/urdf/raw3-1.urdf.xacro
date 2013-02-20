@@ -39,8 +39,8 @@
     <origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" />
   </xacro:raw_torso>
 
-  <!--xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
-    <origin xyz="0.04 0.122 0" rpy="1.570796 0 0.12" />
-  </xacro:raw_boxgripper-->
+  <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
+    <origin xyz="0 0 0" rpy="1.570796 0 0" />
+  </xacro:raw_boxgripper>
 
 </robot>
