@@ -1,6 +1,6 @@
 # powercube_chain parameters
 can_module: PCAN
-can_device: /dev/pcan1
+can_device: /dev/pcan3
 can_baudrate: 500
 modul_ids: [10]
 joint_names: [tray_joint]
