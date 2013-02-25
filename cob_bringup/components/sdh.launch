@@ -4,8 +4,12 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-	<node name="sdh_controller" pkg="schunk_sdh" type="schunk_sdh" cwd="node" respawn="true" output="screen" >
+	<node name="sdh_controller" pkg="schunk_sdh" type="sdh_only" cwd="node" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/sdh.yaml"/>
+	</node>
+
+	<node name="dsa_controller" pkg="schunk_sdh" type="dsa_only" cwd="node" respawn="true" output="screen" >
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/dsa.yaml"/>
 	</node>
 
 </launch>
