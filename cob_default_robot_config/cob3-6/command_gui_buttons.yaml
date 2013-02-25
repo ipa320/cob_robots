@@ -29,8 +29,12 @@ group3:
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],
-    [up,move,up],
-    [down,move,down]]
+    [deliverup,move,deliverup],
+    [displayup,move,displayup],
+    [deliverdown,move,deliverdown],
+    [displaydown,move,displaydown],
+    [storetray,move,storetray],
+    ]
 group4:
   group_name: arm settings
   component_name: arm
@@ -46,7 +50,6 @@ group5:
     [pregrasp,move,pregrasp],
     [hold,move,hold],
     [overtray,move,overtray],
-    [tray,move,tray],
     [wave in,move,wavein],
     [wave out,move,waveout]]
 group6:
@@ -72,7 +75,7 @@ group7:
     [point,move,point],
     [fist,move,fist]]
 group8:
-  group_name: eyes
+  group_name: head
   component_name: head
   buttons: [[stop,trigger,stop],
     [init,trigger,init],

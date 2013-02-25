@@ -24,8 +24,16 @@
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
 
-		<!-- wifi monitor -->
-		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
+		<!-- monitoring -->
+		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
@@ -39,6 +47,9 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/laser_top.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/base.launch" >
@@ -84,18 +95,6 @@
 		</include>
 
 		<!-- start camera sensors -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
->>>>>>> review-ipa320
-=======
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
->>>>>>> 54ab3a01fca50a8b16bb36e92e6dd65ce33e4fb7
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -104,6 +103,17 @@
 		</include>
 		<include file="$(find cob_bringup)/components/kinect.launch" >
 			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<!--include file="$(find cob_image_flip)/ros/launch/image_flip_nodelet.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="start_manager" value="false"/>
+			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+		</include-->
+		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+			<arg name="namespace" value="/cam3d" />
+			<arg name="rate" value="1.0" />
+			<arg name="start_manager" value="false"/>
+			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
 	</group>
 
@@ -117,7 +127,9 @@
 		</include>
 
 		<!-- start additional packages -->
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+
 		<include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>

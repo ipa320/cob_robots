@@ -7,10 +7,12 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
 
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_raw.launch">
 		<arg name="robot" value="raw3-3"/>
 	</include>
-	<include file="$(find cob_bringup)/components/relayboard_sim.launch"/>
+	<include file="$(find cob_bringup)/components/relayboard.launch">
+		<arg name="sim" value="true"/>
+	</include>
 
 	<!-- Arm -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_raw3-3.launch">

@@ -6,7 +6,7 @@
     <param name="topic" value="/ddwrt/accesspoint" />  
     <param name="hz" value= "5" />
     <param name="hzerror" value="4.99" />
-    <param name="test_duration" value="5.0" />  
+    <param name="test_duration" value="15.0" />  
    </test>
 
 </launch>
