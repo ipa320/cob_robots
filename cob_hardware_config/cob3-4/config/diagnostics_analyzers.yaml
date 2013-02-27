@@ -49,6 +49,10 @@ analyzers:
     type: AnalyzerGroup
     path: Sensors
     analyzers:
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
       laser_top:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Top
@@ -70,6 +74,10 @@ analyzers:
         path: Stereo (Right)
         contains: right
         startswith: ['stereo/right/color_camera']
+      dsa:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: DSA
+        contains: 'dsa_controller'
 
   motors:
     type: AnalyzerGroup
