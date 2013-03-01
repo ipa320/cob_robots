@@ -4,7 +4,7 @@
     <!-- start dialog service -->
     <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
     <!-- launch component -->
-    <node pkg="joy" type="joy" name="joy"/>
+    <include file="$(find cob_bringup)/components/joy.launch" />
     <!-- include test -->
     <include file="$(find cob_hardware_test)/components/joy.test.xml" />
 
