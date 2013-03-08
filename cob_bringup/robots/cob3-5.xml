@@ -72,7 +72,15 @@
 		<include file="$(find cob_bringup)/components/head.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+<<<<<<< HEAD
+<<<<<<< HEAD
+		
+=======
 
+>>>>>>> review-ipa320
+=======
+
+>>>>>>> 54ab3a01fca50a8b16bb36e92e6dd65ce33e4fb7
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -103,6 +111,12 @@
 		</include>
 		<include file="$(find cob_bringup)/components/kinect.launch" >
 			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+			<arg name="namespace" value="/cam3d" />
+			<arg name="rate" value="1.0" />
+			<arg name="start_manager" value="false"/>
+			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
 	</group>
 
