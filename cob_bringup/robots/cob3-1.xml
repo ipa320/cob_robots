@@ -21,7 +21,7 @@
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc1)" />
+			<arg name="pc" value="cob3_1_pc1" />
 		</include>
 
 		<!-- monitoring -->
@@ -86,7 +86,7 @@
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc2)" />
+			<arg name="pc" value="cob3_1_pc2" />
 		</include>
 
 		<!-- start camera sensors -->
