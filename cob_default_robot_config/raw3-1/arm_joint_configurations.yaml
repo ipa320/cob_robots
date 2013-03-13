@@ -2,6 +2,6 @@ joint_names: ['arm_shoulder_pan_joint', 'arm_shoulder_lift_joint', 'arm_elbow_jo
 #joint_names: ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint','wrist_1_joint', 'wrist_2_joint', 'wrist_3_joint']
 
 # back side positions
-home: [[0.797, -1.54, -2.016, 0.475, 1.568, -1.542]]
-place: [[0.828, -2.55, -2.248, 1.747, 1.571, -1.542]]
-rack: [[-0.67, -1.379, -1.408, -0.286, 1.503, -1.49]]
+home: [[0.797, -1.5707, -2.016, 0.475, 1.5707, -1.5707]]
+place: [[0.828, -2.55, -2.248, 1.747, 1.5707, -1.5707]]
+rack: [[-0.67, -1.379, -1.408, -0.286, 1.503, -1.5707]]
