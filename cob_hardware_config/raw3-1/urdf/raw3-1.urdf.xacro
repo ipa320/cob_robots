@@ -3,7 +3,7 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="icob" >
+       name="raw3-1" >
   
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
@@ -24,16 +24,14 @@
   <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
 
   <!-- ur_arm -->
-  <include filename="$(find ur5_description)/urdf/model.urdf.xacro" />
+ <include filename="$(find raw_description)/urdf/ur10/arm.urdf.xacro" />   
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
-  <xacro:ur5_robot prefix="arm_"/>
-  <joint name="arm_base_joint" type="fixed" >
-		<origin xyz="0.324 -0.191 0.565" rpy="0 0 -0.79" />
-		<parent link="base_link" />
-		<child link="arm_base_link" />
-  </joint>
+
+  <xacro:ur10_robot name="arm" parent="base_link">
+	<origin xyz="0.324 -0.191 0.565" rpy="0 0 3.14" />
+  </xacro:ur10_robot>
 
   <xacro:raw_torso name="torso" parent="base_link">
     <origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" />
