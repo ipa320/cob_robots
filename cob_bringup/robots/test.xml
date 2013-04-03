@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- args -->
+	<arg name="robot" value="cob3-5"/>
+	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
+	<arg name="pc3" default="localhost"/>
+
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/cob3-5/upload_param_cob3-5.launch" />
+
+	<group>
+		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
+
+
+		<include file="$(find cob_bringup)/components/head.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+
+	</group>
+
+	<group>
+		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
+
+		<include file="$(find cob_bringup)/components/kinect.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+	</group>
+
+	<group>
+		<machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
+		<include file="$(find cob_bringup)/components/light.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
+
+	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
+</launch>
