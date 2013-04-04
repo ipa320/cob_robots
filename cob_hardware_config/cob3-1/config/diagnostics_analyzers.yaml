@@ -62,6 +62,10 @@ analyzers:
     type: AnalyzerGroup
     path: Sensors
     analyzers:
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
       laser_top:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Top
