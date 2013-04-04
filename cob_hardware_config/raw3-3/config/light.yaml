@@ -1,3 +1,4 @@
-devicestring: /dev/ttyUSB2
+devicestring: /dev/ttyLed
 baudrate: 230400
-
+invert_output: true
+pubmarker: false
