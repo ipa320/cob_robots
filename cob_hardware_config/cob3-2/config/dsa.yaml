@@ -1,0 +1,4 @@
+dsadevicestring: /dev/ttyS0
+polling: false
+use_rle: true
+frequency: 5

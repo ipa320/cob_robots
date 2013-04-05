@@ -18,15 +18,15 @@ analyzers:
         path: pc3
         contains: 'pc3'
 
-  network:
-    type: AnalyzerGroup
-    path: Network
-    analyzers:
-      wifi:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: wifi
-        num_items: 1
-        expected: ['Wifi Status (ddwrt)']
+#  network:
+#    type: AnalyzerGroup
+#    path: Network
+#    analyzers:
+#      wifi:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: wifi
+#        num_items: 1
+#        expected: ['Wifi Status (ddwrt)']
  
 
 #  computers:
@@ -73,6 +73,16 @@ analyzers:
   #   path: 'Power System'
   #   startswith: 'battery'
 
+  io:
+    type: AnalyzerGroup
+    path: IO
+    analyzers:
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sound
+        contains: 'sound'
+        timeout: 15
+
   sensors:
     type: AnalyzerGroup
     path: Sensors
@@ -102,6 +112,10 @@ analyzers:
         path: Stereo (Right)
         contains: right
         startswith: ['stereo/right/color_camera']
+      dsa:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: DSA
+        contains: 'dsa_controller'
 
   motors:
     type: AnalyzerGroup
