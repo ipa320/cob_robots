@@ -24,7 +24,7 @@
   <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
 
   <!-- ur_arm -->
- <include filename="$(find raw_description)/urdf/ur10/arm.urdf.xacro" />   
+ <include filename="$(find ur_description)/urdf/ur10.urdf.xacro" />   
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
