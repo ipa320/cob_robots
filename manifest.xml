@@ -1,0 +1,15 @@
+<package>
+  <description brief="cob_moveit_config">
+
+     cob_moveit_config
+
+  </description>
+  <author>Mathias Lüdtke</author>
+  <license>LGPL</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cob_moveit_config</url>
+  <depend package="moveit_ros_move_group"/>  
+
+</package>
+
+
