@@ -4,7 +4,6 @@
 	<!-- upload default configurations -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch" />
 	<!-- include manual tests -->
-
 	<include file="$(find cob_hardware_test)/components/base.test.xml" /> 
 	<include file="$(find cob_hardware_test)/components/joy.test.xml" />   
 	<include file="$(find cob_hardware_test)/components/teleop.test.xml" />	
