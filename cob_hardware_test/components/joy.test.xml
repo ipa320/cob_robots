@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-    <!-- perform test -->
-    <test test-name="hz_joy" pkg="cob_hardware_test" type="joy_test.py" name="hztest_joy"/> 
+	<!-- perform test -->
+	<test test-name="hz_joy" pkg="cob_hardware_test" type="joy_test.py" name="hztest_joy"/> 
 
 </launch>

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-    <!-- launch component -->
-    <include file="$(find cob_bringup)/components/relayboard.launch" />
-    <!-- include test -->
-    <include file="$(find cob_hardware_test)/components/relayboard.test.xml" />
+	<!-- launch component -->
+	<include file="$(find cob_bringup)/components/relayboard.launch" />
+	<!-- include test -->
+	<include file="$(find cob_hardware_test)/components/relayboard.test.xml" />
 
 </launch>

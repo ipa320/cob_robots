@@ -1,15 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 
-    <!-- upload parameter -->
-    <include file="$(find cob_default_robot_config)/upload_param.launch" />
-    <!-- perform test -->
-    <test test-name="test_tray" pkg="cob_hardware_test" type="component_test.py" name="cob_tray" >
-      <param name="component"  value="tray" />
-      <param name="test_target" value="up" />
-      <param name="default_target" value="down" />
-      <param name="wait_time" value="30.0" />
-      <param name="error_range" value="0.1" />
-    </test>
+	<!-- perform test -->
+	<test test-name="test_tray" pkg="cob_hardware_test" type="component_test.py" name="cob_tray" >
+	 <param name="component"  value="tray" />
+	 <param name="test_target" value="up" />
+	 <param name="default_target" value="down" />
+	 <param name="wait_time" value="30.0" />
+	 <param name="error_range" value="0.1" />
+	</test>
 
 </launch>
