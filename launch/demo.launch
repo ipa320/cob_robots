@@ -1,0 +1,27 @@
+<launch>
+  <arg name="robot" default="$(env ROBOT)"/>
+
+  <include file="$(find cob_moveit_config)/launch/planning_context.xml">
+    <arg name="load_robot_description" value="true"/>
+    <arg name="robot" value="$(arg robot)"/>
+  </include>
+
+  <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom_combined base_footprint 100" />
+
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+  </node>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+  <include file="$(find cob_moveit_config)/launch/move_group.xml">
+    <arg name="allow_trajectory_execution" value="false"/>
+    <arg name="robot" value="$(arg robot)"/>
+  </include>
+
+  <include file="$(find cob_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="robot" value="$(arg robot)"/>
+  </include>
+
+</launch>

@@ -1,0 +1,20 @@
+<launch>
+  <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
+  <arg name="load_robot_description" default="false"/>
+  <arg name="robot" default="$(env ROBOT)"/>
+  <arg name="config_path" default="$(find cob_moveit_config)/$(arg robot)/config"/>
+
+  <!-- Load universal robotic description format (URDF) -->
+  <include file="$(find cob_hardware_config)/common/upload_robot.launch" if="$(arg load_robot_description)">
+    <arg name="robot" value="$(arg robot)" /> 
+  </include>
+
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="robot_description_semantic" textfile="$(arg config_path)/robot.srdf" />
+  
+  <!-- Load to the parameter server yaml files -->
+  <group ns="robot_description_planning">    
+    <rosparam command="load" file="$(arg config_path)/joint_limits.yaml"/>
+  </group>
+  
+</launch>

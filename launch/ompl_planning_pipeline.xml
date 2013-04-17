@@ -1,0 +1,16 @@
+<launch>
+
+  <arg name="robot" default="$(env ROBOT)"/>
+  <arg name="config_path" default="$(find cob_moveit_config)/$(arg robot)/config"/>
+
+  <arg name="planning_plugin" value="ompl_interface_ros/OMPLPlanner" />
+
+  <arg name="planning_adapters" value="default_planner_request_adapters/AddTimeParameterization default_planner_request_adapters/FixWorkspaceBounds default_planner_request_adapters/FixStartStateBounds default_planner_request_adapters/FixStartStateCollision default_planner_request_adapters/FixStartStatePathConstraints" />
+
+  <param name="planning_plugin" value="$(arg planning_plugin)" />
+  <param name="request_adapters" value="$(arg planning_adapters)" />
+
+  <rosparam command="load" file="$(arg config_path)/kinematics.yaml"/>
+  <rosparam command="load" file="$(arg config_path)/ompl_planning.yaml"/>
+
+</launch>
