@@ -19,6 +19,8 @@
     <arg name="robot" value="$(arg robot)"/>
   </include>
 
+  <rosparam file="$(arg config_path)/controllers.yaml"/>
+
   <include ns="move_group" file="$(find cob_moveit_config)/launch/planning_pipeline.xml">
       <arg name="pipeline" value="$(arg pipeline)"/>
       <arg name="robot" value="$(arg robot)"/>
