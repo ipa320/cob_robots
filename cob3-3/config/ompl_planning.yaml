@@ -27,6 +27,7 @@ arm:
     - KPIECEkConfigDefault
     - BKPIECEkConfigDefault
     - RRTStarkConfigDefault
+  projection_evaluator: joints(arm_1_joint,arm_2_joint)
 sdh:
   planner_configs:
     - SBLkConfigDefault

@@ -47,6 +47,7 @@ arm:
     - KPIECEkConfigDefault
     - BKPIECEkConfigDefault
     - RRTStarkConfigDefault
+  projection_evaluator: joints(arm_shoulder_pan_joint,arm_shoulder_lift_joint)
 hook:
   planner_configs:
     - SBLkConfigDefault
