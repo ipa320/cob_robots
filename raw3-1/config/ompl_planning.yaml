@@ -17,26 +17,6 @@ planner_configs:
     type: geometric::RRTstar
   BKPIECEkConfigDefault:
     type: geometric::BKPIECE
-torso:
-  planner_configs:
-    - SBLkConfigDefault
-    - LBKPIECEkConfigDefault
-    - RRTkConfigDefault
-    - RRTConnectkConfigDefault
-    - ESTkConfigDefault
-    - KPIECEkConfigDefault
-    - BKPIECEkConfigDefault
-    - RRTStarkConfigDefault
-head:
-  planner_configs:
-    - SBLkConfigDefault
-    - LBKPIECEkConfigDefault
-    - RRTkConfigDefault
-    - RRTConnectkConfigDefault
-    - ESTkConfigDefault
-    - KPIECEkConfigDefault
-    - BKPIECEkConfigDefault
-    - RRTStarkConfigDefault
 arm:
   planner_configs:
     - SBLkConfigDefault
@@ -48,6 +28,7 @@ arm:
     - BKPIECEkConfigDefault
     - RRTStarkConfigDefault
   projection_evaluator: joints(arm_shoulder_pan_joint,arm_shoulder_lift_joint)
+  longest_valid_segment_fraction: 0.05
 hook:
   planner_configs:
     - SBLkConfigDefault
