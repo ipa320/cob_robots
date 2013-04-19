@@ -2,7 +2,7 @@
 <launch>
 
 	<!-- args -->
-	<arg name="robot" value="raw3-3"/>
+	<arg name="robot" value="raw3-5"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
@@ -13,7 +13,7 @@
 	</include>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/raw3-3/upload_param_raw3-3.launch" />
+	<include file="$(find cob_default_robot_config)/raw3-5/upload_param_raw3-5.launch" />
 
 	<group>
 		<machine name="pc1" address="$(arg pc1)" env-loader="/opt/ros/groovy/env.sh" default="true"/>
