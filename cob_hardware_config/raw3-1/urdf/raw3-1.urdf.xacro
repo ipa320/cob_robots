@@ -30,7 +30,7 @@
 
 
   <xacro:ur10_robot name="arm" parent="base_link">
-	<origin xyz="0.324 -0.191 0.565" rpy="0 0 3.14" />
+      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:ur10_robot>
 
   <xacro:raw_torso name="torso" parent="base_link">
