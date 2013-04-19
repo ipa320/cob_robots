@@ -39,3 +39,31 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
         contains: 'base_controller'
+      frida:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Frida
+        contains: ['arm_left_controller', 'arm_right_controller']
+      grippers:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Grippers
+        contains: ['gripper_left_controller', 'gripper_right_controller']
+  joints:
+    type: diagnostic_aggregator/GenericAnalyzer
+    path: Joints
+    startswith: [
+      'Joint']
+    expected: [
+      'Joint (arm_left_1_joint)',
+      'Joint (arm_left_2_joint)',
+      'Joint (arm_left_3_joint)',
+      'Joint (arm_left_4_joint)',
+      'Joint (arm_left_5_joint)',
+      'Joint (arm_left_6_joint)',
+      'Joint (arm_left_7_joint)',
+      'Joint (arm_left_1_joint)',
+      'Joint (arm_left_2_joint)',
+      'Joint (arm_left_3_joint)',
+      'Joint (arm_left_4_joint)',
+      'Joint (arm_left_5_joint)',
+      'Joint (arm_left_6_joint)',
+      'Joint (arm_left_7_joint)']
