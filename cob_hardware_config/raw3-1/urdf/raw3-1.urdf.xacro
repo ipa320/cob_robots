@@ -34,7 +34,8 @@
   </xacro:ur10_robot>
 
   <xacro:raw_torso name="torso" parent="base_link">
-    <origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" />
+    <!--origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" /-->
+      <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:raw_torso>
 
 
