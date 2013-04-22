@@ -4,8 +4,6 @@
 	<!-- args -->
 	<arg name="robot" value="raw3-5"/>
 	<arg name="pc1" default="localhost"/>
-	<arg name="pc2" default="localhost"/>
-	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -22,6 +20,12 @@
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
+		<include file="$(find cob_bringup)/components/laser_front.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/laser_rear.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/components/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -37,15 +41,10 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-	</group>
-
-	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="/opt/ros/groovy/env.sh" default="true"/>
-
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc2)" />
+			<arg name="pc" value="$(arg pc1)" />
 		</include>
 
 	</group>
