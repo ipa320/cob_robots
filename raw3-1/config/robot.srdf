@@ -15,6 +15,14 @@
     <group name="hook">
         <link name="arm_ee_link" />
     </group>
+    <group name="torso">
+        <joint name="torso_0_joint" />
+        <joint name="torso_pan_joint" />
+        <joint name="torso_tilt_joint" />
+    </group>
+    <group name="base">
+        <joint name="world_joint" />
+    </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hook" parent_link="arm_wrist_3_link" group="hook" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
@@ -81,12 +89,15 @@
     <disable_collisions link1="arm_wrist_1_link" link2="arm_wrist_2_link" reason="Adjacent" />
     <disable_collisions link1="arm_wrist_1_link" link2="arm_wrist_3_link" reason="Never" />
     <disable_collisions link1="arm_wrist_1_link" link2="bl_caster_rotation_link" reason="Never" />
+    <disable_collisions link1="arm_wrist_1_link" link2="fr_caster_rotation_link" reason="Never" />
     <disable_collisions link1="arm_wrist_1_link" link2="gripper_link" reason="Never" />
     <disable_collisions link1="arm_wrist_2_link" link2="arm_wrist_3_link" reason="Adjacent" />
     <disable_collisions link1="arm_wrist_2_link" link2="bl_caster_rotation_link" reason="Never" />
+    <disable_collisions link1="arm_wrist_2_link" link2="fr_caster_rotation_link" reason="Never" />
     <disable_collisions link1="arm_wrist_2_link" link2="gripper_link" reason="Never" />
     <disable_collisions link1="arm_wrist_3_link" link2="base_footprint" reason="Never" />
     <disable_collisions link1="arm_wrist_3_link" link2="bl_caster_rotation_link" reason="Never" />
+    <disable_collisions link1="arm_wrist_3_link" link2="br_caster_rotation_link" reason="Never" />
     <disable_collisions link1="arm_wrist_3_link" link2="gripper_link" reason="Adjacent" />
     <disable_collisions link1="base_battery_front_battery" link2="base_battery_rear_battery" reason="Never" />
     <disable_collisions link1="base_battery_front_battery" link2="base_footprint" reason="Never" />
