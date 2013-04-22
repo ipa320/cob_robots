@@ -49,6 +49,6 @@
 	</group>
 
 
-	<machine name="pc1" address="$(arg pc1)" default="true"/>
+	<!--machine name="pc1" address="$(arg pc1)" default="true"/-->
 
 </launch>
