@@ -22,7 +22,7 @@
   <depend package="schunk_powercube_chain"/>
 
   <depend package="robot_state_publisher"/>
-  <depend package="ur5_driver"/>
+  <depend package="ur_driver"/>
 
   <!-- components: sensors -->
   <depend package="cob_relayboard"/>
