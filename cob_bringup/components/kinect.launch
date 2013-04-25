@@ -10,6 +10,7 @@
 		<arg name="camera" value="cam3d"/>
 		<arg name="rgb_frame_id" value="/head_cam3d_link" />
 		<arg name="depth_frame_id" value="/head_cam3d_link" />
+                <arg name="publish_tf" value="false" />
 		<arg name="rgb_camera_info_url" value="file:///$(find cob_calibration_data)/$(arg robot)/calibration/cameras/kinect_rgb.yaml" />
 	</include>
 
