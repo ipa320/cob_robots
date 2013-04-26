@@ -3,15 +3,9 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="sim" default="false" />
-
-	<!-- start simulated relayboard node -->
-	<node if="$(arg sim)" pkg="cob_light" type="cob_light_sim" name="light_node" ns="light_controller" respawn="false" output="screen" >
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/light.yaml"/>
-	</node>
 
 	<!-- start light controller -->
-	<node unless="$(arg sim)" pkg="cob_light" type="cob_light" name="light_node" ns="light_controller" respawn="false" output="screen" >
+	<node pkg="cob_light" type="cob_light" name="light_controller" respawn="false" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/light.yaml"/>
 	</node>
 
