@@ -1,11 +1,7 @@
 # common params
 run_factor: 2.0
 
-# joy config
-joy_num_buttons: 12
-joy_num_axes: 6
-
-# button assignment
+# buttons
 lower_neck_button: 6
 upper_neck_button: 4
 tray_button: 3
@@ -29,13 +25,5 @@ modules: {
   base: {
     max_velocity: [0.3, 0.2, 0.3],
     max_acceleration: [0.5, 0.5, 0.7]
-  },
-  torso: {
-    joint_names: ['torso_pan_joint','torso_tilt_joint'],
-    joint_step: [0.05,0.05]
-  },
-  arm: {
-    joint_names: ['arm_shoulder_pan_joint','arm_shoulder_lift_joint','arm_elbow_joint','arm_wrist_1_joint','arm_wrist_2_joint','arm_wrist_3_joint'],
-    joint_step: [0.1,0.1,0.1,0.1,0.1,0.1]
   }
 }
