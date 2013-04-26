@@ -68,7 +68,6 @@
     <disable_collisions link1="arm_forearm_link" link2="fr_caster_rotation_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="gripper_link" reason="Never" />
     <disable_collisions link1="arm_forearm_link" link2="torso_2_link" reason="Never" />
-    <disable_collisions link1="arm_forearm_middle_link" link2="arm_upper_arm_link" reason="Never" />
     <disable_collisions link1="arm_forearm_middle_link" link2="arm_upper_arm_middle_link" reason="Never" />
     <disable_collisions link1="arm_forearm_middle_link" link2="arm_upper_shoulder_link" reason="Never" />
     <disable_collisions link1="arm_forearm_middle_link" link2="arm_wrist_1_link" reason="Never" />
