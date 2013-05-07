@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-	<node pkg="cob_phidgets" type="range_sensors" name="tray_sensor_node" ns="tray_sensors" cwd="node" respawn="true" output="screen" />
+	<node pkg="cob_phidgets" type="range_sensors" name="tray_sensor_node" ns="tray_sensors" cwd="node" respawn="true" output="screen">
+	  <rosparam file="$(find cob_hardware_config)/$(env ROBOT)/config/phidgets.yaml" command="load" />
+	</node>
 
 </launch>
 

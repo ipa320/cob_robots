@@ -15,21 +15,20 @@ group2:
   component_name: arm
   buttons: [[stop,trigger,stop],
     [home,move,home],
-    [place,move,place],
-    [rack,move,rack]]
+    [calibration,move,calibration],
+    [upright,move,upright],
+    [new_home,move,new_home],
+    [show,move,show]]
 group3:
   group_name: arm traj
   component_name: arm
-  buttons: [[stop,trigger,stop],
-    [folded-to-look at table,move,folded-to-look_at_table],
-    [look_at_table-to-folded,move,look_at_table-to-folded],
-    [grasp-to-tray,move,grasp-to-tray],
-    [tray-to-folded,move,tray-to-folded],
-    [wave,move,wave]]
+  buttons: [[stop,trigger,stop]]
 group4:
   group_name: torso
   component_name: torso
   buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
     [home,move,home],
     [left,move,left],
     [right,move,right]]
