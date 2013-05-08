@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- start dialog service -->
+	<node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
+	<!-- launch robot -->
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" />
+	<!-- include test -->
+	<include file="$(find cob_hardware_test)/components/tray.test.xml" />
+
+</launch>

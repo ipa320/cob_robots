@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
-<launch>	
-	
+<launch>
+
+	<!-- perform test -->
 	<test test-name="test_base" pkg="cob_hardware_test" type="base_test.py" name="cob_base" >
-	  <param name="move_x"  value="0.07" />
-	  <param name="move_y"  value="0.07" />
-	  <param name="move_theta"  value="0.07" />
+	 <param name="move_x"  value="0.07" />
+	 <param name="move_y"  value="0.07" />
+	 <param name="move_theta"  value="0.07" />
 	</test>
-	
+
 </launch>
