@@ -12,7 +12,7 @@
   <include filename="$(find cob_calibration_data)/raw3-5/calibration/calibration.urdf.xacro" />   
   
   <!-- raw base -->
-  <include filename="$(find raw_description)/urdf/base/base.urdf.xacro" />
+  <include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
 
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />

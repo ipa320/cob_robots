@@ -20,15 +20,14 @@
 		<include file="$(find cob_undercarriage_ctrl)/ros/launch/undercarriage_ctrl.launch" />
 
 		<!-- start cob_base_velocity_smoother-->
-		<node ns="cob_base_velocity_smoother" pkg="cob_base_velocity_smoother" type="cob_base_velocity_smoother" name="cob_base_velocity_smoother" respawn="false" output="screen">
+		<node pkg="cob_base_velocity_smoother" type="cob_base_velocity_smoother" name="cob_base_velocity_smoother" respawn="false" output="screen">
 
 			<remap from="input" to="/base_controller/command"/>
 			<remap from="output" to="/base_controller/command_direct"/>
 
+			<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/base_velocity_smoother_params.yaml" command="load"/>
 		</node>
-
-		<rosparam ns="cob_base_velocity_smoother" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_velocity_smoother_params.yaml" command="load"/>
-
+		
 	</group>
 
 
