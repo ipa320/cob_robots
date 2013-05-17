@@ -13,7 +13,7 @@
   
   <!-- raw base -->
   <include filename="$(find raw_description)/urdf/base/base.urdf.xacro" />
-rm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_roll} ${arm_yaw}" 
+
   <!-- raw boxgripper -->
   <include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
 
