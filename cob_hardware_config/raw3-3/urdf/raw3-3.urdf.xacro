@@ -11,10 +11,7 @@
 
   <include filename="$(find cob_calibration_data)/raw3-3/calibration/calibration.urdf.xacro" />   
   <!-- raw base -->
-  <include filename="$(find raw_description)/urdf/base/base.urdf.xacro" />
-
-  <!-- torso -->
-  <!--include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" /-->
+  <include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
 
   <!-- frida --> 
   <include filename="$(find frida_description)/urdf/frida.urdf.xacro" />
@@ -27,10 +24,11 @@
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
-  <xacro:frida parent="base_tower" name="arm">
-    <origin xyz="0 -0.029 0" rpy="0 0 -3.14159265" />
+  <xacro:frida parent="base_link" name="arm">
+    <origin xyz="0.24 0.0 0.48" rpy="0 0 0" />
   </xacro:frida>
 
+ <!--
   <xacro:prace_gripper name="gripper_left" parent="arm_left_7_link">
     <origin xyz="0.0 0.0 0.0561" rpy="0 0 0" />
   </xacro:prace_gripper>
@@ -38,5 +36,5 @@
   <xacro:prace_gripper name="gripper_right" parent="arm_right_7_link">
     <origin xyz="0.0 0.0 0.0561" rpy="0 0 0" />
   </xacro:prace_gripper>
-
+-->
 </robot>
