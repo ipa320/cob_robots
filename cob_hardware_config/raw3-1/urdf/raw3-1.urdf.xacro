@@ -13,7 +13,7 @@
   
   <!-- raw base -->
   <include filename="$(find raw_description)/urdf/base/base.urdf.xacro" />
-rm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_roll} ${arm_yaw}" 
+  
   <!-- raw boxgripper -->
   <include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
 
@@ -24,27 +24,25 @@ rm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_roll} ${arm_yaw}"
   <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
 
   <!-- ur_arm -->
-  <include filename="$(find ur10_description)/urdf/gazebo.urdf.xacro" />
-
   <include filename="$(find ur10_description)/urdf/model.urdf.xacro" />
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
   <xacro:macro name="ur_arm_base_joint" >
-  <joint name="arm_base_joint" type="fixed" >
-    <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_roll} ${arm_yaw}" />
-    <parent link="base_link" />
-    <child link="arm_base_link" />
-  </joint>
+	<joint name="arm_base_joint" type="fixed" >
+		<origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_roll} ${arm_yaw}" />
+		<parent link="base_link" />
+		<child link="arm_base_link" />
+	</joint>
   </xacro:macro>
 
  <xacro:ur_arm_base_joint/>
  <xacro:ur10_robot prefix="arm_"/>
 
   <xacro:raw_torso name="torso" parent="base_link">
-    <!--origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" /-->
       <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:raw_torso>
+
 
 
   <!--link name="arm_ee_link"/-->
