@@ -6,7 +6,8 @@ import sys
 import unittest
 import rospy
 import rostest
-
+#import audio_common_msgs.msg
+from audio_common_msgs.msg import AudioData
 from cob_hardware_test.srv import *
 from std_msgs.msg import String
 from simple_script_server import *
@@ -28,25 +29,53 @@ class HardwareTest(unittest.TestCase):
 
         super(HardwareTest, self).__init__(*args)
         rospy.init_node('test_hardware_test')
-        torso_joint_states = []
         self.message_received = False
         self.sss = simple_script_server()
+        self.record = []
 
-    def test_play(self):
-        dialog_client(0, 'Listen up for the sound' )
-        rospy.set_param("script_server/sound/language","de")
-        handle = self.sss.play("grasp_tutorial_01")
-        self.assertEqual(handle.get_state(), 3)
-        self.assertTrue(dialog_client(1, 'Did you hear some audio file?'))
+    #def test_play(self):
+        #dialog_client(0, 'Listen up for the sound' )
+        #rospy.set_param("script_server/sound/language","de")
+        #handle = self.sss.play("grasp_tutorial_01")
+        #self.assertEqual(handle.get_state(), 3)
+        #self.assertTrue(dialog_client(1, 'Did you hear some audio file?'))
         
-    def test_say(self):
-        dialog_client(0, 'Listen up for the sound' )
-        handle = self.sss.say(["Hello"])
-        self.assertEqual(handle.get_state(), 3)
-        if handle.get_error_code() != 0:
-            error_msg = 'Could say something'
-            self.fail(error_msg + "; errorCode: " + str(handle.get_error_code()))
-        self.assertTrue(dialog_client(1, 'Did you hear <<Hello>>?'))
+    #def test_say(self):
+        #dialog_client(0, 'Listen up for the sound' )
+        #handle = self.sss.say(["Hello"])
+        #self.assertEqual(handle.get_state(), 3)
+        #if handle.get_error_code() != 0:
+            #error_msg = 'Could say something'
+            #self.fail(error_msg + "; errorCode: " + str(handle.get_error_code()))
+        #self.assertTrue(dialog_client(1, 'Did you hear <<Hello>>?'))
+        
+        
+        
+    def test_record(self):
+        
+        dialog_client(0, 'Prepare to Record')
+        sub = rospy.Subscriber("/audio_in", AudioData, self.callback)
+        pub = rospy.Publisher("/audio_out", AudioData)
+        rospy.sleep(1.2)
+        dialog_client(0, 'Done recording, listen up')
+        
+        r = rospy.Rate(len(self.record)/1.2)
+        #self.record.reverse()
+        #print "DATEN: %r" % len(self.record)
+        #print "LaNGE: %s" % self.record.count()
+        for i in self.record:
+            #print i
+            pub.publish(i)
+            r.sleep()
+        
+        self.assertTrue(dialog_client(1, 'Did you hear your record?' ))
+        
+        
+    def callback(self, Data):
+        self.record.append(Data)        
+        
+
+    
 
 if __name__ == '__main__':
     # Copied from hztest: A dirty hack to work around an apparent race condition at startup
