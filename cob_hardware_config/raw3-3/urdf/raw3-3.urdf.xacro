@@ -13,6 +13,9 @@
   <!-- raw base -->
   <include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
 
+  <!-- raw tower -->
+  <include filename="$(find raw_description)/urdf/tower_symetric/tower.urdf.xacro" />
+
   <!-- frida --> 
   <include filename="$(find frida_description)/urdf/frida.urdf.xacro" />
 
@@ -23,6 +26,10 @@
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
+
+  <xacro:tower_symetric name="tower" parent="base_link">
+    <origin xyz="0.221 0.0 0.306"/>
+  </xacro:tower_symetric>
 
   <xacro:frida parent="base_link" name="arm">
     <origin xyz="0.24 0.0 0.48" rpy="0 0 0" />
