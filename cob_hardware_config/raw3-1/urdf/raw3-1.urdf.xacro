@@ -24,8 +24,6 @@
   <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
 
   <!-- ur_arm -->
-  <include filename="$(find ur10_description)/urdf/gazebo.urdf.xacro" />
-
   <include filename="$(find ur10_description)/urdf/model.urdf.xacro" />
 
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
@@ -42,7 +40,6 @@
  <xacro:ur10_robot prefix="arm_"/>
 
   <xacro:raw_torso name="torso" parent="base_link">
-    <!--origin xyz="0.166 0.2175 0.5405" rpy="0 0 0" /-->
       <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:raw_torso>
 
