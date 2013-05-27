@@ -3,7 +3,7 @@
 import roslib; roslib.load_manifest('cob_hardware_test')
 
 import sys
-import threading
+import thread
 import time
 import unittest
 
@@ -14,25 +14,31 @@ NAME = 'hztest'
 
 from threading import Thread
 
-
-class HzTest(unittest.TestCase):
-    def __init__(self, *args):
-        super(HzTest, self).__init__(*args)
-        rospy.init_node(NAME)
-
-       #self.lock = threading.Lock()
-       #self.message_received = False
-
-    def setUp(self):
-        self.verificationErrors = []
-        
-        self.errors = []
+class Result:    
+    def __init__(self, topic):
+        self.topic = topic
+        self.message_received = False
         # Count of all messages received
         self.msg_count = 0
         # Time of first message received
         self.msg_t0 = -1.0
         # Time of last message received
         self.msg_tn = -1.0
+        
+        self.errors = []
+        
+        self.min_interval = -1
+        self.max_interval = -1
+
+
+
+class HzTest(unittest.TestCase):
+    def __init__(self, *args):
+        super(HzTest, self).__init__(*args)
+        rospy.init_node(NAME)
+
+    def setUp(self):
+        self.verificationErrors = []
         
     def tearDown(self):
         self.assertEqual([], self.verificationErrors)
@@ -41,18 +47,13 @@ class HzTest(unittest.TestCase):
     ## performs two tests of a node, first with /rostime off, then with /rostime on
     def test_hz(self):
         # Fetch parameters
-        cob_hardware_test = rospy.get_param('cob_hardware_test')
-        
+        cob_hardware_test = rospy.get_param('cob_hardware_test')        
         
         for k, i in cob_hardware_test.iteritems():
-            self.lock = threading.Lock()
+            #self.lock = threading.Lock()
             
             #Reset for each cycle:
             self.message_received = False
-            self.errors = []
-            self.msg_count = 0
-            self.msg_t0 = -1.0
-            self.msg_tn = -1.0
             
             hz = i.get('hz')
             hzerror = i.get('hzerror')
@@ -89,11 +90,22 @@ class HzTest(unittest.TestCase):
     Topic: %s
     Test Duration: %s"""%(hz, hzerror, topic, test_duration)
             
+
             self._test_hz(hz, hzerror, topic, test_duration, wait_time)
+            #t = threading.Thread(self._test_hz(hz, hzerror, topic, test_duration, wait_time))
+            #t = Thread(target=self._test_hz, args=(hz, hzerror, topic, test_duration, wait_time))
+            #t.start()
+            #t.join()
+            #thread.start_new_thread(self._test_hz(hz, hzerror, topic, test_duration, wait_time),())
+            #Use: Processing & Vars
             
+        
     def _test_hz(self, hz, hzerror, topic, test_duration, wait_time):
     
-        self.current_test_failed = False
+        result = Result(topic)
+        
+        current_test_failed = False
+        result.message_received = False
         
         self.assert_(hz >= 0.0, "bad parameter (hz)")
         self.assert_(hzerror >= 0.0, "bad parameter (hzerror)")
@@ -101,25 +113,26 @@ class HzTest(unittest.TestCase):
         self.assert_(len(topic), "bad parameter (topic")
 
         if hz == 0:
-            self.min_rate = 0.0
-            self.max_rate = 0.0
-            self.min_interval = 0.0
-            self.max_interval = 0.0
+            min_rate = 0.0
+            max_rate = 0.0
+            result.min_interval = 0.0
+            result.max_interval = 0.0
         else:
-            self.min_rate = hz - hzerror
-            self.max_rate = hz + hzerror
-            self.min_interval = 1.0 / self.max_rate
-            if self.min_rate <= 0.0:
-                self.max_interval = 0.0
+            min_rate = hz - hzerror
+            max_rate = hz + hzerror
+            result.min_interval = 1.0 / max_rate
+            if min_rate <= 0.0:
+                result.max_interval = 0.0
             else:
-                self.max_interval = 1.0 / self.min_rate
+                result.max_interval = 1.0 / min_rate
 
         # Start actual test
-        sub = rospy.Subscriber(topic, rospy.AnyMsg, self.callback)
-        try: self.assert_(not self.errors, "bad initialization state (errors)")
+        sub = rospy.Subscriber(topic, rospy.AnyMsg, self.callback, result)
+        try: self.assert_(not result.errors, "bad initialization state (errors)")
         except AssertionError, e:
-            if not self.current_test_failed:
+            if not current_test_failed:
                 self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
+                current_test_failed = True
         
         print "Waiting for messages"
         # we have to wait until the first message is received before measuring the rate
@@ -127,20 +140,23 @@ class HzTest(unittest.TestCase):
         
         # - give the test 20 seconds to start, may parameterize this in the future
         wallclock_timeout_t = time.time() + wait_time
-        while not self.message_received and time.time() < wallclock_timeout_t:
+        while not result.message_received and time.time() < wallclock_timeout_t:
             time.sleep(0.1)
+            
+        print 'TOPIC: %r ' % (result.topic)
+        
         if hz > 0.:
-            try: self.assert_(self.message_received, "no messages before timeout")
+            try: self.assert_(result.message_received, "no messages before timeout")
             except AssertionError, e:
-                if not self.current_test_failed:
+                if not current_test_failed:
                     self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
-                    self.current_test_failed = True
+                    current_test_failed = True
         else:
-            try: self.failIf(self.message_received, "message received")
+            try: self.failIf(message_received, "message received")
             except AssertionError, e:
-                if not self.current_test_failed:
+                if not current_test_failed:
                     self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
-                    self.current_test_failed = True
+                    current_test_failed = True
             
         print "Starting rate measurement"
         if self.wall_clock:
@@ -156,51 +172,52 @@ class HzTest(unittest.TestCase):
 
         # Check that we got at least one message
         if hz > 0:
-            try: self.assert_(self.msg_count > 0, "no messages received")
+            try: self.assert_(result.msg_count > 0, "no messages received")
             except AssertionError, e:
-                if not self.current_test_failed:
+                if not current_test_failed:
                     self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
-                    self.current_test_failed = True
+                    current_test_failed = True
         else:
-            try: self.assertEquals(0, self.msg_count)
+            try: self.assertEquals(0, result.msg_count)
             except AssertionError, e:
-                if not self.current_test_failed:
+                if not current_test_failed:
                     self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
-                    self.current_test_failed = True
+                    current_test_failed = True
         # Check whether inter-message intervals were violated (if we were
         # checking them)
-        try: self.assert_(not self.errors, '\n'.join(self.errors))
+        try: self.assert_(not result.errors, '\n'.join(result.errors))
         except AssertionError, e:
-            if not self.current_test_failed:
+            if not current_test_failed:
                 self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
-                self.current_test_failed = True
+                current_test_failed = True
+                
 
         # If we have a non-zero rate target, make sure that we hit it on
         # average
         if hz > 0.0:
             try:
-                self.assert_(self.msg_t0 >= 0.0, "no first message received")
-                self.assert_(self.msg_tn >= 0.0, "no last message received")
-                dt = self.msg_tn - self.msg_t0
+                self.assert_(result.msg_t0 >= 0.0, "no first message received")
+                self.assert_(result.msg_tn >= 0.0, "no last message received")
+                dt = result.msg_tn - result.msg_t0
                 self.assert_(dt > 0.0, "only one message received")
-                rate = ( self.msg_count - 1) / dt
-                self.assert_(rate >= self.min_rate, 
+                rate = ( result.msg_count - 1) / dt
+                self.assert_(rate >= min_rate, 
                             "average rate (%.3fHz) exceeded minimum (%.3fHz)" %
-                            (rate, self.min_rate))
-                self.assert_(rate <= self.max_rate, 
+                            (rate, min_rate))
+                self.assert_(rate <= max_rate, 
                             "average rate (%.3fHz) exceeded maximum (%.3fHz)" %
-                            (rate, self.max_rate))
+                            (rate, max_rate))
             except AssertionError, e:
-                if not self.current_test_failed:
+                if not current_test_failed:
                     self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
-                    self.current_test_failed = True
-	    
+                    current_test_failed = True
+
         
-    def callback(self, msg):
+    def callback(self, msg, result):
         # flag that message has been received
-        self.message_received = True         
+        result.message_received = True         
         try:
-            self.lock.acquire()
+            #self.lock.acquire()
 
             if self.wall_clock:
                 curr = time.time()
@@ -213,37 +230,37 @@ class HzTest(unittest.TestCase):
                     return
                 curr = curr_rostime.to_sec()
  
-            if self.msg_t0 <= 0.0 or self.msg_t0 > curr:
-                self.msg_t0 = curr
-                self.msg_count = 1
+            if result.msg_t0 <= 0.0 or result.msg_t0 > curr:
+                result.msg_t0 = curr
+                result.msg_count = 1
                 last = 0
             else:
-                self.msg_count += 1
-                last = self.msg_tn
+                result.msg_count += 1
+                last = result.msg_tn
 
-            self.msg_tn = curr
+            result.msg_tn = curr
 
             # If we're instructed to check each inter-message interval, do
             # so
             if self.check_intervals and last > 0:
                 interval = curr - last
-                if interval < self.min_interval:
+                if interval < result.min_interval:
                     print >> sys.stderr, "CURR", curr
                     print >> sys.stderr, "LAST", last
-                    print >> sys.stderr, "msg_count", self.msg_count
-                    print >> sys.stderr, "msg_tn", self.msg_tn
-                    self.errors.append(
+                    print >> sys.stderr, "msg_count", result.msg_count
+                    print >> sys.stderr, "msg_tn", result.msg_tn
+                    result.errors.append(
                         'min_interval exceeded: %s [actual] vs. %s [min]'%\
-                        (interval, self.min_interval))
+                        (interval, result.min_interval))
                 # If max_interval is <= 0.0, then we have no max
-                elif self.max_interval > 0.0 and interval > self.max_interval:
-                    self.errors.append(
+                elif result.max_interval > 0.0 and interval > result.max_interval:
+                    result.errors.append(
                         'max_interval exceeded: %s [actual] vs. %s [max]'%\
-                        (interval, self.max_interval))
+                        (interval, result.max_interval))
 
         finally:
-            self.lock.release()
-    
+            #self.lock.release()    
+            pass
         
 if __name__ == '__main__':
     # A dirty hack to work around an apparent race condition at startup
