@@ -47,7 +47,8 @@ class HzTest(unittest.TestCase):
     ## performs two tests of a node, first with /rostime off, then with /rostime on
     def test_hz(self):
         # Fetch parameters
-        cob_hardware_test = rospy.get_param('cob_hardware_test')        
+        cob_hardware_test = rospy.get_param('cob_hardware_test')   
+        threads = []     
         
         for k, i in cob_hardware_test.iteritems():
             #self.lock = threading.Lock()
@@ -91,11 +92,14 @@ class HzTest(unittest.TestCase):
     Test Duration: %s"""%(hz, hzerror, topic, test_duration)
             
 
-            self._test_hz(hz, hzerror, topic, test_duration, wait_time)
+            #self._test_hz(hz, hzerror, topic, test_duration, wait_time)
             #t = threading.Thread(self._test_hz(hz, hzerror, topic, test_duration, wait_time))
-            #t = Thread(target=self._test_hz, args=(hz, hzerror, topic, test_duration, wait_time))
-            #t.start()
-            #t.join()
+            t = Thread(target=self._test_hz, args=(hz, hzerror, topic, test_duration, wait_time))
+            threads.append(t)
+            t.start()
+            
+        for t in threads:
+            t.join()
             #thread.start_new_thread(self._test_hz(hz, hzerror, topic, test_duration, wait_time),())
             #Use: Processing & Vars
             
