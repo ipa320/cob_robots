@@ -10,6 +10,8 @@ import unittest
 import rospy
 import rostest
 
+import rosunit
+
 NAME = 'hztest'
 
 from threading import Thread
@@ -30,6 +32,11 @@ class Result:
         self.min_interval = -1
         self.max_interval = -1
 
+#class CheckTest(unittest.TestCase):
+#    def __init__(self, input, output):
+#        super(KnownGood, self).__init__()
+#        self.input = input
+#        self.output = output
 
 
 class HzTest(unittest.TestCase):
@@ -43,12 +50,21 @@ class HzTest(unittest.TestCase):
     def tearDown(self):
         self.assertEqual([], self.verificationErrors)
         
+#    def suite():
+#        suite = unittest.TestSuite()
+#        suite.addTests(KnownGood(input, output) for input, output in known_values)
+#        return suite
+        
+    def create_test(self, x):
+        def do_test_expected(self):
+            self.assertEqual(x,2)
+        return do_test_expected
         
     ## performs two tests of a node, first with /rostime off, then with /rostime on
     def test_hz(self):
         # Fetch parameters
         cob_hardware_test = rospy.get_param('cob_hardware_test')   
-        threads = []     
+        threads = []
         
         for k, i in cob_hardware_test.iteritems():
             #self.lock = threading.Lock()
@@ -100,8 +116,23 @@ class HzTest(unittest.TestCase):
             
         for t in threads:
             t.join()
+        
+
+
+        for x in range (0,5):
+            test_method = self.create_test(x)
+            test_method.__name__ = 'test_expected_%d' % x
+            setattr(HzTest, test_method.__name__, test_method)
+            
+             
+        print 'THREADS: %s ERRORS: %s' % (len(threads), len(self.verificationErrors))
             #thread.start_new_thread(self._test_hz(hz, hzerror, topic, test_duration, wait_time),())
             #Use: Processing & Vars
+            
+
+
+
+       
             
         
     def _test_hz(self, hz, hzerror, topic, test_duration, wait_time):
@@ -265,6 +296,23 @@ class HzTest(unittest.TestCase):
         finally:
             #self.lock.release()    
             pass
+            
+class KnownGood(unittest.TestCase):
+    def __init__(self, i):
+        super(KnownGood, self).__init__()
+        self.i = i
+    def runTest(self):
+        self.assertEqual((self.i), 1)
+    def test(self):
+        return suite()
+
+
+def suite():
+    suite = unittest.TestSuite()
+    #for i in range(0,5):
+    suite.addTests(KnownGood(i) for i in range (0,5))
+    return suite
+
         
 if __name__ == '__main__':
     # A dirty hack to work around an apparent race condition at startup
@@ -273,6 +321,7 @@ if __name__ == '__main__':
     time.sleep(0.75)
     try:
         rostest.run('rostest', NAME, HzTest, sys.argv)
+        #rosunit.unitrun('rostest', NAME, KnownGood, sys.argv)
     except KeyboardInterrupt, e:
         pass
     print "exiting"
