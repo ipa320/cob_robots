@@ -4,3 +4,5 @@ moveit_setup_assistant_config:
     relative_path: cob3-3/urdf/cob3-3.urdf.xacro
   SRDF:
     relative_path: config/robot.srdf
+  CONFIG:
+    generated_timestamp: 1369837754

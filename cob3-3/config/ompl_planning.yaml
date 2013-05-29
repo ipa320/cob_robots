@@ -28,6 +28,7 @@ arm:
     - BKPIECEkConfigDefault
     - RRTStarkConfigDefault
   projection_evaluator: joints(arm_1_joint,arm_2_joint)
+  longest_valid_segment_fraction: 0.05
 sdh:
   planner_configs:
     - SBLkConfigDefault
@@ -38,3 +39,5 @@ sdh:
     - KPIECEkConfigDefault
     - BKPIECEkConfigDefault
     - RRTStarkConfigDefault
+  projection_evaluator: joints(sdh_knuckle_joint,sdh_finger_12_joint)
+  longest_valid_segment_fraction: 0.05
