@@ -32,7 +32,7 @@ modules: {
   },
   torso: {
     joint_names: ['torso_pan_joint','torso_tilt_joint'],
-    joint_step: [0.05,0.05]
+    joint_step: [0.15,0.15]
   },
   arm: {
     joint_names: ['arm_shoulder_pan_joint','arm_shoulder_lift_joint','arm_elbow_joint','arm_wrist_1_joint','arm_wrist_2_joint','arm_wrist_3_joint'],
