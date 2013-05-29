@@ -6,5 +6,5 @@
   <arg name="publish_monitored_planning_scene" value="true" />
  </include>
  # The visualization component of MoveIt!
- <include file="$(find cob_moveit_config)/launch/moveit_rviz.launch"/>
+ <include file="$(find cob_moveit_config)/launch/rviz.launch"/>
 </launch>

@@ -20,9 +20,9 @@
     <arg name="robot" value="$(arg robot)"/>
   </include>
 
-  <include file="$(find cob_moveit_config)/launch/moveit_rviz.launch">
+  <include file="$(find cob_moveit_config)/launch/rviz.launch">
     <arg name="robot" value="$(arg robot)"/>
-    <arg name="debug" value="true"/>
+    <arg name="debug" value="false"/>
   </include>
 
 </launch>
