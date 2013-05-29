@@ -13,7 +13,7 @@
   
   <!-- raw base -->
   <include filename="$(find raw_description)/urdf/base/base.urdf.xacro" />
-  
+
   <!-- raw boxgripper -->
   <include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
 
@@ -29,11 +29,11 @@
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
   <xacro:macro name="ur_arm_base_joint" >
-	<joint name="arm_base_joint" type="fixed" >
-		<origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_roll} ${arm_yaw}" />
-		<parent link="base_link" />
-		<child link="arm_base_link" />
-	</joint>
+  <joint name="arm_base_joint" type="fixed" >
+    <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_roll} ${arm_yaw}" />
+    <parent link="base_link" />
+    <child link="arm_base_link" />
+  </joint>
   </xacro:macro>
 
  <xacro:ur_arm_base_joint/>
@@ -42,7 +42,6 @@
   <xacro:raw_torso name="torso" parent="base_link">
       <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:raw_torso>
-
 
 
   <!--link name="arm_ee_link"/-->
