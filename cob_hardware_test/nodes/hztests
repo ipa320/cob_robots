@@ -17,8 +17,9 @@ NAME = 'hztest'
 from threading import Thread
 
 class Result:    
-    def __init__(self, topic):
+    def __init__(self, test_name, topic):
         self.topic = topic
+        self.topic = test_name
         self.message_received = False
         # Count of all messages received
         self.msg_count = 0
@@ -43,6 +44,7 @@ class HzTest(unittest.TestCase):
     def __init__(self, *args):
         super(HzTest, self).__init__(*args)
         rospy.init_node(NAME)
+        self.maxDiff = None
 
     def setUp(self):
         self.verificationErrors = []
@@ -72,11 +74,19 @@ class HzTest(unittest.TestCase):
             #Reset for each cycle:
             self.message_received = False
             
+            test_name = k
             hz = i.get('hz')
             hzerror = i.get('hzerror')
             topic = i.get('topic')
             test_duration = i.get('test_duration')
             wait_time = i.get('wait_time')
+            
+            self.assert_(len(test_name), "bad parameter (test_name)")
+            self.assert_(len(topic), "bad parameter (topic)")
+            self.assert_(hz >= 0.0, "bad parameter (hz)")
+            self.assert_(hzerror >= 0.0, "bad parameter (hzerror)")
+            self.assert_(test_duration > 0.0, "bad parameter (test_duration)")
+            self.assert_(wait_time > 0.0, "bad parameter (wait_time)")
             
         
             # We only require hzerror if hz is non-zero
@@ -102,15 +112,17 @@ class HzTest(unittest.TestCase):
             except KeyError, e:
                 self.wall_clock = False
 
-            print """Hz: %s
-    Hz Error: %s
+            print """%s
     Topic: %s
-    Test Duration: %s"""%(hz, hzerror, topic, test_duration)
+    Hz: %s
+    HzError: %s    
+    duration: %s
+    wait time: %s"""%(test_name, topic, hz, hzerror, test_duration, wait_time)
             
 
             #self._test_hz(hz, hzerror, topic, test_duration, wait_time)
             #t = threading.Thread(self._test_hz(hz, hzerror, topic, test_duration, wait_time))
-            t = Thread(target=self._test_hz, args=(hz, hzerror, topic, test_duration, wait_time))
+            t = Thread(target=self._test_hz, args=(test_name, topic, hz, hzerror, test_duration, wait_time))
             threads.append(t)
             t.start()
             
@@ -119,10 +131,10 @@ class HzTest(unittest.TestCase):
         
 
 
-        for x in range (0,5):
-            test_method = self.create_test(x)
-            test_method.__name__ = 'test_expected_%d' % x
-            setattr(HzTest, test_method.__name__, test_method)
+        #for x in range (0,5):
+            #test_method = self.create_test(x)
+            #test_method.__name__ = 'test_expected_%d' % x
+            #setattr(HzTest, test_method.__name__, test_method)
             
              
         print 'THREADS: %s ERRORS: %s' % (len(threads), len(self.verificationErrors))
@@ -135,17 +147,15 @@ class HzTest(unittest.TestCase):
        
             
         
-    def _test_hz(self, hz, hzerror, topic, test_duration, wait_time):
+    def _test_hz(self, test_name, topic, hz, hzerror, test_duration, wait_time):
     
-        result = Result(topic)
+        result = Result(test_name, topic)
         
         current_test_failed = False
         result.message_received = False
         
-        self.assert_(hz >= 0.0, "bad parameter (hz)")
-        self.assert_(hzerror >= 0.0, "bad parameter (hzerror)")
-        self.assert_(test_duration > 0.0, "bad parameter (test_duration)")
-        self.assert_(len(topic), "bad parameter (topic")
+
+        
 
         if hz == 0:
             min_rate = 0.0
@@ -166,7 +176,7 @@ class HzTest(unittest.TestCase):
         try: self.assert_(not result.errors, "bad initialization state (errors)")
         except AssertionError, e:
             if not current_test_failed:
-                self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
+                self.verificationErrors.append('Name: %s Topic: %s Error: %s'%(test_name, topic, str(e)))
                 current_test_failed = True
         
         print "Waiting for messages"
@@ -184,13 +194,13 @@ class HzTest(unittest.TestCase):
             try: self.assert_(result.message_received, "no messages before timeout")
             except AssertionError, e:
                 if not current_test_failed:
-                    self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
+                    self.verificationErrors.append('Name: %s Topic: %s Error: %s'%(test_name, topic, str(e)))
                     current_test_failed = True
         else:
             try: self.failIf(message_received, "message received")
             except AssertionError, e:
                 if not current_test_failed:
-                    self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
+                    self.verificationErrors.append('Name: %s Topic: %s Error: %s'%(test_name, topic, str(e)))
                     current_test_failed = True
             
         print "Starting rate measurement"
@@ -210,20 +220,20 @@ class HzTest(unittest.TestCase):
             try: self.assert_(result.msg_count > 0, "no messages received")
             except AssertionError, e:
                 if not current_test_failed:
-                    self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
+                    self.verificationErrors.append('Name: %s Topic: %s Error: %s'%(test_name, topic, str(e)))
                     current_test_failed = True
         else:
             try: self.assertEquals(0, result.msg_count)
             except AssertionError, e:
                 if not current_test_failed:
-                    self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
+                    self.verificationErrors.append('Name: %s Topic: %s Error: %s'%(test_name, topic, str(e)))
                     current_test_failed = True
         # Check whether inter-message intervals were violated (if we were
         # checking them)
         try: self.assert_(not result.errors, '\n'.join(result.errors))
         except AssertionError, e:
             if not current_test_failed:
-                self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
+                self.verificationErrors.append('Name: %s Topic: %s Error: %s'%(test_name, topic, str(e)))
                 current_test_failed = True
                 
 
@@ -244,7 +254,7 @@ class HzTest(unittest.TestCase):
                             (rate, max_rate))
             except AssertionError, e:
                 if not current_test_failed:
-                    self.verificationErrors.append('Topic: %s Error: %s'%(topic, str(e)))
+                    self.verificationErrors.append('Name: %s Topic: %s Error: %s'%(test_name, topic, str(e)))
                     current_test_failed = True
 
         
@@ -320,7 +330,8 @@ if __name__ == '__main__':
     # rosstage.
     time.sleep(0.75)
     try:
-        rostest.run('rostest', NAME, HzTest, sys.argv)
+        #rostest.run('rostest', NAME, HzTest, sys.argv)
+        rosunit.unitrun('rostest', NAME, HzTest, sys.argv)
         #rosunit.unitrun('rostest', NAME, KnownGood, sys.argv)
     except KeyboardInterrupt, e:
         pass
