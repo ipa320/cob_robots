@@ -43,23 +43,23 @@
   <xacro:desire_base name="base"/>
   
   <xacro:cob_lbr name="arm_left" parent="base_link">
-    <origin xyz="0.3 0.2 1.36" rpy="-0.82 0 0" />
+    <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
   </xacro:cob_lbr>
   
   <xacro:cob_lbr name="arm_right" parent="base_link">
-    <origin xyz="0.3 -0.2 1.36" rpy="0.82 0 0" />
+    <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
   </xacro:cob_lbr>
   
   <xacro:head_desire name="head" parent="base_link">
-    <origin xyz="0.40 0 1.4246" rpy="3.14159 0 0" />
+    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head_desire>
   
   <xacro:schunk_sdh name="sdh_left" parent="arm_left_7_link">
-    <origin xyz="0 0 0.032" rpy="0 0 1.5708" />
+    <origin xyz="${sdh_left_x} ${sdh_left_y} ${sdh_left_z}" rpy="${sdh_left_roll} ${sdh_left_pitch} ${sdh_left_yaw}" />
   </xacro:schunk_sdh>
   
   <xacro:schunk_sdh name="sdh_right" parent="arm_right_7_link">
-    <origin xyz="0 0 0.032" rpy="0 0 1.5708" />
+    <origin xyz="${sdh_right_x} ${sdh_right_y} ${sdh_right_z}" rpy="${sdh_right_roll} ${sdh_right_pitch} ${sdh_right_yaw}" />
   </xacro:schunk_sdh>
   
 </robot>

@@ -28,20 +28,20 @@
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
   <xacro:tower_symetric name="tower" parent="base_link">
-    <origin xyz="0.221 0.0 0.306"/>
+      <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
   </xacro:tower_symetric>
 
-  <xacro:frida parent="base_link" name="arm">
-    <origin xyz="0.24 0.0 0.48" rpy="0 0 0" />
+  <xacro:frida name="arm" parent="base_link">
+      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:frida>
 
  <!--
   <xacro:prace_gripper name="gripper_left" parent="arm_left_7_link">
-    <origin xyz="0.0 0.0 0.0561" rpy="0 0 0" />
+      <origin xyz="${gripper_left_x} ${gripper_left_y} ${gripper_left_z}" rpy="${gripper_left_roll} ${gripper_left_pitch} ${gripper_left_yaw}" />  
   </xacro:prace_gripper>
 
   <xacro:prace_gripper name="gripper_right" parent="arm_right_7_link">
-    <origin xyz="0.0 0.0 0.0561" rpy="0 0 0" />
+      <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />  
   </xacro:prace_gripper>
 -->
 </robot>
