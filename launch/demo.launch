@@ -23,6 +23,7 @@
   <include file="$(find cob_moveit_config)/launch/rviz.launch">
     <arg name="robot" value="$(arg robot)"/>
     <arg name="debug" value="false"/>
+    <arg name="config" value="true"/>
   </include>
 
 </launch>
