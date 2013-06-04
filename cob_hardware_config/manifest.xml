@@ -13,6 +13,6 @@
   <depend package="cob_description"/>
   <depend package="raw_description"/>
   <depend package="schunk_description"/>
-  <depend package="ur5_description"/>
+  <depend package="ur_description"/>
 
 </package>

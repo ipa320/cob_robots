@@ -16,7 +16,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-4/upload_param_raw3-4.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 		<!-- for ros-fuerte use the next line. WARNING: still under development, additional files needed -->
 		<!-- machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/env.sh" default="true"/-->
 
@@ -61,7 +61,7 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 		<!-- for ros-fuerte use the next line. WARNING: still under development, additional files needed -->
 		<!--machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/env.sh" default="true"/-->
 
@@ -80,7 +80,7 @@
 	</group>
 
 	<group>
-		<machine name="pc3" address="$(arg pc3)" default="true"/>
+		<machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 		<!-- for ros-fuerte use the next line. WARNING: still under development, additional files needed -->
 		<!--machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/env.sh" default="true"/-->
 
@@ -92,7 +92,7 @@
 
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 	<!-- for ros-fuerte use the next line. WARNING: still under development, additional files needed -->
 	<!--machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/env.sh" default="true"/-->
 

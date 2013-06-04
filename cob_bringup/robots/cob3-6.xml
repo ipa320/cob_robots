@@ -15,7 +15,7 @@
 	<include file="$(find cob_default_robot_config)/cob3-6/upload_param_cob3-6.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -85,7 +85,7 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -113,6 +113,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 </launch>

@@ -16,7 +16,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-3/upload_param_raw3-3.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
@@ -40,7 +40,7 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -51,6 +51,6 @@
 	</group>
 
 
-	<machine name="pc1" address="$(arg pc1)" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 </launch>
