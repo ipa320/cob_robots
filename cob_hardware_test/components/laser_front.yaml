@@ -1,4 +1,4 @@
-laser_front: {  
+laser_front_test: {  
   hz: 55.25,
   hzerror: 54.75,
   topic: /scan_front,

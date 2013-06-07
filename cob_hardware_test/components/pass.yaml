@@ -1,21 +1,28 @@
-cam3d_depth_camera_info: {  
-  hz: 55.25,
+laser_front_fast: {  
+  hz: 5005.25,
   hzerror: 54.75,
-  topic: /cam3d/depth/camera_info,
+  topic: /scan_front,
   test_duration: 2.0,
   wait_time: 30.0
 }
-cam3d_depth_image_raw: {  
-  hz: 55.25,
-  hzerror: 54.75,
-  topic: /cam3d/depth/image_raw,
+laser_front_slow: {  
+  hz: 0.25,
+  hzerror: 1,
+  topic: /scan_front,
   test_duration: 2.0,
   wait_time: 30.0
 }
-cam3d_rgb_image_color: {  
+laser_front_nowait: {  
   hz: 55.25,
   hzerror: 54.75,
-  topic: /cam3d/rgb/image_color,
+  topic: /scan_front,
   test_duration: 2.0,
+  wait_time: 0.1
+}
+laser_front_noduration: {  
+  hz: 55.25,
+  hzerror: 54.75,
+  topic: /scan_front,
+  test_duration: 0.1,
   wait_time: 30.0
 }
