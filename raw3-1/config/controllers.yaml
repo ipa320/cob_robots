@@ -1,6 +1,6 @@
 controller_list:
-  - ns: follow_joint_trajectory
-    name: arm_controller
+  - name: arm_controller
+    ns: follow_joint_trajectory
     default: true
     joints:
       - arm_shoulder_pan_joint

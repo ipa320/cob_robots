@@ -22,7 +22,8 @@
   </include>
 
   <rosparam file="$(arg config_path)/controllers.yaml" ns="move_group"/>
-  <rosparam param="use_controller_manager" ns="move_group">false</rosparam>
+  <param name="move_group/use_controller_manager" value="false"/>
+  <param name="move_group/moveit_controller_manager" value="pr2_moveit_controller_manager/Pr2MoveItControllerManager"/>
   
   <include ns="move_group" file="$(find cob_moveit_config)/launch/planning_pipeline.xml">
       <arg name="pipeline" value="$(arg pipeline)"/>
