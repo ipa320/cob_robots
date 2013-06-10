@@ -29,6 +29,30 @@ arm:
     - RRTStarkConfigDefault
   projection_evaluator: joints(arm_1_joint,arm_2_joint)
   longest_valid_segment_fraction: 0.05
+torso:
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+  projection_evaluator: joints(torso_lower_neck_tilt_joint,torso_pan_joint)
+  longest_valid_segment_fraction: 0.05
+lookat:
+  planner_configs:
+    - SBLkConfigDefault
+    - LBKPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - ESTkConfigDefault
+    - KPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - RRTStarkConfigDefault
+  projection_evaluator: joints(torso_lower_neck_tilt_joint,torso_pan_joint)
+  longest_valid_segment_fraction: 0.05
 sdh:
   planner_configs:
     - SBLkConfigDefault
@@ -39,5 +63,5 @@ sdh:
     - KPIECEkConfigDefault
     - BKPIECEkConfigDefault
     - RRTStarkConfigDefault
-  projection_evaluator: joints(sdh_knuckle_joint,sdh_finger_12_joint)
+  projection_evaluator: joints(sdh_finger_22_joint,sdh_finger_23_joint)
   longest_valid_segment_fraction: 0.05

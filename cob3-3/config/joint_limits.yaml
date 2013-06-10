@@ -34,6 +34,16 @@ joint_limits:
     max_velocity: 1.0
     has_acceleration_limits: true
     max_acceleration: 1.0
+  head_axis_joint:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+  head_lookat_joint:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
   sdh_finger_12_joint:
     has_velocity_limits: true
     max_velocity: 1.0
@@ -65,6 +75,21 @@ joint_limits:
     has_acceleration_limits: true
     max_acceleration: 1.0
   sdh_thumb_3_joint:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+  torso_lower_neck_tilt_joint:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+  torso_pan_joint:
+    has_velocity_limits: true
+    max_velocity: 1.0
+    has_acceleration_limits: true
+    max_acceleration: 1.0
+  torso_upper_neck_tilt_joint:
     has_velocity_limits: true
     max_velocity: 1.0
     has_acceleration_limits: true
