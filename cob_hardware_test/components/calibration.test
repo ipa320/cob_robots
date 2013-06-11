@@ -4,7 +4,7 @@
 	<!-- start dialog service -->
 	<node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
 	<!-- launch robot (on real $ROBOT)-->
-	<include file="$(find cob_bringup)/robot.launch" />
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" />
 	<!-- open rviz with configuration -->
 	<node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(find cob_hardware_test)/config/calibration.vcg" respawn="false" output="screen" />
 	<!-- include test -->

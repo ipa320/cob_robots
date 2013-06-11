@@ -46,8 +46,6 @@ class HzTest(unittest.TestCase):
     def setUp(self):
         self.verificationErrors = []
         
-    def tearDown(self):
-        self.assertEqual([], self.verificationErrors)       
                
     ## performs two tests of a node, first with /rostime off, then with /rostime on
 
@@ -119,7 +117,7 @@ class HzTest(unittest.TestCase):
             t.join()        
                        
         print 'THREADS: %s ERRORS: %s' % (len(threads), len(self.verificationErrors))         
-                 
+        self.assertEqual([], self.verificationErrors)          
         
     def _test_hz(self, test_name, topic, hz, hzerror, test_duration, wait_time):
     
