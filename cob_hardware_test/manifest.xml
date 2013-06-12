@@ -13,5 +13,6 @@
   <depend package="cob_bringup"/>
   <depend package="cob_default_robot_config"/>
   <depend package="audio_common_msgs" /> <!-- audio_common -->
+  <depend package="cob_teleop" />
 
 </package>
