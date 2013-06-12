@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- launch component -->
+	<include file="$(find cob_bringup)/components/tray_sensors.launch" />
+	<!-- upload default configurations -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch" />
+	<!-- include test -->
+	<include file="$(find cob_hardware_test)/components/tray_sensors.test.xml" />
+
+</launch>

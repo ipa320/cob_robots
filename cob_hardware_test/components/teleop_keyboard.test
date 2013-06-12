@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- start dialog service -->
+	<node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
+	<!-- start component -->
+	<include file="$(find cob_teleop)/ros/launch/teleop_keyboard.launch" />
+	<!-- include test -->
+	<include file="$(find cob_hardware_test)/components/teleop.test.xml" />
+
+</launch>

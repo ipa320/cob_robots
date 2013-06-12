@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-    <include file="$(find cob_bringup)/components/kinect.launch" />
-    <include file="$(find cob_hardware_test)/components/kinect.test.xml" />
-           
+	<!-- launch component -->
+	<include file="$(find cob_bringup)/components/kinect.launch" />
+	<!-- include test -->
+	<include file="$(find cob_hardware_test)/components/kinect.test.xml" />
+
 </launch>
