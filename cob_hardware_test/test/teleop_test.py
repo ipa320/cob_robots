@@ -6,7 +6,6 @@ import time
 import unittest
 import rospy
 import rostest
-#importing test specific messages
 from geometry_msgs.msg import Twist
 from dialog_client import dialog_client
 

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import roslib
 roslib.load_manifest('cob_hardware_test')
-#from mpmath.functions.functions import fabs
 import sys
 import time
 import unittest

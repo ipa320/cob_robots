@@ -7,7 +7,6 @@ import unittest
 import rospy
 import rostest
 from simple_script_server import *
-#importing test specific messages
 import schunk_sdh.msg
 from dialog_client import dialog_client
 
