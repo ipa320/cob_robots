@@ -78,7 +78,7 @@ if __name__ == '__main__':
     # rosstage.
     time.sleep(0.75)
     try:
-        rostest.run('rostest', 'component_test', UnitTest, sys.argv)
+        rostest.run('rostest', 'calibration_test', UnitTest, sys.argv)
     except KeyboardInterrupt, e:
         pass
     print "exiting"

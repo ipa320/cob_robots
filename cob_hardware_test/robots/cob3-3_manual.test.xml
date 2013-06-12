@@ -14,6 +14,6 @@
 	<include file="$(find cob_hardware_test)/components/sdh.test.xml" />
 	<include file="$(find cob_hardware_test)/components/joy.test.xml" />   
 	<include file="$(find cob_hardware_test)/components/teleop.test.xml" />	
-	<include file="$(find cob_hardware_test)/components/calibration.xml" />
+	<include file="$(find cob_hardware_test)/components/calibration.test.xml" />
 
 </launch>

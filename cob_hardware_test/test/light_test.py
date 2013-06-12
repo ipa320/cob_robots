@@ -24,7 +24,7 @@ class HardwareTest(unittest.TestCase):
     def __init__(self, *args):
 
         super(HardwareTest, self).__init__(*args)
-        rospy.init_node('test_hardware_test')
+        rospy.init_node('light_test')
         torso_joint_states = []
         self.message_received = False
         self.sss = simple_script_server()
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     # rosstage.
     time.sleep(0.75)
     try:
-        rostest.run('rostest', 'test_hardware_test', HardwareTest, sys.argv)
+        rostest.run('rostest', 'light_test', HardwareTest, sys.argv)
     except KeyboardInterrupt, e:
         pass
     print "exiting"

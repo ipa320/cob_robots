@@ -2,6 +2,6 @@
 <launch>
 
 	<!-- perform test -->
-	<test test-name="hz_joy" pkg="cob_hardware_test" type="joy_test.py" name="hztest_joy"/> 
+	<test test-name="joy_test" pkg="cob_hardware_test" type="joy_test.py" name="joy_test"/> 
 
 </launch>

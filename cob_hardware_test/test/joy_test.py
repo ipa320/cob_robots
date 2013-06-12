@@ -48,7 +48,7 @@ class UnitTest(unittest.TestCase):
 
 if __name__ == '__main__':
     try:
-        rostest.run('rostest', 'component_test', UnitTest, sys.argv)
+        rostest.run('rostest', 'joy_test', UnitTest, sys.argv)
     except KeyboardInterrupt, e:
         pass
     print "exiting"

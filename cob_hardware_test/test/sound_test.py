@@ -27,36 +27,35 @@ class HardwareTest(unittest.TestCase):
     def __init__(self, *args):
 
         super(HardwareTest, self).__init__(*args)
-        rospy.init_node('test_hardware_test')
+        rospy.init_node('sound_test')
         self.message_received = False
         self.sss = simple_script_server()
         self.record = []
 
-    #def test_play(self):
-        #dialog_client(0, 'Listen up for the sound' )
-        #rospy.set_param("script_server/sound/language","de")
-        #handle = self.sss.play("grasp_tutorial_01")
-        #self.assertEqual(handle.get_state(), 3)
-        #self.assertTrue(dialog_client(1, 'Did you hear some audio file?'))
+    def test_play(self):
+        dialog_client(0, 'Listen up for the sound' )
+        rospy.set_param("script_server/sound/language","de")
+        handle = self.sss.play("grasp_tutorial_01")
+        self.assertEqual(handle.get_state(), 3)
+        self.assertTrue(dialog_client(1, 'Did you hear some audio file?'))
         
-    #def test_say(self):
-        #dialog_client(0, 'Listen up for the sound' )
-        #handle = self.sss.say(["Hello"])
-        #self.assertEqual(handle.get_state(), 3)
-        #if handle.get_error_code() != 0:
-            #error_msg = 'Could say something'
-            #self.fail(error_msg + "; errorCode: " + str(handle.get_error_code()))
-        #self.assertTrue(dialog_client(1, 'Did you hear <<Hello>>?'))
-        
-        
+    def test_say(self):
+        dialog_client(0, 'Listen up for the sound' )
+        handle = self.sss.say(["Hello"])
+        self.assertEqual(handle.get_state(), 3)
+        if handle.get_error_code() != 0:
+            error_msg = 'Could say something'
+            self.fail(error_msg + "; errorCode: " + str(handle.get_error_code()))
+        self.assertTrue(dialog_client(1, 'Did you hear <<Hello>>?'))
+                
     def test_record(self):
         
         dialog_client(0, 'Prepare to Record')
         sub = rospy.Subscriber("/audio_in", AudioData, self.callback)
         pub = rospy.Publisher("/audio_out", AudioData)
-        rospy.sleep(1.2)
+        rospy.sleep(4.0)
         dialog_client(0, 'Done recording, listen up')        
-        r = rospy.Rate(len(self.record)/1.2)
+        r = rospy.Rate(len(self.record)/4.0)
         
         for Data in self.record:
             pub.publish(Data)
@@ -78,7 +77,7 @@ if __name__ == '__main__':
     time.sleep(0.75)
 
     try:
-        rostest.run('rostest', 'test_hardware_test', HardwareTest, sys.argv)
+        rostest.run('rostest', 'sound_test', HardwareTest, sys.argv)
     except KeyboardInterrupt, e:
         pass
     print "exiting"
