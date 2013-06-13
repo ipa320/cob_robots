@@ -3,42 +3,45 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="icob" >
+       name="raw3-3" >
   
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
   <include filename="$(find cob_calibration_data)/raw3-3/calibration/calibration.urdf.xacro" />   
-  
   <!-- raw base -->
-  <include filename="$(find raw_description)/urdf/base/base.urdf.xacro" />
+  <include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
+
+  <!-- raw tower -->
+  <include filename="$(find raw_description)/urdf/tower_symetric/tower.urdf.xacro" />
+
+  <!-- frida --> 
+  <include filename="$(find frida_description)/urdf/frida.urdf.xacro" />
+
+  <!-- prace gripper -->
+  <include filename="$(find prace_gripper_description)/urdf/prace_gripper.urdf.xacro"/>
 
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
-  <!-- torso -->
-  <!--include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" /-->
-
-  <!-- frida --> 
-  <!--include filename="$(find frida_description)/urdf/frida/frida.urdf.xacro" /-->
-
   <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
 
-  <!-- baer base-->
-  <!--include filename="$(find raw_description)/urdf/base/baer_base.urdf.xacro" /> 
-  <xacro:baer_base name="base"/-->
+  <xacro:tower_symetric name="tower" parent="base_link">
+      <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
+  </xacro:tower_symetric>
 
-  <!--xacro:frida_torso parent="base_link">
-    <origin xyz="0 0 0.88" rpy="0 0 0" />
-  </xacro:frida_torso-->
+  <xacro:frida name="arm" parent="base_link">
+      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
+  </xacro:frida>
 
-  <!--xacro:frida_arm name="arm" suffix ="left" reflect = "0">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </xacro:frida_arm-->
+ <!--
+  <xacro:prace_gripper name="gripper_left" parent="arm_left_7_link">
+      <origin xyz="${gripper_left_x} ${gripper_left_y} ${gripper_left_z}" rpy="${gripper_left_roll} ${gripper_left_pitch} ${gripper_left_yaw}" />  
+  </xacro:prace_gripper>
 
-  <!--xacro:frida_arm name="arm" suffix= "right" reflect = "1">
-    <origin xyz="0 -0.15 0" rpy="0 0 ${-M_PI/4}" />
-  </xacro:frida_arm-->
-
+  <xacro:prace_gripper name="gripper_right" parent="arm_right_7_link">
+      <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />  
+  </xacro:prace_gripper>
+-->
 </robot>

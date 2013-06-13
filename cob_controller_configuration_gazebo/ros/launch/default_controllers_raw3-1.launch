@@ -19,6 +19,11 @@
 		<arg name="robot" value="raw3-1"/>
 	</include>
 
+	<!-- Torso -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_controller_raw3-1.launch">
+		<arg name="robot" value="raw3-1"/>
+	</include>
+
 	<!-- start additional components -->
 	<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
