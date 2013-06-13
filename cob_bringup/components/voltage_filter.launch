@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+	<arg name="robot"/>
 	<arg name="mode" default="update"/>
 
 	<node name="volts_filt" pkg="cob_voltage_control" type="savitzky_golay.py" output="screen">
