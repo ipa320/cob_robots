@@ -114,7 +114,7 @@
 		</include>
 
 		<!-- start additional packages -->
-		<param name="/sound_controller/mode" value="cepstral" />
+		<param name="/sound_controller/mode" value="festival" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 
 		<include file="$(find cob_bringup)/components/light.launch" >
