@@ -32,8 +32,12 @@
     <group name="lookat">
         <chain base_link="base_link" tip_link="lookat_focus_frame" />
     </group>
+    <group name="focus">
+        <link name="lookat_focus_frame" />
+    </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand" parent_link="arm_7_link" group="sdh" />
+    <end_effector name="lookat_ee" parent_link="lookat_focus_frame" group="focus" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_joint" type="planar" parent_frame="odom_combined" child_link="base_footprint" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
