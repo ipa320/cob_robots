@@ -69,6 +69,9 @@
 		<include file="$(find cob_bringup)/components/sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<include file="$(find cob_bringup)/components/dsa.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/components/head.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>

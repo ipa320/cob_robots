@@ -8,8 +8,4 @@
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/sdh.yaml"/>
 	</node>
 
-	<node name="dsa_controller" pkg="schunk_sdh" type="dsa_only" cwd="node" respawn="true" output="screen" >
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/dsa.yaml"/>
-	</node>
-
 </launch>
