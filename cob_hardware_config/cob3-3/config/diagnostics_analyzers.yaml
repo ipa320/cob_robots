@@ -2,7 +2,7 @@ pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
   computers:
-    type: AnalyzerGroup
+    type: IgnoreAnalyzer
     path: Computers
     analyzers:
       pc1:
@@ -88,7 +88,7 @@ analyzers:
     path: Sensors
     analyzers:
       joystick:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/IgnoreAnalyzer
         path: Joystick
         contains: 'joy'
       laser_top:
@@ -106,14 +106,14 @@ analyzers:
       stereo_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Stereo (Left)
-        startswith: ['stereo/left/color_camera']
+        startswith: ['stereo/left/image_color']
       stereo_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Stereo (Right)
         contains: right
-        startswith: ['stereo/right/color_camera']
+        startswith: ['stereo/right/image_color']
       dsa:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/IgnoreAnalyzer
         path: DSA
         contains: 'dsa_controller'
 
@@ -140,8 +140,18 @@ analyzers:
       arm:
         type: diagnostic_aggregator/GenericAnalyzer
         path: LBR
-        contains: 'cob_lbr'
+        contains: 'arm_controller'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
         contains: 'base_controller'
+        
+## remove diagnostics from gazebo in simulated case
+  simulation:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'joint'
+  simulation2:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'Controller'
