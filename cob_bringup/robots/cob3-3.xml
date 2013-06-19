@@ -119,6 +119,7 @@
 
 	<group>
 		<machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -134,6 +135,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 </launch>
