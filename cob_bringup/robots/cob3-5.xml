@@ -122,16 +122,17 @@
 	<group>
 		<machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
 
-		
+		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc3)" />
 		</include>
 
+
 		<include file="$(find cob_bringup)/components/tray_powerball.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
+		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
