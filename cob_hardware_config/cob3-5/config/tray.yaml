@@ -4,8 +4,6 @@ can_baudrate: 1000
 max_accelerations: [0.8,0.8,0.8]
 OperationMode: position
 
-joint_names: [tray_1_joint, tray_2_joint, tray_3_joint]
-
 # trajectory controller parameters
 ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.1 # rad/sec^2
