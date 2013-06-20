@@ -8,7 +8,7 @@ max_accelerations: [0.8,0.8,0.8,0.8,0.8,0.8,0.8]
 min_publish_duration: 0.1
 horizon: 0.1 # [s]
 frequency: 68
-force_use_movevel: True
+force_use_movevel: False
 
 # trajectory controller parameters
 ptp_vel: 0.4 # rad/sec

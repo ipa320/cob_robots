@@ -60,9 +60,6 @@
 		<include file="$(find cob_bringup)/components/torso.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/tray.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
 		<include file="$(find cob_bringup)/components/lwa.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -83,6 +80,10 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<!-- start additional packages -->
+		<!--param name="/sound_controller/mode" value="cepstral" /-->
+		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
 	<group>
@@ -115,21 +116,21 @@
 	<group>
 		<machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
 
-		<!-- pc monitor -->
+		
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc3)" />
 		</include>
 
-		<!-- start additional packages -->
-		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<include file="$(find cob_bringup)/components/tray_powerball.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 </launch>
