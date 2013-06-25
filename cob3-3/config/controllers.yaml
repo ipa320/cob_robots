@@ -10,3 +10,14 @@ controller_list:
       - arm_5_joint
       - arm_6_joint
       - arm_7_joint
+  - name: sdh_controller
+    ns: follow_joint_trajectory
+    default: true
+    joints:
+      - sdh_knuckle_joint
+      - sdh_thumb_2_joint
+      - sdh_thumb_3_joint
+      - sdh_finger_12_joint
+      - sdh_finger_13_joint
+      - sdh_finger_22_joint
+      - sdh_finger_23_joint
