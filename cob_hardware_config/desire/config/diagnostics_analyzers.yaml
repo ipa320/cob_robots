@@ -8,11 +8,18 @@ analyzers:
       pc1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc1
-        contains: 'pc1'
+        contains: ['pc1 CPU Temperature',
+                   'pc1 CPU Usage',
+                   'pc1 HD Temperature',
+                   'pc1 HD Usage']
+
       pc2:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc2
-        contains: 'pc2'
+        contains: ['pc2 CPU Temperature',
+                   'pc2 CPU Usage',
+                   'pc2 HD Temperature',
+                   'pc2 HD Usage']
 
   network:
     type: AnalyzerGroup
@@ -28,10 +35,6 @@ analyzers:
     type: AnalyzerGroup
     path: Sensors
     analyzers:
-      joystick:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Joystick
-        contains: 'joy'
       laser_rear:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Rear
@@ -41,6 +44,20 @@ analyzers:
         path: Scan Front
         contains: 'laser_front'
 
+  io:
+    type: AnalyzerGroup
+    path: IO
+    analyzers:
+      sound:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sound
+        contains: 'sound'
+        timeout: 15
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
+
   motors:
     type: AnalyzerGroup
     path: Actuators
@@ -49,3 +66,6 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
         contains: 'base_controller'
+
+
+
