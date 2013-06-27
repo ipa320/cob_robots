@@ -15,17 +15,11 @@
 [Geom]
 
 // Length of the platform in [mm]
-<<<<<<< HEAD
-PltfLength = 752 
-
-// Width of the platform in [mm]
-PltfWidth = 565 
-=======
 PltfLength = 758 //(mit Huelle) //679 (ohne Huelle)
 
 // Width of the platform in [mm]
 PltfWidth = 573 //(mit Huelle) //500 (ohne Huelle)
->>>>>>> ef74cb1df6cf06f3139cd77b667a72a59b3930f9
+
 
 // Distance of the wheels in [mm] // also used in ThreadMotionCtrl->PostProcess (ToDo: get rid of it)
 DistWheels = 320
