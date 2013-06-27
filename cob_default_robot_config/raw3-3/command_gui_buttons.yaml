@@ -15,10 +15,10 @@ group4:
   component_name: arm_left
   buttons: [[stop,trigger,stop],
     [home,move,home],
-    [open,move,open]]
+    [zero,move,zero]]
 group5:
   group_name: arm pos right
   component_name: arm_right
   buttons: [[stop,trigger,stop],
     [home,move,home],
-    [open,move,open]]
+    [zero,move,zero]]
