@@ -77,6 +77,10 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<!-- wifi monitor -->
+		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
@@ -99,6 +103,9 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<include file="$(find cob_bringup)/components/tray_sensors.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
