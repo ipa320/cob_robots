@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- hztest power_state -->	
+   <test test-name="hz_power_state" pkg="rostest" type="hztest" name="hztest_power_state">
+    <param name="topic" value="power_state" />  
+    <param name="hz" value="55.25" />
+    <param name="hzerror" value="54.75" />
+    <param name="test_duration" value="2.0" />  
+   </test>
+  
+</launch>
