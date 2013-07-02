@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find cob_bringup)/components/voltage_filter.launch" />
+	<include file="$(find cob_bringup)/components/relayboard.launch" />
+	<include file="$(find cob_hardware_test)/components/voltage_filter.test.xml" />
+
+</launch>

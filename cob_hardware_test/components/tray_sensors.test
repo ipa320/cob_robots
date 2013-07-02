@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find cob_bringup)/components/tray_sensors.launch" />   
+    <include file="$(find cob_hardware_test)/components/tray_sensors.test.xml" />
+  
+</launch>
