@@ -16,4 +16,4 @@ reset_on_open:         true
 #iso_speed:             400
 # frame_rate           15
 # frame_rate           5
-frame_id:              head_color_camera_l_link
+frame_id:              /head_color_camera_l_link
