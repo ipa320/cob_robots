@@ -7,11 +7,12 @@
 	<include file="$(find cob_bringup)/robots/raw3-1.xml" >
 		<arg name="pc1" value="raw3-1-pc1"/>
 		<arg name="pc2" value="raw3-1-pc2"/>
+		<arg name="pc3" value="raw3-1-pc3"/>
 	</include>
 	
 	<!-- upload default configuration parameters -->
 	<include file="$(arg pkg_env_config)/upload_navigation_goals.launch">
 		<arg name="robot_env" value="$(arg robot_env)" />
 	</include>
-
+  
 </launch>

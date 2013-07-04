@@ -21,7 +21,7 @@
   <depend stack="laser_drivers" /> <!-- hokuyo_node -->
   <depend stack="navigation" /> <!-- costmap_2d -->
   <depend stack="nodelet_core" /> <!-- nodelet -->
-  <depend stack="openni_kinect" /> <!-- openni_launch -->
+  <depend stack="openni_launch" /> <!-- openni_launch -->
   <depend stack="pr2_common" /> <!-- pr2_dashboard_aggregator -->
   <depend stack="pr2_controllers" /> <!-- joint_trajectory_action -->
   <depend stack="pr2_mechanism" /> <!-- pr2_controller_manager -->
