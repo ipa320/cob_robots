@@ -1,63 +1,39 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+# http://ros.org/doc/groovy/api/catkin/html/user_guide/supposed.html
+cmake_minimum_required(VERSION 2.8.3)
+project(cob_default_robot_config)
 
-# Set the build type.  Options are:
-#  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
-#  Debug          : w/ debug symbols, w/o optimization
-#  Release        : w/o debug symbols, w/ optimization
-#  RelWithDebInfo : w/ debug symbols, w/ optimization
-#  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
-#set(ROS_BUILD_TYPE RelWithDebInfo)
-
-rosbuild_init()
-
-#set the default path for built executables to the "bin" directory
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-#set the default path for built libraries to the "lib" directory
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
-
-#uncomment if you have defined messages
-#rosbuild_genmsg()
-#uncomment if you have defined services
-#rosbuild_gensrv()
-
-#common commands for building c++ executables and libraries
-#rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
-#target_link_libraries(${PROJECT_NAME} another_library)
-#rosbuild_add_boost_directories()
-#rosbuild_link_boost(${PROJECT_NAME} thread)
-#rosbuild_add_executable(example examples/example.cpp)
-#target_link_libraries(example ${PROJECT_NAME})
 
 # rostest for cob3-1
-rosbuild_add_roslaunch_check(cob3-1/upload_param_cob3-1.launch)
+#rosbuild_add_roslaunch_check(cob3-1/upload_param_cob3-1.launch)
 
 # rostest for cob3-2
-rosbuild_add_roslaunch_check(cob3-2/upload_param_cob3-2.launch)
+#rosbuild_add_roslaunch_check(cob3-2/upload_param_cob3-2.launch)
 
 # rostest for cob3-3
-rosbuild_add_roslaunch_check(cob3-3/upload_param_cob3-3.launch)
+#rosbuild_add_roslaunch_check(cob3-3/upload_param_cob3-3.launch)
 
 # rostest for cob3-4
-rosbuild_add_roslaunch_check(cob3-4/upload_param_cob3-4.launch)
+#rosbuild_add_roslaunch_check(cob3-4/upload_param_cob3-4.launch)
 
 # rostest for cob3-5
-rosbuild_add_roslaunch_check(cob3-5/upload_param_cob3-5.launch)
+#rosbuild_add_roslaunch_check(cob3-5/upload_param_cob3-5.launch)
 
 # rostest for cob3-6
-rosbuild_add_roslaunch_check(cob3-6/upload_param_cob3-6.launch)
+#rosbuild_add_roslaunch_check(cob3-6/upload_param_cob3-6.launch)
 
 # rostest for raw3-1
-rosbuild_add_roslaunch_check(raw3-1/upload_param_raw3-1.launch)
+#rosbuild_add_roslaunch_check(raw3-1/upload_param_raw3-1.launch)
 
 # rostest for raw3-2
-rosbuild_add_roslaunch_check(raw3-2/upload_param_raw3-2.launch)
+#rosbuild_add_roslaunch_check(raw3-2/upload_param_raw3-2.launch)
 
 # rostest for raw3-3
-rosbuild_add_roslaunch_check(raw3-3/upload_param_raw3-3.launch)
+#rosbuild_add_roslaunch_check(raw3-3/upload_param_raw3-3.launch)
 
 # rostest for raw3-4
-rosbuild_add_roslaunch_check(raw3-4/upload_param_raw3-4.launch)
+#rosbuild_add_roslaunch_check(raw3-4/upload_param_raw3-4.launch)
 
 # rostest for desire
-rosbuild_add_roslaunch_check(desire/upload_param_desire.launch)
+#rosbuild_add_roslaunch_check(desire/upload_param_desire.launch)
+
+catkin_package()
