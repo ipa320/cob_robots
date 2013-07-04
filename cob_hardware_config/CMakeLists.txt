@@ -1,85 +1,83 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
+# http://ros.org/doc/groovy/api/catkin/html/user_guide/supposed.html
+cmake_minimum_required(VERSION 2.8.3)
+project(cob_hardware_config)
 
-# Set the build type.  Options are:
-#  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
-#  Debug          : w/ debug symbols, w/o optimization
-#  Release        : w/o debug symbols, w/ optimization
-#  RelWithDebInfo : w/ debug symbols, w/ optimization
-#  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
-#set(ROS_BUILD_TYPE RelWithDebInfo)
-
-rosbuild_init()
-
-#set the default path for built executables to the "bin" directory
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-#set the default path for built libraries to the "lib" directory
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
-
-#uncomment if you have defined messages
-#rosbuild_genmsg()
-#uncomment if you have defined services
-#rosbuild_gensrv()
-
-#common commands for building c++ executables and libraries
-#rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
-#target_link_libraries(${PROJECT_NAME} another_library)
-#rosbuild_add_boost_directories()
-#rosbuild_link_boost(${PROJECT_NAME} thread)
-#rosbuild_add_executable(example examples/example.cpp)
-#target_link_libraries(example ${PROJECT_NAME})
+find_package(catkin REQUIRED COMPONENTS)
 
 # rostest for cob3-1
-rosbuild_add_roslaunch_check(common robot:=cob3-1)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-1)
-rosbuild_add_rostest(test/urdf_cob3-1.test)
+#rosbuild_add_roslaunch_check(common robot:=cob3-1)
+#rosbuild_add_roslaunch_check(common ROBOT=cob3-1)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_cob3-1.test)
 
 # rostest for cob3-2
-rosbuild_add_roslaunch_check(common robot:=cob3-2)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-2)
-rosbuild_add_rostest(test/urdf_cob3-2.test)
+#rosbuild_add_roslaunch_check(common robot:=cob3-2)
+#rosbuild_add_roslaunch_check(common ROBOT=cob3-2)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_cob3-2.test)
 
 # rostest for cob3-3
-rosbuild_add_roslaunch_check(common robot:=cob3-3)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-3)
-rosbuild_add_rostest(test/urdf_cob3-3.test)
+#rosbuild_add_roslaunch_check(common robot:=cob3-3)
+#rosbuild_add_roslaunch_check(common ROBOT=cob3-3)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_cob3-3.test)
 
 # rostest for cob3-4
-rosbuild_add_roslaunch_check(common robot:=cob3-4)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-4)
-rosbuild_add_rostest(test/urdf_cob3-4.test)
+#rosbuild_add_roslaunch_check(common robot:=cob3-4)
+#rosbuild_add_roslaunch_check(common ROBOT=cob3-4)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_cob3-4.test)
 
 # rostest for cob3-5
-rosbuild_add_roslaunch_check(common robot:=cob3-5)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-5)
-rosbuild_add_rostest(test/urdf_cob3-5.test)
+#rosbuild_add_roslaunch_check(common robot:=cob3-5)
+#rosbuild_add_roslaunch_check(common ROBOT=cob3-5)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_cob3-5.test)
 
 # rostest for cob3-6
-rosbuild_add_roslaunch_check(common robot:=cob3-6)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-6)
-rosbuild_add_rostest(test/urdf_cob3-6.test)
+#rosbuild_add_roslaunch_check(common robot:=cob3-6)
+#rosbuild_add_roslaunch_check(common ROBOT=cob3-6)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_cob3-6.test)
 
 # rostest for raw3-1
 #rosbuild_add_roslaunch_check(common robot:=raw3-1)	--> currently disabled due to wrong usage of ur10_robot macro (no prefix)
 #rosbuild_add_roslaunch_check(common ROBOT=raw3-1)	--> currently disabled due to wrong usage of ur10_robot macro (no prefix)
-#rosbuild_add_rostest(test/urdf_raw3-1.test)		--> currently disabled due to wrong usage of ur10_robot macro (no prefix)
+#
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_raw3-1.test)		--> currently disabled due to wrong usage of ur10_robot macro (no prefix)
 
 # rostest for raw3-2
-rosbuild_add_roslaunch_check(common robot:=raw3-2)
-rosbuild_add_roslaunch_check(common ROBOT=raw3-2)
-rosbuild_add_rostest(test/urdf_raw3-2.test)
+#rosbuild_add_roslaunch_check(common robot:=raw3-2)
+#rosbuild_add_roslaunch_check(common ROBOT=raw3-2)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_raw3-2.test)
 
 # rostest for raw3-3
 #rosbuild_add_roslaunch_check(common robot:=raw3-3)	--> currently disabled due to not existing frida_description package
 #rosbuild_add_roslaunch_check(common ROBOT=raw3-3)	--> currently disabled due to not existing frida_description package
-#rosbuild_add_rostest(test/urdf_raw3-3.test)		--> currently disabled due to not existing frida_description package
+#
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_raw3-3.test)		--> currently disabled due to not existing frida_description package
 
 # rostest for raw3-4
-rosbuild_add_roslaunch_check(common robot:=raw3-4)
-rosbuild_add_roslaunch_check(common ROBOT=raw3-4)
-rosbuild_add_rostest(test/urdf_raw3-4.test)
+#rosbuild_add_roslaunch_check(common robot:=raw3-4)
+#rosbuild_add_roslaunch_check(common ROBOT=raw3-4)
+
+# CATKIN_MIGRATION: removed during catkin migration
+# rosbuild_add_rostest(test/urdf_raw3-4.test)
 
 # rostest for desire
-rosbuild_add_roslaunch_check(common robot:=desire)
-rosbuild_add_roslaunch_check(common ROBOT=desire)
-rosbuild_add_rostest(test/urdf_desire.test)
+#rosbuild_add_roslaunch_check(common robot:=desire)
+#rosbuild_add_roslaunch_check(common ROBOT=desire)
+
+catkin_package(
+    DEPENDS cob_calibration_data cob_description raw_description schunk_description ur_description
+)
