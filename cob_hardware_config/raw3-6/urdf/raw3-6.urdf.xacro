@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       name="raw3-6" >
+  
+  <!-- common stuff -->
+  <include filename="$(find cob_description)/urdf/common.xacro" />
+  <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+
+  <include filename="$(find cob_calibration_data)/raw3-6/calibration/calibration.urdf.xacro" />   
+  
+  <!-- raw base -->
+  <include filename="$(find raw_description)/urdf/base_long/base.urdf.xacro" />
+
+  <!-- raw tower -->
+  <include filename="$(find raw_description)/urdf/tower_symetric/tower.urdf.xacro" />
+
+  <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
+  <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
+
+  <xacro:raw_base name="base"/>	<!--with new collision_model-->
+
+  <xacro:tower_symetric name="tower" parent="base_link">
+      <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
+  </xacro:tower_symetric>
+
+  </robot>

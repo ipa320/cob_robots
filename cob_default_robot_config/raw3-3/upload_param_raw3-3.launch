@@ -2,6 +2,7 @@
 <launch>
 
 	<!-- send ROBOT parameters to parameter server -->
-	<!-- nothin ghere at the moment -->
+	<rosparam command="load" ns="/script_server/arm_left" file="$(find cob_default_robot_config)/raw3-3/arm_left_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/arm_right" file="$(find cob_default_robot_config)/raw3-3/arm_right_joint_configurations.yaml"/>
 
 </launch>
