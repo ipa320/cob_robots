@@ -25,10 +25,13 @@ cob3-3
 cob3-4
 cob3-5
 cob3-6
-# raw3-1 --> currently disabled due to wrong usage of ur10_robot macro (no prefix)
+cob3-7
+raw3-1# --> currently disabled due to wrong usage of ur10_robot macro (no prefix)
 raw3-2
-# raw3-3 --> currently disabled due to wrong usage of ur10_robot macro (no prefix)
+raw3-3# --> currently disabled due to wrong usage of ur10_robot macro (no prefix)
 raw3-4
+raw3-5
+raw3-6
 desire
 )
 
