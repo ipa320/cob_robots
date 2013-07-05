@@ -23,3 +23,16 @@ FOREACH(robot ${robotlist})
 ENDFOREACH(robot)
 
 catkin_package()
+
+FOREACH(robot ${robotlist})
+    install(DIRECTORY ${robot}/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${robot}
+    )
+ENDFOREACH(robot)
+
+
+## Mark other files for installation (e.g. launch and bag files, etc.)
+install(FILES
+  upload_param.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)

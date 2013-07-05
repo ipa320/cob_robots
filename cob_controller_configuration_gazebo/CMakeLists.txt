@@ -26,3 +26,17 @@ ENDFOREACH(robot)
 catkin_package(
     DEPENDS rostopic joint_trajectory_action cob_bringup cob_sick_s300 cob_relayboard cob_sound image_proc schunk_simulated_tactile_sensors cob_phidgets
  )
+
+
+## Mark cpp header files for installation
+install(DIRECTORY ros/launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/launch
+)
+
+install(DIRECTORY ros/controller/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/controller
+)
+
+install(PROGRAMS ros/src/fake_diagnostics.py ros/src/gazebo_services.py
+  DESTINATION ${CATKIN_PACKAGE_PYTHON_DESTINATION}
+)

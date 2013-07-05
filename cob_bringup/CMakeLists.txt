@@ -43,4 +43,20 @@ ENDFOREACH(robot)
 #  #rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 100.0)
 #endif(disp)
 
+catkin_package()
+
+## Mark cpp header files for installation
+install(DIRECTORY robots/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/robots
+)
+
+## Mark cpp header files for installation
+install(DIRECTORY components/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/components
+)
+
+## Mark cpp header files for installation#
+install(DIRECTORY tools/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/tools
+)
 

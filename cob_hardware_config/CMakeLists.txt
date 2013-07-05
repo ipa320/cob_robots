@@ -29,3 +29,14 @@ ENDFOREACH(robot)
 catkin_package(
     DEPENDS cob_calibration_data cob_description raw_description schunk_description ur_description
 )
+
+FOREACH(robot ${robotlist})
+    install(DIRECTORY ${robot}/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${robot}
+    )
+ENDFOREACH(robot)
+
+
+install(DIRECTORY common/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/common
+   )
