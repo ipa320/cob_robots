@@ -10,9 +10,10 @@
 	</include>
 
 	<!-- test upper robot -->
+	<!--include file="$(find cob_hardware_test)/components/kinect.test.xml" /-->
 
 	<!-- test additional packages -->
-	<!--include file="$(find cob_hardware_test)/tools/wifi_monitor.test.xml" /-->
+	<include file="$(find cob_hardware_test)/tools/wifi_monitor.test.xml" />
 	<include file="$(find cob_hardware_test)/tools/diagnostics_aggregator.test.xml" />
 
 </launch>
