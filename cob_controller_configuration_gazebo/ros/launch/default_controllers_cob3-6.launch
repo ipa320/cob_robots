@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" value="cob3-6"/>
+	<arg name="robot" default="cob3-6"/>
 
 	<!-- controller_manager -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
