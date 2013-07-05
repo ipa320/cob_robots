@@ -72,6 +72,7 @@ analyzers:
       stereo_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Stereo (Left)
+        contains: left
         startswith: ['stereo/left/color_camera']
       stereo_right:
         type: diagnostic_aggregator/GenericAnalyzer
@@ -111,3 +112,13 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
         contains: 'base_controller'
+        
+## remove diagnostics from gazebo in simulated case
+  simulation:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'joint'
+  simulation2:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'Controller'
