@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<node name="dsa_controller" pkg="schunk_sdh" type="dsa_only" cwd="node" output="screen" >
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/dsa.yaml"/>
+	</node>
+
+</launch>
+
+
+
+
