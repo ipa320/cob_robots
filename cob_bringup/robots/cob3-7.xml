@@ -5,7 +5,6 @@
 	<arg name="robot" value="cob3-7"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
-	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -60,10 +59,10 @@
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/components/torso.launch" >
+		<include file="$(find cob_bringup)/components/torso_canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/tray.launch" >
+		<include file="$(find cob_bringup)/components/tray_canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/head.launch" >
@@ -101,15 +100,15 @@
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include-->
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<!--include file="$(find cob_sound)/ros/launch/sound.launch" /-->
 
-		<include file="$(find cob_bringup)/components/light.launch" >
+		<!--include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>
+		</include-->
 
-		<include file="$(find cob_bringup)/components/tray_sensors.launch" >
+		<!--include file="$(find cob_bringup)/components/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>
+		</include-->
 	</group>
 
 
