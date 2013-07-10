@@ -1,83 +1,28 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- hztest cam3d_depth_camera_info >
-   <test test-name="hz_cam3d_depth_camera_info" pkg="rostest" type="hztest" name="hztest_cam3d_depth_camera_info">
-    <param name="topic" value="/cam3d/depth/camera_info" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test-->
-
-	<!-- hztest cam3d_rgb_camera_info >
-   <test test-name="hz_cam3d_rgb_camera_info" pkg="rostest" type="hztest" name="hztest_cam3d_rgb_camera_info">
-    <param name="topic" value="/cam3d/rgb/camera_info" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test-->
-
-	<!-- hztest cam3d_depth_disparity -->
-   <test test-name="hz_cam3d_depth_disparity" pkg="rostest" type="hztest" name="hztest_cam3d_depth_disparity">
-    <param name="topic" value="/cam3d/depth/disparity" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test>
-
-	<!-- hztest cam3d_depth_image -->
-   <test test-name="hz_cam3d_depth_image" pkg="rostest" type="hztest" name="hztest_cam3d_depth_image">
-    <param name="topic" value="/cam3d/depth/image" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test> 
-   
-	<!-- hztest cam3d_depth_image_raw -->
-   <test test-name="hz_cam3d_depth_image_raw" pkg="rostest" type="hztest" name="hztest_cam3d_depth_image_raw">
-    <param name="topic" value="/cam3d/depth/image" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test>  
 	<!-- hztest cam3d_depth_points -->
-   <test test-name="hz_cam3d_depth_points" pkg="rostest" type="hztest" name="hztest_cam3d_depth_points">
-    <param name="topic" value="/cam3d/depth/points" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />
-   </test>
-   
-	<!-- hztest cam3d_rgb_image_color -->
-   <test test-name="hz_cam3d_rgb_image_color" pkg="rostest" type="hztest" name="hztest_cam3d_rgb_image_color">
-    <param name="topic" value="/cam3d/rgb/image_color" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test>
-   
-	<!-- hztest cam3d_rgb_image_mono -->
-   <test test-name="hz_cam3d_rgb_image_mono" pkg="rostest" type="hztest" name="hztest_cam3d_rgb_image_mono">
-    <param name="topic" value="/cam3d/rgb/image_mono" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test>
-   
-	<!-- hztest cam3d_rgb_image_raw >
-   <test test-name="hz_cam3d_rgb_image_raw" pkg="rostest" type="hztest" name="hztest_cam3d_rgb_image_raw">
-    <param name="topic" value="/cam3d/rgb/image_raw" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test-->
-   
-	<!-- hztest cam3d_rgb_points -->
-   <test test-name="hz_cam3d_rgb_points" pkg="rostest" type="hztest" name="hztest_cam3d_rgb_points">
-    <param name="topic" value="/cam3d/rgb/points" />  
-    <param name="hz" value= "55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="15.0" />  
-   </test>
-      
+	<test test-name="hz_cam3d_depth_points" pkg="rostest" type="hztest" name="hztest_cam3d_depth_points">
+		<param name="topic" value="/cam3d/depth/points" />
+		<param name="hz" value= "55.25" />
+		<param name="hzerror" value="54.75" />
+		<param name="test_duration" value="15.0" />
+	</test>
+
+	<!-- hztest cam3d_depth_registered_points -->
+	<test test-name="hz_cam3d_rgb_points" pkg="rostest" type="hztest" name="hztest_cam3d_depth_registered_points">
+		<param name="topic" value="/cam3d/depth_registered/points" />
+		<param name="hz" value= "55.25" />
+		<param name="hzerror" value="54.75" />
+		<param name="test_duration" value="15.0" />  
+	</test>
+
+	<!-- hztest cam3d_rgb_image_raw -->
+	<test test-name="hz_cam3d_rgb_image_raw" pkg="rostest" type="hztest" name="hztest_cam3d_rgb_image_raw">
+		<param name="topic" value="/cam3d/rgb/image_raw" />
+		<param name="hz" value= "55.25" />
+		<param name="hzerror" value="54.75" />
+		<param name="test_duration" value="15.0" />
+	</test>
+
 </launch>

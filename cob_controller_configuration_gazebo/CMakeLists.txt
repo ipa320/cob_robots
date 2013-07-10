@@ -16,19 +16,27 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/bin)
 #set the default path for built libraries to the "lib" directory
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/ros/lib)
 
-# rostest cob
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-1.launch robot:=cob3-1)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-2.launch robot:=cob3-2)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-3.launch robot:=cob3-3)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-4.launch robot:=cob3-4)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-5.launch robot:=cob3-5)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_cob3-6.launch robot:=cob3-6)
 
-# rostest raw
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-1.launch robot:=raw3-1)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-2.launch robot:=raw3-2)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-3.launch robot:=raw3-3)
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_raw3-4.launch robot:=raw3-4)
+# rostest for robots
+SET(robotlist
+cob3-1
+cob3-2
+cob3-3
+cob3-4
+cob3-5
+cob3-6
+cob3-7
+raw3-1
+raw3-2
+raw3-3
+raw3-4
+raw3-5
+raw3-6
+desire
+)
 
-# rostest desire
-rosbuild_add_roslaunch_check(ros/launch/default_controllers_desire.launch robot:=desire)
+# loop through list of robots for testing
+FOREACH(robot ${robotlist})
+	MESSAGE("testing for robot: ${robot}")
+	rosbuild_add_roslaunch_check(ros/launch/default_controllers_${robot}.launch robot:=${robot})
+ENDFOREACH(robot)

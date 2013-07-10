@@ -1,0 +1,3 @@
+joint_names: ["tray_joint"]
+up: [[0.0]]
+down: [[-2.995926]]

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- hztest tray_sensors/range_0 -->
+	<test test-name="hz_tray_sensors_range0" pkg="rostest" type="hztest" name="hztest_tray_sensors_range0">
+		<param name="topic" value="/tray_sensors/range_0" />
+		<param name="hz" value= "55.25" />
+		<param name="hzerror" value="54.75" />
+		<param name="test_duration" value="2.0" />
+	</test>
+
+	<!-- hztest tray_sensors/range_1 -->
+	<test test-name="hz_tray_sensors_range1" pkg="rostest" type="hztest" name="hztest_tray_sensors_range1">
+		<param name="topic" value="/tray_sensors/range_1" />
+		<param name="hz" value= "55.25" />
+		<param name="hzerror" value="54.75" />
+		<param name="test_duration" value="2.0" />
+	</test>
+
+	<!-- hztest tray_sensors/range_2 -->
+	<test test-name="hz_tray_sensors_range2" pkg="rostest" type="hztest" name="hztest_tray_sensors_range2">
+		<param name="topic" value="/tray_sensors/range_2" />
+		<param name="hz" value= "55.25" />
+		<param name="hzerror" value="54.75" />
+		<param name="test_duration" value="2.0" />
+	</test>
+
+	<!-- hztest tray_sensors/range_3 -->
+	<test test-name="hz_tray_sensors_range3" pkg="rostest" type="hztest" name="hztest_tray_sensors_range3">
+		<param name="topic" value="/tray_sensors/range_3" />
+		<param name="hz" value= "55.25" />
+		<param name="hzerror" value="54.75" />
+		<param name="test_duration" value="2.0" />
+	</test>
+
+</launch>

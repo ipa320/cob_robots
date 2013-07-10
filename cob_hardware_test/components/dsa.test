@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find cob_bringup)/components/dsa.launch" />   
+    <include file="$(find cob_hardware_test)/components/dsa.test.xml" />
+  
+</launch>
