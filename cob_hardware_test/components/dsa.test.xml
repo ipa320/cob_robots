@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- hztest tactile_data -->
+	<test test-name="hz_tactile_data" pkg="rostest" type="hztest" name="hztest_tactile_data">
+		<param name="topic" value="/dsa_contoller/tactile_data" />  
+		<param name="hz" value= "55.25" />
+		<param name="hzerror" value="54.75" />
+		<param name="test_duration" value="2.0" />  
+	</test>
+
+</launch>
