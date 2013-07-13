@@ -1,19 +1,15 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- test lower robot -->
-	<include file="$(find cob_hardware_test)/components/laser.test.xml" >
-		<arg name="laser_namespace" value="scan_front" />
-	</include>
-	<include file="$(find cob_hardware_test)/components/laser.test.xml" >
-		<arg name="laser_namespace" value="scan_rear" />
-	</include>
-
-	<!-- test upper robot -->
-	<!--include file="$(find cob_hardware_test)/components/kinect.test.xml" /-->
-
-	<!-- test additional packages -->
-	<include file="$(find cob_hardware_test)/tools/wifi_monitor.test.xml" />
-	<include file="$(find cob_hardware_test)/tools/diagnostics_aggregator.test.xml" />
+	<!-- load testparameter-->
+	<!-- lower robot -->	
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_front.yaml" command="load"/>  
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_rear.yaml" command="load"/>		
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/relayboard.yaml" command="load"/>
+	<!-- additional packages -->
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/tools/diagnostics_aggregator.yaml" command="load"/>
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/tools/wifi_monitor.yaml" command="load"/>
+	<!-- perform test -->
+	<test test-name="cob_hardware_test" pkg="cob_hardware_test" type="hztests" name="cob_hardware_test" time-limit="1000.0" />
 
 </launch>
