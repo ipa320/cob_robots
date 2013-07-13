@@ -106,7 +106,7 @@ class HzTest(unittest.TestCase):
     wait time: %s"""%(test_name, topic, hz, hzerror, test_duration, wait_time)
             
 
-            #self._test_hz(hz, hzerror, topic, test_duration, wait_time)
+            #self._test_hz(test_name, topic, hz, hzerror, test_duration, wait_time)
             #t = threading.Thread(self._test_hz(hz, hzerror, topic, test_duration, wait_time))
             t = Thread(target=self._test_hz, args=(test_name, topic, hz, hzerror, test_duration, wait_time))
             threads.append(t)
