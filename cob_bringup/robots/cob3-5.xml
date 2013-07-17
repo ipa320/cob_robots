@@ -25,9 +25,9 @@
 		</include>
 
 		<!-- monitoring -->
-		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
+		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>

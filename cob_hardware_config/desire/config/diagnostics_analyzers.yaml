@@ -31,19 +31,6 @@ analyzers:
         num_items: 1
         expected: ['Wifi Status (ddwrt)']
 
-  sensors:
-    type: AnalyzerGroup
-    path: Sensors
-    analyzers:
-      laser_rear:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Scan Rear
-        contains: 'laser_rear'
-      laser_front:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Scan Front
-        contains: 'laser_front'
-
   io:
     type: AnalyzerGroup
     path: IO
@@ -58,6 +45,19 @@ analyzers:
         path: Joystick
         contains: 'joy'
 
+  sensors:
+    type: AnalyzerGroup
+    path: Sensors
+    analyzers:
+      laser_rear:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Rear
+        contains: 'laser_rear'
+      laser_front:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Front
+        contains: 'laser_front'
+
   motors:
     type: AnalyzerGroup
     path: Actuators
@@ -66,6 +66,13 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
         contains: 'base_controller'
-
-
-
+        
+## remove diagnostics from gazebo in simulated case
+  simulation:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'joint'
+  simulation2:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'Controller'

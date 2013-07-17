@@ -1,0 +1,3 @@
+# NOT USED YET IN BATTERY MONITOR --> NEEDS TO BE IMPLEMENTED FIRST
+threshold_warning: 30 # % of battery level
+threshold_warning: 10 # % of battery level
