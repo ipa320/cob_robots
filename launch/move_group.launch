@@ -41,6 +41,14 @@
   </include>
 -->
 
+  <!-- include this for sensing -->
+<!--  
+  <param name="octomap_frame" type="string" value="odom_combined" />
+  <param name="octomap_resolution" type="double" value="0.05" />
+  <param name="max_range" type="double" value="5.0" />
+  <rosparam file="$(arg config_path)/sensor_kinect.yaml" ns="move_group"/>
+-->
+
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="$(arg command_args)">
     <!-- Set the display variable, in case OpenGL code is used internally -->
     <env name="DISPLAY" value="$(optenv DISPLAY :0)" />
