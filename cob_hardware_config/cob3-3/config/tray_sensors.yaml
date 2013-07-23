@@ -1,0 +1,2 @@
+#hw ID, frame id, filter interval
+sensors: [[0, "/tray_sensors_0", 10], [1, "/tray_sensors_1", 10], [2, "/tray_sensors_2", 10], [3, "/tray_sensors_3", 10]]

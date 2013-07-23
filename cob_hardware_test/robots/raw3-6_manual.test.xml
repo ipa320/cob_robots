@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
+
+	<!-- start manual tests -->
+    <!--include file="$(find cob_hardware_test)/components/light.test.xml" /-->
+    <!--include file="$(find cob_hardware_test)/components/sound.test.xml" /-->
+    <!--include file="$(find cob_hardware_test)/components/base.test.xml" /-->
+
+</launch>

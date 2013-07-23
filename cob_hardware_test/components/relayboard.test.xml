@@ -9,14 +9,6 @@
     <param name="test_duration" value="2.0" />  
    </test>
 
-	<!-- hztest power_state -->	
-   <test test-name="hz_power_state" pkg="rostest" type="hztest" name="hztest_power_state">
-    <param name="topic" value="power_state" />  
-    <param name="hz" value="55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="2.0" />  
-   </test>
-
 	<!-- hztest power_board_state -->	
    <test test-name="hz_power_board_state" pkg="rostest" type="hztest" name="hztest_power_board_state">
     <param name="topic" value="power_board/state" />  
@@ -25,4 +17,12 @@
     <param name="test_duration" value="2.0" />  
    </test>
   
+	<!-- hztest power_board_voltage -->	
+   <test test-name="hz_power_board_voltage" pkg="rostest" type="hztest" name="hztest_power_board_voltage">
+    <param name="topic" value="power_board/voltage" />  
+    <param name="hz" value="55.25" />
+    <param name="hzerror" value="54.75" />
+    <param name="test_duration" value="2.0" />  
+   </test>
+
 </launch>

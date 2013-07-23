@@ -1,0 +1,69 @@
+pub_rate: 1.0 # Optional
+base_path: '' # Optional, prepended to all diagnostic output
+analyzers:
+  computers:
+    type: AnalyzerGroup
+    path: Computers
+    analyzers:
+      pc1:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc1
+        contains: 'pc1'
+      pc2:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc2
+        contains: 'pc2'
+
+  sensors:
+    type: AnalyzerGroup
+    path: Sensors
+    analyzers:
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
+      laser_rear:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Rear
+        contains: 'laser_rear'
+      laser_front:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Front
+        contains: 'laser_front'
+
+  motors:
+    type: AnalyzerGroup
+    path: Actuators
+    analyzers:
+      base:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Base
+        contains: 'base_controller'
+      frida:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Frida
+        contains: ['arm_left_controller', 'arm_right_controller']
+      grippers:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Grippers
+        contains: ['gripper_left_controller', 'gripper_right_controller']
+  joints:
+    type: diagnostic_aggregator/GenericAnalyzer
+    path: Joints
+    startswith: [
+      'Joint']
+    expected: [
+      'Joint (arm_left_1_joint)',
+      'Joint (arm_left_2_joint)',
+      'Joint (arm_left_3_joint)',
+      'Joint (arm_left_4_joint)',
+      'Joint (arm_left_5_joint)',
+      'Joint (arm_left_6_joint)',
+      'Joint (arm_left_7_joint)',
+      'Joint (arm_left_1_joint)',
+      'Joint (arm_left_2_joint)',
+      'Joint (arm_left_3_joint)',
+      'Joint (arm_left_4_joint)',
+      'Joint (arm_left_5_joint)',
+      'Joint (arm_left_6_joint)',
+      'Joint (arm_left_7_joint)']
