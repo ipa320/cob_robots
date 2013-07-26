@@ -81,9 +81,9 @@
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 	</group>
 
 	<group>
