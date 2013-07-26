@@ -96,12 +96,6 @@
 		</include>
 
 		<!-- start camera sensors -->
-		<include file="$(find cob_bringup)/components/pike_left.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<!--include file="$(find cob_bringup)/components/pike_right.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include-->
 		<include file="$(find cob_bringup)/components/kinect.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
