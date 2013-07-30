@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-	<include file="$(find cob_bringup)/components/dsa.launch" />   
+	<!-- bringup robot -->
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" />
 	<include file="$(find cob_hardware_test)/components/dsa.test.xml" />
 
 </launch>
