@@ -48,6 +48,7 @@ class HardwareTest(unittest.TestCase):
         self.assertTrue(dialog_client(0, 'EM Pressed and Released? \n Ready to move my Base ?' ))
         self.sss.recover("base")
         handle = self.sss.move_base_rel("base", [-self.move_x, -self.move_y, -self.move_theta])
+        self.assertTrue(dialog_client(1, 'Did I move back?'))
 
 if __name__ == '__main__':
     # Copied from hztest: A dirty hack to work around an apparent race condition at startup
