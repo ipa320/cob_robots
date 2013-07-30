@@ -4,7 +4,7 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        name="cob3_3" >
-  
+
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
@@ -12,7 +12,7 @@
 
   <!-- calibration -->
   <include filename="$(find cob_calibration_data)/cob3-3/calibration/calibration.urdf.xacro" />
-  
+
   <!-- base -->
   <include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
 
