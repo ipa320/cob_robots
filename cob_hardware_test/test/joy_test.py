@@ -31,14 +31,14 @@ class UnitTest(unittest.TestCase):
         #sub_state_topic = rospy.Subscriber(state_topic, JointTrajectoryControllerState, self.cb_state)
 
     def test_component(self):
-        self.assertTrue(dialog_client(0, 'Press at least one Button of the Controller within 5 seconds after Confirm'))
+        self.assertTrue(dialog_client(0, 'Press at least one Button of the Controller within 60 seconds after Confirm'))
         # init component
         sub = rospy.Subscriber("/joy", Joy, self.cb_state)
-        abort_time = time.time() + 5.0 #rospy.Duration(self.wait_time)
+        abort_time = time.time() + 60.0 #rospy.Duration(self.wait_time)
         while not self.message_received and time.time() < abort_time:
             time.sleep(0.1)          
         if not self.message_received:
-            self.fail('No state message received within 5 seconds')
+            self.fail('No state message received within 60 seconds')
 
     # callback functions
     def cb_state(self, msg):
