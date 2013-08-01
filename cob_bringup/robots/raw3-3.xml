@@ -30,6 +30,8 @@
 			<arg name="robot_ip" value="192.168.43.40" />
 		</include>
 
+		<include file="$(find cob_bringup)/components/prace_grippers.launch"/>
+
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
