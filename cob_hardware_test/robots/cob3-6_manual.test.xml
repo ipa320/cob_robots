@@ -4,16 +4,17 @@
 	<!-- upload default configurations -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch" />
 	<!-- include manual tests -->
-	<include file="$(find cob_hardware_test)/components/light.test.xml" />
-	<include file="$(find cob_hardware_test)/components/sound.test.xml" />
 	<include file="$(find cob_hardware_test)/components/base.test.xml" />
-	<include file="$(find cob_hardware_test)/components/tray_powerball.test.xml" />
 	<include file="$(find cob_hardware_test)/components/torso.test.xml" />
-	<include file="$(find cob_hardware_test)/components/lwa.test.xml" />  
-	<include file="$(find cob_hardware_test)/components/head.test.xml" />
+	<!--include file="$(find cob_hardware_test)/components/tray.test.xml" /-->
+	<include file="$(find cob_hardware_test)/components/lwa.test.xml" />
 	<include file="$(find cob_hardware_test)/components/sdh.test.xml" />
-	<include file="$(find cob_hardware_test)/components/joy.test.xml" />   
-	<include file="$(find cob_hardware_test)/components/teleop.test.xml" />	
+	<include file="$(find cob_hardware_test)/components/head.test.xml" />
+	<include file="$(find cob_hardware_test)/components/joy.test.xml" />
+	<include file="$(find cob_hardware_test)/components/teleop.test.xml" />
+	<include file="$(find cob_hardware_test)/components/sound.test.xml" />
+	<include file="$(find cob_hardware_test)/components/light.test.xml" />
 	<include file="$(find cob_hardware_test)/components/calibration.test" />
+
 
 </launch>
