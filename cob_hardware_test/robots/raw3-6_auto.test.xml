@@ -3,8 +3,8 @@
 
 	<!-- load testparameter-->
 	<!-- lower robot -->	
-	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_front.yaml" command="load"/>  
-	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_rear.yaml" command="load"/>		
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_front.yaml" command="load"/>
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_rear.yaml" command="load"/>
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/relayboard.yaml" command="load"/>
 	<!-- additional packages -->
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/tools/diagnostics_aggregator.yaml" command="load"/>

@@ -5,6 +5,6 @@
 	<include file="$(find cob_hardware_test)/components/base.test.xml" />
 	<include file="$(find cob_hardware_test)/components/joy.test.xml" />
 	<include file="$(find cob_hardware_test)/components/teleop.test.xml" />
-	<!--include file="$(find cob_hardware_test)/components/calibration.test" /-->
+	<!--include file="$(find cob_hardware_test)/components/calibration.test.xml" /-->
 
 </launch>

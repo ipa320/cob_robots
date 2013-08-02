@@ -3,15 +3,15 @@
 
 	<!-- load testparameter-->
 	<!-- lower robot -->	
-	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_front.yaml" command="load"/>  
-	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_rear.yaml" command="load"/>   
-	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_top.yaml" command="load"/>  	
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_front.yaml" command="load"/>
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_rear.yaml" command="load"/>
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_top.yaml" command="load"/>
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/relayboard.yaml" command="load"/>
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/voltage_filter.yaml" command="load"/>
 	<!-- upper robot -->
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/kinect.yaml" command="load"/>  
-	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/prosilica_left.yaml" command="load"/>   
-	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/prosilica_right.yaml" command="load"/> 
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/prosilica_left.yaml" command="load"/>
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/prosilica_right.yaml" command="load"/>
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/dsa.yaml" command="load"/>
 	<!-- tray_sensors-->
 	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/tray_sensors.yaml" command="load"/>

@@ -12,7 +12,7 @@
 	<include file="$(find cob_hardware_test)/components/teleop.test.xml" />
 	<include file="$(find cob_hardware_test)/components/sound.test.xml" />
 	<include file="$(find cob_hardware_test)/components/light.test.xml" />
-	<!--include file="$(find cob_hardware_test)/components/calibration.test" /-->
+	<!--include file="$(find cob_hardware_test)/components/calibration.test.xml" /-->
 
 
 </launch>
