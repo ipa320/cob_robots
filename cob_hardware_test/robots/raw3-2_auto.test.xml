@@ -8,19 +8,9 @@
 	<include file="$(find cob_hardware_test)/components/laser.test.xml" >
 		<arg name="laser_namespace" value="scan_rear" />
 	</include>
-	<include file="$(find cob_hardware_test)/components/laser.test.xml" >
-		<arg name="laser_namespace" value="scan_top" />
-	</include>
-	<include file="$(find cob_hardware_test)/components/relayboard.test.xml" />
 
 	<!-- test upper robot -->
-	<include file="$(find cob_hardware_test)/components/prosilica.test.xml" >
-		<arg name="camera_namespace" value="/stereo/left" />
-	</include>
-	<include file="$(find cob_hardware_test)/components/prosilica.test.xml" >
-		<arg name="camera_namespace" value="/stereo/right" />
-	</include>
-	<include file="$(find cob_hardware_test)/components/kinect.test.xml" />
+	<!--include file="$(find cob_hardware_test)/components/kinect.test.xml" /-->
 
 	<!-- test additional packages -->
 	<include file="$(find cob_hardware_test)/tools/wifi_monitor.test.xml" />

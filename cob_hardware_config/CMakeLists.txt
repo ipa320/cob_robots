@@ -16,70 +16,29 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #set the default path for built libraries to the "lib" directory
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
-#uncomment if you have defined messages
-#rosbuild_genmsg()
-#uncomment if you have defined services
-#rosbuild_gensrv()
 
-#common commands for building c++ executables and libraries
-#rosbuild_add_library(${PROJECT_NAME} src/example.cpp)
-#target_link_libraries(${PROJECT_NAME} another_library)
-#rosbuild_add_boost_directories()
-#rosbuild_link_boost(${PROJECT_NAME} thread)
-#rosbuild_add_executable(example examples/example.cpp)
-#target_link_libraries(example ${PROJECT_NAME})
+# rostest for robots
+SET(robotlist
+cob3-1
+cob3-2
+cob3-3
+cob3-4
+cob3-5
+cob3-6
+cob3-7
+raw3-1
+raw3-2
+raw3-3
+raw3-4
+raw3-5
+raw3-6
+desire
+)
 
-# rostest for cob3-1
-rosbuild_add_roslaunch_check(common robot:=cob3-1)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-1)
-rosbuild_add_rostest(test/urdf_cob3-1.test)
-
-# rostest for cob3-2
-rosbuild_add_roslaunch_check(common robot:=cob3-2)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-2)
-rosbuild_add_rostest(test/urdf_cob3-2.test)
-
-# rostest for cob3-3
-rosbuild_add_roslaunch_check(common robot:=cob3-3)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-3)
-rosbuild_add_rostest(test/urdf_cob3-3.test)
-
-# rostest for cob3-4
-rosbuild_add_roslaunch_check(common robot:=cob3-4)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-4)
-rosbuild_add_rostest(test/urdf_cob3-4.test)
-
-# rostest for cob3-5
-rosbuild_add_roslaunch_check(common robot:=cob3-5)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-5)
-rosbuild_add_rostest(test/urdf_cob3-5.test)
-
-# rostest for cob3-6
-rosbuild_add_roslaunch_check(common robot:=cob3-6)
-rosbuild_add_roslaunch_check(common ROBOT=cob3-6)
-rosbuild_add_rostest(test/urdf_cob3-6.test)
-
-# rostest for raw3-1
-#rosbuild_add_roslaunch_check(common robot:=raw3-1)	--> currently disabled due to wrong usage of ur10_robot macro (no prefix)
-#rosbuild_add_roslaunch_check(common ROBOT=raw3-1)	--> currently disabled due to wrong usage of ur10_robot macro (no prefix)
-#rosbuild_add_rostest(test/urdf_raw3-1.test)		--> currently disabled due to wrong usage of ur10_robot macro (no prefix)
-
-# rostest for raw3-2
-rosbuild_add_roslaunch_check(common robot:=raw3-2)
-rosbuild_add_roslaunch_check(common ROBOT=raw3-2)
-rosbuild_add_rostest(test/urdf_raw3-2.test)
-
-# rostest for raw3-3
-#rosbuild_add_roslaunch_check(common robot:=raw3-3)	--> currently disabled due to not existing frida_description package
-#rosbuild_add_roslaunch_check(common ROBOT=raw3-3)	--> currently disabled due to not existing frida_description package
-#rosbuild_add_rostest(test/urdf_raw3-3.test)		--> currently disabled due to not existing frida_description package
-
-# rostest for raw3-4
-rosbuild_add_roslaunch_check(common robot:=raw3-4)
-rosbuild_add_roslaunch_check(common ROBOT=raw3-4)
-rosbuild_add_rostest(test/urdf_raw3-4.test)
-
-# rostest for desire
-rosbuild_add_roslaunch_check(common robot:=desire)
-rosbuild_add_roslaunch_check(common ROBOT=desire)
-rosbuild_add_rostest(test/urdf_desire.test)
+# loop through list of robots for testing
+FOREACH(robot ${robotlist})
+	MESSAGE("testing for robot: ${robot}")
+	rosbuild_add_roslaunch_check(common robot:=${robot})
+	rosbuild_add_roslaunch_check(common ROBOT=${robot})
+	rosbuild_add_rostest(test/urdf_${robot}.test)
+ENDFOREACH(robot)
