@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- hztest scan_top -->
-   <test test-name="hz_scan_top" pkg="rostest" type="hztest" name="hztest_scan_top">
-    <param name="topic" value="scan_top" />  
-    <param name="hz" value="55.25" />
-    <param name="hzerror" value="54.75" />
-    <param name="test_duration" value="2.0" />  
-   </test>
+	<!-- upload testparameter -->  
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/laser_top.yaml" command="load"/>
+	<!-- perform test -->
+	<test test-name="cob_hardware_test" pkg="cob_hardware_test" type="hztests" name="cob_hardware_test" time-limit="60.0" />
 
 </launch>
