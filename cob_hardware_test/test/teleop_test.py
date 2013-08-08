@@ -34,7 +34,7 @@ class UnitTest(unittest.TestCase):
             
             
     def test_teleop(self):
-        self.assertTrue(dialog_client(0, 'Move the left base controller stick to the left top and hold the deadmans button after confirm within 60 seconds'))
+        self.assertTrue(dialog_client(0, 'Move the left base controller stick to the left top and hold the deadmans button after confirm or press W on the Keyboard within 60 seconds'))
         # init component
         sub = rospy.Subscriber(self.topic, Twist, self.cb_state)
         abort_time = time.time() + 60.0
