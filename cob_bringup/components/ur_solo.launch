@@ -10,15 +10,15 @@
 	</include>
 
 	<!-- upload robot_description -->
-    <include file="$(arg pkg_hardware_config)/common/upload_robot.launch" >
+	<include file="$(arg pkg_hardware_config)/common/upload_robot.launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 
 	<!-- start robot_state_publisher -->
 	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
-    <!-- start arm -->
-    <include file="$(find cob_bringup)/components/ur.launch" >
+	<!-- start arm -->
+	<include file="$(find cob_bringup)/components/ur.launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 

@@ -7,7 +7,7 @@
 	 <param name="test_target" value="pregrasp" />
 	 <param name="default_target" value="folded" />
 	 <param name="wait_time" value="30.0" />
-	 <param name="error_range" value="0.1" />  
+	 <param name="error_range" value="0.1" />
 	</test>  
 
 </launch>
