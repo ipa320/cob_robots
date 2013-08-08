@@ -4,7 +4,7 @@
 	<!-- include manual tests -->
 	<include file="$(find cob_hardware_test)/components/base.test.xml" />
 	<include file="$(find cob_hardware_test)/components/torso.test.xml" />
-	<include file="$(find cob_hardware_test)/components/ur10.test.xml" />
+	<include file="$(find cob_hardware_test)/components/ur.test.xml" />
 	<include file="$(find cob_hardware_test)/components/light.test.xml" />
 	<include file="$(find cob_hardware_test)/components/joy.test.xml" />
 	<include file="$(find cob_hardware_test)/components/teleop.test.xml" />
