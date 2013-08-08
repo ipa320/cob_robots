@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- hztest tactile_data -->
-	<test test-name="hz_tactile_data" pkg="rostest" type="hztest" name="hztest_tactile_data">
-		<param name="topic" value="/dsa_contoller/tactile_data" />  
-		<param name="hz" value= "55.25" />
-		<param name="hzerror" value="54.75" />
-		<param name="test_duration" value="2.0" />  
-	</test>
+
+	<!-- upload testparameter -->
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/components/dsa.yaml" command="load"/>
+	<!-- perform test -->
+	<test test-name="cob_hardware_test" pkg="cob_hardware_test" type="hztests" name="cob_hardware_test" time-limit="100.0" />
+
+
 
 </launch>
