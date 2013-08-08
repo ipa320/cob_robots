@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- launch component -->
-	<include file="$(find cob_bringup)/components/tray_sensors.launch" />
-	<!-- upload default configurations -->
-	<include file="$(find cob_default_robot_config)/upload_param.launch" />
+	<!-- launch component or simulation-->
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" if="$(arg sim)" />
+	<include file="$(find cob_bringup)/components/tray_sensors.launch" unless="$(arg sim)" />
 	<!-- include test -->
 	<include file="$(find cob_hardware_test)/components/tray_sensors.test.xml" />
   
