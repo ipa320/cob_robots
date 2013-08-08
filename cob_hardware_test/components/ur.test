@@ -6,8 +6,8 @@
 	<!-- launch component or simulation-->
 	<include file="$(find cob_bringup_sim)/launch/robot.launch" if="$(arg sim)" />
 	<include file="$(find cob_default_robot_config)/upload_param.launch" unless="$(arg sim)" />
-	<include file="$(find cob_bringup)/components/ur10_solo.launch" unless="$(arg sim)" />
+	<include file="$(find cob_bringup)/components/ur_solo.launch" unless="$(arg sim)" />
 	<!-- include test -->
-	<include file="$(find cob_hardware_test)/components/ur10.test.xml" />
+	<include file="$(find cob_hardware_test)/components/ur.test.xml" />
 
 </launch>
