@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 
-    <include file="$(find cob_bringup)/components/relayboard.launch" />   
-    <include file="$(find cob_hardware_test)/components/relayboard.test.xml" />
-  
+	<!-- launch component or simulation-->
+	<include file="$(find cob_bringup_sim)/launch/robot.launch" if="$(arg sim)" />
+	<include file="$(find cob_bringup)/components/relayboard.launch" unless="$(arg sim)" />
+	<!-- include test -->
+	<include file="$(find cob_hardware_test)/components/relayboard.test.xml" />
+
 </launch>
