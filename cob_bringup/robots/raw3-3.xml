@@ -21,6 +21,9 @@
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
+		<!-- start phidget driver -->
+		<node pkg="cob_phidgets" type="phidget_sensors" name="phidget_driver"/>
+
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/components/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
