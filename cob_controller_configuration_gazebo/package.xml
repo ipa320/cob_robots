@@ -14,6 +14,8 @@
  <buildtool_depend>catkin</buildtool_depend>
   <run_depend>rostopic</run_depend>
   <run_depend>joint_trajectory_action</run_depend>
+  <run_depend>robot_mechanism_controllers</run_depend>
+  <run_depend>velocity_controllers</run_depend>
   <run_depend>cob_bringup</run_depend>
   <run_depend>cob_sick_s300</run_depend>
   <run_depend>cob_relayboard</run_depend>
