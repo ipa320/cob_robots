@@ -21,11 +21,11 @@
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc1)" />
+			<arg name="pc" value="cob3_1_pc1" />
 		</include>
 
 		<!-- monitoring -->
-		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" /-->
+		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
@@ -58,9 +58,9 @@
 		<include file="$(find cob_bringup)/components/tray.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/lbr.launch" >
+		<!--include file="$(find cob_bringup)/components/lbr.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>
+		</include-->
 		<include file="$(find cob_bringup)/components/sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -81,9 +81,9 @@
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 	</group>
 
 	<group>
@@ -92,23 +92,19 @@
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc2)" />
+			<arg name="pc" value="cob3_1_pc2" />
 		</include>
 
 		<!-- start camera sensors -->
-		<include file="$(find cob_bringup)/components/pike_left.launch" >
+		<include file="$(find cob_bringup)/components/kinect.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/components/pike_right.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include-->
-		<!--include file="$(find cob_bringup)/components/kinect.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/cam3d_throttle.launch" >
+		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
 			<arg name="namespace" value="/cam3d" />
-			<arg name="rate" value="5.0" />
-		</include-->
+			<arg name="rate" value="1.0" />
+			<arg name="start_manager" value="false"/>
+			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+		</include>
 	</group>
 
 	<machine name="pc1_reset_default" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true" />
