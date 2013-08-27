@@ -29,10 +29,25 @@
     <group name="base"> 
         <joint name="world_joint" />
     </group>
+    <group name="torso">
+        <chain base_link="base_link" tip_link="torso_upper_neck_tilt_link" />
+    </group>
+    <group name="lookat">
+        <chain base_link="base_link" tip_link="lookat_focus_frame" />
+    </group>
+    <group name="focus">
+        <link name="lookat_focus_frame" />
+    </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand" parent_link="arm_7_link" group="sdh" />
+    <end_effector name="lookat_ee" parent_link="lookat_focus_frame" group="focus" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_joint" type="planar" parent_frame="odom_combined" child_link="base_footprint" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="lookat_back_joint" />
+    <passive_joint name="lookat_x_joint" />
+    <passive_joint name="lookat_y_joint" />
+    <passive_joint name="lookat_z_joint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="arm_0_link" link2="arm_1_link" reason="Adjacent" />
     <disable_collisions link1="arm_0_link" link2="arm_2_link" reason="Never" />
@@ -54,6 +69,7 @@
     <disable_collisions link1="arm_0_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="arm_0_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="arm_0_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="arm_0_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="arm_0_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="arm_0_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="arm_0_link" link2="tray_link" reason="Never" />
@@ -79,6 +95,7 @@
     <disable_collisions link1="arm_1_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="arm_1_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="arm_1_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="arm_1_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="arm_1_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="arm_1_link" link2="sdh_finger_21_link" reason="Never" />
     <disable_collisions link1="arm_1_link" link2="sdh_palm_link" reason="Never" />
@@ -105,6 +122,7 @@
     <disable_collisions link1="arm_2_link" link2="head_cam3d_link" reason="Never" />
     <disable_collisions link1="arm_2_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="arm_2_link" link2="head_color_camera_r_link" reason="Never" />
+    <disable_collisions link1="arm_2_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="arm_2_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="arm_2_link" link2="sdh_finger_12_link" reason="Never" />
     <disable_collisions link1="arm_2_link" link2="sdh_finger_21_link" reason="Never" />
@@ -231,13 +249,15 @@
     <disable_collisions link1="base_laser_front_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="base_laser_front_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="sdh_finger_12_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="sdh_finger_21_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="sdh_finger_22_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="sdh_finger_23_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="sdh_palm_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="sdh_thumb_1_link" reason="Never" />
+    <disable_collisions link1="base_laser_front_link" link2="sdh_thumb_2_link" reason="Never" />
+    <disable_collisions link1="base_laser_front_link" link2="sdh_thumb_3_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="base_laser_front_link" link2="tray_link" reason="Never" />
@@ -255,6 +275,10 @@
     <disable_collisions link1="base_laser_rear_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="base_laser_rear_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="base_laser_rear_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="base_laser_rear_link" link2="lookat_focus_frame" reason="Never" />
+    <disable_collisions link1="base_laser_rear_link" link2="sdh_finger_11_link" reason="Never" />
+    <disable_collisions link1="base_laser_rear_link" link2="sdh_finger_21_link" reason="Never" />
+    <disable_collisions link1="base_laser_rear_link" link2="sdh_palm_link" reason="Never" />
     <disable_collisions link1="base_laser_rear_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="base_laser_rear_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="base_laser_rear_link" link2="tray_link" reason="Never" />
@@ -271,6 +295,7 @@
     <disable_collisions link1="base_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="base_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="base_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="base_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="base_link" link2="torso_lower_neck_tilt_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="base_link" link2="tray_link" reason="Adjacent" />
@@ -286,6 +311,7 @@
     <disable_collisions link1="bl_caster_r_wheel_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="bl_caster_r_wheel_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="sdh_finger_12_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="sdh_finger_13_link" reason="Never" />
@@ -295,7 +321,6 @@
     <disable_collisions link1="bl_caster_r_wheel_link" link2="sdh_palm_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="sdh_thumb_1_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="sdh_thumb_2_link" reason="Never" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="sdh_thumb_3_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="bl_caster_r_wheel_link" link2="tray_link" reason="Never" />
@@ -310,6 +335,7 @@
     <disable_collisions link1="bl_caster_rotation_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="bl_caster_rotation_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="bl_caster_rotation_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="bl_caster_rotation_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="bl_caster_rotation_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="bl_caster_rotation_link" link2="sdh_finger_12_link" reason="Never" />
     <disable_collisions link1="bl_caster_rotation_link" link2="sdh_finger_13_link" reason="Never" />
@@ -333,6 +359,7 @@
     <disable_collisions link1="br_caster_r_wheel_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="br_caster_r_wheel_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="br_caster_r_wheel_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="br_caster_r_wheel_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="br_caster_r_wheel_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="br_caster_r_wheel_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="br_caster_r_wheel_link" link2="tray_link" reason="Never" />
@@ -345,10 +372,13 @@
     <disable_collisions link1="br_caster_rotation_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="br_caster_rotation_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="sdh_finger_12_link" reason="Never" />
+    <disable_collisions link1="br_caster_rotation_link" link2="sdh_finger_13_link" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="sdh_finger_21_link" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="sdh_finger_22_link" reason="Never" />
+    <disable_collisions link1="br_caster_rotation_link" link2="sdh_finger_23_link" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="sdh_palm_link" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="sdh_thumb_1_link" reason="Never" />
     <disable_collisions link1="br_caster_rotation_link" link2="sdh_thumb_2_link" reason="Never" />
@@ -364,6 +394,7 @@
     <disable_collisions link1="fl_caster_r_wheel_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="fl_caster_r_wheel_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="fl_caster_r_wheel_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="fl_caster_r_wheel_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="fl_caster_r_wheel_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="fl_caster_r_wheel_link" link2="sdh_finger_12_link" reason="Never" />
     <disable_collisions link1="fl_caster_r_wheel_link" link2="sdh_finger_13_link" reason="Never" />
@@ -384,6 +415,7 @@
     <disable_collisions link1="fl_caster_rotation_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="fl_caster_rotation_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="fl_caster_rotation_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="fl_caster_rotation_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="fl_caster_rotation_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="fl_caster_rotation_link" link2="sdh_finger_12_link" reason="Never" />
     <disable_collisions link1="fl_caster_rotation_link" link2="sdh_finger_13_link" reason="Never" />
@@ -403,8 +435,8 @@
     <disable_collisions link1="fr_caster_r_wheel_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="fr_caster_r_wheel_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="fr_caster_r_wheel_link" link2="head_cover_link" reason="Never" />
-    <disable_collisions link1="fr_caster_r_wheel_link" link2="sdh_palm_link" reason="Never" />
-    <disable_collisions link1="fr_caster_r_wheel_link" link2="sdh_thumb_1_link" reason="Never" />
+    <disable_collisions link1="fr_caster_r_wheel_link" link2="lookat_focus_frame" reason="Never" />
+    <disable_collisions link1="fr_caster_r_wheel_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="fr_caster_r_wheel_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="fr_caster_r_wheel_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="fr_caster_r_wheel_link" link2="tray_link" reason="Never" />
@@ -413,6 +445,7 @@
     <disable_collisions link1="fr_caster_rotation_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="fr_caster_rotation_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="fr_caster_rotation_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="fr_caster_rotation_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="fr_caster_rotation_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="fr_caster_rotation_link" link2="sdh_finger_12_link" reason="Never" />
     <disable_collisions link1="fr_caster_rotation_link" link2="sdh_finger_13_link" reason="Never" />
@@ -430,27 +463,40 @@
     <disable_collisions link1="head_axis_link" link2="head_color_camera_l_link" reason="Adjacent" />
     <disable_collisions link1="head_axis_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="head_axis_link" link2="head_cover_link" reason="Never" />
+    <disable_collisions link1="head_axis_link" link2="lookat_focus_frame" reason="Never" />
+    <disable_collisions link1="head_axis_link" link2="sdh_finger_11_link" reason="Never" />
     <disable_collisions link1="head_axis_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="head_axis_link" link2="torso_upper_neck_tilt_link" reason="Adjacent" />
     <disable_collisions link1="head_axis_link" link2="tray_link" reason="Never" />
     <disable_collisions link1="head_cam3d_link" link2="head_color_camera_l_link" reason="Never" />
     <disable_collisions link1="head_cam3d_link" link2="head_color_camera_r_link" reason="Never" />
     <disable_collisions link1="head_cam3d_link" link2="head_cover_link" reason="Default" />
+    <disable_collisions link1="head_cam3d_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="head_cam3d_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="head_cam3d_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="head_cam3d_link" link2="tray_link" reason="Never" />
     <disable_collisions link1="head_color_camera_l_link" link2="head_color_camera_r_link" reason="Adjacent" />
     <disable_collisions link1="head_color_camera_l_link" link2="head_cover_link" reason="Default" />
+    <disable_collisions link1="head_color_camera_l_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="head_color_camera_l_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="head_color_camera_l_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="head_color_camera_l_link" link2="tray_link" reason="Never" />
     <disable_collisions link1="head_color_camera_r_link" link2="head_cover_link" reason="Default" />
+    <disable_collisions link1="head_color_camera_r_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="head_color_camera_r_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="head_color_camera_r_link" link2="torso_upper_neck_tilt_link" reason="Never" />
     <disable_collisions link1="head_color_camera_r_link" link2="tray_link" reason="Never" />
+    <disable_collisions link1="head_cover_link" link2="lookat_focus_frame" reason="Never" />
     <disable_collisions link1="head_cover_link" link2="torso_lower_neck_tilt_link" reason="Never" />
     <disable_collisions link1="head_cover_link" link2="torso_upper_neck_tilt_link" reason="Adjacent" />
     <disable_collisions link1="head_cover_link" link2="tray_link" reason="Never" />
+    <disable_collisions link1="lookat_focus_frame" link2="sdh_finger_11_link" reason="Never" />
+    <disable_collisions link1="lookat_focus_frame" link2="sdh_finger_13_link" reason="Never" />
+    <disable_collisions link1="lookat_focus_frame" link2="sdh_finger_22_link" reason="Never" />
+    <disable_collisions link1="lookat_focus_frame" link2="sdh_finger_23_link" reason="Never" />
+    <disable_collisions link1="lookat_focus_frame" link2="torso_lower_neck_tilt_link" reason="Never" />
+    <disable_collisions link1="lookat_focus_frame" link2="torso_upper_neck_tilt_link" reason="Adjacent" />
+    <disable_collisions link1="lookat_focus_frame" link2="tray_link" reason="Never" />
     <disable_collisions link1="sdh_finger_11_link" link2="sdh_finger_12_link" reason="Adjacent" />
     <disable_collisions link1="sdh_finger_11_link" link2="sdh_finger_13_link" reason="Never" />
     <disable_collisions link1="sdh_finger_11_link" link2="sdh_finger_21_link" reason="Never" />
