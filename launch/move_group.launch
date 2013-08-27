@@ -3,7 +3,7 @@
   <arg name="robot" default="$(env ROBOT)"/>
   <arg name="config_path" default="$(find cob_moveit_config)/$(arg robot)/config"/>
 
-    <param name="moveit/robot_description" command="$(find xacro)/xacro.py '$(arg config_path)/description.urdf.xacro'" />
+  <!--param name="moveit/robot_description" command="$(find xacro)/xacro.py '$(arg config_path)/description.urdf.xacro'" /-->
   <arg name="pipeline" default="ompl" />
 
   <arg name="debug" default="false" />
