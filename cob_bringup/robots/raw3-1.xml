@@ -25,7 +25,7 @@
 		</include>
 
 		<!-- wifi monitor -->
-		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
+		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" /-->
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
@@ -90,9 +90,9 @@
 		<!--include file="$(find cob_bringup)/components/prosilica_left.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
-		<!--include file="$(find cob_bringup)/components/prosilica_right.launch" >
+		<include file="$(find cob_bringup)/components/prosilica_right.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 	</group>
 
 
