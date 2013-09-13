@@ -8,15 +8,19 @@ analyzers:
       pc1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc1
-        contains: 'pc1'
+        contains: ['pc1 CPU Temperature',
+                   'pc1 CPU Usage',
+                   'pc1 HD Temperature',
+                   'pc1 HD Usage']
+
       pc2:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc2
-        contains: 'pc2'
-      pc3:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: pc3
-        contains: 'pc3'
+        contains: ['pc2 CPU Temperature',
+                   'pc2 CPU Usage',
+                   'pc2 HD Temperature',
+                   'pc2 HD Usage']
+
 
 #  network:
 #    type: AnalyzerGroup
@@ -73,15 +77,15 @@ analyzers:
   #   path: 'Power System'
   #   startswith: 'battery'
 
-  io:
-    type: AnalyzerGroup
-    path: IO
-    analyzers:
-      joystick:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Sound
-        contains: 'sound'
-        timeout: 15
+  #io:
+  #  type: AnalyzerGroup
+  #  path: IO
+  #  analyzers:
+  #    sound:
+  #      type: diagnostic_aggregator/GenericAnalyzer
+  #      path: Sound
+  #      contains: 'sound'
+  #      timeout: 15
 
   sensors:
     type: AnalyzerGroup
