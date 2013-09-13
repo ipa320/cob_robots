@@ -7,6 +7,7 @@
 		<rosparam file="$(arg pkg_prace_gripper_driver)/ros/config/controller_joint_names_left.yaml" command="load" />
 		<node pkg="prace_gripper_driver" type="prace_gripper_controller" name="gripper_controller_node" cwd="node" output="screen">
 			<rosparam file="$(arg pkg_prace_gripper_driver)/ros/config/controller_config_left.yaml" command="load" />
+			<remap from="/gripper_controller_left/joint_states" to="/joint_states"/>
 		</node>
 	</group>
 	
@@ -14,6 +15,7 @@
 		<rosparam file="$(arg pkg_prace_gripper_driver)/ros/config/controller_joint_names_right.yaml" command="load" />
 		<node pkg="prace_gripper_driver" type="prace_gripper_controller" name="gripper_controller_node" cwd="node" output="screen">
 			<rosparam file="$(arg pkg_prace_gripper_driver)/ros/config/controller_config_right.yaml" command="load" />
+			<remap from="/gripper_controller_right/joint_states" to="/joint_states"/>
 		</node>
 	</group>
 
