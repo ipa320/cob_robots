@@ -2,7 +2,7 @@
   <name>cob_bringup</name>
   <version>0.5.0</version>
   <description>This package provides launch files for operating Care-O-bot.</description>
-  
+
   <license>LGPL</license>
 
   <url type="website">http://ros.org/wiki/cob_bringup</url>
@@ -26,6 +26,7 @@
   <run_depend>cob_relayboard</run_depend>
   <run_depend>cob_voltage_control</run_depend>
   <run_depend>cob_sick_s300</run_depend>
+  <run_depend>cob_sick_lms1xx</run_depend>
   <run_depend>cob_hokuyo</run_depend>
   <run_depend>cob_camera_sensors</run_depend>
   <run_depend>cob_hwboard</run_depend>
