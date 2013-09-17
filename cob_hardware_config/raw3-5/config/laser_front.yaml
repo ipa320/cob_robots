@@ -1,4 +1,4 @@
-host: 192.168.45.121
+host: 141.3.80.11
 angle_resolution: 0.5 #deg
 scan_frequency: 25 #hz
 inverted: true
