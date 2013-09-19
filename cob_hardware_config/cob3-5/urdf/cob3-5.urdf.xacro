@@ -6,33 +6,33 @@
        name="cob3_5" >
   
   <!-- common stuff -->
-  <include filename="$(find cob_description)/urdf/common.xacro" />
-  <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
-  <include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- calibration -->
-  <include filename="$(find cob_calibration_data)/cob3-5/calibration/calibration.urdf.xacro" />
+  <xacro:include filename="$(find cob_calibration_data)/cob3-5/calibration/calibration.urdf.xacro" />
   
   <!-- base -->
-  <include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
 
   <!-- tray -->
-  <include filename="$(find cob_description)/urdf/tray_powerball/tray.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/tray_powerball/tray.urdf.xacro" />
  
   <!-- torso -->
-  <include filename="$(find cob_description)/urdf/torso_v1/torso.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/torso_v1/torso.urdf.xacro" />
 
   <!-- head -->
-  <include filename="$(find cob_description)/urdf/head_v3/head.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/head_v3/head.urdf.xacro" />
 
   <!-- arm -->
-  <include filename="$(find schunk_description)/urdf/lwa/lwa.urdf.xacro" />
+  <xacro:include filename="$(find schunk_description)/urdf/lwa/lwa.urdf.xacro" />
 
   <!-- sdh -->
-  <include filename="$(find schunk_description)/urdf/sdh/sdh.urdf.xacro" />
+  <xacro:include filename="$(find schunk_description)/urdf/sdh/sdh.urdf.xacro" />
 
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
-  <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
   
   <!-- composition of the robot -->
   <xacro:cob_base name="base"/>
