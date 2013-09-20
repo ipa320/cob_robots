@@ -1,0 +1,7 @@
+joint_names: ['ur_conector_joint','arm_shoulder_pan_joint', 'arm_shoulder_lift_joint', 'arm_elbow_joint','arm_wrist_1_joint', 'arm_wrist_2_joint', 'arm_wrist_3_joint']
+
+
+# back side positions
+folded: [[0, 0, 0, 0, 0, 0, 0]]
+grasp_to_tray: [[ 0, 0, 0, 0, 0, 0, 0]]
+grasp: [[-1.92, -2.3, -1.5708, -2, -2, 0, 0]]
