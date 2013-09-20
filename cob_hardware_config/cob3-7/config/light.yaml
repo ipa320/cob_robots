@@ -1,0 +1,3 @@
+devicestring: /dev/ttyLed
+baudrate: 230400
+
