@@ -12,7 +12,7 @@
 	<rosparam command="load" ns="torso_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/torso.yaml" />
 
 	<!-- This is the CANopen ROS wrapper node -->
-	<node ns="torso_canopen" name="torso_canopen_ros" pkg="ipa_canopen_ros" type="canopen_ros" cwd="node" respawn="false" output="screen" /> 
+	<node ns="torso_canopen" name="torso_canopen_ros" pkg="ipa_canopen_ros" type="canopen_ros" cwd="node" respawn="false" output="screen" />
 
 	<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
 	<node ns="torso_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller" cwd="node" respawn="false" output="screen" />
