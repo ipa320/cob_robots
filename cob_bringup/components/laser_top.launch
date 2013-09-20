@@ -9,7 +9,7 @@
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_top.yaml"/>
 		<remap from="scan" to="/scan_top_raw"/>
 	</node>
-	
+
 	<!-- laser filter -->
 	<node name="laser_top_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" ns="laser_top">
 		<remap from="scan" to="/scan_top_raw"/>
