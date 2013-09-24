@@ -6,4 +6,4 @@ inverted: true
 scan_id: 7
 frame_id: /base_laser_front_link
 publish_frequency: 12
-scan_intervals: [[-1.35, 1.35]] #[rad] these intervals are included to the scan
+scan_intervals: [[-1.30, 1.30]] #[rad] these intervals are included to the scan
