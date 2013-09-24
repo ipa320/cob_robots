@@ -5,7 +5,6 @@
 	<arg name="robot" value="cob3-7"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
-	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -60,12 +59,18 @@
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/components/torso.launch" >
+		<include file="$(find cob_bringup)/components/torso_canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/tray.launch" >
+		<include file="$(find cob_bringup)/components/tray_canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<include file="$(find cob_bringup)/components/ur_conector_canopen.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<!--include file="$(find cob_bringup)/components/canopen.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
 		<include file="$(find cob_bringup)/components/head.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -92,7 +97,15 @@
 		</include>
 
 		<!-- start camera sensors -->
-		<!--include file="$(find cob_bringup)/components/kinect.launch" >
+		<include file="$(find cob_bringup)/components/prosilica_left.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/prosilica_right.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- start camera sensors -->
+		<include file="$(find cob_bringup)/components/kinect.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
@@ -100,7 +113,7 @@
 			<arg name="rate" value="1.0" />
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
-		</include-->
+		</include>
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 
 		<include file="$(find cob_bringup)/components/light.launch" >

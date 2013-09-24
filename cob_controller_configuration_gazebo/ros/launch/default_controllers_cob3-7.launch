@@ -19,9 +19,6 @@
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
-	<!-- SDH -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sdh_controller.launch"/>
-
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_v1_controller.launch"/>
 
