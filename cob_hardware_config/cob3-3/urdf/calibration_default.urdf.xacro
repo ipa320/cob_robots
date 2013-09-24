@@ -58,9 +58,9 @@
 	<property name="def_arm_x" value="-0.0170912083"/>
 	<property name="def_arm_y" value="-0.0921082478"/>
 	<property name="def_arm_z" value="0.8766602432"/>
-	<property name="def_arm_roll" value="0.7815978927"/>
-	<property name="def_arm_pitch" value="-0.0011338404"/>
-	<property name="def_arm_yaw" value="-0.2715640362"/>
+	<property name="def_arm_roll" value="-0.7584"/>
+	<property name="def_arm_pitch" value="0.2114"/>
+	<property name="def_arm_yaw" value="3.0869"/>
 	
 	
 	<!-- sdh mount positions | relative to arm_7_link -->
