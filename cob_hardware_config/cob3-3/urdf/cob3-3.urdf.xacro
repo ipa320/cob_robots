@@ -11,8 +11,8 @@
   <include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- calibration -->
-  <include filename="$(find cob_calibration_data)/cob3-3/calibration/calibration.urdf.xacro" />
-
+  <include filename="$(find cob_hardware_config)/cob3-3/urdf/properties.urdf.xacro" />
+  
   <!-- base -->
   <include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
 
@@ -37,6 +37,8 @@
   <!-- composition of the robot -->
   <xacro:cob_base name="base"/>
 
+  <xacro:cob_component type="cob_torso_v1" name="tray" parent="base_link"/>
+ 
   <xacro:cob_tray name="tray" parent="base_link">
     <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
   </xacro:cob_tray>
