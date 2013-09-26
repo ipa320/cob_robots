@@ -19,7 +19,7 @@
 
 	<!-- start arm -->
 	<include file="$(find cob_bringup)/components/ur.launch" >
-		<arg name="robot" value="$(arg robot)" />
+		<!--arg name="robot" value="$(arg robot)" /-->
 	</include>
 
 </launch>

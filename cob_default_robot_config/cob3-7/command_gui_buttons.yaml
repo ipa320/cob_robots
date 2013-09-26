@@ -32,8 +32,8 @@ group3:
     [up,move,up],
     [down,move,down]]
 group4:
-  group_name: ur_conector 
-  component_name: ur_conector
+  group_name: ur_connector 
+  component_name: ur_connector
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],

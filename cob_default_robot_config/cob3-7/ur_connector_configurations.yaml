@@ -1,4 +1,4 @@
-joint_names: ['ur_conector_joint']
+joint_names: ['ur_connector_joint']
 
 # back side positions
 front: [[0]]
