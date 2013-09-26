@@ -12,4 +12,4 @@ frequency: 100
 
 joint_names: [tray_joint]
 module_ids: [10]
-devices: ["/dev/pcan1"]
+devices: ["/dev/pcan2"]
