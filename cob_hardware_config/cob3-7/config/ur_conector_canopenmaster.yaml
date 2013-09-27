@@ -5,4 +5,4 @@ devices:
 # - name: /dev/pcan32
 #   baudrate: 1M
 #   sync_interval: 5
-chains: ["ur_conector_controller"]
+chains: ["ur_connector_controller"]
