@@ -1,5 +1,5 @@
 devices:
-  - name: /dev/pcan1
+  - name: /dev/pcan2
     baudrate: 500K
     sync_interval: 10
 # - name: /dev/pcan32
