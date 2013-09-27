@@ -1,0 +1,16 @@
+ur_connector_controller:
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - ur_connector_joint
+  gains:
+    ur_connector_joint:
+      p: 2000.0
+      d: 0.0
+  ur_connector_joint_trajectory_action_node:
+    joints:
+        - ur_connector_joint
+    constraints:
+      goal_time: 0.6
+      ur_connector_joint:
+        goal: 0.05
+

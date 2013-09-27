@@ -1,0 +1,4 @@
+joint_names: ["ur_conector_1_joint"]
+grasp_to_tray: [[0]]
+folded: [[-200]]
+grasp:[[-90]]
