@@ -10,6 +10,6 @@ ptp_acc: 0.2 # rad/sec^2
 max_error: 0.15 # rad
 frequency: 100
 
-joint_names: [tray_joint]
-module_ids: [10]
-devices: ["/dev/pcan1"]
+joint_names: [ur_connector_joint]
+module_ids: [11]
+devices: ["/dev/pcan0"]
