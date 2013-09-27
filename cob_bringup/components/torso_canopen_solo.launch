@@ -23,9 +23,5 @@
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 
-	<!-- start canopen -->
-	<!--include file="$(find cob_bringup)/components/canopen.launch" >
-		<arg name="robot" value="$(arg robot)" />
-	</include-->
 
 </launch>
