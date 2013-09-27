@@ -27,7 +27,7 @@
   <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
 
   <!-- ur_arm -->
-  <include filename="$(find ur_description)/urdf/ur10.urdf.xacro" />
+  <include filename="$(find raw_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
 
 
 
@@ -37,17 +37,25 @@
       <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
   </xacro:tower_asymetric>
 
-  <!-- comment out ur10 as this is not working now -->
-  <!--xacro:ur10_robot name="arm" parent="base_link">
+  <xacro:cob_ur10 name="arm" parent="base_link">
       <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-  </xacro:ur10_robot-->
+  </xacro:cob_ur10>
+  <!-- mount the arm to the robot 
+  <joint name="arm_base_joint" type="fixed" >
+      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
+      <parent link="base_link" />
+      <child link="arm_base_link" />
+  </joint>
+
+  <xacro:ur10_robot prefix="arm_"/>-->
+
 
   <xacro:raw_torso name="torso" parent="base_link">
       <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:raw_torso>
 
-  <!--xacro:raw_boxgripper name="gripper" parent="arm_wrist_3_link">
+  <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
       <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
-  </xacro:raw_boxgripper-->
+  </xacro:raw_boxgripper>
 
   </robot>
