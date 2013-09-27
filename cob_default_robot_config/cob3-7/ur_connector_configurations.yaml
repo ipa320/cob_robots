@@ -1,4 +1,5 @@
-joint_names: ["ur_conector_1_joint"]
-grasp_to_tray: [[0]]
-folded: [[-200]]
-grasp:[[-90]]
+joint_names: ['ur_connector_joint']
+
+# back side positions
+front: [[0]]
+back: [[-1.92]]

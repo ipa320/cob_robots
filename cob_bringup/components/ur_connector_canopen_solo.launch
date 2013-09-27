@@ -17,11 +17,9 @@
 	<!-- start robot_state_publisher -->
 	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
-
-	<!-- start torso controller -->
-	<include file="$(find cob_bringup)/components/torso_canopen.launch" >
+    	<!-- start ur_conector_canopen controller -->
+	<include file="$(find cob_bringup)/components/ur_connector_canopen.launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
-
 
 </launch>

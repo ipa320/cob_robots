@@ -31,13 +31,26 @@ group3:
     [recover,trigger,recover],
     [up,move,up],
     [down,move,down]]
+group4:
+  group_name: ur_connector 
+  component_name: ur_connector
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [back,move,back],
+    [front,move,front]]
 group5:
   group_name: arm pos
   component_name: arm
   buttons: [[stop,trigger,stop],
+    [home,move,home],
     [folded,move,folded],
-    [grasp_to_tray,move,grasp_to_tray],
-    [grasp,move,grasp]]
+    [pregrasp,move,pregrasp],
+    [hold,move,hold],
+    [sdhmount, move, sdhmount],
+    [overtray,move,overtray],
+    [wave in,move,wavein],
+    [wave out,move,waveout]]
 group6:
   group_name: arm traj
   component_name: arm
@@ -47,7 +60,7 @@ group6:
     [grasp-to-tray,move,grasp-to-tray],
     [tray-to-folded,move,tray-to-folded],
     [wave,move,wave]]
-group8:
+group7: 
   group_name: head
   component_name: head
   buttons: [[stop,trigger,stop],
