@@ -5,7 +5,7 @@
 	<arg name="robot" value="cob3-7"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
-	<arg name="ur_ip" default="192.168.41.40" />
+	<arg name="ur_ip" default="localhost" />
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
