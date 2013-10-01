@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<!-- start tray_canopen controller -->
+	<include file="$(find cob_bringup)/components/tray_canopen.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
+	<!-- start tray_canopen controller -->
+	<include file="$(find cob_bringup)/components/torso_canopen.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
+	<!-- parameters for CANopen node -->
+	<rosparam command="load" ns="canopen" file="$(arg pkg_hardware_config)/$(arg robot)/config/canopen.yaml" />
+
+
+	<!-- This is the CANopen ROS wrapper node -->
+	<node ns="canopen" name="canopen_ros" pkg="ipa_canopen_ros" type="canopen_ros" cwd="node" respawn="false" output="screen" /> 
+
+
+
+	<!-- parameters for CANopen node -->
+	<!--- rosparam command="load" ns="tray_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/tray.yaml" -->
+
+	<!-- parameters for CANopen node -->
+	<!-- rosparam command="load" ns="torso_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/torso.yaml" -->
+
+
+</launch>

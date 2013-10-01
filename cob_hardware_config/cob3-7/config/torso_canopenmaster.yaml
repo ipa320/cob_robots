@@ -1,0 +1,8 @@
+devices:
+  - name: /dev/pcan2
+    baudrate: 500K
+    sync_interval: 10
+# - name: /dev/pcan32
+#   baudrate: 1M
+#   sync_interval: 5
+chains: ["torso_controller"]
