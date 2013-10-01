@@ -37,8 +37,6 @@
   <!-- composition of the robot -->
   <xacro:cob_base name="base"/>
 
-  <xacro:cob_component type="cob_torso_v1" name="tray" parent="base_link"/>
- 
   <xacro:cob_tray name="tray" parent="base_link">
     <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
   </xacro:cob_tray>
