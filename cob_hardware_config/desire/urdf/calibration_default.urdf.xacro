@@ -54,12 +54,19 @@
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->
 	<!-- ***************************** -->
-	<property name="def_cam_l_x" value="-0.1246347991"/>
-	<property name="def_cam_l_y" value="-0.0698722875"/>
-	<property name="def_cam_l_z" value="-0.2360901407"/>
-	<property name="def_cam_l_roll" value="0.6254583135"/>
-	<property name="def_cam_l_pitch" value="-1.5196809763"/>
-	<property name="def_cam_l_yaw" value="-0.8146938173"/>
+	<property name="def_cam_reference_x" value="-0.1246347991"/>
+	<property name="def_cam_reference_y" value="-0.0698722875"/>
+	<property name="def_cam_reference_z" value="-0.2360901407"/>
+	<property name="def_cam_reference_roll" value="0.6254583135"/>
+	<property name="def_cam_reference_pitch" value="-1.5196809763"/>
+	<property name="def_cam_reference_yaw" value="-0.8146938173"/>
+	<!-- left | handeye calibration | relative to head_axis_link -->
+	<property name="def_cam_l_x" value="0"/>
+	<property name="def_cam_l_y" value="0"/>
+	<property name="def_cam_l_z" value="0"/>
+	<property name="def_cam_l_roll" value="0"/>
+	<property name="def_cam_l_pitch" value="0"/>
+	<property name="def_cam_l_yaw" value="0"/>
 
 	<!-- right | stereo baseline calibration | relative to left camera -->
 	<property name="def_cam_r_x" value="0.120347347704"/>
