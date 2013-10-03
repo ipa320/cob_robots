@@ -43,6 +43,9 @@
 		<include file="$(find cob_bringup)/components/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<include file="$(find cob_bringup)/components/voltage_filter.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/components/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -58,6 +61,9 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/sdh.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/dsa.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/head.launch" >

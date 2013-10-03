@@ -12,7 +12,10 @@
   <include filename="$(find cob_calibration_data)/raw3-1/calibration/calibration.urdf.xacro" />   
   
   <!-- raw base -->
-  <include filename="$(find raw_description)/urdf/base/base.urdf.xacro" />
+  <include filename="$(find raw_description)/urdf/base_long/base.urdf.xacro" />
+
+  <!-- raw tower -->
+  <include filename="$(find raw_description)/urdf/tower_asymetric/tower.urdf.xacro" />  
 
   <!-- raw boxgripper -->
   <include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
@@ -28,11 +31,24 @@
 
 
 
-  <xacro:raw_base name="base"/>	<!--with new collision_model, but no platform_controller available yet-->
+  <xacro:raw_base name="base"/>	
+
+  <xacro:tower_asymetric name="tower" parent="base_link">
+      <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
+  </xacro:tower_asymetric>
 
   <xacro:cob_ur10 name="arm" parent="base_link">
       <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:cob_ur10>
+  <!-- mount the arm to the robot 
+  <joint name="arm_base_joint" type="fixed" >
+      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
+      <parent link="base_link" />
+      <child link="arm_base_link" />
+  </joint>
+
+  <xacro:ur10_robot prefix="arm_"/>-->
+
 
   <xacro:raw_torso name="torso" parent="base_link">
       <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
