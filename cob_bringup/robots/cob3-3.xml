@@ -66,6 +66,9 @@
 		<include file="$(find cob_bringup)/components/tray_canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<!--include file="$(find cob_bringup)/components/canopen.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
 		<include file="$(find cob_bringup)/components/lbr.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
