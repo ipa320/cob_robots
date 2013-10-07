@@ -1,5 +1,5 @@
 head_controller:
-  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  type: "effort_controllers/JointTrajectoryController"
   joints:
     - head_axis_joint 
   gains:
@@ -8,12 +8,5 @@ head_controller:
       i: 12.0
       d: 0.5
       i_clamp: 0.5 
-    
-  head_joint_trajectory_action_node:
-    joints:
-    - head_axis_joint 
-    constraints:
-      goal_time: 0.6
-      head_axis_joint:
-        goal: 0.02
+  
 

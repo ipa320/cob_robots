@@ -5,10 +5,6 @@
 
     <node name="sdh_controller_spawner" pkg="controller_manager" type="spawner" args="sdh_controller" />
 
-    <group ns="sdh_controller">
-		<node name="sdh_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
-    </group>
-
     <!-- sdh simulated tactile sensors -->
     <include file="$(find schunk_simulated_tactile_sensors)/ros/launch/simulated_tactile_sensors.launch" />
 
