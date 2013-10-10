@@ -117,6 +117,7 @@
 	<property name="def_cam_reference_roll" value="0.8665791516"/>
 	<property name="def_cam_reference_pitch" value="-1.5610273707"/>
 	<property name="def_cam_reference_yaw" value="-0.9246703056"/>
+
 	<!-- left | handeye calibration | relative to head_axis_link -->
 	<property name="def_cam_l_x" value="0"/>
 	<property name="def_cam_l_y" value="0"/>
