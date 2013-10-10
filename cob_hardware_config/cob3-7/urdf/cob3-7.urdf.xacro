@@ -25,8 +25,11 @@
   <!-- head -->
   <include filename="$(find cob_description)/urdf/head_v3/head.urdf.xacro" />
 
-  <!-- sdh -->
-  <include filename="$(find schunk_description)/urdf/sdh/sdh.urdf.xacro" />
+  <!-- ur_connector -->
+  <include filename="$(find cob_description)/urdf/ur_connector/ur_connector.urdf.xacro" />
+
+  <!-- arm -->
+  <include filename="$(find cob_description)/urdf/ur_arm/ur5_arm.urdf.xacro"/>
 
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
@@ -42,10 +45,16 @@
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:cob_torso_v1>
  
-  
   <xacro:cob_head_v3 name="head" parent="torso_upper_neck_tilt_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:cob_head_v3>
+
+  <xacro:cob_ur_connector name="ur_connector" parent="base_link">
+    <origin xyz="${ur_connector_x} ${ur_connector_y} ${ur_connector_z}" rpy="${ur_connector_roll} ${ur_connector_pitch} ${ur_connector_yaw}" />
+  </xacro:cob_ur_connector>
   
+  <xacro:cob_ur5 name="arm" parent="ur_connector_link">
+      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
+  </xacro:cob_ur5>
   
 </robot>
