@@ -24,6 +24,7 @@
   </include>
 
   <rosparam file="$(arg config_path)/controllers.yaml" ns="move_group"/>
+  <param name="trajectory_execution/execution_duration_monitoring" value="false"/>
   <param name="move_group/use_controller_manager" value="false"/>
   <param name="move_group/moveit_controller_manager" value="pr2_moveit_controller_manager/Pr2MoveItControllerManager"/>
   
@@ -31,7 +32,7 @@
       <arg name="pipeline" value="$(arg pipeline)"/>
       <arg name="robot" value="$(arg robot)"/>
   </include>
-
+ 
 <!--  
   <include ns="move_group" file="$(find raw3-1)/launch/trajectory_execution.launch" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_controller_manager" value="raw3-1" /> 
@@ -46,7 +47,8 @@
   <!-- include this for sensing -->
   <!-- IMPORTANT: To disable, you must manually remove the paramater from the parameter server -->
   <!-- rosparam delete /move_group/sensors -->
-<!--  <param name="move_group/octomap_frame" type="string" value="odom_combined" />
+<!--  
+  <param name="move_group/octomap_frame" type="string" value="odom_combined" />
   <param name="move_group/octomap_resolution" type="double" value="0.05" />
   <param name="move_group/max_range" type="double" value="2.0" />
   <rosparam file="$(arg config_path)/sensor_kinect.yaml" ns="move_group"/>
@@ -62,14 +64,14 @@
 
     <!-- MoveGroup capabilities to load -->
     <param name="capabilities" value="move_group/MoveGroupCartesianPathService
-				      move_group/MoveGroupExecuteService
-				      move_group/MoveGroupKinematicsService
-				      move_group/MoveGroupMoveAction
-				      move_group/MoveGroupPickPlaceAction
-				      move_group/MoveGroupPlanService
-				      move_group/MoveGroupQueryPlannersService
-				      move_group/MoveGroupStateValidationService
-				      " />
+                      move_group/MoveGroupExecuteService
+                      move_group/MoveGroupKinematicsService
+                      move_group/MoveGroupMoveAction
+                      move_group/MoveGroupPickPlaceAction
+                      move_group/MoveGroupPlanService
+                      move_group/MoveGroupQueryPlannersService
+                      move_group/MoveGroupStateValidationService
+                      " />
 
     <!-- Publish the planning scene of the physical robot so that rviz plugin can know actual robot -->
     <param name="planning_scene_monitor/publish_planning_scene" value="$(arg publish_monitored_planning_scene)" />

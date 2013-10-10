@@ -164,6 +164,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          head_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           head_cam3d_frame:
             Alpha: 1
             Show Axes: false
@@ -173,6 +177,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          head_cam_reference_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           head_color_camera_l_frame:
             Alpha: 1
             Show Axes: false
@@ -254,6 +262,10 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          torso_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           torso_lower_neck_tilt_link:
             Alpha: 1
             Show Axes: false
@@ -322,7 +334,7 @@ Visualization Manager:
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
         Planning Group: arm
-        Query Goal State: false
+        Query Goal State: true
         Query Start State: false
         Show Workspace: false
         Start State Alpha: 1
@@ -452,6 +464,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          head_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           head_cam3d_frame:
             Alpha: 1
             Show Axes: false
@@ -461,6 +477,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          head_cam_reference_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           head_color_camera_l_frame:
             Alpha: 1
             Show Axes: false
@@ -542,6 +562,10 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          torso_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           torso_lower_neck_tilt_link:
             Alpha: 1
             Show Axes: false
@@ -610,35 +634,36 @@ Visualization Manager:
       Hide Inactive Objects: true
     - Class: rviz/MoveCamera
     - Class: rviz/Select
+    - Class: rviz/FocusCamera
   Value: true
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 8.30298
+      Distance: 7.82587
       Focal Point:
-        X: 0.627292
-        Y: -0.839251
-        Z: 5.20314e-07
+        X: -0.435789
+        Y: -0.0338127
+        Z: 0
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.0597966
+      Pitch: 0.424643
       Target Frame: /base_link
       Value: XYOrbit (rviz)
-      Yaw: 2.15183
+      Yaw: 1.99125
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: true
-  Height: 669
+  Height: 680
   Help:
     collapsed: false
   Hide Left Dock: true
   Hide Right Dock: false
   Motion Planning:
     collapsed: true
-  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000257fc0200000005fb000000100044006900730070006c0061007900730000000028000000dd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067000000010b000001740000017400ffffff000002c80000025700000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000262fc0200000005fb000000100044006900730070006c0061007900730000000028000000dd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067000000010b0000017f0000017400ffffff000002c80000026200000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 712
-  X: 319
-  Y: 42
+  X: 67
+  Y: 67

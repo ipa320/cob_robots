@@ -21,3 +21,10 @@ controller_list:
       - sdh_finger_13_joint
       - sdh_finger_22_joint
       - sdh_finger_23_joint
+  - name: torso_controller
+    ns: follow_joint_trajectory
+    default: true
+    joints:
+      - torso_lower_neck_tilt_joint
+      - torso_pan_joint
+      - torso_upper_neck_tilt_joint
