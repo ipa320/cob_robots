@@ -31,11 +31,11 @@
 	<!-- upper robot calibration -->
 	<!-- *********************** -->
 	<!-- tray mount positions | relative to base_link -->
-	<property name="def_tray_x" value="0.186"/>
-	<property name="def_tray_y" value="0.113"/>
-	<property name="def_tray_z" value="0.721"/>
-	<property name="def_tray_roll" value="-1.5707"/>
-	<property name="def_tray_pitch" value="0.35"/>
+	<property name="def_tray_x" value="0.2406"/>
+	<property name="def_tray_y" value="0.1900"/>
+	<property name="def_tray_z" value="0.7320"/>
+	<property name="def_tray_roll" value="2.3561"/>
+	<property name="def_tray_pitch" value="0"/>
 	<property name="def_tray_yaw" value="0"/>
 
 	<!-- torso mount positions | relative to base_link -->
@@ -54,13 +54,21 @@
 	<property name="def_head_pitch" value="0.0"/>
 	<property name="def_head_yaw" value="0.0"/>
 
-	<!-- arm mount positions | relative to base_link -->
-	<property name="def_arm_x" value="0.040"/>
-	<property name="def_arm_y" value="-0.005"/>
-	<property name="def_arm_z" value="0.83637"/>
-	<property name="def_arm_roll" value="3.1415926"/>
-	<property name="def_arm_pitch" value="0.7854"/>
-	<property name="def_arm_yaw" value="-1.8326"/>
+	<!-- ur_connector mount positions | relative to base_link --> 
+	<property name="def_ur_connector_x" value="0"/>
+	<property name="def_ur_connector_y" value="0"/>
+	<property name="def_ur_connector_z" value="0.775"/>
+	<property name="def_ur_connector_roll" value="0"/>
+	<property name="def_ur_connector_pitch" value="0"/>
+	<property name="def_ur_connector_yaw" value="0"/>
+
+	<!-- arm mount positions | relative to ur_connector_link --> 
+	<property name="def_arm_x" value="0.1712"/>
+	<property name="def_arm_y" value="-0.1776"/>
+	<property name="def_arm_z" value="0.0551"/>
+	<property name="def_arm_roll" value="-0.5236"/>
+	<property name="def_arm_pitch" value="0"/>
+	<property name="def_arm_yaw" value="-1.5708"/>
 	
 	
 	<!-- sdh mount positions | relative to arm_7_link -->
@@ -74,27 +82,30 @@
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
-	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
+    <!-- torso chain calibration_offest! | relative to reference position (see below)-->
+    <!-- not used right now
+	<property name="def_torso_lower_neck_tilt_cal_offset" value="0.0"/>
+	<property name="def_torso_pan_cal_offset" value="0.0"/>
+	<property name="def_torso_upper_neck_tilt_cal_offset" value="0.0"/>
+	-->
 	<property name="def_torso_lower_neck_tilt_ref" value="-0.299259484"/>
 	<property name="def_torso_pan_ref" value="0.03021506"/>
 	<property name="def_torso_upper_neck_tilt_ref" value="0.207151622"/>
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
-	<property name="def_tray_1_ref" value="0.0"/>
-	<property name="def_tray_2_ref" value="0.0"/>
-	<property name="def_tray_3_ref" value="0.0"/>
+	<property name="def_tray_ref" value="0.0"/>
 
 	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
-	<property name="def_head_axis_ref" value="0.15"/>
+	<property name="def_head_axis_ref" value="0.0"/>
 
 	<!-- arm reference positions | used as calibration_rising for arm chain-->
-	<property name="def_arm_1_ref" value="2.32692684"/>
-	<property name="def_arm_2_ref" value="-0.0079118870198726654"/>
-	<property name="def_arm_3_ref" value="-0.0109574124"/>
-	<property name="def_arm_4_ref" value="0.0211027861"/>
-	<property name="def_arm_5_ref" value="0.0074385176412761211"/>
-	<property name="def_arm_6_ref" value="385.34559"/>
-	<property name="def_arm_7_ref" value="3.08280301"/>
+    <property name="def_arm_1_ref" value="0.0"/>
+	<property name="def_arm_2_ref" value="0.0"/>
+	<property name="def_arm_3_ref" value="0.0"/>
+	<property name="def_arm_4_ref" value="0.0"/>
+	<property name="def_arm_5_ref" value="0.0"/>
+	<property name="def_arm_6_ref" value="0.0"/>
+	<property name="def_arm_7_ref" value="0.0"/>
 
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->
