@@ -3,7 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)" />
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="ur_ip" default="localhost"/>
+	<arg name="ur_ip"/>
 
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch" >

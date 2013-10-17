@@ -46,20 +46,11 @@ group5:
     [home,move,home],
     [folded,move,folded],
     [pregrasp,move,pregrasp],
-    [hold,move,hold],
-    [sdhmount, move, sdhmount],
-    [overtray,move,overtray],
-    [wave in,move,wavein],
-    [wave out,move,waveout]]
-group6:
-  group_name: arm traj
-  component_name: arm
-  buttons: [[stop,trigger,stop],
-    [folded-to-look at table,move,folded-to-look_at_table],
-    [look_at_table-to-folded,move,look_at_table-to-folded],
-    [grasp-to-tray,move,grasp-to-tray],
-    [tray-to-folded,move,tray-to-folded],
-    [wave,move,wave]]
+    [hold,move,hold]]
+#group6:
+#  group_name: arm traj
+#  component_name: arm
+#  buttons: [[stop,trigger,stop]]
 group7: 
   group_name: head
   component_name: head
