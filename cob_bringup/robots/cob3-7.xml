@@ -66,9 +66,9 @@
 		<include file="$(find cob_bringup)/components/tray_canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--lude file="$(find cob_bringup)/components/ur_connector_canopen.launch" >
+		<include file="$(find cob_bringup)/components/ur_connector_canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 		<include file="$(find cob_bringup)/components/ur.launch" >
 			<arg name="ur_ip" value="$(arg ur_ip)"/>
 		</include>
@@ -115,6 +115,7 @@
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 		<include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
