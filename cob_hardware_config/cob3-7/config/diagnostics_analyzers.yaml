@@ -61,16 +61,28 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Front
         contains: 'laser_front'
+#      stereo_left:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Stereo (Left)
+#        contains: left
+#        startswith: ['stereo/left/color_camera']
+#      stereo_right:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Stereo (Right)
+#        contains: right
+#        startswith: ['stereo/right/color_camera']
+# as the cameras throw errors, we want to supress the diagnostics messages
       stereo_left:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/DiscardAnalyzer
         path: Stereo (Left)
         contains: left
         startswith: ['stereo/left/color_camera']
       stereo_right:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/DiscardAnalyzer
         path: Stereo (Right)
         contains: right
         startswith: ['stereo/right/color_camera']
+
 
   motors:
     type: AnalyzerGroup
@@ -80,10 +92,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Head
         contains: 'head_controller'
-      arm:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: UR
-        contains: 'arm_controller'
+#      arm:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: UR
+#        contains: 'arm_controller'
       ur_connector:
         type: diagnostic_aggregator/GenericAnalyzer
         path: UR_connector
