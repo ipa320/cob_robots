@@ -14,25 +14,25 @@
 	<property name="def_tower_yaw" value="0.0"/>
 
 	<!-- arm mount positions | relative to base_link -->
-	<property name="def_arm_x" value="0.24"/>
+	<property name="def_arm_x" value="0.244"/>
 	<property name="def_arm_y" value="0.0"/>
-	<property name="def_arm_z" value="0.48"/>
+	<property name="def_arm_z" value="0.59316"/>
 	<property name="def_arm_roll" value="0.0"/>
 	<property name="def_arm_pitch" value="0.0"/>
 	<property name="def_arm_yaw" value="0.0"/>
 
 	<!-- gripper_left mount positions | relative to arm_left_7_link -->
-	<property name="def_gripper_left x" value="0.0"/>
-	<property name="def_gripper_left y" value="0.0"/>
-	<property name="def_gripper_left z" value="0.0561"/>
-	<property name="def_gripper_left roll" value="0.0"/>
-	<property name="def_gripper_left pitch" value="0.0"/>
-	<property name="def_gripper_left yaw" value="0.0"/>
+	<property name="def_gripper_left_x" value="0.0"/>
+	<property name="def_gripper_left_y" value="0.0"/>
+	<property name="def_gripper_left_z" value="0.0"/>
+	<property name="def_gripper_left_roll" value="0.0"/>
+	<property name="def_gripper_left_pitch" value="0.0"/>
+	<property name="def_gripper_left_yaw" value="0.0"/>
 
 	<!-- gripper_right mount positions | relative to arm_right_7_link -->
 	<property name="def_gripper_right_x" value="0.0"/>
 	<property name="def_gripper_right_y" value="0.0"/>
-	<property name="def_gripper_right_z" value="0.0561"/>
+	<property name="def_gripper_right_z" value="0.0"/>
 	<property name="def_gripper_right_roll" value="0.0"/>
 	<property name="def_gripper_right_pitch" value="0.0"/>
 	<property name="def_gripper_right_yaw" value="0.0"/>

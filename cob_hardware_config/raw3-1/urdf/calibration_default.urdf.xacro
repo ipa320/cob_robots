@@ -5,6 +5,14 @@
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
 
+	<!-- tower mount positions | relative to base_link -->
+	<property name="def_tower_x" value="0.357"/>
+	<property name="def_tower_y" value="0.0"/>
+	<property name="def_tower_z" value="0.306"/>
+	<property name="def_tower_roll" value="0.0"/>
+	<property name="def_tower_pitch" value="0.0"/>
+	<property name="def_tower_yaw" value="3.14159265359"/>
+
 	<!-- torso reference positions | used as calibration_rising for torso chain -->
 	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
 	<property name="torso_pan_ref" value="-0.4363323130"/>
@@ -38,19 +46,12 @@
 	<!-- camera calibration properties -->
 	<!-- ***************************** -->
 	<!-- left | handeye calibration | relative to head_axis_link -->
-	<property name="def_cam_reference_x" value="-0.0171250371"/>
-	<property name="def_cam_reference_y" value="-0.0389120491"/>
-	<property name="def_cam_reference_z" value="-0.12027305"/>
-	<property name="def_cam_reference_roll" value="2.149627771"/>
-	<property name="def_cam_reference_pitch" value="-1.5608998734"/>
-	<property name="def_cam_reference_yaw" value="-2.2074792588"/>
-	<!-- left | handeye calibration | relative to head_axis_link -->
-	<property name="def_cam_l_x" value="0"/>
-	<property name="def_cam_l_y" value="0"/>
-	<property name="def_cam_l_z" value="0"/>
-	<property name="def_cam_l_roll" value="0"/>
-	<property name="def_cam_l_pitch" value="0"/>
-	<property name="def_cam_l_yaw" value="0"/>
+	<property name="def_cam_l_x" value="-0.0171250371"/>
+	<property name="def_cam_l_y" value="-0.0389120491"/>
+	<property name="def_cam_l_z" value="-0.12027305"/>
+	<property name="def_cam_l_roll" value="2.149627771"/>
+	<property name="def_cam_l_pitch" value="-1.5608998734"/>
+	<property name="def_cam_l_yaw" value="-2.2074792588"/>
 
 	<!-- right | stereo baseline calibration | relative to left camera -->
 	<property name="def_cam_r_x" value="0.044"/>
