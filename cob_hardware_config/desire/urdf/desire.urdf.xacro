@@ -12,7 +12,7 @@
   <include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- desire calibration -->
-  <include filename="$(find cob_calibration_data)/desire/calibration/calibration.urdf.xacro" />
+  <include filename="$(find cob_hardware_config)/desire/urdf/properties.urdf.xacro" />
   
   <!-- desire base -->
   <include filename="$(find desire_description)/urdf/base_desire/base.urdf.xacro" />
