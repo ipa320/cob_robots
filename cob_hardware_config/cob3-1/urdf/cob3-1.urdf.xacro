@@ -54,7 +54,7 @@
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:cob_head_v1>
   
-  <xacro:cob_lookat name="lookat" parent="torso_upper_neck_tilt_link">
+  <xacro:cob_lookat name="lookat" parent="torso_upper_neck_tilt_link" lower="-5.0" upper="5.0">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
     <axis xyz="-1 0 0"/>
   </xacro:cob_lookat>

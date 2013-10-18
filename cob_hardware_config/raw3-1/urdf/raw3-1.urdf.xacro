@@ -48,7 +48,7 @@
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:raw_head>
   
-  <xacro:cob_lookat name="lookat" parent="torso_2_link">
+  <xacro:cob_lookat name="lookat" parent="torso_2_link" lower="0.0" upper="5.0">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
     <axis xyz="1 0 0"/>
   </xacro:cob_lookat>
