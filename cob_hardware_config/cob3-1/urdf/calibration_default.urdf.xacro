@@ -62,7 +62,6 @@
 	<property name="def_arm_pitch" value="0.0"/>
 	<property name="def_arm_yaw" value="-0.2618"/>
 	
-	
 	<!-- sdh mount positions | relative to arm_7_link -->
 	<property name="def_sdh_x" value="0.0"/>
 	<property name="def_sdh_y" value="0.0"/>
@@ -98,13 +97,15 @@
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->
 	<!-- ***************************** -->
+	<!-- left | handeye calibration | relative to head_axis_link -->
 	<property name="def_cam_reference_x" value="0.0"/>
 	<property name="def_cam_reference_y" value="0.0"/>
 	<property name="def_cam_reference_z" value="-0.06"/>
 	<property name="def_cam_reference_roll" value="0.0"/>
 	<property name="def_cam_reference_pitch" value="1.57079633"/>
 	<property name="def_cam_reference_yaw" value="3.14159265"/>
-	<!-- left | handeye calibration | relative to head_axis_link -->
+	
+	<!-- left | handeye calibration | relative to cam_reference_link -->
 	<property name="def_cam_l_x" value="0"/>
 	<property name="def_cam_l_y" value="0"/>
 	<property name="def_cam_l_z" value="0"/>
@@ -112,7 +113,7 @@
 	<property name="def_cam_l_pitch" value="0"/>
 	<property name="def_cam_l_yaw" value="0"/>
 
-	<!-- right | stereo baseline calibration | relative to left camera -->
+	<!-- right | stereo baseline calibration | relative to cam_reference_link -->
 	<property name="def_cam_r_x" value="-0.12075932"/>
 	<property name="def_cam_r_y" value="-0.00006386"/>
 	<property name="def_cam_r_z" value="-0.00026527"/>
@@ -120,7 +121,7 @@
 	<property name="def_cam_r_pitch" value="0.00546"/>
 	<property name="def_cam_r_yaw" value="0.00676"/>
 
-	<!-- cam3d | handeye calibration | relative to left camera -->
+	<!-- cam3d | handeye calibration | relative to cam_reference_link -->
 	<property name="def_cam3d_x" value="-0.07"/>
 	<property name="def_cam3d_y" value="0.05"/>
 	<property name="def_cam3d_z" value="0.08"/>

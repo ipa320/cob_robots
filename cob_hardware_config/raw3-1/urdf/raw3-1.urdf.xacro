@@ -17,25 +17,43 @@
   <!-- raw tower -->
   <include filename="$(find raw_description)/urdf/tower_asymetric/tower.urdf.xacro" />  
 
+  <!-- torso -->
+  <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
+  
+  <!-- head -->
+  <include filename="$(find raw_description)/urdf/head/head.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
+  
+  <!-- ur_arm -->
+  <include filename="$(find raw_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
+  
   <!-- raw boxgripper -->
   <include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
-
+  
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
-  <!-- torso -->
-  <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
-
-  <!-- ur_arm -->
-  <include filename="$(find raw_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
-
-
-
-  <xacro:raw_base name="base"/>	
+  <xacro:raw_base name="base"/>  
 
   <xacro:tower_asymetric name="tower" parent="base_link">
       <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
   </xacro:tower_asymetric>
+
+
+  <xacro:raw_torso name="torso" parent="base_link">
+      <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
+  </xacro:raw_torso>
+  
+  <xacro:raw_head name="head" parent="torso_2_link">
+    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
+  </xacro:raw_head>
+  
+  <xacro:cob_lookat name="lookat" parent="torso_2_link" lower="0.0" upper="5.0">
+    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
+    <axis xyz="1 0 0"/>
+  </xacro:cob_lookat>
+
+
 
   <xacro:cob_ur10 name="arm" parent="base_link">
       <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
@@ -46,14 +64,8 @@
       <parent link="base_link" />
       <child link="arm_base_link" />
   </joint>
-
   <xacro:ur10_robot prefix="arm_"/>-->
-
-
-  <xacro:raw_torso name="torso" parent="base_link">
-      <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
-  </xacro:raw_torso>
-
+  
   <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
       <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
   </xacro:raw_boxgripper>
