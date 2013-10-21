@@ -31,21 +31,27 @@ group3:
     [recover,trigger,recover],
     [up,move,up],
     [down,move,down]]
-
-group7:
-  group_name: sdh
-  component_name: sdh
+group4:
+  group_name: ur_connector 
+  component_name: ur_connector
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],
+    [back,move,back],
+    [front,move,front]]
+group5:
+  group_name: arm pos
+  component_name: arm
+  buttons: [[stop,trigger,stop],
     [home,move,home],
-    [cyl. closed,move,cylclosed],
-    [cyl. open,move,cylopen],
-    [spher. closed,move,spherclosed],
-    [spher. open,move,spheropen],
-    [point,move,point],
-    [fist,move,fist]]
-group8:
+    [folded,move,folded],
+    [pregrasp,move,pregrasp],
+    [hold,move,hold]]
+#group6:
+#  group_name: arm traj
+#  component_name: arm
+#  buttons: [[stop,trigger,stop]]
+group7: 
   group_name: head
   component_name: head
   buttons: [[stop,trigger,stop],

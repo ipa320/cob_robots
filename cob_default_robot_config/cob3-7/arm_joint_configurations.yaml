@@ -1,0 +1,13 @@
+joint_names: ['arm_shoulder_pan_joint', 'arm_shoulder_lift_joint', 'arm_elbow_joint','arm_wrist_1_joint', 'arm_wrist_2_joint', 'arm_wrist_3_joint']
+
+# back side positions
+home: [[0, -1.5708, 0, 0, 0, 0]]
+folded: [[1.5735, 1.0397, -2.8243, 0.0, -1.5708, 0.0]]
+pregrasp: [[1.5689, 0.3618, -2.0478, -2.0, -1.3591, 0.0]]
+hold: [[1.5689, 1.0356, -2.8204, -0.3164, 0.0, 0.0]]
+
+# front side positions
+#overtray: [[1.568, 0.8421, -2.5531, -1.9957, 0.263, 0.0]]
+
+# trajectories
+#example: [folded, pregrasp, hold]

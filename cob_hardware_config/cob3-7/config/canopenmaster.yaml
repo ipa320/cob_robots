@@ -1,0 +1,14 @@
+devices:
+  - name: /dev/pcan2
+    baudrate: 500K
+    sync_interval: 10
+  - name: /dev/pcan1
+    baudrate: 500K
+    sync_interval: 10
+  - name: /dev/pcan0
+    baudrate: 500K
+    sync_interval: 10
+chains:
+  - torso_controller
+  - tray_controller
+  - ur_conector_controller

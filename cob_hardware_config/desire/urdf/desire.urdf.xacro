@@ -2,7 +2,7 @@
 <robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="desire" >
   
   <!-- The following included files set up definitions of parts of the robot body -->
@@ -12,7 +12,7 @@
   <xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- desire calibration -->
-  <xacro:include filename="$(find cob_calibration_data)/desire/calibration/calibration.urdf.xacro" />
+  <xacro:include filename="$(find cob_hardware_config)/desire/urdf/properties.urdf.xacro" />
   
   <!-- desire base -->
   <xacro:include filename="$(find desire_description)/urdf/base_desire/base.urdf.xacro" />

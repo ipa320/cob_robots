@@ -2,42 +2,33 @@ pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
   computers:
-    type: AnalyzerGroup
+    type: IgnoreAnalyzer
     path: Computers
     analyzers:
       pc1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc1
-        contains: ['pc1 CPU Temperature',
-                   'pc1 CPU Usage',
-                   'pc1 HD Temperature',
-                   'pc1 HD Usage']
-
+        contains: 'pc1'
       pc2:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc2
-        contains: ['pc2 CPU Temperature',
-                   'pc2 CPU Usage',
-                   'pc2 HD Temperature',
-                   'pc2 HD Usage']
-
+        contains: 'pc2'
       pc3:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc3
-        contains: ['pc3 CPU Temperature',
-                   'pc3 CPU Usage',
-                   'pc3 HD Temperature',
-                   'pc3 HD Usage']
+        contains: 'pc3'
 
-  network:
-    type: AnalyzerGroup
-    path: Network
-    analyzers:
-      wifi:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: wifi
-        num_items: 1
-        expected: ['Wifi Status (ddwrt)']
+#  network:
+#    type: AnalyzerGroup
+#    path: Network
+#    analyzers:
+#      wifi:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: wifi
+#        num_items: 1
+#        expected: ['Wifi Status (ddwrt)']
+ 
+
 
   io:
     type: AnalyzerGroup
@@ -72,15 +63,15 @@ analyzers:
       stereo_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Stereo (Left)
-        contains: left
-        startswith: ['stereo/left/color_camera']
+        contains: left      
+        startswith: ['stereo/left/image_color']
       stereo_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Stereo (Right)
         contains: right
-        startswith: ['stereo/right/color_camera']
+        startswith: ['stereo/right/image_color']
       dsa:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/IgnoreAnalyzer
         path: DSA
         contains: 'dsa_controller'
 
