@@ -1,8 +1,9 @@
 head_controller:
-  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  type: effort_controllers/JointTrajectoryController
+  topic: "test"
   joints:
-    - head_pan_joint 
-    - head_tilt_joint
+     - head_pan_joint 
+     - head_tilt_joint
   gains:
     head_pan_joint:
       p: 10.0
@@ -14,10 +15,6 @@ head_controller:
       i: 12.0
       d: 0.5
       i_clamp: 0.5     
-  head_joint_trajectory_action_node:
-    joints:
-    - head_pan_joint 
-    - head_tilt_joint 
     constraints:
       goal_time: 0.6
       head_pan_joint:

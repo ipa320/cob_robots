@@ -1,5 +1,6 @@
 tray_controller:
-  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  type: effort_controllers/JointTrajectoryController
+  topic: "test"
   joints:
     - tray_1_joint 
     - tray_2_joint 
@@ -20,13 +21,6 @@ tray_controller:
       i: 12.0
       d: 0.5
       i_clamp: 0.5 
-
-    
-  tray_joint_trajectory_action_node:
-    joints:
-    - tray_1_joint 
-    - tray_2_joint 
-    - tray_3_joint 
     constraints:
       goal_time: 0.6
       tray_1_joint:

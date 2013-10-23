@@ -1,5 +1,6 @@
 torso_controller:
-  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  type: effort_controllers/JointTrajectoryController
+  topic: "test"
   joints:
     - torso_lower_neck_pan_joint 
     - torso_lower_neck_tilt_joint
@@ -26,13 +27,6 @@ torso_controller:
       i: 520.0
       d: 0.5
       i_clamp: 0.5 
- 
-  torso_joint_trajectory_action_node:
-    joints:
-    - torso_lower_neck_pan_joint 
-    - torso_lower_neck_tilt_joint
-    - torso_upper_neck_pan_joint
-    - torso_upper_neck_tilt_joint
     constraints:
       goal_time: 0.6
       torso_lower_neck_pan_joint:
