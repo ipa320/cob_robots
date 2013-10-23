@@ -5,7 +5,6 @@
 
 	<node name="head_controller_spawner" pkg="controller_manager" type="spawner" args="head_controller"/>
 
-	
 	<!-- image_proc for cameras-->
 	<node ns="/stereo/left" pkg="image_proc" type="image_proc" respawn="false" name="prosilica_image_proc" />
 	<node ns="/stereo/right" pkg="image_proc" type="image_proc" respawn="false" name="prosilica_image_proc" />
