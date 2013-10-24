@@ -24,7 +24,7 @@
   </include>
 
   <rosparam file="$(arg config_path)/controllers.yaml" ns="move_group"/>
-  <param name="trajectory_execution/execution_duration_monitoring" value="false"/>
+  <param name="move_group/trajectory_execution/execution_duration_monitoring" value="false"/>
   <param name="move_group/use_controller_manager" value="false"/>
   <param name="move_group/moveit_controller_manager" value="pr2_moveit_controller_manager/Pr2MoveItControllerManager"/>
   
