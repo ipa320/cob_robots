@@ -11,6 +11,7 @@ Panels:
         - /MotionPlanning1/Planned Path1
         - /MarkerArray1
         - /MarkerArray1/Namespaces1
+        - /Pose1
       Splitter Ratio: 0.74256
     Tree Height: 156
   - Class: rviz/Help
@@ -204,6 +205,26 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          lookat_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          lookat_focus_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          lookat_x_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          lookat_y_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          lookat_z_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           sdh_finger_11_link:
             Alpha: 1
             Show Axes: false
@@ -280,15 +301,22 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          tray_base_link:
+          tray_1_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
+          tray_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           tray_left_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          tray_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -313,6 +341,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
         Loop Animation: false
         Robot Alpha: 0.5
         Show Robot Collision: false
@@ -504,6 +533,26 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          lookat_base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          lookat_focus_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          lookat_x_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          lookat_y_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          lookat_z_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           sdh_finger_11_link:
             Alpha: 1
             Show Axes: false
@@ -580,15 +629,22 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          tray_base_link:
+          tray_1_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
+          tray_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           tray_left_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          tray_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -613,8 +669,10 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
         Robot Alpha: 0.5
-        Show Scene Robot: true
+        Show Robot Collision: false
+        Show Robot Visual: true
       Value: true
     - Class: rviz/MarkerArray
       Enabled: true
@@ -624,10 +682,25 @@ Visualization Manager:
         {}
       Queue Size: 10000
       Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.1
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.3
+      Head Radius: 0.1
+      Name: Pose
+      Shaft Length: 1
+      Shaft Radius: 0.05
+      Shape: Axes
+      Topic: /lookat_target
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: /odom_combined
+    Fixed Frame: odom_combined
+    Frame Rate: 30
   Name: root
   Tools:
     - Class: rviz/Interact
@@ -647,23 +720,23 @@ Visualization Manager:
       Name: Current View
       Near Clip Distance: 0.01
       Pitch: 0.424643
-      Target Frame: /base_link
+      Target Frame: base_link
       Value: XYOrbit (rviz)
       Yaw: 1.99125
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: true
-  Height: 680
+  Height: 553
   Help:
     collapsed: false
   Hide Left Dock: true
   Hide Right Dock: false
   Motion Planning:
     collapsed: true
-  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000262fc0200000005fb000000100044006900730070006c0061007900730000000028000000dd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067000000010b0000017f0000017400ffffff000002c80000026200000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000262fc0200000005fb000000100044006900730070006c0061007900730000000028000000dd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067000000010b0000017f0000017400ffffff000002a6000001e300000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
-  Width: 712
-  X: 67
-  Y: 67
+  Width: 678
+  X: 60
+  Y: 194
