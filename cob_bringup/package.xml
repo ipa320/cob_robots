@@ -1,0 +1,102 @@
+<package>
+  <name>cob_bringup</name>
+  <version>0.5.0</version>
+  <description>This package provides launch files for operating Care-O-bot.</description>
+
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_bringup</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+
+ <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>cob_undercarriage_ctrl</run_depend>
+  <run_depend>cob_base_drive_chain</run_depend>
+  <run_depend>cob_trajectory_controller</run_depend>
+  <run_depend>cob_lbr</run_depend>
+  <run_depend>cob_head_axis</run_depend>
+  <run_depend>cob_sound</run_depend>
+  <run_depend>cob_light</run_depend>
+  <run_depend>schunk_sdh</run_depend>
+  <run_depend>schunk_powercube_chain</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>ur_driver</run_depend>
+  <run_depend>cob_relayboard</run_depend>
+  <run_depend>cob_voltage_control</run_depend>
+  <run_depend>cob_sick_s300</run_depend>
+  <run_depend>cob_sick_lms1xx</run_depend>
+  <run_depend>cob_hokuyo</run_depend>
+  <run_depend>cob_camera_sensors</run_depend>
+  <run_depend>cob_hwboard</run_depend>
+  <run_depend>openni_launch</run_depend>
+  <run_depend>cob_cam3d_throttle</run_depend>
+  <run_depend>image_proc</run_depend>
+  <run_depend>hokuyo_node</run_depend>
+  <run_depend>prosilica_camera</run_depend>
+  <run_depend>camera1394</run_depend>
+  <run_depend>nodelet</run_depend>
+  <run_depend>cob_command_gui</run_depend>
+  <run_depend>cob_dashboard</run_depend>
+  <run_depend>cob_teleop</run_depend>
+  <run_depend>cob_collision_velocity_filter</run_depend>
+  <run_depend>cob_footprint_observer</run_depend>
+  <run_depend>cob_base_velocity_smoother</run_depend>
+  <run_depend>cob_monitoring</run_depend>
+  <run_depend>joy</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>diagnostic_aggregator</run_depend>
+  <run_depend>pr2_dashboard_aggregator</run_depend>
+  <run_depend>pr2_computer_monitor</run_depend>
+  <run_depend>wifi_ddwrt</run_depend>
+  <run_depend>costmap_2d</run_depend>
+  <run_depend>cob_hardware_config</run_depend>
+  <run_depend>cob_default_robot_config</run_depend>
+  <run_depend>cob_default_env_config</run_depend>
+  <!-- <test_depend>cob_undercarriage_ctrl</test_depend> -->
+  <!-- <test_depend>cob_base_drive_chain</test_depend> -->
+  <!-- <test_depend>cob_trajectory_controller</test_depend> -->
+  <!-- <test_depend>cob_lbr</test_depend> -->
+  <!-- <test_depend>cob_head_axis</test_depend> -->
+  <!-- <test_depend>cob_sound</test_depend> -->
+  <!-- <test_depend>cob_light</test_depend> -->
+  <!-- <test_depend>schunk_sdh</test_depend> -->
+  <!-- <test_depend>schunk_powercube_chain</test_depend> -->
+  <!-- <test_depend>robot_state_publisher</test_depend> -->
+  <!-- <test_depend>ur_driver</test_depend> -->
+  <!-- <test_depend>cob_relayboard</test_depend> -->
+  <!-- <test_depend>cob_voltage_control</test_depend> -->
+  <!-- <test_depend>cob_sick_s300</test_depend> -->
+  <!-- <test_depend>cob_hokuyo</test_depend> -->
+  <!-- <test_depend>cob_camera_sensors</test_depend> -->
+  <!-- <test_depend>cob_hwboard</test_depend> -->
+  <!-- <test_depend>openni_launch</test_depend> -->
+  <!-- <test_depend>cob_cam3d_throttle</test_depend> -->
+  <!-- <test_depend>image_proc</test_depend> -->
+  <!-- <test_depend>hokuyo_node</test_depend> -->
+  <!-- <test_depend>prosilica_camera</test_depend> -->
+  <!-- <test_depend>camera1394</test_depend> -->
+  <!-- <test_depend>nodelet</test_depend> -->
+  <!-- <test_depend>cob_command_gui</test_depend> -->
+  <!-- <test_depend>cob_dashboard</test_depend> -->
+  <!-- <test_depend>cob_teleop</test_depend> -->
+  <!-- <test_depend>cob_collision_velocity_filter</test_depend> -->
+  <!-- <test_depend>cob_footprint_observer</test_depend> -->
+  <!-- <test_depend>cob_base_velocity_smoother</test_depend> -->
+  <!-- <test_depend>cob_monitoring</test_depend> -->
+  <!-- <test_depend>joy</test_depend> -->
+  <!-- <test_depend>rviz</test_depend> -->
+  <!-- <test_depend>diagnostic_aggregator</test_depend> -->
+  <!-- <test_depend>pr2_dashboard_aggregator</test_depend> -->
+  <!-- <test_depend>pr2_computer_monitor</test_depend> -->
+  <!-- <test_depend>wifi_ddwrt</test_depend> -->
+  <!-- <test_depend>costmap_2d</test_depend> -->
+  <!-- <test_depend>cob_hardware_config</test_depend> -->
+  <!-- <test_depend>cob_default_robot_config</test_depend> -->
+  <!-- <test_depend>cob_default_env_config</test_depend> -->
+
+  <export>
+
+  </export>
+</package>

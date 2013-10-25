@@ -1,0 +1,29 @@
+<package>
+  <name>cob_hardware_config</name>
+  <version>0.5.0</version>
+  <description>This package contains configuration for each robot instance (e.g. cob3-1, cob3-2,...). There is a directory for each robot with configuration about urdf and hardware/device configurations.</description>
+
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_hardware_config</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>cob_calibration_data</run_depend>
+  <run_depend>cob_description</run_depend>
+  <run_depend>raw_description</run_depend>
+  <run_depend>schunk_description</run_depend>
+  <run_depend>ur_description</run_depend>
+  <!-- <test_depend>cob_calibration_data</test_depend> -->
+  <!-- <test_depend>cob_description</test_depend> -->
+  <!-- <test_depend>raw_description</test_depend> -->
+  <!-- <test_depend>schunk_description</test_depend> -->
+  <!-- <test_depend>ur_description</test_depend> -->
+
+  <export>
+
+  </export>
+</package>
