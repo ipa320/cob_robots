@@ -8,7 +8,7 @@
   <license>LGPL</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/cob_moveit_config</url>
-  <depend package="moveit_ros_move_group"/>  
+  <depend package="moveit-ros-move-group"/>  
 
 </package>
 
