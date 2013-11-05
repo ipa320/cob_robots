@@ -1,13 +1,14 @@
 arm_left_controller:
-  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  type: effort_controllers/JointTrajectoryController
+  topic: "test"
   joints:
-    - arm_left_1_joint
-    - arm_left_2_joint
-    - arm_left_3_joint
-    - arm_left_4_joint
-    - arm_left_5_joint
-    - arm_left_6_joint
-    - arm_left_7_joint
+     - arm_left_1_joint
+     - arm_left_2_joint
+     - arm_left_3_joint
+     - arm_left_4_joint
+     - arm_left_5_joint
+     - arm_left_6_joint
+     - arm_left_7_joint
   gains:
     arm_left_1_joint:
       p: 2000.0
@@ -30,16 +31,6 @@ arm_left_controller:
     arm_left_7_joint:
       p: 2080.0
       d: 0.0
-
-  arm_joint_trajectory_action_node:
-    joints:
-      - arm_left_1_joint
-      - arm_left_2_joint
-      - arm_left_3_joint
-      - arm_left_4_joint
-      - arm_left_5_joint
-      - arm_left_6_joint
-      - arm_left_7_joint
     constraints:
       goal_time: 0.6
       arm_left_1_joint:
@@ -58,15 +49,16 @@ arm_left_controller:
         goal: 0.05
 
 arm_right_controller:
-  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  type: effort_controllers/JointTrajectoryController
+  topic: "test"
   joints:
-    - arm_right_1_joint
-    - arm_right_2_joint
-    - arm_right_3_joint
-    - arm_right_4_joint
-    - arm_right_5_joint
-    - arm_right_6_joint
-    - arm_right_7_joint
+     - arm_right_1_joint
+     - arm_right_2_joint
+     - arm_right_3_joint
+     - arm_right_4_joint
+     - arm_right_5_joint
+     - arm_right_6_joint
+     - arm_right_7_joint
   gains:
     arm_right_1_joint:
       p: 2000.0
@@ -89,16 +81,6 @@ arm_right_controller:
     arm_right_7_joint:
       p: 2080.0
       d: 0.0
-
-  arm_joint_trajectory_action_node:
-    joints:
-      - arm_right_1_joint
-      - arm_right_2_joint
-      - arm_right_3_joint
-      - arm_right_4_joint
-      - arm_right_5_joint
-      - arm_right_6_joint
-      - arm_right_7_joint
     constraints:
       goal_time: 0.6
       arm_right_1_joint:
@@ -115,5 +97,3 @@ arm_right_controller:
         goal: 0.05
       arm_right_7_joint:
         goal: 0.05
-
-

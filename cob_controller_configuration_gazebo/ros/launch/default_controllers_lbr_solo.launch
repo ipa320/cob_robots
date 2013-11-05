@@ -2,18 +2,16 @@
 <launch>
 
 	<!-- controller_manager -->
-        <include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
 
-        <include file="$(find cob_bringup)/components/relayboard.launch">
-                <arg name="sim" value="true"/>
-        </include>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/joint_state_controller.launch" />
 
-        <rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/arm_controller_cob3-3.yaml" command="load"/>
+	<include file="$(find cob_bringup)/components/relayboard.launch">
+		<arg name="sim" value="true"/>
+	</include>
 
-        <node name="arm_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="arm_controller" />
-
-        <group ns="arm_controller">
-                <node name="arm_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
-        </group>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller.launch">
+		<arg name="robot" value="cob3-3"/>
+	</include>
 
 </launch>

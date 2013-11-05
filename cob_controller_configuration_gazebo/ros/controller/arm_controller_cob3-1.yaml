@@ -1,5 +1,6 @@
 arm_controller:
-  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  type: effort_controllers/JointTrajectoryController
+  topic: "test"
   joints:
     - arm_1_joint
     - arm_2_joint
@@ -30,16 +31,6 @@ arm_controller:
     arm_7_joint:
       p: 2080.0
       d: 0.0
-
-  arm_joint_trajectory_action_node:
-    joints:
-      - arm_1_joint
-      - arm_2_joint
-      - arm_3_joint
-      - arm_4_joint
-      - arm_5_joint
-      - arm_6_joint
-      - arm_7_joint
     constraints:
       goal_time: 0.6
       arm_1_joint:

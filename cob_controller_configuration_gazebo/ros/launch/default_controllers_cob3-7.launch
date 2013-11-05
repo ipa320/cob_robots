@@ -6,6 +6,8 @@
 	<!-- controller_manager -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
 
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/joint_state_controller.launch" />
+
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_cob.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -15,14 +17,14 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller.launch"/>
 
 	<!-- ur_connector -->
-        <include file="$(find cob_controller_configuration_gazebo)/ros/launch/ur_connector_controller.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/ur_connector_controller.launch"/>
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_cob.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
 	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_v1_controller.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_controller_v1.launch"/>
 
 	<!-- Tray -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/tray_controller.launch"/>

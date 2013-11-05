@@ -6,6 +6,8 @@
 	<!-- controller_manager -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
 
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/joint_state_controller.launch" />
+
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_controller_desire.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -15,7 +17,7 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller_desire.launch"/>
 
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_desire.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_dual.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
