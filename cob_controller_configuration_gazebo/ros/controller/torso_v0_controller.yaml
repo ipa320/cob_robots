@@ -1,5 +1,5 @@
 torso_controller:
-  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  type: "effort_controllers/JointTrajectoryController"
   joints:
     - torso_lower_neck_pan_joint 
     - torso_lower_neck_tilt_joint
@@ -26,20 +26,23 @@ torso_controller:
       i: 520.0
       d: 0.5
       i_clamp: 0.5 
+
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0.02
+    torso_lower_neck_pan_joint:
+      trajectory: 0.05
+      goal: 0.1
+    torso_lower_neck_tilt_joint:
+      trajectory: 0.05
+      goal: 0.1
+    torso_upper_neck_pan_joint:
+      trajectory: 0.05
+      goal: 0.1
+    torso_upper_neck_tilt_joint:
+      trajectory: 0.05
+      goal: 0.1
  
-  torso_joint_trajectory_action_node:
-    joints:
-    - torso_lower_neck_pan_joint 
-    - torso_lower_neck_tilt_joint
-    - torso_upper_neck_pan_joint
-    - torso_upper_neck_tilt_joint
-    constraints:
-      goal_time: 0.6
-      torso_lower_neck_pan_joint:
-        goal: 0.1
-      torso_lower_neck_tilt_joint:
-        goal: 0.1
-      torso_upper_neck_pan_joint:
-        goal: 0.1
-      torso_upper_neck_tilt_joint:
-        goal: 0.1
+  hold_trajectory_duration: 0  
+  state_publish_rate:  25 # Defaults to 50
+  action_monitor_rate: 10 # Defaults to 20
