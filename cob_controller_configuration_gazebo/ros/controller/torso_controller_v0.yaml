@@ -7,33 +7,17 @@ torso_controller:
     - torso_upper_neck_pan_joint
     - torso_upper_neck_tilt_joint
   gains:
-    torso_lower_neck_pan_joint:
-      p: 800.0
-      i: 820.0
-      d: 0.5
-      i_clamp: 0.5 
-    torso_lower_neck_tilt_joint:
-      p: 800.0
-      i: 820.0
-      d: 0.5
-      i_clamp: 0.5
-    torso_upper_neck_pan_joint:
-      p: 500.0
-      i: 520.0
-      d: 0.5
-      i_clamp: 0.5
-    torso_upper_neck_tilt_joint:
-      p: 500.0
-      i: 520.0
-      d: 0.5
-      i_clamp: 0.5 
-    constraints:
+    torso_lower_neck_pan_joint: {p: 100.0, i: 5.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
+    torso_lower_neck_tilt_joint: {p: 100.0, i: 5.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
+    torso_upper_neck_pan_joint: {p: 100.0, i: 5.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
+    torso_upper_neck_tilt_joint: {p: 100.0, i: 5.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
+  constraints:
       goal_time: 0.6
-      torso_lower_neck_pan_joint:
-        goal: 0.1
-      torso_lower_neck_tilt_joint:
-        goal: 0.1
-      torso_upper_neck_pan_joint:
-        goal: 0.1
-      torso_upper_neck_tilt_joint:
-        goal: 0.1
+      stopped_velocity_tolerance: 0.4
+      torso_lower_neck_pan_joint: {trajectory: 0.2, goal: 0.2}
+      torso_lower_neck_tilt_joint: {trajectory: 0.2, goal: 0.2}
+      torso_upper_neck_pan_joint: {trajectory: 0.2, goal: 0.2}
+      torso_upper_neck_tilt_joint: {trajectory: 0.2, goal: 0.2}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10

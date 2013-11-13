@@ -5,7 +5,7 @@
 
 	<!-- Arm -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller.launch">
-		<arg name="robot" value="cob3-3"/>
+		<arg name="arm" value="lbr"/>
 	</include>
 
 </launch>
