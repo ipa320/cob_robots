@@ -103,7 +103,7 @@
 	<property name="def_cam_reference_z" value="-0.06"/>
 	<property name="def_cam_reference_roll" value="0.0"/>
 	<property name="def_cam_reference_pitch" value="1.57079633"/>
-	<property name="def_cam_reference_yaw" value="3.14159265"/>
+	<property name="def_cam_reference_yaw" value="0.0"/>
 	
 	<!-- left | handeye calibration | relative to cam_reference_link -->
 	<property name="def_cam_l_x" value="0"/>
@@ -115,17 +115,17 @@
 
 	<!-- right | stereo baseline calibration | relative to cam_reference_link -->
 	<property name="def_cam_r_x" value="-0.12075932"/>
-	<property name="def_cam_r_y" value="-0.00006386"/>
-	<property name="def_cam_r_z" value="-0.00026527"/>
-	<property name="def_cam_r_roll" value="-0.00006"/>
-	<property name="def_cam_r_pitch" value="0.00546"/>
-	<property name="def_cam_r_yaw" value="0.00676"/>
+	<property name="def_cam_r_y" value="0"/>
+	<property name="def_cam_r_z" value="0"/>
+	<property name="def_cam_r_roll" value="0"/>
+	<property name="def_cam_r_pitch" value="0"/>
+	<property name="def_cam_r_yaw" value="0"/>
 
 	<!-- cam3d | handeye calibration | relative to cam_reference_link -->
-	<property name="def_cam3d_x" value="-0.07"/>
-	<property name="def_cam3d_y" value="0.05"/>
-	<property name="def_cam3d_z" value="0.08"/>
-	<property name="def_cam3d_roll" value="0.0"/>
-	<property name="def_cam3d_pitch" value="0.0"/>
+	<property name="def_cam3d_x" value="-0.06"/>
+	<property name="def_cam3d_y" value="0.055"/>
+	<property name="def_cam3d_z" value="0.0"/>
+	<property name="def_cam3d_roll" value="1.57079632679"/>
+	<property name="def_cam3d_pitch" value="-1.57079632679"/>
 	<property name="def_cam3d_yaw" value="0.0"/>
 </robot>
