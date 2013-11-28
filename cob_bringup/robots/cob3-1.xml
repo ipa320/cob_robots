@@ -32,12 +32,6 @@
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/light.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
 		<include file="$(find cob_bringup)/components/laser_front.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -45,6 +39,12 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/laser_top.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/relayboard.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/base.launch" >
@@ -68,6 +68,9 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/head.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 

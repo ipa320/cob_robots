@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot>
+	<!-- *********************************** -->
+	<!-- kinematic chain reference positions -->
+	<!-- *********************************** -->
+
+	<!-- tower mount positions | relative to base_link -->
+	<property name="def_tower_x" value="0.357"/>
+	<property name="def_tower_y" value="0.0"/>
+	<property name="def_tower_z" value="0.306"/>
+	<property name="def_tower_roll" value="0.0"/>
+	<property name="def_tower_pitch" value="0.0"/>
+	<property name="def_tower_yaw" value="3.14159265359"/>
+</robot>

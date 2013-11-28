@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot>
+	<include filename="$(find cob_hardware_config)/raw3-2/urdf/calibration_default.urdf.xacro" />
+	<include filename="$(find cob_calibration_data)/raw3-2/calibration/calibration_offset.urdf.xacro" />>
+
+	<!-- *********************** -->
+	<!-- upper robot calibration -->
+	<!-- *********************** -->
+	<!-- tower mount positions | relative to base_link -->
+	<property name="tower_x" value="${def_tower_x+offset_tower_x}"/>
+	<property name="tower_y" value="${def_tower_y+offset_tower_y}"/>
+	<property name="tower_z" value="${def_tower_z+offset_tower_z}"/>
+	<property name="tower_roll" value="${def_tower_roll+offset_tower_roll}"/>
+	<property name="tower_pitch" value="${def_tower_pitch+offset_tower_pitch}"/>
+	<property name="tower_yaw" value="${def_tower_yaw+offset_tower_yaw}"/>
+
+</robot>
