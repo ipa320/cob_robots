@@ -63,7 +63,7 @@
 		<include file="$(find cob_bringup)/components/torso.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/lwa.launch" >
+		<include file="$(find cob_bringup)/components/lwa4d.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/sdh.launch" >

@@ -27,7 +27,7 @@
   <include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- arm -->
-  <include filename="$(find schunk_description)/urdf/lwa/lwa.urdf.xacro" />
+  <include filename="$(find schunk_description)/urdf/lwa4d/lwa4d.urdf.xacro" />
 
   <!-- sdh -->
   <include filename="$(find schunk_description)/urdf/sdh/sdh.urdf.xacro" />
@@ -46,9 +46,9 @@
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:cob_torso_v1>
   
-  <xacro:schunk_lwa name="arm" parent="base_link">
+  <xacro:schunk_lwa4d name="arm" parent="base_link">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-  </xacro:schunk_lwa>
+  </xacro:schunk_lwa4d>
   
   <xacro:cob_head_v3 name="head" parent="torso_upper_neck_tilt_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
