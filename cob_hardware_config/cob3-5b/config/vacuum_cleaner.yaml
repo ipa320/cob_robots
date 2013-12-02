@@ -12,4 +12,4 @@ frequency: 100
 
 joint_names: [vacuum_cleaner_connector_joint]
 module_ids: [13]
-devices: ["/dev/pcan0"]
+devices: ["/dev/pcan3"]
