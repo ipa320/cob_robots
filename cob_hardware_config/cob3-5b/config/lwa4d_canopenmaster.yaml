@@ -1,0 +1,5 @@
+devices:
+  - name: /dev/pcan0
+    baudrate: 500K
+    sync_interval: 10
+chains: ["arm_controller"]
