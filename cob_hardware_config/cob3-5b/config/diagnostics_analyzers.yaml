@@ -79,10 +79,6 @@ analyzers:
         path: Stereo (Right)
         contains: right
         startswith: ['stereo/right/color_camera']
-      dsa:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: DSA
-        contains: 'dsa_controller'
 
   motors:
     type: AnalyzerGroup
