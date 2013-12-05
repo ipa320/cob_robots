@@ -30,8 +30,8 @@ group3:
     [init,trigger,init],
     [recover,trigger,recover],
     [deliverup,move,deliverup],
-    [displayup,move,displayup],
     [deliverdown,move,deliverdown],
+    [displayup,move,displayup],
     [displaydown,move,displaydown],
     [storetray,move,storetray]]
 group4:

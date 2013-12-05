@@ -87,7 +87,7 @@
 		</include>
 
 		<!-- start additional packages -->
-		<!--param name="/sound_controller/mode" value="cepstral" /-->
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
