@@ -11,5 +11,5 @@ max_error: 0.2 # rad
 frequency: 100
 
 joint_names: ["tray_1_joint", "tray_2_joint", "tray_3_joint"]
-module_ids: [10,8,7]
+module_ids: [10,7,8]
 devices: ["/dev/pcan32", "/dev/pcan32", "/dev/pcan32"]
