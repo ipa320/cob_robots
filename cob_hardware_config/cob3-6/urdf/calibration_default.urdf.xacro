@@ -7,25 +7,25 @@
 	<property name="def_laser_front_x" value="0.325"/>
 	<property name="def_laser_front_y" value="0.0"/>
 	<property name="def_laser_front_z" value="0.135"/>
-	<property name="def_laser_front_roll" value="0"/>
-	<property name="def_laser_front_pitch" value="0"/>
-	<property name="def_laser_front_yaw" value="0"/>
+	<property name="def_laser_front_roll" value="0.0"/>
+	<property name="def_laser_front_pitch" value="0.0"/>
+	<property name="def_laser_front_yaw" value="0.0"/>
 
 	<!-- laser rear mount positions | relative to base_link -->
 	<property name="def_laser_rear_x" value="-0.325"/>
 	<property name="def_laser_rear_y" value="0.0"/>
 	<property name="def_laser_rear_z" value="0.135"/>
-	<property name="def_laser_rear_roll" value="0"/>
-	<property name="def_laser_rear_pitch" value="0"/>
+	<property name="def_laser_rear_roll" value="0.0"/>
+	<property name="def_laser_rear_pitch" value="0.0"/>
 	<property name="def_laser_rear_yaw" value="3.1415926"/>
 
 	<!-- laser top mount positions | relative to base_link -->
 	<property name="def_laser_top_x" value="-0.252"/>
 	<property name="def_laser_top_y" value="0.0"/>
 	<property name="def_laser_top_z" value="0.42"/>
-	<property name="def_laser_top_roll" value="0"/>
-	<property name="def_laser_top_pitch" value="0"/>
-	<property name="def_laser_top_yaw" value="0"/>
+	<property name="def_laser_top_roll" value="0.0"/>
+	<property name="def_laser_top_pitch" value="0.0"/>
+	<property name="def_laser_top_yaw" value="0.0"/>
 
 	<!-- *********************** -->
 	<!-- upper robot calibration -->
@@ -34,9 +34,9 @@
 	<property name="def_tray_x" value="0.186"/>
 	<property name="def_tray_y" value="0.113"/>
 	<property name="def_tray_z" value="0.721"/>
-	<property name="def_tray_roll" value="-1.5707"/>
-	<property name="def_tray_pitch" value="0.35"/>
-	<property name="def_tray_yaw" value="0"/>
+	<property name="def_tray_roll" value="-1.5708"/>
+	<property name="def_tray_pitch" value="0.0"/>
+	<property name="def_tray_yaw" value="0.0"/>
 
 	<!-- torso mount positions | relative to base_link -->
 	<property name="def_torso_x" value="0.1535525935"/>
@@ -55,9 +55,9 @@
 	<property name="def_head_yaw" value="0.0"/>
 
 	<!-- arm mount positions | relative to base_link -->
-	<property name="def_arm_x" value="0.040"/>
-	<property name="def_arm_y" value="-0.005"/>
-	<property name="def_arm_z" value="0.83637"/>
+	<property name="def_arm_x" value="0.04"/>
+	<property name="def_arm_y" value="0.0"/>
+	<property name="def_arm_z" value="0.83"/>
 	<property name="def_arm_roll" value="3.1415926"/>
 	<property name="def_arm_pitch" value="0.7854"/>
 	<property name="def_arm_yaw" value="-1.8326"/>
