@@ -1,4 +1,4 @@
-CanDevice: PCAN:0
+CanDevice: PCAN:2
 CanBaudrate: 500
 ModId: 17
 JointName: head_axis_joint
