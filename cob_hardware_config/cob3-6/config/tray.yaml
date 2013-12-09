@@ -1,20 +1,14 @@
-# canopen parameters
-chains:
-  - name: tray_controller
-    devices:
-      - name: tray_1_joint
-        id: 10 
-        bus: /dev/pcan32
-      - name: tray_2_joint
-        id: 8
-        bus: /dev/pcan32
-      - name: tray_3_joint
-        id: 7
-        bus: /dev/pcan32
-max_accelerations: [0.8]
+# canopen parameter
+can_module: PCAN
+can_baudrate: 1000
+max_accelerations: [0.8,0.8,0.8]
 
 # trajectory controller parameters
-ptp_vel: 0.2 # rad/sec
+ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.1 # rad/sec^2
-max_error: 0.15 # rad
-frequency: 50 # Hz
+max_error: 0.2 # rad
+frequency: 100
+
+joint_names: ["tray_1_joint", "tray_2_joint", "tray_3_joint"]
+module_ids: [10,7,8]
+devices: ["/dev/pcan0", "/dev/pcan0", "/dev/pcan0"]
