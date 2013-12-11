@@ -2,9 +2,10 @@
 <launch>
 
 	<!-- args -->
-	<arg name="robot" value="cob3-6"/>
+	<arg name="robot" value="cob3-5b"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
+	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -12,10 +13,12 @@
 	</include>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/cob3-6/upload_param_cob3-6.launch" />
+	<include file="$(find cob_default_robot_config)/upload_param.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -25,7 +28,7 @@
 
 		<!-- monitoring -->
 		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
+			<arg name="robot" value="cob3-5" />
 		</include>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -59,10 +62,10 @@
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/components/torso_canopen.launch" >
+		<include file="$(find cob_bringup)/components/torso.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/lwa.launch" >
+		<include file="$(find cob_bringup)/components/lwa4d.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/sdh.launch" >
@@ -82,19 +85,19 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<!-- start additional packages -->
+		<param name="/sound_controller/mode" value="cepstral" />
+		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
-		</include>
-
-		<include file="$(find cob_bringup)/components/tray_powerball.launch" >
-			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<!-- start camera sensors -->
@@ -113,19 +116,28 @@
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
-
-		<!-- start additional packages -->
-		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
-
-		<include file="$(find cob_bringup)/components/light.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
 		<include file="$(find cob_bringup)/components/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+	</group>
 
+	<group>
+		<machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg pc3)" />
+		</include>
+
+
+		<include file="$(find cob_bringup)/components/tray_powerball.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/components/light.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>

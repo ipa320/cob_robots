@@ -13,7 +13,9 @@
 	</include>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/cob3-5/upload_param_cob3-5.launch" />
+	<include file="$(find cob_default_robot_config)/upload_param.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
 
 	<group>
 		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
@@ -88,7 +90,7 @@
 		</include>
 
 		<!-- start additional packages -->
-		<!--param name="/sound_controller/mode" value="cepstral" /-->
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
