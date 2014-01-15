@@ -70,4 +70,28 @@
       <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
   </xacro:raw_boxgripper>
 
+
+   <!-- IMU brick mount on raw3-1 -->
+   <joint name="imu_brick_joint" type="fixed" >
+      <origin xyz="0.402 -0.0811 0.335" rpy="0 0 0" />
+      <parent link="base_link" />
+      <child link="imu_brick_link" />
+    </joint>
+
+    <link name="imu_brick_link">
+       <inertial>
+            <mass value="0.0001" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001" />
+       </inertial>
+       <visual>
+   	    <origin xyz="0 0 -0.02" rpy="0 0 0" />
+	    <geometry>
+    	       <box size="0.04 0.04 0.02" />
+	    </geometry>
+	    <material name="IPA/LightGrey" />
+       </visual>
+    </link>
+    <!-- END: IMU brick	mount -->
+
   </robot>
