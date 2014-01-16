@@ -6,6 +6,7 @@
 
 	<include file="$(find cob_bringup)/components/joy.launch">
 		<arg name="robot" value="$(arg robot)" />
+		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
 	</include>
 
 	<node pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" ns="teleop" output="screen">
