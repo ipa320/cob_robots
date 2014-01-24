@@ -1,15 +1,14 @@
-# powercube_chain parameters
+# canopen parameter
 can_module: PCAN
-can_device: /dev/pcan1
 can_baudrate: 1000
-modul_ids: [1,2,3]
-joint_names: [torso_lower_neck_tilt_joint, torso_pan_joint, torso_upper_neck_tilt_joint]
 max_accelerations: [0.8,0.8,0.8]
-min_publish_duration: 0.1
-horizon: 0.1 # [s]
-frequency: 68
 
 # trajectory controller parameters
 ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.2 # rad/sec^2
 max_error: 0.15 # rad
+frequency: 68
+
+joint_names: [torso_lower_neck_tilt_joint, torso_pan_joint, torso_upper_neck_tilt_joint]
+module_ids: [1,2,3]
+devices: ["/dev/pcan1", "/dev/pcan1", "/dev/pcan1"]

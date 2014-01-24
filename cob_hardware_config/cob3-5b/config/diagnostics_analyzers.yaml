@@ -21,6 +21,14 @@ analyzers:
                    'pc2 HD Temperature',
                    'pc2 HD Usage']
 
+      pc3:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc3
+        contains: ['pc3 CPU Temperature',
+                   'pc3 CPU Usage',
+                   'pc3 HD Temperature',
+                   'pc3 HD Usage']
+
   network:
     type: AnalyzerGroup
     path: Network
