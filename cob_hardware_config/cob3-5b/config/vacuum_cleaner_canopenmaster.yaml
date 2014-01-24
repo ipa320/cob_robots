@@ -1,5 +1,0 @@
-devices:
-  - name: /dev/pcan3
-    baudrate: 500K
-    sync_interval: 13
-chains: ["vacuum_cleaner_controller"]
