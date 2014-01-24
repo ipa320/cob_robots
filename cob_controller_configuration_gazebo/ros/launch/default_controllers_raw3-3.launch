@@ -18,7 +18,7 @@
 
 	<!-- Arms
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_dual.launch">
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="arm" value="frida"/>
 	</include> -->
 
 	<!-- Grippers 
