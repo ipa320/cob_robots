@@ -18,7 +18,7 @@
 
 	<!-- Arm -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="arm" value="lbr"/>
 	</include>
 
 	<!-- SDH -->

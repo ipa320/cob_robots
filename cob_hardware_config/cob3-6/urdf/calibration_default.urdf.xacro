@@ -7,25 +7,25 @@
 	<property name="def_laser_front_x" value="0.325"/>
 	<property name="def_laser_front_y" value="0.0"/>
 	<property name="def_laser_front_z" value="0.135"/>
-	<property name="def_laser_front_roll" value="0"/>
-	<property name="def_laser_front_pitch" value="0"/>
-	<property name="def_laser_front_yaw" value="0"/>
+	<property name="def_laser_front_roll" value="0.0"/>
+	<property name="def_laser_front_pitch" value="0.0"/>
+	<property name="def_laser_front_yaw" value="0.0"/>
 
 	<!-- laser rear mount positions | relative to base_link -->
 	<property name="def_laser_rear_x" value="-0.325"/>
 	<property name="def_laser_rear_y" value="0.0"/>
 	<property name="def_laser_rear_z" value="0.135"/>
-	<property name="def_laser_rear_roll" value="0"/>
-	<property name="def_laser_rear_pitch" value="0"/>
+	<property name="def_laser_rear_roll" value="0.0"/>
+	<property name="def_laser_rear_pitch" value="0.0"/>
 	<property name="def_laser_rear_yaw" value="3.1415926"/>
 
 	<!-- laser top mount positions | relative to base_link -->
 	<property name="def_laser_top_x" value="-0.252"/>
 	<property name="def_laser_top_y" value="0.0"/>
 	<property name="def_laser_top_z" value="0.42"/>
-	<property name="def_laser_top_roll" value="0"/>
-	<property name="def_laser_top_pitch" value="0"/>
-	<property name="def_laser_top_yaw" value="0"/>
+	<property name="def_laser_top_roll" value="0.0"/>
+	<property name="def_laser_top_pitch" value="0.0"/>
+	<property name="def_laser_top_yaw" value="0.0"/>
 
 	<!-- *********************** -->
 	<!-- upper robot calibration -->
@@ -34,9 +34,9 @@
 	<property name="def_tray_x" value="0.186"/>
 	<property name="def_tray_y" value="0.113"/>
 	<property name="def_tray_z" value="0.721"/>
-	<property name="def_tray_roll" value="-1.5707"/>
-	<property name="def_tray_pitch" value="0.35"/>
-	<property name="def_tray_yaw" value="0"/>
+	<property name="def_tray_roll" value="-1.5708"/>
+	<property name="def_tray_pitch" value="0.0"/>
+	<property name="def_tray_yaw" value="0.0"/>
 
 	<!-- torso mount positions | relative to base_link -->
 	<property name="def_torso_x" value="0.1535525935"/>
@@ -55,9 +55,9 @@
 	<property name="def_head_yaw" value="0.0"/>
 
 	<!-- arm mount positions | relative to base_link -->
-	<property name="def_arm_x" value="0.040"/>
-	<property name="def_arm_y" value="-0.005"/>
-	<property name="def_arm_z" value="0.83637"/>
+	<property name="def_arm_x" value="0.04"/>
+	<property name="def_arm_y" value="0.0"/>
+	<property name="def_arm_z" value="0.83"/>
 	<property name="def_arm_roll" value="3.1415926"/>
 	<property name="def_arm_pitch" value="0.7854"/>
 	<property name="def_arm_yaw" value="-1.8326"/>
@@ -74,9 +74,9 @@
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
 	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
-	<property name="def_torso_lower_neck_tilt_ref" value="-0.299259484"/>
-	<property name="def_torso_pan_ref" value="0.03021506"/>
-	<property name="def_torso_upper_neck_tilt_ref" value="0.207151622"/>
+	<property name="def_torso_lower_neck_tilt_ref" value="0.0"/>
+	<property name="def_torso_pan_ref" value="0.0"/>
+	<property name="def_torso_upper_neck_tilt_ref" value="0.0"/>
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
 	<property name="def_tray_1_ref" value="0.0"/>
@@ -87,13 +87,13 @@
 	<property name="def_head_axis_ref" value="0.15"/>
 
 	<!-- arm reference positions | used as calibration_rising for arm chain-->
-	<property name="def_arm_1_ref" value="2.32692684"/>
-	<property name="def_arm_2_ref" value="-0.0079118870198726654"/>
-	<property name="def_arm_3_ref" value="-0.0109574124"/>
-	<property name="def_arm_4_ref" value="0.0211027861"/>
-	<property name="def_arm_5_ref" value="0.0074385176412761211"/>
-	<property name="def_arm_6_ref" value="385.34559"/>
-	<property name="def_arm_7_ref" value="3.08280301"/>
+	<property name="def_arm_1_ref" value="0.0"/>
+	<property name="def_arm_2_ref" value="0.0"/>
+	<property name="def_arm_3_ref" value="0.0"/>
+	<property name="def_arm_4_ref" value="0.0"/>
+	<property name="def_arm_5_ref" value="0.0"/>
+	<property name="def_arm_6_ref" value="0.0"/>
+	<property name="def_arm_7_ref" value="0.0"/>
 
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->
