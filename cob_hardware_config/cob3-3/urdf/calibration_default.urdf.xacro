@@ -74,9 +74,9 @@
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
 	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
-	<property name="def_torso_lower_neck_tilt_ref" value="0.0412540253582"/>
-	<property name="def_torso_pan_ref" value="0.00407497584834"/>
-	<property name="def_torso_upper_neck_tilt_ref" value="0.326748415828"/>
+	<property name="def_torso_lower_neck_tilt_ref" value="0.0"/>
+	<property name="def_torso_pan_ref" value="0.0"/>
+	<property name="def_torso_upper_neck_tilt_ref" value="0.0"/>
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
 	<property name="def_tray_ref" value="0.0"/>
