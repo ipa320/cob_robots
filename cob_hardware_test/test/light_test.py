@@ -6,7 +6,6 @@ import unittest
 import rospy
 import rostest
 from simple_script_server import *
-from pr2_controllers_msgs.msg import *
 from dialog_client import dialog_client
 
 class HardwareTest(unittest.TestCase):
