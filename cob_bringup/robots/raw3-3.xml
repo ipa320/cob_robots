@@ -21,6 +21,14 @@
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
+		<!-- lower robot -->
+        <include file="$(find cob_bringup)/components/laser_front.launch" >
+            <arg name="robot" value="$(arg robot)" />
+        </include>
+        <include file="$(find cob_bringup)/components/laser_rear.launch" >
+            <arg name="robot" value="$(arg robot)" />
+        </include>
+
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/components/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -31,7 +39,7 @@
         	</include>
 
 		<include file="$(find cob_bringup)/components/frida.launch" >
-			<arg name="robot_ip" value="192.168.43.40" />
+			<arg name="robot_ip" value="192.168.125.1" />
 		</include>
 
 		<!-- start additional packages -->
@@ -44,7 +52,7 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
+                
 	</group>
 
 	<group>
