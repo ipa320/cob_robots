@@ -24,9 +24,9 @@
 		</include>
 
 		<!-- monitoring -->
-		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
+		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -59,12 +59,9 @@
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/components/torso.launch" >
+		<include file="$(find cob_bringup)/components/torso_canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/components/tray.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include-->
 		<include file="$(find cob_bringup)/components/lwa.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -96,6 +93,10 @@
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
 
+		<include file="$(find cob_bringup)/components/tray_powerball.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/components/prosilica_left.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -114,7 +115,7 @@
 		</include>
 
 		<!-- start additional packages -->
-		<param name="/sound_controller/mode" value="festival" />
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 
 		<include file="$(find cob_bringup)/components/light.launch" >

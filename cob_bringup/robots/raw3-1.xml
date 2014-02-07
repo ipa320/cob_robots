@@ -6,6 +6,7 @@
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
+	<arg name="ur_ip" default="localhost" />
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -52,8 +53,9 @@
 		<include file="$(find cob_bringup)/components/torso.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/ur.launch" />
-
+		<include file="$(find cob_bringup)/components/ur.launch" >
+			<arg name="ur_ip" value="$(arg ur_ip)"/>
+		</include>
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />

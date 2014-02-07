@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<robot>
+	<include filename="$(find cob_hardware_config)/desire/urdf/calibration_default.urdf.xacro" />
+	<include filename="$(find cob_calibration_data)/desire/calibration/calibration_offset.urdf.xacro" />
+
+
+	<!-- *********************** -->
+	<!-- upper robot calibration -->
+	<!-- *********************** -->
+
+	<!-- head mount positions | relative to base_link -->
+	<property name="head_x" value="${def_head_x+offset_head_x}"/>
+	<property name="head_y" value="${def_head_y+offset_head_y}"/>
+	<property name="head_z" value="${def_head_z+offset_head_z}"/>
+	<property name="head_roll" value="${def_head_roll+offset_head_roll}"/>
+	<property name="head_pitch" value="${def_head_pitch+offset_head_pitch}"/>
+	<property name="head_yaw" value="${def_head_yaw+offset_head_yaw}"/>
+
+	<!-- arm_left mount positions | relative to base_link -->
+	<property name="arm_left_x" value="${def_arm_left_x+offset_arm_left_x}"/>
+	<property name="arm_left_y" value="${def_arm_left_y+offset_arm_left_y}"/>
+	<property name="arm_left_z" value="${def_arm_left_z+offset_arm_left_z}"/>
+	<property name="arm_left_roll" value="${def_arm_left_roll+offset_arm_left_roll}"/>
+	<property name="arm_left_pitch" value="${def_arm_left_pitch+offset_arm_left_pitch}"/>
+	<property name="arm_left_yaw" value="${def_arm_left_yaw+offset_arm_left_yaw}"/>
+
+	<!-- arm_right mount positions | relative to base_link -->
+	<property name="arm_right_x" value="${def_arm_right_x+offset_arm_right_x}"/>
+	<property name="arm_right_y" value="${def_arm_right_y+offset_arm_right_y}"/>
+	<property name="arm_right_z" value="${def_arm_right_z+offset_arm_right_z}"/>
+	<property name="arm_right_roll" value="${def_arm_right_roll+offset_arm_right_roll}"/>
+	<property name="arm_right_pitch" value="${def_arm_right_pitch+offset_arm_right_pitch}"/>
+	<property name="arm_right_yaw" value="${def_arm_right_yaw+offset_arm_right_yaw}"/>
+
+	<!-- sdh_left mount positions | relative to arm_left_7_link -->
+	<property name="sdh_left_x" value="${def_sdh_left_x+offset_sdh_left_x}"/>
+	<property name="sdh_left_y" value="${def_sdh_left_y+offset_sdh_left_y}"/>
+	<property name="sdh_left_z" value="${def_sdh_left_z+offset_sdh_left_z}"/>
+	<property name="sdh_left_roll" value="${def_sdh_left_roll+offset_sdh_left_roll}"/>
+	<property name="sdh_left_pitch" value="${def_sdh_left_pitch+offset_sdh_left_pitch}"/>
+	<property name="sdh_left_yaw" value="${def_sdh_left_yaw+offset_sdh_left_yaw}"/>
+
+	<!-- sdh_right mount positions | relative to arm_right_7_link -->
+	<property name="sdh_right_x" value="${def_sdh_right_x+offset_sdh_right_x}"/>
+	<property name="sdh_right_y" value="${def_sdh_right_y+offset_sdh_right_y}"/>
+	<property name="sdh_right_z" value="${def_sdh_right_z+offset_sdh_right_z}"/>
+	<property name="sdh_right_roll" value="${def_sdh_right_roll+offset_sdh_right_roll}"/>
+	<property name="sdh_right_pitch" value="${def_sdh_right_pitch+offset_sdh_right_pitch}"/>
+	<property name="sdh_right_yaw" value="${def_sdh_right_yaw+offset_sdh_right_yaw}"/>
+
+
+	<!-- *********************************** -->
+	<!-- kinematic chain reference positions -->
+	<!-- *********************************** -->
+	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
+	<property name="head_pan_ref" value="${def_head_pan_ref+offset_head_pan_ref}"/>
+	<property name="head_tilt_ref" value="${def_head_tilt_ref+offset_head_tilt_ref}" />
+
+
+	<!-- ***************************** -->
+	<!-- camera calibration properties -->
+	<!-- ***************************** -->
+	<property name="cam_reference_x" value="${def_cam_reference_x+offset_cam_reference_x}"/>
+	<property name="cam_reference_y" value="${def_cam_reference_y+offset_cam_reference_y}"/>
+	<property name="cam_reference_z" value="${def_cam_reference_z+offset_cam_reference_z}"/>
+	<property name="cam_reference_roll" value="${def_cam_reference_roll+offset_cam_reference_roll}"/>
+	<property name="cam_reference_pitch" value="${def_cam_reference_pitch+offset_cam_reference_pitch}"/>
+	<property name="cam_reference_yaw" value="${def_cam_reference_yaw+offset_cam_reference_yaw}"/>
+	<!-- left | handeye calibration | relative to head_axis_link -->
+	<property name="cam_l_x" value="${def_cam_l_x+offset_cam_l_x}"/>
+	<property name="cam_l_y" value="${def_cam_l_y+offset_cam_l_y}"/>
+	<property name="cam_l_z" value="${def_cam_l_z+offset_cam_l_z}"/>
+	<property name="cam_l_roll" value="${def_cam_l_roll+offset_cam_l_roll}"/>
+	<property name="cam_l_pitch" value="${def_cam_l_pitch+offset_cam_l_pitch}"/>
+	<property name="cam_l_yaw" value="${def_cam_l_yaw+offset_cam_l_yaw}"/>
+
+	<!-- right | stereo baseline calibration | relative to left camera -->
+	<property name="cam_r_x" value="${def_cam_r_x+offset_cam_r_x}"/>
+	<property name="cam_r_y" value="${def_cam_r_y+offset_cam_r_y}"/>
+	<property name="cam_r_z" value="${def_cam_r_z+offset_cam_r_z}"/>
+	<property name="cam_r_roll" value="${def_cam_r_roll+offset_cam_r_roll}"/>
+	<property name="cam_r_pitch" value="${def_cam_r_pitch+offset_cam_r_pitch}"/>
+	<property name="cam_r_yaw" value="${def_cam_r_yaw+offset_cam_r_yaw}"/>
+
+	<!-- cam3d | handeye calibration | relative to head_axis_link -->
+	<property name="tof_x" value="${def_tof_x+offset_tof_x}"/>
+	<property name="tof_y" value="${def_tof_y+offset_tof_y}"/>
+	<property name="tof_z" value="${def_tof_z+offset_tof_z}"/>
+	<property name="tof_roll" value="${def_tof_roll+offset_tof_roll}"/>
+	<property name="tof_pitch" value="${def_tof_pitch+offset_tof_pitch}"/>
+	<property name="tof_yaw" value="${def_tof_yaw+offset_tof_yaw}"/>
+
+</robot>
