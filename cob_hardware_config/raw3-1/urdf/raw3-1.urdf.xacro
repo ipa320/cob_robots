@@ -54,7 +54,7 @@
       <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:raw_torso>
 
-  <xacro:raw_boxgripper name="gripper" parent="arm_wrist_3_link">
+  <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
       <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
   </xacro:raw_boxgripper>
 
