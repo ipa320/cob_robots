@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/base_cob4_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+		
+	<!--include file="$(find cob_bringup)/components/relayboard.launch">
+		<arg name="sim" value="true"/>
+	</include-->
+
+	<!-- Torso -->
+	<!--include file="$(find cob4_controller_configuration_gazebo)/ros/launch/torso_controller.launch"/-->
+
+	<!-- Head -->
+	<!--include file="$(find cob4_controller_configuration_gazebo)/ros/launch/head_controller.launch"/-->
+
+</launch>

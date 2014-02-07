@@ -26,16 +26,16 @@
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/components/laser_lms1xx_front.launch" >
+		<include file="$(find cob_bringup)/components/sensors/laser_lms1xx_front.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_lms1xx_rear.launch" >
+		<include file="$(find cob_bringup)/components/sensors/laser_lms1xx_rear.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/relayboard.launch" >
 			<arg name="sim" value="true" />
 		</include>
-		<include file="$(find cob_bringup)/components/base.launch" >
+		<include file="$(find cob_bringup)/components/base/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -50,8 +50,5 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
-
-
-	<!--machine name="pc1" address="$(arg pc1)" default="true"/-->
 
 </launch>

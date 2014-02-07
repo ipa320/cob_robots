@@ -1,0 +1,28 @@
+head_controller:
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - head_joint
+    - head_virtual_joint
+  gains:
+    head_joint:
+      p: 800.0
+      i: 820.0
+      d: 0.5
+      i_clamp: 0.5
+    head_virtual_joint:
+      p: 800.0
+      i: 820.0
+      d: 0.5
+      i_clamp: 0.5
+
+  head_joint_trajectory_action_node:
+    joints:
+    - head_joint
+    - head_virtual_joint
+    constraints:
+      goal_time: 0.6
+      head_joint:
+        goal: 0.1
+      head_virtual_joint:
+        goal: 0.1
+

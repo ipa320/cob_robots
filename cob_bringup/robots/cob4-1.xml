@@ -2,10 +2,8 @@
 <launch>
 
 	<!-- args -->
-	<arg name="robot" value="raw3-3"/>
+	<arg name="robot" value="cob4-1"/>
 	<arg name="pc1" default="localhost"/>
-	<arg name="pc2" default="localhost"/>
-	<arg name="pc3" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -13,16 +11,10 @@
 	</include>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/raw3-3/upload_param_raw3-3.launch" />
-
-	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
-
-		<!-- start phidget driver -->
-		<node pkg="cob_phidgets" type="phidget_sensors" name="phidget_driver"/>
 
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
@@ -31,9 +23,12 @@
 		</include>
 		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="rear" />
+			<arg name="name" value="right" />
 		</include>
-		
+		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="left" />
+		</include>
 		<include file="$(find cob_bringup)/components/relayboard.launch" >
 			<arg name="sim" value="true" />
 		</include>
@@ -41,12 +36,6 @@
 		<include file="$(find cob_bringup)/components/base/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
-		<include file="$(find cob_bringup)/components/manipulator/frida.launch" >
-			<arg name="robot_ip" value="192.168.43.40" />
-		</include>
-
-		<include file="$(find cob_bringup)/components/gripper/prace_grippers.launch"/>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
@@ -58,21 +47,5 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
-	</group>
-
-	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
-
-		<!-- pc monitor -->
-		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc2)" />
-		</include>
-
-	</group>
-
-
-	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 </launch>
