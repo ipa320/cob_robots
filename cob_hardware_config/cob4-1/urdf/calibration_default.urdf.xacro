@@ -4,28 +4,28 @@
 	<!-- base calibration -->
 	<!-- ***************** -->
 	<!-- laser front mount positions | relative to base_link -->
-	<property name="def_laser_1_x" value="0.244"/>
-	<property name="def_laser_1_y" value="0.0"/>
-	<property name="def_laser_1_z" value="0.08"/>
-	<property name="def_laser_1_roll" value="0.0"/>
-	<property name="def_laser_1_pitch" value="0.0"/>
-	<property name="def_laser_1_yaw" value="0.0"/>
+	<property name="def_laser_front_x" value="0.244"/>
+	<property name="def_laser_front_y" value="0.0"/>
+	<property name="def_laser_front_z" value="0.08"/>
+	<property name="def_laser_front_roll" value="0.0"/>
+	<property name="def_laser_front_pitch" value="0.0"/>
+	<property name="def_laser_front_yaw" value="0.0"/>
 
 	<!-- laser rear mount positions | relative to base_link -->
-	<property name="def_laser_2_x" value="-0.122"/>
-	<property name="def_laser_2_y" value="0.21131"/>
-	<property name="def_laser_2_z" value="0.08"/>
-	<property name="def_laser_2_roll" value="0.0"/>
-	<property name="def_laser_2_pitch" value="0.0"/>
-	<property name="def_laser_2_yaw" value="2.094"/>
+	<property name="def_laser_left_x" value="-0.122"/>
+	<property name="def_laser_left_y" value="0.21131"/>
+	<property name="def_laser_left_z" value="0.08"/>
+	<property name="def_laser_left_roll" value="0.0"/>
+	<property name="def_laser_left_pitch" value="0.0"/>
+	<property name="def_laser_left_yaw" value="2.094"/>
 
 	<!-- laser top mount positions | relative to base_link -->
-	<property name="def_laser_3_x" value="-0.122"/>
-	<property name="def_laser_3_y" value="-0.21131"/>
-	<property name="def_laser_3_z" value="0.08"/>
-	<property name="def_laser_3_roll" value="0.0"/>
-	<property name="def_laser_3_pitch" value="0.0"/>
-	<property name="def_laser_3_yaw" value="-2.094"/>
+	<property name="def_laser_right_x" value="-0.122"/>
+	<property name="def_laser_right_y" value="-0.21131"/>
+	<property name="def_laser_right_z" value="0.08"/>
+	<property name="def_laser_right_roll" value="0.0"/>
+	<property name="def_laser_right_pitch" value="0.0"/>
+	<property name="def_laser_right_yaw" value="-2.094"/>
 
 	<!-- *********************** -->
 	<!-- upper robot calibration -->

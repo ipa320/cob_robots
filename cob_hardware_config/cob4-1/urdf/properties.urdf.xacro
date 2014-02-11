@@ -7,28 +7,28 @@
 	<!-- base calibration -->
 	<!-- ***************** -->
 	<!-- laser front mount positions | relative to base_link -->
-	<property name="laser_1_x" value="${def_laser_1_x+offset_laser_1_x}"/>
-	<property name="laser_1_y" value="${def_laser_1_y+offset_laser_1_y}"/>
-	<property name="laser_1_z" value="${def_laser_1_z+offset_laser_1_z}"/>
-	<property name="laser_1_roll" value="${def_laser_1_roll+offset_laser_1_roll}"/>
-	<property name="laser_1_pitch" value="${def_laser_1_pitch+offset_laser_1_pitch}"/>
-	<property name="laser_1_yaw" value="${def_laser_1_yaw+offset_laser_1_yaw}"/>
+	<property name="laser_front_x" value="${def_laser_front_x+offset_laser_front_x}"/>
+	<property name="laser_front_y" value="${def_laser_front_y+offset_laser_front_y}"/>
+	<property name="laser_front_z" value="${def_laser_front_z+offset_laser_front_z}"/>
+	<property name="laser_front_roll" value="${def_laser_front_roll+offset_laser_front_roll}"/>
+	<property name="laser_front_pitch" value="${def_laser_front_pitch+offset_laser_front_pitch}"/>
+	<property name="laser_front_yaw" value="${def_laser_front_yaw+offset_laser_front_yaw}"/>
 
 	<!-- laser rear mount positions | relative to base_link -->
-	<property name="laser_2_x" value="${def_laser_2_x+offset_laser_2_x}"/>
-	<property name="laser_2_y" value="${def_laser_2_y+offset_laser_2_y}"/>
-	<property name="laser_2_z" value="${def_laser_2_z+offset_laser_2_z}"/>
-	<property name="laser_2_roll" value="${def_laser_2_roll+offset_laser_2_roll}"/>
-	<property name="laser_2_pitch" value="${def_laser_2_pitch+offset_laser_2_pitch}"/>
-	<property name="laser_2_yaw" value="${def_laser_2_yaw+offset_laser_2_yaw}"/>
+	<property name="laser_left_x" value="${def_laser_left_x+offset_laser_left_x}"/>
+	<property name="laser_left_y" value="${def_laser_left_y+offset_laser_left_y}"/>
+	<property name="laser_left_z" value="${def_laser_left_z+offset_laser_left_z}"/>
+	<property name="laser_left_roll" value="${def_laser_left_roll+offset_laser_left_roll}"/>
+	<property name="laser_left_pitch" value="${def_laser_left_pitch+offset_laser_left_pitch}"/>
+	<property name="laser_left_yaw" value="${def_laser_left_yaw+offset_laser_left_yaw}"/>
 
 	<!-- laser top mount positions | relative to base_link -->
-	<property name="laser_3_x" value="${def_laser_3_x+offset_laser_3_x}"/>
-	<property name="laser_3_y" value="${def_laser_3_y+offset_laser_3_y}"/>
-	<property name="laser_3_z" value="${def_laser_3_z+offset_laser_3_z}"/>
-	<property name="laser_3_roll" value="${def_laser_3_roll+offset_laser_3_roll}"/>
-	<property name="laser_3_pitch" value="${def_laser_3_pitch+offset_laser_3_pitch}"/>
-	<property name="laser_3_yaw" value="${def_laser_3_yaw+offset_laser_3_yaw}"/>
+	<property name="laser_right_x" value="${def_laser_right_x+offset_laser_right_x}"/>
+	<property name="laser_right_y" value="${def_laser_right_y+offset_laser_right_y}"/>
+	<property name="laser_right_z" value="${def_laser_right_z+offset_laser_right_z}"/>
+	<property name="laser_right_roll" value="${def_laser_right_roll+offset_laser_right_roll}"/>
+	<property name="laser_right_pitch" value="${def_laser_right_pitch+offset_laser_right_pitch}"/>
+	<property name="laser_right_yaw" value="${def_laser_right_yaw+offset_laser_right_yaw}"/>
 
 	<!-- *********************** -->
 	<!-- upper robot calibration -->
