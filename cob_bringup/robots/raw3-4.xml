@@ -68,10 +68,10 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
-		<include file="$(find cob_bringup)/components/voltage_controller.launch" >
+		<include file="$(find cob_bringup)/components/io/voltage_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/voltage_filter.launch" >
+		<include file="$(find cob_bringup)/components/io/voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 

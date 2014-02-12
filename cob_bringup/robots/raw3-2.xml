@@ -38,7 +38,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="rear" />
 		</include>
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
+		<include file="$(find cob_bringup)/components/sensors/relayboard.launch" >
 			<arg name="sim" value="true" />
 		</include>
 		<include file="$(find cob_bringup)/components/base/base.launch" >

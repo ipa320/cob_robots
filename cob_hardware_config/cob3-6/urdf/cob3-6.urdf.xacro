@@ -14,16 +14,16 @@
   <include filename="$(find cob_hardware_config)/cob3-6/urdf/properties.urdf.xacro" />
   
   <!-- base -->
-  <include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/base_cob3/base.urdf.xacro" />
 
   <!-- tray -->
-  <include filename="$(find cob_description)/urdf/tray_powerball/tray.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/tray_cob3_3DOF/tray.urdf.xacro" />
  
   <!-- torso -->
-  <include filename="$(find cob_description)/urdf/torso_v1/torso.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/torso_cob3_v2/torso.urdf.xacro" />
 
   <!-- head -->
-  <include filename="$(find cob_description)/urdf/head_v3/head.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/head_cob3_v3/head.urdf.xacro" />
   <include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- arm -->
@@ -36,23 +36,23 @@
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
   
   <!-- composition of the robot -->
-  <xacro:cob_base name="base"/>
+  <xacro:cob3_base name="base"/>
 
-  <xacro:cob_tray_powerball name="tray" parent="base_link">
+  <xacro:cob3_tray_3DOF name="tray" parent="base_link">
     <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
-  </xacro:cob_tray_powerball>
+  </xacro:cob3_tray_3DOF>
 
-  <xacro:cob_torso_v1 name="torso" parent="base_link">
+  <xacro:cob3_torso_v2 name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
-  </xacro:cob_torso_v1>
+  </xacro:cob3_torso_v2>
   
   <xacro:schunk_lwa name="arm" parent="base_link">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:schunk_lwa>
   
-  <xacro:cob_head_v3 name="head" parent="torso_upper_neck_tilt_link">
+  <xacro:cob3_head_v3 name="head" parent="torso_upper_neck_tilt_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-  </xacro:cob_head_v3>
+  </xacro:cob3_head_v3>
   
   <xacro:cob_lookat name="lookat" parent="torso_upper_neck_tilt_link" lower="-5.0" upper="5.0">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />

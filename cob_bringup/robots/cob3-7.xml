@@ -51,10 +51,10 @@
 		<include file="$(find cob_bringup)/components/sensors/laser_top.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
+		<include file="$(find cob_bringup)/components/sensors/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/voltage_filter.launch" >
+		<include file="$(find cob_bringup)/components/io/voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/base/base.launch" >
@@ -119,7 +119,7 @@
 		</include>
 		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
-		<include file="$(find cob_bringup)/components/light.launch" >
+		<include file="$(find cob_bringup)/components/io/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/components/sensors/tray_sensors.launch" >
