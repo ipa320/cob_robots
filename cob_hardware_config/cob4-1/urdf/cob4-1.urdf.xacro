@@ -38,11 +38,11 @@
 		<origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
 	</xacro:cob4_torso>
 	
-	<xacro:cob3_head name="head" parent="torso_3_link">
+	<xacro:cob4_head name="head" parent="torso_3_link">
 		<origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-	</xacro:cob3_head>
+	</xacro:cob4_head>
 
-	<xacro:cob_sensorring name="head_sensors" parent="head_3_link">
+	<xacro:cob_sensorring name="sensorring" parent="head_3_link">
 		<origin xyz="${head_sensors_x} ${head_sensors_y} ${head_sensors_z}" rpy="${head_sensors_roll} ${head_sensors_pitch} ${head_sensors_yaw}" />
 	</xacro:cob_sensorring>
 	
