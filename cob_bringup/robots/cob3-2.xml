@@ -39,8 +39,9 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="rear" />
 		</include>
-		<include file="$(find cob_bringup)/components/sensors/laser_top.launch" >
+		<include file="$(find cob_bringup)/components/sensors/hokuyo.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="top" />
 		</include>
 		<include file="$(find cob_bringup)/components/sensors/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />

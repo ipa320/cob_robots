@@ -3,7 +3,7 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="cob4_1" >
+       name="cob4-1" >
 
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
@@ -38,7 +38,7 @@
 		<origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
 	</xacro:cob4_torso>
 	
-	<xacro:cob4_head name="head" parent="torso_3_link">
+	<!--xacro:cob4_head name="head" parent="torso_3_link">
 		<origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
 	</xacro:cob4_head>
 
@@ -66,6 +66,6 @@
 						arm_6_ref="${arm_left_6_ref}"
 						arm_7_ref="${arm_left_7_ref}">
 		<origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
-	</xacro:schunk_lwa4p_extended>
+	</xacro:schunk_lwa4p_extended-->
 
 </robot>
