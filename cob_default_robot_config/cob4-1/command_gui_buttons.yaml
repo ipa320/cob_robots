@@ -36,3 +36,14 @@ group3:
     [right,move,right],
     [shake,move,shake],
     [nod,move,nod]]
+group4:
+  group_name: sensorring
+  component_name: sensorring
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [front,move,front],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right]]
+

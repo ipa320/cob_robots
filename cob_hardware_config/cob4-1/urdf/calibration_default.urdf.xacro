@@ -48,12 +48,12 @@
 	<property name="def_head_yaw" value="0.0"/>
 	
 	<!-- head sensors mount positions | relative to head_3_link -->
-	<property name="def_head_sensors_x" value="0.0"/>
-	<property name="def_head_sensors_y" value="0.0"/>
-	<property name="def_head_sensors_z" value="0.07"/>
-	<property name="def_head_sensors_roll" value="0.0"/>
-	<property name="def_head_sensors_pitch" value="0.0"/>
-	<property name="def_head_sensors_yaw" value="0.0"/>
+	<property name="def_sensorring_x" value="0.0"/>
+	<property name="def_sensorring_y" value="0.0"/>
+	<property name="def_sensorring_z" value="0.07"/>
+	<property name="def_sensorring_roll" value="0.0"/>
+	<property name="def_sensorring_pitch" value="0.0"/>
+	<property name="def_sensorring_yaw" value="0.0"/>
 
 	<!-- arm right mount positions | relative to torso_3_link -->
 	<property name="def_arm_right_x" value="0.0"/>
@@ -84,7 +84,7 @@
 	<property name="def_head_2_ref" value="0.0"/>
 	<property name="def_head_3_ref" value="0.0"/>
 	
-	<property name="def_head_sensor_ref" value="0.0"/>
+	<property name="def_sensorring_ref" value="0.0"/>
 
 	<!-- arm right reference positions | used as calibration_rising for arm chain-->
 	<property name="def_arm_right_1_ref" value="0.0"/>

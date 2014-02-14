@@ -1,1 +1,1 @@
-robot_modules: ['base']
+robot_modules: ['base','torso','head','sensorring']

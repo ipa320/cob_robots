@@ -5,32 +5,32 @@
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        name="cob4-1" >
 
-  <!-- common stuff -->
-  <include filename="$(find cob_description)/urdf/common.xacro" />
-  <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
-  <include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
+	<!-- common stuff -->
+	<include filename="$(find cob_description)/urdf/common.xacro" />
+	<include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+	<include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
-  <!-- calibration -->
-  <include filename="$(find cob_hardware_config)/cob4-1/urdf/properties.urdf.xacro" />
+	<!-- calibration -->
+	<include filename="$(find cob_hardware_config)/cob4-1/urdf/properties.urdf.xacro" />
 
-  <!-- base -->
-  <include filename="$(find cob_description)/urdf/base_cob4/base.urdf.xacro" />
+	<!-- base -->
+	<include filename="$(find cob_description)/urdf/base_cob4/base.urdf.xacro" />
 
-  <!-- torso -->
-  <include filename="$(find cob_description)/urdf/torso_cob4/torso.urdf.xacro" />
+	<!-- torso -->
+	<include filename="$(find cob_description)/urdf/torso_cob4/torso.urdf.xacro" />
 
-  <!-- arm -->
-  <include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
+	<!-- arm -->
+	<include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
 
-  <!-- head -->
-  <include filename="$(find cob_description)/urdf/head_cob4/head.urdf.xacro" />
-  
-  <!-- head_sensors -->
-  <include filename="$(find cob_description)/urdf/sensorring/sensorring.urdf.xacro" />
-  
-  <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
-  <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
-  
+	<!-- head -->
+	<include filename="$(find cob_description)/urdf/head_cob4/head.urdf.xacro" />
+	
+	<!-- sensorring -->
+	<include filename="$(find cob_description)/urdf/sensorring/sensorring.urdf.xacro" />
+
+	<!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
+	<include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
+
 	<!-- composition of the robot -->
 	<xacro:cob4_base name="base"/>
 
@@ -38,12 +38,12 @@
 		<origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
 	</xacro:cob4_torso>
 	
-	<!--xacro:cob4_head name="head" parent="torso_3_link">
+	<xacro:cob4_head name="head" parent="torso_3_link">
 		<origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
 	</xacro:cob4_head>
 
 	<xacro:cob_sensorring name="sensorring" parent="head_3_link">
-		<origin xyz="${head_sensors_x} ${head_sensors_y} ${head_sensors_z}" rpy="${head_sensors_roll} ${head_sensors_pitch} ${head_sensors_yaw}" />
+		<origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
 	</xacro:cob_sensorring>
 	
 	<xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" 
@@ -66,6 +66,6 @@
 						arm_6_ref="${arm_left_6_ref}"
 						arm_7_ref="${arm_left_7_ref}">
 		<origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
-	</xacro:schunk_lwa4p_extended-->
+	</xacro:schunk_lwa4p_extended>
 
 </robot>

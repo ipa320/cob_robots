@@ -19,6 +19,9 @@
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/torso_controller_cob4.launch"/>
 
 	<!-- Head -->
-	<!--include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller_cob4.launch"/-->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller_cob4.launch"/>
+	
+	<!-- Sensorring -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sensorring.launch"/>
 
 </launch>
