@@ -13,5 +13,9 @@
 	</include>
 	
 	# The visualization component of MoveIt!
-	<include file="$(find cob_moveit_config)/launch/rviz.launch"/>
+	<include file="$(find cob_moveit_config)/launch/rviz.launch">
+		<arg name="robot" value="$(env ROBOT)"/>
+		<arg name="debug" value="$(arg debug)"/>
+		<arg name="config" value="true"/>
+	</include>
 </launch>

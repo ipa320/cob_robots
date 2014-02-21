@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
   <arg name="robot" default="$(env ROBOT)"/>
   <arg name="with_db" default="false"/>
