@@ -1,0 +1,5 @@
+joint_names: ["sensorring_joint"]
+left: [[1.57]]
+right: [[-1.57]]
+front: [[0.0]]
+back: [[3.14]]

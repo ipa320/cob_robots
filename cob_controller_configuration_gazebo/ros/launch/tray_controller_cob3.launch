@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/tray_powerball_controller.yaml" command="load" />
+	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/tray_controller_cob3.yaml" command="load" />
 
 	<node name="tray_controller_spawner" pkg="cob_controller_configuration_gazebo" type="spawner" args="tray_controller" />
 

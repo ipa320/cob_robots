@@ -43,7 +43,7 @@
 
 	<!-- fake components for simulation -->
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
-	<include file="$(find cob_bringup)/components/relayboard.launch">
+	<include file="$(find cob_bringup)/components/sensors/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >

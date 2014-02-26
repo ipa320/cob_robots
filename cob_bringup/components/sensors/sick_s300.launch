@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="name" default="front"/>
+
+	<!-- start laser driver -->
+	<node name="laser_$(arg name)" pkg="cob_sick_s300" type="cob_sick_s300" respawn="false" output="screen" >
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_$(arg name).yaml"/>
+		<remap from="laser_$(arg name)/scan" to="/scan_$(arg name)_raw"/>
+	</node>
+
+	<!-- laser filter -->
+	<node name="laser_$(arg name)_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" ns="laser_$(arg name)">
+		<remap from="/laser_$(arg name)/scan" to="/scan_$(arg name)_raw"/>
+		<remap from="/laser_$(arg name)/scan_filtered" to="/scan_$(arg name)"/>
+	</node>
+
+</launch>
