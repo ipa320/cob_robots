@@ -25,7 +25,6 @@
   <run_depend>cob_phidgets</run_depend>
   <!-- <test_depend>rostopic</test_depend> -->
   <!-- <test_depend>joint_trajectory_action</test_depend> -->
-  <!-- <test_depend>pr2_controller_manager</test_depend> -->
   <!-- <test_depend>cob_bringup</test_depend> -->
   <!-- <test_depend>cob_sick_s300</test_depend> -->
   <!-- <test_depend>cob_relayboard</test_depend> -->
