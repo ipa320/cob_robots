@@ -21,6 +21,11 @@
 	<!-- Head -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/head_controller_cob4.launch"/>
 	
+	<!-- Arms -->
+	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/arm_controller_cob4.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	
 	<!-- Sensorring -->
 	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/sensorring.launch"/>
 

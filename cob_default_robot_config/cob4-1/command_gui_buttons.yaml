@@ -46,4 +46,21 @@ group4:
     [back,move,back],
     [left,move,left],
     [right,move,right]]
-
+group5:
+  group_name: arm_left
+  component_name: arm_left
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [pregrasp,move,pregrasp]]
+group6:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [pregrasp,move,pregrasp]]
