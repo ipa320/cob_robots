@@ -3,7 +3,7 @@
 
 	<rosparam file="$(find cob_controller_configuration_gazebo)/controller/ur_connector_controller.yaml" command="load" />
 
-	<node name="ur_connector_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="ur_connector_controller" />
+	<node name="ur_connector_controller_spawner" pkg="cob_controller_configuration_gazebo" type="spawner" args="ur_connector_controller" />
 
 	<group ns="ur_connector_controller">
 		<node name="ur_connector_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />

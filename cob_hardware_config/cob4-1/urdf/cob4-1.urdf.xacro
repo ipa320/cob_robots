@@ -14,37 +14,37 @@
 	<include filename="$(find cob_hardware_config)/cob4-1/urdf/properties.urdf.xacro" />
 
 	<!-- base -->
-	<include filename="$(find cob_description)/urdf/base_cob4/base.urdf.xacro" />
+	<include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
 
 	<!-- torso -->
-	<include filename="$(find cob_description)/urdf/torso_cob4/torso.urdf.xacro" />
+	<include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
 
 	<!-- arm -->
 	<include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
 
 	<!-- head -->
-	<include filename="$(find cob_description)/urdf/head_cob4/head.urdf.xacro" />
+	<include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
 	
 	<!-- sensorring -->
-	<include filename="$(find cob_description)/urdf/sensorring/sensorring.urdf.xacro" />
+	<include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
 
 	<!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
 	<include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
 	<!-- composition of the robot -->
-	<xacro:cob4_base name="base"/>
+	<xacro:base name="base"/>
 
-	<xacro:cob4_torso name="torso" parent="base_link">
+	<xacro:torso name="torso" parent="base_link">
 		<origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
-	</xacro:cob4_torso>
+	</xacro:torso>
 	
-	<xacro:cob4_head name="head" parent="torso_3_link">
+	<xacro:head name="head" parent="torso_3_link">
 		<origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-	</xacro:cob4_head>
+	</xacro:head>
 
-	<xacro:cob_sensorring name="sensorring" parent="head_3_link">
+	<xacro:sensorring name="sensorring" parent="head_3_link">
 		<origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
-	</xacro:cob_sensorring>
+	</xacro:sensorring>
 	
 	<xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" 
 						arm_1_ref="${arm_right_1_ref}"
