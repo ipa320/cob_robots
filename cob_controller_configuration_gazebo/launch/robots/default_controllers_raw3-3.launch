@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" />
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_raw.launch">
+		<arg name="robot" value="raw3-3"/>
+	</include>
+	<include file="$(find cob_bringup)/components/sensors/relayboard.launch">
+		<arg name="sim" value="true"/>
+	</include>
+
+	<!-- Arms -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/arm_controller_dual.launch">
+		<arg name="arm" value="frida"/>
+	</include>
+
+	<!-- Grippers -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/prace_gripper_controller.launch"/>
+
+	<!-- start additional components -->
+	<!--include file="$(find cob_sound)/ros/launch/sound.launch" /-->
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+		<arg name="robot" value="raw3-3"/>
+	</include>
+</launch>

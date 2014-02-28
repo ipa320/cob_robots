@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot"/>
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob4.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+		
+	<include file="$(find cob_bringup)/components/sensors/relayboard.launch">
+		<arg name="sim" value="true"/>
+	</include>
+
+	<!-- Torso -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/torso_controller.launch">
+		<arg name="torso" value="cob4"/>
+	</include>
+
+	<!-- Head -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/head_controller.launch">
+		<arg name="head" value="cob4"/>
+	</include>
+	
+	<!-- Arms -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/arm_controller_dual.launch">
+		<arg name="arm" value="lwa4p_dual"/>
+	</include>
+	
+	<!-- Sensorring -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/sensorring_controller.launch"/>
+
+</launch>

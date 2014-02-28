@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="torso" />
+	
+	<rosparam file="$(find cob_controller_configuration_gazebo)/controller/torso_controller_$(arg torso).yaml" command="load" />
+
+	<node name="torso_controllers_spawner" pkg="cob_controller_configuration_gazebo" type="spawner" args="torso_controller" />
+
+	<group ns="torso_controller">
+		<node name="torso_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
+	</group>
+
+</launch>
