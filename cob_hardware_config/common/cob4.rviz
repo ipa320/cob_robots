@@ -26,7 +26,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan Rear
+    SyncSource: LaserScan Front
 Visualization Manager:
   Class: ""
   Displays:
@@ -53,42 +53,76 @@ Visualization Manager:
       Collision Enabled: false
       Enabled: true
       Links:
-        arm_0_link:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        arm_left_1_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        arm_1_link:
+        arm_left_2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        arm_2_link:
+        arm_left_3_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        arm_3_link:
+        arm_left_4_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        arm_4_link:
+        arm_left_5_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        arm_5_link:
+        arm_left_6_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        arm_6_link:
+        arm_left_7_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        arm_7_link:
+        arm_left_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_4_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_5_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_6_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_7_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        arm_right_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -98,7 +132,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        base_laser_rear_link:
+        base_laser_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_laser_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -107,7 +146,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         bl_caster_r_wheel_link:
           Alpha: 1
           Show Axes: false
@@ -138,106 +176,44 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        fr_caster_r_wheel_link:
+        head_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        head_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        head_3_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        fr_caster_rotation_link:
+        head_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        head_sensors_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torso_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torso_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torso_3_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        head_axis_link:
+        torso_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        head_cam3d_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        head_color_camera_l_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        head_color_camera_r_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        head_cover_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_finger_11_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_finger_12_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_finger_13_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_finger_21_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_finger_22_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_finger_23_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_palm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_thumb_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_thumb_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sdh_thumb_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        torso_lower_neck_tilt_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        torso_upper_neck_tilt_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tray_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -248,17 +224,17 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        /arm_0_link:
+        /arm_left_base_link:
           Value: true
-        /arm_7_link:
+        /arm_right_base_link:
           Value: true
         /base_footprint:
           Value: true
         /base_laser_front_link:
           Value: true
-        /base_laser_rear_link:
+        /base_laser_left_link:
           Value: true
-        /base_laser_top_link:
+        /base_laser_right_link:
           Value: true
         /base_link:
           Value: true
@@ -274,55 +250,15 @@ Visualization Manager:
           Value: true
         /fl_caster_rotation_link:
           Value: true
-        /fr_caster_r_wheel_link:
-          Value: true
-        /fr_caster_rotation_link:
-          Value: true
-        /head_axis_link:
-          Value: true
-        /head_cam3d_frame:
-          Value: true
-        /head_cam3d_link:
-          Value: true
-        /head_color_camera_l_frame:
-          Value: true
-        /head_color_camera_l_link:
-          Value: true
-        /head_color_camera_r_frame:
-          Value: true
-        /head_color_camera_r_link:
-          Value: true
-        /head_cover_link:
+        /head_base_link:
           Value: true
         /map:
           Value: true
         /odom_combined:
           Value: true
-        /sdh_grasp_link:
+        /torso_3_link:
           Value: true
-        /sdh_palm_link:
-          Value: true
-        /sdh_thumb_1_link:
-          Value: true
-        /sdh_tip_link:
-          Value: true
-        /torso_upper_neck_tilt_link:
-          Value: true
-        /tray_base_link:
-          Value: true
-        /tray_left_link:
-          Value: true
-        /tray_link:
-          Value: true
-        /tray_phidgets_1_link:
-          Value: true
-        /tray_phidgets_2_link:
-          Value: true
-        /tray_phidgets_3_link:
-          Value: true
-        /tray_phidgets_4_link:
-          Value: true
-        /tray_right_link:
+        /torso_base_link:
           Value: true
         All Enabled: false
       Marker Scale: 1
@@ -335,13 +271,11 @@ Visualization Manager:
           /odom_combined:
             /base_footprint:
               /base_link:
-                /arm_0_link:
-                  {}
                 /base_laser_front_link:
                   {}
-                /base_laser_rear_link:
+                /base_laser_left_link:
                   {}
-                /base_laser_top_link:
+                /base_laser_right_link:
                   {}
                 /bl_caster_rotation_link:
                   /bl_caster_r_wheel_link:
@@ -352,9 +286,8 @@ Visualization Manager:
                 /fl_caster_rotation_link:
                   /fl_caster_r_wheel_link:
                     {}
-                /fr_caster_rotation_link:
-                  /fr_caster_r_wheel_link:
-                    {}
+                /torso_base_link:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 0.7
@@ -409,14 +342,14 @@ Visualization Manager:
       Max Intensity: 0
       Min Color: 0; 255; 0
       Min Intensity: 0
-      Name: LaserScan Rear
+      Name: LaserScan Left
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.025
       Style: Spheres
-      Topic: /scan_rear
+      Topic: /scan_left
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -437,14 +370,14 @@ Visualization Manager:
       Max Intensity: 4096
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: LaserScan Top
+      Name: LaserScan Right
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.025
       Style: Spheres
-      Topic: /scan_top
+      Topic: /scan_right
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -458,17 +391,17 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/GridCells
       Color: 255; 0; 0
-      Enabled: true
+      Enabled: false
       Name: Obstacles
       Topic: /move_base/local_costmap/obstacles
-      Value: true
+      Value: false
     - Alpha: 1
       Class: rviz/GridCells
       Color: 0; 0; 255
-      Enabled: true
+      Enabled: false
       Name: Inflated Obstacles
       Topic: /move_base/local_costmap/inflated_obstacles
-      Value: true
+      Value: false
     - Class: rviz/Axes
       Enabled: true
       Length: 1
@@ -544,17 +477,17 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 9.49617
+      Distance: 16.6595
       Focal Point:
         X: 0.646932
         Y: 0.446475
         Z: 0.000559447
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.5698
+      Pitch: 1.1598
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.76359
+      Yaw: 5.86359
     Saved: ~
 Window Geometry:
   Displays:
@@ -572,5 +505,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1535
-  X: 58
-  Y: 24
+  X: 57
+  Y: -4
