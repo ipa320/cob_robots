@@ -15,14 +15,15 @@
 	</include>
 
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/arm_controller.launch">
-		<arg name="arm" value="ur10"/>
-		
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="ur10"/>
 	</include>
 
 	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/torso_controller.launch">
-		<arg name="torso" value="raw3-1"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="torso"/>
+		<arg name="version" value="raw3-1"/>
 	</include>
 
 	<!-- start additional components -->

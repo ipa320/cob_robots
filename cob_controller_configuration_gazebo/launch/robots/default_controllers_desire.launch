@@ -12,17 +12,22 @@
 	</include>
 
 	<!-- Head -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/head_controller.launch">
-		<arg name="head" value="desire"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="head"/>
+		<arg name="version" value="desire"/>
 	</include>
 	
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/arm_controller_dual.launch">
-		<arg name="arm" value="lbr_dual"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="lbr_dual"/>
 	</include>
 
 	<!-- SDH -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/sdh_controller_dual.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+		<arg name="component_name" value="sdh"/>
+		<arg name="version" value="dual"/>
+	</include>
 
 	<!-- start additional components -->
 	<include file="$(find cob_sound)/ros/launch/sound.launch" />

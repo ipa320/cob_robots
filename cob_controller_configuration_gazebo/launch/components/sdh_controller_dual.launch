@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<rosparam file="$(find cob_controller_configuration_gazebo)/controller/sdh_controller_dual.yaml" command="load" />
-
-	<node name="sdh_left_controller_spawner" pkg="controller_manager" type="spawner" args="sdh_left_controller" />
-	<node name="sdh_right_controller_spawner" pkg="controller_manager" type="spawner" args="sdh_right_controller" />
-
-</launch>

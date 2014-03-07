@@ -15,8 +15,9 @@
 	</include>
 
 	<!-- Arms -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/arm_controller_dual.launch">
-		<arg name="arm" value="frida"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="frida"/>
 	</include>
 
 	<!-- Grippers -->

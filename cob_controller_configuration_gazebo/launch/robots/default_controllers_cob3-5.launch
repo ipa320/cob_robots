@@ -12,26 +12,33 @@
 	</include>
 
 	<!-- Head -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/head_controller.launch">
-		<arg name="head" value="cob3"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="head"/>
+		<arg name="version" value="cob3"/>
 	</include>
 
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/arm_controller.launch">
-		<arg name="arm" value="lwa"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="lwa"/>
 	</include>
 
 	<!-- SDH -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/sdh_controller.launch"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="sdh"/>
+		<arg name="version" value="cob3"/>
+	</include>
 
 	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/torso_controller.launch">
-	    <arg name="torso" value="cob3_v2"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="torso"/>
+	    <arg name="version" value="cob3_v2"/>
 	</include>
 
 	<!-- Tray -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/tray_controller.launch">
-	    <arg name="tray" value="cob3_3DOF"/>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="tray"/>
+	    <arg name="version" value="cob3_3DOF"/>
 	</include>
 
 	<!-- start additional components -->
