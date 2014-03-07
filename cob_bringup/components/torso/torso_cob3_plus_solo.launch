@@ -19,7 +19,7 @@
 
 
 	<!-- start torso controller -->
-	<include file="$(find cob_bringup)/components/torso_canopen.launch" >
+	<include file="$(find cob_bringup)/components/torso/torso_cob3_plus.launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 
