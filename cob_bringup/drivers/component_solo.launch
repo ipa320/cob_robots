@@ -2,7 +2,9 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)" />
-	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>	
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component" />
+	<arg name="driver" />
 
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch" >
@@ -17,11 +19,10 @@
 	<!-- start robot_state_publisher -->
 	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
-
-	<!-- start torso controller -->
-	<include file="$(find cob_bringup)/components/torso_canopen.launch" >
+	<!-- start driver -->
+	<include file="$(find cob_bringup)/drivers/$(arg driver).launch" >
+	    <arg name="component_name" value="$(arg component)" />
 		<arg name="robot" value="$(arg robot)" />
 	</include>
-
 
 </launch>

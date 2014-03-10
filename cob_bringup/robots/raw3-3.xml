@@ -25,28 +25,27 @@
 		<node pkg="cob_phidgets" type="phidget_sensors" name="phidget_driver"/>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+		<!-- lower robot -->
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="front" />
 		</include>
-		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="rear" />
 		</include>
-		
-		<include file="$(find cob_bringup)/components/sensors/relayboard.launch" >
+		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
 			<arg name="sim" value="true" />
 		</include>
 
-		<include file="$(find cob_bringup)/components/base/base.launch" >
+		<include file="$(find cob_bringup)/drivers/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
-		<include file="$(find cob_bringup)/components/manipulator/frida.launch" >
+		<include file="$(find cob_bringup)/drivers/frida.launch" >
 			<arg name="robot_ip" value="192.168.43.40" />
 		</include>
 
-		<include file="$(find cob_bringup)/components/gripper/prace_grippers.launch"/>
+		<include file="$(find cob_bringup)/drivers/prace_grippers.launch"/>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
