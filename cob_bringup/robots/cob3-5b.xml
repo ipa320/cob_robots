@@ -42,36 +42,39 @@
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
-		<include file="$(find cob_bringup)/components/laser_front.launch" >
+		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="front" />
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="rear" />
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/hokuyo.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="top" />
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_rear.launch" >
+		<include file="$(find cob_bringup)/components/io/voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_top.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/voltage_filter.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/base.launch" >
+		<include file="$(find cob_bringup)/components/base/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/components/torso.launch" >
+		<include file="$(find cob_bringup)/components/torso/torso_cob3.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/lwa4d.launch" >
+		<include file="$(find cob_bringup)/components/manipulator/lwa4d.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/sdh.launch" >
+		<include file="$(find cob_bringup)/components/gripper/sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/head.launch" >
+		<include file="$(find cob_bringup)/components/head/head_cob3.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -101,13 +104,13 @@
 		</include>
 
 		<!-- start camera sensors -->
-		<include file="$(find cob_bringup)/components/prosilica_left.launch" >
+		<include file="$(find cob_bringup)/components/sensors/prosilica_left.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/prosilica_right.launch" >
+		<include file="$(find cob_bringup)/components/sensors/prosilica_right.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/kinect.launch" >
+		<include file="$(find cob_bringup)/components/sensors/kinect.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
@@ -116,7 +119,7 @@
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
-		<include file="$(find cob_bringup)/components/tray_sensors.launch" >
+		<include file="$(find cob_bringup)/components/sensors/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
@@ -130,12 +133,11 @@
 			<arg name="pc" value="$(arg pc3)" />
 		</include>
 
-
-		<include file="$(find cob_bringup)/components/tray_powerball.launch" >
+		<include file="$(find cob_bringup)/components/tray/tray_cob3_plus.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<!-- start additional packages -->
-		<include file="$(find cob_bringup)/components/light.launch" >
+		<include file="$(find cob_bringup)/components/io/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>

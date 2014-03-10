@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+<robot>
+	<!--reference calc-->
+	<include filename="$(find cob_calibration_data)/cob4-1/calibration/calibration_offset.urdf.xacro" />
+	<include filename="$(find cob_hardware_config)/cob4-1/urdf/calibration_default.urdf.xacro" />>
+	<!-- ***************** -->
+	<!-- base calibration -->
+	<!-- ***************** -->
+	<!-- laser front mount positions | relative to base_link -->
+	<property name="laser_front_x" value="${def_laser_front_x+offset_laser_front_x}"/>
+	<property name="laser_front_y" value="${def_laser_front_y+offset_laser_front_y}"/>
+	<property name="laser_front_z" value="${def_laser_front_z+offset_laser_front_z}"/>
+	<property name="laser_front_roll" value="${def_laser_front_roll+offset_laser_front_roll}"/>
+	<property name="laser_front_pitch" value="${def_laser_front_pitch+offset_laser_front_pitch}"/>
+	<property name="laser_front_yaw" value="${def_laser_front_yaw+offset_laser_front_yaw}"/>
+
+	<!-- laser rear mount positions | relative to base_link -->
+	<property name="laser_left_x" value="${def_laser_left_x+offset_laser_left_x}"/>
+	<property name="laser_left_y" value="${def_laser_left_y+offset_laser_left_y}"/>
+	<property name="laser_left_z" value="${def_laser_left_z+offset_laser_left_z}"/>
+	<property name="laser_left_roll" value="${def_laser_left_roll+offset_laser_left_roll}"/>
+	<property name="laser_left_pitch" value="${def_laser_left_pitch+offset_laser_left_pitch}"/>
+	<property name="laser_left_yaw" value="${def_laser_left_yaw+offset_laser_left_yaw}"/>
+
+	<!-- laser top mount positions | relative to base_link -->
+	<property name="laser_right_x" value="${def_laser_right_x+offset_laser_right_x}"/>
+	<property name="laser_right_y" value="${def_laser_right_y+offset_laser_right_y}"/>
+	<property name="laser_right_z" value="${def_laser_right_z+offset_laser_right_z}"/>
+	<property name="laser_right_roll" value="${def_laser_right_roll+offset_laser_right_roll}"/>
+	<property name="laser_right_pitch" value="${def_laser_right_pitch+offset_laser_right_pitch}"/>
+	<property name="laser_right_yaw" value="${def_laser_right_yaw+offset_laser_right_yaw}"/>
+
+	<!-- *********************** -->
+	<!-- upper robot calibration -->
+	<!-- *********************** -->
+
+	<!-- torso mount positions | relative to base_link -->
+	<property name="torso_x" value="${def_torso_x+offset_torso_x}"/>
+	<property name="torso_y" value="${def_torso_y+offset_torso_y}"/>
+	<property name="torso_z" value="${def_torso_z+offset_torso_z}"/>
+	<property name="torso_roll" value="${def_torso_roll+offset_torso_roll}"/>
+	<property name="torso_pitch" value="${def_torso_pitch+offset_torso_pitch}"/>
+	<property name="torso_yaw" value="${def_torso_yaw+offset_torso_yaw}"/>
+
+	<!-- head mount positions | relative to torso_3_link -->
+	<property name="head_x" value="${def_head_x+offset_head_x}"/>
+	<property name="head_y" value="${def_head_y+offset_head_y}"/>
+	<property name="head_z" value="${def_head_z+offset_head_z}"/>
+	<property name="head_roll" value="${def_head_roll+offset_head_roll}"/>
+	<property name="head_pitch" value="${def_head_pitch+offset_head_pitch}"/>
+	<property name="head_yaw" value="${def_head_yaw+offset_head_yaw}"/>
+
+	<!-- head sensors mount positions | relative to head_3_link -->
+	<property name="sensorring_x" value="${def_sensorring_x+offset_sensorring_x}"/>
+	<property name="sensorring_y" value="${def_sensorring_y+offset_sensorring_y}"/>
+	<property name="sensorring_z" value="${def_sensorring_z+offset_sensorring_z}"/>
+	<property name="sensorring_roll" value="${def_sensorring_roll+offset_sensorring_roll}"/>
+	<property name="sensorring_pitch" value="${def_sensorring_pitch+offset_sensorring_pitch}"/>
+	<property name="sensorring_yaw" value="${def_sensorring_yaw+offset_sensorring_yaw}"/>
+	
+	<!-- arm mount positions | relative to torso_3_link -->
+	<property name="arm_right_x" value="${def_arm_right_x+offset_arm_right_x}"/>
+	<property name="arm_right_y" value="${def_arm_right_y+offset_arm_right_y}"/>
+	<property name="arm_right_z" value="${def_arm_right_z+offset_arm_right_z}"/>
+	<property name="arm_right_roll" value="${def_arm_right_roll+offset_arm_right_roll}"/>
+	<property name="arm_right_pitch" value="${def_arm_right_pitch+offset_arm_right_pitch}"/>
+	<property name="arm_right_yaw" value="${def_arm_right_yaw+offset_arm_right_yaw}"/>
+	
+	<!-- arm mount positions | relative to torso_3_link -->
+	<property name="arm_left_x" value="${def_arm_left_x+offset_arm_left_x}"/>
+	<property name="arm_left_y" value="${def_arm_left_y+offset_arm_left_y}"/>
+	<property name="arm_left_z" value="${def_arm_left_z+offset_arm_left_z}"/>
+	<property name="arm_left_roll" value="${def_arm_left_roll+offset_arm_left_roll}"/>
+	<property name="arm_left_pitch" value="${def_arm_left_pitch+offset_arm_left_pitch}"/>
+	<property name="arm_left_yaw" value="${def_arm_left_yaw+offset_arm_left_yaw}"/>
+
+	<!-- *********************************** -->
+	<!-- kinematic chain reference positions -->
+	<!-- *********************************** -->
+	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
+
+	<!-- torso reference positions | used as calibration_rising for torso chain -->
+	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
+	<property name="torso_1_ref" value="${def_torso_1_ref+offset_torso_1_ref}"/>
+	<property name="torso_2_ref" value="${def_torso_2_ref+offset_torso_2_ref}"/>
+	<property name="torso_3_ref" value="${def_torso_3_ref+offset_torso_3_ref}"/>
+
+	<!-- head reference positions | used as calibration_rising for head axis chain -->
+	<property name="head_1_ref" value="${def_head_1_ref+offset_head_1_ref}"/>
+	<property name="head_2_ref" value="${def_head_2_ref+offset_head_2_ref}"/>
+	<property name="head_3_ref" value="${def_head_3_ref+offset_head_3_ref}"/>
+	
+	<property name="sensorring_ref" value="${def_sensorring_ref+offset_sensorring_ref}"/>
+
+	<!-- arm right reference positions | used as calibration_rising for arm chain-->
+	<property name="arm_right_1_ref" value="${def_arm_right_1_ref+offset_arm_right_1_ref}"/>
+	<property name="arm_right_2_ref" value="${def_arm_right_2_ref+offset_arm_right_2_ref}"/>
+	<property name="arm_right_3_ref" value="${def_arm_right_3_ref+offset_arm_right_3_ref}"/>
+	<property name="arm_right_4_ref" value="${def_arm_right_4_ref+offset_arm_right_4_ref}"/>
+	<property name="arm_right_5_ref" value="${def_arm_right_5_ref+offset_arm_right_5_ref}"/>
+	<property name="arm_right_6_ref" value="${def_arm_right_6_ref+offset_arm_right_6_ref}"/>
+	<property name="arm_right_7_ref" value="${def_arm_right_7_ref+offset_arm_right_7_ref}"/>
+	
+	<!-- arm right reference positions | used as calibration_rising for arm chain-->
+	<property name="arm_left_1_ref" value="${def_arm_left_1_ref+offset_arm_left_1_ref}"/>
+	<property name="arm_left_2_ref" value="${def_arm_left_2_ref+offset_arm_left_2_ref}"/>
+	<property name="arm_left_3_ref" value="${def_arm_left_3_ref+offset_arm_left_3_ref}"/>
+	<property name="arm_left_4_ref" value="${def_arm_left_4_ref+offset_arm_left_4_ref}"/>
+	<property name="arm_left_5_ref" value="${def_arm_left_5_ref+offset_arm_left_5_ref}"/>
+	<property name="arm_left_6_ref" value="${def_arm_left_6_ref+offset_arm_left_6_ref}"/>
+	<property name="arm_left_7_ref" value="${def_arm_left_7_ref+offset_arm_left_7_ref}"/>
+
+</robot>

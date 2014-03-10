@@ -1,0 +1,31 @@
+# global information
+global_frame: /base_link
+robot_base_frame: /base_footprint
+update_frequency: 5.0
+publish_frequency: 5.0
+map_type: costmap
+
+# local map settings
+static_map: false
+rolling_window: true
+width: 5.0
+height: 5.0
+resolution: 0.07
+
+# footprint and range 
+obstacle_range: 3.0 #[m]
+max_obstacle_height: 2.0 #[m]
+raytrace_range: 3.0 #3.0 #[m]
+#footprint: [[0.4,0.0],[0.35,0.35],[-0.2,0.4],[-0.45,0.0],[-0.2,-0.4],[0.35,-0.35]] #[m]
+footprint: [[0.43, 0.35], [0.43, -0.35], [-0.43, -0.35],[-0.43, 0.35]] #[m]
+footprint_padding: 0.02 #[m]
+inflation_radius: 0.55 #[m]
+
+# sensor setup
+observation_sources: laser_scan_front laser_scan_left laser_scan_right 
+laser_scan_front: {sensor_frame: /base_laser_front_link, topic: /scan_front, data_type: LaserScan, marking: true, clearing: true}
+
+laser_scan_left: {sensor_frame: /base_laser_left_link, topic: /scan_left, data_type: LaserScan, marking: true, clearing: true}
+
+laser_scan_right: {sensor_frame: /base_laser_right_link, topic: /scan_right, data_type: LaserScan, marking: true, clearing: true}
+
