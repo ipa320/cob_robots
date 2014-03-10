@@ -64,15 +64,15 @@
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/canopen.launch" >
-		    <arg name="component_name" value="torso" />
+			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/canopen.launch" >
-		    <arg name="component_name" value="tray" />
+			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/canopen.launch" >
-		    <arg name="component_name" value="ur_connector" />
+			<arg name="component_name" value="ur_connector" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/ur.launch" >

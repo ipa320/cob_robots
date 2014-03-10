@@ -55,15 +55,15 @@
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
-		    <arg name="component_name" value="torso" />
+			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
-		    <arg name="component_name" value="tray" />
+			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
-		    <arg name="component_name" value="lwa" />
+			<arg name="component_name" value="lwa" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/schunk_sdh.launch" >

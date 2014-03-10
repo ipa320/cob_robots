@@ -53,7 +53,7 @@
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
-		    <arg name="component_name" value="torso" />
+			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/ur.launch" >
@@ -96,7 +96,7 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
-		    <arg name="name" value="right" />
+			<arg name="name" value="right" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
