@@ -7,7 +7,7 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<!-- parameters for CANopen node -->
-	<rosparam command="load" ns="$(arg component_name)_canopen" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_canopenmaster.yaml" />
+	<rosparam command="load" ns="$(arg component_name)_canopen" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_canopen.yaml" />
 
 	<!-- parameter description of the CAN modules and for the corresponding trajectory controller -->
 	<rosparam command="load" ns="$(arg component_name)_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name).yaml" />
