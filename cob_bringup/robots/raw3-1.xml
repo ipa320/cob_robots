@@ -92,7 +92,8 @@
 		</include>
 
 		<!-- start camera sensors -->
-		<!--include file="$(find cob_bringup)/components/prosilica_left.launch" >
+		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
+			<arg name="name" value="left" />
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >

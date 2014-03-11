@@ -1,11 +1,4 @@
 joint_names: ['arm_shoulder_pan_joint', 'arm_shoulder_lift_joint', 'arm_elbow_joint','arm_wrist_1_joint', 'arm_wrist_2_joint', 'arm_wrist_3_joint']
-#joint_names: ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint','wrist_1_joint', 'wrist_2_joint', 'wrist_3_joint']
 
-# back side positions
-home: [[2.356, -3.1415, 1.5707, 0.00, 1.5707, 3.4906]]
-calibration: [[2.356, -3.1415, 1.5707, 0.00, 1.5707, 3.4906]]
-pregrasp: [[2.356, -3.1415, 1.5707, 0.00, 1.5707, 3.4906]]
-test: [[2.356, -1.5707, -1.5707, -1.5707, 1.5707, 3.4906]]
-upright: [[2.356, -1.5707, 0.0, 0.0, 1.5707, 3.4906]]
-new_home: [[2.325, -2.5697, 2.3669, -2.8453, 1.7039, 4.739]]
-show: [[3.2216, -2.3551, 2.1913, -2.9077, 1.7039, 4.739]]
+home: [[-0.7854, -1.5707, 1.5707, 0.0, 1.5707, 1.5707]]
+upright: [[0.0, -1.5707, 0.0, -1.5707, 0.00, 0.0]]
