@@ -6,6 +6,8 @@
 	<!-- controller_manager -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_manager.launch" />
 
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/joint_state_controller.launch" />
+
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob3.launch">
 		<arg name="robot" value="$(arg robot)"/>

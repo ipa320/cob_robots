@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<robot>
-	<include filename="$(find cob_hardware_config)/raw3-4/urdf/calibration_default.urdf.xacro" />
-	<include filename="$(find cob_calibration_data)/raw3-4/calibration/calibration_offset.urdf.xacro" />
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:include filename="$(find cob_hardware_config)/raw3-4/urdf/calibration_default.urdf.xacro" />
+	<xacro:include filename="$(find cob_calibration_data)/raw3-4/calibration/calibration_offset.urdf.xacro" />
 
 	<!-- tower mount positions | relative to base_link -->
 	<property name="tower_x" value="${def_tower_x+offset_tower_x}"/>
