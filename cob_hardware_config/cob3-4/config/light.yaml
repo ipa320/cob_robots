@@ -1,0 +1,7 @@
+devicestring: /dev/ttyLed
+baudrate: 230400
+invert_output: false
+pubmarker: true
+sim_enabled: false
+startup_color: [0.0, 0.0, 0.0, 0.0] #rgba value
+startup_mode: None #possible values: None, Static, Breath, BreathColor, Flash, FadeColor
