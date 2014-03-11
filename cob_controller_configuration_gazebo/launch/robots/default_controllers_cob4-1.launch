@@ -11,7 +11,7 @@
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 		
-	<include file="$(find cob_bringup)/components/sensors/relayboard.launch">
+	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>
 
