@@ -54,8 +54,8 @@ install(DIRECTORY robots/
 )
 
 ## Mark cpp header files for installation
-install(DIRECTORY components/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/components
+install(DIRECTORY drivers/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/drivers
 )
 
 ## Mark cpp header files for installation#
