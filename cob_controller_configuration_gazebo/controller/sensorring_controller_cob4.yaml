@@ -4,7 +4,7 @@ sensorring_controller:
   joints:
      - sensorring_joint
   gains:
-    head_axis_joint: {p: 100.0, i: 1.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
+    sensorring_joint: {p: 100.0, i: 1.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.5
