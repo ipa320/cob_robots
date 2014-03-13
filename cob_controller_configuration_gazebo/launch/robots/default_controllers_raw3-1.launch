@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="raw3-1"/>
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_raw.launch">
+		<arg name="robot" value="raw3-1"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/relayboard.launch">
+		<arg name="sim" value="true"/>
+	</include>
+
+	<!-- Arm -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="ur10"/>
+	</include>
+
+	<!-- Torso -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="torso"/>
+		<arg name="version" value="raw3-1"/>
+	</include>
+
+	<!-- start additional components -->
+	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+		<arg name="robot" value="raw3-1"/>
+	</include>
+
+</launch>

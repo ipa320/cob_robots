@@ -17,8 +17,6 @@
 
 	<group>
 		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
-		<!-- for ros-fuerte use the next line. WARNING: still under development, additional files needed -->
-		<!-- machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/env.sh" default="true"/-->
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -34,13 +32,15 @@
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
-		<include file="$(find cob_bringup)/components/laser_front.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="front" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_rear.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="rear" />
 		</include>
-		<include file="$(find cob_bringup)/components/base.launch" >
+		<include file="$(find cob_bringup)/drivers/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -62,18 +62,16 @@
 
 	<group>
 		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
-		<!-- for ros-fuerte use the next line. WARNING: still under development, additional files needed -->
-		<!--machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/env.sh" default="true"/-->
-
+		
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
-		<include file="$(find cob_bringup)/components/voltage_controller.launch" >
+		<include file="$(find cob_bringup)/drivers/voltage_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/voltage_filter.launch" >
+		<include file="$(find cob_bringup)/drivers/voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -84,8 +82,6 @@
 
 	<group>
 		<machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
-		<!-- for ros-fuerte use the next line. WARNING: still under development, additional files needed -->
-		<!--machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/env.sh" default="true"/-->
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -96,7 +92,5 @@
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
-	<!-- for ros-fuerte use the next line. WARNING: still under development, additional files needed -->
-	<!--machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/env.sh" default="true"/-->
 
 </launch>
