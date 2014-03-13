@@ -19,7 +19,7 @@
   <!-- frida adapter -->
   <xacro:include filename="$(find frida_description)/urdf/adapter.urdf.xacro" />  
 
-  <include filename="$(find frida_description)/urdf/camera_holder.urdf.xacro" />  
+  <xacro:include filename="$(find frida_description)/urdf/camera_holder.urdf.xacro" />  
 
   <!-- prace gripper -->
   <xacro:include filename="$(find prace_gripper_description)/urdf/prace_gripper.urdf.xacro"/>

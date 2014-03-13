@@ -6,7 +6,7 @@
 	<!-- controller_manager -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_manager.launch" />
 
-	<include file="$(find cob_controller_configuration_gazebo)/ros/launch/joint_state_controller.launch" />
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/joint_state_controller.launch" />
 
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob3.launch">
@@ -99,19 +99,19 @@
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc1 CPU Usage"/>
-		<prame name="topic_name" value="/pc1_usage"/>
+		<param name="topic_name" value="/pc1_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc2 CPU Usage"/>
-		<prame name="topic_name" value="/pc2_usage"/>
+		<param name="topic_name" value="/pc2_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc3 CPU Usage"/>
-		<prame name="topic_name" value="/pc3_usage"/>
+		<param name="topic_name" value="/pc3_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="Wifi Status (ddwrt)"/>
-		<prame name="topic_name" value="/wifi_status"/>
+		<param name="topic_name" value="/wifi_status"/>
 	</node>
 
 </launch>

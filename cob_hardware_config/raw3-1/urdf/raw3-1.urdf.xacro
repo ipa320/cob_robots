@@ -22,7 +22,7 @@
   <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
   
   <!-- ur_arm -->
-  <include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
   
   <!-- raw boxgripper -->
   <xacro:include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
