@@ -126,7 +126,7 @@
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
-		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
+		<include file="$(find cob_bringup)/drivers/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>

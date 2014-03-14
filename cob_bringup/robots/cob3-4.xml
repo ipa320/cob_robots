@@ -118,7 +118,7 @@
 		</include>
 
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
-		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
+		<include file="$(find cob_bringup)/drivers/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
