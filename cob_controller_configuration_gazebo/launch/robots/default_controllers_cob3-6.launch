@@ -32,13 +32,13 @@
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="torso"/>
-	    <arg name="version" value="cob3_v2"/>
+		<arg name="version" value="cob3_v2"/>
 	</include>
 
 	<!-- Tray -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="tray"/>
-	    <arg name="version" value="cob3_3DOF"/>
+		<arg name="version" value="cob3_3DOF"/>
 	</include>
 
 	<!-- start additional components -->
@@ -90,6 +90,10 @@
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="/stereo/right/color_camera"/>
 		<param name="topic_name" value="/stereo/right/image_raw"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="joy"/>
+		<param name="topic_name" value="/joy_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc1 CPU Usage"/>

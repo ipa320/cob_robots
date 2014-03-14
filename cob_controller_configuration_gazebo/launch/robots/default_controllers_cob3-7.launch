@@ -96,6 +96,10 @@
 		<param name="topic_name" value="/dsa_controller/tactile_data"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="joy"/>
+		<param name="topic_name" value="/joy_usage"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc1 CPU Usage"/>
 		<param name="topic_name" value="/pc1_usage"/>
 	</node>

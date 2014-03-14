@@ -29,16 +29,19 @@
 		<arg name="version" value="single"/>
 	</include>
 
+	<!-- DSA -->
+	<include file="$(find schunk_simulated_tactile_sensors)/ros/launch/simulated_tactile_sensors.launch" />
+
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="torso"/>
-	    <arg name="version" value="cob3_v2"/>
+		<arg name="version" value="cob3_v2"/>
 	</include>
 
 	<!-- Tray -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="tray"/>
-	    <arg name="version" value="cob3_3DOF"/>
+		<arg name="version" value="cob3_3DOF"/>
 	</include>
 
 	<!-- start additional components -->
@@ -94,6 +97,10 @@
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="dsa_controller"/>
 		<param name="topic_name" value="/dsa_controller/tactile_data"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="joy"/>
+		<param name="topic_name" value="/joy_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc1 CPU Usage"/>
