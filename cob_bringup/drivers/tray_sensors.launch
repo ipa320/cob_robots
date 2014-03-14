@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<node pkg="cob_phidgets" type="range_sensors" name="tray_sensor_node" ns="tray_sensors" cwd="node" respawn="true" output="screen">
+		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/tray_sensors.yaml" command="load" />
+	</node>
+
+</launch>
+

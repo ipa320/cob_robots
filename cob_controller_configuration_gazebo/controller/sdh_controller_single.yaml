@@ -56,6 +56,3 @@ sdh_controller:
         goal: 0.2
       sdh_finger_23_joint:
         goal: 0.2
-
-
-

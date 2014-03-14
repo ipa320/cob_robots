@@ -29,17 +29,25 @@
 		<arg name="version" value="single"/>
 	</include>
 
+	<!-- DSA -->
+	<include file="$(find schunk_simulated_tactile_sensors)/ros/launch/simulated_tactile_sensors.launch" />
+
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="torso"/>
-	    <arg name="version" value="cob3_v2"/>
+		<arg name="version" value="cob3_v2"/>
 	</include>
 
 	<!-- Tray -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="tray"/>
-	    <arg name="version" value="cob3"/>
+		<arg name="version" value="cob3"/>
 	</include>
+	
+	<!-- Tray sensors -->
+	<node name="tray_sensors" pkg="cob_phidgets" type="simulated_range_sensors.py" output="screen">
+		<rosparam file="$(find cob_controller_configuration_gazebo)/controller/tray_sensors.yaml" command="load" />
+	</node>
 
 	<!-- start additional components -->
 	<include file="$(find cob_sound)/ros/launch/sound.launch" />
@@ -56,6 +64,9 @@
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 	<node name="cam3d_relay" pkg="topic_tools" type="relay" args="/cam3d/rgb/image_raw /cam3d/rgb/image_color" respawn="false" output="screen"/>
+	<node name="cam3d_relay_depth_image" pkg="topic_tools" type="relay" args="/cam3d/depth/image_raw /cam3d/depth/image" respawn="false" output="screen"/>
+	<node name="cam3d_relay_depth_points" pkg="topic_tools" type="relay" args="/cam3d/depth_registered/points /cam3d/depth/points" respawn="false" output="screen"/>
+	<node name="cam3d_relay_depth_camera_info" pkg="topic_tools" type="relay" args="/cam3d/depth_registered/camera_info /cam3d/depth/camera_info" respawn="false" output="screen"/>
 	<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
 		<arg name="namespace" value="/cam3d" />
 		<arg name="rate" value="1.0" />
@@ -94,6 +105,10 @@
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="dsa_controller"/>
 		<param name="topic_name" value="/dsa_controller/tactile_data"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="joy"/>
+		<param name="topic_name" value="/joy_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc1 CPU Usage"/>
