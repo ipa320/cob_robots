@@ -43,6 +43,11 @@
 		<arg name="component_name" value="tray"/>
 		<arg name="version" value="cob3"/>
 	</include>
+	
+	<!-- Tray sensors -->
+	<node name="tray_sensors" pkg="cob_phidgets" type="simulated_range_sensors.py" output="screen">
+		<rosparam file="$(find cob_controller_configuration_gazebo)/controller/tray_sensors.yaml" command="load" />
+	</node>
 
 	<!-- start additional components -->
 	<include file="$(find cob_sound)/ros/launch/sound.launch" />
