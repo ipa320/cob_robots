@@ -18,7 +18,8 @@ group2:
     [calibration,move,calibration],
     [upright,move,upright],
     [new_home,move,new_home],
-    [show,move,show]]
+    [show,move,show],
+    [neutral_front,move,neutral_front]]
 group3:
   group_name: arm traj
   component_name: arm
