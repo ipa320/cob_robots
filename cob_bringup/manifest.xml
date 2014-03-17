@@ -17,6 +17,7 @@
   <depend package="cob_head_axis"/>
   <depend package="cob_sound"/>
   <depend package="cob_light"/>
+  <depend package="ipa_canopen_ros"/>
 
   <depend package="schunk_sdh"/>
   <depend package="schunk_powercube_chain"/>
@@ -31,6 +32,7 @@
   <depend package="cob_hokuyo"/>
   <depend package="cob_camera_sensors"/>
   <depend package="cob_hwboard"/>
+  <depend package="cob_phidgets"/>
 
   <depend package="openni_launch"/>
   <depend package="cob_cam3d_throttle"/>
