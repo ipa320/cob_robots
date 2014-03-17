@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot>
+
+	<!-- *********************************** -->
+	<!-- kinematic chain reference positions -->
+	<!-- *********************************** -->
+
+	<!-- tower mount positions | relative to base_link -->
+	<property name="def_tower_x" value="0.221"/>
+	<property name="def_tower_y" value="0.0"/>
+	<property name="def_tower_z" value="0.306"/>
+	<property name="def_tower_roll" value="0.0"/>
+	<property name="def_tower_pitch" value="0.0"/>
+	<property name="def_tower_yaw" value="0.0"/>
+
+	<!-- arm mount positions | relative to base_link -->
+	<property name="def_arm_x" value="0.244"/>
+	<property name="def_arm_y" value="0.0"/>
+	<property name="def_arm_z" value="0.59316"/>
+	<property name="def_arm_roll" value="0.0"/>
+	<property name="def_arm_pitch" value="0.0"/>
+	<property name="def_arm_yaw" value="0.0"/>
+
+	<!-- gripper_left mount positions | relative to arm_left_7_link -->
+	<property name="def_gripper_left_x" value="0.0"/>
+	<property name="def_gripper_left_y" value="0.0"/>
+	<property name="def_gripper_left_z" value="0.0"/>
+	<property name="def_gripper_left_roll" value="0.0"/>
+	<property name="def_gripper_left_pitch" value="0.0"/>
+	<property name="def_gripper_left_yaw" value="0.0"/>
+
+	<!-- gripper_right mount positions | relative to arm_right_7_link -->
+	<property name="def_gripper_right_x" value="0.0"/>
+	<property name="def_gripper_right_y" value="0.0"/>
+	<property name="def_gripper_right_z" value="0.0"/>
+	<property name="def_gripper_right_roll" value="0.0"/>
+	<property name="def_gripper_right_pitch" value="0.0"/>
+	<property name="def_gripper_right_yaw" value="0.0"/>
+
+</robot>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<robot>
+	<include filename="$(find cob_hardware_config)/raw3-1/urdf/calibration_default.urdf.xacro" />
+	<include filename="$(find cob_calibration_data)/raw3-1/calibration/calibration_offset.urdf.xacro" />>
+
+	<!-- *********************** -->
+	<!-- upper robot calibration -->
+	<!-- *********************** -->
+
+	<!-- tower mount positions | relative to base_link -->
+	<property name="tower_x" value="${def_tower_x+offset_tower_x}"/>
+	<property name="tower_y" value="${def_tower_y+offset_tower_y}"/>
+	<property name="tower_z" value="${def_tower_z+offset_tower_z}"/>
+	<property name="tower_roll" value="${def_tower_roll+offset_tower_roll}"/>
+	<property name="tower_pitch" value="${def_tower_pitch+offset_tower_pitch}"/>
+	<property name="tower_yaw" value="${def_tower_yaw+offset_tower_yaw}"/>
+
+	<!-- torso mount positions | relative to base_link -->
+	<property name="torso_x" value="${def_torso_x+offset_torso_x}"/>
+	<property name="torso_y" value="${def_torso_y+offset_torso_y}"/>
+	<property name="torso_z" value="${def_torso_z+offset_torso_z}"/>
+	<property name="torso_roll" value="${def_torso_roll+offset_torso_roll}"/>
+	<property name="torso_pitch" value="${def_torso_pitch+offset_torso_pitch}"/>
+	<property name="torso_yaw" value="${def_torso_yaw+offset_torso_yaw}"/>
+
+	<!-- head mount positions | relative to head_cover_link -->
+	<property name="head_x" value="${def_head_x+offset_head_x}"/>
+	<property name="head_y" value="${def_head_y+offset_head_y}"/>
+	<property name="head_z" value="${def_head_z+offset_head_z}"/>
+	<property name="head_roll" value="${def_head_roll+offset_head_roll}"/>
+	<property name="head_pitch" value="${def_head_pitch+offset_head_pitch}"/>
+	<property name="head_yaw" value="${def_head_yaw+offset_head_yaw}"/>
+
+	<!-- arm mount positions | relative to base_link -->
+	<property name="arm_x" value="${def_arm_x+offset_arm_x}"/>
+	<property name="arm_y" value="${def_arm_y+offset_arm_y}"/>
+	<property name="arm_z" value="${def_arm_z+offset_arm_z}"/>
+	<property name="arm_roll" value="${def_arm_roll+offset_arm_roll}"/>
+	<property name="arm_pitch" value="${def_arm_pitch+offset_arm_pitch}"/>
+	<property name="arm_yaw" value="${def_arm_yaw+offset_arm_yaw}"/>
+
+	<!-- gripper mount positions | relative to arm_ee_link -->
+	<property name="gripper_x" value="${def_gripper_x+offset_gripper_x}"/>
+	<property name="gripper_y" value="${def_gripper_y+offset_gripper_y}"/>
+	<property name="gripper_z" value="${def_gripper_z+offset_gripper_z}"/>
+	<property name="gripper_roll" value="${def_gripper_roll+offset_gripper_roll}"/>
+	<property name="gripper_pitch" value="${def_gripper_pitch+offset_gripper_pitch}"/>
+	<property name="gripper_yaw" value="${def_gripper_yaw+offset_gripper_yaw}"/>
+
+	<!-- ***************************** -->
+	<!-- camera calibration properties -->
+	<!-- ***************************** -->
+	<!-- left | handeye calibration | relative to head_axis_link -->
+	<property name="cam_reference_x" value="${def_cam_reference_x+offset_cam_reference_x}"/>
+	<property name="cam_reference_y" value="${def_cam_reference_y+offset_cam_reference_y}"/>
+	<property name="cam_reference_z" value="${def_cam_reference_z+offset_cam_reference_z}"/>
+	<property name="cam_reference_roll" value="${def_cam_reference_roll+offset_cam_reference_roll}"/>
+	<property name="cam_reference_pitch" value="${def_cam_reference_pitch+offset_cam_reference_pitch}"/>
+	<property name="cam_reference_yaw" value="${def_cam_reference_yaw+offset_cam_reference_yaw}"/>
+	
+	<!-- left | handeye calibration | relative to cam_reference_link -->
+	<property name="cam_l_x" value="${def_cam_l_x+offset_cam_l_x}"/>
+	<property name="cam_l_y" value="${def_cam_l_y+offset_cam_l_y}"/>
+	<property name="cam_l_z" value="${def_cam_l_z+offset_cam_l_z}"/>
+	<property name="cam_l_roll" value="${def_cam_l_roll+offset_cam_l_roll}"/>
+	<property name="cam_l_pitch" value="${def_cam_l_pitch+offset_cam_l_pitch}"/>
+	<property name="cam_l_yaw" value="${def_cam_l_yaw+offset_cam_l_yaw}"/>
+
+	<!-- right | stereo baseline calibration | relative to cam_reference_link -->
+	<property name="cam_r_x" value="${def_cam_r_x+offset_cam_r_x}"/>
+	<property name="cam_r_y" value="${def_cam_r_y+offset_cam_r_y}"/>
+	<property name="cam_r_z" value="${def_cam_r_z+offset_cam_r_z}"/>
+	<property name="cam_r_roll" value="${def_cam_r_roll+offset_cam_r_roll}"/>
+	<property name="cam_r_pitch" value="${def_cam_r_pitch+offset_cam_r_pitch}"/>
+	<property name="cam_r_yaw" value="${def_cam_r_yaw+offset_cam_r_yaw}"/>
+
+	<!-- cam3d | handeye calibration | relative to cam_reference_link -->
+	<property name="cam3d_x" value="${def_cam3d_x+offset_cam3d_x}"/>
+	<property name="cam3d_y" value="${def_cam3d_y+offset_cam3d_y}"/>
+	<property name="cam3d_z" value="${def_cam3d_z+offset_cam3d_z}"/>
+	<property name="cam3d_roll" value="${def_cam3d_roll+offset_cam3d_roll}"/>
+	<property name="cam3d_pitch" value="${def_cam3d_pitch+offset_cam3d_pitch}"/>
+	<property name="cam3d_yaw" value="${def_cam3d_yaw+offset_cam3d_yaw}"/>
+</robot>

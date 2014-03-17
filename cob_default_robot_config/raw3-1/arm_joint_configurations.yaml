@@ -1,5 +1,4 @@
 joint_names: ['arm_shoulder_pan_joint', 'arm_shoulder_lift_joint', 'arm_elbow_joint','arm_wrist_1_joint', 'arm_wrist_2_joint', 'arm_wrist_3_joint']
-#joint_names: ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint','wrist_1_joint', 'wrist_2_joint', 'wrist_3_joint']
 
 # back side positions
 home: [[2.356, -3.1415, 1.5707, 0.00, 1.5707, 3.4906]]

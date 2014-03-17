@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- send ROBOT parameters to parameter server -->
+	<rosparam command="load" ns="/script_server/torso" file="$(find cob_default_robot_config)/cob4-1/torso_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/head" file="$(find cob_default_robot_config)/cob4-1/head_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/sensorring" file="$(find cob_default_robot_config)/cob4-1/sensorring_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/arm_left" file="$(find cob_default_robot_config)/cob4-1/arm_left_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/arm_right" file="$(find cob_default_robot_config)/cob4-1/arm_right_joint_configurations.yaml"/>
+	
+</launch>

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- args -->
+	<arg name="robot" value="cob3-5b"/>
+	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
+	<arg name="pc3" default="localhost"/>
+
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
+	<group>
+		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg pc1)" />
+		</include>
+
+		<!-- monitoring -->
+		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
+			<arg name="robot" value="cob3-5" />
+		</include>
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+		<!-- startup hardware -->
+		<!-- lower robot -->
+		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="front" />
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="rear" />
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/hokuyo.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="top" />
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/relayboard.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/io/voltage_filter.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/base/base.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- upper robot -->
+		<include file="$(find cob_bringup)/components/torso/torso_cob3.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/manipulator/lwa4d.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/gripper/sdh.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/head/head_cob3.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/teleop.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- start additional packages -->
+		<param name="/sound_controller/mode" value="cepstral" />
+		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	</group>
+
+	<group>
+		<machine name="pc2" address="$(arg pc2)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg pc2)" />
+		</include>
+
+		<!-- start camera sensors -->
+		<include file="$(find cob_bringup)/components/sensors/prosilica_left.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/prosilica_right.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/kinect.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+			<arg name="namespace" value="/cam3d" />
+			<arg name="rate" value="1.0" />
+			<arg name="start_manager" value="false"/>
+			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+		</include>
+		<include file="$(find cob_bringup)/components/sensors/tray_sensors.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
+
+	<group>
+		<machine name="pc3" address="$(arg pc3)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg pc3)" />
+		</include>
+
+		<include file="$(find cob_bringup)/components/tray/tray_cob3_plus.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/components/io/light.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
+
+	<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
+</launch>

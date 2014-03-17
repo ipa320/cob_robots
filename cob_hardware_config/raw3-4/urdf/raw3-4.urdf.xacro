@@ -9,7 +9,7 @@
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
-  <include filename="$(find cob_calibration_data)/raw3-4/calibration/calibration.urdf.xacro" />   
+  <include filename="$(find cob_hardware_config)/raw3-4/urdf/properties.urdf.xacro" />   
   
   <!-- raw base -->
   <include filename="$(find raw_description)/urdf/base_long/base.urdf.xacro" />
@@ -20,15 +20,9 @@
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
- 
-
-
   <xacro:raw_base name="base"/>
   <xacro:tower_asymetric name="tower" parent="base_link">
       <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
   </xacro:tower_asymetric>
-
-  
-
 
 </robot>

@@ -4,4 +4,4 @@ invert_output: true
 pubmarker: false
 sim_enabled: false
 startup_color: [0.0, 0.0, 0.0, 0.0] #rgba value
-startup_mode: Node #possible values: None, Static, Breath, BreathColor, Flash, FadeColor
+startup_mode: None #possible values: None, Static, Breath, BreathColor, Flash, FadeColor

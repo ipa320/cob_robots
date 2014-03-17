@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- args -->
+	<arg name="robot" value="cob4-1"/>
+	<arg name="pc1" default="localhost"/>
+
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
+
+		<!-- start robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+		<!-- startup hardware -->
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="front" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="right" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="left" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
+			<arg name="sim" value="true" />
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/base.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- start additional packages -->
+		<!--include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
+		<include file="$(find cob_bringup)/tools/teleop.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+</launch>

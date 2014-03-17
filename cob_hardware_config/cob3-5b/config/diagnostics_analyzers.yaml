@@ -1,0 +1,120 @@
+pub_rate: 1.0 # Optional
+base_path: '' # Optional, prepended to all diagnostic output
+analyzers:
+  computers:
+    type: AnalyzerGroup
+    path: Computers
+    analyzers:
+      pc1:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc1
+        contains: ['pc1 CPU Temperature',
+                   'pc1 CPU Usage',
+                   'pc1 HD Temperature',
+                   'pc1 HD Usage']
+
+      pc2:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc2
+        contains: ['pc2 CPU Temperature',
+                   'pc2 CPU Usage',
+                   'pc2 HD Temperature',
+                   'pc2 HD Usage']
+
+      pc3:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc3
+        contains: ['pc3 CPU Temperature',
+                   'pc3 CPU Usage',
+                   'pc3 HD Temperature',
+                   'pc3 HD Usage']
+
+  network:
+    type: AnalyzerGroup
+    path: Network
+    analyzers:
+      wifi:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: wifi
+        num_items: 1
+        expected: ['Wifi Status (ddwrt)']
+
+  io:
+    type: AnalyzerGroup
+    path: IO
+    analyzers:
+      sound:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sound
+        contains: 'sound'
+        timeout: 15
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
+
+  sensors:
+    type: AnalyzerGroup
+    path: Sensors
+    analyzers:
+      laser_top:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Top
+        contains: 'laser_top'
+      laser_rear:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Rear
+        contains: 'laser_rear'
+      laser_front:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Front
+        contains: 'laser_front'
+      stereo_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Stereo (Left)
+        contains: left
+        startswith: ['stereo/left/color_camera']
+      stereo_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Stereo (Right)
+        contains: right
+        startswith: ['stereo/right/color_camera']
+
+  motors:
+    type: AnalyzerGroup
+    path: Actuators
+    analyzers:
+      torso:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso
+        contains: 'torso_controller'
+      tray:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Tray
+        contains: 'tray_controller'
+      sdh:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: SDH
+        contains: 'sdh_controller'
+      head:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Head
+        contains: 'head_controller'
+      arm:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: LWA
+        contains: 'arm_controller'
+      base:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Base
+        contains: 'base_controller'
+        
+## remove diagnostics from gazebo in simulated case
+  simulation:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'joint'
+  simulation2:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'Controller'
