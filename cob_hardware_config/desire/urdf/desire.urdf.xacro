@@ -12,7 +12,7 @@
   <include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- desire calibration -->
-  <include filename="$(find cob_calibration_data)/desire/calibration/calibration.urdf.xacro" />
+  <include filename="$(find cob_hardware_config)/desire/urdf/properties.urdf.xacro" />
   
   <!-- desire base -->
   <include filename="$(find desire_description)/urdf/base_desire/base.urdf.xacro" />
@@ -42,13 +42,13 @@
 
   <xacro:desire_base name="base"/>
   
-  <xacro:cob_lbr name="arm_left" parent="base_link">
+  <xacro:lbr name="arm_left" parent="base_link">
     <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
-  </xacro:cob_lbr>
+  </xacro:lbr>
   
-  <xacro:cob_lbr name="arm_right" parent="base_link">
+  <xacro:lbr name="arm_right" parent="base_link">
     <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
-  </xacro:cob_lbr>
+  </xacro:lbr>
   
   <xacro:head_desire name="head" parent="base_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />

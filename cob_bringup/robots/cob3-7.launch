@@ -7,6 +7,7 @@
 	<include file="$(find cob_bringup)/robots/cob3-7.xml" >
 		<arg name="pc1" value="cob3-7-pc1"/>
 		<arg name="pc2" value="cob3-7-pc2"/>
+		<arg name="ur_ip" value="192.168.7.41"/>
 	</include>
 	
 	<!-- upload default configuration parameters -->

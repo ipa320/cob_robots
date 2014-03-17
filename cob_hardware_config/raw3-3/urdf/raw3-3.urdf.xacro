@@ -9,7 +9,7 @@
   <include filename="$(find cob_description)/urdf/common.xacro" />
   <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
-  <include filename="$(find cob_calibration_data)/raw3-3/calibration/calibration.urdf.xacro" />   
+  <include filename="$(find cob_hardware_config)/raw3-3/urdf/properties.urdf.xacro" />   
   <!-- raw base -->
   <include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
 
@@ -21,6 +21,8 @@
 
   <!-- frida adapter -->
   <include filename="$(find frida_description)/urdf/adapter.urdf.xacro" />  
+
+  <include filename="$(find frida_description)/urdf/camera_holder.urdf.xacro" />  
 
   <!-- prace gripper -->
   <include filename="$(find prace_gripper_description)/urdf/prace_gripper.urdf.xacro"/>
@@ -49,5 +51,9 @@
   <xacro:prace_gripper name="gripper_right" parent="arm_right_6_link">
       <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />  
   </xacro:prace_gripper>
+
+  <xacro:teachin_handle name="cam_holder" parent="arm_torso_link">
+      <origin xyz="0.0 0 0.49" rpy="0.99483 0 0" />
+  </xacro:teachin_handle>
 
 </robot>

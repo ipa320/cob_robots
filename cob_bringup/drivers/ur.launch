@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="ur_ip" default="localhost"/>
+
+ 	<!-- universal robot arm -->
+	<node name="ur_driver" ns="arm_controller" pkg="ur_driver" type="driver.py" args="$(arg ur_ip)" output="screen">
+		<remap from="/arm_controller/joint_states" to="/joint_states"/>
+		<param name="prefix" value="arm_"/>
+	</node>
+
+</launch>

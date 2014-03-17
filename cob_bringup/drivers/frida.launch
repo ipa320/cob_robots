@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot_ip" />
+	<include file="$(find frida_driver)/launch/motion_controller_interface.launch">
+		<arg name="robot_ip" value="$(arg robot_ip)" />
+	</include>
+	<include file="$(find frida_driver)/launch/robot_state_interface.launch">
+		<arg name="robot_ip" value="$(arg robot_ip)" />
+	</include>
+
+</launch>

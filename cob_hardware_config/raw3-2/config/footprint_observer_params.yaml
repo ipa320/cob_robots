@@ -5,4 +5,4 @@ footprint_source: /local_costmap_node/costmap
 robot_base_frame: /base_link
 # frames to check for footprint adjustment
 frames_to_check: /base_footprint 
-
+epsilon: 0.01

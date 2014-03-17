@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <launch>
 
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<!-- start rviz with configuration -->
-	<node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(arg pkg_hardware_config)/common/rviz_config.rviz" respawn="false" output="screen" />
+	<node pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(arg pkg_hardware_config)/$(arg robot)/$(arg robot).rviz" respawn="false" output="screen" />
 
 </launch>
 

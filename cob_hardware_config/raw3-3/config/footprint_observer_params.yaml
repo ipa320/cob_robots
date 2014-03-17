@@ -4,7 +4,7 @@ footprint_source: /local_costmap_node/costmap
 # 
 robot_base_frame: /base_link
 # wait until tf from robot_base_frame to farthest_frame is available
-farthest_frame: /arm_left_7_link 
+farthest_frame: /arm_left_6_link /arm_right_6_link
 # frames to check for footprint adjustment
 frames_to_check: /arm_left_1_link /arm_left_2_link /arm_left_3_link /arm_left_4_link /arm_left_5_link /arm_left_6_link /arm_left_7_link /arm_right_1_link /arm_right_2_link /arm_right_3_link /arm_right_4_link /arm_right_5_link /arm_right_6_link /arm_right_7_link
-
+epsilon: 0.01

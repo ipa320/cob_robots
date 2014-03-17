@@ -1,0 +1,52 @@
+gripper_left_controller:
+  type: robot_mechanism_controllers/JointTrajectoryActionController
+  joints:
+    - gripper_left_finger_left_joint
+    - gripper_left_finger_right_joint
+  gains:
+    gripper_left_finger_left_joint:
+      p: 1000.0
+      i: 10
+      d: 2.0
+    gripper_left_finger_right_joint:
+      p: 1000.0
+      i: 10
+      d: 2.0
+
+  gripper_joint_trajectory_action_node:
+    joints:
+    - gripper_left_finger_left_joint
+    - gripper_left_finger_right_joint
+    constraints:
+      goal_time: 0.6
+      gripper_left_finger_left_joint:
+        goal: 0.1
+      gripper_left_finger_right_joint:
+        goal: 0.1
+        
+gripper_right_controller:
+  type: robot_mechanism_controllers/JointTrajectoryActionController
+  joints:
+    - gripper_right_finger_left_joint
+    - gripper_right_finger_right_joint
+  gains:
+    gripper_right_finger_left_joint:
+      p: 1000.0
+      i: 10
+      d: 2.0
+    gripper_right_finger_right_joint:
+      p: 1000.0
+      i: 10
+      d: 2.0
+
+  gripper_joint_trajectory_action_node:
+    joints:
+    - gripper_right_finger_left_joint
+    - gripper_right_finger_right_joint
+    constraints:
+      goal_time: 0.6
+      gripper_right_finger_left_joint:
+        goal: 0.1
+      gripper_right_finger_right_joint:
+        goal: 0.1
+        

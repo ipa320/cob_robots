@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       name="cob4-1" >
+
+	<!-- common stuff -->
+	<include filename="$(find cob_description)/urdf/common.xacro" />
+	<include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+	<include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
+
+	<!-- calibration -->
+	<include filename="$(find cob_hardware_config)/cob4-1/urdf/properties.urdf.xacro" />
+
+	<!-- base -->
+	<include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
+
+	<!-- torso -->
+	<include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
+
+	<!-- arm -->
+	<include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
+
+	<!-- head -->
+	<include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
+	
+	<!-- sensorring -->
+	<include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
+
+	<!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
+	<include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
+
+	<!-- composition of the robot -->
+	<xacro:base name="base"/>
+
+	<xacro:torso name="torso" parent="base_link">
+		<origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
+	</xacro:torso>
+	
+	<xacro:head name="head" parent="torso_3_link">
+		<origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
+	</xacro:head>
+
+	<xacro:sensorring name="sensorring" parent="head_3_link">
+		<origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
+	</xacro:sensorring>
+	
+	<xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" 
+						arm_1_ref="${arm_right_1_ref}"
+						arm_2_ref="${arm_right_2_ref}" 
+						arm_3_ref="${arm_right_3_ref}" 
+						arm_4_ref="${arm_right_4_ref}" 
+						arm_5_ref="${arm_right_5_ref}" 
+						arm_6_ref="${arm_right_6_ref}" 
+						arm_7_ref="${arm_right_7_ref}">
+		<origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
+	</xacro:schunk_lwa4p_extended>
+	
+	<xacro:schunk_lwa4p_extended name="arm_left" parent="torso_3_link"
+						arm_1_ref="${arm_left_1_ref}"
+						arm_2_ref="${arm_left_2_ref}"
+						arm_3_ref="${arm_left_3_ref}"
+						arm_4_ref="${arm_left_4_ref}"
+						arm_5_ref="${arm_left_5_ref}"
+						arm_6_ref="${arm_left_6_ref}"
+						arm_7_ref="${arm_left_7_ref}">
+		<origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
+	</xacro:schunk_lwa4p_extended>
+
+</robot>

@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- hztest /ddwrt/accesspoint -->
-   <test test-name="hz_ddwrt_accesspoint" pkg="rostest" type="hztest" name="hztest_ddwrt">
-    <param name="topic" value="/ddwrt/accesspoint" />  
-    <param name="hz" value= "5" />
-    <param name="hzerror" value="4.99" />
-    <param name="test_duration" value="15.0" />  
-   </test>
-
+	<!-- upload testparameters -->  
+	<rosparam ns="cob_hardware_test" file="$(find cob_hardware_test)/tools/wifi_monitor.yaml" command="load"/>
+	<!-- perform test -->  	
+	<test test-name="cob_hardware_test" pkg="cob_hardware_test" type="hztests" name="cob_hardware_test" time-limit="60.0" />	
+  
 </launch>

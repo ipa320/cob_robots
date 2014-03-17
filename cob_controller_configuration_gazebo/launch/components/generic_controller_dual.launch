@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="component_name" />
+	<arg name="version"/>
+
+	<rosparam file="$(find cob_controller_configuration_gazebo)/controller/$(arg component_name)_controller_$(arg version).yaml" command="load"/>
+
+	<node name="$(arg component_name)_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="$(arg component_name)_left_controller $(arg component_name)_right_controller" />
+
+	<group ns="$(arg component_name)_right_controller">
+		<node name="$(arg component_name)_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
+	</group>
+
+	<group ns="$(arg component_name)_left_controller">
+		<node name="$(arg component_name)_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />
+	</group>
+</launch>
