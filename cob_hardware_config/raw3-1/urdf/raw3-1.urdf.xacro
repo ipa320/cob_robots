@@ -1,37 +1,34 @@
 <?xml version="1.0"?>
-<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
-       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
-       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="raw3-1" >
   
   <!-- common stuff -->
-  <include filename="$(find cob_description)/urdf/common.xacro" />
-  <include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
-  <include filename="$(find cob_hardware_config)/raw3-1/urdf/properties.urdf.xacro" />   
+  <xacro:include filename="$(find cob_hardware_config)/raw3-1/urdf/properties.urdf.xacro" />   
   
   <!-- raw base -->
-  <include filename="$(find raw_description)/urdf/base_long/base.urdf.xacro" />
+  <xacro:include filename="$(find raw_description)/urdf/base_long/base.urdf.xacro" />
 
   <!-- raw tower -->
-  <include filename="$(find raw_description)/urdf/tower_asymetric/tower.urdf.xacro" />  
+  <xacro:include filename="$(find raw_description)/urdf/tower_asymetric/tower.urdf.xacro" />  
 
   <!-- torso -->
-  <include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
+  <xacro:include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
   
   <!-- head -->
-  <include filename="$(find raw_description)/urdf/head/head.urdf.xacro" />
-  <include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
+  <xacro:include filename="$(find raw_description)/urdf/head/head.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
   
   <!-- ur_arm -->
-  <include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
   
   <!-- raw boxgripper -->
-  <include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
-  
+  <xacro:include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
+
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
-  <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
   <xacro:raw_base name="base"/>  
 

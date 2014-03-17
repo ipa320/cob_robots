@@ -1,0 +1,19 @@
+<package>
+  <name>cob_default_robot_config</name>
+  <version>0.5.0</version>
+  <description>Default configuration of the different robots supported by the Care-O-bot stacks. Configuration is e.g. preconfigured joint positions.</description>
+  <!-- <maintainer>Florian Weisshardt</maintainer> -->
+
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_default_robot_config</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+
+ <buildtool_depend>catkin</buildtool_depend>
+  <export>
+
+  </export>
+</package>

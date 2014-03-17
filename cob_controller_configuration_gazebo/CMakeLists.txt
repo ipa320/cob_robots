@@ -1,21 +1,6 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
-
-# Set the build type.  Options are:
-#  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
-#  Debug          : w/ debug symbols, w/o optimization
-#  Release        : w/o debug symbols, w/ optimization
-#  RelWithDebInfo : w/ debug symbols, w/ optimization
-#  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
-#set(ROS_BUILD_TYPE RelWithDebInfo)
-
-rosbuild_init()
-
-#set the default path for built executables to the "bin" directory
-#set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-#set the default path for built libraries to the "lib" directory
-#set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
-
+# http://ros.org/doc/groovy/api/catkin/html/user_guide/supposed.html
+cmake_minimum_required(VERSION 2.8.3)
+project(cob_controller_configuration_gazebo)
 
 # rostest for robots
 SET(robotlist
@@ -38,6 +23,24 @@ desire
 # loop through list of robots for testing
 FOREACH(robot ${robotlist})
 	MESSAGE("testing for robot: ${robot}")
-	rosbuild_add_roslaunch_check(launch/robots/default_controllers_${robot}.launch robot:=${robot})
-	rosbuild_add_roslaunch_check(launch/robots/default_controllers_${robot}.launch ROBOT=${robot})
+	#rosbuild_add_roslaunch_check(launch/robots/default_controllers_${robot}.launch robot:=${robot})
+	#rosbuild_add_roslaunch_check(launch/robots/default_controllers_${robot}.launch ROBOT=${robot})
 ENDFOREACH(robot)
+
+catkin_package(
+    DEPENDS rostopic joint_trajectory_action cob_bringup cob_sick_s300 cob_relayboard cob_sound image_proc schunk_simulated_tactile_sensors cob_phidgets
+ )
+
+
+## Mark cpp header files for installation
+install(DIRECTORY ros/launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/launch
+)
+
+install(DIRECTORY ros/controller/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/controller
+)
+
+install(PROGRAMS ros/src/fake_diagnostics.py ros/src/gazebo_services.py
+  DESTINATION ${CATKIN_PACKAGE_PYTHON_DESTINATION}
+)

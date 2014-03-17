@@ -3,8 +3,8 @@
 
 	<arg name="robot" default="desire"/>
 
-	<!-- controller_manager -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_manager.launch" />
+	<!-- controller_utils -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_utils.launch" />
 
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_raw.launch">
@@ -32,6 +32,9 @@
 	<!-- start additional components -->
 	<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/voltage_filter.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 	<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >

@@ -1,0 +1,39 @@
+<package>
+  <name>cob_controller_configuration_gazebo</name>
+  <version>0.5.0</version>
+  <description>This packages provides the controller configuration for simulating Care-O-bot in the gazebo simulator.</description>
+  
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_controller_configuration_gazebo</url>
+  <!-- <url type="bugtracker"></url> -->
+
+  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+
+ <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>rostopic</run_depend>
+  <run_depend>joint_trajectory_action</run_depend>
+  <run_depend>robot_mechanism_controllers</run_depend>
+  <run_depend>velocity_controllers</run_depend>
+  <run_depend>cob_bringup</run_depend>
+  <run_depend>cob_sick_s300</run_depend>
+  <run_depend>cob_relayboard</run_depend>
+  <run_depend>cob_sound</run_depend>
+  <run_depend>image_proc</run_depend>
+  <run_depend>schunk_simulated_tactile_sensors</run_depend>
+  <run_depend>cob_phidgets</run_depend>
+  <!-- <test_depend>rostopic</test_depend> -->
+  <!-- <test_depend>joint_trajectory_action</test_depend> -->
+  <!-- <test_depend>cob_bringup</test_depend> -->
+  <!-- <test_depend>cob_sick_s300</test_depend> -->
+  <!-- <test_depend>cob_relayboard</test_depend> -->
+  <!-- <test_depend>cob_sound</test_depend> -->
+  <!-- <test_depend>image_proc</test_depend> -->
+  <!-- <test_depend>schunk_simulated_tactile_sensors</test_depend> -->
+  <!-- <test_depend>cob_phidgets</test_depend> -->
+
+  <export>
+
+  </export>
+</package>
