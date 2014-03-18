@@ -1,5 +1,7 @@
 joint_names: ["torso_1_joint","torso_2_joint","torso_3_joint"]
 
+home: [[0.0, 0.0, 0.0]]
+
 front: [[0.0, 0.0, 0.0]]
 front_up: [[-1.5708, 3.14, -1.5708]]
 front_down: [[1.5708, -3.14, 1.5708]]
