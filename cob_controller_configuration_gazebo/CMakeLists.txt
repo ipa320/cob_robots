@@ -23,8 +23,7 @@ desire
 # loop through list of robots for testing
 FOREACH(robot ${robotlist})
 	MESSAGE("testing for robot: ${robot}")
-	#rosbuild_add_roslaunch_check(launch/robots/default_controllers_${robot}.launch robot:=${robot})
-	#rosbuild_add_roslaunch_check(launch/robots/default_controllers_${robot}.launch ROBOT=${robot})
+	#rosbuild_add_roslaunch_check(ros/launch/default_controllers_${robot}.launch robot:=${robot})
 ENDFOREACH(robot)
 
 catkin_package(
@@ -33,14 +32,14 @@ catkin_package(
 
 
 ## Mark cpp header files for installation
-install(DIRECTORY ros/launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/launch
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
 
-install(DIRECTORY ros/controller/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/controller
+install(DIRECTORY controller/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/controller
 )
 
-install(PROGRAMS ros/src/fake_diagnostics.py ros/src/gazebo_services.py
+install(PROGRAMS src/fake_diagnostics.py src/gazebo_services.py
   DESTINATION ${CATKIN_PACKAGE_PYTHON_DESTINATION}
 )
