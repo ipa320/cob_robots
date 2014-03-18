@@ -70,7 +70,7 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
-			<arg name="component_name" value="lwa" />
+			<arg name="component_name" value="arm" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/schunk_sdh.launch" >
