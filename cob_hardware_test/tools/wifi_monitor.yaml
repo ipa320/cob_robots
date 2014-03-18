@@ -1,7 +1,0 @@
-hz_ddwrt_accesspoint: {  
-  hz: 5.0,
-  hzerror: 4.99,
-  topic: /ddwrt/accesspoint,
-  test_duration: 5.0,
-  wait_time: 30.0
-}
