@@ -94,7 +94,7 @@
     </link>
     <!-- END: IMU brick	mount -->
     
-       <!-- rfid_front mount on raw3-1 -->
+   <!-- rfid_front mount on raw3-1 -->
    <joint name="rfid_front_joint" type="fixed" >
       <origin xyz="0.55128 0.0 0.09" rpy="0 0 0" />
       <parent link="base_link" />
@@ -117,8 +117,9 @@
       </material>
        </visual>
     </link>
+    <!-- END: rfid front mount -->
     
-        <!-- rfid_rear mount on raw3-1 -->
+   <!-- rfid_rear mount on raw3-1 -->
    <joint name="rfid_rear_joint" type="fixed" >
       <origin xyz="-0.55128 0.0 0.09" rpy="0 0 ${M_PI}" />
       <parent link="base_link" />
@@ -141,9 +142,9 @@
       </material>
        </visual>
     </link>
-    <!-- END: rfid rear	mount -->
+    <!-- END: rfid rear mount -->
     
-            <!-- rfid_right mount on raw3-1 -->
+   <!-- rfid_right mount on raw3-1 -->
    <joint name="rfid_right_joint" type="fixed" >
       <origin xyz="0.0 -0.30850 0.09" rpy="0 0 ${-0.5*M_PI}" />
       <parent link="base_link" />
@@ -166,6 +167,6 @@
       </material>
        </visual>
     </link>
-    <!-- END: rfid right	mount -->
+    <!-- END: rfid right mount -->
 
   </robot>
