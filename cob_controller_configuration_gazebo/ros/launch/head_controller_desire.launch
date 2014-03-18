@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<rosparam file="$(find cob_controller_configuration_gazebo)/ros/controller/head_controller_desire.yaml" command="load" />
-
-	<node name="head_controller_spawner" pkg="controller_manager" type="spawner" args="head_controller"/>
-
-</launch>

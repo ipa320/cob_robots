@@ -23,7 +23,8 @@ desire
 # loop through list of robots for testing
 FOREACH(robot ${robotlist})
 	MESSAGE("testing for robot: ${robot}")
-	#rosbuild_add_roslaunch_check(ros/launch/default_controllers_${robot}.launch robot:=${robot})
+	#rosbuild_add_roslaunch_check(launch/robots/default_controllers_${robot}.launch robot:=${robot})
+	#rosbuild_add_roslaunch_check(launch/robots/default_controllers_${robot}.launch ROBOT=${robot})
 ENDFOREACH(robot)
 
 catkin_package(

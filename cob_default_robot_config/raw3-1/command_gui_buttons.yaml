@@ -15,10 +15,7 @@ group2:
   component_name: arm
   buttons: [[stop,trigger,stop],
     [home,move,home],
-    [calibration,move,calibration],
-    [upright,move,upright],
-    [new_home,move,new_home],
-    [show,move,show]]
+    [upright,move,upright]]
 group3:
   group_name: arm traj
   component_name: arm

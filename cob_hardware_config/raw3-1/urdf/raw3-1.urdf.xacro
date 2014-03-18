@@ -22,7 +22,7 @@
   <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
   
   <!-- ur_arm -->
-  <xacro:include filename="$(find raw_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
   
   <!-- raw boxgripper -->
   <xacro:include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />
@@ -52,9 +52,9 @@
 
 
 
-  <xacro:cob_ur10 name="arm" parent="base_link">
+  <xacro:ur10 name="arm" parent="base_link">
       <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-  </xacro:cob_ur10>
+  </xacro:ur10>
   <!-- mount the arm to the robot 
   <joint name="arm_base_joint" type="fixed" >
       <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />

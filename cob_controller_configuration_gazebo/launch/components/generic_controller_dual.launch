@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="component_name" />
+	<arg name="version"/>
+
+	<rosparam file="$(find cob_controller_configuration_gazebo)/controller/$(arg component_name)_controller_$(arg version).yaml" command="load"/>
+
+	<node name="$(arg component_name)_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg component_name)_left_controller $(arg component_name)_right_controller" />
+
+</launch>
