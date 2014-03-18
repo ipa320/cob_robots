@@ -6,7 +6,7 @@
 	
     <rosparam file="$(find cob_controller_configuration_gazebo)/controller/$(arg component_name)_controller_$(arg version).yaml" command="load" />
 
-	<node name="$(arg component_name)_controller_spawner" pkg="cob_controller_configuration_gazebo" type="spawner" args="$(arg component_name)_controller" />
+	<node name="$(arg component_name)_controller_spawner" pkg="pr2_controller_manager" type="spawner" args="$(arg component_name)_controller" />
 
 	<group ns="$(arg component_name)_controller">
 		<node name="$(arg component_name)_joint_trajectory_action_node" pkg="joint_trajectory_action" type="joint_trajectory_action" />

@@ -1,16 +1,22 @@
 sdh_right_controller:
-  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
   joints:
     - sdh_right_knuckle_joint
+    - sdh_right_thumb_2_joint
+    - sdh_right_thumb_3_joint
     - sdh_right_finger_12_joint
     - sdh_right_finger_13_joint
     - sdh_right_finger_22_joint
     - sdh_right_finger_23_joint
-    - sdh_right_thumb_2_joint
-    - sdh_right_thumb_3_joint
   gains:
     sdh_right_knuckle_joint:
       p: 80.0
+      d: 1.0
+    sdh_right_thumb_2_joint:
+      p: 60.0
+      d: 1.0
+    sdh_right_thumb_3_joint:
+      p: 40.0
       d: 1.0
     sdh_right_finger_12_joint: 
       p: 60.0
@@ -24,25 +30,23 @@ sdh_right_controller:
     sdh_right_finger_23_joint:
       p: 40.0
       d: 1.0
-    sdh_right_thumb_2_joint:
-      p: 60.0
-      d: 1.0
-    sdh_right_thumb_3_joint:
-      p: 40.0
-      d: 1.0
 
   sdh_joint_trajectory_action_node:
     joints:
       - sdh_right_knuckle_joint
+      - sdh_right_thumb_2_joint
+      - sdh_right_thumb_3_joint
       - sdh_right_finger_12_joint
       - sdh_right_finger_13_joint
       - sdh_right_finger_22_joint
       - sdh_right_finger_23_joint
-      - sdh_right_thumb_2_joint
-      - sdh_right_thumb_3_joint
     constraints:
       goal_time: 0.6
       sdh_right_knuckle_joint:
+        goal: 0.2
+      sdh_right_thumb_2_joint:
+        goal: 0.2
+      sdh_right_thumb_3_joint:
         goal: 0.2
       sdh_right_finger_12_joint:
         goal: 0.2
@@ -52,24 +56,25 @@ sdh_right_controller:
         goal: 0.2
       sdh_right_finger_23_joint:
         goal: 0.2
-      sdh_right_thumb_2_joint:
-        goal: 0.2
-      sdh_right_thumb_3_joint:
-        goal: 0.2
-
 sdh_left_controller:
-  type: robot_mechanism_controllers/JointSplineTrajectoryController
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
   joints:
     - sdh_left_knuckle_joint
+    - sdh_left_thumb_2_joint
+    - sdh_left_thumb_3_joint
     - sdh_left_finger_12_joint
     - sdh_left_finger_13_joint
     - sdh_left_finger_22_joint
     - sdh_left_finger_23_joint
-    - sdh_left_thumb_2_joint
-    - sdh_left_thumb_3_joint
   gains:
     sdh_left_knuckle_joint:
       p: 80.0
+      d: 1.0
+    sdh_left_thumb_2_joint:
+      p: 60.0
+      d: 1.0
+    sdh_left_thumb_3_joint:
+      p: 40.0
       d: 1.0
     sdh_left_finger_12_joint: 
       p: 60.0
@@ -83,25 +88,23 @@ sdh_left_controller:
     sdh_left_finger_23_joint:
       p: 40.0
       d: 1.0
-    sdh_left_thumb_2_joint:
-      p: 60.0
-      d: 1.0
-    sdh_left_thumb_3_joint:
-      p: 40.0
-      d: 1.0
 
   sdh_joint_trajectory_action_node:
     joints:
       - sdh_left_knuckle_joint
+      - sdh_left_thumb_2_joint
+      - sdh_left_thumb_3_joint
       - sdh_left_finger_12_joint
       - sdh_left_finger_13_joint
       - sdh_left_finger_22_joint
       - sdh_left_finger_23_joint
-      - sdh_left_thumb_2_joint
-      - sdh_left_thumb_3_joint
     constraints:
       goal_time: 0.6
       sdh_left_knuckle_joint:
+        goal: 0.2
+      sdh_left_thumb_2_joint:
+        goal: 0.2
+      sdh_left_thumb_3_joint:
         goal: 0.2
       sdh_left_finger_12_joint:
         goal: 0.2
@@ -111,11 +114,3 @@ sdh_left_controller:
         goal: 0.2
       sdh_left_finger_23_joint:
         goal: 0.2
-      sdh_left_thumb_2_joint:
-        goal: 0.2
-      sdh_left_thumb_3_joint:
-        goal: 0.2
-
-
-
-

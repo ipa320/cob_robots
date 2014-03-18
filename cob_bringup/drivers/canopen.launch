@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="component_name"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<!-- parameters for CANopen node -->
+	<rosparam command="load" ns="$(arg component_name)_canopen" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_canopen.yaml" />
+
+	<!-- parameter description of the CAN modules and for the corresponding trajectory controller -->
+	<rosparam command="load" ns="$(arg component_name)_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name).yaml" />
+
+	<!-- This is the CANopen ROS wrapper node -->
+	<node ns="$(arg component_name)_canopen" name="$(arg component_name)_canopen_ros" pkg="ipa_canopen_ros" type="canopen_ros" cwd="node" respawn="false" output="screen" />
+
+	<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
+	<node ns="$(arg component_name)_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller" cwd="node" respawn="false" output="screen" />
+
+</launch>

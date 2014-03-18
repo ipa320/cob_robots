@@ -32,15 +32,15 @@
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
-		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="front" />
 		</include>
-		<include file="$(find cob_bringup)/components/sensors/sick_s300.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="rear" />
 		</include>
-		<include file="$(find cob_bringup)/components/base/base.launch" >
+		<include file="$(find cob_bringup)/drivers/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -68,10 +68,10 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
-		<include file="$(find cob_bringup)/components/io/voltage_controller.launch" >
+		<include file="$(find cob_bringup)/drivers/voltage_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/io/voltage_filter.launch" >
+		<include file="$(find cob_bringup)/drivers/voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 

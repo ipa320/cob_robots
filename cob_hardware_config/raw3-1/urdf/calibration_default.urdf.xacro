@@ -38,9 +38,9 @@
 	<property name="def_arm_x" value="0.324"/>
 	<property name="def_arm_y" value="-0.191"/>
 	<property name="def_arm_z" value="0.565"/>
-	<property name="def_arm_roll" value="0"/>
-	<property name="def_arm_pitch" value="0"/>
-	<property name="def_arm_yaw" value="3.141"/>
+	<property name="def_arm_roll" value="0.0"/>
+	<property name="def_arm_pitch" value="0.0"/>
+	<property name="def_arm_yaw" value="-2.3562"/>
 
 	<!-- gripper mount positions | relative to arm_ee_link -->
 	<property name="def_gripper_x" value="0.0"/>
