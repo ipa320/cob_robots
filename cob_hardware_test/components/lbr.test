@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<node pkg="cob_hardware_test" type="dialog.py" name="dialog_server"/>
-	<include file="$(find cob_default_robot_config)/upload_param.launch" />    
-	<include file="$(find cob_bringup)/components/lbr_solo.launch" />
-	<include file="$(find cob_hardware_test)/components/arm.test.xml" />
-
-</launch>

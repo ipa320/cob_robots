@@ -1,0 +1,5 @@
+joint_names: ['ur_connector_joint']
+
+# back side positions
+front: [[4.0]]
+back: [[1.1]]

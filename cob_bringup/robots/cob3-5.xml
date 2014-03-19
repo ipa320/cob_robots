@@ -13,7 +13,9 @@
 	</include>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/cob3-5/upload_param_cob3-5.launch" />
+	<include file="$(find cob_default_robot_config)/upload_param.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
 
 	<group>
 		<machine name="pc1" address="$(arg pc1)" env-loader="/u/robot/git/care-o-bot/env.sh"  default="true"/>
@@ -40,39 +42,44 @@
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
-		<include file="$(find cob_bringup)/components/laser_front.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="front" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="rear" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/hokuyo.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="top" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_rear.launch" >
+		<include file="$(find cob_bringup)/drivers/voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_top.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/voltage_filter.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/base.launch" >
+		<include file="$(find cob_bringup)/drivers/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/components/torso.launch" >
+		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
+			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/lwa.launch" >
+		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
+			<arg name="component_name" value="arm" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/sdh.launch" >
+		<include file="$(find cob_bringup)/drivers/schunk_sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/dsa.launch" >
+		<include file="$(find cob_bringup)/drivers/dsa.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/head.launch" >
+		<include file="$(find cob_bringup)/drivers/head_cob3.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -88,7 +95,7 @@
 		</include>
 
 		<!-- start additional packages -->
-		<!--param name="/sound_controller/mode" value="cepstral" /-->
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 	</group>
 
@@ -102,13 +109,15 @@
 		</include>
 
 		<!-- start camera sensors -->
-		<include file="$(find cob_bringup)/components/prosilica_left.launch" >
+		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="left"/>
 		</include>
-		<include file="$(find cob_bringup)/components/prosilica_right.launch" >
+		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="right"/>
 		</include>
-		<include file="$(find cob_bringup)/components/kinect.launch" >
+		<include file="$(find cob_bringup)/drivers/openni.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
@@ -117,7 +126,7 @@
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
-		<include file="$(find cob_bringup)/components/tray_sensors.launch" >
+		<include file="$(find cob_bringup)/drivers/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
@@ -132,11 +141,12 @@
 		</include>
 
 
-		<include file="$(find cob_bringup)/components/tray_powerball.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<!-- start additional packages -->
-		<include file="$(find cob_bringup)/components/light.launch" >
+		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>

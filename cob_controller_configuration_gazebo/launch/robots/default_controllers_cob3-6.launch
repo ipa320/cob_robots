@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="cob3-6"/>
+
+	<!-- controller_manager -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_manager.launch" />
+
+	<!-- Base -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob3.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+
+	<!-- Head -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="head"/>
+		<arg name="version" value="cob3"/>
+	</include>
+
+	<!-- Arm -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="lwa"/>
+	</include>
+
+	<!-- SDH -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="sdh"/>
+		<arg name="version" value="single"/>
+	</include>
+
+	<!-- Torso -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="torso"/>
+		<arg name="version" value="cob3_v2"/>
+	</include>
+
+	<!-- Tray -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="tray"/>
+		<arg name="version" value="cob3_3DOF"/>
+	</include>
+	
+	<!-- Tray sensors -->
+	<node name="tray_sensors" pkg="cob_phidgets" type="simulated_range_sensors.py" output="screen">
+		<rosparam file="$(find cob_controller_configuration_gazebo)/controller/tray_sensors.yaml" command="load" />
+	</node>
+
+	<!-- start additional components -->
+	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	<include file="$(find cob_bringup)/drivers/light.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/voltage_filter.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	<node name="cam3d_relay" pkg="topic_tools" type="relay" args="/cam3d/rgb/image_raw /cam3d/rgb/image_color" respawn="false" output="screen"/>
+	<node name="cam3d_relay_depth_image" pkg="topic_tools" type="relay" args="/cam3d/depth/image_raw /cam3d/depth/image" respawn="false" output="screen"/>
+	<node name="cam3d_relay_depth_points" pkg="topic_tools" type="relay" args="/cam3d/depth_registered/points /cam3d/depth/points" respawn="false" output="screen"/>
+	<node name="cam3d_relay_depth_camera_info" pkg="topic_tools" type="relay" args="/cam3d/depth_registered/camera_info /cam3d/depth/camera_info" respawn="false" output="screen"/>
+	<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+		<arg name="namespace" value="/cam3d" />
+		<arg name="rate" value="1.0" />
+		<arg name="start_manager" value="true"/>
+		<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+	</include>
+
+	<!-- fake components for simulation -->
+	<include file="$(find cob_bringup)/drivers/relayboard.launch">
+		<arg name="sim" value="true"/>
+	</include>
+	
+	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />
+	
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="laser_front"/>
+		<param name="topic_name" value="/scan_front"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="laser_rear"/>
+		<param name="topic_name" value="/scan_rear"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="laser_top"/>
+		<param name="topic_name" value="/scan_top"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="/stereo/left/color_camera"/>
+		<param name="topic_name" value="/stereo/left/image_raw"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="/stereo/right/color_camera"/>
+		<param name="topic_name" value="/stereo/right/image_raw"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="joy"/>
+		<param name="topic_name" value="/joy_usage"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="pc1 CPU Usage"/>
+		<param name="topic_name" value="/pc1_usage"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="pc2 CPU Usage"/>
+		<param name="topic_name" value="/pc2_usage"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="Wifi Status (ddwrt)"/>
+		<param name="topic_name" value="/wifi_status"/>
+	</node>
+
+</launch>

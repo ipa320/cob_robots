@@ -17,6 +17,7 @@
   <depend stack="cob_substitute" /> <!-- cob_lbr -->
   <depend stack="diagnostics" /> <!-- diagnostic_aggregator -->
   <depend stack="image_pipeline" /> <!-- image_proc -->
+  <depend stack="ipa_canopen" />
   <depend stack="joystick_drivers" /> <!-- joy -->
   <depend stack="laser_drivers" /> <!-- hokuyo_node -->
   <depend stack="navigation" /> <!-- costmap_2d -->

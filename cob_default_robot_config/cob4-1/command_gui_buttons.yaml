@@ -1,0 +1,74 @@
+#group:
+#  group_name: <group_name>
+#  component_name: <component_name>
+#  buttons: [[button_name1,function_name1,parameter_name2,
+#    [button_name2,function_name2,parameter_name2]]
+
+group1:
+  group_name: base
+  component_name: base
+  buttons: [[stop,stop,omni],
+    [init,trigger,init],
+    [recover,trigger,recover]]
+group2:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home],
+    [front,move,front],
+    [front_up,move,front_up],
+    [front_down,move,front_down],
+    [back,move,back],
+    [back_up,move,back_up],
+    [back_down,move,back_down],
+    [left,move,left],
+    [left_up,move,left_up],
+    [left_down,move,left_down],
+    [right,move,right],
+    [right_up,move,right_up],
+    [right_down,move,right_down],
+    [nod,move,nod],
+    [shake,move,shake]]
+group3:
+  group_name: head
+  component_name: head
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home],
+    [front,move,front],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right],
+    [shake,move,shake],
+    [nod,move,nod]]
+group4:
+  group_name: sensorring
+  component_name: sensorring
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [front,move,front],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right]]
+group5:
+  group_name: arm_left
+  component_name: arm_left
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [pregrasp,move,pregrasp]]
+group6:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [pregrasp,move,pregrasp]]

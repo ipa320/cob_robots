@@ -36,8 +36,10 @@ desire
 )
 
 SET(envlist
+empty
 ipa-kitchen
 ipa-apartment
+ipa-factory
 )
 
 # loop through list of robots for testing

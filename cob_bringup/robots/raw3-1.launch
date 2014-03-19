@@ -8,6 +8,7 @@
 		<arg name="pc1" value="raw3-1-pc1"/>
 		<arg name="pc2" value="raw3-1-pc2"/>
 		<arg name="pc3" value="raw3-1-pc3"/>
+		<arg name="ur_ip" value="192.168.41.40"/>
 	</include>
 	
 	<!-- upload default configuration parameters -->

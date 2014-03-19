@@ -3,7 +3,7 @@
        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-       name="cob3_4" >
+       name="cob3-4" >
   
   <!-- common stuff -->
   <include filename="$(find cob_description)/urdf/common.xacro" />
@@ -11,19 +11,20 @@
   <include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- calibration -->
-  <include filename="$(find cob_calibration_data)/cob3-4/calibration/calibration.urdf.xacro" />
+  <include filename="$(find cob_hardware_config)/cob3-4/urdf/properties.urdf.xacro" />
   
   <!-- base -->
-  <include filename="$(find cob_description)/urdf/base/base.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/cob3_base/base.urdf.xacro" />
 
   <!-- tray -->
-  <include filename="$(find cob_description)/urdf/tray/tray.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/cob3_tray/tray.urdf.xacro" />
  
   <!-- torso -->
-  <include filename="$(find cob_description)/urdf/torso_v1/torso.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/cob3_torso/torso_v2.urdf.xacro" />
 
   <!-- head -->
-  <include filename="$(find cob_description)/urdf/head_v3/head.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/cob3_head/head_v3.urdf.xacro" />
+  <include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- arm -->
   <include filename="$(find cob_description)/urdf/lbr/lbr.urdf.xacro" />
@@ -35,23 +36,28 @@
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
   
   <!-- composition of the robot -->
-  <xacro:cob_base name="base"/>
+  <xacro:base name="base"/>
 
-  <xacro:cob_tray name="tray" parent="base_link">
+  <xacro:tray name="tray" parent="base_link">
     <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
-  </xacro:cob_tray>
+  </xacro:tray>
 
-  <xacro:cob_torso_v1 name="torso" parent="base_link">
+  <xacro:torso name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
-  </xacro:cob_torso_v1>
+  </xacro:torso>
   
-  <xacro:cob_lbr name="arm" parent="base_link">
+  <xacro:lbr name="arm" parent="base_link">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-  </xacro:cob_lbr>
+  </xacro:lbr>
   
-  <xacro:cob_head_v3 name="head" parent="torso_upper_neck_tilt_link">
+  <xacro:head name="head" parent="torso_upper_neck_tilt_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-  </xacro:cob_head_v3>
+  </xacro:head>
+  
+  <xacro:lookat name="lookat" parent="torso_upper_neck_tilt_link" lower="-5.0" upper="5.0">
+    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
+    <axis xyz="-1 0 0"/>
+  </xacro:lookat>
   
   <xacro:schunk_sdh name="sdh" parent="arm_7_link">
     <origin xyz="${sdh_x} ${sdh_y} ${sdh_z}" rpy="${sdh_roll} ${sdh_pitch} ${sdh_yaw}" />

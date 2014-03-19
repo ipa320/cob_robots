@@ -39,42 +39,47 @@
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
-		<include file="$(find cob_bringup)/components/laser_front.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="front" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="rear" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/hokuyo.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="top" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_rear.launch" >
+		<include file="$(find cob_bringup)/drivers/voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/laser_top.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/relayboard.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/voltage_filter.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/base.launch" >
+		<include file="$(find cob_bringup)/drivers/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/components/torso.launch" >
+		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
+			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/tray.launch" >
+		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain.launch" >
+			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/lbr.launch" >
+		<include file="$(find cob_bringup)/drivers/lbr.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/sdh.launch" >
+		<include file="$(find cob_bringup)/drivers/schunk_sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/dsa.launch" >
+		<include file="$(find cob_bringup)/drivers/dsa.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/head.launch" >
+		<include file="$(find cob_bringup)/drivers/head_cob3.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -100,17 +105,20 @@
 		</include>
 
 		<!-- start camera sensors -->
-		<include file="$(find cob_bringup)/components/prosilica_left.launch" >
+		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="left"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="right"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/openni.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/prosilica_right.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/components/kinect.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
+
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
-		<include file="$(find cob_bringup)/components/tray_sensors.launch" >
+		<include file="$(find cob_bringup)/drivers/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>

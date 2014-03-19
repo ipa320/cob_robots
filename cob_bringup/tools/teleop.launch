@@ -4,8 +4,9 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-	<include file="$(find cob_bringup)/components/joy.launch">
+	<include file="$(find cob_bringup)/drivers/joy.launch">
 		<arg name="robot" value="$(arg robot)" />
+		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
 	</include>
 
 	<node pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" ns="teleop" output="screen">

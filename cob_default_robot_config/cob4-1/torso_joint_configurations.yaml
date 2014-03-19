@@ -1,0 +1,21 @@
+joint_names: ["torso_1_joint","torso_2_joint","torso_3_joint"]
+
+home: [[0.0, 0.0, 0.0]]
+
+front: [[0.0, 0.0, 0.0]]
+front_up: [[-1.5708, 3.14, -1.5708]]
+front_down: [[1.5708, -3.14, 1.5708]]
+
+back: [[3.14, 0.0, 0.0]]
+back_up: [[1.5708, 3.14, -1.5708]]
+back_down: [[4.7, -3.14, 1.57]]
+
+left: [[1.5708, 0.0, 0.0]]
+left_up: [[0.0, 3.14, -1.5708]]
+left_down: [[3.14, -3.14, 1.5708]]
+right: [[-1.5708, 0.0, 0.0]]
+right_up: [[-3.14, 3.14, -1.5708]]
+right_down: [[0.0, -3.14, 1.5708]]
+
+nod: [front_down,front]
+shake: [left, right, left, home]

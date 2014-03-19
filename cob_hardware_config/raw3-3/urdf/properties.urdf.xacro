@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot>
+	<include filename="$(find cob_hardware_config)/raw3-3/urdf/calibration_default.urdf.xacro" />
+	<include filename="$(find cob_calibration_data)/raw3-3/calibration/calibration_offset.urdf.xacro" />>
+
+	<!-- *********************** -->
+	<!-- upper robot calibration -->
+	<!-- *********************** -->
+	<!-- tower mount positions | relative to base_link -->
+	<property name="tower_x" value="${def_tower_x+offset_tower_x}"/>
+	<property name="tower_y" value="${def_tower_y+offset_tower_y}"/>
+	<property name="tower_z" value="${def_tower_z+offset_tower_z}"/>
+	<property name="tower_roll" value="${def_tower_roll+offset_tower_roll}"/>
+	<property name="tower_pitch" value="${def_tower_pitch+offset_tower_pitch}"/>
+	<property name="tower_yaw" value="${def_tower_yaw+offset_tower_yaw}"/>
+
+	<!-- arm mount positions | relative to base_link -->
+	<property name="arm_x" value="${def_arm_x+offset_arm_x}"/>
+	<property name="arm_y" value="${def_arm_y+offset_arm_y}"/>
+	<property name="arm_z" value="${def_arm_z+offset_arm_z}"/>
+	<property name="arm_roll" value="${def_arm_roll+offset_arm_roll}"/>
+	<property name="arm_pitch" value="${def_arm_pitch+offset_arm_pitch}"/>
+	<property name="arm_yaw" value="${def_arm_yaw+offset_arm_yaw}"/>
+
+	<!-- gripper_left mount positions | relative to arm_left_7_link -->
+	<property name="gripper_left_x" value="${def_gripper_left_x+offset_gripper_left_x}"/>
+	<property name="gripper_left_y" value="${def_gripper_left_y+offset_gripper_left_y}"/>
+	<property name="gripper_left_z" value="${def_gripper_left_z+offset_gripper_left_z}"/>
+	<property name="gripper_left_roll" value="${def_gripper_left_roll+offset_gripper_left_roll}"/>
+	<property name="gripper_left_pitch" value="${def_gripper_left_pitch+offset_gripper_left_pitch}"/>
+	<property name="gripper_left_yaw" value="${def_gripper_left_yaw+offset_gripper_left_yaw}"/>
+
+	<!-- gripper_right mount positions | relative to arm_right_7_link -->
+	<property name="gripper_right_x" value="${def_gripper_right_x+offset_gripper_right_x}"/>
+	<property name="gripper_right_y" value="${def_gripper_right_y+offset_gripper_right_y}"/>
+	<property name="gripper_right_z" value="${def_gripper_right_z+offset_gripper_right_z}"/>
+	<property name="gripper_right_roll" value="${def_gripper_right_roll+offset_gripper_right_roll}"/>
+	<property name="gripper_right_pitch" value="${def_gripper_right_pitch+offset_gripper_right_pitch}"/>
+	<property name="gripper_right_yaw" value="${def_gripper_right_yaw+offset_gripper_right_yaw}"/>
+
+</robot>

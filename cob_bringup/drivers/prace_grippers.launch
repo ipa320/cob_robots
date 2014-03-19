@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<include file="$(find prace_gripper_driver)/ros/launch/gripper_controller.launch"/>
+</launch>
