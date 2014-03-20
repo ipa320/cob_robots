@@ -1,0 +1,23 @@
+head_controller:
+  type: "robot_mechanism_controllers/JointTrajectoryActionController"
+  joints:
+    - head_powerball_side_joint
+    - head_powerball_bottom_joint
+  gains:
+    head_powerball_side_joint:
+      p: 2080.0
+      d: 0.0
+    head_powerball_bottom_joint:
+      p: 2050.0
+      d: 0.0
+ 
+  head_joint_trajectory_action_node:
+    joints:
+    - head_powerball_side_joint
+    - head_powerball_bottom_joint
+    constraints:
+      goal_time: 0.6
+      head_powerball_side_joint:
+        goal: 0.05
+      head_powerball_bottom_joint:
+        goal: 0.05
