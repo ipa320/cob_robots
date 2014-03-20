@@ -1,8 +1,0 @@
-dsa_controller_tactile_data: {
-  hz: 55.25,
-  hzerror: 54.75,
-  topic: /dsa_controller/tactile_data,
-  test_duration: 2.0,
-  wait_time: 30.0
-}
-

@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<!-- perform test -->
-	<test test-name="joy_test" pkg="cob_hardware_test" type="joy_test.py" name="joy_test" time-limit="240"/> 
-
-</launch>

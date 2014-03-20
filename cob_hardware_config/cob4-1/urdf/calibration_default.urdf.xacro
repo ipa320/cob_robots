@@ -50,7 +50,7 @@
 	<!-- head sensors mount positions | relative to head_3_link -->
 	<property name="def_sensorring_x" value="0.0"/>
 	<property name="def_sensorring_y" value="0.0"/>
-	<property name="def_sensorring_z" value="0.07"/>
+	<property name="def_sensorring_z" value="0.007"/>
 	<property name="def_sensorring_roll" value="0.0"/>
 	<property name="def_sensorring_pitch" value="0.0"/>
 	<property name="def_sensorring_yaw" value="0.0"/>

@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<include file="$(find cob_bringup)/robot.launch" />
-	<include file="$(find cob_navigation_slam)/launch/2dnav_ros_tr.launch" />
-
-</launch>

@@ -1,7 +1,0 @@
-uint8 type
-uint8 CONFIRM         = 0
-uint8 QUESTION        = 0
-
-string message
----
-bool answer
