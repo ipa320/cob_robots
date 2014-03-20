@@ -2,8 +2,8 @@
 Changelog for package cob_hardware_test
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2014-03-20)
+------------------
 * removed pr2_controller_msgs
 * merge with ipa320-groovy_dev
 * deactivate tests temporary

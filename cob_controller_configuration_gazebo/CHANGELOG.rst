@@ -2,8 +2,8 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2014-03-20)
+------------------
 * Merge pull request `#155 <https://github.com/ipa320/cob_robots/issues/155>`_ from ipa-nhg/hydro_dev
   install tags
 * install tags
