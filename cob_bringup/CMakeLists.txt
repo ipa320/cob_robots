@@ -2,6 +2,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_bringup)
 
+find_package(catkin REQUIRED)
 
 # rostest for robots
 SET(robotlist
