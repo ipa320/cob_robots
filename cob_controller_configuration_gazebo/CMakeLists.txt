@@ -5,7 +5,7 @@ project(cob_controller_configuration_gazebo)
 find_package(catkin REQUIRED)
 
 # rostest for robots
-SET(robotlist
+set(robotlist
 cob3-1
 cob3-2
 cob3-3
@@ -23,13 +23,13 @@ desire
 )
 
 # loop through list of robots for testing
-FOREACH(robot ${robotlist})
-	MESSAGE("testing for robot: ${robot}")
+foreach(robot ${robotlist})
+	message("testing for robot: ${robot}")
 	#rosbuild_add_roslaunch_check(ros/launch/default_controllers_${robot}.launch robot:=${robot})
-ENDFOREACH(robot)
+endforeach(robot)
 
 catkin_package(
-    DEPENDS rostopic joint_trajectory_action cob_bringup cob_sick_s300 cob_relayboard cob_sound image_proc schunk_simulated_tactile_sensors cob_phidgets
+    CATKIN_DEPENDS rostopic joint_trajectory_action cob_bringup cob_sick_s300 cob_relayboard cob_sound image_proc schunk_simulated_tactile_sensors cob_phidgets
  )
 
 

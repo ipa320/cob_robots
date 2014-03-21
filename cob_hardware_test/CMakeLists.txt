@@ -4,7 +4,7 @@ project(cob_hardware_test)
 find_package(catkin REQUIRED COMPONENTS)
 
 # rostest for robots
-SET(robotlist
+set(robotlist
 cob3-1
 cob3-2
 cob3-3
@@ -22,14 +22,14 @@ desire
 )
 
 # loop through list of robots for testing
-FOREACH(robot ${robotlist})
-	MESSAGE("testing for robot: ${robot}")
+foreach(robot ${robotlist})
+	message("testing for robot: ${robot}")
 	#rosbuild_add_roslaunch_check(robots/${robot}_manual.test.xml robot:=${robot})
 	#rosbuild_add_roslaunch_check(robots/${robot}_auto.test.xml robot:=${robot})
 	#rosbuild_add_roslaunch_check(robots/${robot}_manual.test.xml ROBOT=${robot})
 	#rosbuild_add_roslaunch_check(robots/${robot}_auto.test.xml ROBOT=${robot})
-ENDFOREACH(robot)
+endforeach(robot)
 
 catkin_package(
-    DEPENDS rostest cob_bringup cob_default_robot_config
+    CATKIN_DEPENDS rostest cob_bringup cob_default_robot_config
 )

@@ -5,5 +5,5 @@ project(cob_monitoring)
 find_package(catkin REQUIRED COMPONENTS)
 
 catkin_package(
-    DEPENDS cob_script_server cob_relayboard
+    CATKIN_DEPENDS cob_script_server cob_relayboard
 )

@@ -5,7 +5,7 @@ project(cob_bringup)
 find_package(catkin REQUIRED)
 
 # rostest for robots
-SET(robotlist
+set(robotlist
 cob3-1
 cob3-2
 cob3-3
@@ -22,7 +22,7 @@ raw3-6
 desire
 )
 
-SET(envlist
+set(envlist
 empty
 ipa-kitchen
 ipa-apartment
@@ -30,13 +30,13 @@ ipa-factory
 )
 
 # loop through list of robots for testing
-FOREACH(robot ${robotlist})
-	FOREACH(env ${envlist})
-		MESSAGE("testing for robot: ${robot} in env: ${env}")
+foreach(robot ${robotlist})
+	foreach(env ${envlist})
+		message("testing for robot: ${robot} in env: ${env}")
 		#rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
 		#rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
-	ENDFOREACH(env)
-ENDFOREACH(robot)
+	endforeach(env)
+endforeach(robot)
 
 
 ##rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
