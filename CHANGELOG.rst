@@ -2,8 +2,8 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2014-03-21)
+------------------
 * fix launch files
 * backup from cob3-3
 * use sensor info with moveit
