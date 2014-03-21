@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<!-- launch component -->    	   	
-    <include file="$(find cob_bringup)/tools/wifi_monitor.launch" />   	
-	<!-- start test -->  	
-	<test test-name="cob_hardware_test" pkg="cob_hardware_test" type="hztests" name="cob_hardware_test" time-limit="60.0" />	
-  
-</launch>
