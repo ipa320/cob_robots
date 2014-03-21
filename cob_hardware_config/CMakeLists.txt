@@ -12,6 +12,7 @@ cob3-4
 cob3-5
 cob3-6
 cob3-7
+cob4-1
 raw3-1
 raw3-2
 raw3-3
@@ -43,3 +44,8 @@ endforeach(robot)
 install(DIRECTORY common/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/common
    )
+
+install(DIRECTORY test/
+	DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/test
+   )
+
