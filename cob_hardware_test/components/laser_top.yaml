@@ -1,7 +1,0 @@
-laser_top: {  
-  hz: 55.25,
-  hzerror: 54.75,
-  topic: /scan_top,
-  test_duration: 2.0,
-  wait_time: 30.0
-}
