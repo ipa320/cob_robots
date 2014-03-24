@@ -57,11 +57,11 @@
   </xacro:prace_gripper>
 
   <xacro:neck name="neck" parent="arm_torso_link">
-      <origin xyz="-0.07624 0 0.47378" rpy="0 0.607514 0" />
+      <origin xyz="${neck_x} ${neck_y} ${neck_z}" rpy="${neck_roll} ${neck_pitch} ${neck_yaw}" />
   </xacro:neck>
 
   <xacro:head name="head" parent="neck_mount_link">
-      <origin xyz="0 0 0.074998" rpy="0 0 0" />
+      <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
 
 </robot>

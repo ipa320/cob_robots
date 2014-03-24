@@ -38,4 +38,52 @@
 	<property name="gripper_right_pitch" value="${def_gripper_right_pitch+offset_gripper_right_pitch}"/>
 	<property name="gripper_right_yaw" value="${def_gripper_right_yaw+offset_gripper_right_yaw}"/>
 
+	<!-- neck mount positions | relative to arm_torso_link -->
+	<property name="neck_x" value="${def_neck_x+offset_neck_x}"/>
+	<property name="neck_y" value="${def_neck_y+offset_neck_y}"/>
+	<property name="neck_z" value="${def_neck_z+offset_neck_z}"/>
+	<property name="neck_roll" value="${def_neck_roll+offset_neck_roll}"/>
+	<property name="neck_pitch" value="${def_neck_pitch+offset_neck_pitch}"/>
+	<property name="neck_yaw" value="${def_neck_yaw+offset_neck_yaw}"/>
+
+	<!-- head mount positions | relative to neck_mount_link -->
+	<property name="head_x" value="${def_head_x+offset_head_x}"/>
+	<property name="head_y" value="${def_head_y+offset_head_y}"/>
+	<property name="head_z" value="${def_head_z+offset_head_z}"/>
+	<property name="head_roll" value="${def_head_roll+offset_head_roll}"/>
+	<property name="head_pitch" value="${def_head_pitch+offset_head_pitch}"/>
+	<property name="head_yaw" value="${def_head_yaw+offset_head_yaw}"/>
+
+	<!-- ids_middle mount positions | relative to head_cam_holder_link -->
+	<property name="ids_middle_x" value="${def_ids_middle_x+offset_ids_middle_x}"/>
+	<property name="ids_middle_y" value="${def_ids_middle_y+offset_ids_middle_y}"/>
+	<property name="ids_middle_z" value="${def_ids_middle_z+offset_ids_middle_z}"/>
+	<property name="ids_middle_roll" value="${def_ids_middle_roll+offset_ids_middle_roll}"/>
+	<property name="ids_middle_pitch" value="${def_ids_middle_pitch+offset_ids_middle_pitch}"/>
+	<property name="ids_middle_yaw" value="${def_ids_middle_yaw+offset_ids_middle_yaw}"/>
+
+	<!-- ids_left mount positions | relative to head_cam_holder_link -->
+	<property name="ids_left_x" value="${def_ids_left_x+offset_ids_left_x}"/>
+	<property name="ids_left_y" value="${def_ids_left_y+offset_ids_left_y}"/>
+	<property name="ids_left_z" value="${def_ids_left_z+offset_ids_left_z}"/>
+	<property name="ids_left_roll" value="${def_ids_left_roll+offset_ids_left_roll}"/>
+	<property name="ids_left_pitch" value="${def_ids_left_pitch+offset_ids_left_pitch}"/>
+	<property name="ids_left_yaw" value="${def_ids_left_yaw+offset_ids_left_yaw}"/>
+
+	<!-- ids_right mount positions | relative to head_cam_holder_link -->
+	<property name="ids_right_x" value="${def_ids_right_x+offset_ids_right_x}"/>
+	<property name="ids_right_y" value="${def_ids_right_y+offset_ids_right_y}"/>
+	<property name="ids_right_z" value="${def_ids_right_z+offset_ids_right_z}"/>
+	<property name="ids_right_roll" value="${def_ids_right_roll+offset_ids_right_roll}"/>
+	<property name="ids_right_pitch" value="${def_ids_right_pitch+offset_ids_right_pitch}"/>
+	<property name="ids_right_yaw" value="${def_ids_right_yaw+offset_ids_right_yaw}"/>
+
+	<!-- cam_holder mount positions | relative to head_powerball_knob_link -->
+	<property name="cam_holder_x" value="${def_cam_holder_x+offset_cam_holder_x}"/>
+	<property name="cam_holder_y" value="${def_cam_holder_y+offset_cam_holder_y}"/>
+	<property name="cam_holder_z" value="${def_cam_holder_z+offset_cam_holder_z}"/>
+	<property name="cam_holder_roll" value="${def_cam_holder_roll+offset_cam_holder_roll}"/>
+	<property name="cam_holder_pitch" value="${def_cam_holder_pitch+offset_cam_holder_pitch}"/>
+	<property name="cam_holder_yaw" value="${def_cam_holder_yaw+offset_cam_holder_yaw}"/>
+
 </robot>
