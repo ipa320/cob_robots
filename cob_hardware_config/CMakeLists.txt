@@ -35,17 +35,17 @@ catkin_package(
 )
 
 foreach(robot ${robotlist})
-    install(DIRECTORY ${robot}/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${robot}
+    install(DIRECTORY ${robot}
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
     )
 endforeach(robot)
 
 
-install(DIRECTORY common/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/common
+install(DIRECTORY common
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
    )
 
-install(DIRECTORY test/
-	DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/test
+install(DIRECTORY test
+	DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
    )
 

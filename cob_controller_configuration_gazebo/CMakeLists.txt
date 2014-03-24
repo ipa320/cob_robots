@@ -34,12 +34,12 @@ catkin_package(
 
 
 ## Mark cpp header files for installation
-install(DIRECTORY launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+install(DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(DIRECTORY controller/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/controller
+install(DIRECTORY controller
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 install(PROGRAMS src/fake_diagnostics.py src/gazebo_services.py src/gazebo_topics.py
