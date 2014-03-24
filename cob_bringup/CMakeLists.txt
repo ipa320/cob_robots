@@ -52,18 +52,18 @@ endforeach(robot)
 catkin_package()
 
 ## Mark cpp header files for installation
-install(DIRECTORY robots/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/robots
+install(DIRECTORY robots
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 ## Mark cpp header files for installation
-install(DIRECTORY drivers/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/drivers
+install(DIRECTORY drivers
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 ## Mark cpp header files for installation#
-install(DIRECTORY tools/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/tools
+install(DIRECTORY tools
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 install(PROGRAMS env.sh
