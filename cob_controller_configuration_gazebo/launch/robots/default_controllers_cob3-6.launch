@@ -75,9 +75,6 @@
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>
-	<!-- start simulated phidget sensors -->
-	<rosparam file="$(find cob_controller_configuration_gazebo)/controller/tray_sensors.yaml" command="load" />
-	<node ns="tray_sensors" name="tray_sensors" pkg="cob_phidgets" type="simulated_range_sensors.py" output="screen"/>
 	
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />
