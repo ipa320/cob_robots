@@ -93,5 +93,80 @@
        </visual>
     </link>
     <!-- END: IMU brick	mount -->
+    
+   <!-- rfid_front mount on raw3-1 -->
+   <joint name="rfid_front_joint" type="fixed" >
+      <origin xyz="0.55128 0.0 0.09" rpy="0 0 0" />
+      <parent link="base_link" />
+      <child link="rfid_front_link" />
+    </joint>
+
+    <link name="rfid_front_link">
+       <inertial>
+            <mass value="0.2" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.2" ixy="0" ixz="0" iyy="0.2" iyz="0" izz="0.2" />
+       </inertial>
+       <visual>
+   	    <origin xyz="0 0 0" rpy="0 0 0" />
+	    <geometry>
+    	       <box size="0.16 0.36 0.09" />
+	    </geometry>
+	    <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+       </visual>
+    </link>
+    <!-- END: rfid front mount -->
+    
+   <!-- rfid_rear mount on raw3-1 -->
+   <joint name="rfid_rear_joint" type="fixed" >
+      <origin xyz="-0.55128 0.0 0.09" rpy="0 0 ${M_PI}" />
+      <parent link="base_link" />
+      <child link="rfid_rear_link" />
+    </joint>
+
+    <link name="rfid_rear_link">
+       <inertial>
+            <mass value="0.2" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.2" ixy="0" ixz="0" iyy="0.2" iyz="0" izz="0.2" />
+       </inertial>
+       <visual>
+   	    <origin xyz="0 0 0" rpy="0 0 0" />
+	    <geometry>
+    	       <box size="0.16 0.36 0.09" />
+	    </geometry>
+	    <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+       </visual>
+    </link>
+    <!-- END: rfid rear mount -->
+    
+   <!-- rfid_right mount on raw3-1 -->
+   <joint name="rfid_right_joint" type="fixed" >
+      <origin xyz="0.0 -0.30850 0.09" rpy="0 0 ${-0.5*M_PI}" />
+      <parent link="base_link" />
+      <child link="rfid_right_link" />
+    </joint>
+
+    <link name="rfid_right_link">
+       <inertial>
+            <mass value="0.2" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0.2" ixy="0" ixz="0" iyy="0.2" iyz="0" izz="0.2" />
+       </inertial>
+       <visual>
+   	    <origin xyz="0 0 0" rpy="0 0 0" />
+	    <geometry>
+    	       <box size="0.16 0.36 0.09" />
+	    </geometry>
+	    <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+       </visual>
+    </link>
+    <!-- END: rfid right mount -->
 
   </robot>
