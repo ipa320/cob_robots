@@ -20,13 +20,17 @@
   <include filename="$(find frida_description)/urdf/frida.urdf.xacro" />
 
   <!-- frida adapter -->
-  <include filename="$(find frida_description)/urdf/adapter.urdf.xacro" />  
-
-  <include filename="$(find frida_description)/urdf/camera_holder.urdf.xacro" />  
+  <include filename="$(find prace_common)/urdf/adapter/tower_frida_adapter.urdf.xacro" />  
 
   <!-- prace gripper -->
   <include filename="$(find prace_gripper_description)/urdf/prace_gripper.urdf.xacro"/>
 
+  <!-- prace neck -->
+  <include filename="$(find prace_common)/urdf/neck/neck.urdf.xacro" />  
+  
+  <!-- prace head -->
+  <include filename="$(find prace_common)/urdf/head/head.urdf.xacro" />
+ 
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
@@ -36,9 +40,9 @@
       <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
   </xacro:tower_symetric>
 
-  <xacro:frida_adapter name="adapter" parent="tower_base_link">
+  <xacro:tower_frida_adapter name="adapter" parent="tower_base_link">
       <origin xyz="0.0905 0 0.2305" rpy="0 0 0" />
-  </xacro:frida_adapter>
+  </xacro:tower_frida_adapter>
 
   <xacro:frida name="arm" parent="base_link">
       <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
@@ -52,8 +56,12 @@
       <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />  
   </xacro:prace_gripper>
 
-  <xacro:teachin_handle name="cam_holder" parent="arm_torso_link">
-      <origin xyz="0.0 0 0.49" rpy="0.99483 0 0" />
-  </xacro:teachin_handle>
+  <xacro:neck name="neck" parent="arm_torso_link">
+      <origin xyz="${neck_x} ${neck_y} ${neck_z}" rpy="${neck_roll} ${neck_pitch} ${neck_yaw}" />
+  </xacro:neck>
+
+  <xacro:head name="head" parent="neck_mount_link">
+      <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
+  </xacro:head>
 
 </robot>
