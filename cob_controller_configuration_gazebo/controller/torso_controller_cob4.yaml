@@ -6,20 +6,20 @@ torso_controller:
     - torso_3_joint
   gains:
     torso_1_joint:
-      p: 800.0
-      i: 820.0
-      d: 0.5
-      i_clamp: 0.5
+      p: 1000.0
+      i: 5.0
+      d: 0.0
+      i_clamp: 5.0
     torso_2_joint:
-      p: 800.0
-      i: 820.0
-      d: 0.5
-      i_clamp: 0.5
+      p: 1000.0
+      i: 1.0
+      d: 0.0
+      i_clamp: 1.0
     torso_3_joint:
-      p: 800.0
-      i: 820.0
-      d: 0.5
-      i_clamp: 0.5
+      p: 1000.0
+      i: 1.0
+      d: 0.0
+      i_clamp: 1.0
 
   torso_joint_trajectory_action_node:
     joints:
