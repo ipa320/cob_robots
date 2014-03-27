@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.2 (2014-03-27)
+------------------
 * fix robot_ip address
 * add parameter remapping for robot_description
 * Contributors: Felix
