@@ -9,6 +9,6 @@ catkin_package(
 )
 
 install(PROGRAMS src/battery_monitor.py src/emergency_stop_monitor.py
-    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/src
 )
 
