@@ -54,6 +54,7 @@
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
   <run_depend>cob_default_env_config</run_depend>
+  <run_depend>ipa_canopen_ros</run_depend>
   <!-- <test_depend>cob_undercarriage_ctrl</test_depend> -->
   <!-- <test_depend>cob_base_drive_chain</test_depend> -->
   <!-- <test_depend>cob_trajectory_controller</test_depend> -->
