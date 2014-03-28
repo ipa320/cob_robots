@@ -5,9 +5,10 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.652605
-    Tree Height: 813
+    Tree Height: 784
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -25,7 +26,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: PointCloud2 Right
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -258,9 +259,93 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
+        /arm_left_1_link:
+          Value: true
+        /arm_left_2_link:
+          Value: true
+        /arm_left_3_link:
+          Value: true
+        /arm_left_4_link:
+          Value: true
+        /arm_left_5_link:
+          Value: true
+        /arm_left_6_link:
+          Value: true
+        /arm_left_7_link:
+          Value: true
+        /arm_left_base_link:
+          Value: true
+        /arm_right_1_link:
+          Value: true
+        /arm_right_2_link:
+          Value: true
+        /arm_right_3_link:
+          Value: true
+        /arm_right_4_link:
+          Value: true
+        /arm_right_5_link:
+          Value: true
+        /arm_right_6_link:
+          Value: true
+        /arm_right_7_link:
+          Value: true
+        /arm_right_base_link:
+          Value: true
+        /base_footprint:
+          Value: true
+        /base_laser_front_link:
+          Value: true
+        /base_laser_left_link:
+          Value: true
+        /base_laser_right_link:
+          Value: true
+        /base_link:
+          Value: true
+        /bl_caster_r_wheel_link:
+          Value: true
+        /bl_caster_rotation_link:
+          Value: true
+        /br_caster_r_wheel_link:
+          Value: true
+        /br_caster_rotation_link:
+          Value: true
+        /fl_caster_r_wheel_link:
+          Value: true
+        /fl_caster_rotation_link:
+          Value: true
+        /head_1_link:
+          Value: true
+        /head_2_link:
+          Value: true
+        /head_3_link:
+          Value: true
+        /head_base_link:
+          Value: true
+        /sensorring_link:
+          Value: true
+        /torso_1_link:
+          Value: true
+        /torso_2_link:
+          Value: true
+        /torso_3_link:
+          Value: true
+        /torso_base_link:
+          Value: true
+        /torso_cam3d_down_frame:
+          Value: true
+        /torso_cam3d_down_link:
+          Value: true
+        /torso_cam3d_left_frame:
+          Value: true
+        /torso_cam3d_left_link:
+          Value: true
+        /torso_cam3d_right_frame:
+          Value: true
+        /torso_cam3d_right_link:
+          Value: true
         All Enabled: false
       Marker Scale: 1
       Name: TF
@@ -268,9 +353,62 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        /base_footprint:
+          /base_link:
+            /base_laser_front_link:
+              {}
+            /base_laser_left_link:
+              {}
+            /base_laser_right_link:
+              {}
+            /bl_caster_rotation_link:
+              /bl_caster_r_wheel_link:
+                {}
+            /br_caster_rotation_link:
+              /br_caster_r_wheel_link:
+                {}
+            /fl_caster_rotation_link:
+              /fl_caster_r_wheel_link:
+                {}
+            /torso_base_link:
+              /torso_1_link:
+                /torso_2_link:
+                  /torso_3_link:
+                    /arm_left_base_link:
+                      /arm_left_1_link:
+                        /arm_left_2_link:
+                          /arm_left_3_link:
+                            /arm_left_4_link:
+                              /arm_left_5_link:
+                                /arm_left_6_link:
+                                  /arm_left_7_link:
+                                    {}
+                    /arm_right_base_link:
+                      /arm_right_1_link:
+                        /arm_right_2_link:
+                          /arm_right_3_link:
+                            /arm_right_4_link:
+                              /arm_right_5_link:
+                                /arm_right_6_link:
+                                  /arm_right_7_link:
+                                    {}
+                    /head_base_link:
+                      /head_1_link:
+                        /head_2_link:
+                          /head_3_link:
+                            /sensorring_link:
+                              {}
+                    /torso_cam3d_down_link:
+                      /torso_cam3d_down_frame:
+                        {}
+                    /torso_cam3d_left_link:
+                      /torso_cam3d_left_frame:
+                        {}
+                    /torso_cam3d_right_link:
+                      /torso_cam3d_right_frame:
+                        {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Alpha: 0.7
       Class: rviz/Map
       Draw Behind: false
@@ -575,22 +713,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.14308
+      Distance: 2.14192
       Focal Point:
-        X: 0.213976
-        Y: -0.164554
-        Z: 0.357887
+        X: 0.135033
+        Y: -0.377498
+        Z: 0.283788
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.354801
+      Pitch: 0.464801
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.25677
+      Yaw: 5.86677
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1026
+  Height: 997
   Hide Left Dock: false
   Hide Right Dock: false
   Image Down:
@@ -599,7 +737,7 @@ Window Geometry:
     collapsed: false
   Image Right:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000195000003bcfc0200000006fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000003bc000000dd00fffffffb0000000c00430061006d00650072006100000002a5000000cd00000000000000000000000100000169000003bcfc0200000006fb000000140049006d00610067006500200044006f0077006e0000000028000003bc0000001600fffffffb000000140049006d0061006700650020004c0065006600740000000028000003bc0000001600fffffffb000000160049006d00610067006500200052006900670068007400000002cd000001170000001600fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000326000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000004c4000003bc00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001950000039ffc0200000006fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c00610079007301000000280000039f000000dd00fffffffb0000000c00430061006d00650072006100000002a5000000cd00000000000000000000000100000169000003bcfc0200000006fb000000140049006d00610067006500200044006f0077006e0000000028000003bc0000001600fffffffb000000140049006d0061006700650020004c0065006600740000000028000003bc0000001600fffffffb000000160049006d00610067006500200052006900670068007400000002cd000001170000001600fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000326000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000004b20000039f00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -608,6 +746,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1631
-  X: 42
+  Width: 1613
+  X: 1165
   Y: 24
