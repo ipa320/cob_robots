@@ -1,6 +1,6 @@
 <package>
   <name>cob_default_robot_config</name>
-  <version>0.5.2</version>
+  <version>0.5.3</version>
   <description>Default configuration of the different robots supported by the Care-O-bot stacks. Configuration is e.g. preconfigured joint positions.</description>
   <!-- <maintainer>Florian Weisshardt</maintainer> -->
 

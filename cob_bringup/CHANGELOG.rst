@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.3 (2014-03-28)
+------------------
 * add dependency to ipa_canopen_ros
 * Contributors: Florian Weisshardt
 

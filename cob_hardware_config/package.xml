@@ -1,6 +1,6 @@
 <package>
   <name>cob_hardware_config</name>
-  <version>0.5.2</version>
+  <version>0.5.3</version>
   <description>This package contains configuration for each robot instance (e.g. cob3-1, cob3-2,...). There is a directory for each robot with configuration about urdf and hardware/device configurations.</description>
 
   <license>LGPL</license>
