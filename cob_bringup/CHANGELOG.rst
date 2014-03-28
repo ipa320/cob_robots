@@ -2,6 +2,11 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add dependency to ipa_canopen_ros
+* Contributors: Florian Weisshardt
+
 0.5.2 (2014-03-27)
 ------------------
 * fix robot_ip address
