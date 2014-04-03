@@ -2,18 +2,21 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="name" default="cam3d"/>
 
-	<param name="/cam3d/driver/data_skip" type="int" value="2"/>
-	<param name="/cam3d/driver/image_mode" type="int" value="2"/>
-	<param name="/cam3d/driver/depth_mode" type="int" value="2"/>
-	<param name="/cam3d/driver/z_offset_mm" type="int" value="20"/>
+	<param name="/$(arg name)/driver/data_skip" type="int" value="2"/>
+	<param name="/$(arg name)/driver/image_mode" type="int" value="2"/>
+	<param name="/$(arg name)/driver/depth_mode" type="int" value="2"/>
+	<param name="/$(arg name)/driver/z_offset_mm" type="int" value="20"/>
+
+
 
 	<include file="$(find openni_launch)/launch/openni.launch">
-		<arg name="camera" value="cam3d"/>
-		<arg name="rgb_frame_id" value="/head_cam3d_link" />
-		<arg name="depth_frame_id" value="/head_cam3d_link" />
-        <arg name="publish_tf" value="false" />
-        <arg name="depth_registration" value="true"/>
+		<arg name="camera" value="$(arg name)"/>
+		<arg name="rgb_frame_id" value="/$(arg name)_link" />
+		<arg name="depth_frame_id" value="/$(arg name)_link" />
+		<arg name="publish_tf" value="false" />
+		<arg name="depth_registration" value="true"/>
 		<arg name="rgb_camera_info_url" value="file:///$(find cob_calibration_data)/$(arg robot)/calibration/cameras/kinect_rgb.yaml" />
 	</include>
 
