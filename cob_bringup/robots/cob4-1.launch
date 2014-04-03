@@ -5,7 +5,12 @@
 	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 
 	<include file="$(find cob_bringup)/robots/cob4-1.xml" >
-		<arg name="pc1" value="cob4-1-pc1"/>
+		<arg name="cob4-1-b1" value="cob4-1-base-pc1"/>
+		<arg name="cob4-1-t1" value="cob4-1-torso-pc1"/>
+		<arg name="cob4-1-t2" value="cob4-1-torso-pc2"/>
+		<arg name="cob4-1-t3" value="cob4-1-torso-pc3"/>
+		<arg name="cob4-1-s1" value="cob4-1-sensorring-pc1"/>
+		<arg name="cob4-1-h1" value="cob4-1-head-pc1"/>
 	</include>
 	
 	<!-- upload default configuration parameters -->

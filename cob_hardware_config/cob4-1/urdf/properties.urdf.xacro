@@ -110,4 +110,28 @@
 	<property name="arm_left_6_ref" value="${def_arm_left_6_ref+offset_arm_left_6_ref}"/>
 	<property name="arm_left_7_ref" value="${def_arm_left_7_ref+offset_arm_left_7_ref}"/>
 
+	<!-- cam3d left | handeye calibration | relative to torso_3_link -->
+	<property name="torso_cam3d_left_x" value="${def_torso_cam3d_left_x+offset_torso_cam3d_left_x}"/>
+	<property name="torso_cam3d_left_y" value="${def_torso_cam3d_left_y+offset_torso_cam3d_left_y}"/>
+	<property name="torso_cam3d_left_z" value="${def_torso_cam3d_left_z+offset_torso_cam3d_left_z}"/>
+	<property name="torso_cam3d_left_roll" value="${def_torso_cam3d_left_roll+offset_torso_cam3d_left_roll}"/>
+	<property name="torso_cam3d_left_pitch" value="${def_torso_cam3d_left_pitch+offset_torso_cam3d_left_pitch}"/>
+	<property name="torso_cam3d_left_yaw" value="${def_torso_cam3d_left_yaw+offset_torso_cam3d_left_yaw}"/>
+	
+	<!-- cam3d right | handeye calibration | relative to torso_3_link -->
+	<property name="torso_cam3d_right_x" value="${def_torso_cam3d_right_x+offset_torso_cam3d_right_x}"/>
+	<property name="torso_cam3d_right_y" value="${def_torso_cam3d_right_y+offset_torso_cam3d_right_y}"/>
+	<property name="torso_cam3d_right_z" value="${def_torso_cam3d_right_z+offset_torso_cam3d_right_z}"/>
+	<property name="torso_cam3d_right_roll" value="${def_torso_cam3d_right_roll+offset_torso_cam3d_right_roll}"/>
+	<property name="torso_cam3d_right_pitch" value="${def_torso_cam3d_right_pitch+offset_torso_cam3d_right_pitch}"/>
+	<property name="torso_cam3d_right_yaw" value="${def_torso_cam3d_right_yaw+offset_torso_cam3d_right_yaw}"/>
+	
+	<!-- cam3d down | handeye calibration | relative to torso_3_link -->
+	<property name="torso_cam3d_down_x" value="${def_torso_cam3d_down_x+offset_torso_cam3d_down_x}"/>
+	<property name="torso_cam3d_down_y" value="${def_torso_cam3d_down_y+offset_torso_cam3d_down_y}"/>
+	<property name="torso_cam3d_down_z" value="${def_torso_cam3d_down_z+offset_torso_cam3d_down_z}"/>
+	<property name="torso_cam3d_down_roll" value="${def_torso_cam3d_down_roll+offset_torso_cam3d_down_roll}"/>
+	<property name="torso_cam3d_down_pitch" value="${def_torso_cam3d_down_pitch+offset_torso_cam3d_down_pitch}"/>
+	<property name="torso_cam3d_down_yaw" value="${def_torso_cam3d_down_yaw+offset_torso_cam3d_down_yaw}"/>
+	
 </robot>
