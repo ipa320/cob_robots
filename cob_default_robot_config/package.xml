@@ -12,7 +12,10 @@
   <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
- <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roslaunch</build_depend>
+
   <export>
 
   </export>

@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_bringup)
 
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS roslaunch)
 
 # rostest for robots
 set(robotlist
@@ -31,11 +31,12 @@ ipa-factory
 
 # loop through list of robots for testing
 foreach(robot ${robotlist})
-	foreach(env ${envlist})
+	#foreach(env ${envlist})
 		message("testing for robot: ${robot} in env: ${env}")
 		#rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
 		#rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
-	endforeach(env)
+		roslaunch_add_file_check(robots/${robot}.xml robot_env:=ipa-apartment)
+	#endforeach(env)
 endforeach(robot)
 
 

@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_controller_configuration_gazebo)
 
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS roslaunch)
 
 # rostest for robots
 set(robotlist
@@ -13,6 +13,7 @@ cob3-4
 cob3-5
 cob3-6
 cob3-7
+cob4-1
 raw3-1
 raw3-2
 raw3-3
@@ -24,13 +25,13 @@ desire
 
 # loop through list of robots for testing
 foreach(robot ${robotlist})
-	message("testing for robot: ${robot}")
-	#rosbuild_add_roslaunch_check(ros/launch/default_controllers_${robot}.launch robot:=${robot})
+  message("testing for robot: ${robot}")
+  roslaunch_add_file_check(launch/robots/default_controllers_${robot}.launch)
 endforeach(robot)
 
 catkin_package(
-    CATKIN_DEPENDS rostopic joint_trajectory_action cob_bringup cob_sick_s300 cob_relayboard cob_sound image_proc schunk_simulated_tactile_sensors cob_phidgets
- )
+  CATKIN_DEPENDS
+)
 
 
 ## Mark cpp header files for installation
