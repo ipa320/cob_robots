@@ -1,0 +1,5 @@
+host: 10.4.1.99
+port: 9100
+threshold_linear_slow: 0.05
+threshold_linear_fast: 0.3
+threshold_angular_fast: 0.05
