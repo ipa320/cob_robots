@@ -4,9 +4,10 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-        <node name="safety_controller" pkg="cob_safety_controller" type="safety_controller" respawn="false" output="screen" >
-        </node>
+	<node  ns="safety_controller" name="safety_controller" pkg="cob_safety_controller" type="safety_controller" respawn="false" output="screen" >
+		<remap from="emergency_stop_state" to="/emergency_stop_state" />		
+	</node>
 
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/flexisoft.yaml"/>
+	<rosparam ns="safety_controller" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/flexisoft.yaml"/>
 
 </launch>
