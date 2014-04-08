@@ -17,28 +17,36 @@
 	</include>
 
 	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<!--include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="torso"/>
 		<arg name="version" value="cob4"/>
+	</include-->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocity.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
+		<arg name="version" value="cob4"/>
+		<arg name="controllers" value="torso_1_joint_velocity_controller torso_2_joint_velocity_controller torso_3_joint_velocity_controller"/>
 	</include>
 
 	<!-- Head -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<!--include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="head"/>
 		<arg name="version" value="cob4"/>
-	</include>
+	</include-->
 	
 	<!-- Arms -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<!--include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
 		<arg name="component_name" value="arm"/>
 		<arg name="version" value="lwa4p_dual"/>
-	</include>
+	</include-->
 	
 	<!-- Sensorring -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<!--include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="sensorring"/>
 		<arg name="version" value="cob4"/>
-	</include>
+	</include-->
 	
+	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />
 
 </launch>
