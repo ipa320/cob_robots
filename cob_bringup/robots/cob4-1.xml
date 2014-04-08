@@ -3,7 +3,12 @@
 
 	<!-- args -->
 	<arg name="robot" value="cob4-1"/>
-	<arg name="pc1" default="localhost"/>
+	<arg name="cob4-1-b1" default="localhost"/>
+	<arg name="cob4-1-t1" default="localhost"/>
+	<arg name="cob4-1-t2" default="localhost"/>
+	<arg name="cob4-1-t3" default="localhost"/>
+	<arg name="cob4-1-s1" default="localhost"/>
+	<arg name="cob4-1-h1" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -12,6 +17,9 @@
 
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
+
+	<group>
+		<machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
@@ -32,7 +40,6 @@
 		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
 			<arg name="sim" value="true" />
 		</include>
-
 		<include file="$(find cob_bringup)/drivers/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -47,5 +54,54 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+	</group>
+
+	<group>
+		<machine name="cob4-1-t1" address="$(arg cob4-1-t1)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
+		<!-- startup hardware -->
+		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="torso" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="head" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="arm_left" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="arm_right" />
+		</include>
+	</group>
+
+	<group>
+		<machine name="cob4-1-t2" address="$(arg cob4-1-t2)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
+		<!-- startup hardware -->
+	</group>
+
+	<group>
+		<machine name="cob4-1-t3" address="$(arg cob4-1-t3)" env-loader="/u/robot/git/care-o-bot/env.sh" default="true"/>
+
+		<!-- startup hardware -->
+		<include file="$(find cob_bringup)/drivers/openni.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="torso_cam3d_left"/>
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/openni.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="torso_cam3d_right"/>
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/softkinetic.launch" >
+			<arg name="name" value="torso_cam3d_down"/>
+		</include>
+
+	</group>
 
 </launch>

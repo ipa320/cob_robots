@@ -5,10 +5,10 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /RobotModel1/Links1
+        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.652605
-    Tree Height: 818
+    Tree Height: 784
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -225,6 +225,33 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        torso_cam3d_down_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torso_cam3d_down_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        torso_cam3d_left_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torso_cam3d_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        torso_cam3d_right_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torso_cam3d_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -297,8 +324,6 @@ Visualization Manager:
           Value: true
         /head_base_link:
           Value: true
-        /odom_combined:
-          Value: true
         /sensorring_link:
           Value: true
         /torso_1_link:
@@ -309,6 +334,18 @@ Visualization Manager:
           Value: true
         /torso_base_link:
           Value: true
+        /torso_cam3d_down_frame:
+          Value: true
+        /torso_cam3d_down_link:
+          Value: true
+        /torso_cam3d_left_frame:
+          Value: true
+        /torso_cam3d_left_link:
+          Value: true
+        /torso_cam3d_right_frame:
+          Value: true
+        /torso_cam3d_right_link:
+          Value: true
         All Enabled: false
       Marker Scale: 1
       Name: TF
@@ -316,52 +353,60 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        /odom_combined:
-          /base_footprint:
-            /base_link:
-              /base_laser_front_link:
+        /base_footprint:
+          /base_link:
+            /base_laser_front_link:
+              {}
+            /base_laser_left_link:
+              {}
+            /base_laser_right_link:
+              {}
+            /bl_caster_rotation_link:
+              /bl_caster_r_wheel_link:
                 {}
-              /base_laser_left_link:
+            /br_caster_rotation_link:
+              /br_caster_r_wheel_link:
                 {}
-              /base_laser_right_link:
+            /fl_caster_rotation_link:
+              /fl_caster_r_wheel_link:
                 {}
-              /bl_caster_rotation_link:
-                /bl_caster_r_wheel_link:
-                  {}
-              /br_caster_rotation_link:
-                /br_caster_r_wheel_link:
-                  {}
-              /fl_caster_rotation_link:
-                /fl_caster_r_wheel_link:
-                  {}
-              /torso_base_link:
-                /torso_1_link:
-                  /torso_2_link:
-                    /torso_3_link:
-                      /arm_left_base_link:
-                        /arm_left_1_link:
-                          /arm_left_2_link:
-                            /arm_left_3_link:
-                              /arm_left_4_link:
-                                /arm_left_5_link:
-                                  /arm_left_6_link:
-                                    /arm_left_7_link:
-                                      {}
-                      /arm_right_base_link:
-                        /arm_right_1_link:
-                          /arm_right_2_link:
-                            /arm_right_3_link:
-                              /arm_right_4_link:
-                                /arm_right_5_link:
-                                  /arm_right_6_link:
-                                    /arm_right_7_link:
-                                      {}
-                      /head_base_link:
-                        /head_1_link:
-                          /head_2_link:
-                            /head_3_link:
-                              /sensorring_link:
-                                {}
+            /torso_base_link:
+              /torso_1_link:
+                /torso_2_link:
+                  /torso_3_link:
+                    /arm_left_base_link:
+                      /arm_left_1_link:
+                        /arm_left_2_link:
+                          /arm_left_3_link:
+                            /arm_left_4_link:
+                              /arm_left_5_link:
+                                /arm_left_6_link:
+                                  /arm_left_7_link:
+                                    {}
+                    /arm_right_base_link:
+                      /arm_right_1_link:
+                        /arm_right_2_link:
+                          /arm_right_3_link:
+                            /arm_right_4_link:
+                              /arm_right_5_link:
+                                /arm_right_6_link:
+                                  /arm_right_7_link:
+                                    {}
+                    /head_base_link:
+                      /head_1_link:
+                        /head_2_link:
+                          /head_3_link:
+                            /sensorring_link:
+                              {}
+                    /torso_cam3d_down_link:
+                      /torso_cam3d_down_frame:
+                        {}
+                    /torso_cam3d_left_link:
+                      /torso_cam3d_left_frame:
+                        {}
+                    /torso_cam3d_right_link:
+                      /torso_cam3d_right_frame:
+                        {}
       Update Interval: 0
       Value: true
     - Alpha: 0.7
@@ -477,12 +522,12 @@ Visualization Manager:
       Topic: /move_base/local_costmap/inflated_obstacles
       Value: false
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 1
       Name: Axes map origin
       Radius: 0.1
       Reference Frame: /map
-      Value: true
+      Value: false
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
@@ -532,6 +577,123 @@ Visualization Manager:
       Show Visual Aids: false
       Update Topic: /cob_interactive_teleop/update
       Value: false
+    - Class: rviz/Image
+      Enabled: false
+      Image Topic: /cam3d_down/rgb/image_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image Down
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Value: false
+    - Class: rviz/Image
+      Enabled: false
+      Image Topic: /cam3d_left/rgb/image_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image Left
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Value: false
+    - Class: rviz/Image
+      Enabled: false
+      Image Topic: /cam3d_right/rgb/image_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image Right
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2 Down
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.01
+      Style: Flat Squares
+      Topic: /cam3d_down/depth_registered/points
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2 Left
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.01
+      Style: Flat Squares
+      Topic: /cam3d_left/depth_registered/points
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2 Right
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.01
+      Style: Flat Squares
+      Topic: /cam3d_right/depth_registered/points
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -551,25 +713,31 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.50703
+      Distance: 2.14192
       Focal Point:
-        X: 0.646932
-        Y: 0.446475
-        Z: 0.000559447
+        X: 0.135033
+        Y: -0.377498
+        Z: 0.283788
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.614801
+      Pitch: 0.464801
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.50858
+      Yaw: 5.86677
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1056
+  Height: 997
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000195000003c1fc0200000006fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000041000003c1000000dd00fffffffb0000000c00430061006d00650072006100000002a5000000cd0000000000000000000000010000010f00000326fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000326000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000005a4000003c100000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Image Down:
+    collapsed: false
+  Image Left:
+    collapsed: false
+  Image Right:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000400000000000001950000039ffc0200000006fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c00610079007301000000280000039f000000dd00fffffffb0000000c00430061006d00650072006100000002a5000000cd00000000000000000000000100000169000003bcfc0200000006fb000000140049006d00610067006500200044006f0077006e0000000028000003bc0000001600fffffffb000000140049006d0061006700650020004c0065006600740000000028000003bc0000001600fffffffb000000160049006d00610067006500200052006900670068007400000002cd000001170000001600fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000326000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000004b20000039f00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -578,6 +746,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1855
-  X: 1985
+  Width: 1613
+  X: 1165
   Y: 24
