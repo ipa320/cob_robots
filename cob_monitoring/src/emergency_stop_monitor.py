@@ -4,6 +4,9 @@ import roslib
 roslib.load_manifest('cob_monitoring')
 import rospy
 
+from geometry_msgs.msg import Twist
+from diagnostic_msgs.msg import DiagnosticArray
+
 from cob_relayboard.msg import *
 
 from simple_script_server import *
@@ -16,9 +19,61 @@ sss = simple_script_server()
 
 class emergency_stop_monitor():
 	def __init__(self):
-		rospy.Subscriber("/emergency_stop_state", EmergencyStopState, self.emergency_callback)
-		self.em_status = EmergencyStopState()
-		self.first_time = True
+		self.color = "None"
+		rospy.wait_for_service("/light_controller/mode")
+		self.diagnotics_enabled = rospy.get_param("~diagnostics_based", False)
+		if(self.diagnotics_enabled):
+			rospy.Subscriber("/diagnostics", DiagnosticArray, self.new_diagnostics)
+			self.on = False
+        		self.diag_err = False
+			self.last_led = rospy.get_rostime()
+		else:
+			rospy.Subscriber("/emergency_stop_state", EmergencyStopState, self.emergency_callback)	
+			self.em_status = EmergencyStopState()
+			self.first_time = True
+
+		self.motion_sensing = rospy.get_param("~motion_sensing", False)
+		if(self.motion_sensing):
+			rospy.Subscriber("/base_controller/command_direct", Twist, self.new_velcommand)
+			self.last_vel = rospy.get_rostime()
+
+	## Diagnostics monitoring
+	def new_diagnostics(self, diag):
+        	for status in diag.status:
+            		if(status.name == "//base_controller"):
+                		if(status.level != 0):## && self.last_base_diag == 0):
+                    			self.diag_err = True
+                		elif(status.level == 0):## && self.last_base_diag == 1):
+                    			self.diag_err = False
+		if((rospy.get_rostime() - self.last_led).to_sec() > 0.5):
+			self.last_led = rospy.get_rostime()
+		        #Trigger LEDS
+	    		if(self.diag_err):
+				if(self.color != "red"):
+		    			sss.set_light("red")	
+					self.color = "red"
+	    		else:
+        			if ((rospy.get_rostime() - self.last_vel).to_sec() > 1.0):
+					if(self.color != "green"):
+		            			sss.set_light("green")
+						self.color = "green"
+	    	    		else:
+        		    		if(self.on):
+            		    			self.on = False
+						if(self.color != "yellow"):
+	            	    				sss.set_light("yellow")
+							self.color = "yellow"
+	 		           	else:
+        	        			self.on = True
+						if(self.color != "led_off"):
+				                	sss.set_light("led_off")
+							self.color = "led_off"
+		
+
+	## Velocity Monitoring
+	def new_velcommand(self, twist):
+	        if twist.linear.x != 0 or twist.linear.y != 0 or twist.angular.z != 0:
+        		self.last_vel = rospy.get_rostime()
 
 	## Emergency stop monitoring
 	def emergency_callback(self,msg):
