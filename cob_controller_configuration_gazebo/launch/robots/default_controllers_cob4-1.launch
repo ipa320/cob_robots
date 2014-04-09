@@ -33,6 +33,12 @@
 		<arg name="component_name" value="head"/>
 		<arg name="version" value="cob4"/>
 	</include-->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocity.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="head"/>
+		<arg name="version" value="cob4"/>
+		<arg name="controllers" value="head_1_joint_velocity_controller head_2_joint_velocity_controller head_3_joint_velocity_controller"/>
+	</include>
 	
 	<!-- Arms -->
 	<!--include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
@@ -45,6 +51,12 @@
 		<arg name="component_name" value="sensorring"/>
 		<arg name="version" value="cob4"/>
 	</include-->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocity.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="sensorring"/>
+		<arg name="version" value="cob4"/>
+		<arg name="controllers" value="sensorring_joint_velocity_controller"/>
+	</include>
 	
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />

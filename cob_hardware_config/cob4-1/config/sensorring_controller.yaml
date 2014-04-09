@@ -1,5 +1,5 @@
 #all
-joint_names: [torso_1_joint, torso_2_joint, torso_3_joint]
+joint_names: [sensorring_joint]
 
 # trajectory controller parameters
 ptp_vel: 1.0 # rad/sec
