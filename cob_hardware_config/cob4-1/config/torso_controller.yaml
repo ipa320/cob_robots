@@ -8,3 +8,7 @@ max_error: 0.25 # rad
 overlap_time: 0.4
 frequency: 68
 operation_mode: velocity
+
+# twist controller parameters
+base_link: torso_base_link
+tip_link: torso_center_link
