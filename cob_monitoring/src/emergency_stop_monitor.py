@@ -20,22 +20,25 @@ sss = simple_script_server()
 class emergency_stop_monitor():
 	def __init__(self):
 		self.color = "None"
-		rospy.wait_for_service("/light_controller/mode")
-		self.diagnotics_enabled = rospy.get_param("~diagnostics_based", False)
-		if(self.diagnotics_enabled):
-			rospy.Subscriber("/diagnostics", DiagnosticArray, self.new_diagnostics)
-			self.on = False
-        		self.diag_err = False
-			self.last_led = rospy.get_rostime()
-		else:
-			rospy.Subscriber("/emergency_stop_state", EmergencyStopState, self.emergency_callback)	
-			self.em_status = EmergencyStopState()
-			self.first_time = True
+		self.sound_enabled = rospy.get_param("~sound_enabled", True)
+		self.led_enabled = rospy.get_param("~led_enabled", True)
+		if(self.led_enabled):
+			rospy.wait_for_service("/light_controller/mode")
+			self.diagnotics_enabled = rospy.get_param("~diagnostics_based", False)
+			if(self.diagnotics_enabled):
+				rospy.Subscriber("/diagnostics", DiagnosticArray, self.new_diagnostics)
+				self.on = False
+        			self.diag_err = False
+				self.last_led = rospy.get_rostime()
+			else:
+				rospy.Subscriber("/emergency_stop_state", EmergencyStopState, self.emergency_callback)	
+				self.em_status = EmergencyStopState()
+				self.first_time = True
 
-		self.motion_sensing = rospy.get_param("~motion_sensing", False)
-		if(self.motion_sensing):
-			rospy.Subscriber("/base_controller/command_direct", Twist, self.new_velcommand)
-			self.last_vel = rospy.get_rostime()
+			self.motion_sensing = rospy.get_param("~motion_sensing", False)
+			if(self.motion_sensing):
+				rospy.Subscriber("/base_controller/command_direct", Twist, self.new_velcommand)
+				self.last_vel = rospy.get_rostime()
 
 	## Diagnostics monitoring
 	def new_diagnostics(self, diag):
@@ -92,14 +95,18 @@ class emergency_stop_monitor():
 			elif self.em_status.emergency_state == 1: # em stop
 				sss.set_light("red")
 				if self.em_status.scanner_stop and not self.em_status.emergency_button_stop:
-					sss.say(["laser emergency stop issued"])
+					if(self.sound_enabled):
+						sss.say(["laser emergency stop issued"])
 				elif not self.em_status.scanner_stop and self.em_status.emergency_button_stop:
-					sss.say(["emergency stop button pressed"])
+					if(self.sound_enabled):
+						sss.say(["emergency stop button pressed"])
 				else:
-					sss.say(["emergency stop issued"])
+					if(self.sound_enabled):
+						sss.say(["emergency stop issued"])
 			elif self.em_status.emergency_state == 2: # release
 				sss.set_light("yellow")
-				sss.say(["emergency stop released"])
+				if(self.sound_enabled):
+					sss.say(["emergency stop released"])
 
 if __name__ == "__main__":
 	rospy.init_node("emergency_stop_monitor")
