@@ -1,0 +1,94 @@
+pub_rate: 1.0 # Optional
+base_path: '' # Optional, prepended to all diagnostic output
+analyzers:
+  computers:
+    type: IgnoreAnalyzer
+    path: Computers
+    analyzers:
+      pc1:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc1
+        contains: 'pc1'
+      pc2:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc2
+        contains: 'pc2'
+      pc3:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: pc3
+        contains: 'pc3'
+
+#  network:
+#    type: AnalyzerGroup
+#    path: Network
+#    analyzers:
+#      wifi:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: wifi
+#        num_items: 1
+#        expected: ['Wifi Status (ddwrt)']
+ 
+  io:
+    type: AnalyzerGroup
+    path: IO
+    analyzers:
+      joystick:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Joystick
+        contains: 'joy'
+
+  sensors:
+    type: AnalyzerGroup
+    path: Sensors
+    analyzers:
+      laser_top:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Front
+        contains: 'laser_front'
+      laser_rear:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Right
+        contains: 'laser_right'
+      laser_front:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Scan Left
+        contains: 'laser_left'
+
+  motors:
+    type: AnalyzerGroup
+    path: Actuators
+    analyzers:
+      torso:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso
+        contains: 'torso_controller'
+      sensorring:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sensorring
+        contains: 'sensorring_controller'
+      head:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Head
+        contains: 'head_controller'
+      arm_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Right
+        contains: 'arm_right_controller'
+      arm_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Left
+        contains: 'arm_left_controller'
+      base:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Base
+        contains: 'base_controller'
+        
+## remove diagnostics from gazebo in simulated case
+  simulation:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'joint'
+  simulation2:
+    type: DiscardAnalyzer
+    path: none
+    contains: 'Controller'

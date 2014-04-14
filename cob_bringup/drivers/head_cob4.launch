@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name" default="head" />
+
+	<!-- parameters for CANopen node -->
+	<rosparam command="load" ns="head_sensorring_canopen" file="$(arg pkg_hardware_config)/$(arg robot)/config/head_sensorring_canopen.yaml" />
+
+	<!-- This is the CANopen ROS wrapper node -->
+	<node ns="head_sensorring_canopen" name="head_sensorring_canopen_ros" pkg="ipa_canopen_ros" type="ipa_canopen_ros" cwd="node" respawn="false" output="screen" />
+	
+	<!-- parameter description of the CAN modules and for the corresponding trajectory controller -->
+	<rosparam command="load" ns="head_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/head.yaml" />
+	
+	<rosparam command="load" ns="sensorring_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/sensorring.yaml" />
+
+	<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
+	<node ns="head_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller" cwd="node" respawn="false" output="screen" />
+	
+	<node ns="sensorring_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller" cwd="node" respawn="false" output="screen" />
+
+</launch>
