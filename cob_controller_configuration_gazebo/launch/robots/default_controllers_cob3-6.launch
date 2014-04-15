@@ -26,7 +26,7 @@
 	<!-- SDH -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="sdh"/>
-		<arg name="version" value="single"/>
+		<arg name="version" value="standard"/>
 	</include>
 
 	<!-- Torso -->

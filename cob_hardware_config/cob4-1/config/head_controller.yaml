@@ -8,3 +8,11 @@ max_error: 0.25 # rad
 overlap_time: 0.4
 frequency: 68
 operation_mode: velocity
+
+# twist controller parameters
+base_link: head_base_link
+tip_link: head_3_link
+
+# controller_adapter_gazebo
+update_rate: 33.0
+max_vel_command_silence: 0.5

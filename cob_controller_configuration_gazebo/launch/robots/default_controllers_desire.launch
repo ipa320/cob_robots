@@ -18,15 +18,27 @@
 	</include>
 	
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lbr_dual"/>
+		<arg name="version" value="lbr"/>
+		<arg name="side" value="_left"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="lbr"/>
+		<arg name="side" value="_right"/>
 	</include>
 
 	<!-- SDH -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="sdh"/>
-		<arg name="version" value="dual"/>
+		<arg name="version" value="standard"/>
+		<arg name="side" value="_left"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="sdh"/>
+		<arg name="version" value="standard"/>
+		<arg name="side" value="_right"/>
 	</include>
 
 	<!-- start additional components -->
