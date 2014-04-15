@@ -18,10 +18,11 @@
 	</include>
 
 	<!-- Arm -->
-	<!--include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="arm"/>
 		<arg name="version" value="lbr"/>
-	</include-->
+	</include>
+<!--
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
@@ -29,6 +30,7 @@
 		<arg name="start_controllers" value="arm_1_joint_position_controller arm_2_joint_position_controller arm_3_joint_position_controller arm_4_joint_position_controller arm_5_joint_position_controller arm_6_joint_position_controller arm_7_joint_position_controller"/>
 		<arg name="stop_controllers" value="arm_1_joint_velocity_controller arm_2_joint_velocity_controller arm_3_joint_velocity_controller arm_4_joint_velocity_controller arm_5_joint_velocity_controller arm_6_joint_velocity_controller arm_7_joint_velocity_controller"/>
 	</include>
+-->
 
 	<!-- SDH -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
