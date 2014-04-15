@@ -17,17 +17,17 @@
   <xacro:include filename="$(find frida_description)/urdf/frida.urdf.xacro" />
 
   <!-- frida adapter -->
-  <include filename="$(find prace_common)/urdf/adapter/tower_frida_adapter.urdf.xacro" />  
+  <xacro:include filename="$(find prace_common)/urdf/adapter/tower_frida_adapter.urdf.xacro" />  
 
   <!-- prace gripper -->
   <xacro:include filename="$(find prace_gripper_description)/urdf/prace_gripper.urdf.xacro"/>
 
   <!-- prace neck -->
-  <include filename="$(find prace_common)/urdf/neck/neck.urdf.xacro" />  
+  <xacro:include filename="$(find prace_common)/urdf/neck/neck.urdf.xacro" />  
   
   <!-- prace head -->
-  <include filename="$(find prace_common)/urdf/head/head.urdf.xacro" />
-  <include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
+  <xacro:include filename="$(find prace_common)/urdf/head/head.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
  
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <xacro:include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
