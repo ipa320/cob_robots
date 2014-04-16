@@ -26,6 +26,12 @@
 		<arg name="version" value="prace_dual"/>
 	</include>
 
+	<!-- Head -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="head"/>
+		<arg name="version" value="raw3-3"/>
+	</include>
+
 	<!-- start additional components -->
 	<!--include file="$(find cob_sound)/ros/launch/sound.launch" /-->
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
