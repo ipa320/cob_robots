@@ -15,15 +15,27 @@
 	</include>
 
 	<!-- Arms -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="arm"/>
 		<arg name="version" value="frida"/>
+		<arg name="side" value="_left"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="frida"/>
+		<arg name="side" value="_right"/>
 	</include>
 
 	<!-- Grippers -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="gripper"/>
-		<arg name="version" value="prace_dual"/>
+		<arg name="version" value="prace"/>
+		<arg name="side" value="_left"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="gripper"/>
+		<arg name="version" value="prace"/>
+		<arg name="side" value="_right"/>
 	</include>
 
 	<!-- Head -->
