@@ -17,10 +17,11 @@
 	</include>
 
 	<!-- Torso -->
-	<!--include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="torso"/>
 		<arg name="version" value="cob4"/>
-	</include-->
+	</include>
+<!--
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="torso"/>
@@ -28,6 +29,7 @@
 		<arg name="start_controllers" value="torso_1_joint_position_controller torso_2_joint_position_controller torso_3_joint_position_controller"/>
 		<arg name="stop_controllers" value="torso_1_joint_velocity_controller torso_2_joint_velocity_controller torso_3_joint_velocity_controller"/>
 	</include>
+-->
 
 	<!-- Head -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
