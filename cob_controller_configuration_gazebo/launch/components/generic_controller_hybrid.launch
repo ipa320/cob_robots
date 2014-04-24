@@ -21,5 +21,7 @@
 	
 	<node name="$(arg component_name)$(arg side)_hybrid_start_controllers_spawner" pkg="controller_manager" type="spawner" args="$(arg start_controllers)" />
 	<node name="$(arg component_name)$(arg side)_hybrid_stop_controllers_spawner" pkg="controller_manager" type="spawner" args="--stopped $(arg stop_controllers)" />
+	
+	<node ns="$(arg component_name)$(arg side)_controller" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen" />
 
 </launch>

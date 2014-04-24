@@ -87,7 +87,6 @@
 		<arg name="stop_controllers" value="sensorring_joint_velocity_controller"/>
 	</include-->
 	
-	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />
 
 </launch>
