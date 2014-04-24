@@ -25,13 +25,26 @@ class cob_controller_adapter_gazebo():
         self.pos_controller_pubs.append(pub)
         self.pos_controller_names.append(self.joint_names[i]+'_position_controller')
     
+    rospy.logwarn("Waiting for load_controller service...")
+    rospy.wait_for_service('/controller_manager/load_controller')
+    rospy.loginfo("...load_controller service available!")
+    
+    self.load_client = rospy.ServiceProxy('/controller_manager/load_controller', LoadController)
+
     rospy.logwarn("Waiting for switch_controller service...")
     rospy.wait_for_service('/controller_manager/switch_controller')
     rospy.loginfo("...switch_controller service available!")
     
     self.switch_client = rospy.ServiceProxy('/controller_manager/switch_controller', SwitchController)
     
+    for controller in self.vel_controller_names:
+        res = self.load_client(controller)
+    for controller in self.pos_controller_names:
+        res = self.load_client(controller)
+    
+    self.switch_controller(self.pos_controller_names, [])
     self.current_control_mode = "position"
+    
     self.update_rate = rospy.get_param("update_rate", 33.0)
     self.max_vel_command_silence = rospy.get_param("max_vel_command_silence", 2.0)
     self.last_vel_command = rospy.get_time()
