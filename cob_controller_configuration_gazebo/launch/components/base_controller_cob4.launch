@@ -16,4 +16,23 @@
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
+  <!-- scan filters-->
+  <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_front.yaml" ns="laser_front" />
+  <node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_front_filter" respawn="false" output="screen" ns="laser_front" >
+    <remap from="scan" to="/scan_front_raw"/>
+    <remap from="scan_filtered" to="/scan_front"/>
+  </node>
+
+  <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_left.yaml" ns="laser_left" />
+  <node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_left_filter" respawn="false" output="screen" ns="laser_left" >
+    <remap from="scan" to="/scan_left_raw"/>
+    <remap from="scan_filtered" to="/scan_left"/>
+  </node>
+
+  <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_right.yaml" ns="laser_right" />
+  <node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_right_filter" respawn="false" output="screen" ns="laser_right" >
+    <remap from="scan" to="/scan_right_raw"/>
+    <remap from="scan_filtered" to="/scan_right"/>
+  </node>
+  
 </launch>
