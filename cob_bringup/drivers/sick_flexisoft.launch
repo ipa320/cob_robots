@@ -10,5 +10,8 @@
     </node>
 
     <rosparam ns="safety_controller" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/flexisoft.yaml"/>
+    <param name="safety_controller/front_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_front.xml"/>
+    <param name="safety_controller/left_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_left.xml"/>
+    <param name="safety_controller/right_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_right.xml"/>
 
 </launch>
