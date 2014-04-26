@@ -32,17 +32,7 @@
       <arg name="pipeline" value="$(arg pipeline)"/>
       <arg name="robot" value="$(arg robot)"/>
   </include>
- 
-<!--  
-  <include ns="move_group" file="$(find raw3-1)/launch/trajectory_execution.launch" if="$(arg allow_trajectory_execution)">
-    <arg name="moveit_controller_manager" value="raw3-1" /> 
-    <arg name="moveit_manage_controllers" value="true" />
-  </include>
 
-  <include ns="move_group" file="$(find raw3-1)/launch/sensor_manager.launch" if="$(arg allow_trajectory_execution)">
-    <arg name="moveit_sensor_manager" value="raw3-1" /> 
-  </include>
--->
 
   <!-- include this for sensing -->
   <!-- IMPORTANT: To disable, you must manually remove the paramater from the parameter server -->
@@ -64,14 +54,15 @@
 
     <!-- MoveGroup capabilities to load -->
     <param name="capabilities" value="move_group/MoveGroupCartesianPathService
-                      move_group/MoveGroupExecuteService
-                      move_group/MoveGroupKinematicsService
-                      move_group/MoveGroupMoveAction
-                      move_group/MoveGroupPickPlaceAction
-                      move_group/MoveGroupPlanService
-                      move_group/MoveGroupQueryPlannersService
-                      move_group/MoveGroupStateValidationService
-                      " />
+                                      move_group/MoveGroupExecuteService
+                                      move_group/MoveGroupKinematicsService
+                                      move_group/MoveGroupMoveAction
+                                      move_group/MoveGroupPickPlaceAction
+                                      move_group/MoveGroupPlanService
+                                      move_group/MoveGroupQueryPlannersService
+                                      move_group/MoveGroupStateValidationService
+                                      move_group/MoveGroupGetPlanningSceneService
+                                      " />
 
     <!-- Publish the planning scene of the physical robot so that rviz plugin can know actual robot -->
     <param name="planning_scene_monitor/publish_planning_scene" value="$(arg publish_monitored_planning_scene)" />

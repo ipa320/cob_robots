@@ -1,0 +1,45 @@
+controller_list:
+  - name: arm_left_controller
+    ns: follow_joint_trajectory
+    default: true
+    joints:
+      - arm_left_1_joint
+      - arm_left_2_joint
+      - arm_left_3_joint
+      - arm_left_4_joint
+      - arm_left_5_joint
+      - arm_left_6_joint
+      - arm_left_7_joint
+  - name: arm_right_controller
+    ns: follow_joint_trajectory
+    default: true
+    joints:
+      - arm_right_1_joint
+      - arm_right_2_joint
+      - arm_right_3_joint
+      - arm_right_4_joint
+      - arm_right_5_joint
+      - arm_right_6_joint
+      - arm_right_7_joint
+  - name: torso_controller
+    ns: follow_joint_trajectory
+    default: true
+    joints:
+      - torso_1_joint
+      - torso_2_joint
+      - torso_3_joint
+  - name: head_controller
+    ns: follow_joint_trajectory
+    default: true
+    joints:
+      - head_1_joint
+      - head_2_joint
+      - head_3_joint
+  - name: lookat_controller
+    ns: follow_joint_trajectory
+    default: true
+    joints:
+      - lookat_lin_joint
+      - lookat_x_joint
+      - lookat_y_joint
+      - lookat_z_joint
