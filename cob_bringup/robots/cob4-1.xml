@@ -37,23 +37,22 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="left" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
-			<arg name="sim" value="true" />
+		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
+			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
 		<!-- start additional packages -->
-		<!--include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>
+		</include-->
 	</group>
 
 	<group>
@@ -64,7 +63,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+		<include file="$(find cob_bringup)/drivers/head_cob4.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="head" />
 		</include>
@@ -80,27 +79,26 @@
 
 	<group>
 		<machine name="cob4-1-t2" address="$(arg cob4-1-t2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
-
-		<!-- startup hardware -->
 	</group>
 
 	<group>
 		<machine name="cob4-1-t3" address="$(arg cob4-1-t3)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
-		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/openni.launch" >
+		<!--include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_left"/>
+			<arg name="device_id" value="#1"/>
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/openni.launch" >
+		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_right"/>
-		</include>
+			<arg name="device_id" value="#2"/>
+		</include-->
 
-		<include file="$(find cob_bringup)/drivers/softkinetic.launch" >
+		<!--include file="$(find cob_bringup)/drivers/softkinetic.launch" >
 			<arg name="name" value="torso_cam3d_down"/>
-		</include>
+		</include-->
 
 	</group>
 
