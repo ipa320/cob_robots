@@ -28,7 +28,7 @@
   <!-- prace head -->
   <xacro:include filename="$(find prace_common)/urdf/head/head.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
- 
+
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <xacro:include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
