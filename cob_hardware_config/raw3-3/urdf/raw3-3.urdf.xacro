@@ -23,7 +23,7 @@
   <xacro:include filename="$(find prace_gripper_description)/urdf/prace_gripper.urdf.xacro"/>
 
   <!-- prace neck -->
-  <xacro:include filename="$(find prace_common)/urdf/neck/neck.urdf.xacro" />  
+  <xacro:include filename="$(find prace_common)/urdf/neck/neck_v2.urdf.xacro" />  
   
   <!-- prace head -->
   <xacro:include filename="$(find prace_common)/urdf/head/head.urdf.xacro" />
