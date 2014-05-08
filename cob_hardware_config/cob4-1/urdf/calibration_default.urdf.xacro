@@ -34,7 +34,7 @@
 	<!-- torso mount positions | relative to base_link -->
 	<property name="def_torso_x" value="0.0"/>
 	<property name="def_torso_y" value="0.0"/>
-	<property name="def_torso_z" value="0.26411"/>
+	<property name="def_torso_z" value="0.33411"/>
 	<property name="def_torso_roll" value="0.0"/>
 	<property name="def_torso_pitch" value="0.0"/>
 	<property name="def_torso_yaw" value="0.0"/>
@@ -127,5 +127,5 @@
 	<property name="def_torso_cam3d_down_roll" value="2.18166"/> <!--2.18166-->
 	<property name="def_torso_cam3d_down_pitch" value="0.0"/>
 	<property name="def_torso_cam3d_down_yaw" value="1.57079"/> <!--1.57079-->
-	
+
 </robot>

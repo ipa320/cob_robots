@@ -21,6 +21,15 @@
 		<arg name="component_name" value="torso"/>
 		<arg name="version" value="cob4"/>
 	</include>
+<!--
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
+		<arg name="version" value="cob4"/>
+		<arg name="start_controllers" value="torso_1_joint_position_controller torso_2_joint_position_controller torso_3_joint_position_controller"/>
+		<arg name="stop_controllers" value="torso_1_joint_velocity_controller torso_2_joint_velocity_controller torso_3_joint_velocity_controller"/>
+	</include>
+-->
 
 	<!-- Head -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
@@ -29,10 +38,34 @@
 	</include>
 	
 	<!-- Arms -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lwa4p_dual"/>
+		<arg name="version" value="lwa4p"/>
+		<arg name="side" value="_left"/>
 	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="lwa4p"/>
+		<arg name="side" value="_right"/>
+	</include>
+<!--
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="lwa4p"/>
+		<arg name="side" value="_left"/>
+		<arg name="start_controllers" value="arm_left_1_joint_position_controller arm_left_2_joint_position_controller arm_left_3_joint_position_controller arm_left_4_joint_position_controller arm_left_5_joint_position_controller arm_left_6_joint_position_controller arm_left_7_joint_position_controller"/>
+		<arg name="stop_controllers" value="arm_left_1_joint_velocity_controller arm_left_2_joint_velocity_controller arm_left_3_joint_velocity_controller arm_left_4_joint_velocity_controller arm_left_5_joint_velocity_controller arm_left_6_joint_velocity_controller arm_left_7_joint_velocity_controller"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="lwa4p"/>
+		<arg name="side" value="_right"/>
+		<arg name="start_controllers" value="arm_right_1_joint_position_controller arm_right_2_joint_position_controller arm_right_3_joint_position_controller arm_right_4_joint_position_controller arm_right_5_joint_position_controller arm_right_6_joint_position_controller arm_right_7_joint_position_controller"/>
+		<arg name="stop_controllers" value="arm_right_1_joint_velocity_controller arm_right_2_joint_velocity_controller arm_right_3_joint_velocity_controller arm_right_4_joint_velocity_controller arm_right_5_joint_velocity_controller arm_right_6_joint_velocity_controller arm_right_7_joint_velocity_controller"/>
+	</include>
+-->
 	
 	<!-- Sensorring -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">

@@ -26,14 +26,14 @@ class gazebo_services():
 		self.torso_init_srv = rospy.Service('/torso_controller/init', Trigger, self.torso_init_cb)
 		self.torso_stop_srv = rospy.Service('/torso_controller/stop', Trigger, self.torso_stop_cb)
 		self.torso_recover_srv = rospy.Service('/torso_controller/recover', Trigger, self.torso_recover_cb)
-		self.torso_set_operation_mode_srv = rospy.Service('/torso_controller/set_operation_mode', SetOperationMode, self.torso_set_operation_mode_cb)
+		#self.torso_set_operation_mode_srv = rospy.Service('/torso_controller/set_operation_mode', SetOperationMode, self.torso_set_operation_mode_cb)
 
 		#tray
 		self.tray_client = actionlib.SimpleActionClient('/tray_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
 		self.tray_init_srv = rospy.Service('/tray_controller/init', Trigger, self.tray_init_cb)
 		self.tray_stop_srv = rospy.Service('/tray_controller/stop', Trigger, self.tray_stop_cb)
 		self.tray_recover_srv = rospy.Service('/tray_controller/recover', Trigger, self.tray_recover_cb)
-		self.tray_set_operation_mode_srv = rospy.Service('/tray_controller/set_operation_mode', SetOperationMode, self.tray_set_operation_mode_cb)
+		#self.tray_set_operation_mode_srv = rospy.Service('/tray_controller/set_operation_mode', SetOperationMode, self.tray_set_operation_mode_cb)
 
 		#arm
 		self.arm_client = actionlib.SimpleActionClient('/arm_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
@@ -41,49 +41,56 @@ class gazebo_services():
 		self.arm_stop_srv = rospy.Service('/arm_controller/stop', Trigger, self.arm_stop_cb)
 		self.arm_recover_srv = rospy.Service('/arm_controller/recover', Trigger, self.arm_recover_cb)
 		self.arm_set_operation_mode_srv = rospy.Service('/arm_controller/set_operation_mode', SetOperationMode, self.arm_set_operation_mode_cb)
-		self.arm_set_joint_stiffness_srv = rospy.Service('/arm_controller/set_joint_stiffness', SetJointStiffness, self.arm_set_joint_stiffness_cb)
+		#self.arm_set_joint_stiffness_srv = rospy.Service('/arm_controller/set_joint_stiffness', SetJointStiffness, self.arm_set_joint_stiffness_cb)
 
 		#arm left
 		self.arm_left_client = actionlib.SimpleActionClient('/arm_left_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
 		self.arm_left_init_srv = rospy.Service('/arm_left_controller/init', Trigger, self.arm_left_init_cb)
 		self.arm_left_stop_srv = rospy.Service('/arm_left_controller/stop', Trigger, self.arm_left_stop_cb)
 		self.arm_left_recover_srv = rospy.Service('/arm_left_controller/recover', Trigger, self.arm_left_recover_cb)
-		self.arm_left_set_operation_mode_srv = rospy.Service('/arm_left_controller/set_operation_mode', SetOperationMode, self.arm_left_set_operation_mode_cb)
+		#self.arm_left_set_operation_mode_srv = rospy.Service('/arm_left_controller/set_operation_mode', SetOperationMode, self.arm_left_set_operation_mode_cb)
 		
 		#arm right
 		self.arm_right_client = actionlib.SimpleActionClient('/arm_right_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
 		self.arm_right_init_srv = rospy.Service('/arm_right_controller/init', Trigger, self.arm_right_init_cb)
 		self.arm_right_stop_srv = rospy.Service('/arm_right_controller/stop', Trigger, self.arm_right_stop_cb)
 		self.arm_right_recover_srv = rospy.Service('/arm_right_controller/recover', Trigger, self.arm_right_recover_cb)
-		self.arm_right_set_operation_mode_srv = rospy.Service('/arm_right_controller/set_operation_mode', SetOperationMode, self.arm_right_set_operation_mode_cb)
+		#self.arm_right_set_operation_mode_srv = rospy.Service('/arm_right_controller/set_operation_mode', SetOperationMode, self.arm_right_set_operation_mode_cb)
 
 		#sdh
 		self.sdh_client = actionlib.SimpleActionClient('/sdh_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
 		self.sdh_init_srv = rospy.Service('/sdh_controller/init', Trigger, self.sdh_init_cb)
 		self.sdh_stop_srv = rospy.Service('/sdh_controller/stop', Trigger, self.sdh_stop_cb)
 		self.sdh_recover_srv = rospy.Service('/sdh_controller/recover', Trigger, self.sdh_recover_cb)
-		self.sdh_set_operation_mode_srv = rospy.Service('/sdh_controller/set_operation_mode', SetOperationMode, self.sdh_set_operation_mode_cb)
+		#self.sdh_set_operation_mode_srv = rospy.Service('/sdh_controller/set_operation_mode', SetOperationMode, self.sdh_set_operation_mode_cb)
 		
 		#sdh left
 		self.sdh_left_client = actionlib.SimpleActionClient('/sdh_left_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
 		self.sdh_left_init_srv = rospy.Service('/sdh_left_controller/init', Trigger, self.sdh_left_init_cb)
 		self.sdh_left_stop_srv = rospy.Service('/sdh_left_controller/stop', Trigger, self.sdh_left_stop_cb)
 		self.sdh_left_recover_srv = rospy.Service('/sdh_left_controller/recover', Trigger, self.sdh_left_recover_cb)
-		self.sdh_left_set_operation_mode_srv = rospy.Service('/sdh_left_controller/set_operation_mode', SetOperationMode, self.sdh_left_set_operation_mode_cb)
+		#self.sdh_left_set_operation_mode_srv = rospy.Service('/sdh_left_controller/set_operation_mode', SetOperationMode, self.sdh_left_set_operation_mode_cb)
 		
 		#sdh right
 		self.sdh_right_client = actionlib.SimpleActionClient('/sdh_right_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
 		self.sdh_right_init_srv = rospy.Service('/sdh_right_controller/init', Trigger, self.sdh_right_init_cb)
 		self.sdh_right_stop_srv = rospy.Service('/sdh_right_controller/stop', Trigger, self.sdh_right_stop_cb)
 		self.sdh_right_recover_srv = rospy.Service('/sdh_right_controller/recover', Trigger, self.sdh_right_recover_cb)
-		self.sdh_right_set_operation_mode_srv = rospy.Service('/sdh_right_controller/set_operation_mode', SetOperationMode, self.sdh_right_set_operation_mode_cb)
+		#self.sdh_right_set_operation_mode_srv = rospy.Service('/sdh_right_controller/set_operation_mode', SetOperationMode, self.sdh_right_set_operation_mode_cb)
 		
 		#head
 		self.head_client = actionlib.SimpleActionClient('/head_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
 		self.head_init_srv = rospy.Service('/head_controller/init', Trigger, self.head_init_cb)
 		self.head_stop_srv = rospy.Service('/head_controller/stop', Trigger, self.head_stop_cb)
 		self.head_recover_srv = rospy.Service('/head_controller/recover', Trigger, self.head_recover_cb)
-		self.head_set_operation_mode_srv = rospy.Service('/head_controller/set_operation_mode', SetOperationMode, self.head_set_operation_mode_cb)
+		#self.head_set_operation_mode_srv = rospy.Service('/head_controller/set_operation_mode', SetOperationMode, self.head_set_operation_mode_cb)
+		
+		#sensorring
+		self.sensorring_client = actionlib.SimpleActionClient('/sensorring_controller/follow_joint_trajectory', FollowJointTrajectoryAction)
+		self.sensorring_init_srv = rospy.Service('/sensorring_controller/init', Trigger, self.sensorring_init_cb)
+		self.sensorring_stop_srv = rospy.Service('/sensorring_controller/stop', Trigger, self.sensorring_stop_cb)
+		self.sensorring_recover_srv = rospy.Service('/sensorring_controller/recover', Trigger, self.sensorring_recover_cb)
+		#self.sensorring_set_operation_mode_srv = rospy.Service('/sensorring_controller/set_operation_mode', SetOperationMode, self.sensorring_set_operation_mode_cb)
 
 	# base
 	def base_init_cb(self, req):
@@ -309,6 +316,30 @@ class gazebo_services():
 		resp = SetOperationModeResponse()
 		resp.success.data = True
 		return resp
+		
+	# sensorring
+	def sensorring_init_cb(self, req):
+		resp = TriggerResponse()
+		resp.success.data = True
+		return resp
+	
+	def sensorring_stop_cb(self, req):
+		self.sensorring_client.cancel_all_goals()
+		resp = TriggerResponse()
+		resp.success.data = True
+		return resp
+
+	def sensorring_recover_cb(self, req):
+		resp = TriggerResponse()
+		resp.success.data = True
+		return resp
+	
+	def sensorring_set_operation_mode_cb(self, req):
+		resp = SetOperationModeResponse()
+		resp.success.data = True
+		return resp
+	
+	
 
 if __name__ == "__main__":
    rospy.init_node('gazebo_services')

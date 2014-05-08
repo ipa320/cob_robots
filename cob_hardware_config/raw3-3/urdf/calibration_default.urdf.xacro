@@ -37,4 +37,52 @@
 	<property name="def_gripper_right_pitch" value="0.0"/>
 	<property name="def_gripper_right_yaw" value="0.0"/>
 
+	<!-- neck mount positions | relative to arm_torso_link -->
+	<property name="def_neck_x" value="-0.07624"/>
+	<property name="def_neck_y" value="0.0"/>
+	<property name="def_neck_z" value="0.47378"/>
+	<property name="def_neck_roll" value="0.0"/>
+	<property name="def_neck_pitch" value="0.607514"/>
+	<property name="def_neck_yaw" value="0.0"/>
+
+	<!-- head mount positions | relative to neck_mount_link -->
+	<property name="def_head_x" value="0.0"/>
+	<property name="def_head_y" value="0.0"/>
+	<property name="def_head_z" value="0.074998"/>
+	<property name="def_head_roll" value="0.0"/>
+	<property name="def_head_pitch" value="0.0"/>
+	<property name="def_head_yaw" value="0.0"/>
+
+	<!-- ids_middle mount positions | relative to head_cam_holder_link -->
+	<property name="def_ids_middle_x" value="-0.002"/>
+	<property name="def_ids_middle_y" value="0.0"/>
+	<property name="def_ids_middle_z" value="0.0145"/>
+	<property name="def_ids_middle_roll" value="0.0"/>
+	<property name="def_ids_middle_pitch" value="0.0"/>
+	<property name="def_ids_middle_yaw" value="0.0"/>
+
+	<!-- ids_left mount positions | relative to head_cam_holder_link -->
+	<property name="def_ids_left_x" value="-0.002"/>
+	<property name="def_ids_left_y" value="0.091"/>
+	<property name="def_ids_left_z" value="0.0145"/>
+	<property name="def_ids_left_roll" value="0.0"/>
+	<property name="def_ids_left_pitch" value="0.0"/>
+	<property name="def_ids_left_yaw" value="0.0"/>
+
+	<!-- ids_right mount positions | relative to head_cam_holder_link -->
+	<property name="def_ids_right_x" value="-0.002"/>
+	<property name="def_ids_right_y" value="-0.091"/>
+	<property name="def_ids_right_z" value="0.0145"/>
+	<property name="def_ids_right_roll" value="0.0"/>
+	<property name="def_ids_right_pitch" value="0.0"/>
+	<property name="def_ids_right_yaw" value="0.0"/>
+
+	<!-- cam_holder mount positions | relative to head_cam_holder_link -->
+	<property name="def_cam_holder_x" value="0.0"/>
+	<property name="def_cam_holder_y" value="-0.065"/>
+	<property name="def_cam_holder_z" value="0.0"/>
+	<property name="def_cam_holder_roll" value="1.5708"/>
+	<property name="def_cam_holder_pitch" value="0.0"/>
+	<property name="def_cam_holder_yaw" value="0.0"/>
+
 </robot>
