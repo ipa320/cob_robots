@@ -70,3 +70,7 @@ group6:
     [home,move,home],
     [folded,move,folded],
     [pregrasp,move,pregrasp]]
+group7:
+  group_name: lookat
+  component_name: lookat
+  buttons: [[home,move,home]]

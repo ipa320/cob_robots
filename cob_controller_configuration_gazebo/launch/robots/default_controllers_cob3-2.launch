@@ -23,10 +23,10 @@
 		<arg name="version" value="lwa"/>
 	</include>
 
-	<!-- SDH -->
+	<!-- Gripper -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
-		<arg name="component_name" value="sdh"/>
-		<arg name="version" value="standard"/>
+		<arg name="component_name" value="gripper"/>
+		<arg name="version" value="sdh"/>
 	</include>
 
 	<!-- DSA -->
@@ -79,7 +79,6 @@
 		<arg name="sim" value="true"/>
 	</include>
 	
-	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />
 	
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >

@@ -15,4 +15,4 @@ tip_link: torso_center_link
 
 # controller_adapter_gazebo
 update_rate: 33.0
-max_vel_command_silence: 0.5
+max_vel_command_silence: 1.0

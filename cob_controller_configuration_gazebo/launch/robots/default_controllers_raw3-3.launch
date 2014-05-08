@@ -48,8 +48,6 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="head"/>
 		<arg name="version" value="raw3-3"/>
-		<arg name="start_controllers" value="head_powerball_bottom_joint_position_controller head_powerball_side_joint_position_controller"/>
-		<arg name="stop_controllers" value="head_powerball_bottom_joint_velocity_controller head_powerball_side_joint_velocity_controller"/>
 	</include>
 -->
 	

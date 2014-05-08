@@ -25,8 +25,8 @@ group5:
     [folded,move,folded],
     [pregrasp,move,pregrasp]]
 group6:
-  group_name: sdh left
-  component_name: sdh_left
+  group_name: gripper left
+  component_name: gripper_left
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],
@@ -38,8 +38,8 @@ group6:
     [point,move,point],
     [fist,move,fist]]
 group7:
-  group_name: sdh right
-  component_name: sdh_right
+  group_name: gripper right
+  component_name: gripper_right
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],
