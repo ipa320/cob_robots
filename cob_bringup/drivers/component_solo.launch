@@ -21,7 +21,7 @@
 
 	<!-- start driver -->
 	<include file="$(find cob_bringup)/drivers/$(arg driver).launch" >
-	    <arg name="component_name" value="$(arg component)" />
+		<arg name="component_name" value="$(arg component)" />
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 

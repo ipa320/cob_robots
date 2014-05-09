@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
