@@ -59,7 +59,7 @@
 		<machine name="cob4-1-t1" address="$(arg cob4-1-t1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- startup hardware -->
-		<!--include file="$(find cob_bringup)/drivers/canopen.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
 		</include>
@@ -74,7 +74,7 @@
 		<include file="$(find cob_bringup)/drivers/canopen.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
-		</include-->
+		</include>
 	</group>
 
 	<group>

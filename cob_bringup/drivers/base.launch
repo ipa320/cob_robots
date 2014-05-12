@@ -13,12 +13,14 @@
 		<param name="PublishEffort" value="false"/>
 
 		<!-- start underlying components - base_drive_chain -->
-		<include file="$(find cob_base_drive_chain)/ros/launch/base_drive_chain.launch" >
-			<arg name="sim" value="$(arg sim)" />
-		</include>
+		<node if="$(arg sim)" pkg="cob_base_drive_chain" type="cob_base_drive_chain_sim_node" name="base_drive_chain_node" respawn="false" output="screen"/>
+		<node unless="$(arg sim)" pkg="cob_base_drive_chain" type="cob_base_drive_chain_node" name="base_drive_chain_node" respawn="false" output="screen"/>
+		
 		
 		<!-- start undercarriage ctrl -->
-		<include file="$(find cob_undercarriage_ctrl)/ros/launch/undercarriage_ctrl.launch" />
+		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node" name="undercarriage_ctrl_node" respawn="false" output="screen">
+			<remap from="command" to="command_direct"/>
+		</node>
 
 		<!-- start cob_base_velocity_smoother-->
 		<node pkg="cob_base_velocity_smoother" type="cob_base_velocity_smoother" name="cob_base_velocity_smoother" respawn="false" output="screen">
