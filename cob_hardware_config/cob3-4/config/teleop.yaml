@@ -41,7 +41,7 @@ modules: {
     joint_names: ['arm_1_joint','arm_2_joint','arm_3_joint','arm_4_joint','arm_5_joint','arm_6_joint','arm_7_joint'],
     joint_step: [0.1,0.1,0.1,0.1,0.1,0.1,0.1]
   },
-  sdh: {
+  gripper: {
     joint_names: ['empty'],
     joint_step: [0.0]
   }

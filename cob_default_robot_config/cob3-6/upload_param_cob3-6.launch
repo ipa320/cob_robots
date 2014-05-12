@@ -6,7 +6,7 @@
 	<rosparam command="load" ns="/script_server/torso" file="$(find cob_default_robot_config)/cob3-6/torso_joint_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/head" file="$(find cob_default_robot_config)/cob3-6/head_joint_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/arm" file="$(find cob_default_robot_config)/cob3-6/arm_joint_configurations.yaml"/>
-	<rosparam command="load" ns="/script_server/sdh" file="$(find cob_default_robot_config)/cob3-6/sdh_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/gripper" file="$(find cob_default_robot_config)/cob3-6/sdh_joint_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/light" file="$(find cob_default_robot_config)/cob3-6/light_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/sound" file="$(find cob_default_robot_config)/cob3-6/sound_configurations.yaml"/>
 	

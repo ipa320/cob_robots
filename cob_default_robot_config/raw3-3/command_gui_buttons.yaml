@@ -22,3 +22,15 @@ group5:
   buttons: [[stop,trigger,stop],
     [home,move,home],
     [zero,move,zero]]
+group6:
+  group_name: head
+  component_name: head
+  buttons: [[stop,trigger,stop],
+    [home,move,home],
+    [pos1,move,pos1],
+    [pos2,move,pos2]]
+group7:
+  group_name: lookat
+  component_name: lookat
+  buttons: [[stop,trigger,stop],
+    [home,move,home]]
