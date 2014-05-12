@@ -55,8 +55,8 @@ group6:
     [tray-to-folded,move,tray-to-folded],
     [wave,move,wave]]
 group7:
-  group_name: sdh
-  component_name: sdh
+  group_name: gripper
+  component_name: gripper
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],

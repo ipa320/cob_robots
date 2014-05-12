@@ -84,10 +84,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray
         contains: 'tray_controller'
-      sdh:
+      gripper:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: SDH
-        contains: 'sdh_controller'
+        path: Gripper
+        contains: 'gripper_controller'
       head:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Head
