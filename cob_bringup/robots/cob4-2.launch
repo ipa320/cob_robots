@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
+	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
+
+	<include file="$(find cob_bringup)/robots/cob4-2.xml" >
+		<arg name="cob4-2-b1" value="cob4-2-b1"/>
+		<arg name="cob4-2-t1" value="cob4-2-t1"/>
+		<arg name="cob4-2-t2" value="cob4-2-t2"/>
+		<arg name="cob4-2-t3" value="cob4-2-t3"/>
+		<arg name="cob4-2-s1" value="cob4-2-s1"/>
+		<arg name="cob4-2-h1" value="cob4-2-h1"/>
+	</include>
+	
+	<!-- upload default configuration parameters -->
+	<!--include file="$(arg pkg_env_config)/upload_navigation_goals.launch">
+		<arg name="robot_env" value="$(arg robot_env)" />
+	</include-->
+
+</launch>

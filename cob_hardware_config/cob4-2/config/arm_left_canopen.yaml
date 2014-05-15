@@ -1,0 +1,4 @@
+device: /dev/pcan3
+baudrate: 500K
+sync_interval: 10
+chains: ["arm_left_controller"]
