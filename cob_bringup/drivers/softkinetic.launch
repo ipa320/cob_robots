@@ -6,7 +6,7 @@ The arguments given are the device indices of the cameras determined by the Dept
 -->
 <launch>
 
-	<arg name="name"/>
+	<arg name="name" default="cam3d"/>
 
 	<node name="$(arg name)" pkg="softkinetic_camera" type="softkinetic_bringup_node" args="0" >
 		<param name="camera_link" type="string" value="/$(arg name)_link" />

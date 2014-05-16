@@ -1,0 +1,12 @@
+joint_names: [arm_left_1_joint,arm_left_2_joint,arm_left_3_joint]
+module_ids: [61,62,63]
+motor_direction: [-1,-1,-1]
+
+# trajectory controller parameters
+ptp_vel: 0.4 # rad/sec
+ptp_acc: 0.2 # rad/sec^2
+max_error: 0.15 # rad
+frequency: 68
+
+devices: ["/dev/pcan3","/dev/pcan3","/dev/pcan3"]
+

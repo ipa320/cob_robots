@@ -1,0 +1,2 @@
+joint_names: ["lookat_lin_joint", "lookat_x_joint", "lookat_y_joint", "lookat_z_joint"]
+home: [[1.00, 0.0, 0.0, 0.0]]
