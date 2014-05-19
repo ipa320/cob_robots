@@ -5,6 +5,7 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component"/>
 	<arg name="driver" />
+	<arg name="trajectory_controller" default="false"/>
 
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch" >
@@ -24,5 +25,10 @@
 		<arg name="component_name" value="$(arg component)" />
 		<arg name="robot" value="$(arg robot)" />
 	</include>
-
+	
+	<include if="$(arg trajectory_controller)" file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch">
+		<arg name="component_name" value="$(arg component)" />
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+ 
 </launch>
