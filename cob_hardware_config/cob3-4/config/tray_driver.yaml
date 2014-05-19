@@ -1,0 +1,10 @@
+# powercube_chain parameters
+can_module: PCAN
+can_device: /dev/pcan1
+can_baudrate: 1000
+modul_ids: [10]
+joint_names: [tray_joint]
+max_accelerations: [0.8]
+min_publish_duration: 0.1
+horizon: 0.1 # [s]
+frequency: 68
