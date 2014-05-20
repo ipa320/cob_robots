@@ -29,5 +29,9 @@ modules: {
   arm: {
     joint_names: ['arm_left_1_joint','arm_left_2_joint','arm_left_3_joint','arm_left_4_joint','arm_left_5_joint','arm_left_6_joint','arm_left_7_joint'],
     joint_step: [0.1,0.1,0.1,0.1,0.1,0.1,0.1]
-  }
+  },
+  torso: {
+    joint_names: ['head_powerball_bottom_joint', 'head_powerball_side_joint'],
+    joint_step: [0.05,0.075]
+  },
 }
