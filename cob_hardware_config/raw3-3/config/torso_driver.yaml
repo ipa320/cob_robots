@@ -1,3 +1,5 @@
+joint_names: [head_powerball_bottom_joint, head_powerball_side_joint]
+
 device: /dev/pcan1
 baudrate: 500K
 sync_interval: 10

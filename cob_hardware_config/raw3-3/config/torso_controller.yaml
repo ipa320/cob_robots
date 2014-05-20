@@ -1,0 +1,9 @@
+#all
+joint_names: [head_powerball_bottom_joint, head_powerball_side_joint]
+
+# trajectory controller parameters
+ptp_vel: 0.1 # rad/sec
+ptp_acc: 0.1 # rad/sec^2
+max_error: 0.01 # rad
+frequency: 68
+

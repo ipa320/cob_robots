@@ -62,11 +62,14 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
 			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
+                <include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+                        <arg name="component_name" value="torso" />
+                        <arg name="robot" value="$(arg robot)" />
+                </include>
 	</group>
 
 	<group>
