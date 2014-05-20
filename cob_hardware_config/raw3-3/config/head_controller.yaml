@@ -12,7 +12,3 @@ operation_mode: velocity
 # twist controller parameters
 base_link: head_powerball_base_link
 tip_link: head_cam_holder_link
-
-# controller_adapter_gazebo
-update_rate: 33.0
-max_vel_command_silence: 0.5
