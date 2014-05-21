@@ -10,7 +10,10 @@
 	
 	<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml" ns="$(arg component_name)$(arg side)_controller"/>
 	
-	<node ns="$(arg component_name)$(arg side)_controller" name="cob_controller_adapter_gazebo" pkg="cob_controller_configuration_gazebo" type="cob_controller_adapter_gazebo.py" cwd="node" respawn="false" output="screen"/>
+	<node ns="$(arg component_name)$(arg side)_controller" name="cob_controller_adapter_gazebo" pkg="cob_controller_configuration_gazebo" type="cob_controller_adapter_gazebo.py" cwd="node" respawn="false" output="screen">
+		<param name="update_rate" type="double" value="33.0" />
+		<param name="max_vel_command_silence" type="double" value="0.5" />
+	</node>
 	
 	<node ns="$(arg component_name)$(arg side)_controller" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen"/>
 	

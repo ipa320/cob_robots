@@ -23,8 +23,8 @@ group5:
     [home,move,home],
     [zero,move,zero]]
 group6:
-  group_name: head
-  component_name: head
+  group_name: torso
+  component_name: torso
   buttons: [[stop,trigger,stop],
     [home,move,home],
     [pos1,move,pos1],

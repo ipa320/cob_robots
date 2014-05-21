@@ -1,0 +1,6 @@
+joint_names: [torso_1_joint, torso_2_joint, torso_3_joint]
+
+device: /dev/pcan0
+baudrate: 500K
+sync_interval: 5
+chains: ["torso_controller"]
