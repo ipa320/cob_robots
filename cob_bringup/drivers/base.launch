@@ -19,7 +19,8 @@
 		
 		<!-- start undercarriage ctrl -->
 		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node" name="undercarriage_ctrl_node" respawn="false" output="screen">
-			<remap from="command" to="command_direct"/>
+      <remap from="command" to="command_direct"/>
+      <param name="boolCtrl" value="1"/>
 		</node>
 
 		<!-- start cob_base_velocity_smoother-->
