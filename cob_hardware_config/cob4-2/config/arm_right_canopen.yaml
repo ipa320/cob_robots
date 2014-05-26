@@ -1,4 +1,0 @@
-device: /dev/pcan2
-baudrate: 500K
-sync_interval: 10
-chains: ["arm_right_controller"]
