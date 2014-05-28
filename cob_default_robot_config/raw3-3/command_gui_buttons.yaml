@@ -34,3 +34,13 @@ group7:
   component_name: lookat
   buttons: [[stop,trigger,stop],
     [home,move,home]]
+group8:
+  group_name: gripper left
+  component_name: gripper_left
+  buttons: [[open,move,open],
+    [close,move,close]]
+group9:
+  group_name: gripper right
+  component_name: gripper_right
+  buttons: [[open,move,open],
+    [close,move,close]]
