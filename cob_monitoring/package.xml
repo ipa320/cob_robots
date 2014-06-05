@@ -15,8 +15,6 @@
 
   <run_depend>cob_script_server</run_depend>
   <run_depend>cob_relayboard</run_depend>
-  <!-- <test_depend>cob_script_server</test_depend> -->
-  <!-- <test_depend>cob_relayboard</test_depend> -->
 
   <export>
 

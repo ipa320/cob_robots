@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_controller_configuration_gazebo)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch)
+find_package(catkin REQUIRED COMPONENTS )
 
 # rostest for robots
 set(robotlist
