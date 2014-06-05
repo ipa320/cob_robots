@@ -12,7 +12,7 @@
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  
+
   <build_depend>roslaunch</build_depend>
   <build_depend>rostest</build_depend>
   
@@ -21,11 +21,6 @@
   <run_depend>raw_description</run_depend>
   <run_depend>schunk_description</run_depend>
   <run_depend>ur_description</run_depend>
-  <!-- <test_depend>cob_calibration_data</test_depend> -->
-  <!-- <test_depend>cob_description</test_depend> -->
-  <!-- <test_depend>raw_description</test_depend> -->
-  <!-- <test_depend>schunk_description</test_depend> -->
-  <!-- <test_depend>ur_description</test_depend> -->
 
   <export>
 

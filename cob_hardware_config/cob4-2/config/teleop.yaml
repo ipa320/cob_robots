@@ -1,0 +1,29 @@
+# common params
+run_factor: 5.0
+
+# buttons
+lower_neck_button: 6
+upper_neck_button: 4
+tray_button: 3
+arm_joint12_button: 0
+arm_joint34_button: 1
+arm_joint56_button: 2
+arm_joint7_button: 3
+deadman_button: 5
+run_button: 7
+base_safety_button: 4
+
+# axes
+axis_vx: 1
+axis_vy: 0
+axis_vth: 2
+up_down: 5 #tray--up/down; tilt--front/back, here we just name up_down
+left_right: 4 #pan--left/right
+
+# component configuration
+modules: {
+  base: {
+    max_velocity: [0.2, 0.2, 0.2],
+    max_acceleration: [2.5, 2.5, 2.5]
+  },
+}

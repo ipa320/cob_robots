@@ -1,0 +1,5 @@
+joint_names: ['gripper_left_finger_left_joint', 'gripper_left_finger_right_joint']
+
+# back side positions
+open: [[0.0, 0.0]]
+close: [[1.0, 1.0]]
