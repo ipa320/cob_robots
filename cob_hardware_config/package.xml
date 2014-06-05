@@ -12,6 +12,9 @@
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roslaunch</build_depend>
+  <build_depend>rostest</build_depend>
   
   <run_depend>cob_calibration_data</run_depend>
   <run_depend>cob_description</run_depend>
