@@ -1,4 +1,0 @@
-device: /dev/pcan0
-baudrate: 500K
-sync_interval: 5
-chains: ["torso_controller"]

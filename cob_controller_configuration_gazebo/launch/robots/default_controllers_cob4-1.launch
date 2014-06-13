@@ -69,6 +69,18 @@
 	</include>
 -->
 	
+	<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="name" value="torso_cam3d_left"/>
+		<arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
+	</include>
+		
+	<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="name" value="torso_cam3d_right"/>
+		<arg name="nodelet_manager" value="torso_cam3d_right_nodelet_manager"/>
+	</include>
+		
 	<!-- Sensorring -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="sensorring"/>

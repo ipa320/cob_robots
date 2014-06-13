@@ -1,0 +1,10 @@
+joint_names: [torso_lower_neck_tilt_joint, torso_pan_joint, torso_upper_neck_tilt_joint]
+
+devices:
+  - name: /dev/pcan1
+    baudrate: 500K
+    sync_interval: 10
+# - name: /dev/pcan32
+#   baudrate: 1M
+#   sync_interval: 5
+chains: ["torso_controller"]

@@ -37,10 +37,10 @@ boards:
     sensors:
       gripper_left_command:
         type: digital_out
-        index: 1
+        index: 0
       gripper_right_command:
         type: digital_out
-        index: 0
+        index: 1
       gripper_relayboard:
         type: analog
         index: 2
