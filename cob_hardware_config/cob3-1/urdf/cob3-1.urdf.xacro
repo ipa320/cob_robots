@@ -20,7 +20,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob3_torso/torso_v1.urdf.xacro" />
 
   <!-- head -->
-  <xacro:include filename="$(find cob_description)/urdf/cob3_head/head_v1.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob3_head/head_prosilicas_kinect.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- arm -->
