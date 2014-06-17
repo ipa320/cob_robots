@@ -46,7 +46,7 @@ class cob_controller_adapter_gazebo():
     self.current_control_mode = "position"
     
     self.update_rate = rospy.get_param("update_rate", 33.0)
-    self.max_vel_command_silence = rospy.get_param("max_vel_command_silence", 2.0)
+    self.max_vel_command_silence = rospy.get_param("max_vel_command_silence", 0.5)
     self.last_vel_command = rospy.get_time()
     
     self.cmd_vel_sub = rospy.Subscriber("command_vel", JointVelocities, self.cmd_vel_cb)

@@ -1,0 +1,8 @@
+# all
+joint_names: ["tray_1_joint", "tray_2_joint", "tray_3_joint"]
+
+# trajectory controller parameters
+ptp_vel: 0.4 # rad/sec
+ptp_acc: 0.1 # rad/sec^2
+max_error: 0.2 # rad
+frequency: 100
