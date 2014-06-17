@@ -52,18 +52,8 @@ endforeach(robot)
 
 catkin_package()
 
-## Mark cpp header files for installation
-install(DIRECTORY robots
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-## Mark cpp header files for installation
-install(DIRECTORY drivers
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-## Mark cpp header files for installation#
-install(DIRECTORY tools
+## Mark launch files for installation
+install(DIRECTORY robots drivers controllers tools
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

@@ -1,5 +1,5 @@
 #all
-joint_names: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
+joint_names: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint]
 
 # trajectory controller parameters
 ptp_vel: 1.5 # rad/sec
@@ -12,3 +12,5 @@ operation_mode: velocity
 # twist controller parameters
 base_link: arm_left_base_link
 tip_link: arm_left_7_link
+
+module_ids: [61,62,63]

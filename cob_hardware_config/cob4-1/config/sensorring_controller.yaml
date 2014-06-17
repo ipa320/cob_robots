@@ -8,3 +8,5 @@ max_error: 0.25 # rad
 overlap_time: 0.4
 frequency: 68
 operation_mode: velocity
+
+module_ids: [73]
