@@ -12,7 +12,3 @@ operation_mode: velocity
 # twist controller parameters
 base_link: arm_0_link
 tip_link: arm_7_link
-
-# controller_adapter_gazebo
-update_rate: 33.0
-max_vel_command_silence: 0.5

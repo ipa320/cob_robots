@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-	<include file="$(find prace_gripper_driver)/ros/launch/gripper_controller.launch"/>
+	<include file="$(find prace_gripper_driver)/ros/launch/gripper_controller.launch">
+		<arg name="sim" value="true" />
+	</include>
 </launch>

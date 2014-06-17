@@ -1,0 +1,10 @@
+joint_names: [head_powerball_bottom_joint, head_powerball_side_joint]
+
+device: /dev/pcan1
+module_ids: [7,8]
+baudrate: 500K
+sync_interval: 10
+# - name: /dev/pcan32
+#   baudrate: 1M
+#   sync_interval: 5
+chains: ["torso_controller"]
