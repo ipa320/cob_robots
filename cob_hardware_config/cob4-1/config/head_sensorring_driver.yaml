@@ -3,12 +3,12 @@ joint_names: [head_1_joint, head_2_joint, head_3_joint, sensorring_joint]
 device: /dev/pcan1
 baudrate: 500K
 sync_interval: 10
-chains: ["head","sensorring"]
-head:
+chains: ["head_controller","sensorring_controller"]
+head_controller:
   joint_names: [head_1_joint, head_2_joint, head_3_joint]
   motor_direction: [1, 1, 1]
   module_ids: [70,71,72]
-sensorring:
+sensorring_controller:
   joint_names: [sensorring_joint]
   motor_direction: [1]
   module_ids: [73]
