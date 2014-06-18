@@ -1,10 +1,9 @@
-joint_names: [tray_joint]
-
-devices:
-  - name: /dev/pcan1
-    baudrate: 500K
-    sync_interval: 10
-# - name: /dev/pcan32
-#   baudrate: 1M
-#   sync_interval: 5
+device: /dev/pcan1
+baudrate: 500K
+sync_interval: 10
 chains: ["tray_controller"]
+tray_controller:
+  joint_names: [tray_joint]
+  motor_direction: [1]
+  module_ids: [10]
+
