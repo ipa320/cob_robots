@@ -2,7 +2,7 @@ pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
   computers:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Computers
     analyzers:
       pc1:
@@ -11,7 +11,7 @@ analyzers:
         contains: 'pc1'
 
 #  network:
-#    type: AnalyzerGroup
+#    type: diagnostic_aggregator/AnalyzerGroup
 #    path: Network
 #    analyzers:
 #      wifi:
@@ -66,7 +66,7 @@ analyzers:
   #   startswith: 'battery'
 
   io:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: IO
     analyzers:
       joystick:
@@ -76,7 +76,7 @@ analyzers:
         timeout: 15
 
   sensors:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Sensors
     analyzers:
       joystick:
@@ -102,7 +102,7 @@ analyzers:
 #        startswith: ['stereo/right/color_camera']
 
 #  motors:
-#    type: AnalyzerGroup
+#    type: diagnostic_aggregator/AnalyzerGroup
 #    path: Actuators
 #    analyzers:
 #      torso:
