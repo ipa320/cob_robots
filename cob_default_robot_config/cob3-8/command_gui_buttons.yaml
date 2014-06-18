@@ -61,12 +61,9 @@ group7:
     [init,trigger,init],
     [recover,trigger,recover],
     [home,move,home],
-    [cyl. closed,move,cylclosed],
-    [cyl. open,move,cylopen],
-    [spher. closed,move,spherclosed],
-    [spher. open,move,spheropen],
-    [point,move,point],
-    [fist,move,fist]]
+    [closed,move,closed],
+    [open,move,open]]
+
 group8:
   group_name: head
   component_name: head

@@ -64,13 +64,13 @@
 	<property name="arm_pitch" value="${def_arm_pitch+offset_arm_pitch}"/>
 	<property name="arm_yaw" value="${def_arm_yaw+offset_arm_yaw}"/>
 	
-	<!-- sdh mount positions | relative to arm_7_link -->
-	<property name="sdh_x" value="${def_sdh_x+offset_sdh_x}"/>
-	<property name="sdh_y" value="${def_sdh_y+offset_sdh_y}"/>
-	<property name="sdh_z" value="${def_sdh_z+offset_sdh_z}"/>
-	<property name="sdh_roll" value="${def_sdh_roll+offset_sdh_roll}"/>
-	<property name="sdh_pitch" value="${def_sdh_pitch+offset_sdh_pitch}"/>
-	<property name="sdh_yaw" value="${def_sdh_yaw+offset_sdh_yaw}"/>
+	<!-- pg70 mount positions | relative to arm_7_link -->
+	<property name="pg70_x" value="${def_pg70_x+offset_pg70_x}"/>
+	<property name="pg70_y" value="${def_pg70_y+offset_pg70_y}"/>
+	<property name="pg70_z" value="${def_pg70_z+offset_pg70_z}"/>
+	<property name="pg70_roll" value="${def_pg70_roll+offset_pg70_roll}"/>
+	<property name="pg70_pitch" value="${def_pg70_pitch+offset_pg70_pitch}"/>
+	<property name="pg70_yaw" value="${def_pg70_yaw+offset_pg70_yaw}"/>
 
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
