@@ -12,5 +12,3 @@ operation_mode: velocity
 # twist controller parameters
 base_link: arm_right_base_link
 tip_link: arm_right_7_link
-
-module_ids: [51,52,53]
