@@ -66,8 +66,8 @@
 	
 	<!-- Lookat -->
 <!--
-	<include file="$(find cob_lookat_controller)/launch/lookat_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
+	<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
+		<arg name="robot" value="$(arg robot)" />
 	</include>
 -->
 	
