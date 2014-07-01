@@ -40,21 +40,21 @@
 
 	<!-- Head -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
-		<arg name="component_name" value="head"/>
+		<arg name="component_name" value="torso"/>
 		<arg name="version" value="raw3-3"/>
 	</include>
 <!--
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="head"/>
+		<arg name="component_name" value="torso"/>
 		<arg name="version" value="raw3-3"/>
 	</include>
 -->
 	
 	<!-- Lookat -->
 <!--
-	<include file="$(find cob_lookat_controller)/launch/lookat_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
+	<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
+		<arg name="robot" value="$(arg robot)" />
 	</include>
 -->
 
