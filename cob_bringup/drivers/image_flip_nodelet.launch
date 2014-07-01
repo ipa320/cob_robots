@@ -4,7 +4,7 @@
     <arg name="start_manager" default="true"/>
     <arg name="name" default="cam3d"/>
     <arg name="nodelet_manager" default="cam3d_nodelet_manager"/>
-    <arg name="robot" default="$(env ROBOT)"/>
+    <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 
   <node pkg="nodelet" type="nodelet" name="CobKinectImageFlipNodelet_$(arg name)" ns="/cob_image_flip" args="load cob_image_flip/CobKinectImageFlipNodelet /$(arg name)/$(arg nodelet_manager)" output="screen">
     <rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/image_flip_params_$(arg name).yaml"/>

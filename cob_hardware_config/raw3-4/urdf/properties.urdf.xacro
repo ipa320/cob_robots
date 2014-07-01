@@ -11,4 +11,12 @@
 	<property name="tower_pitch" value="${def_tower_pitch+offset_tower_pitch}"/>
 	<property name="tower_yaw" value="${def_tower_yaw+offset_tower_yaw}"/>
 
+	<!-- arm mount positions | relative to base_link -->
+	<property name="arm_x" value="${def_arm_x+offset_arm_x}"/>
+	<property name="arm_y" value="${def_arm_y+offset_arm_y}"/>
+	<property name="arm_z" value="${def_arm_z+offset_arm_z}"/>
+	<property name="arm_roll" value="${def_arm_roll+offset_arm_roll}"/>
+	<property name="arm_pitch" value="${def_arm_pitch+offset_arm_pitch}"/>
+	<property name="arm_yaw" value="${def_arm_yaw+offset_arm_yaw}"/>
+
 </robot>
