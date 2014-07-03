@@ -66,10 +66,10 @@
 			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-                <include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-                        <arg name="component_name" value="torso" />
-                        <arg name="robot" value="$(arg robot)" />
-                </include>
+        <include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+                <arg name="component_name" value="torso" />
+                <arg name="robot" value="$(arg robot)" />
+        </include>
 		<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -83,6 +83,9 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
+
+		<!-- light -->
+		<include file="$(find cob_bringup)/drivers/light.launch" />
 
 	</group>
 
