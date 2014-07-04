@@ -25,6 +25,13 @@
 		<!-- wifi monitor -->
 		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" /-->
 
+
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
@@ -56,21 +63,34 @@
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+			<arg name="component_name" value="torso_tray" />
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/canopen.launch" >
+		<!--include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+			<arg name="component_name" value="arm_pg70" />
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
+		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
 			<arg name="component_name" value="arm" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/schunk_sdh.launch" >
+		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+			<arg name="component_name" value="arm" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+			<arg name="component_name" value="pg70" />
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
 		<include file="$(find cob_bringup)/drivers/head_cob3.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -87,15 +107,15 @@
 		</include>
 
 		<!-- start camera sensors -->
-		<include file="$(find cob_bringup)/drivers/openni.launch" >
+		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="head_cam3d"/>
 		</include>
 
 		<!-- start additional packages -->
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
-		<include file="$(find cob_bringup)/drivers/light.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
+
 	</group>
 
   <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>

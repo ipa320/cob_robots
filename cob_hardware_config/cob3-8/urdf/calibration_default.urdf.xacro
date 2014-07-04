@@ -39,18 +39,18 @@
 	<property name="def_tray_yaw" value="0.0"/>
 
 	<!-- torso mount positions | relative to base_link -->
-	<property name="def_torso_x" value="0.155"/>
+	<property name="def_torso_x" value="0.1505153138"/>
 	<property name="def_torso_y" value="0.0"/>
-	<property name="def_torso_z" value="0.892"/>
-	<property name="def_torso_roll" value="3.1415926"/>
-	<property name="def_torso_pitch" value="0.0"/>
-	<property name="def_torso_yaw" value="0.0"/>
+	<property name="def_torso_z" value="0.8602400721"/>
+	<property name="def_torso_roll" value="1.563226442"/>
+	<property name="def_torso_pitch" value="0.0346163655"/>
+	<property name="def_torso_yaw" value="0.0107070343"/>
 
 	<!-- head mount positions | relative to head_cover_link -->
 	<property name="def_head_x" value="0.0"/>
-	<property name="def_head_y" value="-0.154"/>
+	<property name="def_head_y" value="0.173"/>
 	<property name="def_head_z" value="0.0"/>
-	<property name="def_head_roll" value="3.14159"/>
+	<property name="def_head_roll" value="0.0"/>
 	<property name="def_head_pitch" value="0.0"/>
 	<property name="def_head_yaw" value="0.0"/>
 
@@ -74,25 +74,24 @@
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
 	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
-	<property name="def_torso_lower_neck_pan_ref" value="-0.00018174503929913044" />
-	<property name="def_torso_lower_neck_tilt_ref" value="0.048314183950424194" />
-	<property name="def_torso_upper_neck_pan_ref" value="0.0022084463853389025" />
-	<property name="def_torso_upper_neck_tilt_ref" value="0.0073217283934354782" />
+	<property name="def_torso_lower_neck_tilt_ref" value="0.0"/>
+	<property name="def_torso_pan_ref" value="0.0"/>
+	<property name="def_torso_upper_neck_tilt_ref" value="0.0"/>
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
 	<property name="def_tray_ref" value="4.2"/>
 
 	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
-	<property name="def_head_axis_ref" value="3.29"/>
+	<property name="def_head_axis_ref" value="0.1"/>
 
 	<!-- arm reference positions | used as calibration_rising for arm chain-->
-	<property name="def_arm_1_ref" value="3.403339959" />
-	<property name="def_arm_2_ref" value="-0.180424702" />
-	<property name="def_arm_3_ref" value="-1.62660" />
-	<property name="def_arm_4_ref" value="1.36543799" />
-	<property name="def_arm_5_ref" value="0.00185081481" />
-	<property name="def_arm_6_ref" value="7549.28222" />
-	<property name="def_arm_7_ref" value="-0.41888" />
+	<property name="def_arm_1_ref" value="-0.29616492077091777" />
+	<property name="def_arm_2_ref" value="0" />
+	<property name="def_arm_3_ref" value="0" />
+	<property name="def_arm_4_ref" value="0" />
+	<property name="def_arm_5_ref" value="0" />
+	<property name="def_arm_6_ref" value="0" />
+	<property name="def_arm_7_ref" value="0" />
 
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->

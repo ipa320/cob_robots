@@ -79,10 +79,9 @@
 
 	<!-- torso reference positions | used as calibration_rising for torso chain -->
 	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
-	<property name="torso_lower_neck_pan_ref" value="${def_torso_lower_neck_pan_ref+offset_torso_lower_neck_pan_ref}" />
-	<property name="torso_lower_neck_tilt_ref" value="${def_torso_lower_neck_tilt_ref+offset_torso_lower_neck_tilt_ref}" />
-	<property name="torso_upper_neck_pan_ref" value="${def_torso_upper_neck_pan_ref+offset_torso_upper_neck_pan_ref}" />
-	<property name="torso_upper_neck_tilt_ref" value="${def_torso_upper_neck_tilt_ref+offset_torso_upper_neck_tilt_ref}" />
+	<property name="torso_lower_neck_tilt_ref" value="${def_torso_lower_neck_tilt_ref+offset_torso_lower_neck_tilt_ref}"/>
+	<property name="torso_pan_ref" value="${def_torso_pan_ref+offset_torso_pan_ref}"/>
+	<property name="torso_upper_neck_tilt_ref" value="${def_torso_upper_neck_tilt_ref+offset_torso_upper_neck_tilt_ref}"/>
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
 	<property name="tray_ref" value="${def_tray_ref+offset_tray_ref}"/>

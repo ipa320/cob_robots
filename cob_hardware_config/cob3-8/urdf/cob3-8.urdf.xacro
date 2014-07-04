@@ -17,7 +17,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob3_tray/tray.urdf.xacro" />
  
   <!-- torso -->
-  <xacro:include filename="$(find cob_description)/urdf/cob3_torso/torso_v1.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob3_torso/torso_v2.urdf.xacro" />
 
   <!-- head -->
   <xacro:include filename="$(find cob_description)/urdf/cob3_head/head_kinect.urdf.xacro" />
@@ -50,11 +50,6 @@
   <xacro:head name="head" parent="torso_upper_neck_tilt_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
-  
-  <xacro:lookat name="lookat" parent="torso_upper_neck_tilt_link" lower="-5.0" upper="5.0">
-    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-    <axis xyz="-1 0 0"/>
-  </xacro:lookat>
   
   <xacro:schunk_pg70 name="pg70" parent="arm_7_link">
     <origin xyz="${pg70_x} ${pg70_y} ${pg70_z}" rpy="${pg70_roll} ${pg70_pitch} ${pg70_yaw}" />

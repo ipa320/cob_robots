@@ -1,5 +1,5 @@
 #all
-joint_names: [tray_joint]
+joint_names: [pg70_finger_joint]
 
 # trajectory controller parameters
 ptp_vel: 0.4 # rad/sec

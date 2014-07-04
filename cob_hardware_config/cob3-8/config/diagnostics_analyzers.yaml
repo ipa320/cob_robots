@@ -2,16 +2,13 @@ pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
   computers:
-    type: AnalyzerGroup
+    type:  diagnostic_aggregator/IgnoreAnalyzer
     path: Computers
     analyzers:
       pc1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc1
-        contains: ['pc1 CPU Temperature',
-                   'pc1 CPU Usage',
-                   'pc1 HD Temperature',
-                   'pc1 HD Usage']
+        contains: 'pc1'
 
   io:
     type: AnalyzerGroup
@@ -51,7 +48,7 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'torso_controller'
+        contains: 'tray_controller'
       tray:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray

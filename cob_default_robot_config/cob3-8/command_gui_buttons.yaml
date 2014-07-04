@@ -43,17 +43,7 @@ group5:
   buttons: [[stop,trigger,stop],
     [home,move,home],
     [folded,move,folded],
-    [pregrasp,move,pregrasp],
-    [overtray,move,overtray],
-    [wave in,move,wavein],
-    [wave out,move,waveout]]
-group6:
-  group_name: arm traj
-  component_name: arm
-  buttons: [[stop,trigger,stop],
-    [grasp-to-tray,move,grasp-to-tray],
-    [tray-to-folded,move,tray-to-folded],
-    [wave,move,wave]]
+    [pregrasp,move,pregrasp]]
 group7:
   group_name: gripper
   component_name: gripper
