@@ -29,13 +29,11 @@
 		<arg name="version" value="pg70"/>
 	</include>
 
-	<!-- DSA -->
-	<include file="$(find schunk_simulated_tactile_sensors)/ros/launch/simulated_tactile_sensors.launch" />
 
 	<!-- Torso -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="torso"/>
-		<arg name="version" value="cob3_v1"/>
+		<arg name="version" value="cob3_v2"/>
 	</include>
 
 	<!-- Tray -->
@@ -51,9 +49,6 @@
 
 	<!-- start additional components -->
 	<include file="$(find cob_sound)/ros/launch/sound.launch" />
-	<include file="$(find cob_bringup)/drivers/light.launch" >
-		<arg name="robot" value="$(arg robot)"/>
-	</include>
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
@@ -92,10 +87,6 @@
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="laser_top"/>
 		<param name="topic_name" value="/scan_top"/>
-	</node>
-	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
-		<param name="diagnostics_name" value="dsa_controller"/>
-		<param name="topic_name" value="/dsa_controller/tactile_data"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="joy"/>

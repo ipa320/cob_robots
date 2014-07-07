@@ -65,9 +65,9 @@
 	<!-- pg70 mount positions | relative to arm_7_link -->
 	<property name="def_pg70_x" value="0.0"/>
 	<property name="def_pg70_y" value="0.0"/>
-	<property name="def_pg70_z" value="0.0"/>
+	<property name="def_pg70_z" value="0.075"/>
 	<property name="def_pg70_roll" value="0.0"/>
-	<property name="def_pg70_pitch" value="3.1415926"/>
+	<property name="def_pg70_pitch" value="0"/>
 	<property name="def_pg70_yaw" value="0.0"/>
 
 	<!-- *********************************** -->
