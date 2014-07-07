@@ -76,7 +76,7 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<!--include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
-			<arg name="component_name" value="arm_pg70" />
+			<arg name="component_name" value="arm_gripper" />
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
 		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
@@ -88,7 +88,7 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<!--include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="component_name" value="pg70" />
+			<arg name="component_name" value="gripper" />
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
 		<include file="$(find cob_bringup)/drivers/head_cob3.launch" >
