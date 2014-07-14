@@ -11,7 +11,7 @@ analyzers:
         contains: 'pc1'
 
   io:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: IO
     analyzers:
       sound:
