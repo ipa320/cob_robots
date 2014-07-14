@@ -1,0 +1,19 @@
+#all
+joint_names: [arm_1_joint, arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint, arm_6_joint, arm_7_joint]
+
+# trajectory controller parameters
+ptp_vel: 0.4 # rad/sec
+ptp_acc: 0.2 # rad/sec^2
+max_error: 0.15 # rad
+overlap_time: 0.4
+frequency: 68
+operation_mode: velocity
+
+# twist controller parameters
+base_link: arm_1_joint
+tip_link: arm_7_joint
+
+# controller_adapter_gazebo
+update_rate: 33.0
+max_vel_command_silence: 0.5
+
