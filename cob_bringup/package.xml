@@ -34,6 +34,7 @@
   <run_depend>cob_camera_sensors</run_depend>
   <run_depend>cob_hwboard</run_depend>
   <run_depend>openni_launch</run_depend>
+  <run_depend>openni2_launch</run_depend>
   <run_depend>cob_cam3d_throttle</run_depend>
   <run_depend>image_proc</run_depend>
   <run_depend>hokuyo_node</run_depend>
