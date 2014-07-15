@@ -9,7 +9,7 @@
 	<property name="def_head_x" value="0.40"/>
 	<property name="def_head_y" value="0.0"/>
 	<property name="def_head_z" value="1.4246"/>
-	<property name="def_head_roll" value="3.14159"/>
+	<property name="def_head_roll" value="${M_PI}"/>
 	<property name="def_head_pitch" value="0.0"/>
 	<property name="def_head_yaw" value="0.0"/>
 
