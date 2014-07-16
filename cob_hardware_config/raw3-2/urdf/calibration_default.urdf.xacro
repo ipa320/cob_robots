@@ -10,5 +10,5 @@
 	<property name="def_tower_z" value="0.306"/>
 	<property name="def_tower_roll" value="0.0"/>
 	<property name="def_tower_pitch" value="0.0"/>
-	<property name="def_tower_yaw" value="${M_PI}"/>
+	<property name="def_tower_yaw" value="3.14159265359"/>
 </robot>

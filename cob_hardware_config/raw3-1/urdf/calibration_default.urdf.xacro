@@ -11,7 +11,7 @@
 	<property name="def_tower_z" value="0.306"/>
 	<property name="def_tower_roll" value="0.0"/>
 	<property name="def_tower_pitch" value="0.0"/>
-	<property name="def_tower_yaw" value="${M_PI}"/>
+	<property name="def_tower_yaw" value="3.14159265359"/>
 
 	<!-- torso reference positions | used as calibration_rising for torso chain -->
 	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
