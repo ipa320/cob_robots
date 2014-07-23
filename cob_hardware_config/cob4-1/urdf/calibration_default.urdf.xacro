@@ -34,7 +34,8 @@
 	<!-- torso mount positions | relative to base_link -->
 	<property name="def_torso_x" value="0.0"/>
 	<property name="def_torso_y" value="0.0"/>
-	<property name="def_torso_z" value="0.26411"/>
+	<!--property name="def_torso_z" value="0.26411"/-->
+	<property name="def_torso_z" value="0.27411"/>
 	<property name="def_torso_roll" value="0.0"/>
 	<property name="def_torso_pitch" value="0.0"/>
 	<property name="def_torso_yaw" value="0.0"/>
