@@ -5,8 +5,8 @@ torso_controller:
     - torso_pan_joint
     - torso_tilt_joint
   gains:
-    torso_pan_joint: {p: 50.0, i: 1.0, d: 0.0, i_clamp: 1.0, i_clamp_min: 1.0, i_clamp_max: 1.0}
-    torso_tilt_joint: {p: 50.0, i: 1.0, d: 0.0, i_clamp: 1.0, i_clamp_min: 1.0, i_clamp_max: 1.0}
+    torso_pan_joint: {p: 50.0, i: 1.0, d: 0.0, i_clamp: 1.0}
+    torso_tilt_joint: {p: 50.0, i: 1.0, d: 0.0, i_clamp: 1.0}
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.5

@@ -6,9 +6,9 @@ head_controller:
     - head_2_joint
     - head_3_joint
   gains:
-    head_1_joint: {p: 800.0, i: 1.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
-    head_2_joint: {p: 800.0, i: 1.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
-    head_3_joint: {p: 800.0, i: 1.0, d: 0.0, i_clamp: 5.0, i_clamp_min: 5.0, i_clamp_max: 5.0}
+    head_1_joint: {p: 800.0, i: 1.0, d: 0.0, i_clamp: 5.0}
+    head_2_joint: {p: 800.0, i: 1.0, d: 0.0, i_clamp: 5.0}
+    head_3_joint: {p: 800.0, i: 1.0, d: 0.0, i_clamp: 5.0}
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.5
