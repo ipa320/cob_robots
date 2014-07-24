@@ -42,8 +42,11 @@ class cob_controller_adapter_gazebo():
     for controller in self.pos_controller_names:
         res = self.load_client(controller)
     
-    self.switch_controller(self.pos_controller_names, [])
-    self.current_control_mode = "position"
+    #self.switch_controller(self.pos_controller_names, [])
+    #self.current_control_mode = "position"
+    self.switch_controller(self.vel_controller_names, [])
+    self.current_control_mode = "velocity"
+
     
     self.update_rate = rospy.get_param("update_rate", 33.0)
     self.max_vel_command_silence = rospy.get_param("max_vel_command_silence", 0.5)
@@ -58,10 +61,10 @@ class cob_controller_adapter_gazebo():
   def run(self):
     r = rospy.Rate(self.update_rate)
     while not rospy.is_shutdown():
-        if (rospy.get_time() - self.last_vel_command >= self.max_vel_command_silence) and (self.current_control_mode != "position"):
-            rospy.loginfo("Have not heard a vel command for %f seconds. Switch to position_controllers", (rospy.get_time()-self.last_vel_command))
-            self.switch_controller(self.pos_controller_names, self.vel_controller_names)
-            self.current_control_mode = "position"
+        #if (rospy.get_time() - self.last_vel_command >= self.max_vel_command_silence) and (self.current_control_mode != "position"):
+            #rospy.loginfo("Have not heard a vel command for %f seconds. Switch to position_controllers", (rospy.get_time()-self.last_vel_command))
+            #self.switch_controller(self.pos_controller_names, self.vel_controller_names)
+            #self.current_control_mode = "position"
         r.sleep()
   
   
@@ -69,7 +72,7 @@ class cob_controller_adapter_gazebo():
     rospy.loginfo("Switching controllers")
     
     req = SwitchControllerRequest()
-    req.strictness = 2
+    req.strictness = 1
     for i in range(len(start_controllers)):
         req.start_controllers.append(start_controllers[i])
     for i in range(len(stop_controllers)):
