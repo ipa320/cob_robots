@@ -12,3 +12,8 @@ operation_mode: velocity
 # twist controller parameters
 base_link: torso_base_link
 tip_link: torso_center_link
+
+# frame_tracker
+update_rate: 68.0
+max_vel_lin: 10.0
+max_vel_rot: 6.28
