@@ -13,7 +13,9 @@ operation_mode: velocity
 base_link: torso_base_link
 tip_link: torso_center_link
 
-# frame_tracker
+# frame_tracker + interactive_marker
+active_frame: torso_center_link
+tracking_frame: torso_center_target
 update_rate: 68.0
 max_vel_lin: 10.0
 max_vel_rot: 6.28

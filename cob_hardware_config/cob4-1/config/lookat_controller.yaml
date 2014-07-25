@@ -11,7 +11,9 @@ tip_link: lookat_focus_frame
 chain_vel_pub_topic: /torso_controller/command_vel
 ptp_vel: 1.2
 
-# frame_tracker
+# frame_tracker + interactive_marker
+active_frame: lookat_focus_frame
+tracking_frame: lookat_target
 update_rate: 68.0
 max_vel_lin: 10.0
 max_vel_rot: 6.28

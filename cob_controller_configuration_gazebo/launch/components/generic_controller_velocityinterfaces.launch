@@ -21,10 +21,8 @@
 	
 	<node ns="$(arg component_name)$(arg side)_controller" name="cob_twist_controller_node" pkg="cob_twist_controller" type="cob_twist_controller_node" cwd="node" respawn="false" output="screen"/>
 	
-<!--
 	<node ns="$(arg component_name)$(arg side)_controller" name="frame_tracker" pkg="cob_frame_tracker" type="cob_frame_tracker_node" cwd="node" respawn="false" output="screen"/>
 	
 	<node ns="$(arg component_name)$(arg side)_controller" name="interactive_target" pkg="cob_frame_tracker" type="interactive_frame_target.py" cwd="node" respawn="false" output="screen"/>
--->
 
 </launch>
