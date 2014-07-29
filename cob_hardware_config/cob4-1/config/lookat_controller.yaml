@@ -14,6 +14,10 @@ ptp_vel: 1.2
 # frame_tracker + interactive_marker
 active_frame: lookat_focus_frame
 tracking_frame: lookat_target
+movable_trans: true
+movable_rot: true
+pid_trans: {p: 3.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+pid_rot: {p: 3.0, i: 0.0, d: 0.0, i_clamp: 0.0}
 update_rate: 68.0
 max_vel_lin: 10.0
 max_vel_rot: 6.28
