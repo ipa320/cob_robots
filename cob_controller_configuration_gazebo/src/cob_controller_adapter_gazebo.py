@@ -37,9 +37,9 @@ class cob_controller_adapter_gazebo():
     
     self.switch_client = rospy.ServiceProxy('/controller_manager/switch_controller', SwitchController)
     
+    #for controller in self.pos_controller_names:
+        #res = self.load_client(controller)
     for controller in self.vel_controller_names:
-        res = self.load_client(controller)
-    for controller in self.pos_controller_names:
         res = self.load_client(controller)
     
     #self.switch_controller(self.pos_controller_names, [])
