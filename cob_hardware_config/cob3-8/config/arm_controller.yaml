@@ -17,4 +17,3 @@ tip_link: arm_7_joint
 update_rate: 33.0
 max_vel_command_silence: 0.5
 
-module_ids: [3,4,5,6,7,8,9]

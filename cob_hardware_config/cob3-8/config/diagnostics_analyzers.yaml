@@ -11,7 +11,7 @@ analyzers:
         contains: 'pc1'
 
   io:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: IO
     analyzers:
       sound:
@@ -25,7 +25,7 @@ analyzers:
         contains: 'joy'
 
   sensors:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Sensors
     analyzers:
       laser_top:
@@ -42,7 +42,7 @@ analyzers:
         contains: 'laser_front'
 
   motors:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
       torso:

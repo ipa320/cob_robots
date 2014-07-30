@@ -67,7 +67,7 @@
 	<property name="def_pg70_y" value="0.0"/>
 	<property name="def_pg70_z" value="0.075"/>
 	<property name="def_pg70_roll" value="0.0"/>
-	<property name="def_pg70_pitch" value="0"/>
+	<property name="def_pg70_pitch" value="0.0"/>
 	<property name="def_pg70_yaw" value="0.0"/>
 
 	<!-- *********************************** -->

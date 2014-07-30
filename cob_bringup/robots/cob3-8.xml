@@ -80,10 +80,6 @@
 			<arg name="component_name" value="arm_gripper" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
-			<arg name="component_name" value="arm" />
-			<arg name="robot" value="$(arg robot)" />
-		</include-->
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="arm" />
 			<arg name="robot" value="$(arg robot)" />
