@@ -6,6 +6,7 @@
 
 	<include file="$(find cob_bringup)/robots/cob3-8.xml" >
 		<arg name="pc1" value="cob3-8-pc1"/>
+		<arg name="pc2" value="cob3-8-pc2"/>
 	</include>
 	
 	<!-- upload default configuration parameters -->
