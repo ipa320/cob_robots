@@ -64,7 +64,7 @@ analyzers:
       arm:
         type: diagnostic_aggregator/GenericAnalyzer
         path: LWA
-        contains: 'gripper_controller'
+        contains: 'arm_controller'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base

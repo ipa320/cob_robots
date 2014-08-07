@@ -1,4 +1,4 @@
-joint_names: ["pg70_finger_joint"]
-home: [[0.5]]
+joint_names: ["pg70_finger_left_joint"]
+home: [[0.02]]
 closed: [[0.0]]
-open: [[1]]
+open: [[0.03]]
