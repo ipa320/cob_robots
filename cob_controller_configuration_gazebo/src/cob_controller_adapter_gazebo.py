@@ -5,25 +5,32 @@ import rospy
 from std_msgs.msg import Float64
 from brics_actuator.msg import JointVelocities, JointPositions
 from controller_manager_msgs.srv import *
+from control_msgs.msg import JointControllerState, JointTrajectoryControllerState
 
 class cob_controller_adapter_gazebo():
 
   def __init__(self):
     self.joint_names = rospy.get_param("joint_names", [])
+    self.joint_process_values = []
     
-    self.vel_controller_pubs = []
-    self.vel_controller_names = []
     self.pos_controller_pubs = []
     self.pos_controller_names = []
+    self.vel_controller_pubs = []
+    self.vel_controller_names = []
+    self.vel_controller_state_subs = []
     
+    #for i in range(len(self.joint_names)):
+        #pub = rospy.Publisher('/'+self.joint_names[i]+'_position_controller/command', Float64)
+        #self.pos_controller_pubs.append(pub)
+        #self.pos_controller_names.append(self.joint_names[i]+'_position_controller')
     for i in range(len(self.joint_names)):
-        pub = rospy.Publisher('/'+self.joint_names[i]+'_velocity_controller/command', Float64, queue_size=1)
+        self.joint_process_values.append(0.0)
+        pub = rospy.Publisher('/'+self.joint_names[i]+'_velocity_controller/command', Float64)
         self.vel_controller_pubs.append(pub)
         self.vel_controller_names.append(self.joint_names[i]+'_velocity_controller')
-    for i in range(len(self.joint_names)):
-        pub = rospy.Publisher('/'+self.joint_names[i]+'_position_controller/command', Float64, queue_size=1)
-        self.pos_controller_pubs.append(pub)
-        self.pos_controller_names.append(self.joint_names[i]+'_position_controller')
+        sub = rospy.Subscriber('/'+self.joint_names[i]+'_velocity_controller/state', JointControllerState, self.controller_state_cb)
+        self.vel_controller_state_subs.append(sub)
+        
     
     rospy.logwarn("Waiting for load_controller service...")
     rospy.wait_for_service('/controller_manager/load_controller')
@@ -52,8 +59,12 @@ class cob_controller_adapter_gazebo():
     self.max_vel_command_silence = rospy.get_param("max_vel_command_silence", 0.5)
     self.last_vel_command = rospy.get_time()
     
-    self.cmd_vel_sub = rospy.Subscriber("command_vel", JointVelocities, self.cmd_vel_cb)
     self.cmd_pos_sub = rospy.Subscriber("command_pos", JointPositions, self.cmd_pos_cb)
+    self.cmd_vel_sub = rospy.Subscriber("command_vel", JointVelocities, self.cmd_vel_cb)
+    
+    self.joint_trajectory_controller_state_pub = rospy.Publisher("state", JointTrajectoryControllerState)
+    self.state_msg = JointTrajectoryControllerState()
+    self.state_msg.joint_names = self.joint_names
 
     rospy.sleep(0.5)
 
@@ -61,6 +72,8 @@ class cob_controller_adapter_gazebo():
   def run(self):
     r = rospy.Rate(self.update_rate)
     while not rospy.is_shutdown():
+        self.publish_state()
+        
         #if (rospy.get_time() - self.last_vel_command >= self.max_vel_command_silence) and (self.current_control_mode != "position"):
             #rospy.loginfo("Have not heard a vel command for %f seconds. Switch to position_controllers", (rospy.get_time()-self.last_vel_command))
             #self.switch_controller(self.pos_controller_names, self.vel_controller_names)
@@ -113,6 +126,21 @@ class cob_controller_adapter_gazebo():
         return
     for i in range(len(self.joint_names)):
         self.pos_controller_pubs[i].publish(Float64(data.positions[i].value))
+
+
+  def controller_state_cb(self, data):
+    self.joint_process_values[self.joint_names.index(data.header.frame_id)] = data.process_value
+
+  def publish_state(self):
+    self.state_msg.header.stamp = rospy.Time.now()
+    if(self.current_control_mode == "position"):
+      self.state_msg.actual.positions = self.joint_process_values
+    elif(self.current_control_mode == "velocity"):
+      self.state_msg.actual.velocities = self.joint_process_values
+    else:
+      rospy.logerr("Wrong control mode: %s", self.current_control_mode)
+    
+    self.joint_trajectory_controller_state_pub.publish(self.state_msg)
 
 
 

@@ -28,8 +28,14 @@
 		<arg name="version" value="cob4"/>
 	</include>
 -->
+<!--
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocityinterfaces.launch">
 		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
+		<arg name="version" value="cob4"/>
+	</include>
+-->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocityinterfaces_fjt.launch">
 		<arg name="component_name" value="torso"/>
 		<arg name="version" value="cob4"/>
 	</include>
@@ -79,6 +85,7 @@
 		<arg name="side" value="_right"/>
 	</include>
 -->
+<!--
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocityinterfaces.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
@@ -91,6 +98,7 @@
 		<arg name="version" value="lwa4p"/>
 		<arg name="side" value="_right"/>
 	</include>
+-->
 	
 	
 	

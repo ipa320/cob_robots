@@ -17,7 +17,17 @@
 	
 	<node ns="$(arg component_name)$(arg side)_controller" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen"/>
 	
+<!--
 	<node ns="$(arg component_name)$(arg side)_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller_sim" cwd="node" respawn="false" output="screen"/>
+-->
+<!--
+	<include file="$(find cob_hardware_interface)/launch/cob_hardware_interface.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+		<arg name="version" value="$(arg version)"/>
+		<arg name="side" value="$(arg side)"/>
+	</include>
+-->
 	
 	<node ns="$(arg component_name)$(arg side)_controller" name="cob_twist_controller_node" pkg="cob_twist_controller" type="cob_twist_controller_node" cwd="node" respawn="false" output="screen"/>
 	
