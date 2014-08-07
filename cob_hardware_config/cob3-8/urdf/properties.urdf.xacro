@@ -98,6 +98,11 @@
 	<property name="arm_6_ref" value="${def_arm_6_ref+offset_arm_6_ref}"/>
 	<property name="arm_7_ref" value="${def_arm_7_ref+offset_arm_7_ref}"/>
 
+	<!-- gripper reference positions | used as calibration_rising for gripper chain-->
+	<property name="pg70_finger_1_ref" value="${def_pg70_finger_1_ref+offset_pg70_finger_1_ref}"/>
+	<property name="pg70_finger_2_ref" value="${def_pg70_finger_2_ref+offset_pg70_finger_2_ref}"/>
+
+
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->
 	<!-- ***************************** -->

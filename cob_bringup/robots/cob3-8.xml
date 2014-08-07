@@ -4,6 +4,7 @@
 	<!-- args -->
 	<arg name="robot" value="cob3-8"/>
 	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -14,7 +15,7 @@
 	<include file="$(find cob_default_robot_config)/cob3-8/upload_param_cob3-8.launch" />
 
 	<group>
-    <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -75,22 +76,18 @@
 			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
-			<arg name="component_name" value="arm_gripper" />
-			<arg name="robot" value="$(arg robot)" />
-		</include-->
 		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
-			<arg name="component_name" value="arm" />
+			<arg name="component_name" value="arm_gripper" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="arm" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="gripper" />
 			<arg name="robot" value="$(arg robot)" />
-		</include-->
+		</include>
 		<include file="$(find cob_bringup)/drivers/head_cob3.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -106,18 +103,38 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-		<!-- start camera sensors -->
-		<include file="$(find cob_bringup)/drivers/openni2.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="head_cam3d"/>
-		</include>
-
 		<!-- start additional packages -->
 		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 
 	</group>
 
-  <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+
+
+	<group>
+		<machine name="cob3-8-pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="pc" value="$(arg pc2)"/>
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/openni2.launch" >
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="machine" value="cob3-8-pc2"/>
+		</include>
+		<!--include file="$(find cob_image_flip)/ros/launch/image_flip_nodelet.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="start_manager" value="false"/>
+			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+		</include-->
+		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+			<arg name="namespace" value="/cam3d" />
+			<arg name="rate" value="1.0" />
+			<arg name="start_manager" value="false"/>
+			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+		</include>
+	</group>
 
 </launch>

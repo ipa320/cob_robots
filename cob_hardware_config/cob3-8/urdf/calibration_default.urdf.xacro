@@ -79,7 +79,7 @@
 	<property name="def_torso_upper_neck_tilt_ref" value="0.0"/>
 
 	<!-- tray reference position | used as calibration_rising for tray chain -->
-	<property name="def_tray_ref" value="4.2"/>
+	<property name="def_tray_ref" value="0.0"/>
 
 	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
 	<property name="def_head_axis_ref" value="0.1"/>
@@ -92,6 +92,10 @@
 	<property name="def_arm_5_ref" value="0" />
 	<property name="def_arm_6_ref" value="0" />
 	<property name="def_arm_7_ref" value="0" />
+
+	<!-- gripper reference positions | used as calibration_rising for gripper chain-->
+	<property name="def_pg70_finger_1_ref" value="0.0" />
+	<property name="def_pg70_finger_2_ref" value="0.0" />
 
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->
