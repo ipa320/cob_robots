@@ -36,6 +36,7 @@
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
   
+<!--
   <xacro:head name="head" parent="torso_3_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
@@ -72,5 +73,6 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="1 0 0"/>
   </xacro:lookat>
+-->
 
 </robot>
