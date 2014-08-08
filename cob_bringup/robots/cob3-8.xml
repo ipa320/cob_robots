@@ -65,11 +65,15 @@
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
-			<arg name="component_name" value="torso_tray" />
+			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="torso" />
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
@@ -82,14 +86,6 @@
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="arm" />
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
-			<arg name="component_name" value="gripper" />
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="component_name" value="gripper" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/head_cob3.launch" >
@@ -121,6 +117,15 @@
 			<arg name="pc" value="$(arg pc2)"/>
 		</include>
 
+		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+			<arg name="component_name" value="gripper" />
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+			<arg name="component_name" value="gripper" />
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
 		<!-- start asus camera -->
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)"/>
