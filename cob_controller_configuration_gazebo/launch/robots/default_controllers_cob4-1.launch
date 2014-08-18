@@ -85,7 +85,6 @@
 		<arg name="side" value="_right"/>
 	</include>
 -->
-<!--
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocityinterfaces.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
@@ -98,7 +97,6 @@
 		<arg name="version" value="lwa4p"/>
 		<arg name="side" value="_right"/>
 	</include>
--->
 	
 	
 	
