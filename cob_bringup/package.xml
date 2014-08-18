@@ -62,6 +62,7 @@
   <run_depend>cob_phidgets</run_depend>
   <run_depend>prace_gripper_driver</run_depend>
   <run_depend>frida_driver</run_depend>
+  <run_depend>cob_image_flip</run_depend>
   <!-- <test_depend>cob_undercarriage_ctrl</test_depend> -->
   <!-- <test_depend>cob_base_drive_chain</test_depend> -->
   <!-- <test_depend>cob_trajectory_controller</test_depend> -->

@@ -7,7 +7,7 @@
 	<property name="def_laser_front_x" value="0.244"/>
 	<property name="def_laser_front_y" value="0.0"/>
 	<property name="def_laser_front_z" value="0.20858"/>
-	<property name="def_laser_front_roll" value="3.1416"/>
+	<property name="def_laser_front_roll" value="0.0"/>
 	<property name="def_laser_front_pitch" value="0.0"/>
 	<property name="def_laser_front_yaw" value="0.0"/>
 
@@ -15,7 +15,7 @@
 	<property name="def_laser_left_x" value="-0.122"/>
 	<property name="def_laser_left_y" value="0.21131"/>
 	<property name="def_laser_left_z" value="0.20858"/>
-	<property name="def_laser_left_roll" value="3.1416"/>
+	<property name="def_laser_left_roll" value="0.0"/>
 	<property name="def_laser_left_pitch" value="0.0"/>
 	<property name="def_laser_left_yaw" value="2.094"/>
 
@@ -23,7 +23,7 @@
 	<property name="def_laser_right_x" value="-0.122"/>
 	<property name="def_laser_right_y" value="-0.21131"/>
 	<property name="def_laser_right_z" value="0.20858"/>
-	<property name="def_laser_right_roll" value="3.1416"/>
+	<property name="def_laser_right_roll" value="0.0"/>
 	<property name="def_laser_right_pitch" value="0.0"/>
 	<property name="def_laser_right_yaw" value="-2.094"/>
 
@@ -34,7 +34,7 @@
 	<!-- torso mount positions | relative to base_link -->
 	<property name="def_torso_x" value="0.0"/>
 	<property name="def_torso_y" value="0.0"/>
-	<property name="def_torso_z" value="0.33411"/>
+	<property name="def_torso_z" value="0.26411"/>
 	<property name="def_torso_roll" value="0.0"/>
 	<property name="def_torso_pitch" value="0.0"/>
 	<property name="def_torso_yaw" value="0.0"/>

@@ -5,8 +5,8 @@ gripper_controller:
     - pg70_finger_joint
     - pg70_finger_mimic_joint
   gains:
-    pg70_finger_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    pg70_finger_mimic_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
+    pg70_finger_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    pg70_finger_mimic_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
 
   constraints:
       goal_time: 0.6
