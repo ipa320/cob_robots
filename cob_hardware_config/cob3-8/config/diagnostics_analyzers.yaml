@@ -48,7 +48,7 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'tray_controller'
+        contains: 'torso_controller'
       tray:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray
@@ -64,7 +64,7 @@ analyzers:
       arm:
         type: diagnostic_aggregator/GenericAnalyzer
         path: LWA
-        contains: 'gripper_controller'
+        contains: 'arm_controller'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
