@@ -28,7 +28,8 @@
 		<arg name="side" value="$(arg side)"/>
 	</include>
 -->
-	
+	<node name="$(arg component_name)$(arg side)_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg component_name)$(arg side)_controller" />    
+    
 	<node ns="$(arg component_name)$(arg side)_controller" name="cob_twist_controller_node" pkg="cob_twist_controller" type="cob_twist_controller_node" cwd="node" respawn="false" output="screen"/>
 	
 	<node ns="$(arg component_name)$(arg side)_controller" name="frame_tracker" pkg="cob_frame_tracker" type="cob_frame_tracker_node" cwd="node" respawn="false" output="screen"/>

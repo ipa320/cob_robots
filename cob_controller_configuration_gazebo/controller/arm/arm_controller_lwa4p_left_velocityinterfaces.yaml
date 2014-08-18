@@ -1,3 +1,51 @@
+#joint trajectory controller
+arm_left_controller:
+  #all
+  joint_names: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
+
+  ## trajectory controller parameters
+  #ptp_vel: 1.5 # rad/sec
+  #ptp_acc: 0.2 # rad/sec^2
+  #max_error: 0.25 # rad
+  #overlap_time: 0.4
+  #frequency: 68
+  #operation_mode: velocity
+
+  # twist controller parameters
+ 
+  
+  type: velocity_controllers/JointTrajectoryController
+  topic: "test"
+  joints:
+     - arm_left_1_joint
+     - arm_left_2_joint
+     - arm_left_3_joint
+     - arm_left_4_joint
+     - arm_left_5_joint
+     - arm_left_6_joint
+     - arm_left_7_joint
+  gains:
+    arm_left_1_joint: {p: 80, i: 0.0, d: 0.0, i_clamp: 81.5}
+    arm_left_2_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
+    arm_left_3_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
+    arm_left_4_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
+    arm_left_5_joint: {p: 20, i: 0.0, d: 0.0, i_clamp: 48.0}
+    arm_left_6_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 15.0}
+    arm_left_7_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 15.0}
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      arm_left_1_joint: {trajectory: 0.1, goal: 0.1}
+      arm_left_2_joint: {trajectory: 0.1, goal: 0.1}
+      arm_left_3_joint: {trajectory: 0.1, goal: 0.1}
+      arm_left_4_joint: {trajectory: 0.1, goal: 0.1}
+      arm_left_5_joint: {trajectory: 0.1, goal: 0.1}
+      arm_left_6_joint: {trajectory: 0.1, goal: 0.1}
+      arm_left_7_joint: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+
 ##position controller
 #arm_left_1_joint_position_controller:
   #type: velocity_controllers/JointPositionController
