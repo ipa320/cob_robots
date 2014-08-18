@@ -5,8 +5,8 @@ head_controller:
      - head_pan_joint 
      - head_tilt_joint
   gains:
-    head_pan_joint: {p: 10.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    head_tilt_joint: {p: 10.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
+    head_pan_joint: {p: 10.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+    head_tilt_joint: {p: 10.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.5
