@@ -4,7 +4,7 @@ tray_controller:
   joints:
     - tray_joint 
   gains:
-    tray_joint: {p: 500.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
+    tray_joint: {p: 500.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.1

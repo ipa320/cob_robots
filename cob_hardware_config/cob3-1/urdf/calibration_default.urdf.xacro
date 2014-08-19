@@ -7,7 +7,7 @@
 	<property name="def_laser_front_x" value="0.325"/>
 	<property name="def_laser_front_y" value="0.0"/>
 	<property name="def_laser_front_z" value="0.135"/>
-	<property name="def_laser_front_roll" value="0"/>
+	<property name="def_laser_front_roll" value="3.1416"/>
 	<property name="def_laser_front_pitch" value="0"/>
 	<property name="def_laser_front_yaw" value="0"/>
 
@@ -15,9 +15,9 @@
 	<property name="def_laser_rear_x" value="-0.325"/>
 	<property name="def_laser_rear_y" value="0.0"/>
 	<property name="def_laser_rear_z" value="0.135"/>
-	<property name="def_laser_rear_roll" value="0"/>
+	<property name="def_laser_rear_roll" value="3.1416"/>
 	<property name="def_laser_rear_pitch" value="0"/>
-	<property name="def_laser_rear_yaw" value="3.1415926"/>
+	<property name="def_laser_rear_yaw" value="3.1416"/>
 
 	<!-- laser top mount positions | relative to base_link -->
 	<property name="def_laser_top_x" value="-0.252"/>
@@ -42,7 +42,7 @@
 	<property name="def_torso_x" value="0.155"/>
 	<property name="def_torso_y" value="0.0"/>
 	<property name="def_torso_z" value="0.892"/>
-	<property name="def_torso_roll" value="3.1415926"/>
+	<property name="def_torso_roll" value="3.1416"/>
 	<property name="def_torso_pitch" value="0.0"/>
 	<property name="def_torso_yaw" value="0.0"/>
 
@@ -103,7 +103,7 @@
 	<property name="def_cam_reference_z" value="-0.06"/>
 	<property name="def_cam_reference_roll" value="0.0"/>
 	<property name="def_cam_reference_pitch" value="1.57079633"/>
-	<property name="def_cam_reference_yaw" value="3.14159265"/>
+	<property name="def_cam_reference_yaw" value="3.1416"/>
 	
 	<!-- left | handeye calibration | relative to cam_reference_link -->
 	<property name="def_cam_l_x" value="0"/>
