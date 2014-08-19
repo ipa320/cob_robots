@@ -22,13 +22,6 @@
 		<arg name="component_name" value="arm"/>
 		<arg name="version" value="lbr"/>
 	</include>
-<!--
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lbr"/>
-	</include>
--->
 
 	<!-- Gripper -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
@@ -44,13 +37,6 @@
 		<arg name="component_name" value="torso"/>
 		<arg name="version" value="cob3_v2"/>
 	</include>
-<!--
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="torso"/>
-		<arg name="version" value="cob3_v2"/>
-	</include>
--->
 
 	<!-- Tray -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
@@ -63,13 +49,6 @@
 		<rosparam file="$(find cob_controller_configuration_gazebo)/controller/tray_sensors.yaml" command="load" />
 	</node>
 
-
-	<!-- Lookat -->
-<!--
-	<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
-		<arg name="robot" value="$(arg robot)" />
-	</include>
--->
 
 
 	<!-- start additional components -->
