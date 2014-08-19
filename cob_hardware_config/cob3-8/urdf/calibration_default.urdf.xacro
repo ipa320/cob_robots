@@ -94,8 +94,8 @@
 	<property name="def_arm_7_ref" value="0" />
 
 	<!-- gripper reference positions | used as calibration_rising for gripper chain-->
-	<property name="def_pg70_finger_1_ref" value="0.0" />
-	<property name="def_pg70_finger_2_ref" value="0.0" />
+	<property name="def_pg70_finger_left_ref" value="0.0" />
+	<property name="def_pg70_finger_right_ref" value="0.0" />
 
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->
