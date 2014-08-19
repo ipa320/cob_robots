@@ -51,7 +51,6 @@
   <run_depend>joy</run_depend>
   <run_depend>rviz</run_depend>
   <run_depend>diagnostic_aggregator</run_depend>
-  <run_depend>pr2_dashboard_aggregator</run_depend>
   <run_depend>pr2_computer_monitor</run_depend>
   <run_depend>wifi_ddwrt</run_depend>
   <run_depend>costmap_2d</run_depend>
