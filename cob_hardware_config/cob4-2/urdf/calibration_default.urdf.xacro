@@ -57,7 +57,7 @@
 
 	<!-- arm right mount positions | relative to torso_3_link -->
 	<property name="def_arm_right_x" value="0.0"/>
-	<property name="def_arm_right_y" value="-0.148"/>
+	<property name="def_arm_right_y" value="-0.014"/>
 	<property name="def_arm_right_z" value="0.55"/>
 	<property name="def_arm_right_roll" value="1.57097"/>
 	<property name="def_arm_right_pitch" value="3.14159"/>
@@ -65,7 +65,7 @@
 	
 	<!-- arm left mount positions | relative to torso_3_link -->
 	<property name="def_arm_left_x" value="0.0"/>
-	<property name="def_arm_left_y" value="0.148"/>
+	<property name="def_arm_left_y" value="0.014"/>
 	<property name="def_arm_left_z" value="0.55"/>
 	<property name="def_arm_left_roll" value="1.57097"/>
 	<property name="def_arm_left_pitch" value="3.14159"/>

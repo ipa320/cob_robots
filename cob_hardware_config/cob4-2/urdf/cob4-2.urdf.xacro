@@ -43,6 +43,7 @@
   <xacro:sensorring name="sensorring" parent="head_3_link">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
+  
   <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" 
             arm_1_ref="${arm_right_1_ref}"
             arm_2_ref="${arm_right_2_ref}" 
@@ -69,5 +70,6 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="1 0 0"/>
   </xacro:lookat>
+
 
 </robot>
