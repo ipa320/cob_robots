@@ -2,7 +2,7 @@ pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
   computers:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Computers
     analyzers:
       pc1:
@@ -15,7 +15,7 @@ analyzers:
         contains: 'pc2'
 
   sensors:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Sensors
     analyzers:
       joystick:
@@ -32,7 +32,7 @@ analyzers:
         contains: 'laser_front'
 
   motors:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
       base:

@@ -10,13 +10,13 @@ arm_controller:
      - arm_6_joint
      - arm_7_joint
   gains:
-    arm_1_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    arm_2_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    arm_3_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    arm_4_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    arm_5_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    arm_6_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    arm_7_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
+    arm_1_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_2_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_3_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_4_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_5_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_6_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_7_joint: {p: 2000.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.5

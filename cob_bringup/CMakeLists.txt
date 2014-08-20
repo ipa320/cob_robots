@@ -13,6 +13,7 @@ cob3-4
 cob3-5
 cob3-6
 cob3-7
+cob3-8
 raw3-1
 raw3-2
 raw3-3
@@ -52,18 +53,8 @@ endforeach(robot)
 
 catkin_package()
 
-## Mark cpp header files for installation
-install(DIRECTORY robots
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-## Mark cpp header files for installation
-install(DIRECTORY drivers
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-## Mark cpp header files for installation#
-install(DIRECTORY tools
+## Mark launch files for installation
+install(DIRECTORY robots drivers controllers tools
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

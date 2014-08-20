@@ -10,13 +10,13 @@ gripper_controller:
     - sdh_finger_22_joint
     - sdh_finger_23_joint
   gains:
-    sdh_knuckle_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    sdh_thumb_2_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    sdh_thumb_3_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    sdh_finger_12_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    sdh_finger_13_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    sdh_finger_22_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
-    sdh_finger_23_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0, i_clamp_min: 0.0, i_clamp_max: 0.0}
+    sdh_knuckle_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_thumb_2_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_thumb_3_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_finger_12_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_finger_13_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_finger_22_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_finger_23_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.5
