@@ -3,47 +3,51 @@
   <arg name="robot" default="$(env ROBOT)"/>
   <arg name="config_path" default="$(find cob_moveit_config)/$(arg robot)/config"/>
 
-  <!--param name="moveit/robot_description" command="$(find xacro)/xacro.py '$(arg config_path)/description.urdf.xacro'" /-->
   <arg name="pipeline" default="ompl" />
 
+  <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
   <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
 
+  <!-- Verbose Mode Option -->
   <arg name="info" default="$(arg debug)" />  
   <arg unless="$(arg info)" name="command_args" value="" />
   <arg     if="$(arg info)" name="command_args" value="--debug" />
 
+  <!-- move_group settings -->
   <arg name="allow_trajectory_execution" default="true"/>
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="jiggle_fraction" default="0.05" />
   <arg name="publish_monitored_planning_scene" default="true"/>
 
+  <!-- Planning Functionality -->
   <include file="$(find cob_moveit_config)/launch/planning_context.xml">
     <arg name="robot" value="$(arg robot)"/>
   </include>
 
-  <rosparam file="$(arg config_path)/controllers.yaml" ns="move_group"/>
-  <param name="move_group/trajectory_execution/execution_duration_monitoring" value="false"/>
-  <param name="move_group/use_controller_manager" value="false"/>
-  <param name="move_group/moveit_controller_manager" value="pr2_moveit_controller_manager/Pr2MoveItControllerManager"/>
-  
   <include ns="move_group" file="$(find cob_moveit_config)/launch/planning_pipeline.xml">
       <arg name="pipeline" value="$(arg pipeline)"/>
       <arg name="robot" value="$(arg robot)"/>
   </include>
 
-
-  <!-- include this for sensing -->
+  <!-- Trajectory Execution Functionality -->
+  <rosparam file="$(arg config_path)/controllers.yaml" ns="move_group"/>
+  <param name="move_group/trajectory_execution/execution_duration_monitoring" value="false"/>
+  <param name="move_group/use_controller_manager" value="false"/>
+  <param name="move_group/moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
+  
+  <!-- Sensors Functionality -->
   <!-- IMPORTANT: To disable, you must manually remove the paramater from the parameter server -->
   <!-- rosparam delete /move_group/sensors -->
 <!--
+  <rosparam file="$(arg config_path)/sensor_kinect.yaml" ns="move_group"/>
   <param name="move_group/octomap_frame" type="string" value="odom_combined" />
   <param name="move_group/octomap_resolution" type="double" value="0.1" />
   <param name="move_group/max_range" type="double" value="2.0" />
-  <rosparam file="$(arg config_path)/sensor_kinect.yaml" ns="move_group"/>
 -->
 
+  <!-- Start the actual move_group node/action server -->
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="$(arg command_args)">
     <!-- Set the display variable, in case OpenGL code is used internally -->
     <env name="DISPLAY" value="$(optenv DISPLAY :0)" />

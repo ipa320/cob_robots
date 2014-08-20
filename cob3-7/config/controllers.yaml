@@ -1,7 +1,7 @@
 controller_list:
   - name: arm_controller
-    ns: follow_joint_trajectory
-    default: true
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
     joints:
       - ur_connector_joint
       - arm_shoulder_pan_joint
@@ -11,8 +11,8 @@ controller_list:
       - arm_wrist_2_joint
       - arm_wrist_3_joint
   - name: torso_controller
-    ns: follow_joint_trajectory
-    default: true
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
     joints:
       - torso_lower_neck_tilt_joint
       - torso_pan_joint
