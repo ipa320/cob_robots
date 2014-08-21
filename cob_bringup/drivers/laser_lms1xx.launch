@@ -12,7 +12,7 @@
 	</node>
 
 	<!-- laser filter -->
-	<node name="laser_$(arg name)_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" ns="laser_front">
+	<node name="laser_$(arg name)_filter" pkg="cob_sick_s300" type="cob_scan_filter" respawn="false" output="screen" ns="laser_$(arg name)">
 		<remap from="/laser_$(arg name)/scan" to="/scan_$(arg name)_raw"/>
 		<remap from="/laser_$(arg name)/scan_filtered" to="/scan_$(arg name)"/>
 	</node>
