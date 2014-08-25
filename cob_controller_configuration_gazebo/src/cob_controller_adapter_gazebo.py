@@ -13,8 +13,8 @@ class cob_controller_adapter_gazebo():
     self.joint_names = rospy.get_param("joint_names", [])
     self.joint_process_values = []
         
-    #~ self.pos_controller_pubs = []
-    #~ self.pos_controller_names = []
+    #self.pos_controller_pubs = []
+    #self.pos_controller_names = []
     
     self.trajectory_controller_names = []
     self.trajectory_controller_names.append(rospy.get_namespace()[1:-1])    
@@ -25,18 +25,18 @@ class cob_controller_adapter_gazebo():
     
     
     
-    #~ for i in range(len(self.joint_names)):
-        #~ pub = rospy.Publisher('/'+self.joint_names[i]+'_position_controller/command', Float64)
-        #~ self.pos_controller_pubs.append(pub)
-        #~ self.pos_controller_names.append(self.joint_names[i]+'_position_controller')
+    #for i in range(len(self.joint_names)):
+        #pub = rospy.Publisher('/'+self.joint_names[i]+'_position_controller/command', Float64)
+        #self.pos_controller_pubs.append(pub)
+        #self.pos_controller_names.append(self.joint_names[i]+'_position_controller')
         
     for i in range(len(self.joint_names)):
         self.joint_process_values.append(0.0)
         pub = rospy.Publisher('/'+self.joint_names[i]+'_velocity_controller/command', Float64)
         self.vel_controller_pubs.append(pub)
         self.vel_controller_names.append(self.joint_names[i]+'_velocity_controller')
-        #~ sub = rospy.Subscriber('/'+self.joint_names[i]+'_velocity_controller/state', JointControllerState, self.controller_state_cb)
-        #~ self.vel_controller_state_subs.append(sub)
+        #sub = rospy.Subscriber('/'+self.joint_names[i]+'_velocity_controller/state', JointControllerState, self.controller_state_cb)
+        #self.vel_controller_state_subs.append(sub)
         
     
     rospy.logwarn("Waiting for load_controller service...")
@@ -51,18 +51,18 @@ class cob_controller_adapter_gazebo():
     
     self.switch_client = rospy.ServiceProxy('/controller_manager/switch_controller', SwitchController)
     
-    #~ for controller in self.pos_controller_names:
-        #~ res = self.load_client(controller)
+    #for controller in self.pos_controller_names:
+        #res = self.load_client(controller)
     for controller in self.vel_controller_names:
         res = self.load_client(controller)    
     
-    #~ for controller in self.trajectory_controller_names:
-        #~ res = self.load_client(controller)    
+    #for controller in self.trajectory_controller_names:
+        #res = self.load_client(controller)    
     
     #self.switch_controller(self.pos_controller_names, self.vel_controller_names+self.trajectory_controller_names)
     #self.current_control_mode = "position"
-    #~ self.switch_controller(self.vel_controller_names, self.vel_controller_names+self.trajectory_controller_names)
-    #~ self.current_control_mode = "velocity"
+    #self.switch_controller(self.vel_controller_names, self.vel_controller_names+self.trajectory_controller_names)
+    #self.current_control_mode = "velocity"
     self.switch_controller(self.trajectory_controller_names, self.vel_controller_names)
     self.current_control_mode = "trajectory"
     
@@ -73,7 +73,7 @@ class cob_controller_adapter_gazebo():
     self.last_trajectory_command = rospy.get_time()
     self.finished_trajectory=True
     
-    #~ self.cmd_pos_sub = rospy.Subscriber("command_pos", JointPositions, self.cmd_pos_cb)
+    #self.cmd_pos_sub = rospy.Subscriber("command_pos", JointPositions, self.cmd_pos_cb)
     self.cmd_vel_sub = rospy.Subscriber("command_vel", JointVelocities, self.cmd_vel_cb)
     self.cmd_result_sub = rospy.Subscriber("follow_joint_trajectory/result", FollowJointTrajectoryActionResult, self.cmd_result_cb)
     self.cmd_goal_sub = rospy.Subscriber("follow_joint_trajectory/goal", FollowJointTrajectoryActionGoal, self.cmd_goal_cb)
@@ -89,7 +89,7 @@ class cob_controller_adapter_gazebo():
   def run(self):
     r = rospy.Rate(self.update_rate)
     while not rospy.is_shutdown():
-        #~ self.publish_state()        
+        #self.publish_state()        
         if (((rospy.get_time() - self.last_vel_command) >= self.max_vel_command_silence) and (self.current_control_mode != "trajectory")):            
             rospy.loginfo("Have not heard a vel command for %f seconds, switching to trajectory_controllers", (rospy.get_time()-self.last_vel_command))
             self.switch_controller(self.trajectory_controller_names, self.vel_controller_names)
@@ -137,18 +137,18 @@ class cob_controller_adapter_gazebo():
       self.vel_controller_pubs[i].publish(Float64(data.velocities[i].value))
     
     
-  #~ def cmd_pos_cb(self, data):
-    #~ if (self.current_control_mode != "trajectory"):
-      #~ if (self.current_control_mode != "position"):
-          #~ rospy.logwarn("Have to switch to position_controllers")
-          #~ self.switch_controller(self.pos_controller_names, self.vel_controller_names+self.trajectory_controller_names)
-          #~ self.current_control_mode = "position"
-      #~ #print data
-      #~ if(len(self.joint_names) != len(data.positions)):
-          #~ rospy.logerr("DOF do not match")
-          #~ return
-      #~ for i in range(len(self.joint_names)):
-          #~ self.pos_controller_pubs[i].publish(Float64(data.positions[i].value))
+  #def cmd_pos_cb(self, data):
+    #if (self.current_control_mode != "trajectory"):
+      #if (self.current_control_mode != "position"):
+          #rospy.logwarn("Have to switch to position_controllers")
+          #self.switch_controller(self.pos_controller_names, self.vel_controller_names+self.trajectory_controller_names)
+          #self.current_control_mode = "position"
+      ##print data
+      #if(len(self.joint_names) != len(data.positions)):
+          #rospy.logerr("DOF do not match")
+          #return
+      #for i in range(len(self.joint_names)):
+          #self.pos_controller_pubs[i].publish(Float64(data.positions[i].value))
 
   def cmd_result_cb(self, data):    
     self.last_trajectory_command = rospy.get_time()    
