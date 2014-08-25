@@ -33,12 +33,12 @@
   <xacro:raw_base name="base"/>  
 
   <xacro:tower_asymetric name="tower" parent="base_link">
-      <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
+    <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
   </xacro:tower_asymetric>
 
 
   <xacro:raw_torso name="torso" parent="base_link">
-      <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
+    <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:raw_torso>
   
   <xacro:raw_head name="head" parent="torso_2_link">
@@ -53,42 +53,152 @@
 
 
   <xacro:ur10 name="arm" parent="base_link">
-      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
+    <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:ur10>
-  <!-- mount the arm to the robot 
-  <joint name="arm_base_joint" type="fixed" >
-      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-      <parent link="base_link" />
-      <child link="arm_base_link" />
-  </joint>
-  <xacro:ur10_robot prefix="arm_"/>-->
   
   <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
-      <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
+    <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
   </xacro:raw_boxgripper>
 
 
-   <!-- IMU brick mount on raw3-1 -->
-   <joint name="imu_brick_joint" type="fixed" >
-      <origin xyz="0.402 -0.0811 0.335" rpy="0 0 0" />
-      <parent link="base_link" />
-      <child link="imu_brick_link" />
-    </joint>
+  <!-- IMU brick mount on raw3-1 -->
+  <joint name="imu_brick_joint" type="fixed" >
+    <origin xyz="0.402 -0.0811 0.335" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_brick_link" />
+  </joint>
 
-    <link name="imu_brick_link">
-       <inertial>
-            <mass value="0.0001" />
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001" />
-       </inertial>
-       <visual>
-   	    <origin xyz="0 0 -0.02" rpy="0 0 0" />
-	    <geometry>
-    	       <box size="0.04 0.04 0.02" />
-	    </geometry>
-	    <material name="IPA/LightGrey" />
-       </visual>
-    </link>
-    <!-- END: IMU brick	mount -->
+  <link name="imu_brick_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0 0 -0.02" rpy="0 0 0" />
+      <geometry>
+        <box size="0.04 0.04 0.02" />
+      </geometry>
+      <material name="IPA/LightGrey" />
+    </visual>
+  </link>
+  <!-- END: IMU brick  mount -->
+    
+  <!-- rfid_front mount on raw3-1 -->
+  <joint name="rfid_front_joint" type="fixed" >
+    <origin xyz="0.55128 0.0 0.09" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="rfid_front_link" />
+  </joint>
 
-  </robot>
+  <link name="rfid_front_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.16 0.36 0.09" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- END: rfid front mount -->
+    
+  <!-- rfid_rear mount on raw3-1 -->
+  <joint name="rfid_rear_joint" type="fixed" >
+    <origin xyz="-0.55128 0.0 0.09" rpy="0 0 ${M_PI}" />
+    <parent link="base_link" />
+    <child link="rfid_rear_link" />
+  </joint>
+
+  <link name="rfid_rear_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.16 0.36 0.09" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- END: rfid rear mount -->
+    
+  <!-- rfid_right mount on raw3-1 -->
+  <joint name="rfid_right_joint" type="fixed" >
+    <origin xyz="0.0 -0.30850 0.09" rpy="0 0 ${-0.5*M_PI}" />
+    <parent link="base_link" />
+    <child link="rfid_right_link" />
+  </joint>
+
+  <link name="rfid_right_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.16 0.36 0.09" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 .8 1"/>
+      </material>
+    </visual>
+  </link>
+  <!-- END: rfid right mount -->
+    
+  
+  <!-- Camera pillar -->
+  <joint name="camera_pillar_joint" type="fixed" >
+    <origin xyz="0.4925 0.0825 0.48" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_pillar_link" />
+  </joint>
+    
+  <link name="camera_pillar_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0 0 0.123" rpy="0 0 0" />
+      <geometry>
+        <box size="0.045 0.045 0.246" />
+      </geometry>
+      <material name="IPA/LightGrey" />
+    </visual>
+  </link> 
+  <!-- END: camera_pillar -->  
+   
+  <!-- Softkinetic 'left' mount on raw3-1 -->
+  <joint name="softkinetic_left_joint" type="fixed" >
+    <origin xyz="0.015 0.06 0.215" rpy="0.0 ${M_PI/2} 0.0" />
+    <parent link="camera_pillar_link" />
+    <child link="softkinetic_left_link" />
+  </joint>
+    
+  <link name="softkinetic_left_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <box size="0.10 0.03 0.03" />
+      </geometry>
+      <material name="IPA/Black" />
+    </visual>
+  </link>
+  <!-- END: Softkinetic 'left' mount -->
+
+  <!-- Softkinetic 'right' mount on raw3-1 -->
+  <joint name="softkinetic_right_joint" type="fixed" >
+    <origin xyz="0.015 -0.06 0.215" rpy="${M_PI} -${M_PI/2} 0.0" />
+    <parent link="camera_pillar_link" />
+    <child link="softkinetic_right_link" />
+  </joint>
+    
+  <link name="softkinetic_right_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <box size="0.10 0.03 0.03" />
+      </geometry>
+      <material name="IPA/Black" />
+    </visual>
+  </link>
+  <!-- END: Softkinetic 'right' mount -->
+
+</robot>

@@ -1,3 +1,4 @@
+#This file contains parameters for the head_axis (driver + controller)
 CanDevice: PCAN:0
 CanBaudrate: 500
 ModId: 17

@@ -11,7 +11,7 @@
 	
 	<!-- start command_gui -->
 	<node ns="command_gui" pkg="cob_command_gui" type="knoeppkes.py" name="$(anon command_gui_node)" cwd="node" respawn="false" output="screen" >
-		<!-- upload button parameters, but delete the old ones before -->
+		<!-- upload button parameters -->
 		<rosparam command="load" ns="control_buttons" file="$(arg pkg_robot_config)/$(arg robot)/command_gui_buttons.yaml"/>
 		<rosparam command="load" ns="nav_buttons" file="$(arg pkg_env_config)/$(arg robot_env)/command_gui_buttons.yaml"/>
 	</node>

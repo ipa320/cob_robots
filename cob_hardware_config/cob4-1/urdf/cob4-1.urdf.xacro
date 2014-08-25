@@ -15,6 +15,7 @@
 
   <!-- torso -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- arm -->
   <xacro:include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
@@ -43,6 +44,7 @@
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
   
+<!--
   <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" 
             arm_1_ref="${arm_right_1_ref}"
             arm_2_ref="${arm_right_2_ref}" 
@@ -64,5 +66,11 @@
             arm_7_ref="${arm_left_7_ref}">
     <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
   </xacro:schunk_lwa4p_extended>
+-->
+
+  <xacro:lookat name="lookat" parent="torso_center_link" lower="0.0" upper="5.0">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0"/>
+  </xacro:lookat>
 
 </robot>

@@ -1,0 +1,8 @@
+device: /dev/pcan1
+baudrate: 500K
+sync_interval: 10
+chains: ["torso_controller"]
+torso_controller:
+  joint_names: [torso_lower_neck_tilt_joint, torso_pan_joint, torso_upper_neck_tilt_joint]
+  motor_direction: [1, 1, 1]
+  module_ids: [1, 2, 3]

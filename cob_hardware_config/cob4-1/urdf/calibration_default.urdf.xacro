@@ -6,7 +6,7 @@
 	<!-- laser front mount positions | relative to base_link -->
 	<property name="def_laser_front_x" value="0.244"/>
 	<property name="def_laser_front_y" value="0.0"/>
-	<property name="def_laser_front_z" value="0.08"/>
+	<property name="def_laser_front_z" value="0.20858"/>
 	<property name="def_laser_front_roll" value="0.0"/>
 	<property name="def_laser_front_pitch" value="0.0"/>
 	<property name="def_laser_front_yaw" value="0.0"/>
@@ -14,7 +14,7 @@
 	<!-- laser rear mount positions | relative to base_link -->
 	<property name="def_laser_left_x" value="-0.122"/>
 	<property name="def_laser_left_y" value="0.21131"/>
-	<property name="def_laser_left_z" value="0.08"/>
+	<property name="def_laser_left_z" value="0.20858"/>
 	<property name="def_laser_left_roll" value="0.0"/>
 	<property name="def_laser_left_pitch" value="0.0"/>
 	<property name="def_laser_left_yaw" value="2.094"/>
@@ -22,7 +22,7 @@
 	<!-- laser top mount positions | relative to base_link -->
 	<property name="def_laser_right_x" value="-0.122"/>
 	<property name="def_laser_right_y" value="-0.21131"/>
-	<property name="def_laser_right_z" value="0.08"/>
+	<property name="def_laser_right_z" value="0.20858"/>
 	<property name="def_laser_right_roll" value="0.0"/>
 	<property name="def_laser_right_pitch" value="0.0"/>
 	<property name="def_laser_right_yaw" value="-2.094"/>
@@ -50,25 +50,25 @@
 	<!-- head sensors mount positions | relative to head_3_link -->
 	<property name="def_sensorring_x" value="0.0"/>
 	<property name="def_sensorring_y" value="0.0"/>
-	<property name="def_sensorring_z" value="0.07"/>
+	<property name="def_sensorring_z" value="0.007"/>
 	<property name="def_sensorring_roll" value="0.0"/>
 	<property name="def_sensorring_pitch" value="0.0"/>
 	<property name="def_sensorring_yaw" value="0.0"/>
 
 	<!-- arm right mount positions | relative to torso_3_link -->
 	<property name="def_arm_right_x" value="0.0"/>
-	<property name="def_arm_right_y" value="-0.148"/>
+	<property name="def_arm_right_y" value="-0.014"/>
 	<property name="def_arm_right_z" value="0.55"/>
 	<property name="def_arm_right_roll" value="1.57097"/>
-	<property name="def_arm_right_pitch" value="0.0"/>
+	<property name="def_arm_right_pitch" value="3.14159"/>
 	<property name="def_arm_right_yaw" value="0.0"/>
 	
 	<!-- arm left mount positions | relative to torso_3_link -->
 	<property name="def_arm_left_x" value="0.0"/>
-	<property name="def_arm_left_y" value="0.148"/>
+	<property name="def_arm_left_y" value="0.014"/>
 	<property name="def_arm_left_z" value="0.55"/>
 	<property name="def_arm_left_roll" value="1.57097"/>
-	<property name="def_arm_left_pitch" value="0.0"/>
+	<property name="def_arm_left_pitch" value="3.14159"/>
 	<property name="def_arm_left_yaw" value="3.14159"/>
 	
 	<!-- *********************************** -->
@@ -103,5 +103,29 @@
 	<property name="def_arm_left_5_ref" value="0.0"/>
 	<property name="def_arm_left_6_ref" value="0.0"/>
 	<property name="def_arm_left_7_ref" value="0.0"/>
+
+	<!-- cam3d left | handeye calibration | relative to torso_3_link -->
+	<property name="def_torso_cam3d_left_x" value="0.12839"/>
+	<property name="def_torso_cam3d_left_y" value="0.01802"/>
+	<property name="def_torso_cam3d_left_z" value="0.24214"/>
+	<property name="def_torso_cam3d_left_roll" value="0"/>
+	<property name="def_torso_cam3d_left_pitch" value="1.57079"/>
+	<property name="def_torso_cam3d_left_yaw" value="0.418879"/>
+	
+	<!-- cam3d right | handeye calibration | relative to torso_3_link -->
+	<property name="def_torso_cam3d_right_x" value="0.12839"/>
+	<property name="def_torso_cam3d_right_y" value="-0.01802"/>
+	<property name="def_torso_cam3d_right_z" value="0.24214"/>
+	<property name="def_torso_cam3d_right_roll" value="0"/>
+	<property name="def_torso_cam3d_right_pitch" value="1.57079"/>
+	<property name="def_torso_cam3d_right_yaw" value="-0.418879"/>
+	
+	<!-- cam3d down | handeye calibration | relative to torso_3_link -->
+	<property name="def_torso_cam3d_down_x" value="0.15908"/>
+	<property name="def_torso_cam3d_down_y" value="0.0"/>
+	<property name="def_torso_cam3d_down_z" value="0.14005"/>
+	<property name="def_torso_cam3d_down_roll" value="2.18166"/> <!--2.18166-->
+	<property name="def_torso_cam3d_down_pitch" value="0.0"/>
+	<property name="def_torso_cam3d_down_yaw" value="1.57079"/> <!--1.57079-->
 
 </robot>

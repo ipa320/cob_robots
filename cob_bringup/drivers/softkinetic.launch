@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- 
+Default launch file to run two softkinetic cameras simultaneously. 
+Analogously, an arbitrary number of camaras can be started. 
+The arguments given are the device indices of the cameras determined by the DepthSense deamon.   
+-->
+<launch>
+
+	<arg name="name" default="cam3d"/>
+
+	<node name="$(arg name)" pkg="softkinetic_camera" type="softkinetic_bringup_node" args="0" >
+		<param name="camera_link" type="string" value="/$(arg name)_link" />
+		<param name="confidence_threshold" type="int" value="400" />
+		<param name="use_radius_filter" type="bool" value="False" />
+		<param name="search_radius" type="double" value="0.1" />
+		<param name="minNeighboursInRadius" type="int" value="3" />
+	</node>
+
+</launch>
+

@@ -11,46 +11,30 @@
   <xacro:include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
 
   <!-- raw tower -->
+<!--
   <xacro:include filename="$(find raw_description)/urdf/tower_symetric/tower.urdf.xacro" />
+-->
 
   <!-- frida --> 
-  <xacro:include filename="$(find frida_description)/urdf/frida.urdf.xacro" />
-
-  <!-- frida adapter -->
-  <xacro:include filename="$(find frida_description)/urdf/adapter.urdf.xacro" />  
-
-  <xacro:include filename="$(find frida_description)/urdf/camera_holder.urdf.xacro" />  
-
-  <!-- prace gripper -->
-  <xacro:include filename="$(find prace_gripper_description)/urdf/prace_gripper.urdf.xacro"/>
+  <xacro:include filename="$(find prace_common)/urdf/prace.urdf.xacro" />
 
   <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
   <xacro:include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
   <xacro:raw_base name="base"/>
 
+<!--
   <xacro:tower_symetric name="tower" parent="base_link">
       <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
   </xacro:tower_symetric>
+-->
 
-  <xacro:frida_adapter name="adapter" parent="tower_base_link">
-      <origin xyz="0.0905 0 0.2305" rpy="0 0 0" />
-  </xacro:frida_adapter>
+  <!-- prace macros -->
+  <xacro:prace/>
 
-  <xacro:frida name="arm" parent="base_link">
-      <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-  </xacro:frida>
-
-  <xacro:prace_gripper name="gripper_left" parent="arm_left_6_link">
-      <origin xyz="${gripper_left_x} ${gripper_left_y} ${gripper_left_z}" rpy="${gripper_left_roll} ${gripper_left_pitch} ${gripper_left_yaw}" />  
-  </xacro:prace_gripper>
-
-  <xacro:prace_gripper name="gripper_right" parent="arm_right_6_link">
-      <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />  
-  </xacro:prace_gripper>
-
-  <xacro:teachin_handle name="cam_holder" parent="arm_torso_link">
-      <origin xyz="0.0 0 0.49" rpy="0.99483 0 0" />
-  </xacro:teachin_handle>
+  <xacro:lookat name="lookat" parent="head_cam_holder_link" lower="0.0" upper="8.0">
+    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
+    <axis xyz="1 0 0"/>
+  </xacro:lookat>
 
 </robot>

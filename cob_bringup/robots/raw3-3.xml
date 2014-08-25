@@ -16,13 +16,16 @@
 	<include file="$(find cob_default_robot_config)/raw3-3/upload_param_raw3-3.launch" />
 
 	<group>
-    <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/base.launch" >
+		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		
@@ -59,11 +62,21 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
+		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+			<arg name="component_name" value="torso" />
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+			<arg name="component_name" value="torso" />
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
-    <machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -71,9 +84,12 @@
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
 
+		<!-- light -->
+		<include file="$(find cob_bringup)/drivers/light.launch" />
+
 	</group>
 
 
-  <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 </launch>

@@ -27,5 +27,7 @@ group4:
     [init,trigger,init],
     [recover,trigger,recover],
     [home,move,home],
-    [left,move,left],
-    [right,move,right]]
+    [right,move,right],
+    [down,move,down],
+    [exhibition,move,exhibition]]
+

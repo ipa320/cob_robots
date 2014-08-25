@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="name" default="cam3d"/>
+	<arg name="device_id" default="#1"/>
+	<arg name="machine" default="localhost"/>
+
+	<param name="/$(arg name)/driver/data_skip" type="int" value="5"/>
+	<param name="/$(arg name)/driver/image_mode" type="int" value="5"/>
+	<param name="/$(arg name)/driver/depth_mode" type="int" value="5"/>
+	<param name="/$(arg name)/driver/z_offset_mm" type="int" value="20"/>
+
+	<include file="$(find openni2_launch)/launch/openni2.launch">
+		<arg name="camera" value="$(arg name)"/>
+		<arg name="device_id" value="$(arg device_id)" />
+		<arg name="rgb_frame_id" value="/$(arg name)_link" />
+		<arg name="depth_frame_id" value="/$(arg name)_link" />
+		<arg name="publish_tf" value="false" />
+		<arg name="depth_registration" value="true"/>
+		<arg name="rgb_camera_info_url" value="file:///$(find cob_calibration_data)/$(arg robot)/calibration/cameras/$(arg name).yaml" />
+		<arg name="machine" value="$(arg machine)" />
+	</include>
+
+</launch>

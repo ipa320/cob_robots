@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<node  ns="safety_controller" name="safety_controller" pkg="cob_safety_controller" type="safety_controller" respawn="false" output="screen" >
+		<remap from="emergency_stop_state" to="/emergency_stop_state" />		
+		<remap from="odometry" to="/base_controller/odometry" />
+	</node>
+
+	<rosparam ns="safety_controller" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/flexisoft.yaml"/>
+	<param name="safety_controller/front_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_front.xml"/>
+	<param name="safety_controller/left_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_left.xml"/>
+	<param name="safety_controller/right_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_right.xml"/>
+
+</launch>

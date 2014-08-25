@@ -1,0 +1,8 @@
+device: /dev/pcan3
+baudrate: 500K
+sync_interval: 10
+chains: ["arm_left_controller"]
+arm_left_controller:
+  joint_names: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
+  motor_direction: [1,1,1,1,1,1,1]
+  module_ids: [61,62,63,64,65,66,67]

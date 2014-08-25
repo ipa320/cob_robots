@@ -1,0 +1,32 @@
+gripper_controller:
+  type: effort_controllers/JointTrajectoryController
+  topic: "test"
+  joints:
+    - sdh_knuckle_joint
+    - sdh_thumb_2_joint
+    - sdh_thumb_3_joint
+    - sdh_finger_12_joint
+    - sdh_finger_13_joint
+    - sdh_finger_22_joint
+    - sdh_finger_23_joint
+  gains:
+    sdh_knuckle_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_thumb_2_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_thumb_3_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_finger_12_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_finger_13_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_finger_22_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+    sdh_finger_23_joint: {p: 100.0, i: 0.0, d: 1.0, i_clamp: 0.0}
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.5
+      sdh_knuckle_joint: {trajectory: 0.5, goal: 0.5}
+      sdh_thumb_2_joint: {trajectory: 0.5, goal: 0.5}
+      sdh_thumb_3_joint: {trajectory: 0.5, goal: 0.5}
+      sdh_finger_12_joint: {trajectory: 0.5, goal: 0.5}
+      sdh_finger_13_joint: {trajectory: 0.5, goal: 0.5}
+      sdh_finger_22_joint: {trajectory: 0.5, goal: 0.5}
+      sdh_finger_23_joint: {trajectory: 0.5, goal: 0.5}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10

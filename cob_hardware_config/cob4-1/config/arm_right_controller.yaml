@@ -1,0 +1,14 @@
+#all
+joint_names: [arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
+
+# trajectory controller parameters
+ptp_vel: 1.5 # rad/sec
+ptp_acc: 0.2 # rad/sec^2
+max_error: 0.25 # rad
+overlap_time: 0.4
+frequency: 68
+operation_mode: velocity
+
+# twist controller parameters
+base_link: arm_right_base_link
+tip_link: arm_right_7_link

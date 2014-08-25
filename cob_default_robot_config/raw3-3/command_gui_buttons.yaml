@@ -22,3 +22,27 @@ group5:
   buttons: [[stop,trigger,stop],
     [home,move,home],
     [zero,move,zero]]
+group6:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home],
+    [pos1,move,pos1],
+    [pos2,move,pos2]]
+group7:
+  group_name: lookat
+  component_name: lookat
+  buttons: [[stop,trigger,stop],
+    [home,move,home]]
+group8:
+  group_name: gripper left
+  component_name: gripper_left
+  buttons: [[open,move,open],
+    [close,move,close]]
+group9:
+  group_name: gripper right
+  component_name: gripper_right
+  buttons: [[open,move,open],
+    [close,move,close]]

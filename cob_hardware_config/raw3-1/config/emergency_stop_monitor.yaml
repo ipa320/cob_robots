@@ -1,1 +1,4 @@
-# NO PARAMETERS YET TO SPECIFY
+diagnostics_based: True
+motion_sensing: True
+led_enabled: True
+sound_enabled: False

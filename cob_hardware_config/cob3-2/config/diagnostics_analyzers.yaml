@@ -2,7 +2,7 @@ pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
   computers:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Computers
     analyzers:
       pc1:
@@ -22,7 +22,7 @@ analyzers:
                    'pc2 HD Usage']
 
   io:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: IO
     analyzers:
       sound:
@@ -36,7 +36,7 @@ analyzers:
         contains: 'joy'
 
   sensors:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Sensors
     analyzers:
       laser_top:
@@ -67,7 +67,7 @@ analyzers:
         contains: 'dsa_controller'
 
   motors:
-    type: AnalyzerGroup
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
       torso:
@@ -78,10 +78,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray
         contains: 'tray_controller'
-      sdh:
+      gripper:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: SDH
-        contains: 'sdh_controller'
+        path: Gripper
+        contains: 'gripper_controller'
       head:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Head

@@ -18,15 +18,27 @@
 	</include>
 	
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lbr_dual"/>
+		<arg name="version" value="lbr"/>
+		<arg name="side" value="_left"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="lbr"/>
+		<arg name="side" value="_right"/>
 	</include>
 
-	<!-- SDH -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
-		<arg name="component_name" value="sdh"/>
-		<arg name="version" value="dual"/>
+		<!-- Gripper -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="gripper"/>
+		<arg name="version" value="sdh"/>
+		<arg name="side" value="_left"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="gripper"/>
+		<arg name="version" value="sdh"/>
+		<arg name="side" value="_right"/>
 	</include>
 
 	<!-- start additional components -->
@@ -34,7 +46,7 @@
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
-	<include file="$(find cob_bringup)/drivers/voltage_filter.launch" >
+	<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 	<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
@@ -56,7 +68,6 @@
 		<arg name="sim" value="true"/>
 	</include>
 	
-	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />
 	
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" cwd="node" respawn="false" output="screen" >

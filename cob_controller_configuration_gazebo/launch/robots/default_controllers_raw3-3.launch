@@ -15,16 +15,48 @@
 	</include>
 
 	<!-- Arms -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="arm"/>
 		<arg name="version" value="frida"/>
+		<arg name="side" value="_left"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="arm"/>
+		<arg name="version" value="frida"/>
+		<arg name="side" value="_right"/>
 	</include>
 
 	<!-- Grippers -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_dual.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
 		<arg name="component_name" value="gripper"/>
-		<arg name="version" value="prace_dual"/>
+		<arg name="version" value="prace"/>
+		<arg name="side" value="_left"/>
 	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="gripper"/>
+		<arg name="version" value="prace"/>
+		<arg name="side" value="_right"/>
+	</include>
+
+	<!-- Head -->
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+		<arg name="component_name" value="torso"/>
+		<arg name="version" value="raw3-3"/>
+	</include>
+<!--
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_hybrid.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
+		<arg name="version" value="raw3-3"/>
+	</include>
+-->
+	
+	<!-- Lookat -->
+<!--
+	<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+-->
 
 	<!-- start additional components -->
 	<!--include file="$(find cob_sound)/ros/launch/sound.launch" /-->

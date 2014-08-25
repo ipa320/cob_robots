@@ -6,6 +6,7 @@
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
+	<arg name="ur_ip" default="localhost"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -16,7 +17,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-4/upload_param_raw3-4.launch" />
 
 	<group>
-    <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -40,12 +41,20 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="rear" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/base.launch" >
+		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
+			<arg name="sim" value="true" />
 		</include>
 
 		<!-- upper robot -->
-		<!-- tbd -->
+		<include file="$(find cob_bringup)/drivers/ur.launch" >
+			<arg name="ur_ip" value="$(arg ur_ip)"/>
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
@@ -61,17 +70,17 @@
 	</group>
 
 	<group>
-    <machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/voltage_controller.launch" >
+		<include file="$(find cob_bringup)/drivers/battery_voltage.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/voltage_filter.launch" >
+		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -91,6 +100,6 @@
 
 	</group>
 
-  <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 </launch>
