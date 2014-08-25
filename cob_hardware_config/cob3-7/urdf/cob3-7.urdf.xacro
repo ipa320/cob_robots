@@ -20,8 +20,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob3_torso/torso_v2.urdf.xacro" />
 
   <!-- head -->
-  <xacro:include filename="$(find cob_description)/urdf/cob3_head/head_v3.urdf.xacro" />
-  <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob3_head/head_prosilicas_kinect.urdf.xacro" />
 
   <!-- ur_connector -->
   <xacro:include filename="$(find cob_description)/urdf/ur_connector/ur_connector.urdf.xacro" />
@@ -47,11 +46,6 @@
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   
-  <xacro:lookat name="lookat" parent="torso_upper_neck_tilt_link" lower="-5.0" upper="5.0">
-    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-    <axis xyz="-1 0 0"/>
-  </xacro:lookat>
-
   <xacro:ur_connector name="ur_connector" parent="base_link">
     <origin xyz="${ur_connector_x} ${ur_connector_y} ${ur_connector_z}" rpy="${ur_connector_roll} ${ur_connector_pitch} ${ur_connector_yaw}" />
   </xacro:ur_connector>

@@ -11,4 +11,14 @@
 	<property name="def_tower_roll" value="0.0"/>
 	<property name="def_tower_pitch" value="0.0"/>
 	<property name="def_tower_yaw" value="3.14159265359"/>
+
+	<!--arm mount positions | relative to base_link-->
+	<property name="def_arm_x" value="0.0"/>
+	<property name="def_arm_y" value="0.0"/>
+	<property name="def_arm_z" value="0.0"/>
+	<property name="def_arm_roll" value="0.0"/>
+	<property name="def_arm_pitch" value="0.0"/>
+	<property name="def_arm_yaw" value="0.0"/>
+
+
 </robot>

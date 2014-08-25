@@ -30,7 +30,7 @@ if __name__ == "__main__":
 	if topic_name != None:
 		rospy.Subscriber(topic_name, rospy.AnyMsg, callback)
 
-	pub_diagnostics = rospy.Publisher('/diagnostics', DiagnosticArray)
+	pub_diagnostics = rospy.Publisher('/diagnostics', DiagnosticArray, queue_size=1)
 
 	rospy.loginfo("fake diagnostics for %s running listening to %s",diagnostics_name, topic_name)
 	rate = rospy.Rate(1)
@@ -46,6 +46,7 @@ if __name__ == "__main__":
 			status.name = diagnostics_name
 			status.message = diagnostics_name + " running"
 			diagnostics = DiagnosticArray()
+			diagnostics.header.stamp = rospy.Time.now()
 			diagnostics.status.append(status)
 		else:
 			status = DiagnosticStatus()
@@ -53,6 +54,7 @@ if __name__ == "__main__":
 			status.name = diagnostics_name
 			status.message = "no message received on " + topic_name
 			diagnostics = DiagnosticArray()
+			diagnostics.header.stamp = rospy.Time.now()
 			diagnostics.status.append(status)
 		pub_diagnostics.publish(diagnostics)
 		rate.sleep()

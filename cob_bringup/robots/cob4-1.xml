@@ -43,7 +43,7 @@
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/base_controller.launch" >
+		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<!-- start additional packages -->
@@ -70,6 +70,12 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
 		</include>
+<!--
+		<include file="$(find cob_bringup)/controllers/twist_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="torso" />
+		</include>
+-->
 		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="head_sensorring" />
