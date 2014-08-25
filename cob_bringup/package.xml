@@ -30,16 +30,14 @@
   <run_depend>cob_voltage_control</run_depend>
   <run_depend>cob_sick_s300</run_depend>
   <run_depend>cob_sick_lms1xx</run_depend>
-  <run_depend>cob_hokuyo</run_depend>
   <run_depend>cob_camera_sensors</run_depend>
-  <run_depend>cob_hwboard</run_depend>
   <run_depend>openni_launch</run_depend>
   <run_depend>openni2_launch</run_depend>
   <run_depend>cob_cam3d_throttle</run_depend>
   <run_depend>image_proc</run_depend>
   <run_depend>hokuyo_node</run_depend>
   <run_depend>prosilica_camera</run_depend>
-  <run_depend>camera1394</run_depend>
+  <!--run_depend>camera1394</run_depend-->
   <run_depend>nodelet</run_depend>
   <run_depend>cob_command_gui</run_depend>
   <run_depend>cob_dashboard</run_depend>
@@ -51,8 +49,8 @@
   <run_depend>joy</run_depend>
   <run_depend>rviz</run_depend>
   <run_depend>diagnostic_aggregator</run_depend>
-  <run_depend>pr2_computer_monitor</run_depend>
-  <run_depend>wifi_ddwrt</run_depend>
+  <!--run_depend>pr2_computer_monitor</run_depend-->
+  <!--run_depend>wifi_ddwrt</run_depend-->
   <run_depend>costmap_2d</run_depend>
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
