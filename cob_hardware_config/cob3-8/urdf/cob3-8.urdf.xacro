@@ -50,8 +50,7 @@
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   
-  <xacro:schunk_pg70 name="pg70" parent="arm_7_link" pg70_finger_left_ref="${pg70_finger_left_ref}"
-            pg70_finger_right_ref="${pg70_finger_right_ref}" >
+  <xacro:schunk_pg70 name="pg70" parent="arm_7_link" pg70_finger_left_ref="${pg70_finger_left_ref}" pg70_finger_right_ref="${pg70_finger_right_ref}" >
     <origin xyz="${pg70_x} ${pg70_y} ${pg70_z}" rpy="${pg70_roll} ${pg70_pitch} ${pg70_yaw}" />
   </xacro:schunk_pg70>
   
