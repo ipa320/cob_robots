@@ -4,5 +4,5 @@ sync_interval: 10
 chains: ["tray_controller"]
 tray_controller:
  joint_names: [tray_joint]
- motor_direccion: [1]
+ motor_direction: [1]
  module_ids: [10]
