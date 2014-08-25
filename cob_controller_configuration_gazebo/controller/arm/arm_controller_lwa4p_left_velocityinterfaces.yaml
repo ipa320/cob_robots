@@ -25,13 +25,13 @@ arm_left_controller:
      - arm_left_6_joint
      - arm_left_7_joint
   gains:
-    arm_left_1_joint: {p: 80, i: 0.0, d: 0.0, i_clamp: 81.5}
-    arm_left_2_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
-    arm_left_3_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
-    arm_left_4_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
-    arm_left_5_joint: {p: 20, i: 0.0, d: 0.0, i_clamp: 48.0}
-    arm_left_6_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 15.0}
-    arm_left_7_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 15.0}
+    arm_left_1_joint: {p: 80, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_left_2_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_left_3_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_left_4_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_left_5_joint: {p: 20, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_left_6_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
+    arm_left_7_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.5
