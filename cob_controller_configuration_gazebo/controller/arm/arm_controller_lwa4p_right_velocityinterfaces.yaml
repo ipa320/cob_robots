@@ -11,40 +11,55 @@ arm_right_controller:
   #frequency: 68
   #operation_mode: velocity
 
-  # twist controller parameters 
-  
-  type: velocity_controllers/JointTrajectoryController
-  topic: "test"
-  joints:
-     - arm_right_1_joint
-     - arm_right_2_joint
-     - arm_right_3_joint
-     - arm_right_4_joint
-     - arm_right_5_joint
-     - arm_right_6_joint
-     - arm_right_7_joint
-  gains:
-    arm_right_1_joint: {p: 80, i: 0.0, d: 0.0, i_clamp: 81.5}
-    arm_right_2_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
-    arm_right_3_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
-    arm_right_4_joint: {p: 50, i: 0.0, d: 0.0, i_clamp: 48.0}
-    arm_right_5_joint: {p: 20, i: 0.0, d: 0.0, i_clamp: 48.0}
-    arm_right_6_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 15.0}
-    arm_right_7_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 15.0}
-  constraints:
-      goal_time: 0.6
-      stopped_velocity_tolerance: 0.5
-      arm_right_1_joint: {trajectory: 0.1, goal: 0.1}
-      arm_right_2_joint: {trajectory: 0.1, goal: 0.1}
-      arm_right_3_joint: {trajectory: 0.1, goal: 0.1}
-      arm_right_4_joint: {trajectory: 0.1, goal: 0.1}
-      arm_right_5_joint: {trajectory: 0.1, goal: 0.1}
-      arm_right_6_joint: {trajectory: 0.1, goal: 0.1}
-      arm_right_7_joint: {trajectory: 0.1, goal: 0.1}
-  stop_trajectory_duration: 0.5
-  state_publish_rate:  25
-  action_monitor_rate: 10
+  # twist controller parameters
+  base_link: arm_right_base_link
+  tip_link: arm_right_7_link
 
+  # frame_tracker + interactive_marker
+  active_frame: arm_right_7_link
+  tracking_frame: arm_right_7_target
+  root_frame: base_link
+  movable_trans: true
+  movable_rot: true
+  pid_trans: {p: 10.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot: {p: 10.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  update_rate: 68.0
+  max_vel_lin: 10.0
+  max_vel_rot: 6.28    
+
+  # joint trajectory controller
+  arm_right_controller:
+    type: velocity_controllers/JointTrajectoryController
+    topic: "test"
+    joints:
+       - arm_right_1_joint
+       - arm_right_2_joint
+       - arm_right_3_joint
+       - arm_right_4_joint
+       - arm_right_5_joint
+       - arm_right_6_joint
+       - arm_right_7_joint
+    gains:
+      arm_right_1_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
+      arm_right_2_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
+      arm_right_3_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
+      arm_right_4_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
+      arm_right_5_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
+      arm_right_6_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
+      arm_right_7_joint: {p: 10, i: 0.0, d: 0.0, i_clamp: 0.0}
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0.5
+        arm_right_1_joint: {trajectory: 0.1, goal: 0.1}
+        arm_right_2_joint: {trajectory: 0.1, goal: 0.1}
+        arm_right_3_joint: {trajectory: 0.1, goal: 0.1}
+        arm_right_4_joint: {trajectory: 0.1, goal: 0.1}
+        arm_right_5_joint: {trajectory: 0.1, goal: 0.1}
+        arm_right_6_joint: {trajectory: 0.1, goal: 0.1}
+        arm_right_7_joint: {trajectory: 0.1, goal: 0.1}
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
 
 ##position controller
 #arm_right_1_joint_position_controller:
@@ -101,15 +116,7 @@ arm_right_7_joint_velocity_controller:
   joint: arm_right_7_joint
 
 
-#FXM
-#the arm_2_joint just cannot be velocity controlled somehow
-#thus, let it be effort controlled by the gazebo_ros_control plugin internally
 #by setting the following PID the control mode switches from VELOCITY (=SetVelocity) to VELOCITY_PID (=SetForce)!
-gazebo_ros_control/pid_gains:
-  #arm_2_joint: {p: 300.0, i: 0.0, d: 0.0}
-  arm_right_2_joint: {p: 180.0, i: 360000, d: 0.0225}
-  #Ziegler-Nichols: K_u=300 T_u=0.001
-
 #gazebo_ros_control/pid_gains:
  #arm_right_1_joint: {p: 100.0, i: 0.0, d: 0.0, i_clamp: 0.0}
  #arm_right_2_joint: {p: 100.0, i: 0.0, d: 0.0, i_clamp: 0.0}
