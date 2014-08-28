@@ -2,8 +2,8 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.4 (2014-08-28)
+------------------
 * move EmergencyStopState.msg to cob_msgs
 * remove obsolete cob_hwboard
 * inverted scanners

@@ -2,8 +2,8 @@
 Changelog for package cob_monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.4 (2014-08-28)
+------------------
 * move EmergencyStopState.msg to cob_msgs
 * changes due to introduction of cob_msgs
 * cleaning up debs

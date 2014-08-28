@@ -2,8 +2,8 @@
 Changelog for package cob_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.4 (2014-08-28)
+------------------
 * New maintainer
 * Contributors: ipa-nhg
 

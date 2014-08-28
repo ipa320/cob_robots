@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.4 (2014-08-28)
+------------------
 * remove obsolete cob_hwboard
 * remove obsolete dependency
 * changes due to introduction of cob_msgs
