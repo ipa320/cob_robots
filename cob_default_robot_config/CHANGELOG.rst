@@ -2,6 +2,45 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Last update cob3-8
+* cob3-8 setup
+* setup cob3-8
+* fixed dependencies
+* cleaning up debs
+* cob3-8 has pg70 as gripper
+* Added cob3-8
+* fixed dependencies
+* cleaning up debs
+* support for torso configs and init on raw3-3
+* merge with ipa-bnm
+* added default config to open/close gripper
+* changes due to renaming and parameter optimization
+* add cob4-2
+* use arm_joint_configurations valid for current ur_model
+* test and tweak head and lookat control for raw3-3
+* merge with ipa320
+* Renamed positions
+* lookat component for cob4-1
+* changes due to renaming from sdh to gripper and generic gazebo_services
+* New maintainer
+* cob4 fake diagnistics
+* update cob4-1 torso and head positions
+* Torso working
+* support powerball head axis on raw3-3
+* merge cob4 (cob_default_robot_config)
+* add roslaunch and urdf tests
+* fix filename
+* Merge branch 'groovy_dev' of github.com:ipa-bnm/cob_robots into groovy_dev
+  Conflicts:
+  cob_default_robot_config/raw3-1/arm_joint_configurations.yaml
+  cob_default_robot_config/raw3-1/command_gui_buttons.yaml
+* added command gui button for new default pos
+* added new default pos
+* default positions for cob4-1
+* Contributors: Alexander Bubeck, Florian Weisshardt, cob4-1, ipa-bnm, ipa-cob3-8, ipa-cob4-1, ipa-fmw, ipa-fxm, ipa-nhg, ipa-raw3-3
+
 0.5.3 (2014-03-28)
 ------------------
 

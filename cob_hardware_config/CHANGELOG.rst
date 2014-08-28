@@ -2,6 +2,147 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* move EmergencyStopState.msg to cob_msgs
+* remove obsolete cob_hwboard
+* inverted scanners
+* consequently remove lookat and hybrid stuff from cob3-X robots
+* calibration error
+* Merge pull request `#209 <https://github.com/ipa320/cob_robots/issues/209>`_ from ipa-nhg/hydro_dev
+  Inverted scanners
+* Update calibration_default.urdf.xacro
+* Update calibration_default.urdf.xacro
+  back to CAD values
+* separated ports for tray and torso
+* Last update cob3-8
+* beautify
+* Merge branch 'hydro_dev' of https://github.com/ipa320/cob_robots into hydro_dev
+* setup cob3-8
+* cob3-8 setup
+* no chance for tuning PID for follow_joint_trajectory controller for lwa4p -> currently do not use arms in urdf
+* previous value makes torso collide with base
+* Inverted scanners
+* Merge branch 'hydro_dev' of github.com:ipa320/cob_robots into hydro_dev
+* beautify
+* add all joints again
+* offset error
+* Undo calibration
+* use the  macros instead 3.1415...
+* added comment to head.yaml files
+* added namespace diagnostics
+* switch laser orientation for all robots
+* fix safey scanner fields
+* set default flexisoft safety velocity limits
+* adjusted diagnostics parameters and renamed gripper_controller
+* renamed pg70
+* adapted gazebo controllers
+* setup cob3-8 : The arm is lwa4d
+* setup cob3-8
+* corrected value due to inclusion of PRL100 in lwa4p_extended model
+* moved lookat_controller yaml and launch files
+* fix dependencies
+* cleaning up debs
+* use new X_driver.yaml format for all robots with canopen components
+* fix service namespace
+* new layout for X_driver.yaml file, solves module_ids issue
+* cob3-8 has pg70 as gripper
+* added classname as suggested in deprecation warning
+* separate controller and driver yaml file
+* cob3-8 with new structure
+* merge conflict
+* rename head description
+* Added cob3-8
+* fix dependencies
+* cleaning up debs
+* config changed
+* use prace_tower instad of tower_symmetric
+* config for ms35 light controller
+* Retabbing properties
+* Retabbing calibration
+* multiple config changes for raw3-4
+* switched digital ports for grippers
+* changes due to renaming and parameter optimization
+* bring latest raw3-3 changes to new structure
+* Added cob_image_flip driver
+* added calibration stuff for torso powerball
+* added torso powerball to robot config
+* renaming after merge
+* some renaming as discussed
+* remove parameter for gazebo_adapter from cob_hardware_config
+* separation of driver and controller
+* add cob4-2
+* merged prace descriptions into one xacro makro
+* Merge branch 'hydro_dev' of github.com:ipa320/cob_robots into hydro_dev
+* added voltage ctrl yaml for raw3-3
+* Merge pull request `#178 <https://github.com/ipa320/cob_robots/issues/178>`_ from ipa-nhg/hydro_dev
+  Inverted scanners position
+* merge with hydro_control for new file structure
+* merge prace
+* Taking the real value for scanners position
+* Inverted scanners position
+* test and tweak head and lookat control for raw3-3
+* Merge branch 'hydro_dev' of github.com:ipa320/cob_robots into hydro_dev
+* added new longer/higher neck
+* merge with ipa320
+* merge with prace updates
+* Merge branch 'prace_dev' of github.com:ipa-fxm/cob_robots into prace_changes
+* add gazebo_services for lookat for cob4-1
+* lookat component for cob4-1
+* changed marker type
+* increased angular threshold
+* changes due to renaming from sdh to gripper and generic gazebo_services
+* updated laser fields to improve transition behaviour
+* New maintainer
+* updated flexisoft config
+* added laser field configs for cob4-1
+* cob4 fake diagnistics
+* cleaning up
+* Merge branch 'hydro_dev' of github.com:ipa320/cob_robots into hydro_control
+* vel_control and lookat_control with raw3-3
+* Merge remote-tracking branch 'origin/groovy_dev' into merge_groovy-dev
+  Conflicts:
+  CMakeLists.txt
+  cob_bringup/robots/cob4-1.xml
+  cob_controller_configuration_gazebo/controller/torso_controller_cob4.yaml
+  cob_hardware_config/cob4-1/urdf/calibration_default.urdf.xacro
+  cob_hardware_config/common/cob4.rviz
+  cob_hardware_config/raw3-3/urdf/raw3-3.urdf.xacro
+* changes on raw3-3 to get the powerball tracking running
+* restructuring for hybrid_control
+* softkinetic cameras mount (including camera pillar) on raw3-1
+* merged groovy changes into hydro
+* Torso  and head working
+* twist controller params in yaml + parameter tuning with arms
+* added parameters for enabling and disabling sound and led's in cob_monitor
+* Torso working
+* back to torso-only
+* preliminary vel control for schunk lwa4p
+* preliminary velocity_control for head and sensorring
+* integrated advanced led feedback into cob_monitor, old behaviour still working
+* added rfid urdf in hydro
+* tune parameter for cob4-1_torso-only vel control
+* support powerball head axis on raw3-3
+* try vel controller for cob4-1 torso
+* separate yaml file for cob_trajector_controller params
+* flexisofft tested on robot
+* Flexisoft launch and config files
+* Changes for the multiple chains node!
+* add roslaunch and urdf tests
+* merge cob4
+* setup cob4-1 xml
+* Added sensors to cob4 description
+* added calibration data for raw3-3s head
+* added gazebo controller for prace head
+* merge
+* Defined component_name as generic name (arm)
+* clean up
+* added rfid reader on raw31 in raw3-1.urdf.xacro
+* fix filename
+* default positions for cob4-1
+* specific rviz configuration pro robot
+* Contributors: Alexander Bubeck, Felipe Garcia Lopez, Felix Messmer, Florian Weisshardt, Mathias Lüdtke, Nadia Hammoudeh García, abubeck, cob4-1, ipa-bnm, ipa-cob3-8, ipa-cob4-1, ipa-fmw, ipa-fxm, ipa-nhg, ipa-raw3-3, ipa-srd, raw3-1 administrator, thiagodefreitas
+
 0.5.3 (2014-03-28)
 ------------------
 

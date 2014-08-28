@@ -2,6 +2,16 @@
 Changelog for package cob_monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* move EmergencyStopState.msg to cob_msgs
+* changes due to introduction of cob_msgs
+* cleaning up debs
+* cleaning up debs
+* added parameters for enabling and disabling sound and led's in cob_monitor
+* integrated advanced led feedback into cob_monitor, old behaviour still working
+* Contributors: Felix Messmer, ipa-fxm, raw3-1 administrator
+
 0.5.3 (2014-03-28)
 ------------------
 
