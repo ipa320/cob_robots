@@ -17,11 +17,11 @@ class cob_controller_adapter_gazebo():
     self.pos_controller_names = []
     
     for i in range(len(self.joint_names)):
-        pub = rospy.Publisher('/'+self.joint_names[i]+'_velocity_controller/command', Float64)
+        pub = rospy.Publisher('/'+self.joint_names[i]+'_velocity_controller/command', Float64, queue_size=1)
         self.vel_controller_pubs.append(pub)
         self.vel_controller_names.append(self.joint_names[i]+'_velocity_controller')
     for i in range(len(self.joint_names)):
-        pub = rospy.Publisher('/'+self.joint_names[i]+'_position_controller/command', Float64)
+        pub = rospy.Publisher('/'+self.joint_names[i]+'_position_controller/command', Float64, queue_size=1)
         self.pos_controller_pubs.append(pub)
         self.pos_controller_names.append(self.joint_names[i]+'_position_controller')
     
