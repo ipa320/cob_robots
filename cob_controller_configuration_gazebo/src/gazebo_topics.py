@@ -11,11 +11,11 @@ class gazebo_topics():
 
 	def __init__(self):
 		#fake_diagnostics
-		self.joy_usage_pub = rospy.Publisher("/joy_usage", Empty)
-		self.pc1_usage_pub = rospy.Publisher("/pc1_usage", Empty)
-		self.pc2_usage_pub = rospy.Publisher("/pc2_usage", Empty)
-		self.pc3_usage_pub = rospy.Publisher("/pc3_usage", Empty)
-		self.wifi_status_pub = rospy.Publisher("/wifi_status", Empty)
+		self.joy_usage_pub = rospy.Publisher("/joy_usage", Empty, queue_size=1)
+		self.pc1_usage_pub = rospy.Publisher("/pc1_usage", Empty, queue_size=1)
+		self.pc2_usage_pub = rospy.Publisher("/pc2_usage", Empty, queue_size=1)
+		self.pc3_usage_pub = rospy.Publisher("/pc3_usage", Empty, queue_size=1)
+		self.wifi_status_pub = rospy.Publisher("/wifi_status", Empty, queue_size=1)
 		
 		rospy.sleep(0.5)
 
