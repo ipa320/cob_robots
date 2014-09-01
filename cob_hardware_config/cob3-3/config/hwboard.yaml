@@ -1,7 +1,0 @@
-devicestring: /dev/ttyHwBoard
-head_sensor: 0x103AEE7A
-eye_sensor: 0x1089D07A
-torso_module_sensor: 0x102BA47D
-torso_sensor: 0x10E4967D
-pc_sensor: 0x1082E17B
-engine_sensor: 0x10FADC7A

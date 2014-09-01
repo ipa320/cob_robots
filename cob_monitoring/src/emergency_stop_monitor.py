@@ -7,7 +7,7 @@ import rospy
 from geometry_msgs.msg import Twist
 from diagnostic_msgs.msg import DiagnosticArray
 
-from cob_relayboard.msg import *
+from cob_msgs.msg import *
 
 from simple_script_server import *
 sss = simple_script_server()
