@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot"/>
+	<arg name="component_name"/>
+	<arg name="version"/>
+	<arg name="side" default=""/>
+	
+	<rosparam file="$(find cob_controller_configuration_gazebo)/controller/$(arg component_name)/$(arg component_name)_controller_$(arg version)$(arg side)_hybrid.yaml" command="load" />
+	
+	<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml" ns="$(arg component_name)$(arg side)_controller"/>
+	
+	<node ns="$(arg component_name)$(arg side)_controller" name="cob_controller_adapter_gazebo" pkg="cob_controller_configuration_gazebo" type="cob_controller_adapter_gazebo.py" cwd="node" respawn="false" output="screen">
+		<param name="update_rate" type="double" value="33.0" />
+		<param name="max_vel_command_silence" type="double" value="0.5" />
+	</node>
+	
+	<node ns="$(arg component_name)$(arg side)_controller" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen"/>
+	
+	<node ns="$(arg component_name)$(arg side)_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller_sim" cwd="node" respawn="false" output="screen"/>
+	
+	<node ns="$(arg component_name)$(arg side)_controller" name="cob_twist_controller_node" pkg="cob_twist_controller" type="cob_twist_controller_node" cwd="node" respawn="false" output="screen"/>
+
+</launch>

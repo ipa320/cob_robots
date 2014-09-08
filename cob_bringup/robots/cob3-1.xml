@@ -116,10 +116,10 @@
 		</include>
 
 		<!-- start camera sensors -->
-		<!--include file="$(find cob_bringup)/drivers/pike.launch" >
+		<include file="$(find cob_bringup)/drivers/pike.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="left"/>
-		</include-->
+		</include>
 		<!--include file="$(find cob_bringup)/drivers/pike.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="right"/>

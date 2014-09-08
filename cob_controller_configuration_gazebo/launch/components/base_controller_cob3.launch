@@ -20,7 +20,7 @@
     <arg name="sim" value="true"/>
     <arg name="robot" value="$(arg robot)"/>
   </include>
-
+  
   <node pkg="cob_controller_configuration_gazebo" type="gazebo_services_base.py" name="gazebo_services_base" cwd="node" respawn="false" output="screen" />
 
   <!-- scan filters-->
