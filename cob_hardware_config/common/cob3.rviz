@@ -205,26 +205,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        lookat_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lookat_focus_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lookat_x_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lookat_y_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lookat_z_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         sdh_finger_11_link:
           Alpha: 1
           Show Axes: false

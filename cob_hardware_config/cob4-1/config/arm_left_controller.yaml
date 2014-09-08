@@ -1,6 +1,25 @@
 #all
 joint_names: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
 
+
+# twist controller parameters
+base_link: arm_left_base_link
+tip_link: arm_left_7_link
+
+# frame_tracker + interactive_marker
+active_frame: arm_left_7_link
+tracking_frame: arm_left_7_target
+root_frame: base_link
+movable_trans: true
+movable_rot: true
+pid_trans: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+pid_rot: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+update_rate: 68.0
+max_vel_lin: 10.0
+max_vel_rot: 6.28
+
+
+## DEPRECATED cob_trajectory_controller ##
 # trajectory controller parameters
 ptp_vel: 1.5 # rad/sec
 ptp_acc: 0.2 # rad/sec^2
@@ -8,8 +27,3 @@ max_error: 0.25 # rad
 overlap_time: 0.4
 frequency: 68
 operation_mode: velocity
-
-# twist controller parameters
-base_link: arm_left_base_link
-tip_link: arm_left_7_link
-
