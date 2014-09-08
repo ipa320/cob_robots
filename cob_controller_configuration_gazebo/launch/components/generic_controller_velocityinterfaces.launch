@@ -6,24 +6,18 @@
 	<arg name="version"/>
 	<arg name="side" default=""/>
 	
-	<rosparam file="$(find cob_controller_configuration_gazebo)/controller/$(arg component_name)/$(arg component_name)_controller_$(arg version)$(arg side)_velocityinterfaces.yaml" command="load" />
+	<!-- NEW CONTROL -->
+	<!-- controller parameters -->
+	<rosparam command="load" file="$(find cob_controller_configuration_gazebo)/controller/$(arg component_name)/$(arg component_name)_controller_$(arg version)$(arg side)_velocityinterfaces.yaml"/>
 	
-	<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml" ns="$(arg component_name)$(arg side)_controller"/>
+	<!-- control_mode_adapter -->
+	<node ns="$(arg component_name)$(arg side)_controller" name="$(arg component_name)$(arg side)_control_mode_adapter_node" pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" cwd="node" respawn="false" output="screen"/>
 	
-	<!-- let this node handle the JointVelocityControler -->
-	<node ns="$(arg component_name)$(arg side)_controller" name="cob_controller_adapter_gazebo" pkg="cob_controller_configuration_gazebo" type="cob_controller_adapter_gazebo.py" cwd="node" respawn="false" output="screen">
-		<param name="update_rate" type="double" value="68.0" />
-		<param name="max_vel_command_silence" type="double" value="0.5" />
-	</node>
+	<!-- hardware_interface -->
+	<!-- using gazebo_ros plugin as controller_manager -->
 	<node ns="$(arg component_name)$(arg side)_controller" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen"/>
 	
-	<!-- this controller_manager provides the JointTrajectoryController -->
-	<include file="$(find cob_hardware_interface)/launch/cob_hardware_interface.launch">
-		<arg name="component_name" value="$(arg component_name)"/>
-		<arg name="side" value="$(arg side)"/>
-	</include>
-	<!--node name="$(arg component_name)$(arg side)_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg component_name)$(arg side)_controller" /-->
-	
+	<!-- Cartesian stuff -->
 	<node ns="$(arg component_name)$(arg side)_controller" name="cob_twist_controller_node" pkg="cob_twist_controller" type="cob_twist_controller_node" cwd="node" respawn="false" output="screen"/>
 	<node ns="$(arg component_name)$(arg side)_controller" name="frame_tracker" pkg="cob_frame_tracker" type="cob_frame_tracker_node" cwd="node" respawn="false" output="screen"/>
 	<node ns="$(arg component_name)$(arg side)_controller" name="interactive_target" pkg="cob_frame_tracker" type="interactive_frame_target.py" cwd="node" respawn="false" output="screen"/>
