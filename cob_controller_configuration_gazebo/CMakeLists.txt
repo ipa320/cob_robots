@@ -44,6 +44,6 @@ install(DIRECTORY controller
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(PROGRAMS src/fake_diagnostics.py src/gazebo_services.py src/gazebo_topics.py
+install(PROGRAMS src/fake_diagnostics.py src/gazebo_services.py src/gazebo_topics.py src/gazebo_services_base.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/src
 )
