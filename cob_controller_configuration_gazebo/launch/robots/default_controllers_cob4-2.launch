@@ -133,4 +133,25 @@
 		<param name="diagnostics_name" value="Wifi Status (ddwrt)"/>
 		<param name="topic_name" value="/wifi_status"/>
 	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-10)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="torso_controller"/>
+		<param name="topic_name" value="/torso_controller/state"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-11)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="sensorring_controller"/>
+		<param name="topic_name" value="/sensorring_controller/state"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-12)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="head_controller"/>
+		<param name="topic_name" value="/head_controller/state"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-13)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="arm_right_controller"/>
+		<param name="topic_name" value="/arm_right_controller/state"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-14)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="arm_left_controller"/>
+		<param name="topic_name" value="/arm_left_controller/state"/>
+	</node>
+
 </launch>

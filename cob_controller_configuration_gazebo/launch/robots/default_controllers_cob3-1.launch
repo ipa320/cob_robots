@@ -117,5 +117,25 @@
 		<param name="diagnostics_name" value="pc2 CPU Usage"/>
 		<param name="topic_name" value="/pc2_usage"/>
 	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-10)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="torso_controller"/>
+		<param name="topic_name" value="/torso_controller/state"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-11)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="tray_controller"/>
+		<param name="topic_name" value="/tray_controller/state"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-12)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="head_controller"/>
+		<param name="topic_name" value="/head_controller/state"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-13)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="arm_controller"/>
+		<param name="topic_name" value="/arm_controller/state"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-14)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="gripper_controller"/>
+		<param name="topic_name" value="/gripper_controller/state"/>
+	</node>
 
 </launch>
