@@ -1,0 +1,23 @@
+# flip color image
+# bool
+flip_color_image: true
+
+# rotation [in deg] (90, 180, 270 deg), 0=automatic mode, works only with cob3 head axis at the moment
+# int
+rotation: 90
+
+# flip point cloud
+# bool
+flip_pointcloud: false
+
+# point cloud data format
+# string (xyz or xyzrgb)
+pointcloud_data_format: xyzrgb
+
+# display warning if transformation not available
+# bool
+display_warnings: false
+
+# display timing information
+# bool
+display_timing: false
