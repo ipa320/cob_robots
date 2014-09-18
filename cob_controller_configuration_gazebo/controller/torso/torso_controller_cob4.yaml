@@ -15,7 +15,7 @@ torso_controller:
       stopped_velocity_tolerance: 0.5
       torso_1_joint: {trajectory: 0.3, goal: 0.1}
       torso_2_joint: {trajectory: 0.3, goal: 0.1}
-      torso_3_joint:  {trajectory: 0.3, goal: 0.1}
+      torso_3_joint: {trajectory: 0.3, goal: 0.1}
   stop_trajectory_duration: 0.5
   state_publish_rate:  25
   action_monitor_rate: 10

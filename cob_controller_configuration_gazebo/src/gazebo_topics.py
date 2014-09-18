@@ -15,6 +15,10 @@ class gazebo_topics():
 		self.pc1_usage_pub = rospy.Publisher("/pc1_usage", Empty, queue_size=1)
 		self.pc2_usage_pub = rospy.Publisher("/pc2_usage", Empty, queue_size=1)
 		self.pc3_usage_pub = rospy.Publisher("/pc3_usage", Empty, queue_size=1)
+		self.b1_usage_pub = rospy.Publisher("/b1_usage", Empty, queue_size=1)
+		self.t1_usage_pub = rospy.Publisher("/t1_usage", Empty, queue_size=1)
+		self.t2_usage_pub = rospy.Publisher("/t2_usage", Empty, queue_size=1)
+		self.t3_usage_pub = rospy.Publisher("/t3_usage", Empty, queue_size=1)
 		self.wifi_status_pub = rospy.Publisher("/wifi_status", Empty, queue_size=1)
 		
 		rospy.sleep(0.5)
@@ -32,6 +36,10 @@ if __name__ == "__main__":
 		gt.pc1_usage_pub.publish(msg)
 		gt.pc2_usage_pub.publish(msg)
 		gt.pc3_usage_pub.publish(msg)
+		gt.b1_usage_pub.publish(msg)
+		gt.t1_usage_pub.publish(msg)
+		gt.t2_usage_pub.publish(msg)
+		gt.t3_usage_pub.publish(msg)
 		gt.wifi_status_pub.publish(msg)
 		rate.sleep()
 
