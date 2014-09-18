@@ -2,6 +2,13 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'hydro_dev' into hydro_release_candidate
+* 0.5.1
+* add changelogs
+* Contributors: Florian Weisshardt, ipa-fxm
+
 0.5.2 (2014-08-28)
 ------------------
 * update cob_moveit_config package for all robots
