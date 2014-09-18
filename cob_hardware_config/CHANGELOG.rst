@@ -2,6 +2,28 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* setup cob4-2
+* fix laser inversion
+* update parameters for cob4-1 + cob4-2
+* update parameters for cob4-1 + cob4-2
+* updated parameters and launch files, modified adapter for switching
+* merge wih ipa-fxm
+* parameterization for frame_tracker and interactive_frame_target
+* use interactive_target also for non-lookat twist_control
+* moved frame_tracker to separate package
+* tune lookat_controller for cob4_torso
+* use VelocityJointInterface for cob4_torso
+* updated parameters and launch files, modified adapter for switching
+* merge wih ipa-fxm
+* parameterization for frame_tracker and interactive_frame_target
+* use interactive_target also for non-lookat twist_control
+* moved frame_tracker to separate package
+* tune lookat_controller for cob4_torso
+* use VelocityJointInterface for cob4_torso
+* Contributors: Felix Messmer, ipa-fxm, ipa-fxm-fm, ipa-nhg
+
 0.5.4 (2014-08-28)
 ------------------
 * move EmergencyStopState.msg to cob_msgs

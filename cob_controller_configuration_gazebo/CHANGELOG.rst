@@ -2,6 +2,42 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix typo
+* fake_diagnostics for actuators
+* setup cob4-2
+* install tags
+* added cob4-2
+* missing install tag
+* cob4-1 and cob4-2 using latest features of cob_control
+* topic-based hardware_interface works
+* merge with velocity_interface_controller (hydro)
+* backup before switching to indigo
+* remove deprecated hybrid stuff
+* update parameters for cob4-1 + cob4-2
+* add default argument queue_size
+* updated parameters and launch files, modified adapter for switching
+* back to velocity controllers
+* more testing
+* pure JointVelocityController - no JointPositionController
+* use interactive_target also for non-lookat twist_control
+* moved frame_tracker to separate package
+* first tests with velocity_interface_controller for lwa4p_extended arms
+* use adapter as pure velocity adapter
+* use VelocityJointInterface for cob4_torso
+* updated parameters and launch files, modified adapter for switching
+* back to velocity controllers
+* more testing
+* use same PIDs as in ros-industrial repo
+* pure JointVelocityController - no JointPositionController
+* use interactive_target also for non-lookat twist_control
+* moved frame_tracker to separate package
+* first tests with velocity_interface_controller for lwa4p_extended arms
+* use adapter as pure velocity adapter
+* use VelocityJointInterface for cob4_torso
+* Contributors: Felix Messmer, Florian Weisshardt, ipa-fxm, ipa-fxm-fm, ipa-nhg
+
 0.5.4 (2014-08-28)
 ------------------
 * unique identifier

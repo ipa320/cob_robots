@@ -2,6 +2,11 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* setup cob4-2
+* Contributors: ipa-nhg
+
 0.5.4 (2014-08-28)
 ------------------
 * Last update cob3-8
