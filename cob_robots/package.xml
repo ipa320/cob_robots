@@ -1,6 +1,6 @@
 <package>
   <name>cob_robots</name>
-  <version>0.5.4</version>
+  <version>0.6.0</version>
   <description>This stack holds packages for hardware configuration as well as launch files for starting up the basic layer for operating Care-O-bot.</description>
 
   <license>LGPL</license>
