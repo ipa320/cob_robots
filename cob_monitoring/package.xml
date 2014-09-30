@@ -8,13 +8,19 @@
   <url type="website">http://ros.org/wiki/cob_monitoring</url>
   <!-- <url type="bugtracker"></url> -->
 
-   <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <maintainer email="fmw@ipa.fhg.de">Florian Weisshardt</maintainer>
+  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh</maintainer>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <build_depend>sysstat</build_depend>
+  <build_depend>ipmitool</build_depend>
+  <build_depend>std_msgs</build_depend>
+
   <run_depend>cob_msgs</run_depend>
   <run_depend>cob_script_server</run_depend>
+  <run_depend>std_msgs</run_depend>
 
   <export>
 
