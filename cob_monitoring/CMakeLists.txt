@@ -2,13 +2,21 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_monitoring)
 
-find_package(catkin REQUIRED COMPONENTS)
+find_package(catkin REQUIRED COMPONENTS message_generation std_msgs)
 
-catkin_package(
-    CATKIN_DEPENDS cob_msgs cob_script_server
+add_message_files(
+  FILES
+  Network.msg
+  SiteSurvey.msg
 )
 
-install(PROGRAMS src/battery_monitor.py src/emergency_stop_monitor.py
+generate_messages(DEPENDENCIES std_msgs)
+
+catkin_package(
+    CATKIN_DEPENDS cob_msgs cob_script_server std_msgs
+)
+
+install(PROGRAMS src/battery_monitor.py src/emergency_stop_monitor.py src/cpu_monitor.py src/hd_monitor.py src/ntp_monitor.py src/wifi_monitor.py src/ddwrt.py
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/src
 )
 
