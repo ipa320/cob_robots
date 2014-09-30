@@ -2,7 +2,7 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="pc" default="hostname"/>
+	<arg name="pc" default="localhost"/>
 
 	<!-- Monitor CPU (temp, usage) -->
 	<node pkg="cob_monitoring" name="$(anon realtime_cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg pc)" output="screen" >

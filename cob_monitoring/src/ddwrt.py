@@ -37,7 +37,7 @@ import os, sys, string, time, getopt, re
 import StringIO
 
 import rospy
-from wifi_ddwrt.msg import *
+from cob_monitoring.msg import *
 from cob_msgs.msg import AccessPoint
 
 import mechanize
