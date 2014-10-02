@@ -32,6 +32,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 #
 # Revision $Id: gossipbot.py 1013 2008-05-21 01:08:56Z sfkwc $
+# This file has been copied from https://github.com/ros-drivers/wifi_ddwrt in order to support this feature for indigo indepenendly from ros-drivers dependencies
 
 import os, sys, string, time, getopt, re
 import StringIO
