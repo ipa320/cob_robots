@@ -19,7 +19,6 @@
 
   <run_depend>cob_msgs</run_depend>
   <run_depend>cob_script_server</run_depend>
-  <run_depend>std_msgs</run_depend>
 
   <export>
 

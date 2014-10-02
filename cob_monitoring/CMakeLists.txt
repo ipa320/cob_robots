@@ -5,7 +5,7 @@ project(cob_monitoring)
 find_package(catkin REQUIRED COMPONENTS)
 
 catkin_package(
-    CATKIN_DEPENDS cob_msgs cob_script_server std_msgs
+    CATKIN_DEPENDS cob_msgs cob_script_server
 )
 
 install(PROGRAMS src/battery_monitor.py src/emergency_stop_monitor.py src/cpu_monitor.py src/hd_monitor.py src/ntp_monitor.py src/wifi_monitor.py src/ddwrt.py
