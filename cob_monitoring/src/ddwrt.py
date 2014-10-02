@@ -37,8 +37,7 @@ import os, sys, string, time, getopt, re
 import StringIO
 
 import rospy
-from cob_monitoring.msg import *
-from cob_msgs.msg import AccessPoint
+from cob_msgs.msg import *
 
 import mechanize
 from std_msgs.msg import Header

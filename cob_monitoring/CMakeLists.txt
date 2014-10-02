@@ -4,9 +4,6 @@ project(cob_monitoring)
 
 find_package(catkin REQUIRED COMPONENTS)
 
-
-generate_messages(DEPENDENCIES std_msgs)
-
 catkin_package(
     CATKIN_DEPENDS cob_msgs cob_script_server std_msgs
 )
