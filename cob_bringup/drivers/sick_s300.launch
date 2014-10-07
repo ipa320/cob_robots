@@ -3,7 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="name" default="front"/>
+	<arg name="name"/>
 
 	<!-- start laser driver -->
 	<node name="laser_$(arg name)" pkg="cob_sick_s300" type="cob_sick_s300" respawn="false" output="screen" >

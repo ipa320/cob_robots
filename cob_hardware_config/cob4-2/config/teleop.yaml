@@ -23,7 +23,7 @@ left_right: 4 #pan--left/right
 # component configuration
 modules: {
   base: {
-    max_velocity: [0.2, 0.2, 0.2],
+    max_velocity: [0.2, 0.2, 0.35],
     max_acceleration: [2.5, 2.5, 2.5]
   },
 }
