@@ -28,6 +28,7 @@
   <run_depend>ur_driver</run_depend>
   <run_depend>cob_relayboard</run_depend>
   <run_depend>cob_voltage_control</run_depend>
+  <run_depend>cob_safety_controller</run_depend>
   <run_depend>cob_sick_s300</run_depend>
   <run_depend>cob_sick_lms1xx</run_depend>
   <run_depend>cob_camera_sensors</run_depend>

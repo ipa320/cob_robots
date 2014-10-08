@@ -129,7 +129,6 @@
 		<!-- start asus camera -->
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="machine" value="pc2"/>
 		</include>
 		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
 			<arg name="namespace" value="/cam3d" />
