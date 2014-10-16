@@ -1,7 +1,0 @@
-auto_brightness:     2
-auto_white_balance:  2
-guid:                000a470110073080
-video_mode:          1280x960_rgb8
-iso_speed:           400
-frame_rate:          3
-frame_id:            /head_color_camera_r_link

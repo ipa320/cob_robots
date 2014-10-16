@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-	<xacro:include filename="$(find cob_hardware_config)/raw3-5/urdf/calibration_default.urdf.xacro" />
-	<xacro:include filename="$(find cob_calibration_data)/raw3-5/calibration/calibration_offset.urdf.xacro" />>
-
-</robot>

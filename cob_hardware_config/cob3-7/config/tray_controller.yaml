@@ -1,8 +1,0 @@
-# all
-joint_names: [tray_joint]
-
-# trajectory controller parameters
-ptp_vel: 0.4 # rad/sec
-ptp_acc: 0.2 # rad/sec^2
-max_error: 0.15 # rad
-frequency: 100
