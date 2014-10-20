@@ -2,7 +2,7 @@ pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
   computers:
-    type: diagnostic_aggregator/IgnoreAnalyzer
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Computers
     analyzers:
       b1:
