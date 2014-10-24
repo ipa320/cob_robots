@@ -84,10 +84,10 @@
   <joint name="rfid_front_joint" type="fixed" >
     <origin xyz="0.55128 0.0 0.09" rpy="0 0 0" />
     <parent link="base_link" />
-    <child link="rfid_front_link" />
+    <child link="base_rfid_front_link" />
   </joint>
 
-  <link name="rfid_front_link">
+  <link name="base_rfid_front_link">
     <xacro:default_inertial />
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -105,10 +105,10 @@
   <joint name="rfid_rear_joint" type="fixed" >
     <origin xyz="-0.55128 0.0 0.09" rpy="0 0 ${M_PI}" />
     <parent link="base_link" />
-    <child link="rfid_rear_link" />
+    <child link="base_rfid_rear_link" />
   </joint>
 
-  <link name="rfid_rear_link">
+  <link name="base_rfid_rear_link">
     <xacro:default_inertial />
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -126,10 +126,10 @@
   <joint name="rfid_right_joint" type="fixed" >
     <origin xyz="0.0 -0.30850 0.09" rpy="0 0 ${-0.5*M_PI}" />
     <parent link="base_link" />
-    <child link="rfid_right_link" />
+    <child link="base_rfid_side_link" />
   </joint>
 
-  <link name="rfid_right_link">
+  <link name="base_rfid_side_link">
     <xacro:default_inertial />
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
