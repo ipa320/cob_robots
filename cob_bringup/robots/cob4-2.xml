@@ -111,7 +111,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="device_id" value="#1"/>
-			<arg name="machine" value="cob4-2-t3"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
@@ -123,7 +122,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="device_id" value="#2"/>
-			<arg name="machine" value="cob4-2-t3"/>
 		</include>
 		
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
