@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="phidgets_io" pkg="cob_phidgets" type="phidget_sensors">
+    <param name="update_mode" value="polling"/>
+  </node>
+
+</launch>

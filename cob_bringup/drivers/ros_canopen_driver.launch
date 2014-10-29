@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name"/>
+	<arg name="can_module"/>
+
+	<!-- parameters for CANopen node -->
+
+	<node ns="$(arg component_name)" name="$(arg component_name)_driver" pkg="ipa_canopen_motor_control" type="ipa_canopen_motor_control_node" output="screen" clear_params="true" launch-prefix="">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg can_module).yaml" />
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml" />
+		<remap from="joint_states" to="/joint_states"/>
+	</node>
+
+    <!-- controllers -->
+	<rosparam ns="$(arg component_name)" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+
+	<node ns="$(arg component_name)" name="$(arg component_name)_joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="/$(arg component_name)/joint_state_controller" respawn="true" />  
+  
+	<node ns="$(arg component_name)" name="$(arg component_name)_controller_spawner" pkg="controller_manager" type="spawner" args="/$(arg component_name)/joint_trajectory_controller" respawn="true" />
+
+</launch>
