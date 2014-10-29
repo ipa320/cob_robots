@@ -20,8 +20,8 @@
 		<remap from="lookat_command_vel" to="/lookat_controller/command_vel"/>
 	</node>
 	
-	<node ns="lookat_controller" name="frame_tracker" pkg="cob_lookat_controller" type="cob_frame_tracker_node" cwd="node" respawn="false" output="screen"/>
+	<node ns="lookat_controller" name="frame_tracker" pkg="cob_frame_tracker" type="cob_frame_tracker_node" cwd="node" respawn="false" output="screen"/>
 	
-	<node ns="lookat_controller" name="interactive_target" pkg="cob_lookat_controller" type="interactive_lookat_target.py" cwd="node" respawn="false" output="screen"/>
+	<node ns="lookat_controller" name="interactive_target" pkg="cob_frame_tracker" type="interactive_frame_target.py" cwd="node" respawn="false" output="screen"/>
 
 </launch>

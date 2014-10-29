@@ -30,7 +30,7 @@ if __name__ == "__main__":
 	if topic_name != None:
 		rospy.Subscriber(topic_name, rospy.AnyMsg, callback)
 
-	pub_diagnostics = rospy.Publisher('/diagnostics', DiagnosticArray)
+	pub_diagnostics = rospy.Publisher('/diagnostics', DiagnosticArray, queue_size=1)
 
 	rospy.loginfo("fake diagnostics for %s running listening to %s",diagnostics_name, topic_name)
 	rate = rospy.Rate(1)

@@ -9,6 +9,6 @@
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/diagnostics_analyzers.yaml" />
 	</node>
 
-	<node pkg="pr2_dashboard_aggregator" type="dashboard_aggregator.py" name="dashboard_aggregator" />
+	<node pkg="cob_dashboard" type="cob_dashboard_aggregator.py" name="dashboard_aggregator" />
 
 </launch>
