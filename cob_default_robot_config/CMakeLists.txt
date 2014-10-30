@@ -6,7 +6,6 @@ find_package(catkin REQUIRED COMPONENTS roslaunch)
 # rostest for robots
 set(robotlist
 cob3-3
-cob3-5
 cob3-6
 cob3-7
 cob3-8
