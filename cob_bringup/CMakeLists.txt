@@ -8,7 +8,6 @@ find_package(catkin REQUIRED COMPONENTS roslaunch)
 set(robotlist
 cob3-3
 cob3-6
-cob3-8
 raw3-1
 raw3-2
 raw3-3
