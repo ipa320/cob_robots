@@ -1,8 +1,0 @@
-device: /dev/pcan0
-baudrate: 500K
-sync_interval: 10
-chains: ["gripper_controller"]
-gripper_controller:
- joint_names: [pg70_finger_left_joint]
- motor_direccion: [1]
- module_ids: [12]

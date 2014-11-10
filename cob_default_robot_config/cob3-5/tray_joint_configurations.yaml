@@ -1,7 +1,0 @@
-joint_names: ["tray_1_joint", "tray_2_joint", "tray_3_joint"]
-home: [[0.0, 0.0, 0.0]]
-deliverup: [[0.0, 1.57, 1.57]]
-deliverdown: [[0.9, 1.57, 2.47]]
-displayup: [[0.0, 1.57, -1.57]]
-displaydown: [[0.9, 1.57, -0.67]]
-storetray: [[1.35, 1.57, -1.75]]
