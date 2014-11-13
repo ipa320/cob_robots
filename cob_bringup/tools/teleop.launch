@@ -3,17 +3,12 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="version" default="v2"/>
 
-	<include file="$(find cob_bringup)/drivers/joy.launch">
+	<include file="$(find cob_bringup)/tools/teleop_$(arg version).xml">
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
 	</include>
 
-	<node pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" ns="teleop" output="screen">
-		<remap from="/cmd_vel" to="/base_controller/command" />
-		<remap from="/cmd_vel_safety" to="/base_controller/command_safe" />
-		<rosparam command="load" ns="/robot_config" file="$(arg pkg_hardware_config)/$(arg robot)/config/robot_modules.yaml"/>
-		<rosparam command="load" ns="/teleop" file="$(arg pkg_hardware_config)/$(arg robot)/config/teleop.yaml"/>
-	</node>
-
 </launch>
+

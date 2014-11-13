@@ -94,6 +94,8 @@
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 	
+	<include file="$(find cob_script_server)/launch/script_server.launch" />
+	
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />
 	
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-1)" cwd="node" respawn="false" output="screen" >
@@ -108,7 +110,6 @@
 		<param name="diagnostics_name" value="laser_right"/>
 		<param name="topic_name" value="/scan_right"/>
 	</node>
-
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-4)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="joy"/>
 		<param name="topic_name" value="/joy_usage"/>
