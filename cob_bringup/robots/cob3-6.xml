@@ -93,6 +93,7 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
+			<arg name="version" value="v1" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
