@@ -3,11 +3,34 @@
 
 	<arg name="robot" default="cob4-1"/>
 	
-	<!-- controller_utils -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_utils.launch" />
+	<!-- robot state publisher -->
+	<node ns="base" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
+	<node ns="torso" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
+	<node ns="head" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
+	<node ns="sensorring" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
+	<node ns="arm_left" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
+	<node ns="arm_right" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
 	
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob4.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob4_new.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 		
@@ -16,59 +39,58 @@
 	</include>
 	
 	<!-- Torso -->
-<!--
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
-		<arg name="component_name" value="torso"/>
-		<arg name="version" value="cob4"/>
-	</include>
--->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocityinterfaces.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="torso"/>
-		<arg name="version" value="cob4"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_cartesian_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
 	</include>
 	
 	<!-- Lookat -->
+<!--
 	<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
-	<node ns="lookat_controller" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen"/>
+	<node ns="lookat" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen"/>
+-->
 	
 	<!-- Head -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="head"/>
-		<arg name="version" value="cob4"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_cartesian_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="head"/>
 	</include>
 	
 	<!-- Sensorring -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="sensorring"/>
-		<arg name="version" value="cob4"/>
 	</include>
 	
 	<!-- Arms -->
-<!--
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lwa4p"/>
 		<arg name="side" value="_left"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_cartesian_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lwa4p"/>
+		<arg name="side" value="_left"/>
+	</include>
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="arm"/>
 		<arg name="side" value="_right"/>
 	</include>
--->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocityinterfaces.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_cartesian_controller_new.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lwa4p"/>
-		<arg name="side" value="_left"/>
-	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_velocityinterfaces.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lwa4p"/>
 		<arg name="side" value="_right"/>
 	</include>
 	
