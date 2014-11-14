@@ -12,7 +12,15 @@
 		<param name="publish_frequency" type="double" value="50.0" />
 		<param name="tf_prefix" type="string" value="" />
 	</node>
+	<node ns="torso_lookat" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
 	<node ns="head" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
+	<node ns="head_lookat" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
 		<param name="publish_frequency" type="double" value="50.0" />
 		<param name="tf_prefix" type="string" value="" />
 	</node>
@@ -48,13 +56,11 @@
 		<arg name="component_name" value="torso"/>
 	</include>
 	
-	<!-- Lookat -->
-<!--
+	<!-- Torso-Lookat -->
 	<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
 		<arg name="robot" value="$(arg robot)" />
+		<arg name="component_name" value="torso_lookat"/>
 	</include>
-	<node ns="lookat" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen"/>
--->
 	
 	<!-- Head -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
@@ -64,6 +70,12 @@
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_cartesian_controller_new.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="head"/>
+	</include>
+	
+	<!-- Head-Lookat -->
+	<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="component_name" value="head_lookat"/>
 	</include>
 	
 	<!-- Sensorring -->
