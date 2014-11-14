@@ -1,5 +1,5 @@
 controller_list:
-  - name: arm_left_controller
+  - name: arm_left/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
@@ -10,7 +10,7 @@ controller_list:
       - arm_left_5_joint
       - arm_left_6_joint
       - arm_left_7_joint
-  - name: arm_right_controller
+  - name: arm_right/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
@@ -21,14 +21,14 @@ controller_list:
       - arm_right_5_joint
       - arm_right_6_joint
       - arm_right_7_joint
-  - name: torso_controller
+  - name: torso/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
       - torso_1_joint
       - torso_2_joint
       - torso_3_joint
-  - name: head_controller
+  - name: head/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
