@@ -1,5 +1,8 @@
 joint_names: ["torso_1_joint","torso_2_joint","torso_3_joint"]
+action_name: /torso/joint_trajectory_controller/follow_joint_trajectory
+service_ns: /torso/driver
 
+# single positions
 home: [[0.0, 0.0, 0.0]]
 
 front: [[0.0, 0.0, 0.0]]
@@ -17,5 +20,6 @@ right: [[-1.57, 0.0, 0.0]]
 right_down_twisted: [[0.0, 3.14, -1.57]]
 right_down: [[0.0, -3.14, 1.57]]
 
+# trajectories
 nod: [front_down,front]
 shake: [left, right, left, home]
