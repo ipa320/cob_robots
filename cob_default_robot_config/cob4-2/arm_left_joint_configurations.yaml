@@ -4,4 +4,4 @@ service_ns: /arm_left/driver
 
 # single positions
 home: [[0,0,0,0,0,0,0]]
-folded: [[-0.87, 1.57, 0, 1.57, 0, 0, 0]]
+folded: [[0.87, 1.57, 0, 1.57, 0, 0, 0]]
