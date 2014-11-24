@@ -14,14 +14,14 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
 
   <!-- torso -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso_static.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- arm -->
   <xacro:include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
 
   <!-- head -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head_static.urdf.xacro" />
   
   <!-- sensorring -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
