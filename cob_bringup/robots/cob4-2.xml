@@ -122,6 +122,7 @@
 		
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
 			<arg name="name" value="torso_cam3d_right"/>
+            <arg name="robot" value="$(arg robot)" />
 			<arg name="nodelet_manager" value="torso_cam3d_right_nodelet_manager"/>
 		</include>
 		
@@ -142,6 +143,7 @@
 
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
 			<arg name="name" value="torso_cam3d_left"/>
+            <arg name="robot" value="$(arg robot)" />
 			<arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
 		</include>
 
