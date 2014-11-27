@@ -27,7 +27,8 @@ group5:
     [init,init],
     [recover,recover],
     [home,move,home],
-    [folded,move,folded]]
+    [folded,move,folded],
+    [side, move, side]]
 group6:
   group_name: arm_right
   component_name: arm_right
@@ -35,4 +36,5 @@ group6:
     [init,init],
     [recover,recover],
     [home,move,home],
-    [folded,move,folded]]
+    [folded,move,folded],
+    [side, move, side]]
