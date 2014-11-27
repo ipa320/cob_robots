@@ -8,7 +8,7 @@
 
 	<!-- parameters for CANopen node -->
 
-	<node ns="$(arg component_name)" name="$(arg component_name)_driver" pkg="ipa_canopen_motor_control" type="ipa_canopen_motor_control_node" output="screen" clear_params="true" launch-prefix="">
+	<node ns="$(arg component_name)" name="$(arg component_name)_driver" pkg="ipa_canopen_motor_control" type="ipa_canopen_motor_control_node" output="screen" clear_params="true">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg can_module).yaml" />
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml" />
 		<remap from="joint_states" to="/joint_states"/>

@@ -61,6 +61,7 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="version" value="v1"/>
 		</include>
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
@@ -70,6 +71,12 @@
 
 	<group>
 		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-t1)" />
+		</include>
 
 		<!-- startup hardware -->
 		<!--include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
@@ -113,7 +120,12 @@
 
 	<group>
 		<machine name="cob4-2-t2" address="$(arg cob4-2-t2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
-	
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-t2)" />
+		</include>
+
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_right"/>
@@ -134,6 +146,11 @@
 
 	<group>
 		<machine name="cob4-2-t3" address="$(arg cob4-2-t3)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-t3)" />
+		</include>
 
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
