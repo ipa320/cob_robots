@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export MY_CATKIN_WORKSPACE=~/git/care-o-bot
+source /etc/cob.bash.bashrc
 
 . /opt/ros/indigo/setup.sh
 
