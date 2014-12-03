@@ -170,4 +170,17 @@
 
 	</group>
 
+
+	<group>
+		<machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-h1)" />
+		</include>
+		
+		<node pkg="cob_mimic" type="mimic_node.py" name="cob_mimic"/>
+
+	</group>
 </launch>
