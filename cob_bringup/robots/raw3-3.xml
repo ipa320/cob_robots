@@ -46,11 +46,11 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		
-		<include file="$(find cob_bringup)/drivers/frida.launch" >
+		<!--include file="$(find cob_bringup)/drivers/frida.launch" >
 			<arg name="robot_ip" value="192.168.125.1" />
-		</include>
+		</include-->
 
-		<include file="$(find cob_bringup)/drivers/prace_grippers.launch"/>
+		<!--include file="$(find cob_bringup)/drivers/prace_grippers.launch"/-->
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
@@ -63,7 +63,7 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+		<!--include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
 			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -72,6 +72,9 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>

@@ -9,7 +9,7 @@ if [ -e $MY_CATKIN_WORKSPACE/devel/setup.bash ]; then
 elif [ -e /u/robot/git/care-o-bot/devel/setup.bash ]; then
     source /u/robot/git/care-o-bot/devel/setup.bash
 else
-    source /opt/indigo/setup.bash
+    source /opt/ros/indigo/setup.bash
 fi
 
 exec "$@"
