@@ -1,0 +1,11 @@
+devicestring: /dev/ttyACM1
+
+# first joint
+min_pwm0: 3000
+max_pwm0: -4000
+
+# second joint
+min_pwm1: -4000
+max_pwm1: 4000
+
+joint_names: ["finger_right_proximal", "finger_right_distal"]
