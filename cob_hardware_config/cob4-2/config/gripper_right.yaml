@@ -1,0 +1,11 @@
+devicestring: /dev/gripper_right
+
+# first joint
+min_pwm0: 3000
+max_pwm0: -4000
+
+# second joint
+min_pwm1: 4000
+max_pwm1: -4000
+
+joint_names: ["gripper_right_proximal", "gripper_right_distal"]
