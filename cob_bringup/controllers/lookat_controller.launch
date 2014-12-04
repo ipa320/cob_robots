@@ -1,27 +1,29 @@
 <?xml version="1.0"?>
 <launch>
-
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="robot"/>
+	<arg name="component_name"/>
+	<arg name="side" default=""/>
 	
-	<rosparam ns="lookat_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/lookat_controller.yaml" command="load" />
+	<rosparam ns="$(arg component_name)$(arg side)" command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml"/>
 	
 	<!-- start virutal driver -->
-	<node ns="lookat_controller" name="lookat_driver" pkg="cob_lookat_controller" type="cob_lookat_driver_node" cwd="node" respawn="false" output="screen">
-		<remap from="joint_states" to="/joint_states"/>
-	</node>
+	<node ns="$(arg component_name)$(arg side)" name="driver" pkg="cob_lookat_controller" type="cob_lookat_driver_node" cwd="node" respawn="false" output="screen"/>
+	<node ns="$(arg component_name)$(arg side)" name="joint_states_relay" pkg="topic_tools" type="relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 	
 	<!--trajectory controller-->
 	<!--node ns="lookat_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller" cwd="node" respawn="false" output="screen"/-->
 	
 	<!-- start lookat twist controller -->
-	<node ns="lookat_controller" name="lookat_controller" pkg="cob_lookat_controller" type="cob_lookat_controller_node" cwd="node" respawn="false" output="screen">
-		<!--remap from="chain_command_vel" to="/torso_controller/command_vel"/-->
+<!--
+	<node ns="torso_lookat" name="lookat_controller" pkg="cob_lookat_controller" type="cob_lookat_controller_node" cwd="node" respawn="false" output="screen">
 		<remap from="lookat_command_vel" to="/lookat_controller/command_vel"/>
 	</node>
+-->
 	
-	<node ns="lookat_controller" name="frame_tracker" pkg="cob_frame_tracker" type="cob_frame_tracker_node" cwd="node" respawn="false" output="screen"/>
-	
-	<node ns="lookat_controller" name="interactive_target" pkg="cob_frame_tracker" type="interactive_frame_target.py" cwd="node" respawn="false" output="screen"/>
+<!--
+	<node ns="torso_lookat" name="frame_tracker" pkg="cob_frame_tracker" type="cob_frame_tracker_node" cwd="node" respawn="false" output="screen"/>
+	<node ns="torso_lookat" name="interactive_target" pkg="cob_frame_tracker" type="interactive_frame_target.py" cwd="node" respawn="false" output="screen"/>
+	<node ns="torso_lookat" name="gazebo_services" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py"  cwd="node" respawn="false" output="screen"/>
+-->
 
 </launch>

@@ -97,6 +97,7 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="version" value="v1" />
 		</include>
 
 		<!-- start camera sensors -->

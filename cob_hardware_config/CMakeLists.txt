@@ -21,7 +21,7 @@ raw3-6
 foreach(robot ${robotlist})
     message("testing for robot: ${robot}")
     #roslaunch_add_file_check(common robot:=${robot})
-    #rosbuild_add_roslaunch_check(common ROBOT=${robot})
+    #roslaunch_add_file_check(common ROBOT=${robot})
     add_rostest(test/urdf_${robot}.test)
 endforeach(robot)
 

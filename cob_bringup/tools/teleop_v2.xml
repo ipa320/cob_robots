@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<include file="$(find cob_bringup)/drivers/joy.launch">
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
+	</include>
+
+	<node pkg="cob_teleop" type="cob_teleop_v2" name="$(anon teleop_node)" output="screen" >
+		<remap from="base_controller_command" to="base/controller/command"/>
+		<remap from="sensorring_controller_command" to="sensorring/controller/command_twist"/>
+		<remap from="torso_controller_command" to="torso/controller/command_twist"/>
+		<remap from="arm_joint_left" to="arm_left/controller/command_vel"/>
+		<remap from="arm_joint_right" to="arm_right/controller/command_vel"/>
+		<remap from="head_controller_command" to="head/controller/command_twist"/>
+		<remap from="arm_cart_left" to="arm_left/controller/command_twist"/>
+		<remap from="arm_cart_right" to="arm_right/controller/command_twist"/>
+		<remap from="joy_feedback" to="joy/set_feedback" />
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/teleop.yaml" />
+	</node>
+
+</launch>

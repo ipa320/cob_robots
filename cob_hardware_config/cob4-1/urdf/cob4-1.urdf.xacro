@@ -26,23 +26,44 @@
   <!-- sensorring -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
 
-  <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
-  <xacro:include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
-
   <!-- composition of the robot -->
   <xacro:base name="base"/>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>base</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 
   <xacro:torso name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>torso</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
   
   <xacro:head name="head" parent="torso_3_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>head</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 
   <xacro:sensorring name="sensorring" parent="head_3_link">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>sensorring</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
   
   <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" 
             arm_1_ref="${arm_right_1_ref}"
@@ -54,6 +75,12 @@
             arm_7_ref="${arm_right_7_ref}">
     <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
   </xacro:schunk_lwa4p_extended>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>arm_right</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
   
   <xacro:schunk_lwa4p_extended name="arm_left" parent="torso_3_link"
             arm_1_ref="${arm_left_1_ref}"
@@ -65,11 +92,20 @@
             arm_7_ref="${arm_left_7_ref}">
     <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
   </xacro:schunk_lwa4p_extended>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>arm_left</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 
+<!--
   <xacro:lookat name="lookat" parent="torso_center_link" lower="0.0" upper="5.0">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="1 0 0"/>
   </xacro:lookat>
+-->
+  <!-- virtual component -->
 
 
 </robot>
