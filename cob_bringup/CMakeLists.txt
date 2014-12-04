@@ -1,4 +1,3 @@
-# http://ros.org/doc/groovy/api/catkin/html/user_guide/supposed.html
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_bringup)
 
@@ -8,6 +7,8 @@ find_package(catkin REQUIRED COMPONENTS roslaunch)
 set(robotlist
 cob3-3
 cob3-6
+cob4-1
+cob4-2
 raw3-1
 raw3-2
 raw3-3
