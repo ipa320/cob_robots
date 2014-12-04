@@ -1,4 +1,4 @@
-devicestring: /dev/ttyACM0
+devicestring: /dev/gripper_left
 
 # first joint
 min_pwm0: 3000
@@ -8,4 +8,4 @@ max_pwm0: -4000
 min_pwm1: -4000
 max_pwm1: 4000
 
-joint_names: ["finger_left_proximal", "finger_left_distal"]
+joint_names: ["gripper_left_proximal", "gripper_left_distal"]

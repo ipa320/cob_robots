@@ -110,11 +110,22 @@
 			<arg name="can_module" value="can3" />
 		</include>
 
+		<include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="gripper_left" />
+		</include>
+
 		<include file="$(find cob_bringup)/drivers/ros_canopen_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
 			<arg name="can_module" value="can2" />
 		</include>
+
+		<include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="gripper_right" />
+		</include>
+
 
 	</group>
 
