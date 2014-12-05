@@ -1,4 +1,6 @@
 joint_names: ['arm_shoulder_pan_joint', 'arm_shoulder_lift_joint', 'arm_elbow_joint','arm_wrist_1_joint', 'arm_wrist_2_joint', 'arm_wrist_3_joint']
+action_name: /arm_controller/follow_joint_trajectory
+service_ns: /arm_controller
 
 # back side positions
 home: [[-0.7854, -1.5707, 1.5707, 0.0, 1.5707, 1.5707]]
