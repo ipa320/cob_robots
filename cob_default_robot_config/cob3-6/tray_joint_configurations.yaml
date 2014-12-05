@@ -1,4 +1,7 @@
 joint_names: ["tray_1_joint", "tray_2_joint", "tray_3_joint"]
+action_name: /tray_controller/follow_joint_trajectory
+service_ns: /tray_controller
+
 home: [[0.0, 0.0, 0.0]]
 deliverup: [[0.0, 1.57, 1.57]]
 deliverdown: [[0.9, 1.57, 2.47]]
