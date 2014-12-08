@@ -5,7 +5,7 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
 
-	<node name="$(arg component_name)" pkg="schunk_sdhx" type="sdhx_node.py" output="screen" >
+	<node name="$(arg component_name)" pkg="schunk_sdhx" type="sdhx_node.py" respawn="true" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name).yaml"/>
 	</node>
 
