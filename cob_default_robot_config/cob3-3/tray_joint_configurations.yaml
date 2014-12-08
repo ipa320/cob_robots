@@ -1,3 +1,6 @@
 joint_names: ["tray_joint"]
+action_name: /tray_controller/follow_joint_trajectory
+service_ns: /tray_controller
+
 up: [[0.0]]
 down: [[-3.14]]

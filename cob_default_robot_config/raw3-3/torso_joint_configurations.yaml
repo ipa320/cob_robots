@@ -1,4 +1,7 @@
 joint_names: ["head_powerball_bottom_joint","head_powerball_side_joint"]
+action_name: /torso_controller/follow_joint_trajectory
+service_ns: /torso_controller
+
 home: [[0.0,0.0]]
 pos1: [[0.0,1.3]]
 pos2: [[1.57,-1.57]]
