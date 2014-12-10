@@ -1,0 +1,19 @@
+# Paramter for the cob_base_velocity_smoother (velocity filter for smooth navigation)
+
+# Parameter specifying the capacity of the circular buffer (number of saved geometry messages)
+circular_buffer_capacity: 12 #default value: 12
+
+# Parameter specifying maximal time delay in seconds for saved messages (older messages will be deleted)
+maximal_time_delay: 4.0 #default value: 4.0 [s]
+
+# Parameter specifying the threshold for the maximal allowed change of velocity in meters per second
+thresh_max_acc: 0.3 #default value: 0.3 [m/s]
+
+# Parameter specifying the ros loop rate of the velocity smoother
+loop_rate: 30 #default value: 30 [Hz]
+
+# Parameter specifying the minimal input rate that is expected before filling the buffer with zeros.
+min_input_rate: 5.0 #default value: 9.0 [Hz] due to frequency of ros navigation running at 10Hz
+
+# Parameter specifying the maximal time-delay until stopping the robot when there are no incoming messages
+maximal_time_delay_to_stop: 0.1 #default value: 0.1 [s]
