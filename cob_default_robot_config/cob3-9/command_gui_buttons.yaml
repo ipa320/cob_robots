@@ -45,12 +45,7 @@ group5:
   buttons: [[stop,trigger,stop],
     [home,move,home],
     [folded,move,folded],
-    [pregrasp,move,pregrasp],
-    [hold,move,hold],
-    [sdhmount, move, sdhmount],
-    [overtray,move,overtray],
-    [wave in,move,wavein],
-    [wave out,move,waveout]]
+    [pregrasp,move,pregrasp]]
 group6:
   group_name: arm traj
   component_name: arm
