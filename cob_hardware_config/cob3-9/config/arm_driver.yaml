@@ -1,0 +1,21 @@
+name: arm_controller
+
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "cob3-9/config/Schunk_0_63.dcf"
+
+modules:
+  - name: arm_1_joint
+    id: 3
+  - name: arm_2_joint
+    id: 4
+  - name: arm_3_joint
+    id: 5
+  - name: arm_4_joint
+    id: 6
+  - name: arm_5_joint
+    id: 7
+  - name: arm_6_joint
+    id: 8
+  - name: arm_7_joint
+    id: 9

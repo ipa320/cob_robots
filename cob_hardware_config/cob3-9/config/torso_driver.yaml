@@ -1,8 +1,13 @@
-device: /dev/pcan1
-baudrate: 500K
-sync_interval: 10
-chains: ["torso_controller"]
-torso_controller:
-  joint_names: [torso_lower_neck_tilt_joint, torso_pan_joint, torso_upper_neck_tilt_joint]
-  motor_direction: [1, 1, 1]
-  module_ids: [1, 2, 3]
+name: torso_controller
+
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "cob3-9/config/Schunk_0_63.dcf"
+
+modules:
+  - name: torso_lower_neck_tilt_joint
+    id: 1
+  - name: torso_pan_joint
+    id: 2
+  - name: torso_upper_neck_tilt_joint
+    id: 3
