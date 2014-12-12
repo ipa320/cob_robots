@@ -67,7 +67,7 @@
 			<arg name="component_name" value="torso" />
 			<arg name="can_module" value="can1" />
 		</include>
-		<!--include file="$(find cob_bringup)/drivers/ros_canopen_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/ros_canopen_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm" />
 			<arg name="can_module" value="can2" />
@@ -76,7 +76,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="gripper" />
 			<arg name="can_module" value="can3" />
-		</include-->
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
