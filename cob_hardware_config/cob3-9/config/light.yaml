@@ -1,0 +1,9 @@
+devicedriver: cob_ledboard
+devicestring: /dev/ttyLed
+baudrate: 230400
+num_leds: 1
+invert_output: false
+pubmarker: true
+sim_enabled: false
+startup_color: [0.0, 1.0, 0.0, 1.0] #rgba value
+startup_mode: Static #possible values: None, Static, Breath, BreathColor, Flash, FadeColor

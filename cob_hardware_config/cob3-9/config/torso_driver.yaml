@@ -1,0 +1,13 @@
+name: torso_controller
+
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "cob3-9/config/Schunk_0_63.dcf"
+
+modules:
+  - name: torso_lower_neck_tilt_joint
+    id: 1
+  - name: torso_pan_joint
+    id: 2
+  - name: torso_upper_neck_tilt_joint
+    id: 3

@@ -3,7 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="component_name"/>
+	<arg name="component_name" default="light"/>
 
 	<!-- start light controller -->
 	<node pkg="cob_light" type="cob_light" name="$(arg component_name)" respawn="false" output="screen" >
