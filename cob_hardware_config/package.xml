@@ -21,6 +21,7 @@
   <run_depend>raw_description</run_depend>
   <run_depend>schunk_description</run_depend>
   <run_depend>ur_description</run_depend>
+  <run_depend>prace_common</run_depend>
 
   <export>
 
