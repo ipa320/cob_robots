@@ -1,29 +1,74 @@
 #all
 joint_names: [torso_1_joint, torso_2_joint, torso_3_joint]
 
+## control_mode_adapter
+max_command_silence: 0.5
 
-# twist controller parameters
-base_link: torso_base_link
-tip_link: torso_center_link
+## joint_state_controller
+joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
 
-# frame_tracker + interactive_marker
-active_frame: torso_center_link
-tracking_frame: torso_center_target
-root_frame: base_link
-movable_trans: true
-movable_rot: true
-pid_trans: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-pid_rot: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-update_rate: 68.0
-max_vel_lin: 10.0
-max_vel_rot: 6.28
+## joint trajectory controller
+joint_trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - torso_1_joint
+     - torso_2_joint
+     - torso_3_joint
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      torso_1_joint: {trajectory: 0.1, goal: 0.1}
+      torso_2_joint: {trajectory: 0.1, goal: 0.1}
+      torso_3_joint: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+  required_drive_mode: 7
 
 
-## DEPRECATED cob_trajectory_controller ##
-# trajectory controller parameters
-ptp_vel: 1.0 # rad/sec
-ptp_acc: 2.0 # rad/sec^2
-max_error: 0.25 # rad
-overlap_time: 0.4
-frequency: 68
-operation_mode: velocity
+## position controller
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+     - torso_1_joint
+     - torso_2_joint
+     - torso_3_joint
+  required_drive_mode: 1
+     
+torso_1_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: torso_1_joint
+  required_drive_mode: 1
+torso_2_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: torso_2_joint
+  required_drive_mode: 1
+torso_3_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: torso_3_joint
+  required_drive_mode: 1
+
+
+## velocity controller
+joint_group_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+     - torso_1_joint
+     - torso_2_joint
+     - torso_3_joint
+  required_drive_mode: 2
+
+torso_1_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: torso_1_joint
+  required_drive_mode: 2
+torso_2_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: torso_2_joint
+  required_drive_mode: 2
+torso_3_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: torso_3_joint
+  required_drive_mode: 2

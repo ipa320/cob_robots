@@ -60,7 +60,7 @@
 	<property name="def_arm_right_y" value="-0.014"/>
 	<property name="def_arm_right_z" value="0.55"/>
 	<property name="def_arm_right_roll" value="1.57097"/>
-	<property name="def_arm_right_pitch" value="3.14159"/>
+	<property name="def_arm_right_pitch" value="0"/>
 	<property name="def_arm_right_yaw" value="0.0"/>
 	
 	<!-- arm left mount positions | relative to torso_3_link -->
@@ -68,22 +68,14 @@
 	<property name="def_arm_left_y" value="0.014"/>
 	<property name="def_arm_left_z" value="0.55"/>
 	<property name="def_arm_left_roll" value="1.57097"/>
-	<property name="def_arm_left_pitch" value="3.14159"/>
+	<property name="def_arm_left_pitch" value="0"/>
 	<property name="def_arm_left_yaw" value="3.14159"/>
 	
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
-	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
-	<property name="def_torso_1_ref" value="0.0"/>
-	<property name="def_torso_2_ref" value="0.0"/>
-	<property name="def_torso_3_ref" value="0.0"/>
 
-	<!-- head reference positions | used as calibration_rising for head axis chain -->
-	<property name="def_head_1_ref" value="0.0"/>
-	<property name="def_head_2_ref" value="0.0"/>
-	<property name="def_head_3_ref" value="0.0"/>
-	
+	<!-- sensorring reference positions | used as calibration_rising for sensorring chain -->
 	<property name="def_sensorring_ref" value="0.0"/>
 
 	<!-- arm right reference positions | used as calibration_rising for arm chain-->

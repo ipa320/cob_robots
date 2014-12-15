@@ -28,6 +28,7 @@
   <run_depend>ur_driver</run_depend>
   <run_depend>cob_relayboard</run_depend>
   <run_depend>cob_voltage_control</run_depend>
+  <run_depend>cob_safety_controller</run_depend>
   <run_depend>cob_sick_s300</run_depend>
   <run_depend>cob_sick_lms1xx</run_depend>
   <run_depend>cob_camera_sensors</run_depend>
@@ -55,11 +56,15 @@
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
   <run_depend>cob_default_env_config</run_depend>
-  <run_depend>ipa_canopen_ros</run_depend>
   <run_depend>cob_phidgets</run_depend>
   <run_depend>prace_gripper_driver</run_depend>
   <run_depend>frida_driver</run_depend>
   <run_depend>cob_image_flip</run_depend>
+  <run_depend>cob_control_mode_adapter</run_depend>
+  <run_depend>schunk_sdhx</run_depend>
+  <run_depend>cob_script_server</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>canopen_motor_node</run_depend>
 
   <export>
 

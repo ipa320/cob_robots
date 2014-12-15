@@ -1,4 +1,6 @@
 joint_names: ['gripper_left_finger_left_joint', 'gripper_left_finger_right_joint']
+action_name: /gripper_left/joint_trajectory_controller/follow_joint_trajectory
+service_ns: /gripper_left/driver
 
 # back side positions
 open: [[0.0, 0.0]]

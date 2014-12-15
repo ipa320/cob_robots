@@ -1,4 +1,7 @@
 joint_names: ["sdh_knuckle_joint", "sdh_thumb_2_joint", "sdh_thumb_3_joint", "sdh_finger_12_joint", "sdh_finger_13_joint", "sdh_finger_22_joint", "sdh_finger_23_joint"]
+action_name: /gripper_controller/follow_joint_trajectory
+service_ns: /gripper_controller
+
 home: [[0.0,0.0,0.0,0.0,0.0,0.0,0.0]]
 cylclosed: [[0.0,0.0,1.0472,0.0,1.0472,0.0,1.0472]]
 cylopen: [[0.0,-0.9854,0.9472,-0.9854,0.9472,-0.9854,0.9472]]

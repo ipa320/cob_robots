@@ -1,4 +1,7 @@
 joint_names: ["torso_pan_joint", "torso_tilt_joint"]
+action_name: /torso_controller/follow_joint_trajectory
+service_ns: /torso_controller
+
 home: [[0.0,0.0]]
 right: [[0.2,0.0]]
 down: [[-0.48,0.0]]

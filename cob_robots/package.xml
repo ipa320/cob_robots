@@ -17,7 +17,6 @@
   <run_depend>cob_controller_configuration_gazebo</run_depend>
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
-  <run_depend>cob_monitoring</run_depend>
   <run_depend>cob_bringup</run_depend>
 
 

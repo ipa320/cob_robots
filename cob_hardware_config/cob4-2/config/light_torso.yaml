@@ -1,0 +1,9 @@
+devicestring: /dev/ttyLED
+devicedriver: stageprofi
+baudrate: 38400
+num_leds: 58
+invert_output: false
+pubmarker: true
+sim_enabled: false
+startup_color: [0.0, 1.0, 0.7, 0.4] #rgba value
+startup_mode: Breath #possible values: None, Static, Breath, BreathColor, Flash, FadeColor

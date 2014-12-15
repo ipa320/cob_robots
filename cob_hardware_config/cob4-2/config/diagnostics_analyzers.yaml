@@ -2,7 +2,7 @@ pub_rate: 1.0 # Optional
 base_path: '' # Optional, prepended to all diagnostic output
 analyzers:
   computers:
-    type: diagnostic_aggregator/IgnoreAnalyzer
+    type: diagnostic_aggregator/AnalyzerGroup
     path: Computers
     analyzers:
       b1:
@@ -62,18 +62,10 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
-      torso:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Torso
-        contains: 'torso_controller'
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
         contains: 'sensorring_controller'
-      head:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Head
-        contains: 'head_controller'
       arm_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Right

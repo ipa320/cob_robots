@@ -1,0 +1,10 @@
+joint_names: ["arm_1_joint","arm_2_joint","arm_3_joint","arm_4_joint","arm_5_joint","arm_6_joint","arm_7_joint"]
+action_name: /arm/joint_trajectory_controller/follow_joint_trajectory
+service_ns: /arm/driver
+default_vel: 0.3
+
+# back side positions
+home: [[0.0,0.0,0.0,0.0,0.0,0.0,0.0]]
+folded: [[2.429112434387207, -1.7700728178024292, 2.3842358589172363, 1.7392703294754028, 0.15917973220348358, 0.98052412271499634, 0.19730249047279358]]
+pregrasp: [[2.4660451412200928, -1.6569322347640991, 1.8512247800827026, 1.3687270879745483, -1.1863553524017334, 1.0297310352325439, 0.8755269659704354]]
+

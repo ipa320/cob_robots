@@ -21,6 +21,12 @@
 	<group>
 		<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-b1)" />
+		</include>
+		
 		<!-- start robot_state_publisher -->
 		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
@@ -46,89 +52,117 @@
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="version" value="v1"/>
 		</include>
+		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
+		<include file="$(find cob_bringup)/drivers/light.launch">
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="light_base" />
+		</include>
+		
+		<!-- TMP START: recover grippers due to USB disconnect problem. Delete after USB problem is fixed. Recovers both grippers. -->
+		<node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/>
+		<!-- TMP END -->
+		
 	</group>
 
 	<group>
 		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-t1)" />
+		</include>
+
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="torso" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="torso" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="head_sensorring" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="head" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="sensorring" />
+			<arg name="can_module" value="can1" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
+			<arg name="can_module" value="can3" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="arm_left" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
+			<arg name="can_module" value="can2" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+
+		<include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="arm_right" />
+			<arg name="component_name" value="gripper_right" />
 		</include>
+
+
 	</group>
 
 	<group>
 		<machine name="cob4-2-t2" address="$(arg cob4-2-t2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-t2)" />
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="gripper_left" />
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/openni2.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="torso_cam3d_right"/>
+			<arg name="device_id" value="#2"/>
+		</include>
+		
+		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+			<arg name="name" value="torso_cam3d_right"/>
+            <arg name="robot" value="$(arg robot)" />
+			<arg name="nodelet_manager" value="torso_cam3d_right_nodelet_manager"/>
+		</include>
+		
+		<include file="$(find cob_bringup)/drivers/light.launch">
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="light_torso" />
+		</include>
+
 	</group>
 
 	<group>
 		<machine name="cob4-2-t3" address="$(arg cob4-2-t3)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-t3)" />
+		</include>
 
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="device_id" value="#1"/>
-			<arg name="machine" value="cob4-2-t3"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
 			<arg name="name" value="torso_cam3d_left"/>
+            <arg name="robot" value="$(arg robot)" />
 			<arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
-		</include>
-	
-		<include file="$(find cob_bringup)/drivers/openni2.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="torso_cam3d_right"/>
-			<arg name="device_id" value="#2"/>
-			<arg name="machine" value="cob4-2-t3"/>
-		</include>
-		
-		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
-			<arg name="name" value="torso_cam3d_right"/>
-			<arg name="nodelet_manager" value="torso_cam3d_right_nodelet_manager"/>
 		</include>
 
 		<!--include file="$(find cob_bringup)/drivers/softkinetic.launch" >
@@ -137,4 +171,17 @@
 
 	</group>
 
+
+	<group>
+		<machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-2-h1)" />
+		</include>
+		
+		<!--node pkg="cob_mimic" type="mimic_node.py" name="cob_mimic"/-->
+
+	</group>
 </launch>
