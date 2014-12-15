@@ -2,8 +2,8 @@
 Changelog for package cob_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.1 (2014-12-15)
+------------------
 * merge
 * move cob_monitoring to cob_command_tools
 * Contributors: Florian Weisshardt, ipa-nhg
