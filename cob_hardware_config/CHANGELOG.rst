@@ -2,6 +2,51 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* merge
+* rename canopen launch files and fix roslaunch test errors
+* delete cob3-3
+* cleanup: cob4-1 with torso and head; cob4-2 without torso and head
+* cob3-9
+* setup cob3-9 simulation
+* setup cob3-9
+* cob3-9
+* set cores for toros pcs
+* add namespace for light launch file. needed for cob4-2
+* add namespace for light launch file. needed for cob4-2
+* led rule
+* config for gripper right
+* disable launch tests
+* set teleop config for cob4-2
+* Rename teleop_v1.yaml to teleop.yaml
+* test raw3-3
+* Finger configuration files
+* set default mode for light
+* merge
+* add phidget config for cob4-2
+* support for vel mode
+* Merge pull request `#3 <https://github.com/ipa320/cob_robots/issues/3>`_ from ipa-fmw/indigo_new_structure
+  Indigo new structure
+* use static head and torso for cob4-2
+* fix arm mounting positions
+* add lookat components to cob4-2
+* new structure for cob4-1 and cob4-2
+* indigo_new_structure
+* adapt teleop to v2
+* delete desire
+* delete cob3-8
+* delete cob3-7
+* delete cob3-5
+* delete cob3-4
+* delete cob3-2
+* delete cob3-1
+* new ros_canopen driver version, adapted bringup configuration
+* Adds light configuration for cob4-2
+* new parameter files
+* added pc monitor config files for cob4-1
+* Contributors: Florian Weisshardt, ipa-cob3-9, ipa-cob4-1, ipa-cob4-2, ipa-fmw, ipa-fxm, ipa-nhg, thiagodefreitas
+
 0.6.0 (2014-09-18)
 ------------------
 * setup cob4-2

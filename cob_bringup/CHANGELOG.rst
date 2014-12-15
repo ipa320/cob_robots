@@ -2,6 +2,66 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* merge
+* rename canopen launch files and fix roslaunch test errors
+* delete cob3-3
+* cob3-9
+* Update cob3-9.xml
+* setup cob3-9
+* comment mimic
+* cob3-9
+* add recover for grippers
+* add light and sdhx to cob4-2
+* add namespace for light launch file. needed for cob4-2
+* default config for gripper_left
+* config for gripper right
+* add cob4 to tests
+* Delete phidgets_monitor.launch
+* Update base_solo.launch
+* Update base_solo.launch
+* Update teleop_v2.xml
+* Update teleop_v1.xml
+* Merge pull request `#23 <https://github.com/ipa320/cob_robots/issues/23>`_ from ipa-cob4-2/indigo_dev
+  actual version cob4-2
+* actual version cob4-2
+* test raw3-3
+* Update env.sh
+* merge
+* add robot arg to imageflip
+* use teleop v1 and add light to bringup
+* remove launch prefix
+* Merge pull request `#3 <https://github.com/ipa320/cob_robots/issues/3>`_ from ipa-fmw/indigo_new_structure
+  Indigo new structure
+* update cob4-2 launch file
+* updates on cob4-2
+* add lookat components to cob4-2
+* added temporary topic_relays for base - v1.5
+* indigo_new_structure
+* indigo_new_structure
+* launch and yaml file base according to new structure
+* adapt teleop to v2
+* delete desire
+* delete cob3-8
+* delete cob3-7
+* delete cob3-5
+* delete cob3-4
+* delete cob3-2
+* delete cob3-1
+* switch parameter namespaces due to BRIDE private nodehandle
+* new ros_canopen driver version, adapted bringup configuration
+* add parameter for max_X_velocity to launch file
+* new parameter files
+* Merge pull request `#226 <https://github.com/ipa320/cob_robots/issues/226>`_ from ipa-nhg/indigo_test
+  bringup tests
+* bringup tests
+* moved msgs
+* set locahost as default parameter
+* set locahost as default parameter
+* add monitor scripts to replace pr2_computer_monitor
+* Contributors: Florian Weisshardt, Nadia Hammoudeh García, ipa-cob3-9, ipa-cob4-2, ipa-fmw, ipa-fxm, ipa-nhg
+
 0.6.0 (2014-09-18)
 ------------------
 * moved frame_tracker to separate package

@@ -2,6 +2,36 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* merge
+* remove unused dep
+* add depdendencies
+* add dependency
+* delete cob3-3
+* delete cob3-3
+* cleanup: cob4-1 with torso and head; cob4-2 without torso and head
+* setup cob3-9 simulation
+* cob3-9
+* add cob4 to tests
+* Merge pull request `#18 <https://github.com/ipa320/cob_robots/issues/18>`_ from ipa-fxm/indigo_dev
+  add lookat components to cob4-2
+* add lookat components to cob4-2
+* merge
+* new structure for cob4-1 and cob4-2
+* added temporary topic_relays for base - v1.5
+* launch and yaml file base according to new structure
+* adapt teleop to v2
+* delete desire
+* delete cob3-8
+* delete cob3-7
+* delete cob3-5
+* delete cob3-4
+* delete cob3-2
+* delete cob3-1
+* uses forward command controller for all simulated bases
+* Contributors: Florian Weisshardt, ipa-fxm, ipa-nhg
+
 0.6.0 (2014-09-18)
 ------------------
 * fix typo

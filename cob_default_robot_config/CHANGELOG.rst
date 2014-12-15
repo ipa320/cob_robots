@@ -2,6 +2,43 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* delete cob3-3
+* adapt default velocity
+* speedup default vel
+* cleanup: cob4-1 with torso and head; cob4-2 without torso and head
+* deleted sound.yaml
+* cob3-9
+* setup cob3-9 simulation
+* setup cob3-9
+* add service_ns for base
+* cob3-9
+* merge
+* add grippers to dashboard
+* update cob4-2 config
+* updated command_gui buttons
+* added accion_name and service_ns parameters
+* default config for gripper_left
+* default config for gripper_left
+* added gripper_right
+* config for gripper right
+* added accion_name and service_ns parameters
+* test raw3-3
+* add side configuration and update folded configuration
+* switch axis for arm_1 joints
+* add parameters for action and service namespace to sss
+* updates on cob4-2
+* delete desire
+* delete cob3-8
+* delete cob3-7
+* delete cob3-5
+* delete cob3-4
+* delete cob3-2
+* delete cob3-1
+* new ros_canopen driver version, adapted bringup configuration
+* Contributors: Florian Weisshardt, ipa-cob3-9, ipa-cob4-2, ipa-fmw, ipa-nhg
+
 0.6.0 (2014-09-18)
 ------------------
 * setup cob4-2
