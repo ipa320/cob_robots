@@ -116,6 +116,8 @@
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 	
+	<include file="$(find cob_script_server)/launch/script_server.launch" />
+	
 	<node pkg="cob_controller_configuration_gazebo" type="gazebo_topics.py" name="gazebo_topics" cwd="node" respawn="false" output="screen" />
 	
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-1)" cwd="node" respawn="false" output="screen" >
@@ -130,7 +132,6 @@
 		<param name="diagnostics_name" value="laser_right"/>
 		<param name="topic_name" value="/scan_right"/>
 	</node>
-
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-4)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="joy"/>
 		<param name="topic_name" value="/joy_usage"/>
@@ -157,23 +158,23 @@
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-10)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="torso_controller"/>
-		<param name="topic_name" value="/torso_controller/state"/>
+		<param name="topic_name" value="/torso/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-11)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="sensorring_controller"/>
-		<param name="topic_name" value="/sensorring_controller/state"/>
+		<param name="topic_name" value="/sensorring/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-12)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="head_controller"/>
-		<param name="topic_name" value="/head_controller/state"/>
+		<param name="topic_name" value="/head/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-13)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="arm_right_controller"/>
-		<param name="topic_name" value="/arm_right_controller/state"/>
+		<param name="topic_name" value="/arm_right/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-14)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="arm_left_controller"/>
-		<param name="topic_name" value="/arm_left_controller/state"/>
+		<param name="topic_name" value="/arm_left/joint_states"/>
 	</node>
 
 </launch>

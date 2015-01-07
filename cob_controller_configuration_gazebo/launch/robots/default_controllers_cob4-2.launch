@@ -122,15 +122,15 @@
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-11)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="sensorring_controller"/>
-		<param name="topic_name" value="/sensorring_controller/state"/>
+		<param name="topic_name" value="/sensorring/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-13)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="arm_right_controller"/>
-		<param name="topic_name" value="/arm_right_controller/state"/>
+		<param name="topic_name" value="/arm_right/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-14)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="arm_left_controller"/>
-		<param name="topic_name" value="/arm_left_controller/state"/>
+		<param name="topic_name" value="/arm_left/joint_states"/>
 	</node>
 
 </launch>
