@@ -2,6 +2,11 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add missing dep
+* Contributors: Florian Weisshardt
+
 0.6.1 (2014-12-15)
 ------------------
 * merge
