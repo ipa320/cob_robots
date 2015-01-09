@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="robot" default="$(env ROBOT)"/>
+  <arg name="name" default="cam3d"/>
+  
+  <!-- sensor message gateway node (forwards sensor messages in a desired rate) -->
+  <node name="kinect_image_flip_$(arg name)" pkg="cob_image_flip" ns="/cob_image_flip" type="kinect_image_flip" output="screen"> <!--launch-prefix="valgrind"-->
+    <rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/image_flip_params_$(arg name).yaml"/>
+    <param name="robot" type="string" value="$(arg robot)"/>
+    <remap from="~pointcloud_in" to="/$(arg name)/rgb/points"/>
+    <remap from="~pointcloud_out" to="/$(arg name)/flip/rgb/points"/>
+    <remap from="~colorimage_in" to="/$(arg name)/rgb/image_raw"/>
+    <remap from="~colorimage_out" to="/$(arg name)/flip/rgb/image_raw"/>
+  </node>
+
+</launch>
