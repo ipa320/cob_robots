@@ -21,3 +21,7 @@ cartesian_controller:
   pid_trans_y: {p: 5.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_trans_z: {p: 5.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_rot: {p: 5.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+
+  # parameters for damping
+  damping_method: 4 #constant
+  damping_factor: 0
