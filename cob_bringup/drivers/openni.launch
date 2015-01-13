@@ -16,8 +16,7 @@
 		<arg name="rgb_frame_id" value="/$(arg name)_link" />
 		<arg name="depth_frame_id" value="/$(arg name)_link" />
 		<arg name="publish_tf" value="false" />
-		<arg name="depth_registration" value="true"/>
-		<arg name="rgb_camera_info_url" value="file:///$(find cob_calibration_data)/$(arg robot)/calibration/cameras/kinect_rgb.yaml" />
+		<arg name="rgb_camera_info_url" value="file:///$(find cob_calibration_data)/$(arg robot)/calibration/cameras/${arg name}.yaml" />
 	</include>
 
 </launch>

@@ -65,9 +65,10 @@
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="can_module" value="can2" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="torso" />
@@ -110,9 +111,10 @@
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="can_module" value="can1" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="tray" />

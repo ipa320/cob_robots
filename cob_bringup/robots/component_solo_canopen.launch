@@ -3,7 +3,8 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)" />
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="component"/>
+	<arg name="component_name"/>
+	<arg name="can_module"/>
 
 	<!-- start basics -->
 	<include file="$(find cob_bringup)/robots/component_solo_basics.launch" >
@@ -12,16 +13,17 @@
 	</include>
 
 	<!-- start driver -->
-	<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+	<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
-		<arg name="component_name" value="$(arg component)" />
+		<arg name="component_name" value="$(arg component_name)" />
+		<arg name="can_module" value="$(arg can_module)" />
 	</include>
 	
 	<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch">
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
-		<arg name="component_name" value="$(arg component)" />
+		<arg name="component_name" value="$(arg component_name)" />
 	</include>
  
 </launch>

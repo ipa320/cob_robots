@@ -11,6 +11,11 @@ cartesian_controller:
   max_vel_lin: 0.5
   max_vel_rot: 0.5
 
+  # damping parameters
+  damping_method: 0 #manipuability
+  eps: 0.005
+  lambda0: 0.1
+
   # frame_tracker + interactive_marker
   active_frame: arm_left_7_link
   tracking_frame: arm_left_7_target

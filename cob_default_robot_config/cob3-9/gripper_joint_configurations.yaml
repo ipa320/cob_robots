@@ -1,0 +1,8 @@
+joint_names: ["pg70_finger_left_joint"]
+action_name: /gripper/joint_trajectory_controller/follow_joint_trajectory
+service_ns: /gripper/driver
+default_vel: 0.1
+
+home: [[0.02]]
+closed: [[0.0]]
+open: [[0.03]]

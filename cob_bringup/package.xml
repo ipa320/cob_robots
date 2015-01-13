@@ -1,6 +1,6 @@
 <package>
   <name>cob_bringup</name>
-  <version>0.5.3</version>
+  <version>0.6.1</version>
   <description>This package provides launch files for operating Care-O-bot.</description>
 
   <license>LGPL</license>
@@ -56,11 +56,15 @@
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
   <run_depend>cob_default_env_config</run_depend>
-  <run_depend>ipa_canopen_ros</run_depend>
   <run_depend>cob_phidgets</run_depend>
   <run_depend>prace_gripper_driver</run_depend>
   <run_depend>frida_driver</run_depend>
   <run_depend>cob_image_flip</run_depend>
+  <run_depend>cob_control_mode_adapter</run_depend>
+  <run_depend>schunk_sdhx</run_depend>
+  <run_depend>cob_script_server</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>canopen_motor_node</run_depend>
 
   <export>
 
