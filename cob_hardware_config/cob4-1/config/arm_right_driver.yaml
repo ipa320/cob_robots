@@ -1,9 +1,21 @@
-device: /dev/pcan2
-baudrate: 500K
-sync_interval: 10
-chains: ["arm_right_controller"]
-arm_right_controller:
-  joint_names: [arm_right_1_joint, arm_right_2_joint, arm_right_3_joint, arm_right_4_joint, arm_right_5_joint, arm_right_6_joint, arm_right_7_joint]
-  motor_direction: [1,1,1,1,1,1,1]
-  module_ids: [51,52,53,54,55,56,57]
+name: arm_right_controller
 
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "cob4-1/config/Schunk_0_63.dcf"
+
+modules:
+  - name: arm_right_1_joint
+    id: 51
+  - name: arm_right_2_joint
+    id: 52
+  - name: arm_right_3_joint
+    id: 53
+  - name: arm_right_4_joint
+    id: 54
+  - name: arm_right_5_joint
+    id: 55
+  - name: arm_right_6_joint
+    id: 56
+  - name: arm_right_7_joint
+    id: 57

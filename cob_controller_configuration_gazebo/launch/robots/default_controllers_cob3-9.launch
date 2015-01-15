@@ -18,27 +18,27 @@
 	</include>
 
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
-		<arg name="version" value="lwa"/>
 	</include>
 
 	<!-- Gripper -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="gripper"/>
-		<arg name="version" value="pg70"/>
 	</include>
 
 	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="torso"/>
-		<arg name="version" value="cob3_v2"/>
 	</include>
 
 	<!-- Tray -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="tray"/>
-		<arg name="version" value="cob3"/>
 	</include>
 
 	<!-- Tray sensors -->
@@ -121,11 +121,11 @@
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-12)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="torso_controller"/>
-		<param name="topic_name" value="/torso_controller/state"/>
+		<param name="topic_name" value="/torso/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-13)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="tray_controller"/>
-		<param name="topic_name" value="/tray_controller/state"/>
+		<param name="topic_name" value="/tray/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-14)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="head_controller"/>
@@ -133,11 +133,11 @@
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-15)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="arm_controller"/>
-		<param name="topic_name" value="/arm_controller/state"/>
+		<param name="topic_name" value="/arm/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-16)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="gripper_controller"/>
-		<param name="topic_name" value="/gripper_controller/state"/>
+		<param name="topic_name" value="/gripper/joint_states"/>
 	</node>
 
 </launch>

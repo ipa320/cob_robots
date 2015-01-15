@@ -38,10 +38,22 @@
   <xacro:tray name="tray" parent="base_link">
     <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
   </xacro:tray>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>tray</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 
   <xacro:torso name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>torso</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 
   <xacro:schunk_lwa4d name="arm" parent="base_link"
           arm_1_ref="${arm_1_ref}"
@@ -53,6 +65,12 @@
           arm_7_ref="${arm_7_ref}">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:schunk_lwa4d>
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>arm</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
   
   <xacro:head name="head" parent="torso_upper_neck_tilt_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
@@ -63,5 +81,10 @@
           pg70_finger_right_ref="${pg70_finger_right_ref}">
     <origin xyz="${pg70_x} ${pg70_y} ${pg70_z}" rpy="${pg70_roll} ${pg70_pitch} ${pg70_yaw}" />
   </xacro:schunk_pg70>
-
+  <gazebo>
+    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+      <robotNamespace>gripper</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 </robot>

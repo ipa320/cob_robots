@@ -1,3 +1,2 @@
-action_name: /base_controller/follow_joint_trajectory
 service_ns: /base_controller
 

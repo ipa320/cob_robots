@@ -31,14 +31,6 @@ group3:
     [recover,trigger,recover],
     [up,move,up],
     [down,move,down]]
-#group4:
-#  group_name: arm settings
-#  component_name: arm
-#  buttons: [[stop,trigger,stop],
-#    [undefined mode,mode,undefined],
-#    [position mode,mode,position],
-#    [velocity mode,mode,velocity],
-#    [gravcomp mode,mode,gravcomp]]
 group5:
   group_name: arm pos
   component_name: arm
@@ -47,10 +39,7 @@ group5:
     [recover,trigger,recover],
     [home,move,home],
     [folded,move,folded],
-    [pregrasp,move,pregrasp],
-    [overtray,move,overtray],
-    [wave in,move,wavein],
-    [wave out,move,waveout]]
+    [pregrasp,move,pregrasp]]
 group6:
   group_name: arm traj
   component_name: arm
