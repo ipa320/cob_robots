@@ -12,7 +12,7 @@ cartesian_controller:
   max_vel_rot: 0.5
 
   # damping parameters
-  damping_method: 0 #manipuability
+  damping_method: 0
   eps: 0.005
   lambda0: 0.1
 
@@ -22,7 +22,7 @@ cartesian_controller:
   root_frame: odom_combined
   movable_trans: true
   movable_rot: true
-  pid_trans_x: {p: 9.3, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_y: {p: 9.3, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_z: {p: 9.3, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot: {p: 9.3, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
