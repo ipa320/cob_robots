@@ -1,2 +1,2 @@
-dev: /dev/joypad
+dev: /dev/input/js0
 deadzone: 0.12
