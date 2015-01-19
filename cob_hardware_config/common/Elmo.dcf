@@ -2527,6 +2527,7 @@ ObjectType=0x7
 DataType=0x0005
 AccessType=rw
 DefaultValue=1
+ParameterValue=10
 PDOMapping=0
 LowLimit=1
 HighLimit=255
