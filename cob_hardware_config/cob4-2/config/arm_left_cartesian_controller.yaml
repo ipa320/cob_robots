@@ -3,8 +3,8 @@ cartesian_controller:
   update_rate: 50.0
 
   # twist controller parameters
-  base_link: arm_left_base_link
-  tip_link: arm_left_7_link
+  chain_base_link: arm_left_base_link
+  chain_tip_link: arm_left_7_link
   base_compensation: false
   base_active: false
   base_ratio: 0.0
@@ -17,12 +17,9 @@ cartesian_controller:
   lambda0: 0.1
 
   # frame_tracker + interactive_marker
-  active_frame: arm_left_7_link
   tracking_frame: arm_left_7_target
   root_frame: odom_combined
   movable_trans: true
   movable_rot: true
-  pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_rot: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
