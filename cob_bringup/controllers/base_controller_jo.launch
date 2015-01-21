@@ -9,7 +9,10 @@
 
 		<!-- start undercarriage ctrl -->
 		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node" name="undercarriage_ctrl_node" respawn="false" output="screen">
-			<remap from="command" to="command_direct"/>
+			<remap from="command" to="/r1/command"/>
+			<remap from="state" to="/r1/state"/>
+			<remap from="diagnostic" to="/r1/diagnostic"/>
+<!-- 			<remap from="command" to="command_direct"/>-->
 			<param name="boolCtrl" value="1"/>
 		</node>
 

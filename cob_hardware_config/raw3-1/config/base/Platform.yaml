@@ -1,9 +1,10 @@
----
-Config:
 
-  # cpc-pk: This is necessary to have configurations like COB3_5 with less wheels
+Config:
   NumberOfMotors: 8
   NumberOfWheels: 4
+
+Thread:
+  ThrUCarrCycleTimeS: 0.02   #0.0
 
 Geom:
   # Radius of the wheels in [mm]
@@ -12,27 +13,28 @@ Geom:
   # Distance of the wheels steering axis to the wheel center in [mm]
   DistSteerAxisToDriveWheelCenter: 0 #22
 
+  # GEGENUHRZEIGERSINN, MIT XACHSE ERGIBT DIE REIHENFOLGE DER WHEEL BEZEICHUNG
   Wheels:
     0:
       xPos: 368
       yPos: 186
-      WheelSteerDriveCoupling: 0.0
-      WheelNeutralPosition: -180.0
+      SteerDriveCoupling: 0.0
+      NeutralPosition: -180.0
     1:
       xPos: -368
       yPos: 134
-      WheelSteerDriveCoupling: 0.0
-      WheelNeutralPosition: -180.0
+      SteerDriveCoupling: 0.0
+      NeutralPosition: -180.0
     2:
       xPos: -368
       yPos: -186
-      WheelSteerDriveCoupling: 0.0
-      WheelNeutralPosition: 0.0
+      SteerDriveCoupling: 0.0
+      NeutralPosition: 0.0
     3:
       xPos: 368
       yPos: -134
-      WheelSteerDriveCoupling: 0.0
-      WheelNeutralPosition: 0.0
+      SteerDriveCoupling: 0.0
+      NeutralPosition: 0.0
 
 DrivePrms:
   # Maximum Rotational Rate for the Drive Wheels [rad/s]
@@ -40,7 +42,4 @@ DrivePrms:
 
   # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
   MaxSteerRate: 24.4
-
-
-...
 

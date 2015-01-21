@@ -1,4 +1,4 @@
----
+
 SteerCtrl:
 
   # Parameters for tuning PI-Controller
@@ -6,11 +6,11 @@ SteerCtrl:
   Ki: 0.0 #1.15; #0.10;
 
   # Parameters for tuning Impedance-Controller
-  Spring: 15.0 #10.5
-  Damp: 2.75 #2.1
-  VirtMass: "0.1"
+  Spring: 15.0 #10.0
+  Damp: 2.75 #2.5
+  VirtMass: 0.1 #0.1
   DPhiMax: 10.0 #12.0
-  DDPhiMax: 40.0 #75.0 #100.0
+  DDPhiMax: 40.0 #100.0
 
   # determines weight of ICM-motion and Steer-Ctrl-Error for calc of final setpoint values
   # weight of ICM-Motion (influence of inverse kinematics)
@@ -18,4 +18,3 @@ SteerCtrl:
 
   # weight of commands to reduce steady state error (influence of Steer-Ctrlr)
   ErrWeightonSteer: 1.0 #0.2 #0.15
-...
