@@ -55,7 +55,7 @@
     </plugin>
   </gazebo>
 
-  <xacro:schunk_lwa4d name="arm" parent="base_link"
+  <xacro:schunk_lwa4d_without_base name="arm" parent="base_link"
           arm_1_ref="${arm_1_ref}"
           arm_2_ref="${arm_2_ref}"
           arm_3_ref="${arm_3_ref}"
@@ -64,7 +64,7 @@
           arm_6_ref="${arm_6_ref}"
           arm_7_ref="${arm_7_ref}">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-  </xacro:schunk_lwa4d>
+  </xacro:schunk_lwa4d_without_base>
   <gazebo>
     <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
       <robotNamespace>arm</robotNamespace>
