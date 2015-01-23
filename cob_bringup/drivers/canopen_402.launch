@@ -10,8 +10,9 @@
 	<node ns="$(arg component_name)" name="$(arg component_name)_driver" pkg="canopen_motor_node" type="canopen_motor_node" output="screen" clear_params="true">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg can_module).yaml" />
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml" />
-		<remap from="joint_states" to="/joint_states"/>
 	</node>
+	<node ns="$(arg component_name)" name="joint_states_relay" pkg="topic_tools" type="relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
+
 
     <!-- controllers -->
 	<rosparam ns="$(arg component_name)" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
