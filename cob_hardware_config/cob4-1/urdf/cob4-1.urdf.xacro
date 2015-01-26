@@ -65,7 +65,7 @@
     </plugin>
   </gazebo>
   
-  <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" 
+  <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" has_podest="false"
             arm_1_ref="${arm_right_1_ref}"
             arm_2_ref="${arm_right_2_ref}" 
             arm_3_ref="${arm_right_3_ref}" 
@@ -82,7 +82,7 @@
     </plugin>
   </gazebo>
   
-  <xacro:schunk_lwa4p_extended name="arm_left" parent="torso_3_link"
+  <xacro:schunk_lwa4p_extended name="arm_left" parent="torso_3_link" has_podest="false"
             arm_1_ref="${arm_left_1_ref}"
             arm_2_ref="${arm_left_2_ref}"
             arm_3_ref="${arm_left_3_ref}"
