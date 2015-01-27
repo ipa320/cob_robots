@@ -8,13 +8,24 @@
 	<group ns="base_controller">
 
 		<!-- start undercarriage ctrl -->
-		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node" name="undercarriage_ctrl_node" respawn="false" output="screen">
+		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node_old" name="undercarriage_ctrl_node_old" respawn="false" output="screen">
 			<remap from="command" to="/r1/command"/>
 			<remap from="state" to="/r1/state"/>
+<!--			<remap from="state" to="/base_controller/state"/>-->
 			<remap from="diagnostic" to="/r1/diagnostic"/>
 <!-- 			<remap from="command" to="command_direct"/>-->
 			<param name="boolCtrl" value="1"/>
 		</node>
+
+		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node" name="undercarriage_ctrl_node" respawn="false" output="screen">
+			<remap from="command" to="/r1/command"/>
+			<remap from="state" to="/r1/state"/>
+<!--			<remap from="state" to="/base_controller/state"/>-->
+			<remap from="diagnostic" to="/r1/diagnostic"/>
+<!-- 			<remap from="command" to="command_direct"/>-->
+			<param name="boolCtrl" value="1"/>
+		</node>
+
 
 		<!-- start cob_base_velocity_smoother
 		<node pkg="cob_base_velocity_smoother" type="cob_base_velocity_smoother" name="cob_base_velocity_smoother" respawn="false" output="screen">
