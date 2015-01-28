@@ -7,11 +7,8 @@ Panels:
         - /MotionPlanning1
         - /MotionPlanning1/Scene Robot1
         - /MotionPlanning1/Planning Request1
-        - /MotionPlanning1/Planning Metrics1
         - /MotionPlanning1/Planned Path1
-        - /MarkerArray1
         - /MarkerArray1/Namespaces1
-        - /Pose1
       Splitter Ratio: 0.74256
     Tree Height: 156
   - Class: rviz/Help
@@ -44,8 +41,10 @@ Visualization Manager:
       Value: true
     - Class: moveit_rviz_plugin/MotionPlanning
       Enabled: true
+      Move Group Namespace: ""
       MoveIt_Goal_Tolerance: 0
-      MoveIt_Planning_Time: 5
+      MoveIt_Planning_Attempts: 1
+      MoveIt_Planning_Time: 0
       MoveIt_Use_Constraint_Aware_IK: true
       MoveIt_Warehouse_Host: 127.0.0.1
       MoveIt_Warehouse_Port: 33829
@@ -91,6 +90,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           arm_left_base_link:
             Alpha: 1
             Show Axes: false
@@ -130,6 +130,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           arm_right_base_link:
             Alpha: 1
             Show Axes: false
@@ -193,10 +194,12 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           head_2_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           head_3_link:
             Alpha: 1
             Show Axes: false
@@ -206,27 +209,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           head_center_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_focus_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_x_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_y_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_z_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -234,18 +218,22 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           sensorring_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           torso_1_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           torso_2_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           torso_3_link:
             Alpha: 1
             Show Axes: false
@@ -255,6 +243,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           torso_cam3d_down_frame:
             Alpha: 1
             Show Axes: false
@@ -290,12 +279,13 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
         Loop Animation: false
         Robot Alpha: 0.5
         Show Robot Collision: false
         Show Robot Visual: true
         Show Trail: false
-        State Display Time: 0.1 s
+        State Display Time: 0.05 s
         Trajectory Topic: /move_group/display_planned_path
       Planning Metrics:
         Payload: 1
@@ -312,7 +302,7 @@ Visualization Manager:
         Joint Violation Color: 255; 0; 255
         Planning Group: arm_left
         Query Goal State: true
-        Query Start State: false
+        Query Start State: true
         Show Workspace: false
         Start State Alpha: 1
         Start State Color: 0; 255; 0
@@ -367,6 +357,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           arm_left_base_link:
             Alpha: 1
             Show Axes: false
@@ -406,6 +397,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           arm_right_base_link:
             Alpha: 1
             Show Axes: false
@@ -469,10 +461,12 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           head_2_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           head_3_link:
             Alpha: 1
             Show Axes: false
@@ -482,27 +476,8 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           head_center_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_focus_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_x_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_y_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          lookat_z_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -510,18 +485,22 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           sensorring_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           torso_1_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           torso_2_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           torso_3_link:
             Alpha: 1
             Show Axes: false
@@ -531,6 +510,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
           torso_cam3d_down_frame:
             Alpha: 1
             Show Axes: false
@@ -566,9 +546,10 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+            Value: true
         Robot Alpha: 0.5
         Show Robot Collision: false
-        Show Robot Visual: true
+        Show Robot Visual: false
       Value: true
     - Class: rviz/MarkerArray
       Enabled: true
@@ -577,20 +558,6 @@ Visualization Manager:
       Namespaces:
         {}
       Queue Size: 10000
-      Value: true
-    - Alpha: 1
-      Axes Length: 1
-      Axes Radius: 0.1
-      Class: rviz/Pose
-      Color: 255; 25; 0
-      Enabled: true
-      Head Length: 0.3
-      Head Radius: 0.1
-      Name: Pose
-      Shaft Length: 1
-      Shaft Radius: 0.05
-      Shape: Axes
-      Topic: /lookat_target
       Value: true
   Enabled: true
   Global Options:
@@ -608,36 +575,36 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 7.82587
+      Distance: 4.68044
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.435789
-        Y: -0.0338127
-        Z: 0
+        X: -0.217841
+        Y: 0.0194826
+        Z: -1.76654e-07
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: -0.00535698
+      Pitch: 0.264643
       Target Frame: base_link
       Value: XYOrbit (rviz)
-      Yaw: 6.10626
+      Yaw: 0.263076
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 680
+  Height: 735
   Help:
     collapsed: false
   Hide Left Dock: false
   Hide Right Dock: false
   Motion Planning:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002a200000262fc0200000005fb000000100044006900730070006c0061007900730100000028000000dd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067010000010b0000017f0000017400ffffff0000031d0000026200000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002b100000299fc0200000005fb000000100044006900730070006c0061007900730100000028000000dd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067010000010b000001b6000001ab00ffffff0000030e0000029900000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 1477
   X: 55
-  Y: 184
+  Y: 98
