@@ -11,6 +11,10 @@ cartesian_controller:
   max_vel_lin: 0.5
   max_vel_rot: 0.5
 
+  # damping parameters
+  damping_method: 4 #constant
+  damping_factor: 0
+
   # frame_tracker + interactive_marker
   active_frame: torso_center_link
   tracking_frame: torso_center_target
