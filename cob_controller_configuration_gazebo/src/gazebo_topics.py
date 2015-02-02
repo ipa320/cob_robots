@@ -41,5 +41,9 @@ if __name__ == "__main__":
 		gt.t2_usage_pub.publish(msg)
 		gt.t3_usage_pub.publish(msg)
 		gt.wifi_status_pub.publish(msg)
-		rate.sleep()
+		try:
+			rate.sleep()
+		except rospy.ROSInterruptException as e:
+			#print "ROSInterruptException"
+			pass
 

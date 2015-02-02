@@ -38,22 +38,10 @@
   <xacro:torso name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
-  <gazebo>
-    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
-      <robotNamespace>torso</robotNamespace>
-      <filterJointsParam>joint_names</filterJointsParam>
-    </plugin>
-  </gazebo>
   
   <xacro:head name="head" parent="torso_3_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
-  <gazebo>
-    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
-      <robotNamespace>head</robotNamespace>
-      <filterJointsParam>joint_names</filterJointsParam>
-    </plugin>
-  </gazebo>
 
   <xacro:sensorring name="sensorring" parent="head_3_link">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
@@ -65,7 +53,9 @@
     </plugin>
   </gazebo>
   
-  <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" 
+
+
+  <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" has_podest="false"
             arm_1_ref="${arm_right_1_ref}"
             arm_2_ref="${arm_right_2_ref}" 
             arm_3_ref="${arm_right_3_ref}" 
@@ -81,8 +71,9 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
-  <xacro:schunk_lwa4p_extended name="arm_left" parent="torso_3_link"
+
+    
+  <xacro:schunk_lwa4p_extended name="arm_left" parent="torso_3_link" has_podest="false"
             arm_1_ref="${arm_left_1_ref}"
             arm_2_ref="${arm_left_2_ref}"
             arm_3_ref="${arm_left_3_ref}"
@@ -99,14 +90,6 @@
     </plugin>
   </gazebo>
 
-  <xacro:lookat name="torso_lookat" parent="torso_center_link" lower="0.0" upper="5.0">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <axis xyz="1 0 0"/>
-  </xacro:lookat>
-  <xacro:lookat name="head_lookat" parent="head_center_link" lower="0.0" upper="5.0">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <axis xyz="1 0 0"/>
-  </xacro:lookat>
   <!-- virtual component -->
 
 

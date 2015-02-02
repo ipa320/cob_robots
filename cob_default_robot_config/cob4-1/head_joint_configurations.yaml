@@ -1,4 +1,7 @@
 joint_names: ["head_1_joint","head_2_joint","head_3_joint"]
+action_name: /head/joint_trajectory_controller/follow_joint_trajectory
+service_ns: /head/driver
+default_vel: 0.4
 
 home: [[0.0,0.0,0.0]]
 

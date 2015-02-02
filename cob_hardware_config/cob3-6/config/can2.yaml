@@ -1,0 +1,5 @@
+bus:
+  device: can2
+sync:
+  interval_ms: 10
+  overflow: 0
