@@ -1,0 +1,20 @@
+# common params
+run_factor: 2.0
+
+# buttons
+deadman_button: 5
+run_button: 7
+base_safety_button: 4
+
+# axes
+axis_vx: 1
+axis_vy: 0
+axis_vth: 2
+
+# component configuration
+modules: {
+  base: {
+    max_velocity: [0.3, 0.2, 0.3],
+    max_acceleration: [0.5, 0.5, 0.7]
+  }
+}
