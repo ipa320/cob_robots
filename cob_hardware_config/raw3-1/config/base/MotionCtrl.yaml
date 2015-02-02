@@ -1,9 +1,6 @@
 
+# TODO: Could be moved to plt.yaml - should be revolved with mig
 SteerCtrl:
-
-  # Parameters for tuning PI-Controller
-  Kp: 10.5 #1.75; #5.0;
-  Ki: 0.0 #1.15; #0.10;
 
   # Parameters for tuning Impedance-Controller
   Spring: 15.0 #10.0
@@ -11,10 +8,3 @@ SteerCtrl:
   VirtMass: 0.1 #0.1
   DPhiMax: 10.0 #12.0
   DDPhiMax: 40.0 #100.0
-
-  # determines weight of ICM-motion and Steer-Ctrl-Error for calc of final setpoint values
-  # weight of ICM-Motion (influence of inverse kinematics)
-  ICMWeightonSteer: 1.0 #0.8 #0.85
-
-  # weight of commands to reduce steady state error (influence of Steer-Ctrlr)
-  ErrWeightonSteer: 1.0 #0.2 #0.15

@@ -1,41 +1,69 @@
 
+# platform specific configuration params
 Config:
   NumberOfMotors: 8
   NumberOfWheels: 4
 
+# Multi threading params
 Thread:
+  # used as command rate (dCmdRateS)
   ThrUCarrCycleTimeS: 0.02   #0.0
 
+# platform specific geometrics
 Geom:
+  # TODO: Could be added per wheel - should be revolved with mig
   # Radius of the wheels in [mm]
   RadiusWheeL: 80
 
+  # TODO: Could be added per wheel - should be revolved with mig
   # Distance of the wheels steering axis to the wheel center in [mm]
   DistSteerAxisToDriveWheelCenter: 0 #22
 
-  # GEGENUHRZEIGERSINN, MIT XACHSE ERGIBT DIE REIHENFOLGE DER WHEEL BEZEICHUNG
+  # wheel configuration
+  # labeling: start front left, clockwise with x-axis
   Wheels:
     0:
       xPos: 368
       yPos: 186
       SteerDriveCoupling: 0.0
       NeutralPosition: -180.0
+
+      # Maximum Rotational Rate for the Drive Wheels [rad/s]
+      MaxDriveRate: 12.267
+      # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
+      MaxSteerRate: 24.4
     1:
       xPos: -368
       yPos: 134
       SteerDriveCoupling: 0.0
       NeutralPosition: -180.0
+
+      # Maximum Rotational Rate for the Drive Wheels [rad/s]
+      MaxDriveRate: 12.267
+      # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
+      MaxSteerRate: 24.4
     2:
       xPos: -368
       yPos: -186
       SteerDriveCoupling: 0.0
       NeutralPosition: 0.0
+
+      # Maximum Rotational Rate for the Drive Wheels [rad/s]
+      MaxDriveRate: 12.267
+      # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
+      MaxSteerRate: 24.4
     3:
       xPos: 368
       yPos: -134
       SteerDriveCoupling: 0.0
       NeutralPosition: 0.0
 
+      # Maximum Rotational Rate for the Drive Wheels [rad/s]
+      MaxDriveRate: 12.267
+      # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
+      MaxSteerRate: 24.4
+
+# TODO: Could be removed - should be revolved with mig
 DrivePrms:
   # Maximum Rotational Rate for the Drive Wheels [rad/s]
   MaxDriveRate: 12.267
