@@ -30,7 +30,7 @@
 	</node>
 	
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob4_new.launch">
+	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob4.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 		
