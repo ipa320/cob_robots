@@ -82,30 +82,30 @@ joint_group_velocity_controller:
      - fr_caster_r_wheel_joint
      - b_caster_rotation_joint
      - b_caster_r_wheel_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 
 fl_caster_rotation_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: fl_caster_rotation_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 fl_caster_r_wheel_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: fl_caster_r_wheel_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 fr_caster_rotation_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: fr_caster_rotation_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 fr_caster_r_wheel_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: fr_caster_r_wheel_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 b_caster_rotation_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: b_caster_rotation_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 b_caster_r_wheel_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: b_caster_r_wheel_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 
