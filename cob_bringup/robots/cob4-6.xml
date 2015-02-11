@@ -46,6 +46,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="base" />
 			<arg name="can_module" value="can1" />
+			<arg name="mode_adapter" value="false" />
 		</include>
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
