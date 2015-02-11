@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" default="cob4-2"/>
+	<arg name="robot" default="cob4-6"/>
 	
 	<!-- robot state publisher -->
 	<node ns="base" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
