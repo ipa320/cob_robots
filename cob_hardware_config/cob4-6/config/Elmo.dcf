@@ -2353,6 +2353,7 @@ AccessType=rw
 DefaultValue=0
 PDOMapping=0
 LowLimit=0
+ParameterValue=10000
 HighLimit=0xFFFFFFFF
 
 [6099sub2]
@@ -2363,6 +2364,7 @@ AccessType=rw
 DefaultValue=0
 PDOMapping=0
 LowLimit=0
+ParameterValue=1000
 HighLimit=0xFFFFFFFF
 
 [609A]
