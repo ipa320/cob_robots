@@ -55,7 +55,6 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
 
 
   <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" has_podest="false"
