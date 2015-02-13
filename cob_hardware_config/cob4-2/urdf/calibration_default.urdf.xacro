@@ -77,7 +77,7 @@
 	<property name="def_gripper_right_z" value="0.0748"/>
 	<property name="def_gripper_right_roll" value="0.0"/>
 	<property name="def_gripper_right_pitch" value="0.0"/>
-	<property name="def_gripper_right_yaw" value="0.0"/>
+	<property name="def_gripper_right_yaw" value="3.14159"/>
 	
 	<!-- gripper left mount positions | relative to arm_left_7_link -->
 	<property name="def_gripper_left_x" value="0.0"/>
@@ -85,7 +85,7 @@
 	<property name="def_gripper_left_z" value="0.0748"/>
 	<property name="def_gripper_left_roll" value="0.0"/>
 	<property name="def_gripper_left_pitch" value="0.0"/>
-	<property name="def_gripper_left_yaw" value="0.0"/>
+	<property name="def_gripper_left_yaw" value="3.14159"/>
 
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
