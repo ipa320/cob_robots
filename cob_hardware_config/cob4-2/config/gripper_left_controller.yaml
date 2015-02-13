@@ -43,20 +43,3 @@ gripper_left_finger_2_joint_position_controller:
   joint: gripper_left_finger_2_joint
   required_drive_mode: 1
 
-
-## velocity controller
-joint_group_velocity_controller:
-  type: velocity_controllers/JointGroupVelocityController
-  joints:
-     - gripper_left_finger_1_joint
-     - gripper_left_finger_2_joint
-  required_drive_mode: 2
-
-gripper_left_finger_1_joint_velocity_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: gripper_left_finger_1_joint
-  required_drive_mode: 2
-gripper_left_finger_2_joint_velocity_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: gripper_left_finger_2_joint
-  required_drive_mode: 2
