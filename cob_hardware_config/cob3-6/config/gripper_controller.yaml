@@ -1,5 +1,6 @@
 ## joint_names
-joint_names: ['sdh_knuckle_joint', 'sdh_thumb_2_joint', 'sdh_thumb_3_joint', 'sdh_finger_12_joint', 'sdh_finger_13_joint', 'sdh_finger_22_joint', 'sdh_finger_23_joint']
+joint_names: ['sdh_finger_21_joint', 'sdh_knuckle_joint', 'sdh_thumb_2_joint', 'sdh_thumb_3_joint', 'sdh_finger_12_joint', 'sdh_finger_13_joint', 'sdh_finger_22_joint', 'sdh_finger_23_joint']
+#'sdh_finger_21_joint' is mimic joint of 'sdh_knuckle_joint'
 
 ## joint_state_controller
 joint_state_controller:
