@@ -66,7 +66,7 @@ lookat:
     - PRMstarkConfigDefault
   projection_evaluator: joints(torso_lower_neck_tilt_joint,torso_pan_joint)
   longest_valid_segment_fraction: 0.05
-sdh:
+gripper:
   planner_configs:
     - SBLkConfigDefault
     - ESTkConfigDefault

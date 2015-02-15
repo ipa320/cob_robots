@@ -1,5 +1,5 @@
 controller_list:
-  - name: arm_controller
+  - name: arm/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
@@ -10,7 +10,7 @@ controller_list:
       - arm_5_joint
       - arm_6_joint
       - arm_7_joint
-  - name: gripper_controller
+  - name: gripper/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
@@ -21,7 +21,7 @@ controller_list:
       - sdh_finger_13_joint
       - sdh_finger_22_joint
       - sdh_finger_23_joint
-  - name: torso_controller
+  - name: torso/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
