@@ -21,3 +21,15 @@ controller_list:
       - arm_right_5_joint
       - arm_right_6_joint
       - arm_right_7_joint
+  - name: gripper_left/joint_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - gripper_left_finger_1_joint
+      - gripper_left_finger_2_joint
+  - name: gripper_right/joint_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - gripper_right_finger_1_joint
+      - gripper_right_finger_2_joint
