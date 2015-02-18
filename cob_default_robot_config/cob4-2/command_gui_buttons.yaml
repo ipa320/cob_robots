@@ -10,44 +10,12 @@ group1:
   buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
-group2:
-  group_name: torso
-  component_name: torso
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
-    [home,move,home],
-    [front,move,front],
-    [front_down,move,front_down],
-    [back,move,back],
-    [back_down,move,back_down],
-    [left,move,left],
-    [left_down,move,left_down],
-    [right,move,right],
-    [right_down,move,right_down],
-    [nod,move,nod],
-    [shake,move,shake]]
-group3:
-  group_name: head
-  component_name: head
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
-    [home,move,home],
-    [front,move,front],
-    [front_down,move,front_down],
-    [back,move,back],
-    [back_down,move,back_down],
-    [left,move,left],
-    [right,move,right],
-    [nod,move,nod],
-    [shake,move,shake]]
 group4:
   group_name: sensorring
   component_name: sensorring
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [front,move,front],
     [back,move,back],
     [left,move,left],
@@ -55,22 +23,32 @@ group4:
 group5:
   group_name: arm_left
   component_name: arm_left
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [home,move,home],
     [folded,move,folded],
-    [pregrasp,move,pregrasp]]
+    [side, move, side]]
 group6:
   group_name: arm_right
   component_name: arm_right
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [home,move,home],
     [folded,move,folded],
-    [pregrasp,move,pregrasp]]
+    [side, move, side]]
 group7:
-  group_name: lookat
-  component_name: lookat
-  buttons: [[home,move,home]]
+  group_name: gripper_left
+  component_name: gripper_left
+  buttons: [[recover,recover],
+    [home,move,home],
+    [open,move,open],
+    [close, move, close]]
+group8:
+  group_name: gripper_right
+  component_name: gripper_right
+  buttons: [[recover,recover],
+    [home,move,home],
+    [open,move,open],
+    [close, move, close]]

@@ -8,5 +8,6 @@
 	<rosparam command="load" ns="/script_server/lookat" file="$(find cob_default_robot_config)/raw3-3/lookat_joint_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/gripper_left" file="$(find cob_default_robot_config)/raw3-3/gripper_left_joint_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/gripper_right" file="$(find cob_default_robot_config)/raw3-3/gripper_right_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/light" file="$(find cob_default_robot_config)/raw3-1/light_configurations.yaml"/>
 
 </launch>

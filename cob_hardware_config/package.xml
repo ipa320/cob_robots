@@ -1,6 +1,6 @@
 <package>
   <name>cob_hardware_config</name>
-  <version>0.5.3</version>
+  <version>0.6.1</version>
   <description>This package contains configuration for each robot instance (e.g. cob3-1, cob3-2,...). There is a directory for each robot with configuration about urdf and hardware/device configurations.</description>
 
   <license>LGPL</license>
@@ -15,12 +15,17 @@
 
   <build_depend>roslaunch</build_depend>
   <build_depend>rostest</build_depend>
-  
+
   <run_depend>cob_calibration_data</run_depend>
   <run_depend>cob_description</run_depend>
   <run_depend>raw_description</run_depend>
   <run_depend>schunk_description</run_depend>
   <run_depend>ur_description</run_depend>
+  <run_depend>prace_common</run_depend>
+  <run_depend>joint_trajectory_controller</run_depend>
+  <run_depend>position_controllers</run_depend>
+  <run_depend>velocity_controllers</run_depend>
+  <run_depend>effort_controllers</run_depend>
 
   <export>
 

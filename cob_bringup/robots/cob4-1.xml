@@ -62,9 +62,10 @@
 		<machine name="cob4-1-t1" address="$(arg cob4-1-t1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
+			<arg name="can_module" value="can1" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -76,9 +77,10 @@
 			<arg name="component_name" value="torso" />
 		</include>
 -->
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="head_sensorring" />
+			<arg name="can_module" value="can0" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -88,17 +90,19 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="sensorring" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
+			<arg name="can_module" value="can3" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/canopen_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
+			<arg name="can_module" value="can2" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -117,7 +121,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="device_id" value="#1"/>
-			<arg name="machine" value="cob4-1-t3"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
@@ -130,7 +133,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="device_id" value="#2"/>
-			<arg name="machine" value="cob4-1-t3"/>
 		</include>
 		
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">

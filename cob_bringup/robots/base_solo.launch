@@ -3,6 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)" />
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)" />
+	<arg name="teleop_version" default="v1" />
 
 	<!-- upload robot_description -->
 	<include file="$(arg pkg_hardware_config)/common/upload_robot.launch" >
@@ -33,6 +34,7 @@
 	<!-- start teleop -->
 	<include file="$(find cob_bringup)/tools/teleop.launch" >
 		<arg name="robot" value="$(arg robot)" />
+		<arg name="version" value="$(arg teleop_version)"/>
 	</include>
 
 	<!-- start safe base controller -->

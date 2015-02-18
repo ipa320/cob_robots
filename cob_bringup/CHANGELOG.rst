@@ -2,6 +2,160 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.1 (2014-12-15)
+------------------
+* merge
+* rename canopen launch files and fix roslaunch test errors
+* delete cob3-3
+* cob3-9
+* Update cob3-9.xml
+* setup cob3-9
+* comment mimic
+* cob3-9
+* add recover for grippers
+* add light and sdhx to cob4-2
+* add namespace for light launch file. needed for cob4-2
+* default config for gripper_left
+* config for gripper right
+* add cob4 to tests
+* Delete phidgets_monitor.launch
+* Update base_solo.launch
+* Update base_solo.launch
+* Update teleop_v2.xml
+* Update teleop_v1.xml
+* Merge pull request `#23 <https://github.com/ipa320/cob_robots/issues/23>`_ from ipa-cob4-2/indigo_dev
+  actual version cob4-2
+* actual version cob4-2
+* test raw3-3
+* Update env.sh
+* merge
+* add robot arg to imageflip
+* use teleop v1 and add light to bringup
+* remove launch prefix
+* Merge pull request `#3 <https://github.com/ipa320/cob_robots/issues/3>`_ from ipa-fmw/indigo_new_structure
+  Indigo new structure
+* update cob4-2 launch file
+* updates on cob4-2
+* add lookat components to cob4-2
+* added temporary topic_relays for base - v1.5
+* indigo_new_structure
+* indigo_new_structure
+* launch and yaml file base according to new structure
+* adapt teleop to v2
+* delete desire
+* delete cob3-8
+* delete cob3-7
+* delete cob3-5
+* delete cob3-4
+* delete cob3-2
+* delete cob3-1
+* switch parameter namespaces due to BRIDE private nodehandle
+* new ros_canopen driver version, adapted bringup configuration
+* add parameter for max_X_velocity to launch file
+* new parameter files
+* Merge pull request `#226 <https://github.com/ipa320/cob_robots/issues/226>`_ from ipa-nhg/indigo_test
+  bringup tests
+* bringup tests
+* moved msgs
+* set locahost as default parameter
+* set locahost as default parameter
+* add monitor scripts to replace pr2_computer_monitor
+* Contributors: Florian Weisshardt, Nadia Hammoudeh García, ipa-cob3-9, ipa-cob4-2, ipa-fmw, ipa-fxm, ipa-nhg
+
+0.6.0 (2014-09-18)
+------------------
+* moved frame_tracker to separate package
+* moved frame_tracker to separate package
+* Contributors: ipa-fxm
+
+0.5.4 (2014-08-28)
+------------------
+* remove obsolete cob_hwboard
+* remove obsolete dependency
+* changes due to introduction of cob_msgs
+* merge with hydro_dev
+* separated ports for tray and torso
+* Last update cob3-8
+* setup cob3-8
+* cob3-8 setup
+* do not use twist_controller on real hardware yet
+* added cob_image_flip dependency
+* renamed pg70
+* setup cob3-8
+* tabified file
+* start lightcontroller on raw3-3 bringup
+* use twist controller for cob4-1 torso
+* add twist controller launch file
+* moved lookat_controller yaml and launch files
+* cleaning up debs
+* separate controller and driver yaml file
+* cob3-8 with new structure
+* merge conflict
+* update cob4.xml
+* moved base_controller to controllers folder
+* Merge branch 'hydro_dev' of https://github.com/ipa320/cob_robots into feature/raw3-4-configs
+* Added cob3-8
+* cleaning up debs
+* added missing launch file argument for image_flip
+* add lookat launch file
+* Merge pull request `#188 <https://github.com/ipa320/cob_robots/issues/188>`_ from ipa-cob4-1/hydro_dev
+  Adapt cob_image_flip and new tag for openni2 driver
+* another retab
+* Retabbing raw3-4.xml
+* Retabbing base.launch
+* multiple config changes for raw3-4
+* adapted image_flip
+* adapted image_flip
+* needed machine tag for openni2
+* component_solo for canopen components
+* component_solo for canopen components
+* bring latest raw3-3 changes to new structure
+* Added cob_image_flip driver
+* start grippers in simulation
+* Merge branch 'enhancement/separation_driver_control' into merge-aub
+* added torso powerball to robot config
+* use correct executable
+* merge with ipa320
+* some renaming as discussed
+* separation of driver and controller
+* merge with hydro_dev
+* add cob4-2
+* added voltage ctrl yaml for raw3-3
+* beautifying
+* added arguments to softkinetic launch file
+* remove deprecated launch files in cob_driver and add nodes to cob_robots
+* Renamed positions
+* changes due to renaming from sdh to gripper and generic gazebo_services
+* New maintainer
+* added paths to field configs
+* tab vs spaces
+* tabs vs. spaces
+* Merge remote-tracking branch 'origin/groovy_dev' into merge_groovy-dev
+  Conflicts:
+  CMakeLists.txt
+  cob_bringup/robots/cob4-1.xml
+  cob_controller_configuration_gazebo/controller/torso_controller_cob4.yaml
+  cob_hardware_config/cob4-1/urdf/calibration_default.urdf.xacro
+  cob_hardware_config/common/cob4.rviz
+  cob_hardware_config/raw3-3/urdf/raw3-3.urdf.xacro
+* merged groovy changes into hydro
+* Torso  and head working
+* Torso working
+* integrated advanced led feedback into cob_monitor, old behaviour still working
+* remap topic odometry
+* flexisofft tested on robot
+* Flexisoft launch and config files
+* add roslaunch and urdf tests
+* merge cob4
+* tested on cob3-3
+* setup cob4-1 xml
+* Defined component_name as generic name (arm)
+* merge
+* merge
+* default positions for cob4-1
+* specific rviz configuration pro robot
+* Contributors: Alexander Bubeck, Benjamin Maidel, Felix Messmer, Florian Weisshardt, Mathias Lüdtke, Nadia Hammoudeh García, abubeck, cob4-1, ipa-bnm, ipa-cob3-3, ipa-cob3-8, ipa-cob4-1, ipa-fmw, ipa-fxm, ipa-nhg, ipa-raw3-3, raw3-1 administrator
+
 0.5.3 (2014-03-28)
 ------------------
 * add dependency to ipa_canopen_ros

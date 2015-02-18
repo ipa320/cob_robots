@@ -11,6 +11,8 @@
 		<param name="IniDirectory" value="$(arg pkg_hardware_config)/$(arg robot)/config/base/"/>
 		<param name="timeout" value="0.2"/>
 		<param name="PublishEffort" value="false"/>
+		<param name="max_trans_velocity" value="1.1"/>	<!-- default: 1.1 m/s -->
+		<param name="max_rot_velocity" value="1.8"/>	<!-- default: 1.8 rad/s -->
 
 		<!-- start underlying components - base_drive_chain -->
 		<node if="$(arg sim)" pkg="cob_base_drive_chain" type="cob_base_drive_chain_sim_node" name="base_drive_chain_node" respawn="false" output="screen"/>

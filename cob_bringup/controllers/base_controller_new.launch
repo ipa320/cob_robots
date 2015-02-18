@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="sim" default="false" />
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<group ns="base_controller">
+
+		<!-- start undercarriage ctrl -->
+		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node" name="undercarriage_ctrl_node" respawn="false" output="screen">
+			<remap from="command" to="command_direct"/>
+			<param name="boolCtrl" value="1"/>
+		</node>
+
+		<!-- start cob_base_velocity_smoother-->
+		<node pkg="cob_base_velocity_smoother" type="cob_base_velocity_smoother" name="cob_base_velocity_smoother" respawn="false" output="screen">
+			<remap from="input" to="command"/>
+			<remap from="output" to="command_direct"/>
+			<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/base_velocity_smoother_params.yaml" command="load"/>
+		</node>
+
+	</group>
+
+</launch>

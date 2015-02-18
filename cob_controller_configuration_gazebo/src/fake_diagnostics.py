@@ -57,4 +57,9 @@ if __name__ == "__main__":
 			diagnostics.header.stamp = rospy.Time.now()
 			diagnostics.status.append(status)
 		pub_diagnostics.publish(diagnostics)
-		rate.sleep()
+		try:
+			rate.sleep()
+		except rospy.ROSInterruptException as e:
+			#print "ROSInterruptException"
+			pass
+			

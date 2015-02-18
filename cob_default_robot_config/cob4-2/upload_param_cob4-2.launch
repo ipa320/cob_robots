@@ -2,10 +2,11 @@
 <launch>
 
 	<!-- send ROBOT parameters to parameter server -->
-	<rosparam command="load" ns="/script_server/torso" file="$(find cob_default_robot_config)/cob4-2/torso_joint_configurations.yaml"/>
-	<rosparam command="load" ns="/script_server/head" file="$(find cob_default_robot_config)/cob4-2/head_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/base" file="$(find cob_default_robot_config)/cob4-2/base_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/sensorring" file="$(find cob_default_robot_config)/cob4-2/sensorring_joint_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/arm_left" file="$(find cob_default_robot_config)/cob4-2/arm_left_joint_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/arm_right" file="$(find cob_default_robot_config)/cob4-2/arm_right_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/gripper_left" file="$(find cob_default_robot_config)/cob4-2/gripper_left_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/gripper_right" file="$(find cob_default_robot_config)/cob4-2/gripper_right_joint_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/lookat" file="$(find cob_default_robot_config)/cob4-2/lookat_joint_configurations.yaml"/>
 </launch>
