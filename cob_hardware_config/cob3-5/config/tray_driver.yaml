@@ -1,9 +1,0 @@
-device: /dev/pcan32
-baudrate: 500K
-sync_interval: 10
-chains: ["tray_controller"]
-torso_controller:
-  joint_names: [tray_1_joint, tray_2_joint, tray_3_joint]
-  motor_direction: [1,1,1]
-  module_ids: [10,7,8]
-

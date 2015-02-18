@@ -1,4 +1,6 @@
 joint_names: ["arm_1_joint","arm_2_joint","arm_3_joint","arm_4_joint","arm_5_joint","arm_6_joint","arm_7_joint"]
+action_name: /arm_controller/follow_joint_trajectory
+service_ns: /arm_controller
 
 # back side positions
 home: [[0.0,0.0,0.0,0.0,0.0,0.0,0.0]]

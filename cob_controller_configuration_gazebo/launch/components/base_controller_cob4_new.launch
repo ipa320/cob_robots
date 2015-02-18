@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot" />
+  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+  <!-- to be implemented using new ros_control plugins for base -->
+  
+</launch>

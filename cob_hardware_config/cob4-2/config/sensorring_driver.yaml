@@ -1,0 +1,10 @@
+name: sensorring_controller
+
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "cob4-2/config/Elmo.dcf"
+
+modules:
+  - name: sensorring_joint
+    id: 73
+

@@ -1,8 +1,21 @@
-device: /dev/pcan3
-baudrate: 500K
-sync_interval: 10
-chains: ["arm_left_controller"]
-arm_left_controller:
-  joint_names: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
-  motor_direction: [1,1,1,1,1,1,1]
-  module_ids: [61,62,63,64,65,66,67]
+name: arm_left_controller
+
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "cob4-2/config/Schunk_0_63.dcf"
+
+modules:
+  - name: arm_left_1_joint
+    id: 61
+  - name: arm_left_2_joint
+    id: 62
+  - name: arm_left_3_joint
+    id: 63
+  - name: arm_left_4_joint
+    id: 64
+  - name: arm_left_5_joint
+    id: 65
+  - name: arm_left_6_joint
+    id: 66
+  - name: arm_left_7_joint
+    id: 67

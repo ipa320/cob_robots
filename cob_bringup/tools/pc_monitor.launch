@@ -5,19 +5,19 @@
 	<arg name="pc" default="localhost"/>
 
 	<!-- Monitor CPU (temp, usage) -->
-	<node pkg="pr2_computer_monitor" name="$(anon realtime_cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg pc)" output="screen" >
+	<node pkg="cob_monitoring" name="$(anon realtime_cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg pc)" output="screen" >
 		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/pc_monitor_$(arg pc).yaml"/>
 	</node>
 
 	<!-- Monitor hard disk (temp, usage) -->
-	<!--node pkg="pr2_computer_monitor" name="$(anon realtime_hd_monitor)" type="hd_monitor.py" args="-/-diag-hostname=$(arg pc)" output="screen" >
+	<!--node pkg="cob_monitoring" name="$(anon realtime_hd_monitor)" type="hd_monitor.py" args="-/-diag-hostname=$(arg pc)" output="screen" >
 		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/pc_monitor_$(arg pc).yaml"/>
 	</node-->
 
 	<!-- Monitor ntp -->
-	<!--node pkg="pr2_computer_monitor" name="$(anon realtime_ntp_monitor)" type="ntp_monitor.py" args="$(arg robot)-pc1 -/-diag-hostname=$(arg pc)" output="screen" >
+	<node pkg="cob_monitoring" name="$(anon realtime_ntp_monitor)" type="ntp_monitor.py" args="$(arg pc) --diag-hostname=$(arg pc)" output="screen" >
 		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/pc_monitor_$(arg pc).yaml"/>
-	</node-->
+	</node>
 
 
 </launch>

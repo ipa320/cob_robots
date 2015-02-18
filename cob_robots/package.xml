@@ -1,6 +1,6 @@
 <package>
   <name>cob_robots</name>
-  <version>0.5.3</version>
+  <version>0.6.1</version>
   <description>This stack holds packages for hardware configuration as well as launch files for starting up the basic layer for operating Care-O-bot.</description>
 
   <license>LGPL</license>
@@ -17,7 +17,6 @@
   <run_depend>cob_controller_configuration_gazebo</run_depend>
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
-  <run_depend>cob_monitoring</run_depend>
   <run_depend>cob_bringup</run_depend>
 
 

@@ -1,10 +1,50 @@
 #all
 joint_names: [sensorring_joint]
 
-# trajectory controller parameters
-ptp_vel: 1.0 # rad/sec
-ptp_acc: 0.2 # rad/sec^2
-max_error: 0.25 # rad
-overlap_time: 0.4
-frequency: 68
-operation_mode: velocity
+## control_mode_adapter
+max_command_silence: 0.5
+
+## joint_state_controller
+joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+## joint trajectory controller
+joint_trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - sensorring_joint
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      sensorring_joint: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+  required_drive_mode: 7
+
+
+## position controller
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+     - sensorring_joint
+  required_drive_mode: 1
+     
+sensorring_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: sensorring_joint
+  required_drive_mode: 1
+
+
+## velocity controller
+joint_group_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+     - sensorring_joint
+  required_drive_mode: 2
+
+sensorring_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: sensorring_joint
+  required_drive_mode: 2

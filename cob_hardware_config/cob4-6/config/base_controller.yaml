@@ -1,0 +1,36 @@
+## joint_names
+joint_names: [fl_caster_rotation_joint, fl_caster_r_wheel_joint, br_caster_rotation_joint, br_caster_r_wheel_joint, bl_caster_rotation_joint, bl_caster_r_wheel_joint]
+
+## control_mode_adapter
+max_command_silence: 0.5
+
+## joint_state_controller
+joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+fl_caster_rotation_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: fl_caster_rotation_joint
+  required_drive_mode: 2
+fl_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: fl_caster_r_wheel_joint
+  required_drive_mode: 2
+br_caster_rotation_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: br_caster_rotation_joint
+  required_drive_mode: 2
+br_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: br_caster_r_wheel_joint
+  required_drive_mode: 2
+bl_caster_rotation_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: bl_caster_rotation_joint
+  required_drive_mode: 2
+bl_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: bl_caster_r_wheel_joint
+  required_drive_mode: 2
+

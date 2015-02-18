@@ -1,0 +1,10 @@
+name: tray_controller
+
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "cob3-9/config/Schunk_0_63.dcf"
+
+modules:
+  - name: tray_joint
+    id: 10
+

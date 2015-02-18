@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name"/>
+
+	<node name="$(arg component_name)" pkg="schunk_sdhx" type="sdhx_node.py" respawn="true" output="screen" >
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name).yaml"/>
+	</node>
+
+</launch>
