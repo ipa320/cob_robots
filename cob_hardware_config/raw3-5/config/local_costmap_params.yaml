@@ -10,15 +10,15 @@ static_map: false
 rolling_window: true
 width: 5.0
 height: 5.0
-resolution: 0.07
+resolution: 0.02
 
 # footprint and range 
 obstacle_range: 3.0 #[m]
 max_obstacle_height: 2.0 #[m]
 raytrace_range: 3.0 #3.0 #[m]
 footprint: [[0.39,0.3],[-0.39,0.3],[-0.39,-0.3],[0.39,-0.3]] #[m]
-footprint_padding: 0.02 #[m]
-inflation_radius: 0.55 #[m]
+footprint_padding: 0.01 #[m]
+inflation_radius: 0.12 #[m] #default: 0.55
 
 # sensor setup
 observation_sources: laser_scan_sensor_front laser_scan_sensor_rear 
