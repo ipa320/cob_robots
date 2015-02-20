@@ -20,7 +20,14 @@
 		<param name="publish_frequency" type="double" value="50.0" />
 		<param name="tf_prefix" type="string" value="" />
 	</node>
-	
+	<node ns="gripper_left" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
+	<node ns="gripper_right" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="" />
+	</node>
 	<!-- Base -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob4_new.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -57,6 +64,8 @@
 		<arg name="component_name" value="arm"/>
 		<arg name="side" value="_right"/>
 	</include>
+	
+	<!-- Grippers -->
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="gripper"/>
