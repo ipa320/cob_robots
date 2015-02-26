@@ -22,52 +22,52 @@ Geom:
   # wheel configuration
   # labeling: start front left, clockwise with x-axis
   Wheels:
-    0:
-      xPos: 368
-      yPos: 186
-      SteerDriveCoupling: 0.0
-      NeutralPosition: -180.0
+      - xPos: 368.0
+        yPos: 186.0
+        SteerDriveCoupling: 0.0
+        NeutralPosition: -180.0
 
-      # Maximum Rotational Rate for the Drive Wheels [rad/s]
-      MaxDriveRate: 12.267
-      # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
-      MaxSteerRate: 24.4
-    1:
-      xPos: -368
-      yPos: 134
-      SteerDriveCoupling: 0.0
-      NeutralPosition: -180.0
+        # Maximum Rotational Rate for the Drive Wheels [rad/s]
+        MaxDriveRate: 12.267
+        # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
+        MaxSteerRate: 24.4
 
-      # Maximum Rotational Rate for the Drive Wheels [rad/s]
-      MaxDriveRate: 12.267
-      # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
-      MaxSteerRate: 24.4
-    2:
-      xPos: -368
-      yPos: -186
-      SteerDriveCoupling: 0.0
-      NeutralPosition: 0.0
+      - xPos: -368.0
+        yPos: 134.0
+        SteerDriveCoupling: 0.0
+        NeutralPosition: -180.0
 
-      # Maximum Rotational Rate for the Drive Wheels [rad/s]
-      MaxDriveRate: 12.267
-      # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
-      MaxSteerRate: 24.4
-    3:
-      xPos: 368
-      yPos: -134
-      SteerDriveCoupling: 0.0
-      NeutralPosition: 0.0
+        # Maximum Rotational Rate for the Drive Wheels [rad/s]
+        MaxDriveRate: 12.267
+        # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
+        MaxSteerRate: 24.4
 
-      # Maximum Rotational Rate for the Drive Wheels [rad/s]
-      MaxDriveRate: 12.267
-      # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
-      MaxSteerRate: 24.4
+      - xPos: -368.0
+        yPos: -186.0
+        SteerDriveCoupling: 0.0
+        NeutralPosition: 0.0
 
-# TODO: Could be removed - should be revolved with mig
-DrivePrms:
-  # Maximum Rotational Rate for the Drive Wheels [rad/s]
-  MaxDriveRate: 12.267
+        # Maximum Rotational Rate for the Drive Wheels [rad/s]
+        MaxDriveRate: 12.267
+        # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
+        MaxSteerRate: 24.4
 
-  # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
-  MaxSteerRate: 24.4
+      - xPos: 368.0
+        yPos: -134.0
+        SteerDriveCoupling: 0.0
+        NeutralPosition: 0.0
+
+        # Maximum Rotational Rate for the Drive Wheels [rad/s]
+        MaxDriveRate: 12.267
+        # Maximum Rotational Rate for Steering Motion of the wheels [rad/s]
+        MaxSteerRate: 24.4
+
+SteerCtrl:
+
+  # Parameters for tuning Impedance-Controller
+  Spring: 15.0 #10.0
+  Damp: 2.75 #2.5
+  VirtMass: 0.1 #0.1
+  DPhiMax: 10.0 #12.0
+  DDPhiMax: 40.0 #100.0
 
