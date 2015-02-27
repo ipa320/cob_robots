@@ -13,19 +13,19 @@ modules:
     id: 2
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "35" # homing method
-  - name: bl_caster_rotation_joint
+  - name: fr_caster_rotation_joint
     id: 3
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-  - name: bl_caster_r_wheel_joint
+  - name: fr_caster_r_wheel_joint
     id: 4
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "35" # homing method
-  - name: br_caster_rotation_joint
+  - name: b_caster_rotation_joint
     id: 5
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-  - name: br_caster_r_wheel_joint
+  - name: b_caster_r_wheel_joint
     id: 6
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "35" # homing method
