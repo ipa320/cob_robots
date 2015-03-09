@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot" />
+  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+  
+  <group ns="base">
+    <!-- temporary relay -->
+<!--
+    <node name="command_relay" pkg="topic_tools" type="relay" args="/base/controller/command /base/base_controller/command" cwd="node" respawn="true" output="screen"/>
+    <node name="command_direct_relay" pkg="topic_tools" type="relay" args="/base/controller/command_direct /base/base_controller/command_direct" cwd="node" respawn="true" output="screen"/>
+    <node name="odometry_relay" pkg="topic_tools" type="relay" args="/base/base_controller/odometry /base/controller/odometry" cwd="node" respawn="true" output="screen"/>
+-->
+    <node name="joint_states_relay" pkg="topic_tools" type="relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
+    
+    <!-- cob Base Control -->
+    <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_controller_plugin.yaml"/>
+
+    <!-- Controllers that come up started -->
+    <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="joint_state_controller" respawn="true" />
+    <node name="wheel_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 --shutdown-timeout 1 wheel_controller" respawn="true" output="screen"/>
+    <node name="odom_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 --shutdown-timeout 1 odom_controller" respawn="true" output="screen"/>
+    
+<!--
+    <node pkg="cob_controller_configuration_gazebo" type="gazebo_services_base.py" name="gazebo_services_base" cwd="node" respawn="false" output="screen" />
+-->
+  </group>
+
+  <!-- scan filters-->
+  <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_front.yaml" ns="laser_front" />
+  <node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_front_filter" respawn="false" output="screen" ns="laser_front" >
+    <remap from="scan" to="/scan_front_raw"/>
+    <remap from="scan_filtered" to="/scan_front"/>
+  </node>
+
+  <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_rear.yaml" ns="laser_rear" />
+  <node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_rear_filter" respawn="false" output="screen" ns="laser_rear" >
+    <remap from="scan" to="/scan_rear_raw"/>
+    <remap from="scan_filtered" to="/scan_rear"/>
+  </node>
+
+  <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_top.yaml" ns="laser_top" />
+  <node pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_top_filter" respawn="false" output="screen" ns="laser_top" >
+    <remap from="scan" to="/scan_top_raw"/>
+    <remap from="scan_filtered" to="/scan_top"/>
+  </node>
+
+</launch>
