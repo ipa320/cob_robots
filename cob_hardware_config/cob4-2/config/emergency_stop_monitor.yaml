@@ -1,0 +1,5 @@
+# NO PARAMETERS YET TO SPECIFY
+sound_enabled: False
+led_enabled: True
+led_components: [light_base]
+color_ok: cyan
