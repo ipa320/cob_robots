@@ -13,6 +13,6 @@
   
   <!-- joint_state_controller -->
   <rosparam file="$(find cob_controller_configuration_gazebo)/controller/joint_state_controller.yaml" command="load"/>
-  <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 joint_state_controller" />
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" />
   
 </launch>

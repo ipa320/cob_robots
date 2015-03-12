@@ -35,6 +35,8 @@ group5:
   group_name: arm pos
   component_name: arm
   buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
     [home,move,home],
     [folded,move,folded],
     [pregrasp,move,pregrasp]]

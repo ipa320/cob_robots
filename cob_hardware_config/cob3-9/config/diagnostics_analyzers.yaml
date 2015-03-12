@@ -99,7 +99,12 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
         contains: 'base_controller'
-        
+
+  ntp:
+    type: diagnostic_aggregator/DiscardAnalyzer
+    path: none
+    contains: 'NTP'
+
 ## remove diagnostics from gazebo in simulated case
   simulation:
     type: diagnostic_aggregator/DiscardAnalyzer

@@ -65,12 +65,12 @@
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
-			<arg name="can_module" value="can1" />
+			<arg name="can_module" value="can2" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm" />
-			<arg name="can_module" value="can2" />
+			<arg name="can_module" value="can1" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -114,10 +114,6 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/head_axis.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -129,6 +125,7 @@
 		</include>
 		<include file="$(find cob_bringup)/drivers/openni.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="cam3d" />
 		</include>
 		<!--include file="$(find cob_image_flip)/ros/launch/image_flip_nodelet.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -141,6 +138,12 @@
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
+
+
+		<!-- start additional packages -->
+		<param name="/sound_controller/mode" value="cepstral" />
+		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+
 	</group>
 
 	<group>
@@ -152,9 +155,10 @@
 			<arg name="pc" value="$(arg pc3)" />
 		</include>
 
-		<!-- start additional packages -->
-		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+
+		<include file="$(find cob_bringup)/drivers/head_axis.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)" />

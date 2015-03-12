@@ -55,7 +55,7 @@
     </plugin>
   </gazebo>
 
-  <xacro:schunk_lwa4d name="arm" parent="base_link"
+  <xacro:schunk_lwa4d name="arm" parent="base_link" has_podest="false"
           arm_1_ref="${arm_1_ref}"
           arm_2_ref="${arm_2_ref}"
           arm_3_ref="${arm_3_ref}"

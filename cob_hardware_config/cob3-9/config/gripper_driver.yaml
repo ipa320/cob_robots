@@ -3,7 +3,8 @@ name: gripper_controller
 defaults:
   eds_pkg: cob_hardware_config
   eds_file: "cob3-9/config/Schunk_0_63.dcf"
-
+  pos_unit_factor: 1000000.0
+  vel_unit_factor: 1000000.0
 modules:
   - name: pg70_finger_left_joint
     id: 10
