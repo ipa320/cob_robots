@@ -1,6 +1,8 @@
 ## joint_names
 joint_names: ['sdh_finger_21_joint', 'sdh_knuckle_joint', 'sdh_thumb_2_joint', 'sdh_thumb_3_joint', 'sdh_finger_12_joint', 'sdh_finger_13_joint', 'sdh_finger_22_joint', 'sdh_finger_23_joint']
-#'sdh_finger_21_joint' is mimic joint of 'sdh_knuckle_joint'
+
+## control_mode_adapter
+max_command_silence: 0.5
 
 ## joint_state_controller
 joint_state_controller:
@@ -33,5 +35,4 @@ joint_trajectory_controller:
   action_monitor_rate: 10
   required_drive_mode: 7
   
-## no control_mode_adapter available
 ## no further controllers available

@@ -6,8 +6,8 @@ joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
-## wheel_controller
-wheel_controller:
+## twist_controller
+twist_controller:
     type: cob_omni_drive_controller/WheelController
     publish_rate: 50
     

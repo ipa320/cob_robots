@@ -1,6 +1,9 @@
 ## joint_names
 joint_names: [head_axis_joint]
 
+## control_mode_adapter
+max_command_silence: 0.5
+
 ## joint_state_controller
 joint_state_controller:
     type: joint_state_controller/JointStateController
@@ -20,5 +23,4 @@ joint_trajectory_controller:
   action_monitor_rate: 10
   required_drive_mode: 7
   
-## no control_mode_adapter available
 ## no further controllers available

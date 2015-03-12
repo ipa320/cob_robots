@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="cob3-6" >
-  
+
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
@@ -56,7 +56,7 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
+
   <xacro:schunk_lwa name="arm" parent="base_link">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:schunk_lwa>
