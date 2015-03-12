@@ -34,7 +34,7 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-
+  
   <xacro:torso name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
@@ -54,7 +54,7 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-
+  
   <xacro:sensorring name="sensorring" parent="head_3_link">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
@@ -64,7 +64,8 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
+
+
   <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" has_podest="false"
             arm_1_ref="${arm_right_1_ref}"
             arm_2_ref="${arm_right_2_ref}" 
@@ -99,13 +100,13 @@
     </plugin>
   </gazebo>
 
+
+  <!-- virtual component -->
 <!--
   <xacro:lookat name="lookat" parent="torso_center_link" lower="0.0" upper="5.0">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axis xyz="1 0 0"/>
   </xacro:lookat>
 -->
-  <!-- virtual component -->
-
 
 </robot>
