@@ -1,5 +1,5 @@
 ## joint_names
-joint_names: [fl_caster_rotation_joint, fl_caster_r_wheel_joint, br_caster_rotation_joint, br_caster_r_wheel_joint, bl_caster_rotation_joint, bl_caster_r_wheel_joint]
+joint_names: [fl_caster_rotation_joint, fl_caster_r_wheel_joint, fr_caster_rotation_joint, fr_caster_r_wheel_joint, b_caster_rotation_joint, b_caster_r_wheel_joint]
 
 ## control_mode_adapter
 max_command_silence: 0.5
@@ -9,28 +9,133 @@ joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
+odometry_controller:
+  type: cob_omni_drive_controller/OdometryController
+  publish_rate: 50
+  wheels: &wheels # start front left, counter-clockwise for base_drive_chain compatibility
+
+    - steer: fl_caster_rotation_joint
+      drive: fl_caster_r_wheel_joint
+    - steer: b_caster_rotation_joint
+      drive: b_caster_r_wheel_joint
+    - steer: fr_caster_rotation_joint
+      drive: fr_caster_r_wheel_joint
+
+twist_controller:
+  type: cob_omni_drive_controller/WheelController
+  required_drive_mode: 3
+
+  #max_rot_velocity: 1.0
+  #max_trans_velocity: 1.0
+  timeout: 0.5
+
+  defaults: # default settings for all wheels, can per overwritten per wheel
+    steer_ctrl: # Parameters for tuning Impedance-Controller
+      spring: 15.0 #10.0
+      damp: 2.75 #2.5
+      virt_mass: 0.1 #0.1
+      d_phi_max: 12.0 #100.0
+      dd_phi_max: 17.0 #100.0
+
+  wheels: *wheels
+ 
+## joint trajectory controller
+joint_trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - fl_caster_rotation_joint
+     - fl_caster_r_wheel_joint
+     - fr_caster_rotation_joint
+     - fr_caster_r_wheel_joint
+     - b_caster_rotation_joint
+     - b_caster_r_wheel_joint
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      fl_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
+      fl_caster_r_wheel_joint: {trajectory: 0.1, goal: 0.1}
+      fr_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
+      fr_caster_r_wheel_joint: {trajectory: 0.1, goal: 0.1}
+      b_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
+      b_caster_r_wheel_joint: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+  required_drive_mode: 7
+
+
+## position controller
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+     - fl_caster_rotation_joint
+     - fl_caster_r_wheel_joint
+     - fr_caster_rotation_joint
+     - fr_caster_r_wheel_joint
+     - b_caster_rotation_joint
+     - b_caster_r_wheel_joint
+  required_drive_mode: 1
+     
+fl_caster_rotation_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: fl_caster_rotation_joint
+  required_drive_mode: 1
+fl_caster_r_wheel_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: fl_caster_r_wheel_joint
+  required_drive_mode: 1
+fr_caster_rotation_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: fr_caster_rotation_joint
+  required_drive_mode: 1
+fr_caster_r_wheel_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: fr_caster_r_wheel_joint
+  required_drive_mode: 1
+b_caster_rotation_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: b_caster_rotation_joint
+  required_drive_mode: 1
+b_caster_r_wheel_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: b_caster_r_wheel_joint
+  required_drive_mode: 1
+
+
+## velocity controller
+joint_group_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+     - fl_caster_rotation_joint
+     - fl_caster_r_wheel_joint
+     - fr_caster_rotation_joint
+     - fr_caster_r_wheel_joint
+     - b_caster_rotation_joint
+     - b_caster_r_wheel_joint
+  required_drive_mode: 3
+
 fl_caster_rotation_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: fl_caster_rotation_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 fl_caster_r_wheel_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: fl_caster_r_wheel_joint
-  required_drive_mode: 2
-br_caster_rotation_joint_velocity_controller:
+  required_drive_mode: 3
+fr_caster_rotation_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
-  joint: br_caster_rotation_joint
-  required_drive_mode: 2
-br_caster_r_wheel_joint_velocity_controller:
+  joint: fr_caster_rotation_joint
+  required_drive_mode: 3
+fr_caster_r_wheel_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
-  joint: br_caster_r_wheel_joint
-  required_drive_mode: 2
-bl_caster_rotation_joint_velocity_controller:
+  joint: fr_caster_r_wheel_joint
+  required_drive_mode: 3
+b_caster_rotation_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
-  joint: bl_caster_rotation_joint
-  required_drive_mode: 2
-bl_caster_r_wheel_joint_velocity_controller:
+  joint: b_caster_rotation_joint
+  required_drive_mode: 3
+b_caster_r_wheel_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
-  joint: bl_caster_r_wheel_joint
-  required_drive_mode: 2
+  joint: b_caster_r_wheel_joint
+  required_drive_mode: 3
 
