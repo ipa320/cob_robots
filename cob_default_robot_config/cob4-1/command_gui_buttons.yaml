@@ -70,17 +70,3 @@ group6:
     [home,move,home],
     [folded,move,folded],
     [side, move, side]]
-group7:
-  group_name: gripper_left
-  component_name: gripper_left
-  buttons: [[recover,recover],
-    [home,move,home],
-    [open,move,open],
-    [close, move, close]]
-group8:
-  group_name: gripper_right
-  component_name: gripper_right
-  buttons: [[recover,recover],
-    [home,move,home],
-    [open,move,open],
-    [close, move, close]]
