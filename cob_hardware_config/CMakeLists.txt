@@ -23,7 +23,9 @@ foreach(robot ${robotlist})
     message("testing for robot: ${robot}")
     #roslaunch_add_file_check(common robot:=${robot})
     #roslaunch_add_file_check(common ROBOT=${robot})
-    add_rostest(test/urdf_${robot}.test)
+    if(CATKIN_ENABLE_TESTING)
+        add_rostest(test/urdf_${robot}.test)
+    endif(CATKIN_ENABLE_TESTING)
 endforeach(robot)
 
 catkin_package(
