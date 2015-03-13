@@ -53,7 +53,7 @@
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+		<include file="$(find cob_bringup)/controllers/base_controller_omni_wheel.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -80,6 +80,10 @@
 		<include file="$(find cob_bringup)/drivers/openni.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+                <include file="$(find cob_bringup)/tools/teleop.launch" >
+                        <arg name="robot" value="$(arg robot)" />
+                        <arg name="version" value="v1" />
+                </include>
 
 	</group>
 
@@ -94,10 +98,6 @@
 
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/tools/teleop.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="version" value="v1" />
 		</include>
 
 		<!-- start camera sensors -->
