@@ -31,7 +31,7 @@ twist_controller:
       drive: fr_caster_r_wheel_joint
 
 ## odometry_controller
-odom_controller:
+odometry_controller:
   type: cob_omni_drive_controller/OdometryController
   publish_rate: 50
   wheels: *wheels
