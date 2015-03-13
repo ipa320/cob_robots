@@ -10,7 +10,7 @@
 	</include>
 
 	<node pkg="cob_teleop" type="cob_teleop_v2" name="$(anon teleop_node)" output="screen" >
-		<remap from="base_controller_command" to="base/controller/command"/>
+		<remap from="base_controller_command" to="base/twist_controller/command"/>
 		<remap from="sensorring_controller_command" to="sensorring/controller/command_twist"/>
 		<remap from="torso_controller_command" to="torso/controller/command_twist"/>
 		<remap from="arm_joint_left" to="arm_left/controller/command_vel"/>

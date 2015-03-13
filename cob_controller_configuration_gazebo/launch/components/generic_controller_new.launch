@@ -10,7 +10,7 @@
 	<!--rosparam ns="$(arg component_name)$(arg side)" command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_joint_limits.yaml"/-->
 	
 	<!-- start_controllers -->
-	<node ns="$(arg component_name)$(arg side)" name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="joint_state_controller" respawn="true" />
+	<node ns="$(arg component_name)$(arg side)" name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true"/>
 
 	<!-- control_mode_adapter -->
 	<node ns="$(arg component_name)$(arg side)" name="control_mode_adapter" pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" cwd="node" respawn="false" output="screen"/>
