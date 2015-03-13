@@ -14,7 +14,7 @@
     <node name="odom_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 --shutdown-timeout 1 odom_controller" respawn="true" output="screen"/>
     
     <!-- simulated driver services -->
-    <!--node pkg="cob_controller_configuration_gazebo" type="gazebo_services_base.py" name="gazebo_services_base" cwd="node" respawn="false" output="screen" /-->
+    <node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
     
     <!-- temporary relay -->
     <node name="joint_states_relay" pkg="topic_tools" type="relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
