@@ -59,6 +59,9 @@
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="version" value="v1"/>
@@ -92,17 +95,20 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="sensorring" />
 			<arg name="can_module" value="can1" />
+			<arg name="mode_adapter" value="true" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
 			<arg name="can_module" value="can3" />
+			<arg name="mode_adapter" value="true" />
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
 			<arg name="can_module" value="can2" />
+			<arg name="mode_adapter" value="true" />
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/light.launch">
@@ -181,6 +187,8 @@
 		</include>
 		
 		<!--node pkg="cob_mimic" type="mimic_node.py" name="cob_mimic"/-->
+		<param name="/sound_controller/mode" value="cepstral" />
+		<include file="$(find cob_sound)/ros/launch/sound.launch" />
 
 	</group>
 </launch>
