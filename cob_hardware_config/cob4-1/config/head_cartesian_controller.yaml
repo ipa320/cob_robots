@@ -7,9 +7,11 @@ cartesian_controller:
   chain_tip_link: head_center_link
   base_compensation: false
   base_active: false
-  base_ratio: 0.0
+  base_ratio: 0.1
   max_vel_lin: 0.5
   max_vel_rot: 0.5
+  max_vel_lin_base: 0.5
+  max_vel_rot_base: 0.5
 
   # damping parameters
   damping_method: 0  #MANIPULABILITY
@@ -26,5 +28,9 @@ cartesian_controller:
   root_frame: odom_combined
   movable_trans: false
   movable_rot: true
-  pid_trans: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}

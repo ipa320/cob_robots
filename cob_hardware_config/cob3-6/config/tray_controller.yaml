@@ -1,8 +1,30 @@
-# all
-joint_names: ["tray_1_joint", "tray_2_joint", "tray_3_joint"]
+## joint_names
+joint_names: [tray_1_joint, tray_2_joint, tray_3_joint]
 
-# trajectory controller parameters
-ptp_vel: 0.4 # rad/sec
-ptp_acc: 0.1 # rad/sec^2
-max_error: 0.2 # rad
-frequency: 100
+## control_mode_adapter
+max_command_silence: 0.5
+
+## joint_state_controller
+joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+## joint trajectory controller
+joint_trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - tray_1_joint
+     - tray_2_joint
+     - tray_3_joint
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      tray_1_joint: {trajectory: 0.1, goal: 0.1}
+      tray_2_joint: {trajectory: 0.1, goal: 0.1}
+      tray_3_joint: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+  required_drive_mode: 7
+  
+## no further controllers available

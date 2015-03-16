@@ -73,8 +73,7 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-
-    
+  
   <xacro:schunk_lwa4p_extended name="arm_left" parent="torso_3_link" has_podest="false"
             arm_1_ref="${arm_left_1_ref}"
             arm_2_ref="${arm_left_2_ref}"
@@ -116,7 +115,8 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  <!-- virtual component -->
 
+
+  <!-- virtual component -->
 
 </robot>
