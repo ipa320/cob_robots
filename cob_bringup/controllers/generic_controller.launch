@@ -7,6 +7,12 @@
 
 	<group ns="$(arg component_name)$(arg side)">
 
+		<!-- robot state publisher -->
+		<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+			<param name="publish_frequency" type="double" value="50.0" />
+			<param name="tf_prefix" type="string" value="" />
+		</node>
+
 		<!-- load controller configs -->
 		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml" />
 		<!--rosparam ns="$(arg component_name)$(arg side)" command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_joint_limits.yaml"/-->

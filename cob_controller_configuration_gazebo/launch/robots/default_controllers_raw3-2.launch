@@ -2,13 +2,7 @@
 <launch>
 
 	<arg name="robot" default="raw3-2"/>
-
-	<!-- robot state publisher -->
-	<node ns="base" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-
+	
 	<!-- Base -->
 	<!-- simulated driver services -->
 	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />

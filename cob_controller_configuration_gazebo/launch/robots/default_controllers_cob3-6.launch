@@ -3,32 +3,6 @@
 
 	<arg name="robot" default="cob3-6"/>
 	
-	<!-- robot state publisher -->
-	<node ns="base" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="torso" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="head" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="tray" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="arm" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="gripper" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	
 	<!-- Base -->
 	<!-- simulated driver services -->
 	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
