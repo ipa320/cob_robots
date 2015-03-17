@@ -31,7 +31,7 @@
 	
 	<!-- Base -->
 	<!-- simulated driver services -->
-	<node pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 	<!-- base controllers -->
 	<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -51,30 +51,45 @@
 	</include>
 	
 	<!-- Head -->
+	<!-- simulated driver services -->
+	<node ns="head" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="head"/>
 	</include>
 	
 	<!-- Arm -->
+	<!-- simulated driver services -->
+	<node ns="arm" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
 	</include>
 	
 	<!-- Gripper -->
+	<!-- simulated driver services -->
+	<node ns="gripper" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="gripper"/>
 	</include>
 	
 	<!-- Torso -->
+	<!-- simulated driver services -->
+	<node ns="torso" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="torso"/>
 	</include>
 	
 	<!-- Tray -->
+	<!-- simulated driver services -->
+	<node ns="tray" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="tray"/>
