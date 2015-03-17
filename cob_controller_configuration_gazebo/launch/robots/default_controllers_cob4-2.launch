@@ -33,17 +33,17 @@
 	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_plugin.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="front"/>
+		<arg name="mount_position" value="front"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="left"/>
+		<arg name="mount_position" value="left"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="right"/>
+		<arg name="mount_position" value="right"/>
 	</include>
 	
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
