@@ -20,6 +20,6 @@
 		<!-- temporary relay -->
 		<node name="joint_states_relay" pkg="topic_tools" type="relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 
-	</group
+	</group>
 
 </launch>
