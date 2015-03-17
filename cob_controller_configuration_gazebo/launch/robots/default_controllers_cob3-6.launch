@@ -51,31 +51,31 @@
 	</include>
 	
 	<!-- Head -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="head"/>
 	</include>
 	
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
 	</include>
 	
 	<!-- Gripper -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="gripper"/>
 	</include>
 	
 	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="torso"/>
 	</include>
 	
 	<!-- Tray -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="tray"/>
 	</include>
