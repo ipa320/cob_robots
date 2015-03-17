@@ -23,6 +23,13 @@
   <run_depend>cob_srvs</run_depend>
   <run_depend>cob_bringup</run_depend>
   <run_depend>cob_script_server</run_depend>
+  
+  <run_depend>cob_sound</run_depend>
+  <run_depend>cob_phidgets</run_depend>
+  <run_depend>cob_cam3d_throttle</run_depend>
+  <run_depend>topic_tools</run_depend>
+  
+  
 
   <export>
 
