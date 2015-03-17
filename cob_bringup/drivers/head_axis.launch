@@ -4,9 +4,15 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-	<node name="head_controller" pkg="cob_head_axis" type="cob_head_axis_node" cwd="node" respawn="false" output="screen" >
+	<node ns="head" pkg="cob_head_axis" type="cob_head_axis_node" name="cob_head_axis_node" cwd="node" respawn="false" output="screen" >
 		<param name="CanIniFile" value="$(arg pkg_hardware_config)/$(arg robot)/config/head.ini" />
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/head.yaml"/>
 	</node>
+
+	<!-- robot_state_publisher -->
+	<node ns="head" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+	<!-- temporary relay -->
+	<node ns="head" pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 
 </launch>
