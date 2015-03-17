@@ -31,9 +31,6 @@
 		<!-- wifi monitor -->
 		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" /-->
 
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
-
 		<!-- startup hardware -->
 		<!-- lower robot -->
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
@@ -50,25 +47,29 @@
 		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<node ns="base" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain_driver.launch" >
-			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="torso" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="torso" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/ur.launch" >
 			<arg name="ur_ip" value="$(arg ur_ip)"/>
 		</include>
+		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -102,12 +103,12 @@
 
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
-			<arg name="name" value="left" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="left" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
-			<arg name="name" value="right" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="right" />
 		</include>
 	</group>
 
