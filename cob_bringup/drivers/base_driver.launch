@@ -2,8 +2,8 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="sim" default="false" />
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="sim" default="false" />
 
 	<group ns="base_controller">
 
