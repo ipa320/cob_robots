@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot"/>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
 	<arg name="side" default=""/>
 
@@ -14,17 +15,17 @@
 		</node>
 
 		<!-- load controller configs -->
-		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml" />
-		<!--rosparam ns="$(arg component_name)$(arg side)" command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_joint_limits.yaml"/-->
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml" />
+		<!--rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_joint_limits.yaml"/-->
 
 		<!-- start_controllers -->
-		<node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true"/>
+		<node pkg="controller_manager" type="spawner" name="joint_state_controller_spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true"/>
 
 		<!-- control_mode_adapter -->
-		<node name="control_mode_adapter" pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" cwd="node" respawn="false" output="screen"/>
+		<node pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" name="control_mode_adapter" cwd="node" respawn="false" output="screen"/>
 
 		<!-- temporary relay -->
-		<node name="joint_states_relay" pkg="topic_tools" type="relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
+		<node pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 
 	</group>
 
