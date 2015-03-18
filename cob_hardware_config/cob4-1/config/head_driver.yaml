@@ -1,0 +1,13 @@
+name: head_controller
+
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "cob4-1/config/Elmo.dcf"
+
+modules:
+  - name: head_1_joint
+    id: 70
+  - name: head_2_joint
+    id: 71
+  - name: head_3_joint
+    id: 72
