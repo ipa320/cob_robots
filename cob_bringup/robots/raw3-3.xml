@@ -25,7 +25,6 @@
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<node ns="base" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 		
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
