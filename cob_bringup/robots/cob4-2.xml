@@ -198,7 +198,7 @@
 		
 		<!--node pkg="cob_mimic" type="mimic_node.py" name="cob_mimic"/-->
 		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<include file="$(find cob_bringup)/drivers/sound.launch" />
 
 	</group>
 </launch>

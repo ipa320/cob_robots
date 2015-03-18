@@ -75,7 +75,7 @@
 	</node>
 	
 	<!-- start additional components -->
-	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	<include file="$(find cob_bringup)/drivers/sound.launch" />
 	<include file="$(find cob_bringup)/drivers/light.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="light"/>
