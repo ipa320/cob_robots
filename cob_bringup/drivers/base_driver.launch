@@ -26,7 +26,9 @@
 			<remap from="/base_br_caster_r_wheel_controller/command" to="/base/base_br_caster_r_wheel_controller/command"/>
 			<remap from="/base_bl_caster_r_wheel_controller/command" to="/base/base_bl_caster_r_wheel_controller/command"/>
 		</node>
-		<node unless="$(arg sim)" pkg="cob_base_drive_chain" type="cob_base_drive_chain_node" name="base_drive_chain_node" respawn="false" output="screen"/>
+		<node unless="$(arg sim)" pkg="cob_base_drive_chain" type="cob_base_drive_chain_node" name="base_drive_chain_node" respawn="false" output="screen">
+			<remap from="/joint_states" to="/base/joint_states"/>
+		</node>
 
 	</group>
 
