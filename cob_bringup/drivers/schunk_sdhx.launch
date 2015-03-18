@@ -6,7 +6,7 @@
 	<arg name="component_name"/>
 
 	<node pkg="schunk_sdhx" type="sdhx_node.py" name="$(arg component_name)" respawn="true" output="screen" >
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name).yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
 	</node>
 
 	<!-- robot_state_publisher -->
