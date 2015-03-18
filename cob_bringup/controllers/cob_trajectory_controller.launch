@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<launch deprecated="The cob_trajectory_controller is deprecated. Please use the corresponding trajectory controller in ros_controllers instead!">
+<launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
