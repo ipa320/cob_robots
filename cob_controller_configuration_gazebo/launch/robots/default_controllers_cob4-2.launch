@@ -93,12 +93,12 @@
 	<!-- camera nodelets -->
 	<include file="$(find cob_bringup)/drivers/image_flip.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="torso_cam3d_left"/>
+		<arg name="camera_name" value="torso_cam3d_left"/>
 	</include>
 		
 	<include file="$(find cob_bringup)/drivers/image_flip.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="torso_cam3d_right"/>
+		<arg name="camera_name" value="torso_cam3d_right"/>
 	</include>
 	
 	<!-- start additional components -->
