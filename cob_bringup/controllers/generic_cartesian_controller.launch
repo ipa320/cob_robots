@@ -3,12 +3,11 @@
 
 	<arg name="robot"/>
 	<arg name="component_name"/>
-	<arg name="side" default=""/>
 	
-	<group ns="$(arg component_name)$(arg side)">
+	<group ns="$(arg component_name)">
 
 		<!-- load Cartesian controller config -->
-		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_cartesian_controller.yaml"/>
+		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)_cartesian_controller.yaml"/>
 		
 		<!-- Cartesian controllers -->
 		<node name="twist_controller" pkg="cob_twist_controller" type="cob_twist_controller_node" cwd="node" respawn="false" output="screen"/>

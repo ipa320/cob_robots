@@ -3,9 +3,8 @@
 
 	<arg name="robot"/>
 	<arg name="component_name"/>
-	<arg name="side" default=""/>
 
-	<group ns="$(arg component_name)$(arg side)">
+	<group ns="$(arg component_name)">
 
 		<!-- robot state publisher -->
 		<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
@@ -14,8 +13,8 @@
 		</node>
 
 		<!-- load controller configs -->
-		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml" />
-		<!--rosparam ns="$(arg component_name)$(arg side)" command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_joint_limits.yaml"/-->
+		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+		<!--rosparam ns="$(arg component_name)" command="load" file="$(find cob_hardware_config)/$(arg robot)/config/$(arg component_name)_joint_limits.yaml"/-->
 
 		<!-- start_controllers -->
 		<node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true"/>
