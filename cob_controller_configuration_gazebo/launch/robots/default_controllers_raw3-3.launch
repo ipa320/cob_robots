@@ -33,8 +33,7 @@
 <!--
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="arm"/>
-		<arg name="side" value="_left"/>
+		<arg name="component_name" value="arm_left"/>
 	</include>
 -->
 	<!-- simulated driver services -->
@@ -45,8 +44,7 @@
 <!--
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="arm"/>
-		<arg name="side" value="_right"/>
+		<arg name="component_name" value="arm_right"/>
 	</include>
 -->
 
@@ -59,8 +57,7 @@
 <!--
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="gripper"/>
-		<arg name="side" value="_left"/>
+		<arg name="component_name" value="gripper_left"/>
 	</include>
 -->
 	<!-- simulated driver services -->
@@ -71,8 +68,7 @@
 <!--
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="gripper"/>
-		<arg name="side" value="_right"/>
+		<arg name="component_name" value="gripper_right"/>
 	</include>
 -->
 

@@ -4,9 +4,8 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
-	<arg name="side" default=""/>
 
-	<group ns="$(arg component_name)$(arg side)">
+	<group ns="$(arg component_name)">
 
 		<!-- robot state publisher -->
 		<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
@@ -15,8 +14,8 @@
 		</node>
 
 		<!-- load controller configs -->
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_controller.yaml" />
-		<!--rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)$(arg side)_joint_limits.yaml"/-->
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+		<!--rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_joint_limits.yaml"/-->
 
 		<!-- start_controllers -->
 		<node pkg="controller_manager" type="spawner" name="joint_state_controller_spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true"/>
