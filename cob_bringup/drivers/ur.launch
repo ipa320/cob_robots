@@ -4,10 +4,16 @@
 	<arg name="ur_ip" default="localhost"/>
 
 	<!-- universal robot arm -->
-	<node name="ur_driver" ns="arm_controller" pkg="ur_driver" type="driver.py" args="$(arg ur_ip)" output="screen">
-		<remap from="/arm_controller/joint_states" to="/joint_states"/>
+	<node ns="arm_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg ur_ip)" output="screen">
+		<remap from="/arm_controller/joint_states" to="/arm/joint_states"/>
 		<remap from="/arm_controller/robot_description" to="/robot_description"/>
 		<param name="prefix" value="arm_"/>
 	</node>
+
+	<!-- robot_state_publisher -->
+	<node ns="arm" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+	<!-- temporary relay -->
+	<node ns="arm" pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 
 </launch>

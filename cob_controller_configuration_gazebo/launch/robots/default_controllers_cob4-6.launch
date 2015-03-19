@@ -3,27 +3,25 @@
 
 	<arg name="robot" default="cob4-6"/>
 	
-	<!-- robot state publisher -->
-	<node ns="base" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_plugin.launch">
+	<!-- simulated driver services -->
+	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- base controllers -->
+	<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<!-- scanner and scanner-filter -->
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="front"/>
+		<arg name="name" value="front"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="left"/>
+		<arg name="name" value="left"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="right"/>
+		<arg name="name" value="right"/>
 	</include>
 	
   <include file="$(find cob_bringup)/drivers/relayboard.launch">

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" />
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="name" />
+
+	<!-- scan filters-->
+	<rosparam ns="laser_$(arg name)" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_$(arg name).yaml"/>
+	<node ns="laser_$(arg name)" pkg="cob_sick_s300" type="cob_scan_filter" name="scanner_$(arg name)_filter" respawn="false" output="screen">
+		<remap from="scan" to="/scan_$(arg name)_raw"/>
+		<remap from="scan_filtered" to="/scan_$(arg name)"/>
+	</node>
+
+</launch>
