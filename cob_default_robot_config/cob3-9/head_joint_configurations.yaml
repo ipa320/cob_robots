@@ -1,6 +1,7 @@
 joint_names: ["head_axis_joint"]
-action_name: /head_controller/follow_joint_trajectory
-service_ns: /head_controller
+action_name: /head/joint_trajectory_controller/follow_joint_trajectory
+service_ns: /head/driver
+default_vel: 0.5
 
 front: [[-3.1415926]]
 back: [[0.0]]

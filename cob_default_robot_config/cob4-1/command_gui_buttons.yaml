@@ -73,14 +73,16 @@ group6:
 group7:
   group_name: gripper_left
   component_name: gripper_left
-  buttons: [[recover,recover],
+  buttons: [[stop,stop],
+    [recover,recover],
     [home,move,home],
     [open,move,open],
     [close, move, close]]
 group8:
   group_name: gripper_right
   component_name: gripper_right
-  buttons: [[recover,recover],
+  buttons: [[stop,stop],
+    [recover,recover],
     [home,move,home],
     [open,move,open],
     [close, move, close]]
