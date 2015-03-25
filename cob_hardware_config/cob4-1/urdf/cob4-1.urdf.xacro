@@ -14,7 +14,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
 
   <!-- torso -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso_3DOF.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- arm -->
@@ -30,7 +30,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
 
   <!-- composition of the robot -->
-  <xacro:base name="base" use_old_joint_names="true"/>
+  <xacro:base name="base"/>
   <gazebo>
     <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
       <robotNamespace>base</robotNamespace>
