@@ -1,0 +1,9 @@
+sensors:
+  - laser_topic: "range_1_sim"
+    range_topic: "range_1"
+  - laser_topic: "range_2_sim"
+    range_topic: "range_2"
+  - laser_topic: "range_3_sim"
+    range_topic: "range_3"
+  - laser_topic: "range_4_sim"
+    range_topic: "range_4"

@@ -3,86 +3,79 @@
 
 	<arg name="robot" default="cob3-9"/>
 	
-	<!-- robot state publisher -->
-	<node ns="base" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="torso" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="head" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="tray" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="arm" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="gripper" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_plugin.launch">
+	<!-- simulated driver services -->
+	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- base controllers -->
+	<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<!-- scanner and scanner-filter -->
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="front"/>
+		<arg name="name" value="front"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="rear"/>
+		<arg name="name" value="rear"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_scan_filter.launch">
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="where" value="top"/>
+		<arg name="name" value="top"/>
 	</include>
 	
 	<!-- Head -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<!-- simulated driver services -->
+	<node ns="head" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="head"/>
 	</include>
 	
 	<!-- Arm -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<!-- simulated driver services -->
+	<node ns="arm" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
 	</include>
 	
 	<!-- Gripper -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<!-- simulated driver services -->
+	<node ns="gripper" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="gripper"/>
 	</include>
 	
 	<!-- Torso -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<!-- simulated driver services -->
+	<node ns="torso" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="torso"/>
 	</include>
 	
 	<!-- Tray -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller.launch">
+	<!-- simulated driver services -->
+	<node ns="tray" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="tray"/>
 	</include>
 	
 	<!-- Tray sensors -->
-	<node ns="tray_sensors" name="tray_sensors" pkg="cob_phidgets" type="simulated_range_sensors.py" output="screen">
-		<rosparam file="$(find cob_controller_configuration_gazebo)/controller/tray_sensors.yaml" command="load" />
+	<node ns="tray_sensors" pkg="cob_phidgets" type="simulated_range_sensors.py" name="tray_sensors" output="screen">
+		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/tray_sensors_sim.yaml"/>
 	</node>
 	
 	<!-- start additional components -->
-	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	<include file="$(find cob_bringup)/drivers/sound.launch" />
 	<include file="$(find cob_bringup)/drivers/light.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="light"/>

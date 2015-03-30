@@ -14,7 +14,7 @@
 
 
   <!-- composition of the robot -->
-  <xacro:base name="base"/>
+  <xacro:base name="base" use_old_joint_names="false"/>
   <gazebo>
     <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
       <robotNamespace>base</robotNamespace>

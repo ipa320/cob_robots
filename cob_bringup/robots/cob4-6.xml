@@ -22,9 +22,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-6-b1)" />
 		</include>
-		
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
@@ -43,16 +40,15 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		
-		<!-- Joint Limits Parameter -->
-		<rosparam ns="base" command="load" file="$(find cob_hardware_config)/$(arg robot)/config/base_joint_limits.yaml"/>
-		<!-- Could it go to inside the canopen_402.launch ? -->
-		
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="base" />
 			<arg name="can_module" value="can0" />
-			<arg name="mode_adapter" value="false" />
 		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />

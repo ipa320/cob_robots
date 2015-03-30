@@ -1,14 +1,24 @@
 <?xml version="1.0"?>
-<launch deprecated="The cob_trajectory_controller is deprecated. Please use the corresponding trajectory controller in ros_controllers instead!">
+<launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="component_name"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name"/>
 
-	<!-- parameter description of the trajectory controller -->
-	<rosparam command="load" ns="$(arg component_name)_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+	<group ns="$(arg component_name)" >
 
-	<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
-	<node ns="$(arg component_name)_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller" cwd="node" respawn="false" output="screen" />
+		<!-- parameter description of the trajectory controller -->
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+
+		<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
+		<node pkg="cob_trajectory_controller" type="cob_trajectory_controller" name="joint_trajectory_controller" cwd="node" respawn="false" output="screen" />
+
+		<!-- robot_state_publisher -->
+		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+		<!-- temporary relay -->
+		<node pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
+
+	</group>
 
 </launch>

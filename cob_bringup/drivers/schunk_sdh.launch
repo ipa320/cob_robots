@@ -4,8 +4,14 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-	<node name="gripper_controller" pkg="schunk_sdh" type="sdh_only" cwd="node" respawn="true" output="screen" >
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/sdh.yaml"/>
+	<node ns="gripper" pkg="schunk_sdh" type="sdh_only" name="sdh_controller" cwd="node" respawn="true" output="screen" >
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/gripper_driver.yaml"/>
 	</node>
+
+	<!-- robot_state_publisher -->
+	<node ns="gripper" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+
+	<!-- temporary relay -->
+	<node ns="gripper" pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 
 </launch>
