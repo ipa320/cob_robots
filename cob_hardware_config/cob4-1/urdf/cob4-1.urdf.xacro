@@ -30,7 +30,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
 
   <!-- composition of the robot -->
-  <xacro:base name="base"/>
+  <xacro:base name="base" use_old_joint_names="true"/>
   <gazebo>
     <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
       <robotNamespace>base</robotNamespace>

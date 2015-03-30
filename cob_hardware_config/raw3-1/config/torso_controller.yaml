@@ -25,3 +25,13 @@ joint_trajectory_controller:
   action_monitor_rate: 10
   
 ## no further controllers available
+
+
+
+
+## compatibility section for old cob_trajectory_controller used with hardware ##
+# trajectory controller parameters
+ptp_vel: 0.4 # rad/sec
+ptp_acc: 0.2 # rad/sec^2
+max_error: 0.1 # rad
+frequency: 80

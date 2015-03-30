@@ -26,9 +26,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-b1)" />
 		</include>
-		
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
@@ -46,12 +43,14 @@
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -95,20 +94,30 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="sensorring" />
 			<arg name="can_module" value="can1" />
-			<arg name="mode_adapter" value="true" />
 		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="sensorring"/>
+		</include>
+		
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
 			<arg name="can_module" value="can3" />
-			<arg name="mode_adapter" value="true" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_left"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
 			<arg name="can_module" value="can2" />
-			<arg name="mode_adapter" value="true" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_right"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/light.launch">
@@ -138,8 +147,8 @@
 		</include>
 		
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
-			<arg name="camera_name" value="torso_cam3d_right"/>
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="camera_name" value="torso_cam3d_right"/>
 			<arg name="nodelet_manager" value="torso_cam3d_right_nodelet_manager"/>
 		</include>
 
@@ -165,8 +174,8 @@
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
-			<arg name="camera_name" value="torso_cam3d_left"/>
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="camera_name" value="torso_cam3d_left"/>
 			<arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
 		</include>
 
@@ -188,7 +197,7 @@
 		
 		<!--node pkg="cob_mimic" type="mimic_node.py" name="cob_mimic"/-->
 		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<include file="$(find cob_bringup)/drivers/sound.launch" />
 
 	</group>
 </launch>

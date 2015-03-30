@@ -217,4 +217,23 @@
   </link>
   <!-- END: Softkinetic 'right' mount -->
 
+  <!-- Kinect mount on raw3-1 -->
+  <joint name="kinect_joint" type="fixed" >
+    <origin xyz="0.015 0.0 0.25" rpy="${M_PI/2} 0 ${M_PI/2}" />
+    <parent link="camera_pillar_link" />
+    <child link="kinect_link" />
+  </joint>
+    
+  <link name="kinect_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <geometry>
+        <box size="0.10 0.03 0.03" />
+      </geometry>
+      <material name="IPA/Black" />
+    </visual>
+  </link>
+  <!-- END: Kinect mount -->
+
 </robot>

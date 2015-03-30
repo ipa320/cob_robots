@@ -21,9 +21,6 @@
 	<group>
 		<machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
-
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -40,12 +37,14 @@
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -67,40 +66,49 @@
 			<arg name="component_name" value="torso" />
 			<arg name="can_module" value="can1" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="torso" />
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="head_sensorring" />
+			<arg name="component_name" value="head" />
 			<arg name="can_module" value="can0" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="head" />
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="head"/>
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
+		
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="sensorring" />
+			<arg name="can_module" value="can0" />
 		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="sensorring"/>
+		</include>
+		
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
 			<arg name="can_module" value="can3" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="arm_left" />
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_left"/>
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
 			<arg name="can_module" value="can2" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="arm_right" />
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_right"/>
 		</include>
 	</group>
 
