@@ -1592,7 +1592,7 @@ ParameterName=supported_drive_modes
 ObjectType=0x7
 DataType=0x0007
 AccessType=ro
-DefaultValue=0x00000063
+DefaultValue=0x00000043
 PDOMapping=0
 
 [ManufacturerObjects]
