@@ -1974,7 +1974,6 @@ ParameterName=home_offset
 ObjectType=0x7
 DataType=0x0004
 AccessType=rw
-DefaultValue=0
 PDOMapping=0
 LowLimit=-2147483648
 HighLimit=2147483647
