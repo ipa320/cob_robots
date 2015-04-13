@@ -8,10 +8,4 @@
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/gripper_driver.yaml"/>
 	</node>
 
-	<!-- robot_state_publisher -->
-	<node ns="gripper" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
-
-	<!-- temporary relay -->
-	<node ns="gripper" pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
-
 </launch>
