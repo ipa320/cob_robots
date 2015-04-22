@@ -69,6 +69,10 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
+      torso:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso
+        contains: 'torso'
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring

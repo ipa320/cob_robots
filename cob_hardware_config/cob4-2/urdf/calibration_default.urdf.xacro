@@ -90,6 +90,9 @@
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
+	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
+	<property name="def_torso_2_ref" value="0.0"/>
+	<property name="def_torso_3_ref" value="0.0"/>
 
 	<!-- sensorring reference positions | used as calibration_rising for sensorring chain -->
 	<property name="def_sensorring_ref" value="0.0"/>
