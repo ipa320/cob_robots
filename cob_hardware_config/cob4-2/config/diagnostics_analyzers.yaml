@@ -21,10 +21,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t3
         contains: 't3'
-      s1:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: s1
-        contains: 's1'
+#      s1:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: s1
+#        contains: 's1'
       h1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: h1
@@ -47,6 +47,11 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Joystick
         contains: 'joy'
+    analyzers:
+      sound:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sound
+        contains: 'sound'
 
   sensors:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -74,7 +79,7 @@ analyzers:
         path: Torso
         contains: 'torso'
       sensorring:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/DiscardAnalyzer
         path: Sensorring
         contains: 'sensorring'
       arm_right:
