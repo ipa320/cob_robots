@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" />
+
+	<node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen" >
+		<remap from="robot_descirption" to="/robot_description"/>
+		<remap from="joint_states" to="/joint_states"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/joint_state_publisher.yaml"/>
+	</node>
+
+</launch>
