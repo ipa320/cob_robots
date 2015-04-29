@@ -1,5 +1,6 @@
-# NO PARAMETERS YET TO SPECIFY
 sound_enabled: True
 led_enabled: True
+diagnostics_based: True
+motion_based: True
 led_components: [light_base]
 color_ok: cyan

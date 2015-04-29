@@ -1,5 +1,3 @@
-service_ns: light_torso
-
 #color_name: [r, g, b, a]
 red: [1,0,0,1]
 green: [0,1,0,1]

@@ -1,7 +1,7 @@
 # Paramter for the cob_base_velocity_smoother (velocity filter for smooth navigation)
 
 # Parameter specifying the capacity of the circular buffer (number of saved geometry messages)
-circular_buffer_capacity: 12 #default value: 12
+circular_buffer_capacity: 24 #default value: 12
 
 # Parameter specifying maximal time delay in seconds for saved messages (older messages will be deleted)
 maximal_time_delay: 4.0 #default value: 4.0 [s]
