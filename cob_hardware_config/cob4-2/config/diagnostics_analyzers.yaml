@@ -51,6 +51,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sound
         contains: 'sound'
+      light:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Light
+        contains: 'light'
 
   sensors:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -78,7 +82,7 @@ analyzers:
         path: Torso
         contains: 'torso'
       sensorring:
-        type: diagnostic_aggregator/DiscardAnalyzer
+        type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
         contains: 'sensorring'
       arm_right:

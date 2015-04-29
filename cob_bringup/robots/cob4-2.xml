@@ -93,7 +93,7 @@
 		</include>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+		<!--include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
 			<arg name="can_module" value="can1" />
@@ -101,8 +101,8 @@
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
-		</include>
-		
+		</include-->
+
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="sensorring" />
