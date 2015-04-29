@@ -51,6 +51,14 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sound
         contains: 'sound'
+      light_base:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Light Base
+        contains: 'light_base'
+      light_torso:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Light Torso
+        contains: 'light_torso'
 
   sensors:
     type: diagnostic_aggregator/AnalyzerGroup
