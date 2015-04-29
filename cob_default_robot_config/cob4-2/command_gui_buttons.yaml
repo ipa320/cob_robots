@@ -10,23 +10,23 @@ group1:
   buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
-group2:
-  group_name: torso
-  component_name: torso
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
-    [home,move,home]]
-group4:
-  group_name: sensorring
-  component_name: sensorring
-  buttons: [[stop,stop],
-    [init,init],
-    [recover,recover],
-    [front,move,front],
-    [back,move,back],
-    [left,move,left],
-    [right,move,right]]
+#group2:
+#  group_name: torso
+#  component_name: torso
+#  buttons: [[stop,trigger,stop],
+#    [init,trigger,init],
+#    [recover,trigger,recover],
+#    [home,move,home]]
+#group4:
+#  group_name: sensorring
+#  component_name: sensorring
+#  buttons: [[stop,stop],
+#    [init,init],
+#    [recover,recover],
+#    [front,move,front],
+#    [back,move,back],
+#    [left,move,left],
+#    [right,move,right]]
 group5:
   group_name: arm_left
   component_name: arm_left

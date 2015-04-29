@@ -73,14 +73,14 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
-      torso:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Torso
-        contains: 'torso'
-      sensorring:
-        type: diagnostic_aggregator/DiscardAnalyzer
-        path: Sensorring
-        contains: 'sensorring'
+#      torso:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Torso
+#        contains: 'torso'
+#      sensorring:
+#        type: diagnostic_aggregator/DiscardAnalyzer
+#        path: Sensorring
+#        contains: 'sensorring'
       arm_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Right
