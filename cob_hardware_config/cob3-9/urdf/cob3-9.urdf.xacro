@@ -32,7 +32,7 @@
   <!-- composition of the robot -->
   <xacro:base name="base"/>
   <gazebo>
-    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>base</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
@@ -42,7 +42,7 @@
     <origin xyz="${tray_x} ${tray_y} ${tray_z}" rpy="${tray_roll} ${tray_pitch} ${tray_yaw}" />
   </xacro:tray>
   <gazebo>
-    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>tray</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
@@ -52,7 +52,7 @@
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
   <gazebo>
-    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>torso</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
@@ -69,7 +69,7 @@
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:schunk_lwa4d>
   <gazebo>
-    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>arm</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
@@ -79,7 +79,7 @@
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   <gazebo>
-    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>head</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
@@ -91,7 +91,7 @@
     <origin xyz="${pg70_x} ${pg70_y} ${pg70_z}" rpy="${pg70_roll} ${pg70_pitch} ${pg70_yaw}" />
   </xacro:schunk_pg70>
   <gazebo>
-    <plugin name="ros_control" filename="libmulti_hw_interface_gazebo_ros_control.so">
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>gripper</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
