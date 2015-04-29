@@ -17,16 +17,16 @@ group1:
 #    [init,trigger,init],
 #    [recover,trigger,recover],
 #    [home,move,home]]
-#group4:
-#  group_name: sensorring
-#  component_name: sensorring
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [front,move,front],
-#    [back,move,back],
-#    [left,move,left],
-#    [right,move,right]]
+group4:
+  group_name: sensorring
+  component_name: sensorring
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right]]
 group5:
   group_name: arm_left
   component_name: arm_left
