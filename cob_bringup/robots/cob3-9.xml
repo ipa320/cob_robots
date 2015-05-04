@@ -58,7 +58,7 @@
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="tray" />
-			<arg name="can_module" value="can0" />
+			<arg name="can_device" value="can0" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -68,7 +68,7 @@
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
-			<arg name="can_module" value="can2" />
+			<arg name="can_device" value="can2" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -78,7 +78,7 @@
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm" />
-			<arg name="can_module" value="can1" />
+			<arg name="can_device" value="can1" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -88,7 +88,7 @@
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="gripper" />
-			<arg name="can_module" value="can3" />
+			<arg name="can_device" value="can3" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -109,7 +109,7 @@
 
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-			<arg name="robot" value="$(arg robot)" />>
+			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
 
