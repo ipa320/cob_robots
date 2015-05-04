@@ -2,6 +2,8 @@
 <launch>
 
   <!-- start sound -->
-  <node ns="sound_controller" pkg="cob_sound" type="sound" name="sound_node" cwd="node" respawn="false" output="screen" />
+  <node ns="sound" pkg="cob_sound" type="sound" name="sound_node" cwd="node" respawn="false" output="screen" >
+    <remap from="diagnostics" to="/diagnostics"/>
+  </node>
 
 </launch>
