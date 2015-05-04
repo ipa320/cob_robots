@@ -58,7 +58,7 @@
 		
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-			<arg name="robot" value="$(arg robot)" />>
+			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
 
