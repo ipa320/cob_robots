@@ -88,4 +88,13 @@
 	
 	<property name="torso_bottom_ref" value="${def_torso_bottom_ref+offset_torso_bottom_ref}"/>
 	<property name="torso_side_ref" value="${def_torso_side_ref+offset_torso_side_ref}"/>
+
+	<!-- laser mount positions | relative to base_link -->
+	<property name="laser_front_x" value="${def_laser_front_x+offset_laser_front_x}"/>
+	<property name="laser_rear_x" value="${def_laser_rear_x+offset_laser_rear_x}"/>
+	<property name="laser_front_y" value="${def_laser_front_y+offset_laser_front_y}"/>
+	<property name="laser_rear_y" value="${def_laser_rear_y+offset_laser_rear_y}"/>
+	<property name="laser_front_yaw" value="${def_laser_front_yaw+offset_laser_front_yaw}"/>
+	<property name="laser_rear_yaw" value="${def_laser_rear_yaw+offset_laser_rear_yaw}"/>
+
 </robot>

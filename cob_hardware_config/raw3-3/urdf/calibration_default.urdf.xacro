@@ -87,4 +87,13 @@
 	
 	<property name="def_torso_bottom_ref" value="0.0"/>
 	<property name="def_torso_side_ref" value="0.0"/>
+
+	<!-- laser front/rear  mount positions | relative to base_link -->
+	<property name="def_laser_front_x" value="0.32501"/>
+	<property name="def_laser_rear_x" value="-0.32501"/>
+	<property name="def_laser_front_y" value="-0.232"/>
+	<property name="def_laser_rear_y" value="0.232"/>
+	<property name="def_laser_front_yaw" value="${-M_PI/4}"/>
+	<property name="def_laser_rear_yaw" value="${-M_PI*5/4}"/>
+
 </robot>
