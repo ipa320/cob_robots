@@ -63,6 +63,9 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<include file="$(find rplidar_ros)/launch/rplidar.launch" />
+
 		<!--include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
