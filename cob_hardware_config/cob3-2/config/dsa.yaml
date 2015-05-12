@@ -1,4 +1,4 @@
-dsadevicestring: /dev/ttyS0
+dsadevicestring: /dev/ttyTact
 polling: false
 use_rle: true
 frequency: 5
