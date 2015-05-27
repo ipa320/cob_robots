@@ -85,7 +85,9 @@
 		</include>
 
 		<!-- light -->
-		<include file="$(find cob_bringup)/drivers/light.launch" />
+		<include file="$(find cob_bringup)/drivers/light.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 	</group>
 
