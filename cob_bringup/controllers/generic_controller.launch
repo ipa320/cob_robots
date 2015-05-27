@@ -7,12 +7,6 @@
 
 	<group ns="$(arg component_name)">
 
-		<!-- robot state publisher -->
-		<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-			<param name="publish_frequency" type="double" value="50.0" />
-			<param name="tf_prefix" type="string" value="" />
-		</node>
-
 		<!-- load controller configs -->
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
 		<!--rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_joint_limits.yaml"/-->
@@ -22,9 +16,6 @@
 
 		<!-- control_mode_adapter -->
 		<node pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" name="control_mode_adapter" cwd="node" respawn="false" output="screen"/>
-
-		<!-- temporary relay -->
-		<node pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 
 	</group>
 

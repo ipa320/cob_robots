@@ -4,11 +4,11 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
-	<arg name="can_module"/>
+	<arg name="can_device"/>
 
 	<!-- parameters for CANopen node -->
 	<node ns="$(arg component_name)" pkg="canopen_motor_node" type="canopen_motor_node" name="$(arg component_name)_driver" output="screen" clear_params="true">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg can_module).yaml" />
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg can_device).yaml" />
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml" />
 	</node>
 

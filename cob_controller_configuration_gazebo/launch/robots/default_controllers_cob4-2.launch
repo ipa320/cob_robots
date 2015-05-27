@@ -3,6 +3,11 @@
 
 	<arg name="robot" default="cob4-2"/>
 	
+	<!-- aggregated robot_state_publisher -->
+	<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+	
 	<!-- Base -->
 	<!-- simulated driver services -->
 	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
@@ -26,6 +31,20 @@
 	
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
+	</include>
+	
+	<!-- Torso -->
+	<!-- simulated driver services -->
+	<node ns="torso" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
+	</include>
+	<!-- Cartesian controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
 	</include>
 	
 	<!-- Sensorring -->
@@ -137,6 +156,10 @@
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-9)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="Wifi Status (ddwrt)"/>
 		<param name="topic_name" value="/wifi_status"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-10)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="torso_controller"/>
+		<param name="topic_name" value="/torso/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-11)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="sensorring_controller"/>

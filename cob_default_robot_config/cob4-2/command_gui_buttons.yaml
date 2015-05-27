@@ -10,6 +10,13 @@ group1:
   buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
+#group2:
+#  group_name: torso
+#  component_name: torso
+#  buttons: [[stop,trigger,stop],
+#    [init,trigger,init],
+#    [recover,trigger,recover],
+#    [home,move,home]]
 group4:
   group_name: sensorring
   component_name: sensorring

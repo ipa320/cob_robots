@@ -19,7 +19,7 @@
 	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
 
 	<group>
-		<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -65,7 +65,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="version" value="v1"/>
 		</include>
-		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
@@ -78,11 +77,15 @@
 		<node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/>
 		<!-- TMP END -->
 		
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
-		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
-
+		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -90,10 +93,20 @@
 		</include>
 
 		<!-- startup hardware -->
+		<!--include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="torso" />
+			<arg name="can_device" value="can1" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+		</include-->
+
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="sensorring" />
-			<arg name="can_module" value="can1" />
+			<arg name="can_device" value="can1" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -103,7 +116,7 @@
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
-			<arg name="can_module" value="can3" />
+			<arg name="can_device" value="can3" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -113,7 +126,7 @@
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
-			<arg name="can_module" value="can2" />
+			<arg name="can_device" value="can2" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -124,11 +137,10 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="light_torso" />
 		</include>
-
 	</group>
 
 	<group>
-		<machine name="cob4-2-t2" address="$(arg cob4-2-t2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="cob4-2-t2" address="$(arg cob4-2-t2)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -151,11 +163,10 @@
 			<arg name="camera_name" value="torso_cam3d_right"/>
 			<arg name="nodelet_manager" value="torso_cam3d_right_nodelet_manager"/>
 		</include>
-
 	</group>
 
 	<group>
-		<machine name="cob4-2-t3" address="$(arg cob4-2-t3)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="cob4-2-t3" address="$(arg cob4-2-t3)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -182,12 +193,11 @@
 		<!--include file="$(find cob_bringup)/drivers/softkinetic.launch" >
 			<arg name="name" value="torso_cam3d_down"/>
 		</include-->
-
 	</group>
 
 
 	<group>
-		<machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -198,6 +208,8 @@
 		<!--node pkg="cob_mimic" type="mimic_node.py" name="cob_mimic"/-->
 		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_bringup)/drivers/sound.launch" />
-
 	</group>
+
+	<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+
 </launch>

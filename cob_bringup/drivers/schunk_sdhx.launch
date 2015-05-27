@@ -5,14 +5,8 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
 
-	<node pkg="schunk_sdhx" type="sdhx_node.py" name="$(arg component_name)" respawn="true" output="screen" >
+	<node ns="$(arg component_name)" pkg="schunk_sdhx" type="sdhx_node.py" name="$(arg component_name)_node" respawn="true" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
 	</node>
-
-	<!-- robot_state_publisher -->
-	<node ns="$(arg component_name)" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
-
-	<!-- temporary relay -->
-	<node ns="$(arg component_name)" pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 
 </launch>
