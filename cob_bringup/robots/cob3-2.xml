@@ -16,7 +16,7 @@
 	<include file="$(find cob_default_robot_config)/cob3-2/upload_param_cob3-2.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -28,9 +28,6 @@
 		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
-		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -94,9 +91,7 @@
 		<include file="$(find cob_bringup)/drivers/schunk_sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/dsa.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
+
 		<include file="$(find cob_bringup)/drivers/head_axis.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -109,37 +104,10 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="version" value="v1" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/tray_sensors.launch" >
+		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>
-
-		<!-- aggregated robot_state_publisher -->
-		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-	</group>
-
-	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
-
-		<!-- pc monitor -->
-		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc2)" />
-		</include>
-
-		<!-- start camera sensors -->
-		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="left"/>
-		</include>
-		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="right"/>
-		</include>
-		<include file="$(find cob_bringup)/drivers/openni.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="cam3d" />
+			<arg name="name" value="cam3d"/>
+			<arg name="device_id" value="#1"/>
 		</include>
 		<!--include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -153,6 +121,34 @@
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
 
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
+
+	<group>
+		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg pc2)" />
+		</include>
+
+		<!-- start camera sensors -->
+		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="right"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="left"/>
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/dsa.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/drivers/sound.launch" />
@@ -160,7 +156,7 @@
 	</group>
 
 	<group>
-		<machine name="pc3" address="$(arg pc3)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc3" address="$(arg pc3)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -171,8 +167,11 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="light" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/tray_sensors.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
 </launch>
