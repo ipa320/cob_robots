@@ -67,6 +67,10 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
@@ -86,7 +90,6 @@
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/drivers/sound.launch" />
-
 	</group>
 
 	<group>
@@ -97,7 +100,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc3)" />
 		</include>
-
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
