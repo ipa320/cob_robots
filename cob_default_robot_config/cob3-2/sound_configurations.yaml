@@ -1,7 +1,4 @@
 speech_mode: FEST_EN
-#wav_de_path: /home/cob/svn/cob/Files/Audio/WiMi/wav_de/
-wav_en_path: /home/cob/svn/cob/Files/Audio/WiMi/wav_de/
-temp_wav_file: /home/fmw/wav/swift_temp.wav
 
 rand/introduce: ["sent01","sent02","sent03"]
 rand/offer: ["sent04","sent05","sent06","sent07","sent08","sent09"]
