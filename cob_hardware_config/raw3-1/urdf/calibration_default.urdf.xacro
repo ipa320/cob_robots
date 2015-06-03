@@ -13,11 +13,6 @@
 	<property name="def_tower_pitch" value="0.0"/>
 	<property name="def_tower_yaw" value="3.14159265359"/>
 
-	<!-- torso reference positions | used as calibration_rising for torso chain -->
-	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
-	<property name="torso_pan_ref" value="-0.4363323130"/>
-	<property name="torso_tilt_ref" value="0.0"/>
-
 	<!--torso mount positions | relative to base_link-->
 	<property name="def_torso_x" value="0.166"/>
 	<property name="def_torso_y" value="0.2175"/>

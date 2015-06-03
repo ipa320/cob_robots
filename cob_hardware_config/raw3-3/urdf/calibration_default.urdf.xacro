@@ -84,7 +84,5 @@
 	<property name="def_cam_holder_roll" value="1.5708"/>
 	<property name="def_cam_holder_pitch" value="0.0"/>
 	<property name="def_cam_holder_yaw" value="0.0"/>
-	
-	<property name="def_torso_bottom_ref" value="0.0"/>
-	<property name="def_torso_side_ref" value="0.0"/>
+
 </robot>

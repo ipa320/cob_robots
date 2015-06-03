@@ -20,5 +20,4 @@
 	<property name="def_arm_pitch" value="0.0"/>
 	<property name="def_arm_yaw" value="0.0"/>
 
-
 </robot>

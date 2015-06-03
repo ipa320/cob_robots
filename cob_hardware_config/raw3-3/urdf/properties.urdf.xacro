@@ -85,7 +85,5 @@
 	<property name="cam_holder_roll" value="${def_cam_holder_roll+offset_cam_holder_roll}"/>
 	<property name="cam_holder_pitch" value="${def_cam_holder_pitch+offset_cam_holder_pitch}"/>
 	<property name="cam_holder_yaw" value="${def_cam_holder_yaw+offset_cam_holder_yaw}"/>
-	
-	<property name="torso_bottom_ref" value="${def_torso_bottom_ref+offset_torso_bottom_ref}"/>
-	<property name="torso_side_ref" value="${def_torso_side_ref+offset_torso_side_ref}"/>
+
 </robot>
