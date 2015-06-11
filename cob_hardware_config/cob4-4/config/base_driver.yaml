@@ -6,6 +6,19 @@ defaults:
     "6084": "1000000"
     "60C5": "1000000"
     "60C6": "1000000"
+    "6099sub1": "100000" # find switch (coarse)
+    "6099sub2": "10000" # find home (fine)
+    "1016sub1" : "0x7F0064" # heartbeat timeout of 100 ms for master at 127
+
+
+# wheel 1 [-51915.0, -52077.0] -51996.0
+# wheel 2 [-172313.00000000003, -172050.0] -172181.5
+# wheel 3 [64807.0, 64968.0] 64887.5
+#06.05.2015
+#wheel 1 [-52298.0, -52459.0] -52378.5
+#wheel 2 [-172403.0, -172141.0] -172272.0
+#wheel 3 [68227.0, 68186.0] 68206.5
+
 
 nodes:
   ##Wheel 1
@@ -13,7 +26,7 @@ nodes:
     id: 1
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "-54359" # home offset
+      "607C": "-52378" # home offset
   fl_caster_r_wheel_joint:
     id: 2
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
@@ -24,7 +37,7 @@ nodes:
     id: 3
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "-175428" # home offset
+      "607C": "-172272" # home offset
   b_caster_r_wheel_joint:
     id: 4
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
@@ -35,7 +48,7 @@ nodes:
     id: 5
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "-111597" # home offset
+      "607C": "68206" # home offset
   fr_caster_r_wheel_joint:
     id: 6
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)

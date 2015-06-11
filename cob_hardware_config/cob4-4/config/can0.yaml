@@ -1,5 +1,9 @@
 bus:
   device: can0
 sync:
-  interval_ms: 10
+  interval_ms: 20
   overflow: 0
+  silence_us: 250
+heartbeat:
+  rate: 20
+  msg: "77f#05"

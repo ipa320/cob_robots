@@ -55,7 +55,7 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="version" value="v2"/>
+			<arg name="version" value="v1"/>
 		</include>
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >

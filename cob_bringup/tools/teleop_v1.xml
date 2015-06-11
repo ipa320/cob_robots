@@ -10,7 +10,7 @@
 	</include>
 
 	<node pkg="cob_teleop" type="cob_teleop_v1" name="$(anon teleop_node)" ns="teleop" output="screen">
-		<remap from="/cmd_vel" to="/base_controller/command" />
+		<remap from="/cmd_vel" to="/base/twist_controller/command" />
 		<remap from="/cmd_vel_safety" to="/base_controller/command_safe" />
 		<rosparam command="load" ns="/robot_config" file="$(arg pkg_hardware_config)/$(arg robot)/config/robot_modules.yaml"/>
 		<rosparam command="load" ns="/teleop" file="$(arg pkg_hardware_config)/$(arg robot)/config/teleop.yaml"/>
