@@ -4,7 +4,7 @@ import roslib; roslib.load_manifest('cob_controller_configuration_gazebo')
 import rospy
 
 # care-o-bot includes
-from cob_srvs.srv import *
+from std_srvs.srv import *
 
 class gazebo_services():
 
@@ -16,7 +16,7 @@ class gazebo_services():
 
 	def srv_cb(self, req):
 		resp = TriggerResponse()
-		resp.success.data = True
+		resp.success = True
 		return resp
 
 

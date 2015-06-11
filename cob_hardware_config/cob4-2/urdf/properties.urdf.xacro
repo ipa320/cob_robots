@@ -93,6 +93,11 @@
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
+	<!-- torso reference positions | used as calibration_rising for torso chain -->
+	<!-- ! set these values to make torso straight with (0, 0, 0) joint angles ! -->
+	<property name="torso_2_ref" value="${def_torso_2_ref+offset_torso_2_ref}"/>
+	<property name="torso_3_ref" value="${def_torso_3_ref+offset_torso_3_ref}"/>
+
 	<!-- sensorring reference positions | used as calibration_rising for sensorring chain -->	
 	<property name="sensorring_ref" value="${def_sensorring_ref+offset_sensorring_ref}"/>
 
