@@ -13,12 +13,6 @@
 		<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
 		<node pkg="cob_trajectory_controller" type="cob_trajectory_controller" name="joint_trajectory_controller" cwd="node" respawn="false" output="screen" />
 
-		<!-- robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
-
-		<!-- temporary relay -->
-		<node pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
-
 	</group>
 
 </launch>

@@ -6,12 +6,6 @@
 
 	<group ns="base">
 
-		<!-- robot state publisher -->
-		<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-			<param name="publish_frequency" type="double" value="50.0" />
-			<param name="tf_prefix" type="string" value="" />
-		</node>
-
 		<!-- load controller configs -->
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_controller.yaml"/>
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_joint_limits.yaml"/>
@@ -20,9 +14,6 @@
 		<node pkg="controller_manager" type="spawner" name="joint_state_controller_spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true" />
 		<node pkg="controller_manager" type="spawner" name="twist_controller_spawner" args="--timeout 60 --shutdown-timeout 1 twist_controller" respawn="true" output="screen"/>
 		<node pkg="controller_manager" type="spawner" name="odom_controller_spawner" args="--timeout 60 --shutdown-timeout 1 odometry_controller" respawn="true" output="screen"/>
-
-		<!-- temporary relay -->
-		<node pkg="topic_tools" type="relay" name="joint_states_relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
 
 	</group>
 
