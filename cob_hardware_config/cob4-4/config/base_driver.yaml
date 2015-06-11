@@ -10,15 +10,10 @@ defaults:
     "6099sub2": "10000" # find home (fine)
     "1016sub1" : "0x7F0064" # heartbeat timeout of 100 ms for master at 127
 
-
-# wheel 1 [-51915.0, -52077.0] -51996.0
-# wheel 2 [-172313.00000000003, -172050.0] -172181.5
-# wheel 3 [64807.0, 64968.0] 64887.5
-#06.05.2015
-#wheel 1 [-52298.0, -52459.0] -52378.5
-#wheel 2 [-172403.0, -172141.0] -172272.0
-#wheel 3 [68227.0, 68186.0] 68206.5
-
+drive_wheel: &drive_wheel
+  dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
+    "6098": "35" # homing method
+  vel_from_device: "p1 == nan || obj2041 == t1 ? 0 : deg2rad(1000*norm(obj6064-p1,-36000000,36000000)/norm(obj2041-t1,0,2^32)), p1=p0, p0 = obj6064, t1 = t0, t0 = obj2041"
 
 nodes:
   ##Wheel 1
@@ -26,31 +21,28 @@ nodes:
     id: 1
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "-52378" # home offset
+      "607C": "-52047" # home offset
   fl_caster_r_wheel_joint:
+    <<: *drive_wheel
     id: 2
-    dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
-      "6098": "35" # homing method
 
   ##Wheel 2
   b_caster_rotation_joint:
     id: 3
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "-172272" # home offset
+      "607C": "-172226" # home offset
   b_caster_r_wheel_joint:
+    <<: *drive_wheel
     id: 4
-    dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
-      "6098": "35" # homing method
 
   ##Wheel 3
   fr_caster_rotation_joint:
     id: 5
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "68206" # home offset
+      "607C": "67092" # home offset
   fr_caster_r_wheel_joint:
+    <<: *drive_wheel
     id: 6
-    dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
-      "6098": "35" # homing method
 

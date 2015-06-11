@@ -10,8 +10,8 @@ recover_base_button: 7
 # axes
 axis_vx: 1
 axis_vy: 0
-#axis_vth: 3
-axis_vth: 2
+axis_vth: 3
+#axis_vth: 2
 
 # component configuration
 modules: {
