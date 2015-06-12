@@ -73,27 +73,7 @@
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
-	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
-	<property name="def_torso_lower_neck_tilt_ref" value="0.0"/>
-	<property name="def_torso_pan_ref" value="0.0"/>
-	<property name="def_torso_upper_neck_tilt_ref" value="0.0"/>
-
-	<!-- tray reference position | used as calibration_rising for tray chain -->
-	<property name="def_tray_1_ref" value="0.0"/>
-	<property name="def_tray_2_ref" value="0.0"/>
-	<property name="def_tray_3_ref" value="0.0"/>
-
-	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
-	<property name="def_head_axis_ref" value="0.15"/>
-
-	<!-- arm reference positions | used as calibration_rising for arm chain-->
-	<property name="def_arm_1_ref" value="0.0"/>
-	<property name="def_arm_2_ref" value="0.0"/>
-	<property name="def_arm_3_ref" value="0.0"/>
-	<property name="def_arm_4_ref" value="0.0"/>
-	<property name="def_arm_5_ref" value="0.0"/>
-	<property name="def_arm_6_ref" value="0.0"/>
-	<property name="def_arm_7_ref" value="0.0"/>
+	<!-- this feature is no longer supported as urdfdom does not parse the according 'calibration_rising' tag -->
 
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->
