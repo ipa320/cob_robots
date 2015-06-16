@@ -1,0 +1,38 @@
+## joint_names
+joint_names: ['sdh_finger_21_joint', 'sdh_knuckle_joint', 'sdh_thumb_2_joint', 'sdh_thumb_3_joint', 'sdh_finger_12_joint', 'sdh_finger_13_joint', 'sdh_finger_22_joint', 'sdh_finger_23_joint']
+
+## control_mode_adapter
+max_command_silence: 0.5
+
+## joint_state_controller
+joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+## joint trajectory controller
+joint_trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - sdh_knuckle_joint
+     - sdh_thumb_2_joint
+     - sdh_thumb_3_joint
+     - sdh_finger_12_joint
+     - sdh_finger_13_joint
+     - sdh_finger_22_joint
+     - sdh_finger_23_joint
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      sdh_knuckle_joint: {trajectory: 0.1, goal: 0.1}
+      sdh_thumb_2_joint: {trajectory: 0.1, goal: 0.1}
+      sdh_thumb_3_joint: {trajectory: 0.1, goal: 0.1}
+      sdh_finger_12_joint: {trajectory: 0.1, goal: 0.1}
+      sdh_finger_13_joint: {trajectory: 0.1, goal: 0.1}
+      sdh_finger_22_joint: {trajectory: 0.1, goal: 0.1}
+      sdh_finger_23_joint: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+  required_drive_mode: 7
+  
+## no further controllers available

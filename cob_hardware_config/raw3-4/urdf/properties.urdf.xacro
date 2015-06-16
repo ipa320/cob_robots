@@ -3,6 +3,25 @@
 	<xacro:include filename="$(find cob_hardware_config)/raw3-4/urdf/calibration_default.urdf.xacro" />
 	<xacro:include filename="$(find cob_calibration_data)/raw3-4/calibration/calibration_offset.urdf.xacro" />
 
+	<!-- ***************** -->
+	<!-- base calibration -->
+	<!-- ***************** -->
+	<!-- laser front mount positions | relative to base_link -->
+	<property name="laser_front_x" value="${def_laser_front_x+offset_laser_front_x}"/>
+	<property name="laser_front_y" value="${def_laser_front_y+offset_laser_front_y}"/>
+	<property name="laser_front_z" value="${def_laser_front_z+offset_laser_front_z}"/>
+	<property name="laser_front_roll" value="${def_laser_front_roll+offset_laser_front_roll}"/>
+	<property name="laser_front_pitch" value="${def_laser_front_pitch+offset_laser_front_pitch}"/>
+	<property name="laser_front_yaw" value="${def_laser_front_yaw+offset_laser_front_yaw}"/>
+
+	<!-- laser rear mount positions | relative to base_link -->
+	<property name="laser_rear_x" value="${def_laser_rear_x+offset_laser_rear_x}"/>
+	<property name="laser_rear_y" value="${def_laser_rear_y+offset_laser_rear_y}"/>
+	<property name="laser_rear_z" value="${def_laser_rear_z+offset_laser_rear_z}"/>
+	<property name="laser_rear_roll" value="${def_laser_rear_roll+offset_laser_rear_roll}"/>
+	<property name="laser_rear_pitch" value="${def_laser_rear_pitch+offset_laser_rear_pitch}"/>
+	<property name="laser_rear_yaw" value="${def_laser_rear_yaw+offset_laser_rear_yaw}"/>
+
 	<!-- tower mount positions | relative to base_link -->
 	<property name="tower_x" value="${def_tower_x+offset_tower_x}"/>
 	<property name="tower_y" value="${def_tower_y+offset_tower_y}"/>
