@@ -3,6 +3,8 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="service_ns" default="base_controller"/>
+	<arg name="cmd_vel" default="/cmd_vel"/>
 
 	<include file="$(find cob_bringup)/drivers/joy.launch">
 		<arg name="robot" value="$(arg robot)" />
@@ -10,10 +12,10 @@
 	</include>
 
 	<node pkg="cob_teleop" type="cob_teleop_v1" name="$(anon teleop_node)" ns="teleop" output="screen">
-		<remap from="/cmd_vel" to="/base/twist_controller/command" />
+		<remap from="/cmd_vel" to="$(arg cmd_vel)" />
 		<remap from="/cmd_vel_safety" to="/base_controller/command_safe" />
-		<remap from="/base_controller/init" to="/base/driver/init" />
-		<remap from="/base_controller/recover" to="/base/driver/recover" />
+		<remap from="/base_controller/init" to="/$(arg service_ns)/init" />
+		<remap from="/base_controller/recover" to="/$(arg service_ns)/recover" />
 		<rosparam command="load" ns="/robot_config" file="$(arg pkg_hardware_config)/$(arg robot)/config/robot_modules.yaml"/>
 		<rosparam command="load" ns="/teleop" file="$(arg pkg_hardware_config)/$(arg robot)/config/teleop.yaml"/>
 	</node>
