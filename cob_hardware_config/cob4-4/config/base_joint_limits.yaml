@@ -9,7 +9,7 @@ joint_limits:
     max_acceleration: 2.0
     has_jerk_limits: false
     max_jerk: 100.0
-    has_effort_limits: false
+    has_effort_limits: true
     max_effort: 5.0
   fl_caster_r_wheel_joint:
     has_position_limits: false
@@ -21,7 +21,7 @@ joint_limits:
     max_acceleration: 2.0
     has_jerk_limits: false
     max_jerk: 100.0
-    has_effort_limits: false
+    has_effort_limits: true
     max_effort: 5.0
   fr_caster_rotation_joint:
     has_position_limits: false
@@ -33,7 +33,7 @@ joint_limits:
     max_acceleration: 2.0
     has_jerk_limits: false
     max_jerk: 100.0
-    has_effort_limits: false
+    has_effort_limits: true
     max_effort: 5.0
   fr_caster_r_wheel_joint:
     has_position_limits: false
@@ -45,7 +45,7 @@ joint_limits:
     max_acceleration: 2.0
     has_jerk_limits: false
     max_jerk: 100.0
-    has_effort_limits: false
+    has_effort_limits: true
     max_effort: 5.0
   b_caster_rotation_joint:
     has_position_limits: false
@@ -57,7 +57,7 @@ joint_limits:
     max_acceleration: 2.0
     has_jerk_limits: false
     max_jerk: 100.0
-    has_effort_limits: false
+    has_effort_limits: true
     max_effort: 5.0
   b_caster_r_wheel_joint:
     has_position_limits: false
@@ -69,5 +69,5 @@ joint_limits:
     max_acceleration: 2.0
     has_jerk_limits: false
     max_jerk: 100.0
-    has_effort_limits: false
+    has_effort_limits: true
     max_effort: 5.0
