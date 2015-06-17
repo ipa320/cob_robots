@@ -2,8 +2,8 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.3 (2015-06-17)
+------------------
 * Merge branch 'indigo_dev' into indigo_release_candidate
 * cob3-2 simulation test
 * added cob3-2
