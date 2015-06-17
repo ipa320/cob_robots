@@ -2,8 +2,8 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.1 (2015-06-17)
+------------------
 * updates to moveit config for cob4-2
 * update joint limits to cope with cob4-2 arms
 * fix install tag
