@@ -18,10 +18,15 @@
   <!-- frida --> 
   <xacro:include filename="$(find prace_common)/urdf/prace.urdf.xacro" />
 
-  <!-- generic simulator_gazebo plugins for starting mechanism control, ros time, ros battery -->
-  <xacro:include filename="$(find cob_description)/gazebo/gazebo.urdf.xacro" />
 
+  <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
+  <gazebo>
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
+      <robotNamespace>base</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 
 <!--
   <xacro:tower_symetric name="tower" parent="base_link">
@@ -32,9 +37,11 @@
   <!-- prace macros -->
   <xacro:prace/>
 
+<!--
   <xacro:lookat name="lookat" parent="head_cam_holder_link" lower="0.0" upper="8.0">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
     <axis xyz="1 0 0"/>
   </xacro:lookat>
+-->
 
 </robot>

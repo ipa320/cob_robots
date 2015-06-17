@@ -3,3 +3,4 @@ bus:
 sync:
   interval_ms: 10
   overflow: 0
+  silence_us: 250

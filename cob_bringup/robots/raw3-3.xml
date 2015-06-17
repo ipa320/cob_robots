@@ -16,10 +16,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-3/upload_param_raw3-3.launch" />
 
 	<group>
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
-
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
@@ -46,9 +43,12 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		
-		<!--include file="$(find cob_bringup)/drivers/frida.launch" >
+<!--
+		<include file="$(find cob_bringup)/drivers/frida.launch" >
 			<arg name="robot_ip" value="192.168.125.1" />
-		</include-->
+		</include>
+		<node ns="arm" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+-->
 
 		<!--include file="$(find cob_bringup)/drivers/prace_grippers.launch"/-->
 
@@ -64,24 +64,26 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<!--include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="can_module" value="can1" />
+			<arg name="can_device" value="can1" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="component_name" value="torso" />
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/lookat_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
 		</include-->
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 	</group>
 
 	<group>
-	<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -93,9 +95,7 @@
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
-
 	</group>
-
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 

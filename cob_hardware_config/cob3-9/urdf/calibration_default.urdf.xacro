@@ -55,48 +55,25 @@
 	<property name="def_head_yaw" value="0.0"/>
 
 	<!-- arm mount positions | relative to base_link -->
-  <property name="def_arm_x" value="0.040"/>
-  <property name="def_arm_y" value="-0.005"/>
-  <property name="def_arm_z" value="0.83637"/>
-  <property name="def_arm_roll" value="-0.1"/>
-  <property name="def_arm_pitch" value="-0.7554"/>
-  <property name="def_arm_yaw" value="1.33899265359"/>
+	<property name="def_arm_x" value="0.040"/>
+	<property name="def_arm_y" value="-0.065"/>
+	<property name="def_arm_z" value="0.85"/>
+	<property name="def_arm_roll" value="-0.1"/>
+	<property name="def_arm_pitch" value="-3.896992654"/>
+	<property name="def_arm_yaw" value="1.33899265359"/>
 
-  <!-- pg70 mount positions | relative to arm_7_link -->
-  <property name="def_pg70_x" value="0.0"/>
-  <property name="def_pg70_y" value="0.0"/>
-  <property name="def_pg70_z" value="0.075"/>
-  <property name="def_pg70_roll" value="0.0"/>
-  <property name="def_pg70_pitch" value="0.0"/>
-  <property name="def_pg70_yaw" value="0.0"/>
+	<!-- pg70 mount positions | relative to arm_7_link -->
+	<property name="def_pg70_x" value="0.0"/>
+	<property name="def_pg70_y" value="0.0"/>
+	<property name="def_pg70_z" value="0.075"/>
+	<property name="def_pg70_roll" value="0.0"/>
+	<property name="def_pg70_pitch" value="0.0"/>
+	<property name="def_pg70_yaw" value="0.0"/>
 
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
-	<!-- torso chain calibration_offest! | relative to reference position (see below)-->
-	<property name="def_torso_lower_neck_tilt_ref" value="0.0"/>
-	<property name="def_torso_pan_ref" value="0.0"/>
-	<property name="def_torso_upper_neck_tilt_ref" value="0.0"/>
-
-	<!-- tray reference position | used as calibration_rising for tray chain -->
-	<property name="def_tray_ref" value="0.0"/>
-
-	<!-- head camera axis reference position | used as calibration_rising for head axis chain -->
-	<property name="def_head_axis_ref" value="-0.1"/>
-
-	<!-- arm reference positions | used as calibration_rising for arm chain-->
-	<property name="def_arm_1_ref" value="0"/>
-	<property name="def_arm_2_ref" value="0"/>
-	<property name="def_arm_3_ref" value="0"/>
-	<property name="def_arm_4_ref" value="0"/>
-	<property name="def_arm_5_ref" value="0"/>
-	<property name="def_arm_6_ref" value="0"/>
-	<property name="def_arm_7_ref" value="0"/>
-
-	<!-- gripper reference positions | used as calibration_rising for gripper chain-->
-	<property name="def_pg70_finger_left_ref" value="0.0" />
-	<property name="def_pg70_finger_right_ref" value="0.0" />
-
+	<!-- this feature is no longer supported as urdfdom does not parse the according 'calibration_rising' tag -->
 
 	<!-- ***************************** -->
 	<!-- camera calibration properties -->

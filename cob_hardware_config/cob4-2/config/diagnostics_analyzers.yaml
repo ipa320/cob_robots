@@ -8,20 +8,27 @@ analyzers:
       b1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: b1
-        contains: 'b1'
+        contains: '-b1'
       t1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t1
-        contains: 't1'
+        contains: '-t1'
       t2:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t2
-        contains: 't2'
+        contains: '-t2'
       t3:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t3
-        contains: 't3'
-
+        contains: '-t3'
+#      s1:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: s1
+#        contains: '-s1'
+      h1:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: h1
+        contains: '-h1'
 #  network:
 #    type: diagnostic_aggregator/AnalyzerGroup
 #    path: Network
@@ -40,6 +47,14 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Joystick
         contains: 'joy'
+      sound:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sound
+        contains: 'sound'
+      light:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Light
+        contains: 'light'
 
   sensors:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -62,23 +77,32 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
+      torso:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso
+        contains: 'torso'
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
-        contains: 'sensorring_controller'
+        contains: 'sensorring'
       arm_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Right
-        contains: 'arm_right_controller'
+        contains: 'arm_right'
       arm_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Left
-        contains: 'arm_left_controller'
+        contains: 'arm_left'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
         contains: 'base_controller'
-        
+
+  safety:
+    type: diagnostic_aggregator/GenericAnalyzer
+    path: Safety
+    contains: 'safety'
+
 ## remove diagnostics from gazebo in simulated case
   simulation:
     type: diagnostic_aggregator/DiscardAnalyzer

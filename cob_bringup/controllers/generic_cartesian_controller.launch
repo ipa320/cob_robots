@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name"/>
+
+	<group ns="$(arg component_name)">
+
+		<!-- load Cartesian controller config -->
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_cartesian_controller.yaml"/>
+		
+		<!-- Cartesian controllers -->
+		<node pkg="cob_twist_controller" type="cob_twist_controller_node" name="twist_controller" cwd="node" respawn="false" output="screen"/>
+		<node pkg="cob_frame_tracker" type="cob_frame_tracker_node" name="frame_tracker" cwd="node" respawn="false" output="screen"/>
+		<node pkg="cob_frame_tracker" type="interactive_frame_target_node" name="interactive_target" cwd="node" respawn="false" output="screen"/>
+
+	</group>
+
+</launch>

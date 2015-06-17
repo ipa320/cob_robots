@@ -3,49 +3,44 @@ project(cob_bringup)
 
 find_package(catkin REQUIRED COMPONENTS roslaunch)
 
-# rostest for robots
+catkin_package()
+
+
+
 set(robotlist
-cob3-6
-cob3-9
-cob4-1
-cob4-2
-raw3-1
-raw3-2
-raw3-3
-raw3-4
-raw3-5
-raw3-6
+  cob3-2
+  cob3-6
+  cob3-9
+  cob4-1
+  cob4-2
+  cob4-6
+  raw3-1
+  raw3-2
+  raw3-3
+  raw3-4
+  raw3-5
+  raw3-6
 )
 
 set(envlist
-empty
-ipa-kitchen
-ipa-apartment
-ipa-factory
+  empty
+  ipa-kitchen
+  ipa-apartment
+  ipa-factory
 )
 
-# loop through list of robots for testing
-foreach(robot ${robotlist})
+if(CATKIN_ENABLE_TESTING)
+    foreach(robot ${robotlist})
 	#foreach(env ${envlist})
-		message("testing for robot: ${robot} in env: ${env}")
-		#rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
-		#rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
-		roslaunch_add_file_check(robots/${robot}.xml robot_env:=ipa-apartment)
-	#endforeach(env)
-endforeach(robot)
+	    message("testing for robot: ${robot} in env: ${env}")
+	    #rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
+	    #rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
+	    roslaunch_add_file_check(robots/${robot}.xml robot_env:=ipa-apartment)
+	#endforeach()
+    endforeach()
+endif()
 
 
-##rosbuild_add_roslaunch_check(ros/launch/sim.launch ROBOT=cob3-3 ROBOT_ENV=ipa-kitchen)
-
-# Check whether there's an X display.  Intended to use in gating tests that
-# require a display.
-#rosbuild_check_for_display(disp)
-
-#if(disp)
-#  #rosbuild_add_rostest(ros/launch/sim.launch TIMEOUT 100.0)
-#endif(disp)
-
-catkin_package()
 
 ## Mark launch files for installation
 install(DIRECTORY robots drivers controllers tools

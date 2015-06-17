@@ -1,5 +1,6 @@
 host: 10.4.2.99
 port: "9100" # alternative syntax: !!str 9100
+odometry_timeout: 1.0
 threshold_linear_slow: 0.1
 threshold_linear_fast: 0.4
 threshold_angular_fast: 0.5

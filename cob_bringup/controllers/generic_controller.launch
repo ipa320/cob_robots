@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name"/>
+
+	<group ns="$(arg component_name)">
+
+		<!-- load controller configs -->
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+		<!--rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_joint_limits.yaml"/-->
+
+		<!-- start_controllers -->
+		<node pkg="controller_manager" type="spawner" name="joint_state_controller_spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true"/>
+
+		<!-- control_mode_adapter -->
+		<node pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" name="control_mode_adapter" cwd="node" respawn="false" output="screen"/>
+
+	</group>
+
+</launch>

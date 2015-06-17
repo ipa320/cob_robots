@@ -74,29 +74,26 @@
 	<property name="arm_left_pitch" value="${def_arm_left_pitch+offset_arm_left_pitch}"/>
 	<property name="arm_left_yaw" value="${def_arm_left_yaw+offset_arm_left_yaw}"/>
 
+	<!-- gripper right mount positions | relative to arm_right_7_link -->
+	<property name="gripper_right_x" value="${def_gripper_right_x+offset_gripper_right_x}"/>
+	<property name="gripper_right_y" value="${def_gripper_right_y+offset_gripper_right_y}"/>
+	<property name="gripper_right_z" value="${def_gripper_right_z+offset_gripper_right_z}"/>
+	<property name="gripper_right_roll" value="${def_gripper_right_roll+offset_gripper_right_roll}"/>
+	<property name="gripper_right_pitch" value="${def_gripper_right_pitch+offset_gripper_right_pitch}"/>
+	<property name="gripper_right_yaw" value="${def_gripper_right_yaw+offset_gripper_right_yaw}"/>
+	
+	<!-- gripper left mount positions | relative to arm_left_7_link -->
+	<property name="gripper_left_x" value="${def_gripper_left_x+offset_gripper_left_x}"/>
+	<property name="gripper_left_y" value="${def_gripper_left_y+offset_gripper_left_y}"/>
+	<property name="gripper_left_z" value="${def_gripper_left_z+offset_gripper_left_z}"/>
+	<property name="gripper_left_roll" value="${def_gripper_left_roll+offset_gripper_left_roll}"/>
+	<property name="gripper_left_pitch" value="${def_gripper_left_pitch+offset_gripper_left_pitch}"/>
+	<property name="gripper_left_yaw" value="${def_gripper_left_yaw+offset_gripper_left_yaw}"/>
+
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
-	<!-- sensorring reference positions | used as calibration_rising for sensorring chain -->	
-	<property name="sensorring_ref" value="${def_sensorring_ref+offset_sensorring_ref}"/>
-
-	<!-- arm right reference positions | used as calibration_rising for arm chain-->
-	<property name="arm_right_1_ref" value="${def_arm_right_1_ref+offset_arm_right_1_ref}"/>
-	<property name="arm_right_2_ref" value="${def_arm_right_2_ref+offset_arm_right_2_ref}"/>
-	<property name="arm_right_3_ref" value="${def_arm_right_3_ref+offset_arm_right_3_ref}"/>
-	<property name="arm_right_4_ref" value="${def_arm_right_4_ref+offset_arm_right_4_ref}"/>
-	<property name="arm_right_5_ref" value="${def_arm_right_5_ref+offset_arm_right_5_ref}"/>
-	<property name="arm_right_6_ref" value="${def_arm_right_6_ref+offset_arm_right_6_ref}"/>
-	<property name="arm_right_7_ref" value="${def_arm_right_7_ref+offset_arm_right_7_ref}"/>
-	
-	<!-- arm right reference positions | used as calibration_rising for arm chain-->
-	<property name="arm_left_1_ref" value="${def_arm_left_1_ref+offset_arm_left_1_ref}"/>
-	<property name="arm_left_2_ref" value="${def_arm_left_2_ref+offset_arm_left_2_ref}"/>
-	<property name="arm_left_3_ref" value="${def_arm_left_3_ref+offset_arm_left_3_ref}"/>
-	<property name="arm_left_4_ref" value="${def_arm_left_4_ref+offset_arm_left_4_ref}"/>
-	<property name="arm_left_5_ref" value="${def_arm_left_5_ref+offset_arm_left_5_ref}"/>
-	<property name="arm_left_6_ref" value="${def_arm_left_6_ref+offset_arm_left_6_ref}"/>
-	<property name="arm_left_7_ref" value="${def_arm_left_7_ref+offset_arm_left_7_ref}"/>
+	<!-- this feature is no longer supported as urdfdom does not parse the according 'calibration_rising' tag -->
 
 	<!-- cam3d left | handeye calibration | relative to torso_3_link -->
 	<property name="torso_cam3d_left_x" value="${def_torso_cam3d_left_x+offset_torso_cam3d_left_x}"/>

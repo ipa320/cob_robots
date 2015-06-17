@@ -34,8 +34,6 @@
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
@@ -60,22 +58,41 @@
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="tray" />
-			<arg name="can_module" value="can0" />
+			<arg name="can_device" value="can0" />
 		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="tray"/>
+		</include>
+		
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
-			<arg name="can_module" value="can1" />
+			<arg name="can_device" value="can2" />
 		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+		</include>
+		
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm" />
-			<arg name="can_module" value="can2" />
+			<arg name="can_device" value="can1" />
 		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm"/>
+		</include>
+		
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="gripper" />
-			<arg name="can_module" value="can3" />
+			<arg name="can_device" value="can3" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="gripper"/>
 		</include>
 
 		<!-- start additional packages -->
@@ -90,6 +107,10 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
@@ -110,11 +131,8 @@
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
-		<include file="$(find cob_bringup)/drivers/head_axis.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -129,11 +147,12 @@
 		</include>
 		<include file="$(find cob_bringup)/drivers/openni.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="cam3d" />
 		</include>
-		<!--include file="$(find cob_image_flip)/ros/launch/image_flip_nodelet.launch" >
+		<!--include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+			<arg name="start_manager" value="false"/>
 		</include-->
 		<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
 			<arg name="namespace" value="/cam3d" />
@@ -141,6 +160,11 @@
 			<arg name="start_manager" value="false"/>
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 		</include>
+
+
+		<!-- start additional packages -->
+		<param name="/sound_controller/mode" value="cepstral" />
+		<include file="$(find cob_bringup)/drivers/sound.launch" />
 	</group>
 
 	<group>
@@ -152,15 +176,14 @@
 			<arg name="pc" value="$(arg pc3)" />
 		</include>
 
-		<!-- start additional packages -->
-		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<include file="$(find cob_bringup)/drivers/head_axis.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="light" />
 		</include>
-
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>

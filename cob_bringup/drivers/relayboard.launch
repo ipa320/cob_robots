@@ -6,10 +6,10 @@
 	<arg name="sim" default="false" />
 
 	<!-- start simulated relayboard node -->
-	<node if="$(arg sim)" pkg="cob_relayboard" type="relayboard_sim.py" ns="relayboard" name="relayboard_node" respawn="false" output="screen"/>
+	<node if="$(arg sim)" ns="relayboard" pkg="cob_relayboard" type="relayboard_sim.py" name="relayboard_node" respawn="false" output="screen"/>
 
 	<!-- start relayboard node -->
-	<node unless="$(arg sim)" name="relayboard_controller" pkg="cob_relayboard" type="cob_relayboard_node" respawn="false" output="screen">
+	<node unless="$(arg sim)" pkg="cob_relayboard" type="cob_relayboard_node" name="relayboard_controller" respawn="false" output="screen"> 
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/relayboard.yaml"/>
 	</node>
 

@@ -14,16 +14,13 @@
 	<include file="$(find cob_default_robot_config)/raw3-5/upload_param_raw3-5.launch" />
 
 	<group>
-    <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
-
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/laser_lms1xx.launch" >
@@ -55,6 +52,13 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
+
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 </launch>

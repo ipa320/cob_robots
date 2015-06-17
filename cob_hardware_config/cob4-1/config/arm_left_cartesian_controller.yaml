@@ -1,23 +1,51 @@
-## Cartesian controller
-cartesian_controller:
-  update_rate: 50.0
+## Cartesian controller parameters
 
-  # twist controller parameters
-  base_link: arm_left_base_link
-  tip_link: arm_left_7_link
+# twist controller parameters
+twist_controller:
+  chain_base_link: arm_left_base_link
+  chain_tip_link: arm_left_7_link
   base_compensation: false
   base_active: false
-  base_ratio: 0.0
+  base_ratio: 0.1
   max_vel_lin: 0.5
   max_vel_rot: 0.5
+  max_vel_lin_base: 0.5
+  max_vel_rot_base: 0.5
 
-  # frame_tracker + interactive_marker
-  active_frame: arm_left_7_link
+  # damping parameters
+  damping_method: 2  #MANIPULABILITY
+  damping_factor: 0.2
+  lambda0: 0.1
+  wt: 0.005
+  # constraints and truncation
+  constraint: 2 #WLN_JLA
+  eps: 0.03     #TRUNCATION
+  # limit enforcing
+  keep_direction: true
+  enforce_vel_limits: true
+  enforce_pos_limits: true
+  tolerance: 5.0 
+
+# frame_tracker + interactive_marker
+frame_tracker:
+  update_rate: 50.0
+
+  chain_base_link: arm_left_base_link
+  chain_tip_link: arm_left_7_link
   tracking_frame: arm_left_7_target
   root_frame: odom_combined
   movable_trans: true
   movable_rot: true
-  pid_trans_x: {p: 9.3, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_y: {p: 9.3, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_z: {p: 9.3, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot: {p: 9.3, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  # abortion criteria - cfg
+  cart_min_dist_threshold_lin: 0.042
+  cart_min_dist_threshold_rot: 0.01
+  twist_dead_threshold_lin: 0.05
+  twist_dead_threshold_rot: 0.05
+  twist_deviation_threshold_lin: 0.5
+  twist_deviation_threshold_rot: 0.5

@@ -3,29 +3,32 @@ project(cob_controller_configuration_gazebo)
 
 find_package(catkin REQUIRED COMPONENTS roslaunch)
 
-# rostest for robots
+catkin_package()
+
+
+
 set(robotlist
-cob3-6
-cob3-9
-cob4-1
-cob4-2
-raw3-1
-raw3-2
-raw3-3
-raw3-4
-raw3-5
-raw3-6
+  cob3-6
+  cob3-9
+  cob4-1
+  cob4-2
+  cob4-6
+  raw3-1
+  raw3-2
+  raw3-3
+  raw3-4
+  raw3-5
+  raw3-6
 )
 
-# loop through list of robots for testing
-foreach(robot ${robotlist})
-  message("testing for robot: ${robot}")
-  roslaunch_add_file_check(launch/robots/default_controllers_${robot}.launch)
-endforeach(robot)
 
-catkin_package(
-  CATKIN_DEPENDS
-)
+if(CATKIN_ENABLE_TESTING)
+  foreach(robot ${robotlist})
+    message("testing for robot: ${robot}")
+    roslaunch_add_file_check(launch/robots/default_controllers_${robot}.launch)
+  endforeach()
+endif()
+
 
 
 ## Mark cpp header files for installation
@@ -33,14 +36,6 @@ install(DIRECTORY launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(DIRECTORY controller
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-install(PROGRAMS src/fake_diagnostics.py src/gazebo_services.py src/gazebo_topics.py src/gazebo_services_base.py src/cob_controller_adapter_gazebo.py 
+install(PROGRAMS src/fake_diagnostics.py src/gazebo_services.py src/gazebo_topics.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/src
-)
-
-install(PROGRAMS scripts/test_publisher_pos_control.py scripts/test_publisher_vel_control.py 
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/scripts
 )

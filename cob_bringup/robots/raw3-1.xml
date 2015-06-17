@@ -17,7 +17,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-1/upload_param_raw3-1.launch" />
 
 	<group>
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -30,9 +30,6 @@
 
 		<!-- wifi monitor -->
 		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" /-->
-
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
@@ -50,6 +47,7 @@
 		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -59,16 +57,18 @@
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain_driver.launch" >
-			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="torso" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="torso" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/ur.launch" >
+		
+		<!--include file="$(find cob_bringup)/drivers/ur.launch" >
 			<arg name="ur_ip" value="$(arg ur_ip)"/>
-		</include>
+		</include-->
+		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -80,11 +80,19 @@
 		<include file="$(find cob_bringup)/drivers/openni.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<include file="$(find cob_bringup)/tools/teleop.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="version" value="v1" />
+		</include>
 
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
-	<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -95,22 +103,17 @@
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/tools/teleop.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="version" value="v1" />
-		</include>
 
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
-			<arg name="name" value="left" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="left" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
-			<arg name="name" value="right" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="right" />
 		</include>
 	</group>
-
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 

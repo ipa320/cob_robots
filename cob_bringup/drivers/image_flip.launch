@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="camera_name"/>
+
+	<!-- sensor message gateway node (forwards sensor messages in a desired rate) -->
+	<node ns="image_flip_$(arg camera_name)" pkg="cob_image_flip" type="image_flip" name="image_flip_$(arg camera_name)" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/image_flip_params_$(arg camera_name).yaml"/>
+		<remap from="~pointcloud_in" to="/$(arg camera_name)/rgb/points"/>
+		<remap from="~pointcloud_out" to="/$(arg camera_name)/flip/rgb/points"/>
+		<remap from="~colorimage_in" to="/$(arg camera_name)/rgb/image_raw"/>
+		<remap from="~colorimage_out" to="/$(arg camera_name)/flip/rgb/image_raw"/>
+	</node>
+
+</launch>

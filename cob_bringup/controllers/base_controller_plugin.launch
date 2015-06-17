@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<group ns="base">
+
+		<!-- load controller configs -->
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_controller.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_joint_limits.yaml"/>
+
+		<!-- start controllers -->
+		<node pkg="controller_manager" type="spawner" name="joint_state_controller_spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true" />
+		<node pkg="controller_manager" type="spawner" name="twist_controller_spawner" args="--timeout 60 --shutdown-timeout 1 twist_controller" respawn="true" output="screen"/>
+		<node pkg="controller_manager" type="spawner" name="odom_controller_spawner" args="--timeout 60 --shutdown-timeout 1 odometry_controller" respawn="true" output="screen"/>
+
+	</group>
+
+</launch>

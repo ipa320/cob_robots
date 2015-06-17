@@ -15,7 +15,7 @@
 	<include file="$(find cob_default_robot_config)/cob3-6/upload_param_cob3-6.launch" />
 
 	<group>
-    <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -33,9 +33,6 @@
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
-		<!-- start robot_state_publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
@@ -57,6 +54,7 @@
 		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -66,25 +64,28 @@
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
-			<arg name="component_name" value="torso" />
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="can_module" value="can2" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
 			<arg name="component_name" value="torso" />
-			<arg name="robot" value="$(arg robot)" />
+			<arg name="can_device" value="can2" />
 		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+		</include>
+		
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain_driver.launch" >
-			<arg name="component_name" value="arm" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="arm" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="component_name" value="arm" />
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="arm" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/schunk_sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/head_axis.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -100,10 +101,15 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
-    <machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -112,13 +118,13 @@
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
-			<arg name="component_name" value="tray" />
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="can_module" value="can1" />
+			<arg name="component_name" value="tray" />
+			<arg name="can_device" value="can1" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="component_name" value="tray" />
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="tray"/>
 		</include>
 
 		<!-- start camera sensors -->
@@ -142,7 +148,7 @@
 
 		<!-- start additional packages -->
 		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_sound)/ros/launch/sound.launch" />
+		<include file="$(find cob_bringup)/drivers/sound.launch" />
 
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -151,9 +157,8 @@
 		<include file="$(find cob_bringup)/drivers/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
 	</group>
 
-  <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
 </launch>

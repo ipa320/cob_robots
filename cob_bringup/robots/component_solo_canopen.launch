@@ -6,10 +6,14 @@
 	<arg name="component_name"/>
 	<arg name="can_module"/>
 
-	<!-- start basics -->
-	<include file="$(find cob_bringup)/robots/component_solo_basics.launch" >
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch" >
 		<arg name="robot" value="$(arg robot)" />
-		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
+	</include>
+
+	<!-- upload robot_description -->
+	<include file="$(arg pkg_hardware_config)/common/upload_robot.launch" >
+		<arg name="robot" value="$(arg robot)" />
 	</include>
 
 	<!-- start driver -->
@@ -19,11 +23,10 @@
 		<arg name="component_name" value="$(arg component_name)" />
 		<arg name="can_module" value="$(arg can_module)" />
 	</include>
-	
-	<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch">
-		<arg name="robot" value="$(arg robot)" />
-		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
-		<arg name="component_name" value="$(arg component_name)" />
+
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
 	</include>
  
 </launch>

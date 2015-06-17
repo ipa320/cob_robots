@@ -2,13 +2,17 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="component_name"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name"/>
 
-	<!-- parameter description of the trajectory controller -->
-	<rosparam command="load" ns="$(arg component_name)_controller" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+	<group ns="$(arg component_name)" >
 
-	<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
-	<node ns="$(arg component_name)_controller" name="joint_trajectory_controller" pkg="cob_trajectory_controller" type="cob_trajectory_controller" cwd="node" respawn="false" output="screen" />
+		<!-- parameter description of the trajectory controller -->
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+
+		<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
+		<node pkg="cob_trajectory_controller" type="cob_trajectory_controller" name="joint_trajectory_controller" cwd="node" respawn="false" output="screen" />
+
+	</group>
 
 </launch>

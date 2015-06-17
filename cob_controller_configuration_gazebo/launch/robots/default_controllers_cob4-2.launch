@@ -3,79 +3,116 @@
 
 	<arg name="robot" default="cob4-2"/>
 	
-	<!-- robot state publisher -->
-	<node ns="base" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="sensorring" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="arm_left" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
-	<node ns="arm_right" pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-		<param name="publish_frequency" type="double" value="50.0" />
-		<param name="tf_prefix" type="string" value="" />
-	</node>
+	<!-- aggregated robot_state_publisher -->
+	<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+		<arg name="robot" value="$(arg robot)" />
+	</include>
 	
 	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_cob4_new.launch">
+	<!-- simulated driver services -->
+	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- base controllers -->
+	<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
-		
+	<!-- scanner and scanner-filter -->
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="name" value="front"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="name" value="left"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="name" value="right"/>
+	</include>
+	
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>
 	
+	<!-- Torso -->
+	<!-- simulated driver services -->
+	<node ns="torso" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
+	</include>
+	<!-- Cartesian controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="torso"/>
+	</include>
+	
 	<!-- Sensorring -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+	<!-- simulated driver services -->
+	<node ns="sensorring" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="sensorring"/>
 	</include>
 	
 	<!-- Arms -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+	<!-- simulated driver services -->
+	<node ns="arm_left" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="arm"/>
-		<arg name="side" value="_left"/>
+		<arg name="component_name" value="arm_left"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_cartesian_controller_new.launch">
+	<!-- Cartesian controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="arm"/>
-		<arg name="side" value="_left"/>
+		<arg name="component_name" value="arm_left"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_controller_new.launch">
+	<!-- simulated driver services -->
+	<node ns="arm_right" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="arm"/>
-		<arg name="side" value="_right"/>
+		<arg name="component_name" value="arm_right"/>
 	</include>
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/generic_cartesian_controller_new.launch">
+	<!-- Cartesian controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="arm"/>
-		<arg name="side" value="_right"/>
+		<arg name="component_name" value="arm_right"/>
 	</include>
 	
+	<!-- Grippers -->
+	<!-- simulated driver services -->
+	<node ns="gripper_left" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="gripper_left"/>
+	</include>
+	<!-- simulated driver services -->
+	<node ns="gripper_right" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="gripper_right"/>
+	</include>
 	
 	<!-- camera nodelets -->
-	<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="torso_cam3d_left"/>
-		<arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
+		<arg name="camera_name" value="torso_cam3d_left"/>
 	</include>
 		
-	<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="torso_cam3d_right"/>
-		<arg name="nodelet_manager" value="torso_cam3d_right_nodelet_manager"/>
+		<arg name="camera_name" value="torso_cam3d_right"/>
 	</include>
 	
 	<!-- start additional components -->
-	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+	<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
-	</include>
+	</include-->
 	<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
@@ -119,6 +156,10 @@
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-9)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="Wifi Status (ddwrt)"/>
 		<param name="topic_name" value="/wifi_status"/>
+	</node>
+	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-10)" cwd="node" respawn="false" output="screen" >
+		<param name="diagnostics_name" value="torso_controller"/>
+		<param name="topic_name" value="/torso/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-11)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="sensorring_controller"/>

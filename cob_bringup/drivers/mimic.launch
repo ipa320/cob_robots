@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- start sound -->
+  <node pkg="cob_mimic" type="mimic_node.py" name="mimic" cwd="node" respawn="false" output="screen" />
+
+</launch>

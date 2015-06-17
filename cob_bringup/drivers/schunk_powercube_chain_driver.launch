@@ -2,11 +2,12 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="component_name"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name"/>
 
-	<node name="$(arg component_name)_controller" pkg="schunk_powercube_chain" type="schunk_powercube_chain" respawn="false" output="screen" >
+	<node ns="$(arg component_name)" pkg="schunk_powercube_chain" type="schunk_powercube_chain" name="$(arg component_name)_driver" respawn="false" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
+		<remap from="diagnostics" to="/diagnostics"/>
 	</node>
 
 </launch>

@@ -2,20 +2,35 @@
 <launch>
 
 	<arg name="robot" default="raw3-5"/>
-
-	<!-- controller_utils -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/controller_utils.launch" />
-
-	<!-- Base -->
-	<include file="$(find cob_controller_configuration_gazebo)/launch/components/base_controller_raw.launch">
-		<arg name="robot" value="raw3-5"/>
+	
+	<!-- aggregated robot_state_publisher -->
+	<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+		<arg name="robot" value="$(arg robot)" />
 	</include>
+	
+	<!-- Base -->
+	<!-- simulated driver services -->
+	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- base controllers -->
+	<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	<!-- scanner and scanner-filter -->
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="name" value="front"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="name" value="rear"/>
+	</include>
+	
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>
 
 	<!-- start additional components -->
-	<include file="$(find cob_sound)/ros/launch/sound.launch" />
+	<include file="$(find cob_bringup)/drivers/sound.launch" />
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="raw3-5"/>
 	</include>

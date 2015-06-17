@@ -17,7 +17,6 @@
  
   <run_depend>cob_undercarriage_ctrl</run_depend>
   <run_depend>cob_base_drive_chain</run_depend>
-  <run_depend>cob_trajectory_controller</run_depend>
   <run_depend>cob_lbr</run_depend>
   <run_depend>cob_head_axis</run_depend>
   <run_depend>cob_sound</run_depend>
@@ -50,8 +49,7 @@
   <run_depend>joy</run_depend>
   <run_depend>rviz</run_depend>
   <run_depend>diagnostic_aggregator</run_depend>
-  <!--run_depend>pr2_computer_monitor</run_depend-->
-  <!--run_depend>wifi_ddwrt</run_depend-->
+  <run_depend>topic_tools</run_depend>
   <run_depend>costmap_2d</run_depend>
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
@@ -60,11 +58,24 @@
   <run_depend>prace_gripper_driver</run_depend>
   <run_depend>frida_driver</run_depend>
   <run_depend>cob_image_flip</run_depend>
-  <run_depend>cob_control_mode_adapter</run_depend>
   <run_depend>schunk_sdhx</run_depend>
   <run_depend>cob_script_server</run_depend>
-  <run_depend>controller_manager</run_depend>
   <run_depend>canopen_motor_node</run_depend>
+
+  <!-- control dependencies -->
+  <run_depend>controller_manager</run_depend>
+  <run_depend>cob_control_mode_adapter</run_depend>
+  <run_depend>cob_frame_tracker</run_depend>
+  <run_depend>cob_trajectory_controller</run_depend>
+  <run_depend>cob_twist_controller</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>position_controllers</run_depend>
+  <run_depend>velocity_controllers</run_depend>
+  <run_depend>effort_controllers</run_depend>
+  <run_depend>joint_trajectory_controller</run_depend>
+
+
 
   <export>
 

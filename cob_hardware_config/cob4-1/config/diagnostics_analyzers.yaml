@@ -65,23 +65,23 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'torso_controller'
+        contains: 'torso'
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
-        contains: 'sensorring_controller'
+        contains: 'sensorring'
       head:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Head
-        contains: 'head_controller'
+        contains: 'head'
       arm_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Right
-        contains: 'arm_right_controller'
+        contains: 'arm_right'
       arm_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Left
-        contains: 'arm_left_controller'
+        contains: 'arm_left'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base

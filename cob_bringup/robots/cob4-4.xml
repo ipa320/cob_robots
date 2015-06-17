@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- args -->
+	<arg name="robot" value="cob4-4"/>
+	<arg name="cob4-4-b1" default="localhost"/>
+
+
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
+
+	<group>
+		<machine name="cob4-4-b1" address="$(arg cob4-4-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+
+		<!-- pc monitor -->
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="pc" value="$(arg cob4-4-b1)" />
+		</include>
+
+		<!-- startup hardware -->
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="front" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="right" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="name" value="left" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="base" />
+			<arg name="can_device" value="can0" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/teleop.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="version" value="v2"/>
+		</include>
+		<include file="$(find cob_script_server)/launch/script_server.launch" />
+		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include-->
+		
+		<!-- aggregated robot_state_publisher -->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
+
+	<machine name="cob4-4-b1" address="$(arg cob4-4-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+
+</launch>

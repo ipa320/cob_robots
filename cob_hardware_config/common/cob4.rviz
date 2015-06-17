@@ -6,8 +6,8 @@ Panels:
       Expanded:
         - /Global Options1
         - /TF1/Frames1
-      Splitter Ratio: 0.850534
-    Tree Height: 813
+      Splitter Ratio: 0.622896
+    Tree Height: 843
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -61,6 +61,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         arm_left_2_link:
           Alpha: 1
           Show Axes: false
@@ -90,14 +91,17 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         arm_left_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         arm_right_1_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         arm_right_2_link:
           Alpha: 1
           Show Axes: false
@@ -127,15 +131,16 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         arm_right_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         base_laser_front_link:
           Alpha: 1
           Show Axes: false
@@ -186,14 +191,76 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        gripper_left_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left_finger_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left_finger_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left_grasp_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_left_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right_finger_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right_finger_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right_grasp_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gripper_right_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         head_1_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         head_2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         head_3_link:
           Alpha: 1
           Show Axes: false
@@ -203,34 +270,21 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         head_center_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        lookat_base_link:
+        sensorring_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        lookat_focus_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lookat_x_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lookat_y_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lookat_z_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
+          Value: true
         sensorring_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         torso_1_link:
           Alpha: 1
           Show Axes: false
@@ -303,14 +357,6 @@ Visualization Manager:
         {}
       Update Interval: 0
       Value: false
-    - Alpha: 0.7
-      Class: rviz/Map
-      Color Scheme: map
-      Draw Behind: false
-      Enabled: true
-      Name: Map
-      Topic: /map
-      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -406,27 +452,6 @@ Visualization Manager:
       Topic: /particlecloud
       Value: true
     - Alpha: 1
-      Class: rviz/GridCells
-      Color: 255; 0; 0
-      Enabled: false
-      Name: Obstacles
-      Topic: /move_base/local_costmap/obstacles
-      Value: false
-    - Alpha: 1
-      Class: rviz/GridCells
-      Color: 0; 0; 255
-      Enabled: false
-      Name: Inflated Obstacles
-      Topic: /move_base/local_costmap/inflated_obstacles
-      Value: false
-    - Class: rviz/Axes
-      Enabled: false
-      Length: 1
-      Name: Axes map origin
-      Radius: 0.1
-      Reference Frame: map
-      Value: false
-    - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
       Color: 0; 255; 0
@@ -460,21 +485,28 @@ Visualization Manager:
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /light_controller/marker
-      Name: Marker Light
+      Marker Topic: /sound/marker
+      Name: SoundMarker
       Namespaces:
-        {}
+        color: true
       Queue Size: 100
       Value: true
-    - Class: rviz/InteractiveMarkers
-      Enable Transparency: true
-      Enabled: false
-      Name: InteractiveMarkers
-      Show Axes: false
-      Show Descriptions: true
-      Show Visual Aids: false
-      Update Topic: /cob_interactive_teleop/update
-      Value: false
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /light_base/marker
+      Name: LightBaseMarker
+      Namespaces:
+        color: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /light_torso/marker
+      Name: LightTorsoMarker
+      Namespaces:
+        color: true
+      Queue Size: 100
+      Value: true
     - Class: rviz/Image
       Enabled: false
       Image Topic: /cam3d_down/rgb/image_raw
@@ -595,10 +627,48 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
+    - Class: rviz/InteractiveMarkers
+      Enable Transparency: true
+      Enabled: true
+      Name: InteractiveTeleop
+      Show Axes: false
+      Show Descriptions: true
+      Show Visual Aids: false
+      Update Topic: /cob_interactive_teleop/update
+      Value: true
+    - Alpha: 0.7
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: false
+      Name: Map
+      Topic: /map
+      Value: false
+    - Alpha: 1
+      Class: rviz/GridCells
+      Color: 255; 0; 0
+      Enabled: false
+      Name: Obstacles
+      Topic: /move_base/local_costmap/obstacles
+      Value: false
+    - Alpha: 1
+      Class: rviz/GridCells
+      Color: 0; 0; 255
+      Enabled: false
+      Name: Inflated Obstacles
+      Topic: /move_base/local_costmap/inflated_obstacles
+      Value: false
+    - Class: rviz/Axes
+      Enabled: false
+      Length: 1
+      Name: Axes map origin
+      Radius: 0.1
+      Reference Frame: map
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: odom_combined
     Frame Rate: 30
   Name: root
   Tools:
@@ -615,27 +685,27 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 9.0388
+      Distance: 6.09258
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.135033
-        Y: -0.377498
-        Z: 0.283788
+        X: -0.408188
+        Y: -0.0225992
+        Z: -0.23833
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.649801
+      Pitch: 0.619797
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.89812
+      Yaw: 0.538123
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1026
+  Height: 1056
   Hide Left Dock: false
   Hide Right Dock: false
   Image Down:
@@ -644,7 +714,7 @@ Window Geometry:
     collapsed: false
   Image Right:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000012b000003bcfc0200000006fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000003bc000000dd00fffffffb0000000c00430061006d00650072006100000002a5000000cd00000000000000000000000100000169000003bcfc0200000006fb000000140049006d00610067006500200044006f0077006e00000000280000014e0000001600fffffffb000000140049006d0061006700650020004c0065006600740000000028000001db0000001600fffffffb000000160049006d0061006700650020005200690067006800740000000028000003bc0000001600fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000326000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002f600fffffffb0000000800540069006d006501000000000000045000000000000000000000052e000003bc00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000012b000003dafc0200000006fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000003da000000dd00fffffffb0000000c00430061006d00650072006100000002a5000000cd00000000000000000000000100000169000003bcfc0200000006fb000000140049006d00610067006500200044006f0077006e00000000280000014e0000001600fffffffb000000140049006d0061006700650020004c0065006600740000000028000001db0000001600fffffffb000000160049006d0061006700650020005200690067006800740000000028000003bc0000001600fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000326000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002f600fffffffb0000000800540069006d006501000000000000045000000000000000000000060e000003da00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -653,6 +723,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1631
-  X: 42
+  Width: 1855
+  X: 65
   Y: 24

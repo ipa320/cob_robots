@@ -1,16 +1,21 @@
 <?xml version="1.0"?>
-
 <launch>
-    <arg name="start_manager" default="true"/>
-    <arg name="name" default="cam3d"/>
-    <arg name="nodelet_manager" default="cam3d_nodelet_manager"/>
-    <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 
-  <node pkg="nodelet" type="nodelet" name="CobKinectImageFlipNodelet_$(arg name)" ns="/cob_image_flip" args="load cob_image_flip/CobKinectImageFlipNodelet /$(arg name)/$(arg nodelet_manager)" output="screen">
-    <rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/image_flip_params_$(arg name).yaml"/>
-    <param name="robot" type="string" value="$(arg robot)"/>
-    <remap from="~colorimage_in" to="/$(arg name)/rgb/image_raw"/>
-    <remap from="~colorimage_out" to="/$(arg name)/flip/rgb/image_raw"/>
-  </node>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="camera_name"/>
+	<arg name="nodelet_manager"/>
+	<arg name="start_manager" default="true"/>
+
+
+	<node if="$(arg start_manager)" ns="image_flip_$(arg camera_name)" pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen"/>
+
+	<node ns="image_flip_$(arg camera_name)" pkg="nodelet" type="nodelet" name="image_flip_$(arg camera_name)_nodelet" args="load cob_image_flip/ImageFlipNodelet /$(arg camera_name)/$(arg nodelet_manager)" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/image_flip_params_$(arg camera_name).yaml"/>
+		<remap from="~pointcloud_in" to="/$(arg camera_name)/rgb/points"/>
+		<remap from="~pointcloud_out" to="/$(arg camera_name)_upright/rgb/points"/>
+		<remap from="~colorimage_in" to="/$(arg camera_name)/rgb/image_raw"/>
+		<remap from="~colorimage_out" to="/$(arg camera_name)_upright/rgb/image_raw"/>
+	</node>
 
 </launch>

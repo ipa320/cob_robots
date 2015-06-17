@@ -10,6 +10,13 @@ group1:
   buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
+#group2:
+#  group_name: torso
+#  component_name: torso
+#  buttons: [[stop,trigger,stop],
+#    [init,trigger,init],
+#    [recover,trigger,recover],
+#    [home,move,home]]
 group4:
   group_name: sensorring
   component_name: sensorring
@@ -41,14 +48,16 @@ group6:
 group7:
   group_name: gripper_left
   component_name: gripper_left
-  buttons: [[recover,recover],
+  buttons: [[stop,stop],
+    [recover,recover],
     [home,move,home],
     [open,move,open],
     [close, move, close]]
 group8:
   group_name: gripper_right
   component_name: gripper_right
-  buttons: [[recover,recover],
+  buttons: [[stop,stop],
+    [recover,recover],
     [home,move,home],
     [open,move,open],
     [close, move, close]]

@@ -26,8 +26,5 @@ group4:
   buttons: [[stop,trigger,stop],
     [init,trigger,init],
     [recover,trigger,recover],
-    [home,move,home],
-    [right,move,right],
-    [down,move,down],
-    [exhibition,move,exhibition]]
+    [home,move,home]]
 
