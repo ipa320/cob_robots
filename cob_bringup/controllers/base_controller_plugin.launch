@@ -14,7 +14,7 @@
 		<node pkg="controller_manager" type="spawner" name="joint_state_controller_spawner" args="--timeout 60 --shutdown-timeout 1 joint_state_controller" respawn="true" />
 		<node pkg="controller_manager" type="spawner" name="twist_controller_spawner" args="--timeout 60 --shutdown-timeout 1 twist_controller" respawn="true" output="screen"/>
 		<node pkg="controller_manager" type="spawner" name="odom_controller_spawner" args="--timeout 60 --shutdown-timeout 1 odometry_controller" respawn="true" output="screen"/>
-
+		<!--node pkg="controller_manager" type="spawner" name="velocity_controller_spawner" args="-/-timeout 60 -/-shutdown-timeout 1 joint_group_velocity_controller" respawn="true" output="screen"/-->
 	</group>
 
 </launch>

@@ -35,3 +35,14 @@ odometry_controller:
   type: cob_omni_drive_controller/OdometryController
   publish_rate: 50
   wheels: *wheels
+
+joint_group_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+     - fl_caster_rotation_joint
+     - fl_caster_r_wheel_joint
+     - bl_caster_rotation_joint
+     - bl_caster_r_wheel_joint
+     - br_caster_rotation_joint
+     - br_caster_r_wheel_joint
+  required_drive_mode: 2
