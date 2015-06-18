@@ -2,6 +2,11 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.2 (2015-01-07)
+------------------
+* fix diagnostics
+* Contributors: Florian Weisshardt
+
 0.6.1 (2014-12-15)
 ------------------
 * merge

@@ -3,6 +3,25 @@
 	<xacro:include filename="$(find cob_hardware_config)/raw3-3/urdf/calibration_default.urdf.xacro" />
 	<xacro:include filename="$(find cob_calibration_data)/raw3-3/calibration/calibration_offset.urdf.xacro" />>
 
+	<!-- ***************** -->
+	<!-- base calibration -->
+	<!-- ***************** -->
+	<!-- laser front mount positions | relative to base_link -->
+	<property name="laser_front_x" value="${def_laser_front_x+offset_laser_front_x}"/>
+	<property name="laser_front_y" value="${def_laser_front_y+offset_laser_front_y}"/>
+	<property name="laser_front_z" value="${def_laser_front_z+offset_laser_front_z}"/>
+	<property name="laser_front_roll" value="${def_laser_front_roll+offset_laser_front_roll}"/>
+	<property name="laser_front_pitch" value="${def_laser_front_pitch+offset_laser_front_pitch}"/>
+	<property name="laser_front_yaw" value="${def_laser_front_yaw+offset_laser_front_yaw}"/>
+
+	<!-- laser rear mount positions | relative to base_link -->
+	<property name="laser_rear_x" value="${def_laser_rear_x+offset_laser_rear_x}"/>
+	<property name="laser_rear_y" value="${def_laser_rear_y+offset_laser_rear_y}"/>
+	<property name="laser_rear_z" value="${def_laser_rear_z+offset_laser_rear_z}"/>
+	<property name="laser_rear_roll" value="${def_laser_rear_roll+offset_laser_rear_roll}"/>
+	<property name="laser_rear_pitch" value="${def_laser_rear_pitch+offset_laser_rear_pitch}"/>
+	<property name="laser_rear_yaw" value="${def_laser_rear_yaw+offset_laser_rear_yaw}"/>
+
 	<!-- *********************** -->
 	<!-- upper robot calibration -->
 	<!-- *********************** -->
@@ -85,7 +104,5 @@
 	<property name="cam_holder_roll" value="${def_cam_holder_roll+offset_cam_holder_roll}"/>
 	<property name="cam_holder_pitch" value="${def_cam_holder_pitch+offset_cam_holder_pitch}"/>
 	<property name="cam_holder_yaw" value="${def_cam_holder_yaw+offset_cam_holder_yaw}"/>
-	
-	<property name="torso_bottom_ref" value="${def_torso_bottom_ref+offset_torso_bottom_ref}"/>
-	<property name="torso_side_ref" value="${def_torso_side_ref+offset_torso_side_ref}"/>
+
 </robot>
