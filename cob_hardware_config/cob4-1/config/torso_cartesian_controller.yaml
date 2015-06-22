@@ -1,4 +1,7 @@
 ## Cartesian controller parameters
+chain_base_link: torso_base_link
+chain_tip_link: torso_center_link
+root_frame: odom_combined
 
 # twist controller parameters
 twist_controller:

@@ -1,10 +1,6 @@
 ## joint_names
 joint_names: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_joint, arm_left_5_joint, arm_left_6_joint, arm_left_7_joint]
 
-chain_base_link: arm_left_base_link
-chain_tip_link: arm_left_7_link
-root_frame: odom_combined
-
 ## control_mode_adapter
 max_command_silence: 0.5
 
