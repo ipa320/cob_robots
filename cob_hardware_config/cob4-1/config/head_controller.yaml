@@ -1,6 +1,10 @@
 #all
 joint_names: [head_1_joint, head_2_joint, head_3_joint]
 
+chain_base_link: head_base_link
+chain_tip_link: head_center_link
+root_frame: odom_combined
+
 ## control_mode_adapter
 max_command_silence: 0.5
 
