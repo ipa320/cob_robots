@@ -2,6 +2,92 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.3 (2015-06-17)
+------------------
+* Merge branch 'indigo_dev' into indigo_release_candidate
+* last update
+* install tags and scanners config
+* small changes
+* setup cob3-2
+* fix run dependency
+* added controllers
+* adapt cob3-2
+* added cob3-2
+* fix launch xml syntax
+* rename can_modul to can_device
+* use component namespaces for light, mimic and say
+* Merge remote-tracking branch 'origin-320/indigo_dev' into aggregated_robot_state_publisher_for_all_robots
+* Merge branch 'indigo_dev' of github.com:ipa320/cob_robots into indigo_dev
+* add sensorring to dashboard and robot.xml
+* Merge pull request `#5 <https://github.com/ipa320/cob_robots/issues/5>`_ from ipa-fxm/aggregated_robot_state_publisher_for_all_robots
+  aggregated robot_state_publisher for all robots, fixed machine tag in la...
+* remove torso and sensorring (untill working properly
+* aggregated robot_state_publisher for all robots, fixed machine tag in launch files
+* adapt flexisoft config for updated driver with diagnostics
+* Merge branch 'indigo_dev' of https://github.com/ipa-cob4-2/cob_robots into indigo_dev_cob4-2
+* remap diagnostics for cob_head_axis
+* add aggregating robot_state_publisher instead of one per component
+* move script_server to t1 pc, add machine timeouts
+* add 2dof torso to cob4-2 including all configuration files
+* merge
+* added cob4-4
+* robot test
+* remove side argument
+* no default value in image_flip_nodelet launch file
+* robot_state_publisher moved to base_controller launch file
+* robot_state_publisher moved to base_controller
+* fix namespace
+* proper remap for joint_states
+* add robot_state_publisher and joint_state relay
+* updates from raw3-1 robot user
+* some consistency renaming
+* harmonize launch files and resolve node name conflicts
+* merge conflict after cherry-picking image_flip updates
+* rename yaml file
+* remove duplicate robot_state_publisher - it is in controller
+* remove deprecation warning again so that tests pass
+* moved cob sound launch file
+* use updated and adjusted driver and controller launch files for all available robots
+* adjust to new namespaces
+* remove controller aspects from driver launch file
+* adjust old driver launch file to namespaces
+* adjust cob_trajectory_controller launch file to namespaces
+* unify xml order and beautify
+* unify xml order and beautify
+* beautify
+* cleanup and add dependencies from cob_controller_configuration_gazebo
+* remove unused files
+* restructure robot_state_publisher
+* fix syntax error
+* tabs vs. spaces and cleanup
+* restructure generic controller launch files
+* restructure base_controller_plugin launch file
+* tabs vs. spaces
+* restructure laser_scan_filter
+* adjust image_flip launch and config files
+* beautify CMakeLists
+* fix missing mode adapter
+* add end-of-comment
+* remove old non-functional launch files
+* added deprecation warning for cob_trajectory_controller
+* enable sound for cob4-2 and emergency monitor
+* make cob3-6 work in indigo simulation using new namespace structure and fjt controllers only
+* make cob3-6 work in indigo simulation using new namespace structure and fjt controllers only
+* cob4-6 setup
+* add dependency to topic_tools
+* update cob4-2 config on real robot
+* Adds the joint limits for the base
+* Introduces the mode_adapter argument to optionally load the cob_mode_adapter
+* resolve conflicts
+* setup cob4-6
+* setup cob46
+* use relay instead of remap for joint_states topic
+* setup cob3-9
+* setup cob3-9
+* set ROBOT variable
+* addapted diagnostics new ns and create a separated image_flip launch file
+* Contributors: Florian Weisshardt, ipa-cob3-2, ipa-cob3-9, ipa-cob4-2, ipa-cob4-4, ipa-cob4-6, ipa-fmw, ipa-fxm, ipa-nhg, thiagodefreitas
+
 0.6.2 (2015-01-07)
 ------------------
 
