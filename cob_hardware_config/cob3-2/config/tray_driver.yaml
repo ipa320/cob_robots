@@ -9,4 +9,3 @@ min_publish_duration: 0.1
 horizon: 0.1 # [s]
 frequency: 68
 force_use_movevel: True
-

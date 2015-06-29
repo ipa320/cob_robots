@@ -18,7 +18,7 @@ intermediatefront: [[-0.16980814933776855, -0.43355348706245422, 1.7840240001678
 wavein: [[-0.1, 0.5, 0.0, 0.5, 0.0, 0.5, -1.5708]]
 waveout: [[-0.1, 0.5, 0.0, -0.5, 0.0, -0.5, -1.5708]]
 
-#trajectories
+# trajectories
 grasp-to-tray: [intermediateback, intermediatefront, overtray]
 tray-to-folded: [intermediatefront, intermediateback, folded]
 wave: [waveout, wavein, waveout, wavein]

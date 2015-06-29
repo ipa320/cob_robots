@@ -1,3 +1,4 @@
+#This file contains parameters for the schunk_sdh (driver + controller)
 sdhdevicetype: PCAN
 sdhdevicestring: /dev/pcan0
 baudrate: 1000000

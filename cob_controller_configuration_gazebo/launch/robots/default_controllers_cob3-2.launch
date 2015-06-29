@@ -79,8 +79,12 @@
 		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/tray_sensors_sim.yaml"/>
 	</node>
 	
-	<include file="$(find cob_bringup)/drivers/sound.launch" />
 	<!-- start additional components -->
+	<include file="$(find cob_bringup)/drivers/sound.launch" />
+	<include file="$(find cob_bringup)/drivers/light.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="light"/>
+	</include>
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
@@ -104,7 +108,6 @@
 	</include>
 	
 	<!-- fake components for simulation -->
-	
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>
