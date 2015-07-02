@@ -2,6 +2,76 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.3 (2015-06-17)
+------------------
+* Merge branch 'indigo_dev' into indigo_release_candidate
+* cob3-2 simulation test
+* added cob3-2
+* fix launch xml syntax
+* aggregated robot_state_publisher for all robots, fixed machine tag in launch files
+* use new Trigger from std_srvs
+* add 2dof torso to cob4-2 including all configuration files
+* added cob4-4
+* remove side argument
+* merge conflict after cherry-picking image_flip updates
+* moved cob sound launch file
+* added dependencies required for catkin_make test
+* cleanup dependencies
+* restructure robot_state_publisher
+* use correct simulated driver services
+* restructure generic controller launch files
+* restructure base_controller_plugin launch file
+* restructure laser_scan_filter
+* restructure simulated tray_sensors
+* adjust image_flip launch and config files
+* beautify CMakeLists
+* spawn correct controller
+* remove obsolete gazebo_services_base
+* updated gazebo_services
+* add gripper for cob4-1
+* update configs and launch file for cob4-6
+* update configs and launch file for raw3-6
+* update configs and launch file for raw3-5
+* update configs and launch file for raw3-4
+* update configs and launch file for raw3-3
+* update configs and launch file for raw3-2
+* update configs and launch file for raw3-1
+* update configs and launch file for cob4-2
+* update configs and launch file for cob4-1
+* update configs and launch file for cob3-6
+* update configs and launch file for cob3-6
+* restructure, unify and cleanup component launch files
+* update install tags
+* remove old test scripts
+* remove old controller_adapter
+* remove obsolete yaml files
+* testing new base control plugins with simulation
+* test new base controller plugin
+* more namespace adjustments for cob3-6 simulation
+* make cob3-6 work in indigo simulation using new namespace structure and fjt controllers only
+* more namespace adjustments for cob3-6 simulation
+* make cob3-6 work in indigo simulation using new namespace structure and fjt controllers only
+* Merge pull request `#270 <https://github.com/ipa320/cob_robots/issues/270>`_ from ipa-nhg/cob4_gripper
+  cob4_gripper
+* added robot_state_publisher
+* missing joint_state relays
+* merge
+* Merge pull request `#267 <https://github.com/ipa320/cob_robots/issues/267>`_ from ipa-nhg/cob4-updates
+  Cob4 updates
+* cob4_gripper
+* Merge remote-tracking branch 'nhg/cob4-updates' into indigo_dev
+* setup cob4
+* remove obsolete files
+* resolve conflicts
+* setup cob4-6
+* setup cob46
+* missing joint_state topic relay
+* use c++ version of interactive marker
+* faster shutdown of controller_spawner
+* proper exception handling on shutdown
+* addapted diagnostics new ns and create a separated image_flip launch file
+* Contributors: Florian Weisshardt, ipa-cob4-4, ipa-cob4-6, ipa-fxm, ipa-nhg, thiagodefreitas
+
 0.6.2 (2015-01-07)
 ------------------
 * fix diagnostics

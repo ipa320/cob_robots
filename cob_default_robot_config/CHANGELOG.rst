@@ -2,6 +2,52 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.3 (2015-06-17)
+------------------
+* last update
+* install tags and scanners config
+* small changes
+* setup cob3-2
+* update
+* added controllers
+* added cob3-2
+* adapt all light yaml files
+* remove mimic yaml file
+* use component namespaces for light, mimic and say
+* use component namespaces for light, mimic and say
+* add sensorring to dashboard and robot.xml
+* remove torso and sensorring (untill working properly
+* update joint configuration for grippers, add spread pose
+* Merge branch 'indigo_dev' of https://github.com/ipa-cob4-2/cob_robots into indigo_dev_cob4-2
+* add 2dof torso to cob4-2 including all configuration files
+* added cob4-4
+* Update upload_param_cob4-2.launch
+* robot test
+* add missing base_configurations
+* add service_ns for light
+* addedd missing default parameters and namespaces
+* updates from raw3-1 robot user
+* beautify CMakeLists
+* add stop button for gripper
+* add gripper for cob4-1
+* added default_vel
+* cob4-1 has no grippers
+* fix action_name and service_ns
+* adapt light settings for all robots
+* more namespace adjustments for cob3-6 simulation
+* more namespace adjustments for cob3-6 simulation
+* more namespace adjustments for cob3-6 simulation
+* more namespace adjustments for cob3-6 simulation
+* renamed joints
+* setup cob4-6
+* setup cob46
+* update cob3-9
+* teached arm position
+* setup cob3-9
+* setup cob3-9
+* setup cob3-9
+* Contributors: ipa-cob3-2, ipa-cob3-9, ipa-cob4-2, ipa-cob4-4, ipa-cob4-6, ipa-fmw, ipa-fxm, ipa-nhg
+
 0.6.2 (2015-01-07)
 ------------------
 

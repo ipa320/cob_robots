@@ -2,6 +2,132 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.3 (2015-06-17)
+------------------
+* apply changes for cob3-2
+* allow laser calibration
+* remove unsupported calibration_rising
+* last update
+* install tags and scanners config
+* cob3-2 simulation test
+* small changes
+* setup cob3-2
+* update
+* added controllers
+* adapt cob3-2
+* adapt cob3-2
+* added cob3-2
+* new parameter layout for cartesian controller
+* updated rviz config for cob4
+* use center links for light marker
+* configure emergency_stop_monitor for all robots
+* configuration for light maker frame
+* cleanup diagnostics
+* joint diagnostics aggregator for light
+* diagnostics aggregator config for light
+* remove torso and sensorring (untill working properly
+* aggregated robot_state_publisher for all robots, fixed machine tag in launch files
+* pwm update for gripper right due to wrong joint direction
+* display jostick diagnostics correctly in IO group
+* add flexisoft to diagnostics
+* adapt flexisoft config for updated driver with diagnostics
+* Merge branch 'indigo_dev' of https://github.com/ipa-cob4-2/cob_robots into indigo_dev_cob4-2
+* add aggregating robot_state_publisher instead of one per component
+* use diagnostics for emergency_stop_monitor
+* remove sensorring from diagnostics
+* increase buffer of base_velocity_smoother
+* use new name for hwi_switch_gazebo_ros_control_plugin
+* renaming in cob_common
+* add 2dof torso to cob4-2 including all configuration files
+* merge
+* obey update time of 250us for synchronized PDOs
+* updated sensorring config
+* removed homing method paramterization
+* removed default home offset -> force overwrite on init if needed
+* use ring buffer for IP mode
+* switched to new mapping
+* set heartbeat to 100ms
+* added conditional EMCY cob id entry 0x1014
+* Update Schunk_0_63.dcf
+  No homing for schunk
+* Update sensorring_driver.yaml
+  Adds homing method for the sensorring
+* removed unnecessary file
+* added cob4-4
+* robot test
+* adjust cob4_base joint_names
+* jerky - jerk
+* updates from raw3-1 robot user
+* some consistency renaming
+* adjust diagnostic namespaces
+* merge conflict after cherry-picking image_flip updates
+* split up head_sensorring component
+* rename yaml file
+* add parameters for cob_joint_trajectory_controller
+* added placeholder files
+* restructure simulated tray_sensors
+* adjust image_flip launch and config files
+* beautify CMakeLists
+* added missing file
+* catkin_lint
+* unifying base_controller yamls
+* add missing parameters to reduce output
+* add gripper for cob4-1
+* update configs and launch file for cob4-6
+* update configs and launch file for raw3-6
+* update configs and launch file for raw3-5
+* update configs and launch file for raw3-4
+* update configs and launch file for raw3-3
+* update configs and launch file for raw3-2
+* update configs and launch file for raw3-1
+* update configs and launch file for cob4-2
+* update configs and launch file for cob4-1
+* update configs and launch file for cob3-6
+* update configs and launch file for cob3-6
+* adjust limits for base
+* enable sound for cob4-2 and emergency monitor
+* adapt light settings for all robots
+* add led_components parameter to emergency_stop monitor
+* testing new base control plugins with simulation
+* test new base controller plugin
+* more namespace adjustments for cob3-6 simulation
+* make cob3-6 work in indigo simulation using new namespace structure and fjt controllers only
+* more namespace adjustments for cob3-6 simulation
+* make cob3-6 work in indigo simulation using new namespace structure and fjt controllers only
+* add can0 config file
+* cob4-6 setup
+* Corrected suffixes
+* update cob4-2 urdf model
+* removed velocity_controller parameters
+* update cob4-2 config on real robot
+* cob4_gripper
+* cob4_gripper
+* Configures the Homing speed parameters for the base modules
+* Adds the dcf_overlay to the configuration file.
+  This provides the possibility to change the homing method directly on the YAML file.
+* Fixes error on the HW mode for using the base on Velocity Mode
+* Adds the joint limits for the base
+* renamed joints
+* resolve conflicts
+* setup cob4-6
+* setup cob46
+* new schunk description structure
+* updates for twist controller parameter
+* new structure, lwa4p_extended_withour_base
+* cleanup parameters
+* updated schunk_lwa4d description
+* update cob3-9
+* merge with 320
+* setup cob3-9
+* fix cartesian controller parameters for arms
+* setup cob3-9
+* default damping parameters
+* added default damping parameters
+* spaces vs tabs
+* addapted diagnostics new ns and create a separated image_flip launch file
+* set interpolation perdiod to sync interval (10ms/100Hz)
+* Contributors: Florian Weisshardt, Mathias Lüdtke, Thiago de Freitas Oliveira Araujo, ipa-cob3-2, ipa-cob3-9, ipa-cob4-2, ipa-cob4-4, ipa-cob4-6, ipa-fmw, ipa-fxm, ipa-fxm-fm, ipa-nhg, thiagodefreitas
+
 0.6.2 (2015-01-07)
 ------------------
 * add missing dep
