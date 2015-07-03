@@ -61,7 +61,6 @@
   <run_depend>schunk_sdhx</run_depend>
   <run_depend>cob_script_server</run_depend>
   <run_depend>canopen_motor_node</run_depend>
-  <run_depend>rplidar_ros</run_depend>
 
   <!-- control dependencies -->
   <run_depend>controller_manager</run_depend>
