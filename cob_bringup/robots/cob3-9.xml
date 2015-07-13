@@ -52,19 +52,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="top" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		
-		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
@@ -132,6 +119,21 @@
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
+		</include>
+		
+		<!-- start base -->
+		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
+		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<!-- start camera sensors -->
