@@ -23,16 +23,21 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
+
 		<!-- monitoring -->
 		<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
 		<!-- startup hardware -->
 		<!-- lower robot -->
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
@@ -50,6 +55,7 @@
 		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -69,6 +75,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 		</include>
+
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="tray" />
@@ -77,6 +84,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="tray"/>
 		</include>
+
 		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm" />
@@ -85,6 +93,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm"/>
 		</include>
+
 		<include file="$(find cob_bringup)/drivers/schunk_sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -135,20 +144,19 @@
 		<!-- start camera sensors -->
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="right"/>
+			<arg name="name" value="left"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/prosilica.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="left"/>
+			<arg name="name" value="right"/>
 		</include>
-
 		<include file="$(find cob_bringup)/drivers/dsa.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<!-- start additional packages -->
+		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_bringup)/drivers/sound.launch" />
-
 	</group>
 
 	<group>
