@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>cob_behaviour</name>
+  <version>0.0.0</version>
+  <description>The cob_behaviour package</description>
+  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <license>LGPL</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>cob_script_server</build_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>cob_script_server</run_depend>
+  <run_depend>std_srvs</run_depend>
+
+  <build_depend>cob_bringup</build_depend>
+  <build_depend>cob_command_gui</build_depend>
+  <build_depend>cob_dashboard</build_depend>
+  <build_depend>cob_script_server</build_depend>
+  <run_depend>cob_bringup</run_depend>
+  <run_depend>cob_command_gui</run_depend>
+  <run_depend>cob_dashboard</run_depend>
+  <run_depend>cob_script_server</run_depend>
+
+  <export>
+
+  </export>
+</package>

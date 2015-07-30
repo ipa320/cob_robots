@@ -4,23 +4,13 @@
 #  buttons: [[button_name1,function_name1,parameter_name2,
 #    [button_name2,function_name2,parameter_name2]]
 
-group10:
+group1:
   group_name: base
   component_name: base
   buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
-group11:
-  group_name: sensorring
-  component_name: sensorring
-  buttons: [[stop,stop],
-    [init,init],
-    [recover,recover],
-    [front,move,front],
-    [back,move,back],
-    [left,move,left],
-    [right,move,right]]
-group12:
+group2:
   group_name: arm_left
   component_name: arm_left
   buttons: [[stop,stop],
@@ -29,8 +19,9 @@ group12:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
-    [hello, move, hello]]
-group13:
+    [ship, move, ship],
+    [hello_demo, move, hello_demo]]
+group3:
   group_name: arm_right
   component_name: arm_right
   buttons: [[stop,stop],
@@ -39,37 +30,53 @@ group13:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
-    [hello, move, hello]]
-#group14:
+    [ship, move, ship],
+    [hello_demo, move, hello_demo]]
+#group4:
 #  group_name: gripper_left
 #  component_name: gripper_left
 #  buttons: [[stop,stop],
 #    [recover,recover],
 #    [home,move,home],
 #    [open,move,open],
-#    [close, move, close]]
-#group15:
+#    [close, move, close],
+#    [spread, move, spread],
+#    [showCamera, trigger, showCamera_left]]
+#group5:
 #  group_name: gripper_right
 #  component_name: gripper_right
 #  buttons: [[stop,stop],
 #    [recover,recover],
 #    [home,move,home],
 #    [open,move,open],
-#    [close, move, close]]
-group16:
+#    [close, move, close],
+#    [spread, move, spread],
+#    [showCamera, trigger, showCamera_right]]
+group6:
   group_name: torso
   component_name: torso
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [home,move,home]]
-group17:
+
+group61:
   group_name: torso
-  component_name: behaviour
+  component_name: demo
   buttons: [[bow,trigger,bow]]
-group21:
+
+#group7:
+#  group_name: sensorring
+#  component_name: sensorring
+#  buttons: [[stop,stop],
+#    [init,init],
+#    [recover,recover],
+#    [front,move,front],
+#    [left,move,left],
+#    [right,move,right]]
+group8:
   group_name: mimic
-  component_name: behaviour
+  component_name: demo
   buttons: [[laughing,trigger,setMimicLaughing],
     [asking,trigger,setMimicAsking],
     [SayYes,trigger,setMimicYes],
@@ -77,17 +84,17 @@ group21:
     [confused,trigger,setMimicConfused],
     [angry,trigger,setMimicAngry],
     [sleep,trigger,setMimicFallingAsleep]]
-group22:
+group9:
   group_name: light
-  component_name: behaviour
+  component_name: demo
   buttons: [[cyanBreath,trigger,setLightCyanBreath],
     [cyan,trigger,setLightCyan],
     [red,trigger,setLightRed],
     [green,trigger,setLightGreen],
     [cyanSweep,trigger,setLightCyanSweep]]
-group23:
+group91:
   group_name: sound
-  component_name: behaviour
+  component_name: demo
   buttons: [[playSound,trigger,playSound],
     [noConnection,trigger,soundNoConnection],
     [negative,trigger,soundNegative],

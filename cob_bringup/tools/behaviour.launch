@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<!-- start relayboard node -->
+	<node name="behaviour" pkg="cob_behaviour" type="trigger_srvs_$(arg robot).py" respawn="false" output="screen"/>
+
+	<include file="$(find cob_behaviour)/$(arg robot)/launch/upload_param.launch"/>
+
+
+</launch>

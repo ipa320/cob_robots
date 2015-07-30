@@ -18,6 +18,7 @@
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_default_robot_config</run_depend>
   <run_depend>cob_bringup</run_depend>
+  <run_depend>cob_behaviour</run_depend>
 
 
 
