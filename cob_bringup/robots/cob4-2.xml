@@ -86,6 +86,7 @@
 	<group>
 		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
+		<include file="$(find cob_android_script_server)/launch/script_server.launch" />
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -93,15 +94,15 @@
 		</include>
 
 		<!-- startup hardware -->
-		<!--include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
-			<arg name="can_module" value="can1" />
+			<arg name="can_module" value="can0" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
-		</include-->
+		</include>
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -131,16 +132,6 @@
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_right"/>
-		</include>
-
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="torso" />
-			<arg name="can_module" value="can0" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="torso"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/light.launch">
