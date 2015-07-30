@@ -1,5 +1,24 @@
 <?xml version="1.0"?>
 <robot>
+	<!-- ***************** -->
+	<!-- base calibration -->
+	<!-- ***************** -->
+	<!-- laser front mount positions | relative to base_link -->
+	<property name="def_laser_front_x" value="0.32501"/>
+	<property name="def_laser_front_y" value="-0.232"/>
+	<property name="def_laser_front_z" value="0.178"/>
+	<property name="def_laser_front_roll" value="${M_PI}"/>
+	<property name="def_laser_front_pitch" value="0.0"/>
+	<property name="def_laser_front_yaw" value="${-M_PI/4}"/>
+
+	<!-- laser rear mount positions | relative to base_link -->
+	<property name="def_laser_rear_x" value="-0.32501"/>
+	<property name="def_laser_rear_y" value="0.232"/>
+	<property name="def_laser_rear_z" value="0.178"/>
+	<property name="def_laser_rear_roll" value="${M_PI}"/>
+	<property name="def_laser_rear_pitch" value="0.0"/>
+	<property name="def_laser_rear_yaw" value="${-5*M_PI/4}"/>
+
 
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
@@ -84,7 +103,5 @@
 	<property name="def_cam_holder_roll" value="1.5708"/>
 	<property name="def_cam_holder_pitch" value="0.0"/>
 	<property name="def_cam_holder_yaw" value="0.0"/>
-	
-	<property name="def_torso_bottom_ref" value="0.0"/>
-	<property name="def_torso_side_ref" value="0.0"/>
+
 </robot>

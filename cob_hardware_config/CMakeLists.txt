@@ -10,6 +10,7 @@ catkin_package(
 
 
 set(robotlist
+    cob3-2
     cob3-6
     cob3-9
     cob4-1

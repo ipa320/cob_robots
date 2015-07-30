@@ -9,6 +9,7 @@ arm_joint12_button: 0
 arm_joint34_button: 1
 arm_joint56_button: 2
 arm_joint7_button: 3
+base_safety_button: 4
 deadman_button: 5
 run_button: 7
 
@@ -34,7 +35,7 @@ modules: {
     joint_step: [0.05,0.075,0.075]
   },
   head: {
-    joint_names: ['empty'],
+    joint_names: ['head_axis_joint'],
     joint_step: [0.0]
   },
   arm: {
@@ -42,7 +43,7 @@ modules: {
     joint_step: [0.1,0.1,0.1,0.1,0.1,0.1,0.1]
   },
   gripper: {
-    joint_names: ['empty'],
-    joint_step: [0.0]
+    joint_names: ['sdh_finger_11_joint', 'sdh_finger_12_joint', 'sdh_finger_13_joint', 'sdh_finger_21_joint', 'sdh_finger_22_joint', 'sdh_finger_23_joint', 'sdh_thumb_2_joint', 'sdh_thumb_3_joint'],
+    joint_step: [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
   }
 }

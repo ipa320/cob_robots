@@ -6,6 +6,7 @@
 
 	<node ns="gripper" pkg="schunk_sdh" type="sdh_only" name="sdh_controller" cwd="node" respawn="true" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/gripper_driver.yaml"/>
+		<remap from="diagnostics" to="/diagnostics"/>
 	</node>
 
 </launch>
