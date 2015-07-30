@@ -1,4 +1,4 @@
- bus:
+bus:
   device: can0
   master_allocator: canopen::SimpleMaster::Allocator
 sync:
