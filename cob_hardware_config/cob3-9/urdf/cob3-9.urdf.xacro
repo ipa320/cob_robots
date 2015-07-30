@@ -58,14 +58,7 @@
     </plugin>
   </gazebo>
 
-  <xacro:schunk_lwa4d name="arm" parent="base_link" has_podest="false"
-          arm_1_ref="${arm_1_ref}"
-          arm_2_ref="${arm_2_ref}"
-          arm_3_ref="${arm_3_ref}"
-          arm_4_ref="${arm_4_ref}"
-          arm_5_ref="${arm_5_ref}"
-          arm_6_ref="${arm_6_ref}"
-          arm_7_ref="${arm_7_ref}">
+  <xacro:schunk_lwa4d name="arm" parent="base_link" has_podest="false">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:schunk_lwa4d>
   <gazebo>
@@ -85,9 +78,7 @@
     </plugin>
   </gazebo>
   
-  <xacro:schunk_pg70 name="pg70" parent="arm_7_link"
-          pg70_finger_left_ref="${pg70_finger_left_ref}"
-          pg70_finger_right_ref="${pg70_finger_right_ref}">
+  <xacro:schunk_pg70 name="pg70" parent="arm_7_link">
     <origin xyz="${pg70_x} ${pg70_y} ${pg70_z}" rpy="${pg70_roll} ${pg70_pitch} ${pg70_yaw}" />
   </xacro:schunk_pg70>
   <gazebo>

@@ -31,6 +31,12 @@ group3:
     [recover,trigger,recover],
     [up,move,up],
     [down,move,down]]
+group4:
+  group_name: arm settings
+  component_name: arm
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover]]
 group5:
   group_name: arm pos
   component_name: arm

@@ -1,5 +1,5 @@
-diagnostics_based: True
-motion_sensing: True
-led_enabled: True
-led_components: [light]
 sound_enabled: False
+led_enabled: True
+diagnostics_based: True
+motion_based: True
+led_components: [light]

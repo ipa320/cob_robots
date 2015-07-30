@@ -1,6 +1,6 @@
 <package>
   <name>cob_bringup</name>
-  <version>0.6.1</version>
+  <version>0.6.3</version>
   <description>This package provides launch files for operating Care-O-bot.</description>
 
   <license>LGPL</license>
@@ -68,6 +68,7 @@
   <run_depend>cob_frame_tracker</run_depend>
   <run_depend>cob_trajectory_controller</run_depend>
   <run_depend>cob_twist_controller</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
   <run_depend>joint_state_controller</run_depend>
   <run_depend>position_controllers</run_depend>
   <run_depend>velocity_controllers</run_depend>
