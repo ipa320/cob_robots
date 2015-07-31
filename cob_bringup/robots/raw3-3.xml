@@ -63,11 +63,11 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
-    </include>
+		</include>
 
-    <group if="$(arg include_non_released_packages)">
-      <include file="$(find rplidar_ros)/launch/rplidar.launch" />
-    </group>
+		<group if="$(arg include_non_released_packages)">
+			<include file="$(find rplidar_ros)/launch/rplidar.launch" />
+		</group>
 
 		<!--include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
