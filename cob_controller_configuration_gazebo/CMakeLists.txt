@@ -3,8 +3,7 @@ project(cob_controller_configuration_gazebo)
 
 find_package(catkin REQUIRED COMPONENTS roslaunch)
 
-catkin_package()
-
+catkin_package( CATKIN_DEPENDS rospy std_msgs std_srvs diagnostic_msgs cob_bringup cob_cam3d_throttle cob_hardware_config cob_phidgets cob_script_server topic_tools)
 
 
 set(robotlist
@@ -21,7 +20,6 @@ set(robotlist
   raw3-6
 )
 
-
 if(CATKIN_ENABLE_TESTING)
   foreach(robot ${robotlist})
     message("testing for robot: ${robot}")
@@ -30,8 +28,7 @@ if(CATKIN_ENABLE_TESTING)
 endif()
 
 
-
-## Mark cpp header files for installation
+### INSTALL ###
 install(DIRECTORY launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

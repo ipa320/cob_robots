@@ -16,7 +16,4 @@
 
   <build_depend>roslaunch</build_depend>
 
-  <export>
-
-  </export>
 </package>

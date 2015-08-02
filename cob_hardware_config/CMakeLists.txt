@@ -7,8 +7,6 @@ catkin_package(
     CATKIN_DEPENDS cob_calibration_data cob_description raw_description schunk_description ur_description
 )
 
-
-
 set(robotlist
     cob3-2
     cob3-6
@@ -25,7 +23,7 @@ set(robotlist
     raw3-6
 )
 
-# test
+### TESTING ###
 if(CATKIN_ENABLE_TESTING)
     # loop through list of robots for testing
     foreach(robot ${robotlist})
@@ -37,17 +35,13 @@ if(CATKIN_ENABLE_TESTING)
 endif()
 
 
-# install
+### INSTALL ###
 foreach(robot ${robotlist})
     install(DIRECTORY ${robot}
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
     )
 endforeach()
 
-install(DIRECTORY common
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-install(DIRECTORY test
+install(DIRECTORY common test
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
