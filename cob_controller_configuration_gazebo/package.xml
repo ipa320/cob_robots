@@ -13,17 +13,18 @@
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+
   <build_depend>roslaunch</build_depend>
 
-  <run_depend>rospy</run_depend>
-  <run_depend>std_msgs</run_depend>
-  <run_depend>std_srvs</run_depend>
-  <run_depend>diagnostic_msgs</run_depend>
   <run_depend>cob_bringup</run_depend>
   <run_depend>cob_cam3d_throttle</run_depend>
   <run_depend>cob_hardware_config</run_depend>
   <run_depend>cob_phidgets</run_depend>
   <run_depend>cob_script_server</run_depend>
+  <run_depend>diagnostic_msgs</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
   <run_depend>topic_tools</run_depend>
 
 </package>

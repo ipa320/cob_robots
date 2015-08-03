@@ -5,8 +5,6 @@ find_package(catkin REQUIRED COMPONENTS roslaunch)
 
 catkin_package()
 
-
-
 set(robotlist
   cob3-2
   cob3-6
@@ -30,19 +28,17 @@ set(envlist
 )
 
 if(CATKIN_ENABLE_TESTING)
-    foreach(robot ${robotlist})
-	#foreach(env ${envlist})
-	    message("testing for robot: ${robot} in env: ${env}")
-	    #rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
-	    #rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
-	    roslaunch_add_file_check(robots/${robot}.xml robot_env:=ipa-apartment)
-	#endforeach()
-    endforeach()
+  foreach(robot ${robotlist})
+    #foreach(env ${envlist})
+      message("testing for robot: ${robot} in env: ${env}")
+      #rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
+      #rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
+      roslaunch_add_file_check(robots/${robot}.xml robot_env:=ipa-apartment)
+    #endforeach()
+  endforeach()
 endif()
 
-
-
-## Mark launch files for installation
+### INSTALL ###
 install(DIRECTORY robots drivers controllers tools
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
@@ -54,4 +50,3 @@ install(PROGRAMS env.sh
 install(FILES robot.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
-

@@ -4,7 +4,7 @@ project(cob_hardware_config)
 find_package(catkin REQUIRED COMPONENTS roslaunch rostest)
 
 catkin_package(
-    CATKIN_DEPENDS cob_calibration_data cob_description raw_description schunk_description ur_description
+    CATKIN_DEPENDS cob_calibration_data cob_description cob_omni_drive_controller diagnostic_aggregator effort_controllers joint_state_controller joint_trajectory_controller position_controllers prace_common raw_description schunk_description ur_description velocity_controllers visualization_msgs xacro
 )
 
 set(robotlist
@@ -33,7 +33,6 @@ if(CATKIN_ENABLE_TESTING)
         add_rostest(test/urdf_${robot}.test)
     endforeach()
 endif()
-
 
 ### INSTALL ###
 foreach(robot ${robotlist})

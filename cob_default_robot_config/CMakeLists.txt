@@ -29,7 +29,6 @@ if(CATKIN_ENABLE_TESTING)
   endforeach()
 endif()
 
-
 ### INSTALL ###
 foreach(robot ${robotlist})
   install(DIRECTORY ${robot}

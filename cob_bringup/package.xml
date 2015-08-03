@@ -12,6 +12,7 @@
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+
   <build_depend>roslaunch</build_depend>
 
   <run_depend>camera1394</run_depend>
@@ -51,14 +52,20 @@
   <run_depend>controller_manager</run_depend>
   <run_depend>costmap_2d</run_depend>
   <run_depend>diagnostic_aggregator</run_depend>
+  <run_depend>effort_controllers</run_depend>
   <run_depend>frida_driver</run_depend>
   <run_depend>hokuyo_node</run_depend>
   <run_depend>image_proc</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>joint_state_controller</run_depend>
   <run_depend>joint_state_publisher</run_depend>
+  <run_depend>joint_trajectory_controller</run_depend>
   <run_depend>joy</run_depend>
   <run_depend>nodelet</run_depend>
-  <run_depend>openni2_launch</run_depend>
   <run_depend>openni_launch</run_depend>
+  <run_depend>openni2_launch</run_depend>
+  <run_depend>position_controllers</run_depend>
+  <run_depend>position_controllers</run_depend>
   <run_depend>prace_gripper_driver</run_depend>
   <run_depend>prosilica_camera</run_depend>
   <run_depend>robot_state_publisher</run_depend>
@@ -66,16 +73,9 @@
   <run_depend>schunk_powercube_chain</run_depend>
   <run_depend>schunk_sdh</run_depend>
   <run_depend>schunk_sdhx</run_depend>
-  <!--run_depend>softkinetic</run_depend-->
-  <run_depend>ur_driver</run_depend>
-  
-  <run_depend>joint_state_controller</run_depend>
-  <run_depend>position_controllers</run_depend>
-  <run_depend>velocity_controllers</run_depend>
-  <run_depend>effort_controllers</run_depend>
-  <run_depend>joint_trajectory_controller</run_depend>
-  <run_depend>joint_state_controller</run_depend>
-  <run_depend>position_controllers</run_depend>
   <run_depend>topic_tools</run_depend>
+  <run_depend>ur_driver</run_depend>
+  <run_depend>velocity_controllers</run_depend>
+  <!--run_depend>softkinetic</run_depend-->
 
 </package>
