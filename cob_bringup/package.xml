@@ -17,6 +17,7 @@
  
   <run_depend>cob_undercarriage_ctrl</run_depend>
   <run_depend>cob_base_drive_chain</run_depend>
+  <run_depend>cob_omni_drive_controller</run_depend>
   <run_depend>cob_lbr</run_depend>
   <run_depend>cob_head_axis</run_depend>
   <run_depend>cob_sound</run_depend>
