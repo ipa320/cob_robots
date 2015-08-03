@@ -133,6 +133,16 @@
 			<arg name="component_name" value="arm_right"/>
 		</include>
 
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="torso" />
+			<arg name="can_module" value="can0" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+		</include>
+
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="light_torso" />
