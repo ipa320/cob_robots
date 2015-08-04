@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import roslib; roslib.load_manifest('cob_controller_configuration_gazebo')
 
 import sys
 import rospy
