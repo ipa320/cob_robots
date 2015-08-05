@@ -57,15 +57,14 @@
 #
 #################################################################
 
-from std_srvs.srv import Trigger
+from cob_light.srv import *
+from cob_light.msg import *
+
 import rospy
 from simple_script_server import *
 sss = simple_script_server()
 from std_msgs.msg import ColorRGBA
-from cob_light.srv import *
-from cob_light.msg import *
-from cob_mimic.msg import *
-from cob_mimic.srv import *
+from std_srvs.srv import Trigger
 
 def bow_cb(req):
     handle_arm_left = sss.move("arm_left","side", False)
@@ -164,8 +163,8 @@ def setMimicFallingAsleep_cb(req):
     sss.set_mimic("mimic",["falling_asleep",0,1])
     return
 
-def playSound_cb(req):
-    os.system("aplay -q /u/behaviour/sounds/R2D2.wav")
+def soundR2D2_cb(req):
+    sss.play("R2D2")
     return
 
 def showCamera_left_cb(req):
@@ -180,15 +179,15 @@ def showCamera_right_cb(req):
 
 def soundNoConnection_cb(req):
     sss.set_mimic("mimic",["confused",0,1])
-    os.system("aplay -q /u/behaviour/sounds/confused.wav")
+    sss.play("confused")
     return
 
 def soundNegative_cb(req):
-    os.system("aplay -q /u/behaviour/sounds/negative.wav")
+    sss.play("negative")
     return
 
 def soundStarting_cb(req):
-    os.system("aplay -q /u/behaviour/sounds/starting.wav")
+    sss.play("starting")
     return
 
 def soundHello_cb(req):
@@ -211,15 +210,14 @@ def trigger_srvs():
     s = rospy.Service('/behaviour/setMimicConfused', Trigger, setMimicConfused_cb)
     s = rospy.Service('/behaviour/setMimicAngry', Trigger, setMimicAngry_cb)
     s = rospy.Service('/behaviour/setMimicFallingAsleep', Trigger, setMimicFallingAsleep_cb)
-    s = rospy.Service('/behaviour/playSound', Trigger, playSound_cb)
+    s = rospy.Service('/behaviour/soundR2D2', Trigger, soundR2D2_cb)
     s = rospy.Service('/behaviour/soundNoConnection',Trigger,soundNoConnection_cb)
     s = rospy.Service('/behaviour/soundNegative',Trigger,soundNegative_cb)
     s = rospy.Service('/behaviour/soundStarting',Trigger,soundStarting_cb)
     s = rospy.Service('/behaviour/soundHello',Trigger,soundHello_cb)
-
     s = rospy.Service('/gripper_left/driver/showCamera_left',Trigger, showCamera_left_cb)
     s = rospy.Service('/gripper_right/driver/showCamera_right',Trigger, showCamera_right_cb)
-    print "Ready"
+
     rospy.spin()
 
 if __name__ == "__main__":

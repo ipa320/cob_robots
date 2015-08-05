@@ -4,20 +4,19 @@ project(cob_behaviour)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS cob_script_server rospy std_srvs cob_light cob_mimic
+find_package(catkin REQUIRED COMPONENTS cob_script_server
 )
 
-catkin_package()
+catkin_package(
+    CATKIN_DEPENDS cob_light rospy rostest std_msgs std_srvs
+)
 
 set(robotlist
     cob4-2
 )
 
 foreach(robot ${robotlist})
-    install(DIRECTORY ${robot}/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${robot}
-    )
-    install(PROGRAMS ${robot}/scripts/trigger_srvs_${robot}.py
+    install(PROGRAMS scripts/trigger_srvs_${robot}.py
          DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
     )
 endforeach()

@@ -29,6 +29,7 @@ group12:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
+    [ship, move, ship],
     [hello, move, hello]]
 group13:
   group_name: arm_right
@@ -39,6 +40,7 @@ group13:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
+    [ship, move, ship],
     [hello, move, hello]]
 #group14:
 #  group_name: gripper_left
