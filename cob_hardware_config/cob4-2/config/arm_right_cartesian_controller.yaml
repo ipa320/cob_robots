@@ -51,7 +51,7 @@ twist_controller:
   max_vel_rot_base: 0.5
 
   # collision avoidance frames for obstacle distance
-  collision_check_frames: [arm_right_3_link, arm_right_5_link, arm_right_7_link]
+  collision_check_frames: [arm_right_3_link, arm_right_4_link, arm_right_5_link, arm_right_7_link]
 
 # frame_tracker + interactive_marker
 frame_tracker:
