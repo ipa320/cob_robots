@@ -3,6 +3,7 @@
 
 	<!-- args -->
 	<arg name="robot" value="raw3-3"/>
+	<arg name="use_rplidar" default="false"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
@@ -63,6 +64,11 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<group if="$(arg use_rplidar)">
+			<include file="$(find rplidar_ros)/launch/rplidar.launch" />
+		</group>
+
 		<!--include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />

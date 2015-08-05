@@ -8,7 +8,7 @@ find_package(catkin REQUIRED COMPONENTS cob_script_server
 )
 
 catkin_package(
-    CATKIN_DEPENDS cob_light rospy rostest std_msgs std_srvs
+    CATKIN_DEPENDS cob_light rospy std_msgs std_srvs
 )
 
 set(robotlist
