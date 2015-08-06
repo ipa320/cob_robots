@@ -26,14 +26,14 @@ twist_controller:
   # JLA
   constraint_jla: 1    #OFF 0, ENABLED 1, MID 1, INEQ 2
   priority_jla: 50
-  k_H_jla: -10.0
+  k_H_jla: -1.0
   activation_threshold_jla: 10.0    #in [%]
   damping_jla: 0.000001
 
   # CA
   constraint_ca: 0    #OFF 0, ENABLED 1
   priority_ca: 100
-  k_H_ca: -20.0
+  k_H_ca: -2.0
   activation_threshold_ca: 0.1    #in [m]
   damping_ca: 0.000001
 
