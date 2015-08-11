@@ -15,7 +15,7 @@
     <group name="torso">
         <chain base_link="base_link" tip_link="torso_upper_neck_tilt_link" />
     </group>
-    <group name="base"> 
+    <group name="base">
         <joint name="world_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->

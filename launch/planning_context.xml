@@ -9,14 +9,14 @@
 
   <!-- Load universal robotic description format (URDF) -->
   <include file="$(find cob_hardware_config)/common/upload_robot.launch" if="$(arg load_robot_description)">
-    <arg name="robot" value="$(arg robot)" /> 
+    <arg name="robot" value="$(arg robot)" />
   </include>
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic" textfile="$(arg config_path)/robot.srdf" />
-  
+
   <!-- Load to the parameter server yaml files -->
-  <group ns="robot_description_planning">    
+  <group ns="robot_description_planning">
     <rosparam command="load" file="$(arg config_path)/joint_limits.yaml"/>
   </group>
 
@@ -29,5 +29,5 @@
   <group ns="$(arg robot_description)_kinematics">
     <rosparam command="load" file="$(arg config_path)/kinematics.yaml"/>
   </group>
-  
+
 </launch>

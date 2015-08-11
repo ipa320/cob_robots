@@ -11,7 +11,7 @@
   <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
 
   <!-- Verbose Mode Option -->
-  <arg name="info" default="$(arg debug)" />  
+  <arg name="info" default="$(arg debug)" />
   <arg unless="$(arg info)" name="command_args" value="" />
   <arg     if="$(arg info)" name="command_args" value="--debug" />
 
@@ -36,7 +36,7 @@
   <param name="move_group/trajectory_execution/execution_duration_monitoring" value="false"/>
   <param name="move_group/use_controller_manager" value="false"/>
   <param name="move_group/moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
-  
+
   <!-- Sensors Functionality -->
   <!-- IMPORTANT: To disable, you must manually remove the paramater from the parameter server -->
   <!-- rosparam delete /move_group/sensors -->
@@ -74,5 +74,5 @@
     <param name="planning_scene_monitor/publish_state_updates" value="$(arg publish_monitored_planning_scene)" />
     <param name="planning_scene_monitor/publish_transforms_updates" value="$(arg publish_monitored_planning_scene)" />
   </node>
-  
+
 </launch>

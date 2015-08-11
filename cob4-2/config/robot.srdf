@@ -974,7 +974,7 @@
     <disable_collisions link1="torso_cam3d_left_link" link2="torso_cam3d_right_link" reason="Default" />
     <disable_collisions link1="torso_cam3d_left_link" link2="torso_center_link" reason="Never" />
     <disable_collisions link1="torso_cam3d_right_link" link2="torso_center_link" reason="Never" />
-    
+
     <!-- additional manual-->
     <disable_collisions link1="gripper_left_finger_2_link" link2="gripper_left_palm_link" reason="Default" />
     <disable_collisions link1="gripper_right_finger_2_link" link2="gripper_right_palm_link" reason="Default" />
