@@ -1,10 +1,12 @@
-## Self collision parameters for node cob_obstacle_distance
+## Self collision parameters for node cob_obstacle_distance component_name:=arm_right
 
 ## Left: The self collision frame that shall be represented like an obstacle
 ## Right: The frame in the component that shall be ignored for collision checking between self collision frame an arm right component frame.
+## ATTENTION: self-collision for the component frame is only active when this link has been registered before!!!
+# Before arm_right_3_link gets into collision with torso the JLA becomes active or self-collision checking of arm_right_4_link pushes arm away.
 self_collision_frames: {
-    head_3_link : [arm_right_base_link, arm_right_3_link], 
-    torso_3_link : [arm_right_base_link, arm_right_1_link, arm_right_2_link, arm_right_3_link], 
-    base_link : [arm_right_base_link, arm_right_3_link], 
+    head_3_link : [arm_right_3_link, arm_right_4_link, arm_right_5_link, arm_right_6_link, arm_right_7_link],
+    torso_3_link : [arm_right_4_link, arm_right_5_link, arm_right_6_link, arm_right_7_link],
+    base_link : [arm_right_5_link, arm_right_6_link, arm_right_7_link],
 }
 
