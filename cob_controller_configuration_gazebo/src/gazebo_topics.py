@@ -1,10 +1,6 @@
 #!/usr/bin/env python
-import roslib; roslib.load_manifest('cob_controller_configuration_gazebo')
 
 import rospy
-
-
-# care-o-bot includes
 from std_msgs.msg import Empty
 
 class gazebo_topics():

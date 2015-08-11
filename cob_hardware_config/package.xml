@@ -18,16 +18,18 @@
 
   <run_depend>cob_calibration_data</run_depend>
   <run_depend>cob_description</run_depend>
+  <run_depend>cob_omni_drive_controller</run_depend>
+  <run_depend>diagnostic_aggregator</run_depend>
+  <run_depend>effort_controllers</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>joint_trajectory_controller</run_depend>
+  <run_depend>position_controllers</run_depend>
+  <run_depend>prace_common</run_depend>
   <run_depend>raw_description</run_depend>
   <run_depend>schunk_description</run_depend>
   <run_depend>ur_description</run_depend>
-  <run_depend>prace_common</run_depend>
-  <run_depend>joint_trajectory_controller</run_depend>
-  <run_depend>position_controllers</run_depend>
   <run_depend>velocity_controllers</run_depend>
-  <run_depend>effort_controllers</run_depend>
+  <run_depend>visualization_msgs</run_depend>
+  <run_depend>xacro</run_depend>
 
-  <export>
-
-  </export>
 </package>
