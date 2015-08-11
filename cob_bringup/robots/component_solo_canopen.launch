@@ -28,5 +28,5 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
 	</include>
- 
+
 </launch>
