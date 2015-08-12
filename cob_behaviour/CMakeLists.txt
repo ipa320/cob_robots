@@ -1,15 +1,9 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_behaviour)
 
-## Find catkin macros and libraries
-## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
-## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS cob_script_server
-)
+find_package(catkin REQUIRED COMPONENTS)
 
-catkin_package(
-    CATKIN_DEPENDS cob_light rospy std_msgs std_srvs
-)
+catkin_package()
 
 set(robotlist
     cob4-2
