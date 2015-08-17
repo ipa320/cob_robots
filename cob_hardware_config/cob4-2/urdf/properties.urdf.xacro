@@ -57,7 +57,7 @@
 	<property name="sensorring_roll" value="${def_sensorring_roll+offset_sensorring_roll}"/>
 	<property name="sensorring_pitch" value="${def_sensorring_pitch+offset_sensorring_pitch}"/>
 	<property name="sensorring_yaw" value="${def_sensorring_yaw+offset_sensorring_yaw}"/>
-	
+
 	<!-- arm mount positions | relative to torso_3_link -->
 	<property name="arm_right_x" value="${def_arm_right_x+offset_arm_right_x}"/>
 	<property name="arm_right_y" value="${def_arm_right_y+offset_arm_right_y}"/>
@@ -65,7 +65,7 @@
 	<property name="arm_right_roll" value="${def_arm_right_roll+offset_arm_right_roll}"/>
 	<property name="arm_right_pitch" value="${def_arm_right_pitch+offset_arm_right_pitch}"/>
 	<property name="arm_right_yaw" value="${def_arm_right_yaw+offset_arm_right_yaw}"/>
-	
+
 	<!-- arm mount positions | relative to torso_3_link -->
 	<property name="arm_left_x" value="${def_arm_left_x+offset_arm_left_x}"/>
 	<property name="arm_left_y" value="${def_arm_left_y+offset_arm_left_y}"/>
@@ -81,7 +81,7 @@
 	<property name="gripper_right_roll" value="${def_gripper_right_roll+offset_gripper_right_roll}"/>
 	<property name="gripper_right_pitch" value="${def_gripper_right_pitch+offset_gripper_right_pitch}"/>
 	<property name="gripper_right_yaw" value="${def_gripper_right_yaw+offset_gripper_right_yaw}"/>
-	
+
 	<!-- gripper left mount positions | relative to arm_left_7_link -->
 	<property name="gripper_left_x" value="${def_gripper_left_x+offset_gripper_left_x}"/>
 	<property name="gripper_left_y" value="${def_gripper_left_y+offset_gripper_left_y}"/>
@@ -102,7 +102,7 @@
 	<property name="torso_cam3d_left_roll" value="${def_torso_cam3d_left_roll+offset_torso_cam3d_left_roll}"/>
 	<property name="torso_cam3d_left_pitch" value="${def_torso_cam3d_left_pitch+offset_torso_cam3d_left_pitch}"/>
 	<property name="torso_cam3d_left_yaw" value="${def_torso_cam3d_left_yaw+offset_torso_cam3d_left_yaw}"/>
-	
+
 	<!-- cam3d right | handeye calibration | relative to torso_3_link -->
 	<property name="torso_cam3d_right_x" value="${def_torso_cam3d_right_x+offset_torso_cam3d_right_x}"/>
 	<property name="torso_cam3d_right_y" value="${def_torso_cam3d_right_y+offset_torso_cam3d_right_y}"/>
@@ -110,7 +110,7 @@
 	<property name="torso_cam3d_right_roll" value="${def_torso_cam3d_right_roll+offset_torso_cam3d_right_roll}"/>
 	<property name="torso_cam3d_right_pitch" value="${def_torso_cam3d_right_pitch+offset_torso_cam3d_right_pitch}"/>
 	<property name="torso_cam3d_right_yaw" value="${def_torso_cam3d_right_yaw+offset_torso_cam3d_right_yaw}"/>
-	
+
 	<!-- cam3d down | handeye calibration | relative to torso_3_link -->
 	<property name="torso_cam3d_down_x" value="${def_torso_cam3d_down_x+offset_torso_cam3d_down_x}"/>
 	<property name="torso_cam3d_down_y" value="${def_torso_cam3d_down_y+offset_torso_cam3d_down_y}"/>
@@ -118,5 +118,5 @@
 	<property name="torso_cam3d_down_roll" value="${def_torso_cam3d_down_roll+offset_torso_cam3d_down_roll}"/>
 	<property name="torso_cam3d_down_pitch" value="${def_torso_cam3d_down_pitch+offset_torso_cam3d_down_pitch}"/>
 	<property name="torso_cam3d_down_yaw" value="${def_torso_cam3d_down_yaw+offset_torso_cam3d_down_yaw}"/>
-	
+
 </robot>

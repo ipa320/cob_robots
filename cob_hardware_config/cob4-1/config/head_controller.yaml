@@ -36,7 +36,7 @@ joint_group_position_controller:
      - head_2_joint
      - head_3_joint
   required_drive_mode: 1
-     
+
 head_1_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: head_1_joint

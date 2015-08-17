@@ -43,14 +43,14 @@
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -72,11 +72,11 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="light_base" />
 		</include>
-		
+
 		<!-- TMP START: recover grippers due to USB disconnect problem. Delete after USB problem is fixed. Recovers both grippers. -->
 		<node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/>
 		<!-- TMP END -->
-		
+
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
@@ -112,7 +112,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
@@ -157,7 +157,7 @@
 			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="device_id" value="#1"/>
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="camera_name" value="torso_cam3d_right"/>
@@ -204,7 +204,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-h1)" />
 		</include>
-		
+
 		<!--node pkg="cob_mimic" type="mimic_node.py" name="cob_mimic"/-->
 		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_bringup)/drivers/sound.launch" />

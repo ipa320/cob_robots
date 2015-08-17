@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-	
+
 	<param name="/use_sim_time" value="false"/>
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>

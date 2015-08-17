@@ -33,7 +33,7 @@ joint_group_position_controller:
      - gripper_right_finger_1_joint
      - gripper_right_finger_2_joint
   required_drive_mode: 1
-     
+
 gripper_right_finger_1_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: gripper_right_finger_1_joint
