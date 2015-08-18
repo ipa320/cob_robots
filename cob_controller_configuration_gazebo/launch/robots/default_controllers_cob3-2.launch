@@ -84,6 +84,7 @@
 	<include file="$(find cob_bringup)/drivers/light.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="light"/>
+		<arg name="sim_enabled" value="true"/>
 	</include>
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
