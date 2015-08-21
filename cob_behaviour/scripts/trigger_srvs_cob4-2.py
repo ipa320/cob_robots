@@ -77,6 +77,26 @@ def bow_cb(req):
         sss.move("torso","home")
     return
 
+def pick_cb(req):
+    handle_arm_left = sss.move("arm_left","side", False)
+    handle_arm_right = sss.move("arm_right","side", False)
+    handle_arm_left.wait()
+    handle_arm_right.wait()
+    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
+        sss.move("torso",[[-1.57,0.78]],False)
+        sss.move_base_rel("base",[0.2,0,0.8])
+        sss.sleep(3)
+        handle_arm_right = sss.move("arm_right",[[1.9700054866035597, 1.1332073767348785, -1.2900077567340489, -1.916388971982294, -1.0500075312923085, -0.4599989776556255, 1.3099743233768641]], False)
+        handle_arm_right.wait()
+        sss.sleep(3)  
+        sss.move_base_rel("base",[-0.2,0,0.0],False)
+        sss.sleep(1)  
+        sss.move("arm_right","side",False)
+        sss.move("torso","home",False)
+        sss.move_base_rel("base",[-0.2,0,-0.8])
+
+    return
+
 def setLightCyan_cb(req):
     sss.set_light("light_base","cyan")
     sss.set_light("light_torso","cyan")
@@ -198,6 +218,7 @@ def soundHello_cb(req):
 def trigger_srvs():
     rospy.init_node('trigger_srvs')
     s = rospy.Service('/behaviour/bow', Trigger, bow_cb)
+    s = rospy.Service('/behaviour/pick', Trigger, pick_cb)
     s = rospy.Service('/behaviour/setLightCyan', Trigger, setLightCyan_cb)
     s = rospy.Service('/behaviour/setLightRed', Trigger, setLightRed_cb)
     s = rospy.Service('/behaviour/setLightGreen', Trigger, setLightGreen_cb)
