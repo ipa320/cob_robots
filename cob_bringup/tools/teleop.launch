@@ -4,10 +4,14 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="version" default="v2"/>
+	<arg name="service_ns" />
+	<arg name="cmd_vel" />
 
 	<include file="$(find cob_bringup)/tools/teleop_$(arg version).xml">
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
+		<arg name="service_ns" value="$(arg service_ns)" />
+		<arg name="cmd_vel" value="$(arg cmd_vel)" />
 	</include>
 
 </launch>
