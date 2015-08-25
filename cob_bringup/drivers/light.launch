@@ -4,10 +4,12 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name" default="light"/>
+	<arg name="sim_enabled" default="false"/>
 
 	<!-- start light controller -->
 	<node pkg="cob_light" type="cob_light" name="$(arg component_name)" respawn="false" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name).yaml"/>
+		<param name="sim_enabled" value="$(arg sim_enabled)"/>
 	</node>
 
 </launch>
