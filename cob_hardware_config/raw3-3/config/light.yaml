@@ -3,6 +3,5 @@ devicestring: /dev/ttyUSB0
 baudrate: 38400
 invert_output: false
 pubmarker: false
-sim_enabled: false
 startup_color: [0.0, 1.0, 0.0, 1.0] #rgba value
 startup_mode: Static #possible values: None, Static, Breath, BreathColor, Flash...
