@@ -2,6 +2,13 @@
 Changelog for package cob_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* migrate to package format 2
+* remove trailing whitespaces
+* revies dependencies
+* Contributors: ipa-fxm
+
 0.6.3 (2015-06-17)
 ------------------
 
