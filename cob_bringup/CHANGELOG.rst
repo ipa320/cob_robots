@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.4 (2015-08-29)
+------------------
 * renamed parameter
 * making 'sim_enabled' a launch argument
 * migrate to package format 2

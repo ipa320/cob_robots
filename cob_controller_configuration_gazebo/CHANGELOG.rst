@@ -2,8 +2,8 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.4 (2015-08-29)
+------------------
 * making 'sim_enabled' a launch argument
 * migrate to package format 2
 * remove trailing whitespaces
