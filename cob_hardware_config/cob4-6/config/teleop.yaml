@@ -5,7 +5,7 @@ run_factor: 2.0
 deadman_button: 5
 #run_button: 7
 base_safety_button: 4
-recover_base_button: 9 #7
+recover_base_button: 7
 
 # axes
 axis_vx: 1
