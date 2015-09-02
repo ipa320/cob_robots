@@ -5,6 +5,6 @@ defaults:
   eds_file: "cob3-9/config/Schunk_0_63.dcf"
   #pos_unit_factor: 1000000.0
   #vel_unit_factor: 1000000.0
-modules:
+nodes:
   - name: pg70_finger_left_joint
     id: 10
