@@ -6,13 +6,13 @@
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
-  <xacro:include filename="$(find cob_hardware_config)/raw3-1/urdf/properties.urdf.xacro" />   
+  <xacro:include filename="$(find cob_hardware_config)/raw3-1/urdf/properties.urdf.xacro" />
 
   <!-- raw base -->
   <xacro:include filename="$(find raw_description)/urdf/base_long/base.urdf.xacro" />
 
   <!-- raw tower -->
-  <xacro:include filename="$(find raw_description)/urdf/tower_asymetric/tower.urdf.xacro" />  
+  <xacro:include filename="$(find raw_description)/urdf/tower_asymetric/tower.urdf.xacro" />
 
   <!-- torso -->
   <xacro:include filename="$(find raw_description)/urdf/torso/torso.urdf.xacro" />
@@ -50,11 +50,11 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
+
   <xacro:raw_head name="head" parent="torso_2_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:raw_head>
-  
+
   <!--xacro:cob_lookat name="lookat" parent="torso_2_link" lower="0.0" upper="5.0">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
     <axis xyz="1 0 0"/>
@@ -70,7 +70,7 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
+
   <xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
     <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
   </xacro:raw_boxgripper>
@@ -95,7 +95,7 @@
     </visual>
   </link>
   <!-- END: IMU brick  mount -->
-    
+
   <!-- rfid_front mount on raw3-1 -->
   <joint name="rfid_front_joint" type="fixed" >
     <origin xyz="0.55128 0.0 0.09" rpy="0 0 0" />
@@ -116,7 +116,7 @@
     </visual>
   </link>
   <!-- END: rfid front mount -->
-    
+
   <!-- rfid_rear mount on raw3-1 -->
   <joint name="rfid_rear_joint" type="fixed" >
     <origin xyz="-0.55128 0.0 0.09" rpy="0 0 ${M_PI}" />
@@ -137,7 +137,7 @@
     </visual>
   </link>
   <!-- END: rfid rear mount -->
-    
+
   <!-- rfid_right mount on raw3-1 -->
   <joint name="rfid_right_joint" type="fixed" >
     <origin xyz="0.0 -0.30850 0.09" rpy="0 0 ${-0.5*M_PI}" />
@@ -158,15 +158,15 @@
     </visual>
   </link>
   <!-- END: rfid right mount -->
-    
-  
+
+
   <!-- Camera pillar -->
   <joint name="camera_pillar_joint" type="fixed" >
     <origin xyz="0.4925 0.0825 0.48" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="camera_pillar_link" />
   </joint>
-    
+
   <link name="camera_pillar_link">
     <xacro:default_inertial />
     <visual>
@@ -176,16 +176,16 @@
       </geometry>
       <material name="IPA/LightGrey" />
     </visual>
-  </link> 
-  <!-- END: camera_pillar -->  
-   
+  </link>
+  <!-- END: camera_pillar -->
+
   <!-- Softkinetic 'left' mount on raw3-1 -->
   <joint name="softkinetic_left_joint" type="fixed" >
     <origin xyz="0.015 0.06 0.215" rpy="0.0 ${M_PI/2} 0.0" />
     <parent link="camera_pillar_link" />
     <child link="softkinetic_left_link" />
   </joint>
-    
+
   <link name="softkinetic_left_link">
     <xacro:default_inertial />
     <visual>
@@ -204,7 +204,7 @@
     <parent link="camera_pillar_link" />
     <child link="softkinetic_right_link" />
   </joint>
-    
+
   <link name="softkinetic_right_link">
     <xacro:default_inertial />
     <visual>
@@ -223,7 +223,7 @@
     <parent link="camera_pillar_link" />
     <child link="kinect_link" />
   </joint>
-    
+
   <link name="kinect_link">
     <xacro:default_inertial />
     <visual>

@@ -10,7 +10,7 @@ joint_state_controller:
 twist_controller:
   type: cob_omni_drive_controller/WheelController
   publish_rate: 50
-  
+
   defaults: # default settings for all wheels, can per overwritten per wheel
     # wheel_radius: 0.080 # Radius of the wheels in [m]
     # wheel_offset: 0  # Distance of the wheels steering axis to the wheel center in [m], read from URDF is not specified

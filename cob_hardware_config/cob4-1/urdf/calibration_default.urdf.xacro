@@ -46,7 +46,7 @@
 	<property name="def_head_roll" value="0.0"/>
 	<property name="def_head_pitch" value="0.0"/>
 	<property name="def_head_yaw" value="0.0"/>
-	
+
 	<!-- head sensors mount positions | relative to head_3_link -->
 	<property name="def_sensorring_x" value="0.0"/>
 	<property name="def_sensorring_y" value="0.0"/>
@@ -62,7 +62,7 @@
 	<property name="def_arm_right_roll" value="1.57097"/>
 	<property name="def_arm_right_pitch" value="0"/>
 	<property name="def_arm_right_yaw" value="0.0"/>
-	
+
 	<!-- arm left mount positions | relative to torso_3_link -->
 	<property name="def_arm_left_x" value="0.0"/>
 	<property name="def_arm_left_y" value="0.014"/>
@@ -70,7 +70,7 @@
 	<property name="def_arm_left_roll" value="1.57097"/>
 	<property name="def_arm_left_pitch" value="0"/>
 	<property name="def_arm_left_yaw" value="3.14159"/>
-	
+
 	<!-- gripper right mount positions | relative to arm_right_7_link -->
 	<property name="def_gripper_right_x" value="0.0"/>
 	<property name="def_gripper_right_y" value="0.0"/>
@@ -78,7 +78,7 @@
 	<property name="def_gripper_right_roll" value="0.0"/>
 	<property name="def_gripper_right_pitch" value="0.0"/>
 	<property name="def_gripper_right_yaw" value="3.14159"/>
-	
+
 	<!-- gripper left mount positions | relative to arm_left_7_link -->
 	<property name="def_gripper_left_x" value="0.0"/>
 	<property name="def_gripper_left_y" value="0.0"/>
@@ -99,7 +99,7 @@
 	<property name="def_torso_cam3d_left_roll" value="0"/>
 	<property name="def_torso_cam3d_left_pitch" value="1.57079"/>
 	<property name="def_torso_cam3d_left_yaw" value="0.418879"/>
-	
+
 	<!-- cam3d right | handeye calibration | relative to torso_3_link -->
 	<property name="def_torso_cam3d_right_x" value="0.12839"/>
 	<property name="def_torso_cam3d_right_y" value="-0.01802"/>
@@ -107,7 +107,7 @@
 	<property name="def_torso_cam3d_right_roll" value="0"/>
 	<property name="def_torso_cam3d_right_pitch" value="1.57079"/>
 	<property name="def_torso_cam3d_right_yaw" value="-0.418879"/>
-	
+
 	<!-- cam3d down | handeye calibration | relative to torso_3_link -->
 	<property name="def_torso_cam3d_down_x" value="0.15908"/>
 	<property name="def_torso_cam3d_down_y" value="0.0"/>

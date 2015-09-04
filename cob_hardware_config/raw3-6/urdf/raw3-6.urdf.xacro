@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="raw3-6" >
-  
+
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
-  <xacro:include filename="$(find cob_hardware_config)/raw3-6/urdf/properties.urdf.xacro" />   
-  
+  <xacro:include filename="$(find cob_hardware_config)/raw3-6/urdf/properties.urdf.xacro" />
+
   <!-- raw base -->
   <xacro:include filename="$(find raw_description)/urdf/base_long/base.urdf.xacro" />
 

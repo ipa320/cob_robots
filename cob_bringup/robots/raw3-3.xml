@@ -26,7 +26,7 @@
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="front" />
@@ -35,7 +35,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="rear" />
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
 			<arg name="sim" value="true" />
 		</include>
@@ -43,7 +43,7 @@
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 <!--
 		<include file="$(find cob_bringup)/drivers/frida.launch" >
 			<arg name="robot_ip" value="192.168.125.1" />
@@ -81,7 +81,7 @@
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />

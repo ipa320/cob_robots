@@ -27,7 +27,7 @@ analyzers:
 #        path: wifi
 #        num_items: 1
 #        expected: ['Wifi Status (ddwrt)']
- 
+
 
 
   io:
@@ -63,7 +63,7 @@ analyzers:
       stereo_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Stereo (Left)
-        contains: left      
+        contains: left
         startswith: ['stereo/left/image_color']
       stereo_right:
         type: diagnostic_aggregator/GenericAnalyzer

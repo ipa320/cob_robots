@@ -2,12 +2,12 @@
 <launch>
 
 	<arg name="robot" default="raw3-6"/>
-	
+
 	<!-- aggregated robot_state_publisher -->
 	<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 		<arg name="robot" value="$(arg robot)" />
 	</include>
-	
+
 	<!-- Base -->
 	<!-- simulated driver services -->
 	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
@@ -24,7 +24,7 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="name" value="rear"/>
 	</include>
-	
+
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>

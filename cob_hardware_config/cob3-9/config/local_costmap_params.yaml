@@ -12,7 +12,7 @@ width: 5.0
 height: 5.0
 resolution: 0.07
 
-# footprint and range 
+# footprint and range
 obstacle_range: 3.0 #[m]
 max_obstacle_height: 2.0 #[m]
 raytrace_range: 3.0 #3.0 #[m]

@@ -48,7 +48,7 @@ joint_group_position_controller:
      - arm_right_6_joint
      - arm_right_7_joint
   required_drive_mode: 1
-     
+
 arm_right_1_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: arm_right_1_joint

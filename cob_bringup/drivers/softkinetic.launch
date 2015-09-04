@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<!-- 
-Default launch file to run two softkinetic cameras simultaneously. 
-Analogously, an arbitrary number of camaras can be started. 
-The arguments given are the device indices of the cameras determined by the DepthSense deamon.   
+<!--
+Default launch file to run two softkinetic cameras simultaneously.
+Analogously, an arbitrary number of camaras can be started.
+The arguments given are the device indices of the cameras determined by the DepthSense deamon.
 -->
 <launch>
 
