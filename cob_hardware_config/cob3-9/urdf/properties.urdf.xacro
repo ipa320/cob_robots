@@ -64,7 +64,7 @@
 	<property name="arm_roll" value="${def_arm_roll+offset_arm_roll}"/>
 	<property name="arm_pitch" value="${def_arm_pitch+offset_arm_pitch}"/>
 	<property name="arm_yaw" value="${def_arm_yaw+offset_arm_yaw}"/>
-	
+
 	<!-- pg70 mount positions | relative to arm_7_link -->
 	<property name="pg70_x" value="${def_pg70_x+offset_pg70_x}"/>
 	<property name="pg70_y" value="${def_pg70_y+offset_pg70_y}"/>
@@ -88,7 +88,7 @@
 	<property name="cam_reference_roll" value="${def_cam_reference_roll+offset_cam_reference_roll}"/>
 	<property name="cam_reference_pitch" value="${def_cam_reference_pitch+offset_cam_reference_pitch}"/>
 	<property name="cam_reference_yaw" value="${def_cam_reference_yaw+offset_cam_reference_yaw}"/>
-	
+
 	<!-- left | handeye calibration | relative to cam_reference_link -->
 	<property name="cam_l_x" value="${def_cam_l_x+offset_cam_l_x}"/>
 	<property name="cam_l_y" value="${def_cam_l_y+offset_cam_l_y}"/>

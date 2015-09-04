@@ -1,7 +1,7 @@
 frequency: 30                       #nodes update frequency in hz
 update_mode: polling                #switch between poll and event driven processing [polling, event]
 
-boards:                             
+boards:
   ifk_grippers:                      #phidget board with a name
     serial_num: 272849              #phidget boards serial number
     ratiometric: true
@@ -30,8 +30,8 @@ boards:
        gripper_right_hall_z:
         type: analog
         index: 4
- 
-  ifk_general: 
+
+  ifk_general:
     serial_num: 285651
     ratiometric: true
     sensors:
@@ -44,10 +44,10 @@ boards:
       gripper_relayboard:
         type: analog
         index: 2
-      bat1: 
+      bat1:
         type: analog
         index: 0
-      bat2: 
+      bat2:
         type: analog
         index: 1
       example1:

@@ -38,7 +38,7 @@ analyzers:
 #        path: wifi
 #        num_items: 1
 #        expected: ['Wifi Status (ddwrt)']
- 
+
   io:
     type: diagnostic_aggregator/AnalyzerGroup
     path: IO

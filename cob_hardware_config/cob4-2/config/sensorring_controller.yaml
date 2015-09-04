@@ -30,7 +30,7 @@ joint_group_position_controller:
   joints:
      - sensorring_joint
   required_drive_mode: 1
-     
+
 sensorring_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: sensorring_joint

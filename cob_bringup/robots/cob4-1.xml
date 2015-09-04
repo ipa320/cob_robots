@@ -37,14 +37,14 @@
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -55,7 +55,7 @@
 		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
-		
+
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
@@ -75,7 +75,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="head" />
@@ -85,7 +85,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="head"/>
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="sensorring" />
@@ -95,7 +95,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
@@ -105,7 +105,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_left"/>
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_right" />
@@ -135,13 +135,13 @@
 			<arg name="camera_name" value="torso_cam3d_left"/>
 			<arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
 		</include>
-	
+
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="device_id" value="#2"/>
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="camera_name" value="torso_cam3d_right"/>

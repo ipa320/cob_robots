@@ -4,10 +4,10 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="name"/>
-  
+
 	<node ns="stereo/$(arg name)" pkg="camera1394" type="camera1394_node" name="color_camera" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/cameras/parameters_$(arg name).yaml"/>
-		
+
 		<remap from="camera/image_raw" to="image_raw"/>
 		<remap from="camera/camera_info" to="camera_info"/>
 	</node>

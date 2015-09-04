@@ -9,13 +9,13 @@
 
   <!-- calibration -->
   <xacro:include filename="$(find cob_hardware_config)/cob3-9/urdf/properties.urdf.xacro" />
-  
+
   <!-- base -->
   <xacro:include filename="$(find cob_description)/urdf/cob3_base/base.urdf.xacro" />
 
   <!-- tray -->
   <xacro:include filename="$(find cob_description)/urdf/cob3_tray/tray.urdf.xacro" />
- 
+
   <!-- torso -->
   <xacro:include filename="$(find cob_description)/urdf/cob3_torso/torso_v2.urdf.xacro" />
 
@@ -28,7 +28,7 @@
   <!-- gripper -->
   <xacro:include filename="$(find schunk_description)/urdf/pg70/pg70.urdf.xacro" />
 
-  
+
   <!-- composition of the robot -->
   <xacro:base name="base"/>
   <gazebo>
@@ -67,7 +67,7 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
+
   <xacro:head name="head" parent="torso_upper_neck_tilt_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
@@ -77,7 +77,7 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
+
   <xacro:schunk_pg70 name="pg70" parent="arm_7_link">
     <origin xyz="${pg70_x} ${pg70_y} ${pg70_z}" rpy="${pg70_roll} ${pg70_pitch} ${pg70_yaw}" />
   </xacro:schunk_pg70>
@@ -87,5 +87,5 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-  
+
 </robot>
