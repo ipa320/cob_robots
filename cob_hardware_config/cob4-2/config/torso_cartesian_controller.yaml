@@ -5,7 +5,7 @@ root_frame: odom_combined
 
 # twist controller parameters
 twist_controller:
-  hardware_interface_type: 0    #Velocity 0, Position 1, JointStates 2
+  hardware_interface_type: 1    #Velocity 0, Position 1, JointStates 2
 
   # damping parameters
   numerical_filtering: false
