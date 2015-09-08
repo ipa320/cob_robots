@@ -2,12 +2,10 @@
 <launch>
 
 	<arg name="robot" default="raw3-2"/>
-	<arg name="robot_id" default="/"/>
 
 	<!-- aggregated robot_state_publisher -->
 	<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 		<arg name="robot" value="$(arg robot)" />
-		<arg name="robot_id" value="$(arg robot_id)" />
 	</include>
 
 	<!-- Base -->
