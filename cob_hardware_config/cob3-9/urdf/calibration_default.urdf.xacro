@@ -55,7 +55,7 @@
 	<property name="def_head_yaw" value="0.0"/>
 
 	<!-- arm mount positions | relative to base_link -->
-	<property name="def_arm_x" value="0.015"/>
+	<property name="def_arm_x" value="-0.004"/>
 	<property name="def_arm_y" value="-0.065"/>
 	<property name="def_arm_z" value="0.88"/>
 	<property name="def_arm_roll" value="-0.1"/>
