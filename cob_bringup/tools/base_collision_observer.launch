@@ -6,6 +6,8 @@
 
   <!-- start local costmap -->
   <node name="local_costmap_node" pkg="costmap_2d" type="costmap_2d_node" output="screen">
+  	<remap from="scan_front" to="laser_front/scan_filtered"/>
+ 	<remap from="scan_rear" to="laser_rear/scan_filtered"/>
     <rosparam ns="costmap" file="$(arg pkg_hardware_config)/$(arg robot)/config/local_costmap_params.yaml" command="load" />
   </node>
 
