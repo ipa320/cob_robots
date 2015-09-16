@@ -47,28 +47,28 @@
 
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-1)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="laser_front"/>
-		<param name="topic_name" value="/scan_front"/>
+		<param name="topic_name" value="laser_front/scan_filtered"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-2)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="laser_left"/>
-		<param name="topic_name" value="/scan_left"/>
+		<param name="topic_name" value="laser_left/scan_filtered"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-3)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="laser_right"/>
-		<param name="topic_name" value="/scan_right"/>
+		<param name="topic_name" value="laser_right/scan_filtered"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-4)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="joy"/>
-		<param name="topic_name" value="/joy_usage"/>
+		<param name="topic_name" value="joy_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-5)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="b1 CPU Usage"/>
-		<param name="topic_name" value="/b1_usage"/>
+		<param name="topic_name" value="b1_usage"/>
 	</node>
 
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-9)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="Wifi Status (ddwrt)"/>
-		<param name="topic_name" value="/wifi_status"/>
+		<param name="topic_name" value="wifi_status"/>
 	</node>
 
 </launch>
