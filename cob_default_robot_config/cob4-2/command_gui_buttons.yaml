@@ -4,20 +4,13 @@
 #  buttons: [[button_name1,function_name1,parameter_name2,
 #    [button_name2,function_name2,parameter_name2]]
 
-group1:
+group10:
   group_name: base
   component_name: base
   buttons: [[stop,stop,omni],
     [init,trigger,init],
     [recover,trigger,recover]]
-#group2:
-#  group_name: torso
-#  component_name: torso
-#  buttons: [[stop,trigger,stop],
-#    [init,trigger,init],
-#    [recover,trigger,recover],
-#    [home,move,home]]
-group4:
+group11:
   group_name: sensorring
   component_name: sensorring
   buttons: [[stop,stop],
@@ -27,7 +20,7 @@ group4:
     [back,move,back],
     [left,move,left],
     [right,move,right]]
-group5:
+group12:
   group_name: arm_left
   component_name: arm_left
   buttons: [[stop,stop],
@@ -35,8 +28,10 @@ group5:
     [recover,recover],
     [home,move,home],
     [folded,move,folded],
-    [side, move, side]]
-group6:
+    [side, move, side],
+    [ship, move, ship],
+    [hello, move, hello]]
+group13:
   group_name: arm_right
   component_name: arm_right
   buttons: [[stop,stop],
@@ -44,20 +39,59 @@ group6:
     [recover,recover],
     [home,move,home],
     [folded,move,folded],
-    [side, move, side]]
-group7:
-  group_name: gripper_left
-  component_name: gripper_left
-  buttons: [[stop,stop],
-    [recover,recover],
-    [home,move,home],
-    [open,move,open],
-    [close, move, close]]
-group8:
-  group_name: gripper_right
-  component_name: gripper_right
-  buttons: [[stop,stop],
-    [recover,recover],
-    [home,move,home],
-    [open,move,open],
-    [close, move, close]]
+    [side, move, side],
+    [ship, move, ship],
+    [hello, move, hello]]
+#group14:
+#  group_name: gripper_left
+#  component_name: gripper_left
+#  buttons: [[stop,stop],
+#    [recover,recover],
+#    [home,move,home],
+#    [open,move,open],
+#    [close, move, close]]
+#group15:
+#  group_name: gripper_right
+#  component_name: gripper_right
+#  buttons: [[stop,stop],
+#    [recover,recover],
+#    [home,move,home],
+#    [open,move,open],
+#    [close, move, close]]
+group16:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home]]
+group17:
+  group_name: torso
+  component_name: behavior
+  buttons: [[bow,trigger,bow]]
+group21:
+  group_name: mimic
+  component_name: behavior
+  buttons: [[laughing,trigger,setMimicLaughing],
+    [asking,trigger,setMimicAsking],
+    [SayYes,trigger,setMimicYes],
+    [blinkingRight,trigger,setMimicBlinkingRight],
+    [confused,trigger,setMimicConfused],
+    [angry,trigger,setMimicAngry],
+    [sleep,trigger,setMimicFallingAsleep]]
+group22:
+  group_name: light
+  component_name: behavior
+  buttons: [[cyanBreath,trigger,setLightCyanBreath],
+    [cyan,trigger,setLightCyan],
+    [red,trigger,setLightRed],
+    [green,trigger,setLightGreen],
+    [cyanSweep,trigger,setLightCyanSweep]]
+group23:
+  group_name: sound
+  component_name: behavior
+  buttons: [[playSound,trigger,playSound],
+    [noConnection,trigger,soundNoConnection],
+    [negative,trigger,soundNegative],
+    [starting,trigger,soundStarting],
+    [hello,trigger,soundHello]]

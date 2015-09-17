@@ -9,8 +9,13 @@
 		<param name="front_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_front.xml"/>
 		<param name="left_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_left.xml"/>
 		<param name="right_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_right.xml"/>
+<<<<<<< HEAD
 		<remap from="emergency_stop_state" to="/emergency_stop_state" />
 		<remap from="odometry" to="/base_controller/odometry" />
+=======
+		<remap from="emergency_stop_state" to="/emergency_stop_state" />		
+		<remap from="odometry" to="/base/odometry_controller/odometry" />
+>>>>>>> b7ad5f8502efcf9fb9b85cbcf7ca0d02c024917a
 		<remap from="diagnostics" to="/diagnostics" />
 	</node>
 
