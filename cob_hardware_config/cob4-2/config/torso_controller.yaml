@@ -55,8 +55,8 @@ joint_group_velocity_controller:
 torso_2_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: torso_2_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 torso_3_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: torso_3_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
