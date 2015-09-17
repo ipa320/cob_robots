@@ -58,17 +58,17 @@ joint_group_velocity_controller:
      - head_1_joint
      - head_2_joint
      - head_3_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 
 head_1_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: head_1_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 head_2_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: head_2_joint
-  required_drive_mode: 2
+  required_drive_mode: 3
 head_3_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: head_3_joint
-  required_drive_mode: 2
+  required_drive_mode: 3

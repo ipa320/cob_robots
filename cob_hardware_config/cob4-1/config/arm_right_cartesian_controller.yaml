@@ -18,7 +18,7 @@ twist_controller:
   eps_truncation: 0.001
 
   # constraints
-  solver: 1    #WLN
+  solver: 1    #Default 0, WLN 1, GPM 2, StackOfTask 3, Task2nd 4
   priority: 500    #Prio for main task
   mu: -2.0
   k_H: 1.0    #Self-motion factor for GPM
@@ -51,7 +51,7 @@ twist_controller:
   max_vel_rot_base: 0.5
 
   # collision avoidance frames for obstacle distance
-  collision_check_frames: [arm_right_3_link, arm_right_5_link, arm_right_7_link]
+  collision_check_frames: [arm_right_3_link, arm_right_4_link, arm_right_5_link, arm_right_7_link]
 
 # frame_tracker + interactive_marker
 frame_tracker:
