@@ -9,8 +9,8 @@
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
 	</include>
 
-	<node pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" ns="teleop" output="screen">
-		<rosparam command="load" ns="/teleop" file="$(arg pkg_hardware_config)/$(arg robot)/config/teleop.yaml"/>
+	<node ns="teleop" pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" cwd="node" respawn="false" output="screen">
+		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/teleop.yaml" command="load"/>
 	</node>
 
 </launch>
