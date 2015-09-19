@@ -66,8 +66,8 @@ frame_tracker:
   pid_rot_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_rot_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   # abortion criteria - cfg
-  cart_min_dist_threshold_lin: 0.01
-  cart_min_dist_threshold_rot: 0.01
+  cart_min_dist_threshold_lin: 0.1
+  cart_min_dist_threshold_rot: 0.1
   twist_dead_threshold_lin: 0.05
   twist_dead_threshold_rot: 0.05
   twist_deviation_threshold_lin: 0.5
