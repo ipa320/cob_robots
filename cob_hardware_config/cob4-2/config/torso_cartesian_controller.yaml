@@ -44,8 +44,7 @@ twist_controller:
   tolerance: 5.0
 
   # kinematic extensions
-  base_compensation: false
-  kinematic_extension: 0    #OFF 0, BaseActive 1
+  kinematic_extension: 0    #OFF 0, BaseCompensation 1, BaseActive 2
   base_ratio: 0.05
   max_vel_lin_base: 0.5
   max_vel_rot_base: 0.5
