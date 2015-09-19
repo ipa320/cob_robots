@@ -50,8 +50,8 @@ twist_controller:
   max_vel_lin_base: 0.5
   max_vel_rot_base: 0.5
 
-  # collision avoidance frames for obstacle distance
-  collision_check_frames: [head_3_link]
+  # the following links of the chain are considered for collision avoidance
+  collision_check_links: [head_3_link]
 
 # frame_tracker + interactive_marker
 frame_tracker:
