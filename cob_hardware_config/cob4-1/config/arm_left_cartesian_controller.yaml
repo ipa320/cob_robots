@@ -57,6 +57,7 @@ twist_controller:
 frame_tracker:
   update_rate: 50.0
   tracking_frame: arm_left_7_target
+  marker_scale: 0.3
   movable_trans: true
   movable_rot: true
   pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
