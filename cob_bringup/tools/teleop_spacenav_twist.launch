@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="component_name"/>
+
+	<node pkg="spacenav_node" type="spacenav_node" name="spacenav_node" cwd="node" respawn="false" output="screen"/>
+	<node ns="$(arg component_name)" pkg="cob_frame_tracker" type="spacenav_commander" name="spacenav_commander" cwd="node" respawn="false" output="screen"/>
+
+</launch>
+
