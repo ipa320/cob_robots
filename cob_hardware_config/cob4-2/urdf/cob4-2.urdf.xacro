@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="cob4-2" >
+       
+  <xacro:arg name="robot_id" default="/"/>
 
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
@@ -33,7 +35,7 @@
   <xacro:base name="base" use_old_joint_names="true"/>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>base</robotNamespace>
+      <robotNamespace>$(arg robot_id)/base</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -43,7 +45,7 @@
   </xacro:torso>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>torso</robotNamespace>
+      <robotNamespace>$(arg robot_id)/torso</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -57,7 +59,7 @@
   </xacro:sensorring>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>sensorring</robotNamespace>
+      <robotNamespace>$(arg robot_id)/sensorring</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -68,7 +70,7 @@
   </xacro:schunk_lwa4p_extended>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>arm_right</robotNamespace>
+      <robotNamespace>$(arg robot_id)/arm_right</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -78,7 +80,7 @@
   </xacro:schunk_lwa4p_extended>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>arm_left</robotNamespace>
+      <robotNamespace>$(arg robot_id)/arm_left</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -89,7 +91,7 @@
   </xacro:gripper>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>gripper_right</robotNamespace>
+      <robotNamespace>$(arg robot_id)/gripper_right</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -99,7 +101,7 @@
   </xacro:gripper>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>gripper_left</robotNamespace>
+      <robotNamespace>$(arg robot_id)/gripper_left</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
