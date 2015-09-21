@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="raw3-1" >
+       
+  <xacro:arg name="robot_id" default="/"/>
 
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
@@ -32,7 +34,7 @@
   <xacro:raw_base name="base"/>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>base</robotNamespace>
+      <robotNamespace>$(arg robot_id)/base</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -46,7 +48,7 @@
   </xacro:raw_torso>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>torso</robotNamespace>
+      <robotNamespace>$(arg robot_id)/torso</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -66,7 +68,7 @@
   </xacro:ur10>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>arm</robotNamespace>
+      <robotNamespace>$(arg robot_id)/arm</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
