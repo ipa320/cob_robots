@@ -6,7 +6,7 @@ joy_num_buttons: 12
 joy_num_axes: 6
 joy_num_modes: 4
 mode_switch_button: 8
-light_topic_name: /light_torso/light
+light_action_name: /light_torso/set_light
 
 # axes
 axis_vx: 1

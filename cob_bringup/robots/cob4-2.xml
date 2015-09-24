@@ -85,6 +85,12 @@
 	<group>
 		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
+		<include file="$(find cob_bringup)/tools/android.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>	
+		<include file="$(find cob_bringup)/tools/behavior.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -204,9 +210,10 @@
 			<arg name="pc" value="$(arg cob4-2-h1)" />
 		</include>
 
-		<!--node pkg="cob_mimic" type="mimic_node.py" name="cob_mimic"/-->
 		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_bringup)/drivers/sound.launch" />
+
+		<include file="$(find cob_bringup)/drivers/mimic.launch" />
 	</group>
 
 	<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
