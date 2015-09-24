@@ -117,7 +117,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm_left" />
@@ -212,7 +212,7 @@
 
 		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_bringup)/drivers/sound.launch" />
-		
+
 		<include file="$(find cob_bringup)/drivers/mimic.launch" />
 	</group>
 
