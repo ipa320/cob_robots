@@ -5,7 +5,7 @@ run_factor: 2.0
 joy_num_buttons: 12
 joy_num_axes: 6
 joy_num_modes: 1
-light_topic_name: /light
+light_action_name: /light/set_light
 
 # axes
 axis_vx: 1
