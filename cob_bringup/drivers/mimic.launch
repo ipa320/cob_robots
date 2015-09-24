@@ -2,6 +2,6 @@
 <launch>
 
   <!-- start sound -->
-  <node pkg="cob_mimic" type="mimic_node.py" name="mimic" cwd="node" respawn="false" output="screen" />
+  <node pkg="cob_mimic" type="mimic_node.py" name="mimic" cwd="node" respawn="false" />
 
 </launch>
