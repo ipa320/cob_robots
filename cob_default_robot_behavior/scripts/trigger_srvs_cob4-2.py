@@ -66,34 +66,72 @@ sss = simple_script_server()
 from std_msgs.msg import ColorRGBA
 from std_srvs.srv import Trigger
 
-def bow_cb(req):
+def torso_front_cb(req):
     handle_arm_left = sss.move("arm_left","side", False)
     handle_arm_right = sss.move("arm_right","side", False)
     handle_arm_left.wait()
     handle_arm_right.wait()
     if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move("torso","front")
-        sss.sleep(3)
-        sss.move("torso","home")
+        sss.move_base_rel("base",[0,0,1.57],False)
+        sss.move("torso","front",True)
+
+    return
+    
+def front_to_home_cb(req):
+    handle_arm_left = sss.move("arm_left","side", False)
+    handle_arm_right = sss.move("arm_right","side", False)
+    handle_arm_left.wait()
+    handle_arm_right.wait()
+    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
+        sss.move_base_rel("base",[0,0,-1.57],False)
+        sss.move("torso","home",False)
     return
 
 def pick_cb(req):
+    #sss.set_mimic("mimic",["asking",0,1])
+    sss.set_mimic("mimic",["happy",0,1])
     handle_arm_left = sss.move("arm_left","side", False)
     handle_arm_right = sss.move("arm_right","side", False)
+    #sss.set_mimic("mimic",["happy",0,1])
     handle_arm_left.wait()
     handle_arm_right.wait()
     if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move("torso",[[-1.57,0.78]],False)
-        sss.move_base_rel("base",[0.2,0,0.8])
+        sss.move("torso","front",False)
+        sss.move_base_rel("base",[0,0,1.57],False)
+        rospy.loginfo("------------------1 arm right movement")
+        handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
+        sss.sleep(2)
+        sss.move_base_rel("base",[0,0,0.5],False)
+        rospy.loginfo("------------------2 arm right movement")
+        handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
+        sss.sleep(2)
+        handle_arm_left = sss.move("arm_left",[[-0.9599, -1.5708, 0.12, -1.0, -1.38, -0.75, 1.36]], False)
+        sss.sleep(2)
+        rospy.loginfo("torso movement")
+        sss.move("torso",[[-3.14,2.7]],False)
+        handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]], True)
+        handle_arm_right = sss.move("arm_right",[[2.929988935078001, 0.9391791237906687, -2.940007124984448, -0.8784067592362261, -0.2899864552188579, -0.23357741379440114, 0.2800031718974503]], True)
         sss.sleep(3)
-        handle_arm_right = sss.move("arm_right",[[1.9700054866035597, 1.1332073767348785, -1.2900077567340489, -1.916388971982294, -1.0500075312923085, -0.4599989776556255, 1.3099743233768641]], False)
-        handle_arm_right.wait()
-        sss.sleep(3)  
-        sss.move_base_rel("base",[-0.2,0,0.0],False)
-        sss.sleep(1)  
-        sss.move("arm_right","side",False)
+        #move right arm
+        #open the gripper
+        
+        ##RETURN
+
+
+        handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]],True)
+        #sss.sleep(1)
+        sss.move("torso","front",False)
+        handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
+        sss.move_base_rel("base",[0,0,-0.3],False)
+        sss.sleep(2)
         sss.move("torso","home",False)
-        sss.move_base_rel("base",[-0.2,0,-0.8])
+        handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
+        handle_base = sss.move_base_rel("base",[0,0,-1.2],False)
+        sss.sleep(2)
+        handle_arm_left = sss.move("arm_left","side", False)
+        handle_arm_right = sss.move("arm_right","side", False)
+        sss.set_mimic("mimic",["blinking_right",0,1])
+        handle_base.wait()
 
     return
 
@@ -117,7 +155,7 @@ def setLightCyanSweep_cb(req):
     sss.set_light("light_base","cyan")
 
     try:
-      set_light_torso = rospy.ServiceProxy("/light_torso/mode",SetLightMode)
+      set_light_torso = rospy.ServiceProxy("/light_torso/set_light",SetLightMode)
       light_mode = LightMode()
       cyan_color = ColorRGBA()
       cyan_color.r = 0.0
@@ -138,7 +176,7 @@ def setLightCyanBreath_cb(req):
     sss.set_light("light_base","cyan")
 
     try:
-      set_light_torso = rospy.ServiceProxy("/light_torso/mode",SetLightMode)
+      set_light_torso = rospy.ServiceProxy("/light_torso/set_light",SetLightMode)
       light_mode = LightMode()
       cyan_color = ColorRGBA()
       cyan_color.r = 0.0
@@ -217,7 +255,8 @@ def soundHello_cb(req):
 
 def trigger_srvs():
     rospy.init_node('trigger_srvs')
-    s = rospy.Service('/behavior/bow', Trigger, bow_cb)
+    s = rospy.Service('/behavior/torso_front', Trigger, torso_front_cb)
+    s = rospy.Service('/behavior/torso_front_home', Trigger, front_to_home_cb)
     s = rospy.Service('/behavior/pick', Trigger, pick_cb)
     s = rospy.Service('/behavior/setLightCyan', Trigger, setLightCyan_cb)
     s = rospy.Service('/behavior/setLightRed', Trigger, setLightRed_cb)
