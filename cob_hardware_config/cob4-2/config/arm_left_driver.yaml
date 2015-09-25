@@ -10,7 +10,7 @@ defaults:
     "604Csub1": "1" # vl dimension factor numerator
     "604Csub2": "24000" # vl dimension factor denominator
 
-modules:
+nodes:
   - name: arm_left_1_joint
     id: 61
   - name: arm_left_2_joint
