@@ -40,9 +40,9 @@ twist_controller:
   keep_direction: true
   enforce_pos_limits: true
   enforce_vel_limits: true
-  enforce_acc_limits: true
+  enforce_acc_limits: false
   limits_tolerance: 5.0    #for position limits [deg]
-  limits_acc: [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]    #[rad/s2]
+  #limits_acc: [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]    #[rad/s2]
 
   # kinematic extensions
   kinematic_extension: 0    #OFF 0, BaseCompensation 1, BaseActive 2
