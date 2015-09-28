@@ -1,10 +1,10 @@
-## Self collision parameters for node cob_obstacle_distance
+## The following parameter structure defines what pairs of links are to be considered during self-collision avoidance
 
-## Left: The self collision frame that shall be represented like an obstacle
-## Right: The frame in the component that shall be ignored for collision checking between self collision frame an arm right component frame.
-self_collision_frames: {
-    head_3_link : [],
-    torso_3_link : [arm_right_1_link, arm_right_2_link, arm_right_3_link, arm_right_base_link],
-    base_link : [],
+## Left: The link that is considered an 'obstacle' during self-collision avoidance
+## Right: The links of the component that are to be checked for self-collision with the 'obstacle'
+self_collision_map: {
+    head_3_link : [arm_left_3_link, arm_left_4_link, arm_left_5_link, arm_left_6_link, arm_left_7_link],
+    torso_3_link : [arm_left_4_link, arm_left_5_link, arm_left_6_link, arm_left_7_link],
+    base_link : [arm_left_5_link, arm_left_6_link, arm_left_7_link],
 }
 

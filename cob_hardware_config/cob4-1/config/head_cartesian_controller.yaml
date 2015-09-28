@@ -5,7 +5,7 @@ root_frame: odom_combined
 
 # twist controller parameters
 twist_controller:
-  hardware_interface_type: 0    #Velocity 0, Position 1, JointStates 2
+  controller_interface: 0    #Velocity 0, Position 1, Trajectory 2, JointStates 3
 
   # damping parameters
   numerical_filtering: false
@@ -18,7 +18,7 @@ twist_controller:
   eps_truncation: 0.001
 
   # constraints
-  solver: 1    #WLN
+  solver: 1    #Default 0, WLN 1, GPM 2, StackOfTask 3, Task2nd 4
   priority: 500    #Prio for main task
   mu: -2.0
   k_H: 1.0    #Self-motion factor for GPM
@@ -26,14 +26,14 @@ twist_controller:
   # JLA
   constraint_jla: 1    #OFF 0, ENABLED 1, MID 1, INEQ 2
   priority_jla: 50
-  k_H_jla: -10.0
+  k_H_jla: -1.0
   activation_threshold_jla: 10.0    #in [%]
   damping_jla: 0.000001
 
   # CA
   constraint_ca: 0    #OFF 0, ENABLED 1
   priority_ca: 100
-  k_H_ca: -20.0
+  k_H_ca: -2.0
   activation_threshold_ca: 0.1    #in [m]
   damping_ca: 0.000001
 
@@ -44,19 +44,19 @@ twist_controller:
   tolerance: 5.0
 
   # kinematic extensions
-  base_compensation: false
-  kinematic_extension: 0    #OFF 0, BaseActive 1
+  kinematic_extension: 0    #OFF 0, BaseCompensation 1, BaseActive 2
   base_ratio: 0.05
   max_vel_lin_base: 0.5
   max_vel_rot_base: 0.5
 
-  # collision avoidance frames for obstacle distance
-  collision_check_frames: [head_3_link]
+  # the following links of the chain are considered for collision avoidance
+  collision_check_links: [head_3_link]
 
 # frame_tracker + interactive_marker
 frame_tracker:
   update_rate: 50.0
   tracking_frame: head_center_target
+  marker_scale: 0.5
   movable_trans: false
   movable_rot: true
   pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
@@ -66,8 +66,8 @@ frame_tracker:
   pid_rot_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_rot_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   # abortion criteria - cfg
-  cart_min_dist_threshold_lin: 0.01
-  cart_min_dist_threshold_rot: 0.01
+  cart_min_dist_threshold_lin: 0.1
+  cart_min_dist_threshold_rot: 0.1
   twist_dead_threshold_lin: 0.05
   twist_dead_threshold_rot: 0.05
   twist_deviation_threshold_lin: 0.5
