@@ -29,7 +29,7 @@
 		</node>
 -->
 
-		<group if="$(arg debug)"/>
+		<group if="$(arg debug)">
 			<node pkg="cob_twist_controller" type="debug_evaluate_jointstates_node" name="debug_evaluate_jointstates_node" cwd="node" respawn="false" output="screen" />
 			<node pkg="cob_twist_controller" type="debug_trajectory_marker_node" name="debug_trajectory_marker_node" cwd="node" respawn="false" output="screen" />
 			<node pkg="cob_obstacle_distance" type="debug_obstacle_distance_node" name="debug_obstacle_distance_node" cwd="node" respawn="false" output="screen" />
