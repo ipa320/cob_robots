@@ -10,7 +10,7 @@
 		<param name="left_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_left.xml"/>
 		<param name="right_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_right.xml"/>
 		<remap from="emergency_stop_state" to="/emergency_stop_state" />
-		<remap from="odometry" to="/base_controller/odometry" />
+		<remap from="odometry" to="/base/odometry_controller/odometry" />
 		<remap from="diagnostics" to="/diagnostics" />
 	</node>
 
