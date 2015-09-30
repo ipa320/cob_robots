@@ -14,7 +14,7 @@
 		<param name="max_rot_velocity" value="1.8"/>	<!-- default: 1.8 rad/s -->
 
 		<node pkg="cob_base_drive_chain" type="cob_base_drive_chain_node" name="base_drive_chain_node" respawn="false" output="screen">
-			<remap from="/joint_states" to="/base/joint_states"/>
+			<remap from="/joint_states" to="joint_states"/>
 			<remap from="init" to="driver/init"/>
 			<remap from="recover" to="driver/recover"/>
 			<remap from="shutdown" to="driver/shutdown"/>
