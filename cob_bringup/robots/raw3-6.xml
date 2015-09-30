@@ -64,7 +64,7 @@
 		</include>
 
 		<!-- script server -->
-                <include file="$(find cob_script_server)/launch/script_server.launch" />
+		<include file="$(find cob_script_server)/launch/script_server.launch" />
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>

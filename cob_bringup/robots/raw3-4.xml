@@ -72,7 +72,7 @@
 		</include>
 
 		<!-- script server -->
-                <include file="$(find cob_script_server)/launch/script_server.launch" />
+		<include file="$(find cob_script_server)/launch/script_server.launch" />
 	</group>
 
 	<group>
