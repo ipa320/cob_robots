@@ -18,7 +18,7 @@ twist_controller:
   eps_truncation: 0.001
 
   # constraints
-  solver: 2    #Default 0, WLN 1, GPM 2, StackOfTask 3, Task2nd 4
+  solver: 3    #Default 0, WLN 1, GPM 2, StackOfTask 3, Task2nd 4
   priority: 500    #Prio for main task
   k_H: 1.0    #Self-motion factor for GPM
 
@@ -32,7 +32,7 @@ twist_controller:
   # CA
   constraint_ca: 1    #OFF 0, ENABLED 1
   priority_ca: 100
-  k_H_ca: -2.0
+  k_H_ca: -1.0
   activation_threshold_ca: 0.1    #in [m]
   damping_ca: 0.000001
 
