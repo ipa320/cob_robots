@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="raw3-3" >
-  
+
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
-  <xacro:include filename="$(find cob_hardware_config)/raw3-3/urdf/properties.urdf.xacro" />   
+  <xacro:include filename="$(find cob_hardware_config)/raw3-3/urdf/properties.urdf.xacro" />
   <!-- raw base -->
   <xacro:include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
 
@@ -15,7 +15,7 @@
   <xacro:include filename="$(find raw_description)/urdf/tower_symetric/tower.urdf.xacro" />
 -->
 
-  <!-- frida --> 
+  <!-- frida -->
   <xacro:include filename="$(find prace_common)/urdf/prace.urdf.xacro" />
 
 
@@ -43,5 +43,24 @@
     <axis xyz="1 0 0"/>
   </xacro:lookat>
 -->
+
+  <!-- scan top mount -->
+    <joint name="base_laser_top_joint" type="fixed" >
+      <origin xyz="0.28 0.0 0.885" rpy="0.0 0.0 ${M_PI}" />
+      <parent link="base_link" />
+      <child link="base_laser_top_link" />
+    </joint>
+
+    <link name="base_laser_top_link">
+    <xacro:default_inertial />
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <geometry>
+      <box size="0.10 0.03 0.03" />
+      </geometry>
+      <material name="IPA/Black" />
+    </visual>
+    </link>
+  <!-- END: scan top mount -->
 
 </robot>

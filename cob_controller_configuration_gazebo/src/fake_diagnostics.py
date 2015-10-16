@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import roslib; roslib.load_manifest('cob_controller_configuration_gazebo')
 
 import sys
 import rospy
@@ -35,7 +34,7 @@ if __name__ == "__main__":
 	rospy.loginfo("fake diagnostics for %s running listening to %s",diagnostics_name, topic_name)
 	rate = rospy.Rate(1)
 	while not rospy.is_shutdown():
-		# if no topic_name is set, we assume that we received a 
+		# if no topic_name is set, we assume that we received a
 		if topic_name == None:
 			last_received_ = rospy.Time.now()
 
@@ -62,4 +61,4 @@ if __name__ == "__main__":
 		except rospy.ROSInterruptException as e:
 			#print "ROSInterruptException"
 			pass
-			
+

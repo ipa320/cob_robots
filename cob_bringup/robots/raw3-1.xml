@@ -47,7 +47,7 @@
 		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -64,11 +64,11 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
 		</include>
-		
+
 		<!--include file="$(find cob_bringup)/drivers/ur.launch" >
 			<arg name="ur_ip" value="$(arg ur_ip)"/>
 		</include-->
-		
+
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -82,13 +82,15 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="version" value="v1" />
 		</include>
 
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-			<arg name="robot" value="$(arg robot)" />>
+			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<!-- script server -->
+		<include file="$(find cob_script_server)/launch/script_server.launch" />
 	</group>
 
 	<group>

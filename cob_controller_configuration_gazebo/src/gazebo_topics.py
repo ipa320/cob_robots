@@ -1,10 +1,6 @@
 #!/usr/bin/env python
-import roslib; roslib.load_manifest('cob_controller_configuration_gazebo')
 
 import rospy
-
-
-# care-o-bot includes
 from std_msgs.msg import Empty
 
 class gazebo_topics():
@@ -20,7 +16,7 @@ class gazebo_topics():
 		self.t2_usage_pub = rospy.Publisher("/t2_usage", Empty, queue_size=1)
 		self.t3_usage_pub = rospy.Publisher("/t3_usage", Empty, queue_size=1)
 		self.wifi_status_pub = rospy.Publisher("/wifi_status", Empty, queue_size=1)
-		
+
 		rospy.sleep(0.5)
 
 
@@ -28,7 +24,7 @@ if __name__ == "__main__":
 	rospy.init_node('gazebo_topics')
 	gt = gazebo_topics()
 	rospy.loginfo("gazebo_topics running")
-	
+
 	rate = rospy.Rate(1)
 	while not rospy.is_shutdown():
 		msg = Empty()

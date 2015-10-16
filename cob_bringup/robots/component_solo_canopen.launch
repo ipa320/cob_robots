@@ -4,7 +4,7 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)" />
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
-	<arg name="can_module"/>
+	<arg name="can_device"/>
 
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch" >
@@ -21,12 +21,12 @@
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
 		<arg name="component_name" value="$(arg component_name)" />
-		<arg name="can_module" value="$(arg can_module)" />
+		<arg name="can_device" value="$(arg can_device)" />
 	</include>
 
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
 	</include>
- 
+
 </launch>

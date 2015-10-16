@@ -27,7 +27,7 @@ analyzers:
 #        path: wifi
 #        num_items: 1
 #        expected: ['Wifi Status (ddwrt)']
- 
+
 
 
   io:
@@ -63,7 +63,7 @@ analyzers:
       stereo_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Stereo (Left)
-        contains: left      
+        contains: left
         startswith: ['stereo/left/image_color']
       stereo_right:
         type: diagnostic_aggregator/GenericAnalyzer
@@ -78,23 +78,23 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'torso_controller'
+        contains: 'torso'
       tray:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray
-        contains: 'tray_controller'
+        contains: 'tray'
       gripper:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Gripper
-        contains: 'gripper_controller'
+        contains: 'gripper'
       head:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Head
-        contains: 'head_controller'
+        contains: 'head'
       arm:
         type: diagnostic_aggregator/GenericAnalyzer
         path: LWA
-        contains: 'arm_controller'
+        contains: 'arm'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base

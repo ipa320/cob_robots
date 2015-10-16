@@ -1226,7 +1226,7 @@ ParameterName=vl_dimension_factor_numerator
 ObjectType=0x7
 DataType=0x0004
 AccessType=rw
-DefaultValue=1
+#DefaultValue=1
 PDOMapping=0
 
 [604Csub2]
@@ -1234,7 +1234,7 @@ ParameterName=vl_dimension_factor_denominator
 ObjectType=0x7
 DataType=0x0004
 AccessType=rw
-DefaultValue=6000
+#DefaultValue=6000
 PDOMapping=0
 
 [6060]

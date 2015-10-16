@@ -8,18 +8,11 @@ analyzers:
       pc1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc1
-        contains: ['pc1 CPU Temperature',
-                   'pc1 CPU Usage',
-                   'pc1 HD Temperature',
-                   'pc1 HD Usage']
-
+        contains: 'pc1 CPU'
       pc2:
         type: diagnostic_aggregator/GenericAnalyzer
         path: pc2
-        contains: ['pc2 CPU Temperature',
-                   'pc2 CPU Usage',
-                   'pc2 HD Temperature',
-                   'pc2 HD Usage']
+        contains: 'pc2 CPU'
 
   network:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -79,28 +72,29 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'torso_controller'
+        contains: 'torso'
       tray:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray
-        contains: 'tray_controller'
+        contains: 'tray'
       gripper:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Gripper
-        contains: 'gripper_controller'
+        contains: 'gripper'
       head:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Head
-        contains: 'head_controller'
+        contains: 'head'
       arm:
         type: diagnostic_aggregator/GenericAnalyzer
         path: LWA
-        contains: 'arm_controller'
+        contains: 'arm'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
         contains: 'base_controller'
-        
+
+
 ## remove diagnostics from gazebo in simulated case
   simulation:
     type: diagnostic_aggregator/DiscardAnalyzer

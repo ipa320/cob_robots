@@ -1,5 +1,5 @@
 ## joint_names
-joint_names: [pg70_finger_left_joint]
+joint_names: [pg70_finger_left_joint, pg70_finger_right_joint]
 
 ## control_mode_adapter
 max_command_silence: 0.5
@@ -22,5 +22,5 @@ joint_trajectory_controller:
   state_publish_rate:  25
   action_monitor_rate: 10
   required_drive_mode: 7
-  
+
 ## no further controllers available

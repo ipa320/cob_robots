@@ -38,7 +38,7 @@ analyzers:
 #        path: wifi
 #        num_items: 1
 #        expected: ['Wifi Status (ddwrt)']
- 
+
   io:
     type: diagnostic_aggregator/AnalyzerGroup
     path: IO
@@ -80,19 +80,19 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'torso'
+        contains: 'torso_driver'
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
-        contains: 'sensorring'
+        contains: 'sensorring_driver'
       arm_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Right
-        contains: 'arm_right'
+        contains: 'arm_right_driver'
       arm_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Left
-        contains: 'arm_left'
+        contains: 'arm_left_driver'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base

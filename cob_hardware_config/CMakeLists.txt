@@ -3,13 +3,10 @@ project(cob_hardware_config)
 
 find_package(catkin REQUIRED COMPONENTS roslaunch rostest)
 
-catkin_package(
-    CATKIN_DEPENDS cob_calibration_data cob_description raw_description schunk_description ur_description
-)
-
-
+catkin_package()
 
 set(robotlist
+    cob3-2
     cob3-6
     cob3-9
     cob4-1
@@ -24,7 +21,7 @@ set(robotlist
     raw3-6
 )
 
-# test
+### TESTING ###
 if(CATKIN_ENABLE_TESTING)
     # loop through list of robots for testing
     foreach(robot ${robotlist})
@@ -35,18 +32,13 @@ if(CATKIN_ENABLE_TESTING)
     endforeach()
 endif()
 
-
-# install
+### INSTALL ###
 foreach(robot ${robotlist})
     install(DIRECTORY ${robot}
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
     )
 endforeach()
 
-install(DIRECTORY common
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-install(DIRECTORY test
+install(DIRECTORY common test
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
