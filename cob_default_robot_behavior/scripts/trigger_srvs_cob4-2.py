@@ -116,23 +116,38 @@ def pick_cb(req):
         #open the gripper
         
         ##RETURN
-
-
-        handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]],True)
+        #handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]],True)
         #sss.sleep(1)
-        sss.move("torso","front",False)
-        handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
-        sss.move_base_rel("base",[0,0,-0.3],False)
-        sss.sleep(2)
-        sss.move("torso","home",False)
-        handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
-        handle_base = sss.move_base_rel("base",[0,0,-1.2],False)
-        sss.sleep(2)
-        handle_arm_left = sss.move("arm_left","side", False)
-        handle_arm_right = sss.move("arm_right","side", False)
-        sss.set_mimic("mimic",["blinking_right",0,1])
-        handle_base.wait()
+        #sss.move("torso","front",False)
+        #handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
+        #sss.move_base_rel("base",[0,0,-0.3],False)
+        #sss.sleep(2)
+        #sss.move("torso","home",False)
+        #handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
+        #handle_base = sss.move_base_rel("base",[0,0,-1.2],False)
+        #sss.sleep(2)
+        #handle_arm_left = sss.move("arm_left","side", False)
+        #handle_arm_right = sss.move("arm_right","side", False)
+        #sss.set_mimic("mimic",["blinking_right",0,1])
+        #handle_base.wait()
+    return
 
+def pickReturn_cb(req):
+    sss.set_mimic("mimic",["happy",0,1])
+    handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]],True)
+    #sss.sleep(1)
+    sss.move("torso","front",False)
+    handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
+    sss.move_base_rel("base",[0,0,-0.3],False)
+    sss.sleep(2)
+    sss.move("torso","home",False)
+    handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
+    handle_base = sss.move_base_rel("base",[0,0,-1.2],False)
+    sss.sleep(2)
+    handle_arm_left = sss.move("arm_left","side", False)
+    handle_arm_right = sss.move("arm_right","side", False)
+    sss.set_mimic("mimic",["blinking_right",0,1])
+    handle_base.wait()
     return
 
 def setLightCyan_cb(req):
@@ -258,6 +273,7 @@ def trigger_srvs():
     s = rospy.Service('/behavior/torso_front', Trigger, torso_front_cb)
     s = rospy.Service('/behavior/torso_front_home', Trigger, front_to_home_cb)
     s = rospy.Service('/behavior/pick', Trigger, pick_cb)
+    s = rospy.Service('/behavior/pickReturn', Trigger, pickReturn_cb)
     s = rospy.Service('/behavior/setLightCyan', Trigger, setLightCyan_cb)
     s = rospy.Service('/behavior/setLightRed', Trigger, setLightRed_cb)
     s = rospy.Service('/behavior/setLightGreen', Trigger, setLightGreen_cb)
