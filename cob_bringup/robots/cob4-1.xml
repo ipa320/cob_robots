@@ -64,7 +64,8 @@
 
 	<group>
 		<machine name="cob4-1-t1" address="$(arg cob4-1-t1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
-
+		<!-- script server -->
+		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
