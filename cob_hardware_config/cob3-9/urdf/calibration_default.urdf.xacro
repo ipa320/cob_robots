@@ -57,10 +57,10 @@
 	<!-- arm mount positions | relative to base_link -->
 	<property name="def_arm_x" value="-0.004"/>
 	<property name="def_arm_y" value="-0.065"/>
-	<property name="def_arm_z" value="0.88"/>
-	<property name="def_arm_roll" value="-0.1"/>
-	<property name="def_arm_pitch" value="-3.896992654"/>
-	<property name="def_arm_yaw" value="1.33899265359"/>
+	<property name="def_arm_z" value="0.83357"/>
+	<property name="def_arm_roll" value="-0.1"/>  <!-- 0.4 -->
+	<property name="def_arm_pitch" value="-0.785398"/> <!-- 0.7554 -->
+	<property name="def_arm_yaw" value="1.57"/> <!-- -1.33899265359 -->
 
 	<!-- pg70 mount positions | relative to arm_7_link -->
 	<property name="def_pg70_x" value="0.0"/>
