@@ -4,4 +4,3 @@ diagnostics_based: False
 motion_based: False
 led_components: [light]
 color_ok: green
-color_warn: yellow
