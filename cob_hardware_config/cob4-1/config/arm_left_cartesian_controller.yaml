@@ -46,7 +46,7 @@ twist_controller:
 
   # kinematic extensions
   kinematic_extension: 0    #OFF 0, BaseCompensation 1, BaseActive 2
-  base_ratio: 0.05
+  extension_ratio: 0.05
   max_vel_lin_base: 0.5
   max_vel_rot_base: 0.5
 
