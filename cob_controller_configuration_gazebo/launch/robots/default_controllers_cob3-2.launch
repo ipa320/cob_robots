@@ -117,67 +117,67 @@
 
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-1)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="laser_front"/>
-		<param name="topic_name" value="/scan_front"/>
+		<param name="topic_name" value="laser_front/scan_filtered"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-2)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="laser_rear"/>
-		<param name="topic_name" value="/scan_rear"/>
+		<param name="topic_name" value="laser_rear/scan_filtered"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-3)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="laser_top"/>
-		<param name="topic_name" value="/scan_top"/>
+		<param name="topic_name" value="laser_top/scan_filtered"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-4)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="/stereo/left/color_camera"/>
-		<param name="topic_name" value="/stereo/left/image_raw"/>
+		<param name="topic_name" value="stereo/left/image_raw"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-5)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="/stereo/right/color_camera"/>
-		<param name="topic_name" value="/stereo/right/image_raw"/>
+		<param name="topic_name" value="stereo/right/image_raw"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-6)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="joy"/>
-		<param name="topic_name" value="/joy_usage"/>
+		<param name="topic_name" value="joy_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-7)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc1 CPU Usage"/>
-		<param name="topic_name" value="/pc1_usage"/>
+		<param name="topic_name" value="pc1_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-8)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc2 CPU Usage"/>
-		<param name="topic_name" value="/pc2_usage"/>
+		<param name="topic_name" value="pc2_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-9)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="pc3 CPU Usage"/>
-		<param name="topic_name" value="/pc3_usage"/>
+		<param name="topic_name" value="pc3_usage"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-10)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="Wifi Status (ddwrt)"/>
-		<param name="topic_name" value="/wifi_status"/>
+		<param name="topic_name" value="wifi_status"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-11)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="base_controller"/>
-		<param name="topic_name" value="/base/joint_states"/>
+		<param name="topic_name" value="base/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-12)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="torso_controller"/>
-		<param name="topic_name" value="/torso/joint_states"/>
+		<param name="topic_name" value="torso/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-13)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="tray_controller"/>
-		<param name="topic_name" value="/tray/joint_states"/>
+		<param name="topic_name" value="tray/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-14)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="head_controller"/>
-		<param name="topic_name" value="/head/joint_states"/>
+		<param name="topic_name" value="head/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-15)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="arm_controller"/>
-		<param name="topic_name" value="/arm/joint_states"/>
+		<param name="topic_name" value="arm/joint_states"/>
 	</node>
 	<node pkg="cob_controller_configuration_gazebo" type="fake_diagnostics.py" name="$(anon fake_diagnostics-16)" cwd="node" respawn="false" output="screen" >
 		<param name="diagnostics_name" value="gripper_controller"/>
-		<param name="topic_name" value="/gripper/joint_states"/>
+		<param name="topic_name" value="gripper/joint_states"/>
 	</node>
 
 </launch>

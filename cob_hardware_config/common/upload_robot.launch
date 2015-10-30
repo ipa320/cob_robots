@@ -3,8 +3,9 @@
 
     <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
     <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+    <arg name="robot_id" default="/" />
 
     <!-- send cob urdf to param server -->
-    <param name="robot_description" command="$(find xacro)/xacro.py '$(arg pkg_hardware_config)/$(arg robot)/urdf/$(arg robot).urdf.xacro'" />
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(arg pkg_hardware_config)/$(arg robot)/urdf/$(arg robot).urdf.xacro' robot_id:=$(arg robot_id)" />
 
 </launch>

@@ -5,8 +5,8 @@
 
 	<!-- universal robot arm -->
 	<node ns="arm_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg ur_ip)" output="screen">
-		<remap from="/arm_controller/joint_states" to="/arm/joint_states"/>
-		<remap from="/arm_controller/robot_description" to="/robot_description"/>
+		<remap from="arm_controller/joint_states" to="arm/joint_states"/>
+		<remap from="arm_controller/robot_description" to="robot_description"/>
 		<param name="prefix" value="arm_"/>
 	</node>
 

@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="cob3-9" >
+       
+  <xacro:arg name="robot_id" default="/"/>
 
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
@@ -33,7 +35,7 @@
   <xacro:base name="base"/>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>base</robotNamespace>
+      <robotNamespace>$(arg robot_id)/base</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -43,7 +45,7 @@
   </xacro:tray>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>tray</robotNamespace>
+      <robotNamespace>$(arg robot_id)/tray</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -53,7 +55,7 @@
   </xacro:torso>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>torso</robotNamespace>
+      <robotNamespace>$(arg robot_id)/torso</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -63,7 +65,7 @@
   </xacro:schunk_lwa4d>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>arm</robotNamespace>
+      <robotNamespace>$(arg robot_id)/arm</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -73,7 +75,7 @@
   </xacro:head>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>head</robotNamespace>
+      <robotNamespace>$(arg robot_id)/head</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -83,7 +85,7 @@
   </xacro:schunk_pg70>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>gripper</robotNamespace>
+      <robotNamespace>$(arg robot_id)/gripper</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
