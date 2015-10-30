@@ -13,7 +13,7 @@ defaults:
 drive_wheel: &drive_wheel
   dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
     "6098": "35" # homing method
-  vel_from_device: "p1 == nan || obj2041 == t1 ? 0 : deg2rad(1000*norm(obj6064-p1,-36000000,36000000)/norm(obj2041-t1,0,2^32)), p1=p0, p0 = obj6064, t1 = t0, t0 = obj2041"
+  vel_from_device: "v != v ? v=0 : v=smooth(deg2rad(obj606c/1000.0),v,0.3)" # for smoother current velocity in joint_states
 
 nodes:
   ##Wheel 1
