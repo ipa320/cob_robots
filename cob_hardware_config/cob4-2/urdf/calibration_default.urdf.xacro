@@ -59,7 +59,7 @@
 	<property name="def_arm_right_x" value="0.0"/>
 	<property name="def_arm_right_y" value="-0.014"/>
 	<property name="def_arm_right_z" value="0.55"/>
-	<property name="def_arm_right_roll" value="1.57097"/>
+	<property name="def_arm_right_roll" value="1.5708"/>
 	<property name="def_arm_right_pitch" value="0"/>
 	<property name="def_arm_right_yaw" value="0.0"/>
 
@@ -67,7 +67,7 @@
 	<property name="def_arm_left_x" value="0.0"/>
 	<property name="def_arm_left_y" value="0.014"/>
 	<property name="def_arm_left_z" value="0.55"/>
-	<property name="def_arm_left_roll" value="1.57097"/>
+	<property name="def_arm_left_roll" value="1.5708"/>
 	<property name="def_arm_left_pitch" value="0"/>
 	<property name="def_arm_left_yaw" value="3.14159"/>
 
@@ -97,7 +97,7 @@
 	<property name="def_torso_cam3d_left_y" value="0.01802"/>
 	<property name="def_torso_cam3d_left_z" value="0.24214"/>
 	<property name="def_torso_cam3d_left_roll" value="0"/>
-	<property name="def_torso_cam3d_left_pitch" value="1.57079"/>
+	<property name="def_torso_cam3d_left_pitch" value="1.5708"/>
 	<property name="def_torso_cam3d_left_yaw" value="0.418879"/>
 
 	<!-- cam3d right | handeye calibration | relative to torso_3_link -->
@@ -105,15 +105,23 @@
 	<property name="def_torso_cam3d_right_y" value="-0.01802"/>
 	<property name="def_torso_cam3d_right_z" value="0.24214"/>
 	<property name="def_torso_cam3d_right_roll" value="0"/>
-	<property name="def_torso_cam3d_right_pitch" value="1.57079"/>
+	<property name="def_torso_cam3d_right_pitch" value="1.5708"/>
 	<property name="def_torso_cam3d_right_yaw" value="-0.418879"/>
 
 	<!-- cam3d down | handeye calibration | relative to torso_3_link -->
 	<property name="def_torso_cam3d_down_x" value="0.15908"/>
 	<property name="def_torso_cam3d_down_y" value="0.0"/>
 	<property name="def_torso_cam3d_down_z" value="0.14005"/>
-	<property name="def_torso_cam3d_down_roll" value="2.18166"/> <!--2.18166-->
+	<property name="def_torso_cam3d_down_roll" value="2.18166"/>
 	<property name="def_torso_cam3d_down_pitch" value="0.0"/>
-	<property name="def_torso_cam3d_down_yaw" value="1.57079"/> <!--1.57079-->
+	<property name="def_torso_cam3d_down_yaw" value="1.5708"/>
+	
+	<!-- sick_3dcs | handeye calibration | relative to sensorring_link -->
+	<property name="def_sensorring_cam3d_x" value="0.13107"/>
+	<property name="def_sensorring_cam3d_y" value="0.0"/>
+	<property name="def_sensorring_cam3d_z" value="0.05029"/>
+	<property name="def_sensorring_cam3d_roll" value="-1.9708"/> <!--90+23grad-->
+	<property name="def_sensorring_cam3d_pitch" value="0.0"/>
+	<property name="def_sensorring_cam3d_yaw" value="-1.5708"/>
 
 </robot>
