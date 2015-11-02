@@ -1,2 +1,2 @@
-service_ns: base_controller
-topic_name: base_controller/command
+service_ns: base/driver
+topic_name: base/twist_controller/command
