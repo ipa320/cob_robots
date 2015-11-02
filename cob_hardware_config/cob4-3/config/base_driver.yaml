@@ -1,6 +1,6 @@
 defaults:
   eds_pkg: cob_hardware_config
-  eds_file: "cob4-6/config/Elmo.dcf"
+  eds_file: "cob4-3/config/Elmo.dcf"
   dcf_overlay:
     "6083": "1000000"
     "6084": "1000000"
@@ -21,7 +21,7 @@ nodes:
     id: 1
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "-52502"#-54359 home offset
+      "607C": "-51445"#-52502 -54359 home offset
   fl_caster_r_wheel_joint:
     <<: *drive_wheel
     id: 2
@@ -33,7 +33,7 @@ nodes:
     id: 3
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "-172553.0" #-175428 home offset
+      "607C": "-174876.0" #-172553.0 -175428 home offset
   b_caster_r_wheel_joint:
     <<: *drive_wheel
     id: 4
@@ -45,7 +45,7 @@ nodes:
     id: 5
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "65675.5" #-111597 home offset
+      "607C": "67570.5" #65675.5 -111597 home offset
   fr_caster_r_wheel_joint:
     <<: *drive_wheel
     id: 6
