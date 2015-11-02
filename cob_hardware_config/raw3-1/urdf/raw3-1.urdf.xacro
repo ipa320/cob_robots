@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="raw3-1" >
-       
-  <xacro:arg name="robot_id" default="/"/>
 
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
@@ -21,7 +19,6 @@
 
   <!-- head -->
   <xacro:include filename="$(find raw_description)/urdf/head/head.urdf.xacro" />
-  <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- ur_arm -->
   <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
@@ -34,7 +31,7 @@
   <xacro:raw_base name="base"/>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>$(arg robot_id)/base</robotNamespace>
+      <robotNamespace>base</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -48,7 +45,7 @@
   </xacro:raw_torso>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>$(arg robot_id)/torso</robotNamespace>
+      <robotNamespace>torso</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
@@ -57,18 +54,13 @@
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:raw_head>
 
-  <!--xacro:cob_lookat name="lookat" parent="torso_2_link" lower="0.0" upper="5.0">
-    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-    <axis xyz="1 0 0"/>
-  </xacro:cob_lookat-->
-
 <!--
   <xacro:ur10 name="arm" parent="base_link">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:ur10>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>$(arg robot_id)/arm</robotNamespace>
+      <robotNamespace>arm</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>

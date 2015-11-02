@@ -12,34 +12,16 @@ width: 5.0
 height: 5.0
 resolution: 0.07
 
-# footprint
+# footprint and range
+obstacle_range: 3.0 #[m]
+max_obstacle_height: 2.0 #[m]
+raytrace_range: 3.0 #3.0 #[m]
 footprint: [[0.52, 0.3], [0.52, -0.3], [-0.52, -0.3],[-0.52, 0.3]] #[m]
 footprint_padding: 0.02 #[m]
+inflation_radius: 0.55 #[m]
 
-# costmap layers
-plugins:
-  - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
-  - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+# sensor setup
+observation_sources: laser_scan_sensor_front laser_scan_sensor_rear
+laser_scan_sensor_front: {sensor_frame: base_laser_front_link, data_type: LaserScan, topic: base_laser_front/scan_filtered, marking: true, clearing: true}
 
-# obstacle layer paramters
-obstacle_layer:
-  observation_sources: laser_scan_sensor_front laser_scan_sensor_rear
-  laser_scan_sensor_front:
-    sensor_frame: base_laser_front_link
-    topic: laser_front/scan_filtered
-    data_type: LaserScan
-    marking: true
-    clearing: true
-  laser_scan_sensor_rear: 
-    sensor_frame: base_laser_rear_link
-    topic: laser_rear/scan_filtered
-    data_type: LaserScan
-    marking: true
-    clearing: true
-  obstacle_range: 3.0 #[m]
-  max_obstacle_height: 2.0 #[m]
-  raytrace_range: 3.0 #3.0 #[m]
-
-# inflation layer parameters
-inflation_layer:
-  inflation_radius: 0.55 #[m]
+laser_scan_sensor_rear: {sensor_frame: base_laser_rear_link, data_type: LaserScan, topic: base_laser_rear/scan_filtered, marking: true, clearing: true}

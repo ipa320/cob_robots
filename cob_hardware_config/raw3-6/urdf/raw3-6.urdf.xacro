@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="raw3-6" >
-  
-  <xacro:arg name="robot_id" default="/"/>
 
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
@@ -21,7 +19,7 @@
   <xacro:raw_base name="base"/>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>$(arg robot_id)/base</robotNamespace>
+      <robotNamespace>base</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
