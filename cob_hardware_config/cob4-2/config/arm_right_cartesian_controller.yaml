@@ -20,7 +20,6 @@ twist_controller:
   # constraints
   solver: 2    #Default 0, WLN 1, GPM 2, StackOfTask 3, Task2nd 4
   priority: 500    #Prio for main task
-  mu: -2.0
   k_H: 1.0    #Self-motion factor for GPM
 
   # JLA
@@ -33,7 +32,7 @@ twist_controller:
   # CA
   constraint_ca: 1    #OFF 0, ENABLED 1
   priority_ca: 100
-  k_H_ca: -2.0
+  k_H_ca: -1.0
   activation_threshold_ca: 0.1    #in [m]
   damping_ca: 0.000001
 
@@ -59,12 +58,12 @@ frame_tracker:
   marker_scale: 0.3
   movable_trans: true
   movable_rot: true
-  pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_x: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_y: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_z: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_x: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_y: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_z: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   # abortion criteria - cfg
   cart_min_dist_threshold_lin: 0.1
   cart_min_dist_threshold_rot: 0.1

@@ -20,7 +20,6 @@ twist_controller:
   # constraints
   solver: 2    #Default 0, WLN 1, GPM 2, StackOfTask 3, Task2nd 4
   priority: 500    #Prio for main task
-  mu: -2.0
   k_H: 1.0    #Self-motion factor for GPM
 
   # JLA
