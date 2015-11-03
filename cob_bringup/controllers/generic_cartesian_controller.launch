@@ -4,7 +4,6 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
-	<arg name="old_base_driver" default="false"/>
 	<arg name="debug" default="false"/>
 	
 
@@ -15,10 +14,7 @@
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_self_collision.yaml"/>
 
 		<!-- Cartesian controllers -->
-		<node pkg="cob_twist_controller" type="cob_twist_controller_node" name="twist_controller" cwd="node" respawn="false" output="screen">
-		    <remap if="$(arg old_base_driver)" from="/base/odometry_controller/odometry" to="/base_controller/odometry"/>
-		    <remap if="$(arg old_base_driver)" from="/base/twist_controller/command" to="/base_controller/command_direct"/>
-		</node>
+		<node pkg="cob_twist_controller" type="cob_twist_controller_node" name="twist_controller" cwd="node" respawn="false" output="screen"/>
 		<node pkg="cob_frame_tracker" type="cob_frame_tracker_node" name="frame_tracker" cwd="node" respawn="false" output="screen"/>
 		<node pkg="cob_frame_tracker" type="interactive_frame_target_node" name="interactive_target" cwd="node" respawn="false" output="screen"/>
 		
