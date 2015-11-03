@@ -51,7 +51,7 @@ twist_controller:
   max_vel_rot_base: 0.5
 
   # the following links of the chain are considered for collision avoidance
-  collision_check_links: [arm_left_3_link, arm_left_4_link, arm_left_5_link, arm_left_7_link]
+  collision_check_links: [arm_left_3_link, arm_left_4_link, arm_left_5_link, arm_left_6_link, arm_left_7_link]
 
 # frame_tracker + interactive_marker
 frame_tracker:
@@ -60,15 +60,15 @@ frame_tracker:
   marker_scale: 0.3
   movable_trans: true
   movable_rot: true
-  pid_trans_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_x: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_y: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_z: {p: 4.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_x: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_y: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_z: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_x: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_y: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_z: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   # abortion criteria - cfg
-  cart_min_dist_threshold_lin: 0.1
-  cart_min_dist_threshold_rot: 0.1
+  cart_min_dist_threshold_lin: 0.4
+  cart_min_dist_threshold_rot: 0.4
   twist_dead_threshold_lin: 0.05
   twist_dead_threshold_rot: 0.05
   twist_deviation_threshold_lin: 0.5
