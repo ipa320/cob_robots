@@ -53,7 +53,7 @@ analyzers:
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
-        contains: 'base'
+        startswith: '/base'
 
   safety:
     type: diagnostic_aggregator/GenericAnalyzer
