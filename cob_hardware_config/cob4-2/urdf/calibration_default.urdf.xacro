@@ -120,8 +120,8 @@
 	<property name="def_sensorring_cam3d_x" value="0.096"/>
 	<property name="def_sensorring_cam3d_y" value="0.0"/>
 	<property name="def_sensorring_cam3d_z" value="0.0195"/>
-	<property name="def_sensorring_cam3d_roll" value="1.5708"/>
+	<property name="def_sensorring_cam3d_roll" value="-1.5708"/>
 	<property name="def_sensorring_cam3d_pitch" value="0.0"/>
-	<property name="def_sensorring_cam3d_yaw" value="1.5708"/>
+	<property name="def_sensorring_cam3d_yaw" value="-1.5708"/>
 
 </robot>
