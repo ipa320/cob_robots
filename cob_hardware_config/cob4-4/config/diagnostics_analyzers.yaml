@@ -53,7 +53,12 @@ analyzers:
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
-        startswith: '//base'
+        startswith: '/base'
+
+  safety:
+    type: diagnostic_aggregator/GenericAnalyzer
+    path: Safety
+    contains: 'safety'
 
 ## remove diagnostics from gazebo in simulated case
   simulation:

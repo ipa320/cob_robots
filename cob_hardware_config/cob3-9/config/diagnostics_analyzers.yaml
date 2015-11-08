@@ -98,7 +98,7 @@ analyzers:
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
-        startswith: '//base'
+        startswith: '/base'
 
   ntp:
     type: diagnostic_aggregator/DiscardAnalyzer
