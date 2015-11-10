@@ -15,7 +15,6 @@
 
   <!-- torso -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso_2dof.urdf.xacro" />
-  <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- arm -->
   <xacro:include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
@@ -103,8 +102,5 @@
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
-
-
-  <!-- virtual component -->
 
 </robot>
