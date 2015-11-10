@@ -50,7 +50,7 @@
 	<!-- head sensors mount positions | relative to head_3_link -->
 	<property name="def_sensorring_x" value="0.0"/>
 	<property name="def_sensorring_y" value="0.0"/>
-	<property name="def_sensorring_z" value="0.007"/>
+	<property name="def_sensorring_z" value="0.006"/>
 	<property name="def_sensorring_roll" value="0.0"/>
 	<property name="def_sensorring_pitch" value="0.0"/>
 	<property name="def_sensorring_yaw" value="0.0"/>
@@ -115,5 +115,13 @@
 	<property name="def_torso_cam3d_down_roll" value="2.18166"/> <!--2.18166-->
 	<property name="def_torso_cam3d_down_pitch" value="0.0"/>
 	<property name="def_torso_cam3d_down_yaw" value="1.57079"/> <!--1.57079-->
+
+	<!-- cam3d | handeye calibration | relative to sensorring_link -->
+	<property name="def_sensorring_cam3d_x" value="0.096"/>
+	<property name="def_sensorring_cam3d_y" value="0.0"/>
+	<property name="def_sensorring_cam3d_z" value="0.0195"/>
+	<property name="def_sensorring_cam3d_roll" value="-1.5708"/>
+	<property name="def_sensorring_cam3d_pitch" value="0.0"/>
+	<property name="def_sensorring_cam3d_yaw" value="-1.5708"/>
 
 </robot>

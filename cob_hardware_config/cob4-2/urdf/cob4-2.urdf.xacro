@@ -26,7 +26,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_head/head_static.urdf.xacro" />
 
   <!-- sensorring -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring_asus.urdf.xacro" />
 
   <!-- composition of the robot -->
   <xacro:base name="base" use_old_joint_names="true"/>
