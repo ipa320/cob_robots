@@ -65,6 +65,12 @@
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<!-- scan unifier -->
+		<include file="$(find cob_bringup/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
 	</group>
 
 	<machine name="cob4-4-b1" address="$(arg cob4-4-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>

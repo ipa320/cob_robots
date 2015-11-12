@@ -91,6 +91,12 @@
 
 		<!-- script server -->
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
+
+		<!-- scan unifier -->
+		<include file="$(find cob_bringup/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
 	</group>
 
 	<group>
