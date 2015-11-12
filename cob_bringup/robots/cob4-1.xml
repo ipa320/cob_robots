@@ -62,7 +62,7 @@
 		</include>
 
 		<!-- scan unifier -->
-		<include file="$(find cob_bringup/drivers/scan_unifier.launch" >
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		
