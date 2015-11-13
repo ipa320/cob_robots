@@ -1,1 +1,1 @@
-robot_modules: ['base','torso']
+robot_modules: ['base']
