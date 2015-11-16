@@ -104,6 +104,9 @@
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<!-- script server -->
+		<include file="$(find cob_script_server)/launch/script_server.launch" />
 	</group>
 
 	<group>

@@ -19,7 +19,6 @@
 
   <!-- head -->
   <xacro:include filename="$(find raw_description)/urdf/head/head.urdf.xacro" />
-  <xacro:include filename="$(find cob_description)/urdf/lookat/lookat.urdf.xacro" />
 
   <!-- ur_arm -->
   <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
@@ -54,11 +53,6 @@
   <xacro:raw_head name="head" parent="torso_2_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:raw_head>
-
-  <!--xacro:cob_lookat name="lookat" parent="torso_2_link" lower="0.0" upper="5.0">
-    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-    <axis xyz="1 0 0"/>
-  </xacro:cob_lookat-->
 
 <!--
   <xacro:ur10 name="arm" parent="base_link">

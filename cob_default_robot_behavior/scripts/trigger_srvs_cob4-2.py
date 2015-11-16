@@ -170,19 +170,19 @@ def setLightCyanSweep_cb(req):
     sss.set_light("light_base","cyan")
 
     try:
-      set_light_torso = rospy.ServiceProxy("/light_torso/set_light",SetLightMode)
-      light_mode = LightMode()
-      cyan_color = ColorRGBA()
-      cyan_color.r = 0.0
-      cyan_color.g = 1.0
-      cyan_color.b = 0.5
-      cyan_color.a = 0.4
-      light_mode.colors.append(cyan_color)
-      light_mode.mode = 8
-      light_mode.frequency = 30
-      resp = set_light_torso(light_mode)
-      print resp
-      return
+        set_light_torso = rospy.ServiceProxy("/light_torso/set_light",SetLightMode)
+        light_mode = LightMode()
+        cyan_color = ColorRGBA()
+        cyan_color.r = 0.0
+        cyan_color.g = 1.0
+        cyan_color.b = 0.5
+        cyan_color.a = 0.4
+        light_mode.colors.append(cyan_color)
+        light_mode.mode = 8
+        light_mode.frequency = 30
+        resp = set_light_torso(light_mode)
+        print resp
+        return
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
 
@@ -191,19 +191,19 @@ def setLightCyanBreath_cb(req):
     sss.set_light("light_base","cyan")
 
     try:
-      set_light_torso = rospy.ServiceProxy("/light_torso/set_light",SetLightMode)
-      light_mode = LightMode()
-      cyan_color = ColorRGBA()
-      cyan_color.r = 0.0
-      cyan_color.g = 1.0
-      cyan_color.b = 0.5
-      cyan_color.a = 0.4
-      light_mode.color = cyan_color
-      light_mode.mode = 3
-      light_mode.frequency = 0.25
-      resp = set_light_torso(light_mode)
-      print resp
-      return
+        set_light_torso = rospy.ServiceProxy("/light_torso/set_light",SetLightMode)
+        light_mode = LightMode()
+        cyan_color = ColorRGBA()
+        cyan_color.r = 0.0
+        cyan_color.g = 1.0
+        cyan_color.b = 0.5
+        cyan_color.a = 0.4
+        light_mode.color = cyan_color
+        light_mode.mode = 3
+        light_mode.frequency = 0.25
+        resp = set_light_torso(light_mode)
+        print resp
+        return
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
 
@@ -242,7 +242,7 @@ def soundR2D2_cb(req):
 
 def showCamera_left_cb(req):
     sss.move("arm_left",[[-1.7642137145009082, -1.2919974320813223, 1.3, 1.8777473823431394, -0.0, -0.24, -0.0]])
-    sss.move("gripper_left","open")          
+    sss.move("gripper_left","open")
     return
 
 def showCamera_right_cb(req):

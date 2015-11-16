@@ -3,9 +3,8 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="sim" default="false" />
 
-	<group ns="base_controller">
+	<group ns="base">
 
 		<!-- upload parameters -->
 		<param name="IniDirectory" value="$(arg pkg_hardware_config)/$(arg robot)/config/base/"/>
@@ -14,20 +13,11 @@
 		<param name="max_trans_velocity" value="1.1"/>	<!-- default: 1.1 m/s -->
 		<param name="max_rot_velocity" value="1.8"/>	<!-- default: 1.8 rad/s -->
 
-		<!-- start underlying components - base_drive_chain -->
-		<node if="$(arg sim)" pkg="cob_base_drive_chain" type="cob_base_drive_chain_sim_node" name="base_drive_chain_node" respawn="false" output="screen">
-			<remap from="/joint_states" to="/base/joint_states"/>
-			<remap from="/base_fr_caster_rotation_controller/command" to="/base/base_fr_caster_rotation_controller/command"/>
-			<remap from="/base_fl_caster_rotation_controller/command" to="/base/base_fl_caster_rotation_controller/command"/>
-			<remap from="/base_br_caster_rotation_controller/command" to="/base/base_br_caster_rotation_controller/command"/>
-			<remap from="/base_bl_caster_rotation_controller/command" to="/base/base_bl_caster_rotation_controller/command"/>
-			<remap from="/base_fr_caster_r_wheel_controller/command" to="/base/base_fr_caster_r_wheel_controller/command"/>
-			<remap from="/base_fl_caster_r_wheel_controller/command" to="/base/base_fl_caster_r_wheel_controller/command"/>
-			<remap from="/base_br_caster_r_wheel_controller/command" to="/base/base_br_caster_r_wheel_controller/command"/>
-			<remap from="/base_bl_caster_r_wheel_controller/command" to="/base/base_bl_caster_r_wheel_controller/command"/>
-		</node>
-		<node unless="$(arg sim)" pkg="cob_base_drive_chain" type="cob_base_drive_chain_node" name="base_drive_chain_node" respawn="false" output="screen">
-			<remap from="/joint_states" to="/base/joint_states"/>
+		<node pkg="cob_base_drive_chain" type="cob_base_drive_chain_node" name="base_drive_chain_node" respawn="false" output="screen">
+			<remap from="/joint_states" to="joint_states"/>
+			<remap from="init" to="driver/init"/>
+			<remap from="recover" to="driver/recover"/>
+			<remap from="shutdown" to="driver/shutdown"/>
 		</node>
 
 	</group>

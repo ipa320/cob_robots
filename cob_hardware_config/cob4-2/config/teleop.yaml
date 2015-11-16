@@ -57,7 +57,7 @@ arm_left_twist_button: 0
 
 components: {
   base: {
-    twist_topic_name: '/base_controller/command',
+    twist_topic_name: '/base/twist_controller/command',
     twist_max_velocity: [0.3, 0.2, 0.3],
     twist_max_acc: [0.5, 0.5, 0.7]
   },
