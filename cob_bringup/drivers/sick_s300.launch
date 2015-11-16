@@ -6,12 +6,10 @@
 	<arg name="name"/>
 
 	<!-- load parameter -->
-	<rosparam ns="laser_$(arg name)" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/laser_$(arg name).yaml"/>
+	<rosparam ns="$(arg name)" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg name).yaml"/>
 
 	<!-- start laser driver -->
-	<node ns="laser_$(arg name)" pkg="cob_sick_s300" type="cob_sick_s300" name="laser_$(arg name)" respawn="false" output="screen" >
-		<remap from="scan" to="/scan_$(arg name)_raw"/>
-	</node>
+	<node ns="$(arg name)" pkg="cob_sick_s300" type="cob_sick_s300" name="$(arg name)" respawn="false" output="screen" />
 
 	<!-- laser filter -->
 	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">

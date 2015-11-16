@@ -6,12 +6,12 @@
 
 	<node ns="safety_controller" pkg="cob_safety_controller" type="safety_controller" name="safety_controller" respawn="false" output="screen" >
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/flexisoft.yaml"/>
-		<param name="front_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_front.xml"/>
-		<param name="left_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_left.xml"/>
-		<param name="right_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/laser_right.xml"/>
-		<remap from="emergency_stop_state" to="/emergency_stop_state" />
-		<remap from="odometry" to="/base/odometry_controller/odometry" />
-		<remap from="diagnostics" to="/diagnostics" />
+		<param name="front_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/base_laser_front.xml"/>
+		<param name="left_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/base_laser_left.xml"/>
+		<param name="right_xml" value="$(arg pkg_hardware_config)/$(arg robot)/config/base_laser_right.xml"/>
+		<remap from="emergency_stop_state" to="/emergency_stop_state"/>
+		<remap from="odometry" to="/base/odometry_controller/odometry"/>
+		<remap from="diagnostics" to="/diagnostics"/>
 	</node>
 
 

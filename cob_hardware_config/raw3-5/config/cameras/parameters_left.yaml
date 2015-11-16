@@ -6,7 +6,7 @@ auto_gain:         True
 gain_auto_target: 40
 gain:              1
 auto_whitebalance: True
-frame_id: /head_color_camera_l_link
+frame_id: head_color_camera_stereo_left_link
 stream_bytes_per_second: 55000000
 auto_adjust_stream_bytes_per_second: False
 trigger_mode: syncin1
