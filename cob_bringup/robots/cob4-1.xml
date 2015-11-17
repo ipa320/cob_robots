@@ -207,6 +207,6 @@
 		<include file="$(find cob_bringup)/drivers/mimic.launch" />
 	</group>
 
-	<machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
 </launch>
