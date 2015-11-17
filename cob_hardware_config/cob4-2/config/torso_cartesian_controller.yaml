@@ -56,7 +56,7 @@ twist_controller:
 # frame_tracker + interactive_marker
 frame_tracker:
   update_rate: 50.0
-  tracking_frame: torso_center_target
+  target_frame: torso_center_target
   marker_scale: 0.5
   movable_trans: false
   movable_rot: true
