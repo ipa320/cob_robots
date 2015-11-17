@@ -8,8 +8,12 @@
 	<node pkg="cob_voltage_control" type="cob_voltage_control" name="voltage_controller" respawn="false" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/battery_voltage.yaml"/>
 		<!--remap from="pub_powerstate_" to="power_state"/-->
-		<remap from="pub_em_stop_state_" to="/power_board/state"/>
-		<remap from="pub_relayboard_state_" to="/emergency_stop_state"/>
+		<remap from="em_stop_state" to="/emergency_stop_state"/>
+		<remap from="powerboard_state" to="/power_board/state"/>
+		<remap from="current" to="/power_board/current"/>
+		<remap from="voltage" to="/power_board/voltage"/>
+		<remap from="input/analog_sensors" to="/analog_sensors" />
+		<remap from="input/digital_sensors" to="/digital_sensors" />
 	</node>
 
 </launch>
