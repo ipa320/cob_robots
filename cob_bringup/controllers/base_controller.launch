@@ -3,23 +3,32 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="sim" default="false" />
 
 	<group ns="base">
 
 		<!-- start undercarriage ctrl -->
 		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node" name="undercarriage_ctrl_node" respawn="false" output="screen">
-			<remap from="command" to="twist_controller/command_direct"/>
+			<remap from="command" to="twist_controller/command"/>
 			<remap from="odometry" to="odometry_controller/odometry"/>
 			<param name="boolCtrl" value="1"/>
 		</node>
 
-		<!-- start cob_base_velocity_smoother-->
-		<node pkg="cob_base_velocity_smoother" type="cob_base_velocity_smoother" name="cob_base_velocity_smoother" respawn="false" output="screen">
-			<remap from="input" to="twist_controller/command"/>
-			<remap from="output" to="twist_controller/command_direct"/>
-			<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/base_velocity_smoother_params.yaml" command="load"/>
-		</node>
+		<!-- twist mux -->
+		<include file="$(find cob_bringup)/tools/twist_mux.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="cmd_vel_out" default="velocity_smoother/raw_cmd_vel"/>
+			<arg name="marker_out" default="twist_mux/marker"/>
+		</include>
+
+		<!-- velocity smoother -->
+		<include file="$(find cob_bringup)/tools/velocity_smoother.launch" >
+			<arg name="robot" value="$(arg robot)" />
+  		<arg name="config_file"           default="$(arg pkg_hardware_config)/$(arg robot)/config/velocity_smoother.yaml"/>
+  		<arg name="raw_cmd_vel_topic"     default="velocity_smoother/raw_cmd_vel"/>
+  		<arg name="smooth_cmd_vel_topic"  default="twist_controller/command"/>
+  		<arg name="robot_cmd_vel_topic"   default="twist_controller/command"/>
+  		<arg name="odom_topic"            default="odom_controller/odometry"/>
+		</include>
 
 	</group>
 
