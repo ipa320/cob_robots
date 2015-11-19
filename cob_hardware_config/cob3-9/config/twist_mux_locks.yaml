@@ -1,0 +1,22 @@
+# Locks to stop the twist inputs.
+# For each lock:
+# - topic   : input topic that provides the lock; it must be of type std_msgs::Bool?!!! 
+# - timeout : == 0.0 -> not used
+#              > 0.0 -> the lock is supposed to published at a certain frequency in order
+#                       to detect that the publisher is alive; the timeout in seconds allows
+#                       to detect that, and if the publisher dies we will enable the lock
+# - priority: priority in the range [0, 255], so all the topics with priority lower than it
+#             will be stopped/disabled
+
+locks:
+-
+  name    : pause
+  topic   : twist_mux/locks/pause_navigation
+  timeout : 0.0
+  # Lower/same priority as joystick control, so it'll not block it.
+  priority: 80
+-
+  name    : joystick 
+  topic   : twist_mux/locks/joy_priority
+  timeout : 0.0
+  priority: 100
