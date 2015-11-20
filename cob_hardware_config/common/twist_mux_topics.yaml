@@ -10,6 +10,11 @@ topics:
   name    : navigation
   topic   : twist_mux/command_nav
   timeout : 0.25
+  priority: 20
+-
+  name    : collision_velocity_filter
+  topic   : twist_mux/command_safe
+  timeout : 0.25
   priority: 10
 -
   name    : joystick
