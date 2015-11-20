@@ -40,5 +40,5 @@ script:
   - catkin_init_workspace
   - cd $CATKIN_WS
   - catkin_make -DCMAKE_BUILD_TYPE=Release
-  - catkin_make run_tests
+  - catkin_make run_tests -j1
 #  - catkin_test_results
