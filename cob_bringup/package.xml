@@ -80,7 +80,6 @@
   <exec_depend>twist_mux</exec_depend>
   <exec_depend>ur_driver</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
-  <exec_depend>yocs_velocity_smoother</exec_depend>
   <!--exec_depend>softkinetic</exec_depend-->
 
 </package>
