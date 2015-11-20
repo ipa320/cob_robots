@@ -22,7 +22,7 @@ install:
   - sudo apt-get install -qq -y python-rosdep python-wstool
   - sudo rosdep init
   - rosdep update
-  - rosdep install --from-paths ./ -i -y --rosdistro $CI_ROS_DISTRO
+  - rosdep install -q --from-paths ./ -i -y --rosdistro $CI_ROS_DISTRO
 script:
   - set -e
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
@@ -31,7 +31,7 @@ script:
   - if [ -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init src $TRAVIS_BUILD_DIR/.travis.rosinstall; fi
   - if [ ! -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init src $DEFAULT_ROSINSTALL; fi
   - wstool update -t src
-  - rosdep install --from-paths src -i -y
+  - rosdep install -q --from-paths src -i -y
   - catkin_make -DCMAKE_BUILD_TYPE=Release install
   - source $CATKIN_WS_UNDERLAY/install/setup.bash
   - mkdir -p $CATKIN_WS_SRC
