@@ -111,6 +111,7 @@
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
