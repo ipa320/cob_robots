@@ -14,6 +14,7 @@ accel_lim_w: 0.7
 # Optional parameters
 frequency: 100.0
 decel_factor: 2.0
+decel_factor_safe: 4.0
 
 # Robot velocity feedback type:
 #  0 - none
