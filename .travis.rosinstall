@@ -1,4 +1,8 @@
 - git:
+    uri: 'https://github.com/ipa320/cob_android.git'
+    local-name: cob_android
+    version: indigo_dev
+- git:
     uri: 'https://github.com/ipa320/cob_calibration_data.git'
     local-name: cob_calibration_data
     version: indigo_dev
@@ -29,6 +33,10 @@
 - git:
     uri: 'https://github.com/ipa320/cob_gazebo_plugins.git'
     local-name: cob_gazebo_plugins
+    version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_manipulation.git'
+    local-name: cob_manipulation
     version: indigo_dev
 - git:
     uri: 'https://github.com/ipa320/cob_perception_common.git'
