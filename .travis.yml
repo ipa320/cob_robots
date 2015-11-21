@@ -30,7 +30,6 @@ script:
   - cd $CATKIN_WS_UNDERLAY
   - if [ -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init src $TRAVIS_BUILD_DIR/.travis.rosinstall; fi
   - if [ ! -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init src $DEFAULT_ROSINSTALL; fi
-  - wstool update -t src
   - rosdep install -q --from-paths src -i -y
   - catkin_make -DCMAKE_BUILD_TYPE=Release install > /dev/null
   - source $CATKIN_WS_UNDERLAY/install/setup.bash
