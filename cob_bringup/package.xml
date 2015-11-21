@@ -17,6 +17,7 @@
 
   <exec_depend>camera1394</exec_depend>
   <exec_depend>canopen_motor_node</exec_depend>
+  <exec_depend>cob_android_script_server</exec_depend>
   <exec_depend>cob_base_drive_chain</exec_depend>
   <exec_depend>cob_base_velocity_smoother</exec_depend>
   <exec_depend>cob_calibration_data</exec_depend>
@@ -38,6 +39,7 @@
   <exec_depend>cob_light</exec_depend>
   <exec_depend>cob_mimic</exec_depend>
   <exec_depend>cob_monitoring</exec_depend>
+  <exec_depend>cob_obstacle_distance</exec_depend>
   <exec_depend>cob_phidgets</exec_depend>
   <exec_depend>cob_relayboard</exec_depend>
   <exec_depend>cob_safety_controller</exec_depend>
@@ -71,6 +73,7 @@
   <exec_depend>prace_gripper_driver</exec_depend>
   <exec_depend>prosilica_camera</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rplidar_ros</exec_depend> <!-- from cob_substitute -->
   <exec_depend>rviz</exec_depend>
   <exec_depend>schunk_powercube_chain</exec_depend>
   <exec_depend>schunk_sdh</exec_depend>
