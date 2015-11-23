@@ -31,11 +31,6 @@ group6:
     [home,move,home],
     [pos1,move,pos1],
     [pos2,move,pos2]]
-group7:
-  group_name: lookat
-  component_name: lookat
-  buttons: [[stop,trigger,stop],
-    [home,move,home]]
 group8:
   group_name: gripper left
   component_name: gripper_left

@@ -92,7 +92,7 @@ analyzers:
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
-        contains: 'base_controller'
+        startswith: '/base'
 
 
 ## remove diagnostics from gazebo in simulated case

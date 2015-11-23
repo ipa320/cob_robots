@@ -21,10 +21,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t3
         contains: '-t3'
-#      s1:
-#        type: diagnostic_aggregator/GenericAnalyzer
-#        path: s1
-#        contains: '-s1'
+      s1:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: s1
+        contains: '-s1'
       h1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: h1
@@ -96,7 +96,7 @@ analyzers:
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
-        contains: 'base_controller'
+        startswith: '/base'
 
   safety:
     type: diagnostic_aggregator/GenericAnalyzer

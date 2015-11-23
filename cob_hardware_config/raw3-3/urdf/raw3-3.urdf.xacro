@@ -37,16 +37,9 @@
   <!-- prace macros -->
   <xacro:prace/>
 
-<!--
-  <xacro:lookat name="lookat" parent="head_cam_holder_link" lower="0.0" upper="8.0">
-    <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-    <axis xyz="1 0 0"/>
-  </xacro:lookat>
--->
-
   <!-- scan top mount -->
     <joint name="base_laser_top_joint" type="fixed" >
-      <origin xyz="0.28 0.0 0.885" rpy="0.0 0.0 ${M_PI}" />
+      <origin xyz="0.28 0.0 0.885" rpy="0.0 0.0 0.0" />
       <parent link="base_link" />
       <child link="base_laser_top_link" />
     </joint>

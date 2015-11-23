@@ -5,18 +5,19 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false" />
 
-	<group ns="base_controller">
+	<group ns="base">
 
 		<!-- start undercarriage ctrl -->
 		<node pkg="cob_undercarriage_ctrl" type="cob_undercarriage_ctrl_node" name="undercarriage_ctrl_node" respawn="false" output="screen">
-			<remap from="command" to="command_direct"/>
+			<remap from="command" to="twist_controller/command_direct"/>
+			<remap from="odometry" to="odometry_controller/odometry"/>
 			<param name="boolCtrl" value="1"/>
 		</node>
 
 		<!-- start cob_base_velocity_smoother-->
 		<node pkg="cob_base_velocity_smoother" type="cob_base_velocity_smoother" name="cob_base_velocity_smoother" respawn="false" output="screen">
-			<remap from="input" to="/base_controller/command"/>
-			<remap from="output" to="/base_controller/command_direct"/>
+			<remap from="input" to="twist_controller/command"/>
+			<remap from="output" to="twist_controller/command_direct"/>
 			<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/base_velocity_smoother_params.yaml" command="load"/>
 		</node>
 

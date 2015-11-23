@@ -27,6 +27,7 @@
   <exec_depend>cob_control_mode_adapter</exec_depend>
   <exec_depend>cob_dashboard</exec_depend>
   <exec_depend>cob_default_env_config</exec_depend>
+  <exec_depend>cob_default_robot_behavior</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
   <exec_depend>cob_footprint_observer</exec_depend>
   <exec_depend>cob_frame_tracker</exec_depend>
@@ -40,6 +41,7 @@
   <exec_depend>cob_phidgets</exec_depend>
   <exec_depend>cob_relayboard</exec_depend>
   <exec_depend>cob_safety_controller</exec_depend>
+  <exec_depend>cob_scan_unifier</exec_depend>
   <exec_depend>cob_script_server</exec_depend>
   <exec_depend>cob_sick_lms1xx</exec_depend>
   <exec_depend>cob_sick_s300</exec_depend>

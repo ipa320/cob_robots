@@ -19,4 +19,4 @@ wave1: [[-1.5, 0, 0, 0, 0, 0, 0]]
 wave2: [[-1.5, 0.3, 0, -1, 0, 0.7, 0]]
 wave3: [[-1.5, -0.3, 0, 1, 0, -0.7, 0]]
 
-wave_demo: [side,home,wave1,wave2,wave3,wave2,wave1,home,side]
+wave_demo: [home,wave1,wave2,wave3,wave2,wave1,home,side]
