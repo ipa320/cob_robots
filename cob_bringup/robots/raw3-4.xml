@@ -32,11 +32,11 @@
 		<!-- lower robot -->
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="front" />
+			<arg name="name" value="base_laser_front" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="rear" />
+			<arg name="name" value="base_laser_rear" />
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
