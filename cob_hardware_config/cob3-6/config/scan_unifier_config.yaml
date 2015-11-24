@@ -1,4 +1,4 @@
 #Scan_unifier_config-parameters
 
-input_scans: ["scan_front","scan_rear"]
+input_scans: ["base_laser_front/scan","base_laser_rear/scan"]
 loop_rate: 100.0
