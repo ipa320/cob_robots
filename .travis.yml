@@ -11,15 +11,13 @@ env:
     - CATKIN_WS_UNDERLAY=~/catkin_ws_underlay
     - CATKIN_WS_UNDERLAY_SRC=${CATKIN_WS_UNDERLAY}/src
     - CI_ROS_DISTRO="indigo"
-    - DEFAULT_ROSINSTALL="https://raw.githubusercontent.com/ipa320/setup/master/repositories/cob_$CI_ROS_DISTRO_bringup.rosinstall"
-#  matrix:
-#    - CI_ROS_DISTRO="indigo"
-#    - CI_ROS_DISTRO="jade"
+    - DEFAULT_ROSINSTALL="https://raw.githubusercontent.com/ipa320/care-o-bot/${CI_ROS_DISTRO}_dev/.travis.rosinstall"
 install:
   - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
   - wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
   - sudo apt-get update -qq
-  - sudo apt-get install -qq -y python-rosdep python-wstool
+  - sudo apt-get install -qq -y python-rosdep python-wstool 
+  - sudo apt-get install -qq -y ros-${CI_ROS_DISTRO}-ros #needed as long as https://github.com/ros-infrastructure/rosdep/issues/430 is not fixed
   - sudo rosdep init
   - rosdep update
   - rosdep install -q --from-paths ./ -i -y --rosdistro $CI_ROS_DISTRO
