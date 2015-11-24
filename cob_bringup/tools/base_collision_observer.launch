@@ -7,8 +7,8 @@
 	<!-- start local costmap -->
 	<node name="local_costmap_node" pkg="costmap_2d" type="costmap_2d_node" output="screen">
 		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/local_costmap_params.yaml" command="load" ns="costmap" />
-		<remap from="scan_front" to="/base_laser_front/scan_filtered"/>
-		<remap from="scan_rear" to="/base_laser_rear/scan_filtered"/>
+		<remap from="scan_front" to="/base_laser_front/scan"/>
+		<remap from="scan_rear" to="/base_laser_rear/scan"/>
 	</node>
 
 	<!-- start footprint observer node -->

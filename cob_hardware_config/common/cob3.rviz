@@ -339,7 +339,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.01
       Style: Spheres
-      Topic: /base_laser_front/scan_filtered
+      Topic: /base_laser_front/scan
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -368,7 +368,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.025
       Style: Spheres
-      Topic: /base_laser_rear/scan_filtered
+      Topic: /base_laser_rear/scan
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -397,7 +397,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.025
       Style: Spheres
-      Topic: /base_laser_top/scan_filtered
+      Topic: /base_laser_top/scan
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
