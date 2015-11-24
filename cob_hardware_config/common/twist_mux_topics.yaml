@@ -8,7 +8,7 @@
 topics:
 -
   name    : navigation
-  topic   : twist_mux/command_nav
+  topic   : twist_mux/command_navigation
   timeout : 0.25
   priority: 20
 -
@@ -17,22 +17,22 @@ topics:
   timeout : 0.25
   priority: 10
 -
-  name    : joystick
-  topic   : twist_mux/command_joy
+  name    : teleop_joystick
+  topic   : twist_mux/command_teleop_joy
   timeout : 0.25
   priority: 100
 -
-  name    : keyboard
-  topic   : twist_mux/command_key
+  name    : teleop_keyboard
+  topic   : twist_mux/command_teleop_keyboard
   timeout : 0.5
   priority: 80
 -
-  name    : tablet
-  topic   : twist_mux/command_tab
+  name    : teleop_android
+  topic   : twist_mux/command_teleop_android
   timeout : 0.5
   priority: 90
 -
-  name    : script
-  topic   : twist_mux/command_script
+  name    : script_server
+  topic   : twist_mux/command_script_server
   timeout : 0.5
   priority: 70

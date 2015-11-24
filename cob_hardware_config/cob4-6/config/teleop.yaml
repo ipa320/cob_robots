@@ -20,7 +20,7 @@ run_button:
 
 components: {
   base: {
-    twist_topic_name: '/base/twist_mux/command_joy',
+    twist_topic_name: '/base/twist_mux/command_teleop_joy',
     twist_max_velocity: [0.3, 0.2, 0.3],
     twist_max_acc: [0.5, 0.5, 0.7]
   }
