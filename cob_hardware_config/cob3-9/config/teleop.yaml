@@ -2,6 +2,7 @@
 ##########
 # common params
 run_factor: 2.0
+apply_ramp: false
 joy_num_buttons: 12
 joy_num_axes: 6
 joy_num_modes: 4
