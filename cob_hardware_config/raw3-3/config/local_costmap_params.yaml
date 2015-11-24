@@ -22,8 +22,8 @@ inflation_radius: 0.55 #[m]
 
 # sensor setup
 observation_sources: laser_scan_sensor_front laser_scan_sensor_rear
-laser_scan_sensor_front: {sensor_frame: base_laser_front_link, data_type: LaserScan, topic: scan_front, marking: true, clearing: true}
+laser_scan_sensor_front: {sensor_frame: base_laser_front_link, data_type: LaserScan, topic: base_laser_front/scan, marking: true, clearing: true}
 
-laser_scan_sensor_rear: {sensor_frame: base_laser_rear_link, data_type: LaserScan, topic: scan_rear, marking: true, clearing: true}
+laser_scan_sensor_rear: {sensor_frame: base_laser_rear_link, data_type: LaserScan, topic: base_laser_rear/scan, marking: true, clearing: true}
 
 
