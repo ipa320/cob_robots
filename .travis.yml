@@ -28,8 +28,8 @@ script:
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
   - mkdir -p $CATKIN_WS_UNDERLAY_SRC
   - cd $CATKIN_WS_UNDERLAY
-  - if [ -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init src $TRAVIS_BUILD_DIR/.travis.rosinstall; fi
-  - if [ ! -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init src $DEFAULT_ROSINSTALL; fi
+  - if [ -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init -j10 src $TRAVIS_BUILD_DIR/.travis.rosinstall; fi
+  - if [ ! -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init -j10 src $DEFAULT_ROSINSTALL; fi
   - rosdep install -q --from-paths src -i -y > /dev/null
   - catkin_make -DCMAKE_BUILD_TYPE=Release install > /dev/null
   - source $CATKIN_WS_UNDERLAY/install/setup.bash
