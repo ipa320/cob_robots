@@ -25,11 +25,11 @@
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/laser_lms1xx.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="front" />
+			<arg name="name" value="base_laser_front" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/laser_lms1xx.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="rear" />
+			<arg name="name" value="base_laser_rear" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
 			<arg name="sim" value="true" />
@@ -59,6 +59,12 @@
 
 		<!-- script server -->
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
+
+		<!-- scan unifier -->
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
