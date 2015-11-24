@@ -80,6 +80,7 @@
   <exec_depend>schunk_sdhx</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>topic_tools</exec_depend>
+  <exec_depend>twist_mux</exec_depend>
   <exec_depend>ur_driver</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
   <!--exec_depend>softkinetic</exec_depend-->
