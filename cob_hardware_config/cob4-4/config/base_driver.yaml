@@ -45,4 +45,3 @@ nodes:
   fr_caster_r_wheel_joint:
     <<: *drive_wheel
     id: 6
-

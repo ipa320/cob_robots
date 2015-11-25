@@ -2,6 +2,7 @@
 ##########
 # common params
 run_factor: 2.0
+apply_ramp: false
 joy_num_axes: 6
 joy_num_modes: 1
 
@@ -20,7 +21,7 @@ run_button:
 
 components: {
   base: {
-    twist_topic_name: '/base/twist_controller/command',
+    twist_topic_name: '/base/twist_mux/command_teleop_joy',
     twist_max_velocity: [0.3, 0.2, 0.3],
     twist_max_acc: [0.5, 0.5, 0.7]
   }
