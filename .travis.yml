@@ -21,15 +21,14 @@ install:
   - sudo apt-get install -qq -y ros-${CI_ROS_DISTRO}-ros #needed as long as https://github.com/ros-infrastructure/rosdep/issues/430 is not fixed
   - sudo rosdep init
   - rosdep update
-  - rosdep install -q --from-paths ./ -i -y --rosdistro $CI_ROS_DISTRO
+  - rosdep install -q --from-paths ./ -i -y --rosdistro $CI_ROS_DISTRO > /dev/null
 script:
-  - set -e
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
   - mkdir -p $CATKIN_WS_UNDERLAY_SRC
   - cd $CATKIN_WS_UNDERLAY
   - if [ -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init -j10 src $TRAVIS_BUILD_DIR/.travis.rosinstall; fi
   - if [ ! -f $TRAVIS_BUILD_DIR/.travis.rosinstall ]; then wstool init -j10 src $DEFAULT_ROSINSTALL; fi
-  - rosdep install -q --from-paths src -i -y
+  - rosdep install -q --from-paths src -i -y > /dev/null
   - catkin_make -DCMAKE_BUILD_TYPE=Release install
   - source $CATKIN_WS_UNDERLAY/install/setup.bash
   - mkdir -p $CATKIN_WS_SRC
