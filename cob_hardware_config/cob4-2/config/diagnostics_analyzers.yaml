@@ -102,13 +102,3 @@ analyzers:
     type: diagnostic_aggregator/GenericAnalyzer
     path: Safety
     contains: 'safety'
-
-## remove diagnostics from gazebo in simulated case
-  simulation:
-    type: diagnostic_aggregator/DiscardAnalyzer
-    path: none
-    contains: 'joint'
-  simulation2:
-    type: diagnostic_aggregator/DiscardAnalyzer
-    path: none
-    contains: 'Controller'
