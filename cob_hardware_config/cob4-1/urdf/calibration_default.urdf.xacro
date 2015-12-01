@@ -50,42 +50,10 @@
 	<!-- head sensors mount positions | relative to head_3_link -->
 	<property name="def_sensorring_x" value="0.0"/>
 	<property name="def_sensorring_y" value="0.0"/>
-	<property name="def_sensorring_z" value="0.007"/>
+	<property name="def_sensorring_z" value="0.006"/>
 	<property name="def_sensorring_roll" value="0.0"/>
 	<property name="def_sensorring_pitch" value="0.0"/>
 	<property name="def_sensorring_yaw" value="0.0"/>
-
-	<!-- arm right mount positions | relative to torso_3_link -->
-	<property name="def_arm_right_x" value="0.0"/>
-	<property name="def_arm_right_y" value="-0.014"/>
-	<property name="def_arm_right_z" value="0.55"/>
-	<property name="def_arm_right_roll" value="1.57097"/>
-	<property name="def_arm_right_pitch" value="0"/>
-	<property name="def_arm_right_yaw" value="0.0"/>
-
-	<!-- arm left mount positions | relative to torso_3_link -->
-	<property name="def_arm_left_x" value="0.0"/>
-	<property name="def_arm_left_y" value="0.014"/>
-	<property name="def_arm_left_z" value="0.55"/>
-	<property name="def_arm_left_roll" value="1.57097"/>
-	<property name="def_arm_left_pitch" value="0"/>
-	<property name="def_arm_left_yaw" value="3.14159"/>
-
-	<!-- gripper right mount positions | relative to arm_right_7_link -->
-	<property name="def_gripper_right_x" value="0.0"/>
-	<property name="def_gripper_right_y" value="0.0"/>
-	<property name="def_gripper_right_z" value="0.0748"/>
-	<property name="def_gripper_right_roll" value="0.0"/>
-	<property name="def_gripper_right_pitch" value="0.0"/>
-	<property name="def_gripper_right_yaw" value="3.14159"/>
-
-	<!-- gripper left mount positions | relative to arm_left_7_link -->
-	<property name="def_gripper_left_x" value="0.0"/>
-	<property name="def_gripper_left_y" value="0.0"/>
-	<property name="def_gripper_left_z" value="0.0748"/>
-	<property name="def_gripper_left_roll" value="0.0"/>
-	<property name="def_gripper_left_pitch" value="0.0"/>
-	<property name="def_gripper_left_yaw" value="3.14159"/>
 
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
@@ -115,5 +83,13 @@
 	<property name="def_torso_cam3d_down_roll" value="2.18166"/> <!--2.18166-->
 	<property name="def_torso_cam3d_down_pitch" value="0.0"/>
 	<property name="def_torso_cam3d_down_yaw" value="1.57079"/> <!--1.57079-->
+
+	<!-- cam3d | handeye calibration | relative to sensorring_link -->
+	<property name="def_sensorring_cam3d_x" value="0.096"/>
+	<property name="def_sensorring_cam3d_y" value="0.0"/>
+	<property name="def_sensorring_cam3d_z" value="0.0195"/>
+	<property name="def_sensorring_cam3d_roll" value="-1.5708"/>
+	<property name="def_sensorring_cam3d_pitch" value="0.0"/>
+	<property name="def_sensorring_cam3d_yaw" value="-1.5708"/>
 
 </robot>

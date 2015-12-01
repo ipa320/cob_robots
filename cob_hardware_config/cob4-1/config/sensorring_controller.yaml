@@ -37,14 +37,15 @@ sensorring_joint_position_controller:
   required_drive_mode: 1
 
 
-## velocity controller
-joint_group_velocity_controller:
-  type: velocity_controllers/JointGroupVelocityController
-  joints:
-     - sensorring_joint
-  required_drive_mode: 2
-
-sensorring_joint_velocity_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: sensorring_joint
-  required_drive_mode: 2
+### velocity controller
+### velicty controllers are not to be used with Elmo Devices as JointLimits are not considered!
+#joint_group_velocity_controller:
+#  type: velocity_controllers/JointGroupVelocityController
+#  joints:
+#     - sensorring_joint
+#  required_drive_mode: 3
+#
+#sensorring_joint_velocity_controller:
+#  type: velocity_controllers/JointVelocityController
+#  joint: sensorring_joint
+#  required_drive_mode: 3
