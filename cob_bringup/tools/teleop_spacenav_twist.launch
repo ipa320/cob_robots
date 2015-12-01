@@ -9,7 +9,9 @@
 		<param name="static_trans_deadband" value="0.1"/>
 		<param name="static_rot_deadband" value="0.1"/>
 	</node>
-	<node ns="$(arg component_name)" pkg="cob_frame_tracker" type="spacenav_commander" name="spacenav_commander" cwd="node" respawn="false" output="screen"/>
+	<node ns="$(arg component_name)" pkg="cob_frame_tracker" type="spacenav_commander" name="spacenav_commander" cwd="node" respawn="false" output="screen">
+		<param name="scaling_factor" value="0.5"/> <!-- default: 0.1 -->
+	</node>
 
 </launch>
 
