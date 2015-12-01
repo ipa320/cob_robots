@@ -36,3 +36,8 @@ topics:
   topic   : twist_mux/command_script_server
   timeout : 0.5
   priority: 70
+-
+  name    : syncmm # cob_twist_controller
+  topic   : twist_mux/command_syncmm
+  timeout : 0.5
+  priority: 70
