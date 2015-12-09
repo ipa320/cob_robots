@@ -16,16 +16,57 @@ joint_trajectory_controller:
      - torso_pan_joint
      - torso_tilt_joint
   constraints:
-      goal_time: 1.0
+      goal_time: 0.6
       stopped_velocity_tolerance: 0.05
       torso_pan_joint: {trajectory: 0.1, goal: 0.1}
       torso_tilt_joint: {trajectory: 0.1, goal: 0.1}
   stop_trajectory_duration: 0.5
   state_publish_rate:  25
   action_monitor_rate: 10
+  required_drive_mode: 7
 
-## no further controllers available
 
+## position controller
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+     - torso_pan_joint
+     - torso_tilt_joint
+  required_drive_mode: 1
+
+joint_group_interpol_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+     - torso_pan_joint
+     - torso_tilt_joint
+  required_drive_mode: 7
+
+torso_pan_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: torso_pan_joint
+  required_drive_mode: 1
+torso_tilt_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: torso_tilt_joint
+  required_drive_mode: 1
+
+
+## velocity controller
+joint_group_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+     - torso_pan_joint
+     - torso_tilt_joint
+  required_drive_mode: 2
+
+torso_pan_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: torso_pan_joint
+  required_drive_mode: 2
+torso_tilt_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: torso_tilt_joint
+  required_drive_mode: 2
 
 
 

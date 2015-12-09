@@ -56,14 +56,16 @@
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/drivers/schunk_powercube_chain_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
+			<arg name="can_device" value="can0" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/cob_trajectory_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="torso" />
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
 		</include>
+
 
 		<!--include file="$(find cob_bringup)/drivers/ur.launch" >
 			<arg name="ur_ip" value="$(arg ur_ip)"/>
