@@ -7,4 +7,6 @@ defaults:
 nodes:
   - name: sensorring_joint
     id: 73
+    dcf_overlay: # "ObjectID": "ParameterValue" (both as strings)
+      "6098": "35" #  homing method
 

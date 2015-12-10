@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="cob4-3" >
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+
+  <!-- calibration -->
+  <xacro:include filename="$(find cob_hardware_config)/cob4-3/urdf/properties.urdf.xacro" />
+
+  <!-- base -->
+  <xacro:include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
+
+
+  <!-- composition of the robot -->
+  <xacro:base name="base" use_old_joint_names="false"/>
+  <gazebo>
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
+      <robotNamespace>base</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
+
+</robot>
