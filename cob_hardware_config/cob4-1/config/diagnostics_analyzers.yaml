@@ -86,9 +86,17 @@ analyzers:
         path: Sensorring
         contains: 'sensorring_driver'
       base:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/AnalyzerGroup
         path: Base
-        startswith: '/base'
+        analyzers:
+          base:
+            type: diagnostic_aggregator/GenericAnalyzer
+            path: drives
+            startswith: '/base'
+          base_twist_mux:
+            type: diagnostic_aggregator/GenericAnalyzer
+            path: twist_mux
+            contains: 'twist_mux'
 
   safety:
     type: diagnostic_aggregator/GenericAnalyzer
