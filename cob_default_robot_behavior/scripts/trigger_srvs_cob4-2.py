@@ -75,7 +75,7 @@ def torso_front_cb(req):
         sss.move_base_rel("base",[0,0,1.57],False)
         sss.move("torso","front",True)
     else:
-        TriggerResponse(False, "Could not move arms")
+        TriggerResponse(False, "Could not move arms.")
 
     return TriggerResponse(True, "")
     
@@ -88,7 +88,7 @@ def front_to_home_cb(req):
         sss.move_base_rel("base",[0,0,-1.57],False)
         sss.move("torso","home",False)
     else:
-        TriggerResponse(False, "Could not move arms")
+        TriggerResponse(False, "Could not move arms.")
     return TriggerResponse(True, "")
 
 def pick_cb(req):
@@ -173,7 +173,7 @@ def setLightCyanSweep_cb(req):
         print resp
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
-        return TriggerResponse(False, "Calling light service failed")
+        return TriggerResponse(False, "Calling light service failed.")
     return TriggerResponse(True, "")
 
 def setLightCyanBreath_cb(req):
@@ -195,7 +195,7 @@ def setLightCyanBreath_cb(req):
         print resp
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
-        return TriggerResponse(False, "Calling light service failed")
+        return TriggerResponse(False, "Calling light service failed.")
     return TriggerResponse(True, "")
 
 
