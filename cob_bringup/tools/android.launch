@@ -3,7 +3,6 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_robot_config" default="$(find cob_default_robot_config)"/>
-	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 
 	<node pkg="cob_android_script_server" type="script_server_android" name="android_script_server" cwd="node" respawn="false" output="screen" >
 		<rosparam command="load" ns="control_buttons" file="$(arg pkg_robot_config)/$(arg robot)/command_gui_buttons.yaml"/>
