@@ -23,11 +23,11 @@
 		</include>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/laser_lms1xx.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="base_laser_front" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/laser_lms1xx.launch" >
+		<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="base_laser_rear" />
 		</include>
