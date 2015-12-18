@@ -6,7 +6,7 @@
 	<arg name="name"/>
 
 	<!-- load parameter -->
-	<rosparam ns="$(arg name)" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg name).yaml"/>
+	<rosparam ns="$(arg name)/driver" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg name).yaml"/>
 
 	<!-- start laser driver -->
 	<node ns="$(arg name)" pkg="cob_sick_lms1xx" type="lms100" name="driver" respawn="false" output="screen" >
