@@ -1,7 +1,7 @@
 frequency: 30                       #nodes update frequency in hz
 update_mode: polling                #switch between poll and event driven processing [polling, event]
 
-boards:                             
+boards:
   base_monitor:                      #phidget board with a name
     serial_num: 265664              #phidget boards serial number
     #ratiometric: true
@@ -12,6 +12,6 @@ boards:
        em_scanner_not_stop:
         type: digital_in
         index: 1
-       bat1: 
+       bat1:
         type: analog
         index: 0
