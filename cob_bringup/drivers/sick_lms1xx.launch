@@ -10,7 +10,7 @@
 
 	<!-- start laser driver -->
 	<node ns="$(arg name)" pkg="cob_sick_lms1xx" type="lms100" name="driver" respawn="false" output="screen" >
-		<remap from="scan" to="scan_raw"/>
+		<remap from="driver/scan" to="scan_raw"/>
 	</node>
 
 	<!-- laser filter -->
