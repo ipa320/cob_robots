@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<!-- start battery light monitor node -->
+	<node name="battery_light_monitor" pkg="cob_monitoring" type="battery_light_monitor.py" respawn="false" output="screen">
+	</node>
+
+</launch>
