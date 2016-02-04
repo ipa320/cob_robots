@@ -27,7 +27,7 @@
 			<arg name="raw_cmd_vel_topic"     default="velocity_smoother/command"/>
 			<arg name="smooth_cmd_vel_topic"  default="twist_controller/command"/>
 			<arg name="robot_cmd_vel_topic"   default="twist_controller/command"/>
-			<arg name="odom_topic"            default="odom_controller/odometry"/>
+			<arg name="odom_topic"            default="odometry_controller/odometry"/>
 		</include>
 
 	</group>
