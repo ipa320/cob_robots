@@ -40,6 +40,10 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
+		<include file="$(find cob_bringup)/tools/battery_light_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
