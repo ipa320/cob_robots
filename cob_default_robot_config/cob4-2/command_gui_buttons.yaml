@@ -73,6 +73,21 @@ group17:
   buttons: [[torso_front,trigger,torso_front],
     [torso_front_home,trigger,torso_front_home],
     [pick,trigger,pick]]
+group18:
+  group_name: head
+  component_name: head
+  buttons: [[stop,trigger,stop],
+    [init,trigger,init],
+    [recover,trigger,recover],
+    [home,move,home],
+    [front,move,front],
+    [front_down,move,front_down],
+    [back,move,back],
+    [back_down,move,back_down],
+    [left,move,left],
+    [right,move,right],
+    [nod,move,nod],
+    [shake,move,shake]]
 group21:
   group_name: mimic
   component_name: behavior
