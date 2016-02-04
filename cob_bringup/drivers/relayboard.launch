@@ -6,7 +6,7 @@
 	<arg name="sim" default="false" />
 
 	<!-- start simulated relayboard node -->
-	<node if="$(arg sim)" ns="relayboard" pkg="cob_relayboard" type="relayboard_sim.py" name="relayboard_node" respawn="false" output="screen"/>
+	<node if="$(arg sim)" pkg="cob_relayboard" type="relayboard_sim.py" name="relayboard_node" respawn="false" output="screen"/>
 
 	<!-- start relayboard node -->
 	<node unless="$(arg sim)" pkg="cob_relayboard" type="cob_relayboard_node" name="relayboard_controller" respawn="false" output="screen">
