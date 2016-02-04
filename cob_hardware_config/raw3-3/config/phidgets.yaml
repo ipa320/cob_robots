@@ -3,13 +3,13 @@ update_mode: polling                #switch between poll and event driven proces
 
 boards:
   ifk_general:
-    serial_num: 285651
+    serial_num: 272849
     ratiometric: true
     sensors:
-      bat1:
+      voltage:
         type: analog
         index: 0
-      bat2:
+      current:
         type: analog
         index: 1
       em_stop_laser_rear:
