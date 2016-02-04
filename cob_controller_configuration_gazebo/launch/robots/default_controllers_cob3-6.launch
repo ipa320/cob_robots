@@ -28,6 +28,10 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="name" value="base_laser_top"/>
 	</include>
+	<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
 
 	<!-- Head -->
 	<!-- simulated driver services -->
