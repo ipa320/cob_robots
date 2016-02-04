@@ -6,6 +6,7 @@
 
 	<!-- start battery light monitor node -->
 	<node name="battery_light_monitor" pkg="cob_monitoring" type="battery_light_monitor.py" respawn="false" output="screen">
+    <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/battery_light_monitor.yaml"/>
 	</node>
 
 </launch>
