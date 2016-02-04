@@ -12,7 +12,7 @@
 	<arg name="raw_cmd_vel_topic"     default="base/velocity_smoother/raw_cmd_vel"/>
 	<arg name="smooth_cmd_vel_topic"  default="base/twist_controller/command"/>
 	<arg name="robot_cmd_vel_topic"   default="base/twist_controller/command"/>
-	<arg name="odom_topic"            default="base/odom_controller/odometry"/>
+	<arg name="odom_topic"            default="base/odometry_controller/odometry"/>
 
 	<node pkg="cob_base_velocity_smoother" type="velocity_smoother" name="$(arg node_name)" output="screen">
 
