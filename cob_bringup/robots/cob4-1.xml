@@ -63,6 +63,7 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/battery_light_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="light_service" value="/light_torso/set_light"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
