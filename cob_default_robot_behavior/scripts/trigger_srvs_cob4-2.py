@@ -75,7 +75,7 @@ def torso_front_cb(req):
         sss.move_base_rel("base",[0,0,1.57],False)
         sss.move("torso","front",True)
     else:
-        TriggerResponse(False, "Could not move arms.")
+        return TriggerResponse(False, "Could not move arms.")
 
     return TriggerResponse(True, "")
     
@@ -88,7 +88,8 @@ def front_to_home_cb(req):
         sss.move_base_rel("base",[0,0,-1.57],False)
         sss.move("torso","home",False)
     else:
-        TriggerResponse(False, "Could not move arms.")
+        return TriggerResponse(False, "Could not move arms.")
+
     return TriggerResponse(True, "")
 
 def pick_cb(req):
@@ -136,6 +137,8 @@ def pick_cb(req):
         handle_arm_right = sss.move("arm_right","side", False)
         sss.set_mimic("mimic",["blinking_right",0,1])
         handle_base.wait()
+    else:
+        return TriggerResponse(False, "Could not move arms.")
 
     return TriggerResponse(True, "")
 
@@ -152,7 +155,7 @@ def setLightRed_cb(req):
 def setLightGreen_cb(req):
     sss.set_light("light_base","green")
     sss.set_light("light_torso","green")
-    return TriggerResponse(True, "")()
+    return TriggerResponse(True, "")
     
 def setLightCyanSweep_cb(req):
     #rospy.wait_for_service('/light_torso/set_light')
