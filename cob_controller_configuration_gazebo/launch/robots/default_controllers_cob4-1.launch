@@ -32,7 +32,6 @@
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 
-
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>
@@ -49,6 +48,20 @@
 	<include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="torso"/>
+	</include>
+
+	<!-- Head -->
+	<!-- simulated driver services -->
+	<node ns="head" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="head"/>
+	</include>
+	<!-- Cartesian controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="head"/>
 	</include>
 
 	<!-- Sensorring -->
