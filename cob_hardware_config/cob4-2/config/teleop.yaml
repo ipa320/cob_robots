@@ -72,7 +72,7 @@ components: {
   head: {
     sss_default_target: "front",
     velocity_topic_name: "/head/joint_group_velocity_controller/command",
-    joint_velocity: [0.05, 0.05],
+    joint_velocity: [0,05, 0.05, 0.05],
     twist_topic_name: '/head/twist_controller/command_twist',
     twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
   },
