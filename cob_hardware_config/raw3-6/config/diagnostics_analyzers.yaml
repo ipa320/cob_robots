@@ -110,6 +110,14 @@ analyzers:
 #        path: Torso
 #        contains: 'torso_controller'
 #      base:
-#        type: diagnostic_aggregator/GenericAnalyzer
+#        type: diagnostic_aggregator/AnalyzerGroup
 #        path: Base
-#        contains: 'base_controller'
+#        analyzers:
+#          base:
+#            type: diagnostic_aggregator/GenericAnalyzer
+#            path: drives
+#            startswith: '/base'
+#          base_twist_mux:
+#            type: diagnostic_aggregator/GenericAnalyzer
+#            path: twist_mux
+#            contains: 'twist_mux'
