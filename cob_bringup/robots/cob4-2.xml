@@ -49,8 +49,8 @@
 			<arg name="component_name" value="base" />
 			<arg name="can_device" value="can0" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch" >
+			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
