@@ -16,7 +16,7 @@ safety_button: 4
 init_button: 7
 
 #mode1: Base
-run_button: 
+run_button: 7
 
 components: {
   base: {
