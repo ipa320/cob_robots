@@ -29,21 +29,11 @@ run_button: 7
 torso_sss_default_target_button: 1
 sensorring_sss_default_target_button: 3
 head_sss_default_target_button: 3
-arm_right_sss_default_target_button: 2
-arm_left_sss_default_target_button: 0
 
 #mode3: Velocity group controller
 torso_joint1_button: 0
 sensorring_joint1_button: 1
 head_joint1_button: 2
-arm_right_joint1_button: 0
-arm_right_joint2_button: 1
-arm_right_joint3_button: 2
-arm_right_joint4_button: 3
-arm_left_joint1_button: 0
-arm_left_joint2_button: 1
-arm_left_joint3_button: 2
-arm_left_joint4_button: 3
 
 right_indicator_button: 7
 left_indicator_button: 6
@@ -53,8 +43,6 @@ right_left_button: 4
 #mode4: Twist controller
 torso_twist_button: 1
 head_twist_button: 3
-arm_right_twist_button: 2
-arm_left_twist_button: 0
 
 components: {
   base: {
