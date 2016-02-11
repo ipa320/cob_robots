@@ -18,15 +18,18 @@
 	<!-- scanner and scanner-filter -->
 	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="front"/>
+		<arg name="name" value="base_laser_front"/>
 	</include>
 	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="rear"/>
+		<arg name="name" value="base_laser_rear"/>
 	</include>
 	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="top"/>
+		<arg name="name" value="base_laser_top"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+		<arg name="robot" value="$(arg robot)" />
 	</include>
 
 	<!-- Head -->

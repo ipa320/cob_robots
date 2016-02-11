@@ -59,24 +59,25 @@ head_3_joint_position_controller:
   required_drive_mode: 1
 
 
-## velocity controller
-joint_group_velocity_controller:
-  type: velocity_controllers/JointGroupVelocityController
-  joints:
-     - head_1_joint
-     - head_2_joint
-     - head_3_joint
-  required_drive_mode: 3
-
-head_1_joint_velocity_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: head_1_joint
-  required_drive_mode: 3
-head_2_joint_velocity_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: head_2_joint
-  required_drive_mode: 3
-head_3_joint_velocity_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: head_3_joint
-  required_drive_mode: 3
+### velocity controller
+### velicty controllers are not to be used with Elmo Devices as JointLimits are not considered!
+#joint_group_velocity_controller:
+#  type: velocity_controllers/JointGroupVelocityController
+#  joints:
+#     - head_1_joint
+#     - head_2_joint
+#     - head_3_joint
+#  required_drive_mode: 3
+#
+#head_1_joint_velocity_controller:
+#  type: velocity_controllers/JointVelocityController
+#  joint: head_1_joint
+#  required_drive_mode: 3
+#head_2_joint_velocity_controller:
+#  type: velocity_controllers/JointVelocityController
+#  joint: head_2_joint
+#  required_drive_mode: 3
+#head_3_joint_velocity_controller:
+#  type: velocity_controllers/JointVelocityController
+#  joint: head_3_joint
+#  required_drive_mode: 3

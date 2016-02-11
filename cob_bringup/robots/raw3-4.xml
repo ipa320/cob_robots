@@ -32,11 +32,11 @@
 		<!-- lower robot -->
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="front" />
+			<arg name="name" value="base_laser_front" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="rear" />
+			<arg name="name" value="base_laser_rear" />
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
@@ -73,6 +73,12 @@
 
 		<!-- script server -->
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
+
+		<!-- scan unifier -->
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		
 	</group>
 
 	<group>

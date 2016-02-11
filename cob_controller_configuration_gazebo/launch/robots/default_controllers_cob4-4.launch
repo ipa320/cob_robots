@@ -18,18 +18,21 @@
 	<!-- scanner and scanner-filter -->
 	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="front"/>
+		<arg name="name" value="base_laser_front"/>
 	</include>
 	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="left"/>
+		<arg name="name" value="base_laser_left"/>
 	</include>
 	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
 		<arg name="robot" value="$(arg robot)"/>
-		<arg name="name" value="right"/>
+		<arg name="name" value="base_laser_right"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+		<arg name="robot" value="$(arg robot)" />
 	</include>
 
-  <include file="$(find cob_bringup)/drivers/relayboard.launch">
+	<include file="$(find cob_bringup)/drivers/relayboard.launch">
 		<arg name="sim" value="true"/>
 	</include>
 

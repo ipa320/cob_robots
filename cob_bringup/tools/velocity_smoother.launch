@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+	YOCS velocity smoother launcher
+	-->
+<launch>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<arg name="node_name"             default="velocity_smoother"/>
+	<arg name="nodelet_manager_name"  default="base_nodelet_manager"/>
+	<arg name="config_file"           default="$(arg pkg_hardware_config)/$(arg robot)/config/velocity_smoother.yaml"/>
+	<arg name="raw_cmd_vel_topic"     default="base/velocity_smoother/raw_cmd_vel"/>
+	<arg name="smooth_cmd_vel_topic"  default="base/twist_controller/command"/>
+	<arg name="robot_cmd_vel_topic"   default="base/twist_controller/command"/>
+	<arg name="odom_topic"            default="base/odometry_controller/odometry"/>
+
+	<node pkg="cob_base_velocity_smoother" type="velocity_smoother" name="$(arg node_name)" output="screen">
+
+		<!-- parameters -->
+		<rosparam file="$(arg config_file)" command="load"/>
+
+		<!-- velocity commands I/O -->
+		<remap from="$(arg node_name)/raw_cmd_vel"    to="$(arg raw_cmd_vel_topic)"/>
+		<remap from="$(arg node_name)/smooth_cmd_vel" to="$(arg smooth_cmd_vel_topic)"/>
+
+		<!-- Robot velocity feedbacks -->
+		<remap from="$(arg node_name)/robot_cmd_vel"    to="$(arg robot_cmd_vel_topic)"/>
+		<remap from="$(arg node_name)/odometry"         to="$(arg odom_topic)"/>
+	</node>
+</launch>
