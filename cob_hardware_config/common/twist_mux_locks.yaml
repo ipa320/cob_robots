@@ -19,4 +19,4 @@ locks:
   name    : joystick 
   topic   : twist_mux/locks/joy_priority
   timeout : 0.0
-  priority: 100
+  priority: 101
