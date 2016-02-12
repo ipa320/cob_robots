@@ -3,12 +3,7 @@
 
 	<param name="/use_sim_time" value="false"/>
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
-	<arg name="pkg_env_config" default="$(find cob_default_env_config)"/>
 
-	<include file="$(find cob_bringup)/robots/$(arg robot).launch" >
-		<arg name="robot_env" value="$(arg robot_env)" />
-		<arg name="pkg_env_config" value="$(arg pkg_env_config)" />
-	</include>
+	<include file="$(find cob_bringup)/robots/$(arg robot).launch"/>
 
 </launch>

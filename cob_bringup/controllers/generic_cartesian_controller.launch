@@ -16,7 +16,8 @@
 		<!-- Cartesian controllers -->
 		<node pkg="cob_twist_controller" type="cob_twist_controller_node" name="twist_controller" cwd="node" respawn="false" output="screen">
 			<remap from="base/odometry" to="/base/odometry_controller/odometry"/>
-			<remap from="base/command" to="/base/twist_mux/command_syncmm"/>
+			<!--remap from="base/command" to="/base/twist_mux/command_syncmm"/-->
+			<remap from="base/command" to="/base/twist_controller/command"/>
 		</node>
 		<node pkg="cob_frame_tracker" type="cob_frame_tracker_node" name="frame_tracker" cwd="node" respawn="false" output="screen"/>
 		<node pkg="cob_frame_tracker" type="interactive_frame_target_node" name="interactive_target" cwd="node" respawn="false" output="screen"/>
