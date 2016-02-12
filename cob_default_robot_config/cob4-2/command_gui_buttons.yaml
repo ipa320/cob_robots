@@ -71,9 +71,7 @@ group17:
   group_name: torso
   component_name: behavior
   buttons: [[torso_front,trigger,torso_front],
-    [torso_front_home,trigger,torso_front_home],
-    [pick,trigger,pick],
-    [pickReturn,trigger,pickReturn]]
+    [torso_front_home,trigger,torso_front_home]]
 group21:
   group_name: mimic
   component_name: behavior
