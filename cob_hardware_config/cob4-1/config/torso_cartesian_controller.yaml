@@ -5,7 +5,7 @@ root_frame: odom_combined
 
 # twist controller parameters
 twist_controller:
-  controller_interface: 2    #Velocity 0, Position 1, Trajectory 2, JointStates 3
+  controller_interface: 0    #Velocity 0, Position 1, Trajectory 2, JointStates 3
   integrator_smoothing: 0.2
 
   # damping parameters
@@ -58,7 +58,7 @@ twist_controller:
 
 # frame_tracker + interactive_marker
 frame_tracker:
-  update_rate: 10.0    #temporary: makes torso motion smoother
+  update_rate: 100.0
   target_frame: torso_center_target
   marker_scale: 0.5
   movable_trans: true

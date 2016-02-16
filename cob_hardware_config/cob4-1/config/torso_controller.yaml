@@ -53,13 +53,13 @@ torso_3_joint_position_controller:
 
 ### velocity controller
 ### velicty controllers are not to be used with Elmo Devices as JointLimits are not considered!
-#joint_group_velocity_controller:
-#  type: velocity_controllers/JointGroupVelocityController
-#  joints:
-#     - torso_2_joint
-#     - torso_3_joint
-#  required_drive_mode: 3
-#
+joint_group_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+     - torso_2_joint
+     - torso_3_joint
+  required_drive_mode: 3
+
 #torso_2_joint_velocity_controller:
 #  type: velocity_controllers/JointVelocityController
 #  joint: torso_2_joint
