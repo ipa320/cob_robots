@@ -1,8 +1,8 @@
 ## Cartesian controller parameters
 chain_base_link: torso_base_link
 chain_tip_link: torso_center_link
-#root_frame: odom_combined
-root_frame: base_link
+root_frame: odom_combined
+#root_frame: base_link
 
 # twist controller parameters
 twist_controller:
@@ -43,7 +43,7 @@ twist_controller:
   enforce_pos_limits: true
   enforce_vel_limits: true
   enforce_acc_limits: false
-  limits_tolerance: 5.0    #for position limits [deg]
+  limits_tolerance: 45.0    #for position limits [deg]
   #limits_acc: [10.0, 10.0]    #[rad/s2]
 
   # kinematic extensions
