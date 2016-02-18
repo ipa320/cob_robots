@@ -81,10 +81,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
         contains: 'torso_driver'
-      head:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Head
-        contains: 'head_driver'
+#      head:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Head
+#        contains: 'head_driver'
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
