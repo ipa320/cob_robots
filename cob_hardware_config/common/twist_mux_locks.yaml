@@ -15,8 +15,8 @@ locks:
   timeout : 0.0
   priority: 21
 -
-  name    : pause_joystick 
-  topic   : twist_mux/locks/pause_joystick
+  name    : pause_teleop 
+  topic   : twist_mux/locks/pause_teleop
   timeout : 0.0
   priority: 101
 -
