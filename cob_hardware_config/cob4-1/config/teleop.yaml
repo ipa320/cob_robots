@@ -7,7 +7,11 @@ joy_num_buttons: 12
 joy_num_axes: 6
 joy_num_modes: 4
 mode_switch_button: 8
+
+enable_light: true
 light_action_name: /light_torso/set_light
+enable_sound: true
+sound_action_name: /sound/say
 
 # axes
 axis_vx: 1
