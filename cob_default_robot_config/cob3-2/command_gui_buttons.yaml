@@ -8,14 +8,14 @@ group1:
   group_name: base
   component_name: base
   buttons: [[stop,stop,omni],
-    [init,trigger,init],
+    [init,init],
     [recover,trigger,recover]]
 group2:
   group_name: torso
   component_name: torso
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [home,move,home],
     [front,move,front],
     [back,move,back],
@@ -26,21 +26,21 @@ group2:
 group3:
   group_name: tray
   component_name: tray
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [up,move,up],
     [down,move,down]]
 group4:
   group_name: arm settings
   component_name: arm
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover]]
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover]]
 group5:
   group_name: arm pos
   component_name: arm
-  buttons: [[stop,trigger,stop],
+  buttons: [[stop,stop],
     [home,move,home],
     [folded,move,folded],
     [pregrasp,move,pregrasp],
@@ -50,16 +50,16 @@ group5:
 group6:
   group_name: arm traj
   component_name: arm
-  buttons: [[stop,trigger,stop],
+  buttons: [[stop,stop],
     [grasp-to-tray,move,grasp-to-tray],
     [tray-to-folded,move,tray-to-folded],
     [wave,move,wave]]
 group7:
   group_name: gripper
   component_name: gripper
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [home,move,home],
     [cyl. closed,move,cylclosed],
     [cyl. open,move,cylopen],
@@ -70,8 +70,8 @@ group7:
 group8:
   group_name: head
   component_name: head
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [front,move,front],
     [back,move,back]]

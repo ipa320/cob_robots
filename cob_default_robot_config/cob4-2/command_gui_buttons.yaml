@@ -8,8 +8,8 @@ group10:
   group_name: base
   component_name: base
   buttons: [[stop,stop,omni],
-    [init,trigger,init],
-    [recover,trigger,recover]]
+    [init,init],
+    [recover,recover]]
 group11:
   group_name: sensorring
   component_name: sensorring
@@ -63,9 +63,9 @@ group13:
 group16:
   group_name: torso
   component_name: torso
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [home,move,home]]
 group17:
   group_name: torso
