@@ -1,45 +1,14 @@
 controller_list:
-  - name: arm_left/joint_trajectory_controller
-    action_ns: follow_joint_trajectory
-    type: FollowJointTrajectory
-    joints:
-      - arm_left_1_joint
-      - arm_left_2_joint
-      - arm_left_3_joint
-      - arm_left_4_joint
-      - arm_left_5_joint
-      - arm_left_6_joint
-      - arm_left_7_joint
-  - name: arm_right/joint_trajectory_controller
-    action_ns: follow_joint_trajectory
-    type: FollowJointTrajectory
-    joints:
-      - arm_right_1_joint
-      - arm_right_2_joint
-      - arm_right_3_joint
-      - arm_right_4_joint
-      - arm_right_5_joint
-      - arm_right_6_joint
-      - arm_right_7_joint
   - name: torso/joint_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
-      - torso_1_joint
       - torso_2_joint
       - torso_3_joint
-  - name: head/joint_trajectory_controller
-    action_ns: follow_joint_trajectory
-    type: FollowJointTrajectory
-    joints:
-      - head_1_joint
-      - head_2_joint
-      - head_3_joint
-  #- name: lookat_controller
-    #action_ns: follow_joint_trajectory
-    #type: FollowJointTrajectory
-    #joints:
-      #- lookat_lin_joint
-      #- lookat_x_joint
-      #- lookat_y_joint
-      #- lookat_z_joint
+#  - name: head/joint_trajectory_controller
+#    action_ns: follow_joint_trajectory
+#    type: FollowJointTrajectory
+#    joints:
+#      - head_1_joint
+#      - head_2_joint
+#      - head_3_joint

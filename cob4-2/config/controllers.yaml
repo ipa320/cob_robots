@@ -33,3 +33,9 @@ controller_list:
     joints:
       - gripper_right_finger_1_joint
       - gripper_right_finger_2_joint
+  - name: torso/joint_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - torso_2_joint
+      - torso_3_joint

@@ -5,12 +5,9 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /MotionPlanning1
-        - /MotionPlanning1/Scene Robot1
-        - /MotionPlanning1/Planning Request1
-        - /MotionPlanning1/Planned Path1
         - /MarkerArray1/Namespaces1
       Splitter Ratio: 0.74256
-    Tree Height: 156
+    Tree Height: 263
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -48,90 +45,60 @@ Visualization Manager:
       MoveIt_Use_Constraint_Aware_IK: true
       MoveIt_Warehouse_Host: 127.0.0.1
       MoveIt_Warehouse_Port: 33829
+      MoveIt_Workspace:
+        Center:
+          X: 0
+          Y: 0
+          Z: 0
+        Size:
+          X: 2
+          Y: 2
+          Z: 2
       Name: MotionPlanning
       Planned Path:
+        Interrupt Display: false
         Links:
           All Links Enabled: true
           Expand Joint Details: false
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          arm_left_1_link:
+          arm_1_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_2_link:
+          arm_2_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_3_link:
+          arm_3_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_4_link:
+          arm_4_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_5_link:
+          arm_5_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_6_link:
+          arm_6_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_7_link:
+          arm_7_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_1_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_2_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_3_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_4_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_5_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_6_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_7_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_base_link:
+          arm_base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -145,16 +112,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          base_laser_left_link:
+          base_laser_rear_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          base_laser_right_link:
+          base_laser_top_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-            Value: true
           base_link:
             Alpha: 1
             Show Axes: false
@@ -180,6 +146,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          cam3d_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam3d_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           fl_caster_r_wheel_link:
             Alpha: 1
             Show Axes: false
@@ -190,17 +165,17 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          head_1_link:
+          fr_caster_r_wheel_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          head_2_link:
+          fr_caster_rotation_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          head_3_link:
+          head_axis_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -210,31 +185,90 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          head_center_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          sensorring_base_link:
+          head_cam_reference_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          sensorring_link:
+          head_color_camera_l_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          head_color_camera_l_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_1_link:
+          head_color_camera_r_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          head_color_camera_r_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_2_link:
+          head_cover_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_3_link:
+          sdh_finger_11_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_12_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_13_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_21_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_22_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_23_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_grasp_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_palm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_thumb_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_thumb_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_thumb_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_tip_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -244,38 +278,58 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_cam3d_down_frame:
+          torso_lower_neck_tilt_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_cam3d_down_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          torso_cam3d_down_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          torso_cam3d_left_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          torso_cam3d_left_link:
+          torso_pan_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_cam3d_right_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          torso_cam3d_right_link:
+          torso_upper_neck_tilt_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_center_link:
+          tray_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_left_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_phidgets_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tray_phidgets_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tray_phidgets_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tray_phidgets_4_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tray_right_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -300,9 +354,9 @@ Visualization Manager:
         Goal State Color: 250; 128; 0
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
-        Planning Group: arm_left
+        Planning Group: arm
         Query Goal State: true
-        Query Start State: true
+        Query Start State: false
         Show Workspace: false
         Start State Alpha: 1
         Start State Color: 0; 255; 0
@@ -323,82 +377,42 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          arm_left_1_link:
+          arm_1_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_2_link:
+          arm_2_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_3_link:
+          arm_3_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_4_link:
+          arm_4_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_5_link:
+          arm_5_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_6_link:
+          arm_6_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_7_link:
+          arm_7_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          arm_left_base_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_1_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_2_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_3_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_4_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_5_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_6_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_7_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          arm_right_base_link:
+          arm_base_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -412,16 +426,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          base_laser_left_link:
+          base_laser_rear_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          base_laser_right_link:
+          base_laser_top_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-            Value: true
           base_link:
             Alpha: 1
             Show Axes: false
@@ -447,6 +460,15 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          cam3d_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          cam3d_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           fl_caster_r_wheel_link:
             Alpha: 1
             Show Axes: false
@@ -457,17 +479,17 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          head_1_link:
+          fr_caster_r_wheel_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          head_2_link:
+          fr_caster_rotation_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          head_3_link:
+          head_axis_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -477,31 +499,90 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          head_center_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          sensorring_base_link:
+          head_cam_reference_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          sensorring_link:
+          head_color_camera_l_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          head_color_camera_l_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_1_link:
+          head_color_camera_r_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          head_color_camera_r_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_2_link:
+          head_cover_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_3_link:
+          sdh_finger_11_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_12_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_13_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_21_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_22_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_finger_23_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_grasp_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_palm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_thumb_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_thumb_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_thumb_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          sdh_tip_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -511,45 +592,65 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_cam3d_down_frame:
+          torso_lower_neck_tilt_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_cam3d_down_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          torso_cam3d_down_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          torso_cam3d_left_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          torso_cam3d_left_link:
+          torso_pan_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_cam3d_right_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          torso_cam3d_right_link:
+          torso_upper_neck_tilt_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          torso_center_link:
+          tray_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_left_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          tray_phidgets_1_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tray_phidgets_2_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tray_phidgets_3_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tray_phidgets_4_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tray_right_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
         Robot Alpha: 0.5
         Show Robot Collision: false
-        Show Robot Visual: false
+        Show Robot Visual: true
       Value: true
     - Class: rviz/MarkerArray
       Enabled: true
@@ -595,16 +696,16 @@ Visualization Manager:
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 735
+  Height: 1056
   Help:
     collapsed: false
   Hide Left Dock: false
   Hide Right Dock: false
   Motion Planning:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000100000000000002b100000299fc0200000005fb000000100044006900730070006c0061007900730100000028000000dd000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067010000010b000001b6000001ab00ffffff0000030e0000029900000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000100000000000002b1000003dafc0200000005fb000000100044006900730070006c006100790073010000002800000148000000dd00fffffffb0000000800480065006c00700000000342000000bb0000007600fffffffb0000000a0056006900650077007300000003b0000000b0000000b000fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e006701000001760000028c000001ab00ffffff00000488000003da00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
-  Width: 1477
+  Width: 1855
   X: 55
-  Y: 98
+  Y: -14
