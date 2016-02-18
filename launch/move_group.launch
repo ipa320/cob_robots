@@ -67,6 +67,8 @@
                                       move_group/MoveGroupStateValidationService
                                       move_group/MoveGroupGetPlanningSceneService
                                       " />
+                                      <!-- you can add 'cob_collision_monitor/CollisionMonitor' to the list above
+                                           however, it is recommended to use the standalone-node in cob_collision_monitor -->
 
     <!-- Publish the planning scene of the physical robot so that rviz plugin can know actual robot -->
     <param name="planning_scene_monitor/publish_planning_scene" value="$(arg publish_monitored_planning_scene)" />
