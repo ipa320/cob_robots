@@ -1,5 +1,1 @@
-bus:
-  device: can2
-sync:
-  interval_ms: 10
-  overflow: 0
+../../cob4-2/config/can2.yaml

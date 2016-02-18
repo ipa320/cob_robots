@@ -10,13 +10,17 @@
 
 locks:
 -
-  name    : pause
+  name    : pause_navigation
   topic   : twist_mux/locks/pause_navigation
   timeout : 0.0
-  # Lower/same priority as joystick control, so it'll not block it.
-  priority: 80
+  priority: 21
 -
-  name    : joystick 
-  topic   : twist_mux/locks/joy_priority
+  name    : pause_teleop 
+  topic   : twist_mux/locks/pause_teleop
   timeout : 0.0
-  priority: 100
+  priority: 101
+-
+  name    : pause_all 
+  topic   : twist_mux/locks/pause_all
+  timeout : 0.0
+  priority: 255
