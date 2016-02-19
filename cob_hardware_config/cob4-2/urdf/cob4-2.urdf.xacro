@@ -10,6 +10,9 @@
   <!-- calibration -->
   <xacro:include filename="$(find cob_hardware_config)/cob4-2/urdf/properties.urdf.xacro" />
 
+  <!-- additional sensors -->
+  <xacro:include filename="$(find cob_hardware_config)/cob4-2/urdf/cob4-2.sensors.xacro" />
+
   <!-- base -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
 
@@ -26,7 +29,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_head/head_static.urdf.xacro" />
 
   <!-- sensorring -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring_asus.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
 
   <!-- composition of the robot -->
   <xacro:base name="base" use_old_joint_names="false"/>
