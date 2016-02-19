@@ -1,9 +1,1 @@
-bus:
-  device: can0
-  master_allocator: canopen::SimpleMaster::Allocator
-sync:
-  interval_ms: 10
-  overflow: 0
-heartbeat:
-  rate: 20
-  msg: "77f#05"
+../../cob4-2/config/can0.yaml

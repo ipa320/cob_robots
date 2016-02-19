@@ -120,6 +120,10 @@
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
+	<include file="$(find cob_bringup)/tools/behavior.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+
 	<include file="$(find cob_script_server)/launch/script_server.launch" />
 
 </launch>
