@@ -18,7 +18,6 @@
 	<group>
 		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc1)" />
@@ -142,7 +141,6 @@
 	<group>
 		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
@@ -169,7 +167,6 @@
 	<group>
 		<machine name="pc3" address="$(arg pc3)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc3)" />
