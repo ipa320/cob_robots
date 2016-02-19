@@ -42,7 +42,6 @@
 
 		<include file="$(find cob_bringup)/tools/battery_light_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="light_service" value="/light/set_light"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
@@ -98,7 +97,7 @@
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 	</group>
 
 	<group>

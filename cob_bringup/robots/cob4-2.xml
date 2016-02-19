@@ -65,7 +65,6 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/battery_light_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="light_service" value="/light_torso/set_light"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -91,7 +90,7 @@
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 	</group>
 
 	<group>
@@ -99,7 +98,7 @@
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<include file="$(find cob_bringup)/tools/android.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>	
+		</include>
 		<include file="$(find cob_bringup)/tools/behavior.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>

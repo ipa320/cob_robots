@@ -3,13 +3,11 @@
 
     <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
     <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-    <arg name="light_service" default="/light/set_light"/>
 
     <!-- start battery light monitor node -->
     <node name="battery_light_monitor" pkg="cob_monitoring" type="battery_light_monitor.py" respawn="false" output="screen">
         <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/battery_light_monitor.yaml"/>
         <remap from="power_state" to="/power_state"/>
-        <remap from="set_light" to="$(arg light_service)"/>
     </node>
 
 </launch>
