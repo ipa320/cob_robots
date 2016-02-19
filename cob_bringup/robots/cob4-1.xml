@@ -43,6 +43,9 @@
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -53,17 +56,14 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
+		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/tools/battery_light_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
@@ -82,15 +82,11 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-		<!-- scan unifier -->
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
 	</group>
 
 	<group>
 		<machine name="cob4-1-t1" address="$(arg cob4-1-t1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<include file="$(find cob_bringup)/tools/android.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -98,7 +94,6 @@
 		<include file="$(find cob_bringup)/tools/behavior.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-1-t1)" />
@@ -133,7 +128,6 @@
 
 	<group>
 		<machine name="cob4-1-t2" address="$(arg cob4-1-t2)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-1-t2)" />
@@ -154,7 +148,7 @@
 
 	<group>
 		<machine name="cob4-1-t3" address="$(arg cob4-1-t3)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
-		<!-- pc monitor -->
+
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-1-t3)" />
@@ -179,7 +173,7 @@
 
 	<group>
 		<machine name="cob4-1-s1" address="$(arg cob4-1-s1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
-		<!-- pc monitor -->
+
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-1-s1)" />
@@ -197,10 +191,9 @@
 		</include>
 	</group>
 
-	<group>
+	<!--group>
 		<machine name="cob4-1-h1" address="$(arg cob4-1-h1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-1-h1)" />
@@ -210,7 +203,7 @@
 		<include file="$(find cob_bringup)/drivers/sound.launch" />
 
 		<include file="$(find cob_bringup)/drivers/mimic.launch" />
-	</group>
+	</group-->
 
 	<machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 

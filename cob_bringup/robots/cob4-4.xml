@@ -17,7 +17,6 @@
 	<group>
 		<machine name="cob4-4-b1" address="$(arg cob4-4-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-4-b1)" />
@@ -37,6 +36,9 @@
 			<arg name="name" value="base_laser_left" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -65,12 +67,6 @@
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
-		<!-- scan unifier -->
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		
 	</group>
 
 	<machine name="cob4-4-b1" address="$(arg cob4-4-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
