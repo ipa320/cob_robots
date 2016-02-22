@@ -37,6 +37,10 @@ twist_controller:
 odometry_controller:
   type: cob_omni_drive_controller/OdometryController
   publish_rate: 50
+  frame_id: "/odom_combined"
+  child_frame_id: "/base_footprint"
+  cov_pose: 0.1
+  cov_twist: 0.1
   defaults: # default settings for all wheels, can per overwritten per wheel
     wheel_radius: 0.080 # Radius of the wheels in [m]
   wheels: *wheels
