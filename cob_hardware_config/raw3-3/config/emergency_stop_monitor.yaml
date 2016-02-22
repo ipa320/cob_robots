@@ -1,5 +1,5 @@
-light_enabled: true
-led_components: [light]
+led_enabled: true
+led_components: ['light']
 color_ok: cyan
 
 sound_enabled: false
