@@ -1,8 +1,8 @@
-led_enabled: true
-led_components: ['light_base']
+enable_light: true
+light_components: ['light_base']
 color_ok: cyan
 
-sound_enabled: true
+enable_sound: true
 sound_components: ['sound']
 
 diagnostics_based: true

@@ -1,6 +1,6 @@
-led_enabled: false
+enable_light: false
 
-sound_enabled: false
+enable_sound: false
 
 diagnostics_based: false
 motion_based: false

@@ -1,8 +1,8 @@
-led_enabled: true
-led_components: ['light']
+enable_light: true
+light_components: ['light']
 color_ok: green
 
-sound_enabled: false
+enable_sound: false
 
 diagnostics_based: true
 motion_based: true

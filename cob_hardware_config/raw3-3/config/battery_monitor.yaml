@@ -4,6 +4,6 @@ threshold_critical: 5 # % of battery level
 
 enable_light: true
 num_leds: 1
-led_components: ['light']
+light_components: ['light']
 
 enable_sound: false
