@@ -1,5 +1,8 @@
-sound_enabled: False
-led_enabled: True
-diagnostics_based: True
-motion_based: True
+light_enabled: true
 led_components: [light]
+color_ok: cyan
+
+sound_enabled: false
+
+diagnostics_based: true
+motion_based: true

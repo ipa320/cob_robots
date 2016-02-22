@@ -1,1 +1,6 @@
-# NO PARAMETERS YET TO SPECIFY
+light_enabled: false
+
+sound_enabled: false
+
+diagnostics_based: false
+motion_based: false
