@@ -112,6 +112,11 @@
 		<arg name="camera_name" value="torso_cam3d_right"/>
 	</include>
 
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="camera_name" value="sensorring_cam3d"/>
+	</include>
+
 	<!-- start additional components -->
 	<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
