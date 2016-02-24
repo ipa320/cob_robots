@@ -114,6 +114,7 @@
 		</include>
 		<!--include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="camera_name" values="cam3d" />
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 			<arg name="start_manager" value="false"/>
 		</include-->
