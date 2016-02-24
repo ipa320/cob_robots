@@ -1,4 +1,9 @@
-name: sensorring_controller
+sync:
+  interval_ms: 10
+  overflow: 0
+heartbeat:
+  rate: 20
+  msg: "77f#05"
 
 defaults:
   eds_pkg: cob_hardware_config
