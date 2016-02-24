@@ -72,11 +72,11 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'torso'
+        contains: 'torso/driver'
       tray:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Tray
-        contains: 'tray'
+        contains: 'tray/driver'
       gripper:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Gripper
