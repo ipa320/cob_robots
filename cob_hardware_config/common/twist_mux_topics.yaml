@@ -7,20 +7,25 @@
 
 topics:
 -
-  name    : navigation
-  topic   : twist_mux/command_navigation
-  timeout : 0.25
-  priority: 20
--
   name    : collision_velocity_filter
   topic   : twist_mux/command_safe
   timeout : 0.25
   priority: 10
 -
-  name    : teleop_joystick
-  topic   : twist_mux/command_teleop_joy
+  name    : navigation
+  topic   : twist_mux/command_navigation
   timeout : 0.25
-  priority: 100
+  priority: 20
+-
+  name    : syncmm # cob_twist_controller
+  topic   : twist_mux/command_syncmm
+  timeout : 0.5
+  priority: 60
+-
+  name    : script_server
+  topic   : twist_mux/command_script_server
+  timeout : 0.5
+  priority: 70
 -
   name    : teleop_keyboard
   topic   : twist_mux/command_teleop_keyboard
@@ -32,12 +37,7 @@ topics:
   timeout : 0.5
   priority: 90
 -
-  name    : script_server
-  topic   : twist_mux/command_script_server
-  timeout : 0.5
-  priority: 70
--
-  name    : syncmm # cob_twist_controller
-  topic   : twist_mux/command_syncmm
-  timeout : 0.5
-  priority: 70
+  name    : teleop_joystick
+  topic   : twist_mux/command_teleop_joy
+  timeout : 0.25
+  priority: 100
