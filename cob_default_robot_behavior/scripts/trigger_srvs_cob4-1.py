@@ -182,7 +182,7 @@ def soundStarting_cb(req):
     return TriggerResponse(True, "")
 
 def soundHello_cb(req):
-    sss.say(["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
+    sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
     return TriggerResponse(True, "")
 
 def trigger_srvs():
