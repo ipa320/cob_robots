@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- This file makes it easy to include the settings for sensor managers -->
+  <arg name="config_path"/>
+  <arg name="use_sensors"/>
+
+  <!-- Params for the octomap monitor -->
+  <param name="octomap_frame" type="string" value="odom_combined"/>
+  <param name="octomap_resolution" type="double" value="0.1"/>
+  <param name="max_range" type="double" value="2.0"/>
+
+  <!-- Load the robot specific sensors -->
+  <rosparam file="$(arg config_path)/sensors.yaml" if="$(arg use_sensors)"/>
+  <rosparam command="delete" param="sensors" unless="$(arg use_sensors)"/>
+  
+</launch>

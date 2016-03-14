@@ -7,7 +7,7 @@
   <arg name="pipeline" default="ompl" />
 
   <include file="$(find cob_moveit_config)/launch/$(arg pipeline)_planning_pipeline.xml">
-      <arg name="robot" value="$(arg robot)"/>
+    <arg name="robot" value="$(arg robot)"/>
   </include>
 
 </launch>

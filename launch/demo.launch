@@ -4,34 +4,34 @@
   <arg name="with_db" default="false"/>
   <arg name="debug" default="false"/>
 
-  <include file="$(find cob_moveit_config)/launch/planning_context.xml">
-    <arg name="load_robot_description" value="true"/>
-    <arg name="robot" value="$(arg robot)"/>
-  </include>
 
-  <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom_combined base_footprint 100" />
-
+  <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom_combined base_footprint 100"/>
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/>
+    <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
   </node>
 
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen"/>
 
   <include file="$(find cob_moveit_config)/launch/move_group.launch">
-    <arg name="allow_trajectory_execution" value="false"/>
     <arg name="robot" value="$(arg robot)"/>
+    <arg name="load_robot_description" value="true"/>
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="fake_execution" value="true"/>
+    <arg name="use_sensors" value="false"/>
+    <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
   <include file="$(find cob_moveit_config)/launch/rviz.launch">
     <arg name="robot" value="$(arg robot)"/>
-    <arg name="debug" value="$(arg debug)"/>
     <arg name="config" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
   </include>
 
   <include file="$(find cob_moveit_config)/launch/warehouse.launch" if="$(arg with_db)">
-    <arg name="moveit_warehouse_database_path" value="$(find cob_moveit_config)/$(arg robot)/default_warehouse_mongo_db" />
+    <arg name="moveit_warehouse_database_path" value="$(find cob_moveit_config)/$(arg robot)/default_warehouse_mongo_db"/>
   </include>
 
 </launch>

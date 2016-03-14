@@ -1,0 +1,15 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - arm_1_joint
+      - arm_2_joint
+      - arm_3_joint
+      - arm_4_joint
+      - arm_5_joint
+      - arm_6_joint
+      - arm_7_joint
+  - name: fake_torso_controller
+    joints:
+      - torso_lower_neck_tilt_joint
+      - torso_pan_joint
+      - torso_upper_neck_tilt_joint
