@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="robot" default="$(env ROBOT)"/>
+  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="with_db" default="false"/>
   <arg name="debug" default="false"/>
 

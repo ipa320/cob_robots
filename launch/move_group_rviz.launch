@@ -2,8 +2,8 @@
 <launch>
 
   <!-- define arguments -->
-  <arg name="robot" default="$(env ROBOT)" />
-  <arg name="debug" default="false" />
+  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+  <arg name="debug" default="false"/>
   <arg name="use_sensors" default="true"/>
 
   # The planning and execution components of MoveIt! configured to

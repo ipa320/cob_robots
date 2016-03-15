@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="robot" default="$(env ROBOT)"/>
+  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="config_path" default="$(find cob_moveit_config)/$(arg robot)/config"/>
 
   <arg name="debug" default="false" />
