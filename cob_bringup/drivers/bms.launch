@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<node name="bms" pkg="cob_bms_driver" type="bms_driver_node" output="screen" clear_params="true">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/bms.yaml"/>
+	</node>
+	<node ns="bms" name="power_state_aggregator" pkg="cob_bms_driver" type="power_state_aggregator.py" output="screen">
+	    <remap from="power_state" to="/power_state"/>
+	</node>
+
+</launch>
