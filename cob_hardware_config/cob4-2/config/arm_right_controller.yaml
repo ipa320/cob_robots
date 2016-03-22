@@ -49,18 +49,6 @@ joint_group_position_controller:
      - arm_right_7_joint
   required_drive_mode: 1
 
-joint_group_interpol_position_controller:
-  type: position_controllers/JointGroupPositionController
-  joints:
-     - arm_right_1_joint
-     - arm_right_2_joint
-     - arm_right_3_joint
-     - arm_right_4_joint
-     - arm_right_5_joint
-     - arm_right_6_joint
-     - arm_right_7_joint
-  required_drive_mode: 7
-
 arm_right_1_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: arm_right_1_joint
