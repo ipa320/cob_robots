@@ -23,25 +23,6 @@
 		</include>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="base_laser_front" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="base_laser_right" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="base_laser_left" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="base" />
