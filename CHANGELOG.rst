@@ -2,6 +2,16 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* make 'robot' argument optenv
+* add support for fake_execution and sensor input, more consistent with latest moveit_setup_assistant structure
+* add octomap updater sensor configuration
+* remove schunk arm moveit configs
+* update moveit_configs
+* explicit name for the collision_monitor plugin
+* Contributors: ipa-fxm
+
 0.6.3 (2015-08-31)
 ------------------
 
