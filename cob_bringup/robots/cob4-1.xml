@@ -195,7 +195,7 @@
 		</include>
 	</group>
 
-	<!--group>
+	<group>
 		<machine name="cob4-1-h1" address="$(arg cob4-1-h1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
@@ -206,8 +206,8 @@
 		<param name="/sound_controller/mode" value="cepstral" />
 		<include file="$(find cob_bringup)/drivers/sound.launch" />
 
-		<include file="$(find cob_bringup)/drivers/mimic.launch" />
-	</group-->
+		<!--include file="$(find cob_bringup)/drivers/mimic.launch" /--> <!-- mimic cannot be executed on the current head-pc -->
+	</group>
 
 	<machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
