@@ -2,8 +2,8 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * add missing image_flip nodes to simulation
 * add default_robot_behavior to cob4-1 and cob4-2
 * add 3dof head for cob4-1 within simulation only

@@ -2,8 +2,8 @@
 Changelog for package cob_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * cob_behaviour
 * cob_behaviour
 * Contributors: ipa-cob4-2

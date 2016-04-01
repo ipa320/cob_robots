@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * adjust launch file to current head-pc setup
 * Merge pull request `#448 <https://github.com/ipa320/cob_robots/issues/448>`_ from ipa-nhg/BMSintegration
   added bms driver to bringup

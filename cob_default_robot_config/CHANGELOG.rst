@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * proper stop, init and recover via command_gui
 * remove pick from command gui
 * fix head positions

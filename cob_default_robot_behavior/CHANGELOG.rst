@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2016-04-01)
+------------------
 * adjust cob_default_robot_behavior to new sss.say
 * tabs vs. spaces
 * apply changes to cob4-1 too
