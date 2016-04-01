@@ -2,8 +2,8 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.4 (2016-04-01)
+------------------
 * make 'robot' argument optenv
 * add support for fake_execution and sensor input, more consistent with latest moveit_setup_assistant structure
 * add octomap updater sensor configuration
