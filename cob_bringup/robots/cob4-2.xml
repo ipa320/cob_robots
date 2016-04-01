@@ -78,6 +78,9 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="light_base" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/bms.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<!-- TMP START: recover grippers due to USB disconnect problem. Delete after USB problem is fixed. Recovers both grippers. -->
 		<node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/>
@@ -87,7 +90,6 @@
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
 	</group>
 
 	<group>
