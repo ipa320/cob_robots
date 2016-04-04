@@ -2,6 +2,43 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.5 (2016-04-01)
+------------------
+* proper stop, init and recover via command_gui
+* remove pick from command gui
+* fix head positions
+* add 3dof head for cob4-1 within simulation only
+* update cob4-3 according to lastest updates in cob_robots (twist_mux, vel_smoother, laser_topics)
+* adapt twist_mux topic names according to https://github.com/ipa320/orga/pull/1#issuecomment-159195427
+* changed base_configurations to twist_mux input topic
+* remove pick from knoeppkes
+* use cob4-1 as cob4-2 without arms - copying configuration files
+* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into indigo_dev
+* remove show gripper
+* added cob4-3
+* upload correct light params
+* modified default colors, more yellow looking color
+* fix behaviour
+* remove lookat
+* fix and consistent services and topics in base config
+* arm calibration
+* arm calibration and adapted the default positions
+* divide pick trigger service
+* wave without side start
+* added led_off configuration for all robots equiped with lights
+* changed base namespace from 'base_controller' to 'base' for cob4 and raw3
+* all raws still use old namespace for base
+* raws bases still use old namespace '/base_controller' instead of '/base/driver'
+* corrected light_configuration.yaml
+* added new behavior trigger services
+* updated cob_teleop and renamed behaviour package
+* more parameter updates for cob4-2
+* merge
+* robot test
+* cob_behaviour
+* right arm mount position and removed arm trajectories
+* Contributors: Benjamin Maidel, ipa-bnm, ipa-cob3-9, ipa-cob4-2, ipa-fmw, ipa-fxm, ipa-nhg
+
 0.6.4 (2015-08-29)
 ------------------
 * migrate to package format 2
