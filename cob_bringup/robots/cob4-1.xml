@@ -113,6 +113,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+			<arg name="debug" value="false"/>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
