@@ -152,8 +152,9 @@
 		</include>
 
 		<!-- start additional packages -->
-		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_bringup)/drivers/sound.launch" />
+		<include file="$(find cob_bringup)/drivers/sound.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)" />
