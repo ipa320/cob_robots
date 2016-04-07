@@ -6,45 +6,18 @@ analyzers:
     path: Computers
     analyzers:
       b1:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/DiscardAnalyzer
         path: b1
         contains: 'b1'
-
-#  network:
-#    type: diagnostic_aggregator/AnalyzerGroup
-#    path: Network
-#    analyzers:
-#      wifi:
-#        type: diagnostic_aggregator/GenericAnalyzer
-#        path: wifi
-#        num_items: 1
-#        expected: ['Wifi Status (ddwrt)']
 
   io:
     type: diagnostic_aggregator/AnalyzerGroup
     path: IO
     analyzers:
       joystick:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/DiscardAnalyzer
         path: Joystick
         contains: 'joy'
-
-  sensors:
-    type: diagnostic_aggregator/AnalyzerGroup
-    path: Sensors
-    analyzers:
-      laser_top:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Scan Front
-        contains: 'laser_front'
-      laser_rear:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Scan Right
-        contains: 'laser_right'
-      laser_front:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Scan Left
-        contains: 'laser_left'
 
   motors:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -63,7 +36,11 @@ analyzers:
             path: twist_mux
             contains: 'twist_mux'
 
-  safety:
-    type: diagnostic_aggregator/GenericAnalyzer
-    path: Safety
-    contains: 'safety'
+  sensors:
+    type: diagnostic_aggregator/AnalyzerGroup
+    path: Sensors
+    analyzers:
+      battery:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Battery Status
+        contains: 'bms'
