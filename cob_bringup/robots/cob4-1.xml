@@ -198,7 +198,7 @@
 
 	<group>
 		<!--machine name="cob4-1-h1" address="$(arg cob4-1-h1)" env-loader="$(arg env-script)" default="true" timeout="30"/-->
-		<machine name="cob4-1-h1" address="$(arg cob4-1-h1)" env-loader="~/.bashrc" default="true" timeout="30"/>
+		<machine name="cob4-1-h1" address="$(arg cob4-1-h1)" env-loader="/u/robot/git/care-o-bot/install/share/cob_bringup/env.sh" default="true" timeout="30"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
