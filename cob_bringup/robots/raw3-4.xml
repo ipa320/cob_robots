@@ -92,7 +92,9 @@
 		</include>
 
 		<!-- start additional packages -->
-		<include file="$(find cob_bringup)/drivers/sound.launch" />
+		<include file="$(find cob_bringup)/drivers/sound.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
