@@ -66,7 +66,15 @@ group16:
   buttons: [[stop,stop],
     [init,init],
     [recover,recover],
-    [home,move,home]]
+    [home,move,home],
+    [front,move,front],
+    [front_down,move,front_down],
+    [back,move,back],
+    [back_down,move,back_down],
+    [left,move,left],
+    [right,move,right],
+    [nod,move,nod],
+    [shake,move,shake]]
 group17:
   group_name: torso
   component_name: behavior
