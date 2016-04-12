@@ -83,7 +83,7 @@
 		</include>
 
 		<!-- TMP START: recover grippers due to USB disconnect problem. Delete after USB problem is fixed. Recovers both grippers. -->
-		<node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/>
+		<!--node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/-->
 		<!-- TMP END -->
 
 		<!-- aggregated robot_state_publisher -->
@@ -98,7 +98,7 @@
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<include file="$(find cob_bringup)/tools/android.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>	
+		</include>
 		<include file="$(find cob_bringup)/tools/behavior.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -121,6 +121,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+			<arg name="debug" value="false"/>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -141,6 +146,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_left"/>
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_left"/>
+			<arg name="debug" value="false"/>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -151,6 +161,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_right"/>
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_right"/>
+			<arg name="debug" value="false"/>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)" />
@@ -166,10 +181,10 @@
 			<arg name="pc" value="$(arg cob4-2-t2)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
+		<!--include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="gripper_right" />
-		</include>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -192,10 +207,10 @@
 			<arg name="pc" value="$(arg cob4-2-t3)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
+		<!--include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="gripper_left" />
-		</include>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
