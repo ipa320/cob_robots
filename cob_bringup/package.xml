@@ -24,6 +24,7 @@
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_cam3d_throttle</exec_depend>
   <exec_depend>cob_camera_sensors</exec_depend>
+  <exec_depend>cob_collision_monitor</exec_depend>
   <exec_depend>cob_collision_velocity_filter</exec_depend>
   <exec_depend>cob_command_gui</exec_depend>
   <exec_depend>cob_control_mode_adapter</exec_depend>
@@ -40,7 +41,9 @@
   <exec_depend>cob_light</exec_depend>
   <exec_depend>cob_mimic</exec_depend>
   <exec_depend>cob_monitoring</exec_depend>
+  <exec_depend>cob_moveit_config</exec_depend>
   <exec_depend>cob_obstacle_distance</exec_depend>
+  <exec_depend>cob_obstacle_distance_moveit</exec_depend>
   <exec_depend>cob_phidgets</exec_depend>
   <exec_depend>cob_relayboard</exec_depend>
   <exec_depend>cob_safety_controller</exec_depend>

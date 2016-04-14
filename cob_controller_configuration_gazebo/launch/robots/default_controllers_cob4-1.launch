@@ -90,6 +90,9 @@
 	</include>
 
 	<!-- start additional components -->
+	<include file="$(find cob_bringup)/drivers/sound.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
 	<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include-->

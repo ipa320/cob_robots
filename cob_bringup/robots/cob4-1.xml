@@ -39,10 +39,13 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="base_laser_left" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+		<include file="$(find cob_bringup)/tools/collision_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -102,6 +105,10 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-1-t1)" />
 		</include>
+		<include file="$(find cob_bringup)/tools/obstacle_distance_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="use_sensors" value="false" />
+		</include>
 
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
@@ -113,6 +120,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+			<arg name="debug" value="false"/>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
