@@ -20,15 +20,6 @@ footprint: [[0.39,0.3],[-0.39,0.3],[-0.39,-0.3],[0.39,-0.3]] #[m]
 footprint_padding: 0.02 #[m]
 inflation_radius: 0.55 #[m]
 
-# The list of all the costmap layers that will be loaded
-plugins:
-# The obstacle layer tracks the obstacles as read by the sensor data. The ObstacleLayer Plugin marks and
-# raytraces obstacles in two dimensions, while the VoxelLayer Plugin does so in three dimensions.
-- {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
-# The inflation layer is an optimization that adds new values around lethal obstacles (i.e. inflates the obstacles)
-# in order to make the costmap represent the configuration space of the robot.
-- {name: inflation_layer, type: "costmap_2d::InflationLayer"}
-
 # sensor setup
 observation_sources: laser_scan_sensor_front laser_scan_sensor_rear
 laser_scan_sensor_front: {sensor_frame: base_laser_front_link, data_type: LaserScan, topic: base_laser_front/scan, marking: true, clearing: true}
