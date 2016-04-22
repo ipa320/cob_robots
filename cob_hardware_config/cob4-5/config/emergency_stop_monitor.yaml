@@ -1,4 +1,4 @@
-enable_light: true
+enable_light: false
 light_components: ['light_base']
 color_ok: cyan
 
