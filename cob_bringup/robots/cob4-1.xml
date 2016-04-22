@@ -45,9 +45,6 @@
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/tools/collision_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
