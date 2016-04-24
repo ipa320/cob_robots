@@ -18,10 +18,39 @@ max_obstacle_height: 2.0 #[m]
 raytrace_range: 3.0 #3.0 #[m]
 footprint: [[0.39,0.3],[-0.39,0.3],[-0.39,-0.3],[0.39,-0.3]] #[m]
 footprint_padding: 0.02 #[m]
-inflation_radius: 0.55 #[m]
 
-# sensor setup
-observation_sources: laser_scan_sensor_front laser_scan_sensor_rear
-laser_scan_sensor_front: {sensor_frame: base_laser_front_link, data_type: LaserScan, topic: base_laser_front/scan, marking: true, clearing: true}
+#layers
+plugins:
 
-laser_scan_sensor_rear: {sensor_frame: base_laser_rear_link, data_type: LaserScan, topic: base_laser_rear/scan, marking: true, clearing: true}
+# The obstacle layer tracks the obstacles as read by the sensor data.  The ObstacleCostmapPlugin marks and
+# raytraces obstacles in two dimensions, while the VoxelCostmapPlugin does so in three dimensions.
+- {name: obstacle_layer,  type: "costmap_2d::VoxelLayer"}
+
+
+obstacle_layer:
+
+  # Definition of the sensors/observation sources
+  observation_sources: laser_scan_front laser_scan_rear
+
+  # Parameters of the source: laser_scan_front
+  laser_scan_front:
+    sensor_frame: base_laser_front_link # The frame of the origin of the sensor, default: ""
+    topic: /base_laser_front/scan       # The topic on which sensor data comes in for this source, default: source_name
+    data_type: LaserScan                # The data type associated with the topic, default: "PointCloud"
+    marking: true                       # Whether or not this observation is used to mark obstacles, default: true
+    clearing: true                      # Whether or not this observation is used to clear out freespace, default: false
+
+  # Parameters of the source: laser_scan_rear
+  laser_scan_rear:
+    sensor_frame: base_laser_rear_link  # The frame of the origin of the sensor, default: ""
+    topic: /base_laser_rear/scan       # The topic on which sensor data comes in for this source, default: source_name
+    data_type: LaserScan                # The data type associated with the topic, default: "PointCloud"
+    marking: true                       # Whether or not this observation is used to mark obstacles, default: true
+    clearing: true                      # Whether or not this observation is used to clear out freespace, default: false
+
+
+# # sensor setup
+# observation_sources: laser_scan_sensor_front laser_scan_sensor_rear
+# laser_scan_sensor_front: {sensor_frame: base_laser_front_link, data_type: LaserScan, topic: base_laser_front/scan, marking: true, clearing: true}
+#
+# laser_scan_sensor_rear: {sensor_frame: base_laser_rear_link, data_type: LaserScan, topic: base_laser_rear/scan, marking: true, clearing: true}
