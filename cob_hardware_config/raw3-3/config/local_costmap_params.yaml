@@ -3,7 +3,6 @@ global_frame: /base_link
 robot_base_frame: /base_footprint
 update_frequency: 5.0
 publish_frequency: 5.0
-map_type: costmap
 
 # local map settings
 static_map: false
@@ -13,9 +12,6 @@ height: 5.0
 resolution: 0.07
 
 # footprint and range
-obstacle_range: 3.0 #[m]
-max_obstacle_height: 2.0 #[m]
-raytrace_range: 3.0 #3.0 #[m]
 footprint: [[0.39,0.3],[-0.39,0.3],[-0.39,-0.3],[0.39,-0.3]] #[m]
 footprint_padding: 0.02 #[m]
 
@@ -48,9 +44,14 @@ obstacle_layer:
     marking: true                       # Whether or not this observation is used to mark obstacles, default: true
     clearing: true                      # Whether or not this observation is used to clear out freespace, default: false
 
+  # The default maximum distance from the robot at which an obstacle will be inserted into the cost map in meters
+  obstacle_range: 3.0
 
-# # sensor setup
-# observation_sources: laser_scan_sensor_front laser_scan_sensor_rear
-# laser_scan_sensor_front: {sensor_frame: base_laser_front_link, data_type: LaserScan, topic: base_laser_front/scan, marking: true, clearing: true}
-#
-# laser_scan_sensor_rear: {sensor_frame: base_laser_rear_link, data_type: LaserScan, topic: base_laser_rear/scan, marking: true, clearing: true}
+  # The default range in meters at which to raytrace out obstacles from the map using sensor data
+  raytrace_range: 3.0
+
+  # What map type to use. "voxel" or "costmap" are the supported types, with the difference between them being a 3D-view of the world vs. a 2D-view of the world
+  map_type: costmap
+
+  # The maximum height in meters of a sensor reading considered valid.
+  max_obstacle_height: 2.0
