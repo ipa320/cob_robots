@@ -1,6 +1,5 @@
 #where to look for costmap parameters
 costmap_parameter_source: "/local_costmap_node/costmap" #default "/local_costmap_node/costmap"
-teleop_topic: "/base/collision_velocity_filter/command"
 
 #frequency at which the get_footprint service should be called
 footprint_update_frequency: 0.1
