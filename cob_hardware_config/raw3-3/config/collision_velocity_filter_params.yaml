@@ -1,6 +1,6 @@
 #where to look for costmap parameters
 costmap_parameter_source: "/local_costmap_node/costmap" #default "/local_costmap_node/costmap"
-teleop_topic: "/base/twist_mux/command_teleop_keyboard"
+teleop_topic: "/base/collision_velocity_filter/command"
 
 #frequency at which the get_footprint service should be called
 footprint_update_frequency: 0.1
@@ -16,6 +16,6 @@ max_acceleration: [0.3, 0.3, 0.4]
 #Parameters specifying collision velocity filter
 influence_radius: 2.0 #[m] distance from robot_center
 obstacle_damping_dist: 0.3 # used as slow-down dist
-stop_threshold: 0.2 #[m]
+stop_threshold: 0.05 #[m]
 use_circumscribed_threshold: 0.2 #[rad/s] scan for obstacles in circumscribed radius of robot even when tube filter is enabled during fast rotations
 costmap_obstacle_threshold: 250
