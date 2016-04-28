@@ -23,7 +23,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_gripper/gripper.urdf.xacro" />
 
   <!-- head -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head_static.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
 
   <!-- sensorring -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring_asus.urdf.xacro" />
@@ -50,6 +50,12 @@
   <xacro:head name="head" parent="torso_3_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
+  <gazebo>
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
+      <robotNamespace>head</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 
   <xacro:sensorring name="sensorring" parent="head_3_link">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
