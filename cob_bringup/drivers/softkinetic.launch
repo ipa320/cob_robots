@@ -26,5 +26,7 @@ The arguments given are the device indices of the cameras determined by the Dept
     <param name="color_frame_rate" value="25" /> <!-- 25, 30 -->
   </node>
 
+  <node name="cam3d_down_relay_depth_points" pkg="topic_tools" type="relay" args="/$(arg name)/depth/points /$(arg name)/depth_registered/points" respawn="false" output="screen"/>
+
 </launch>
 
