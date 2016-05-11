@@ -82,6 +82,7 @@
   <exec_depend>schunk_powercube_chain</exec_depend>
   <exec_depend>schunk_sdh</exec_depend>
   <exec_depend>schunk_sdhx</exec_depend>
+  <exec_depend>softkinetic_camera</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>topic_tools</exec_depend>
   <exec_depend>twist_mux</exec_depend>
