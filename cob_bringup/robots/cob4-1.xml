@@ -182,9 +182,9 @@
 			<arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
 		</include>
 
-		<!--include file="$(find cob_bringup)/drivers/softkinetic.launch" >
+		<include file="$(find cob_bringup)/drivers/softkinetic.launch" >
 			<arg name="name" value="torso_cam3d_down"/>
-		</include-->
+		</include>
 	</group>
 
 	<group>
