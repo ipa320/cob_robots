@@ -2,6 +2,23 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.5 (2016-04-01)
+------------------
+* add missing image_flip nodes to simulation
+* add default_robot_behavior to cob4-1 and cob4-2
+* add 3dof head for cob4-1 within simulation only
+* add scan unifier to simulated robots
+* update cob4-3 according to lastest updates in cob_robots (twist_mux, vel_smoother, laser_topics)
+* Merge branch 'indigo_dev' of github.com:ipa320/cob_robots into feature_cob4-1_without_arms
+* restructure laser topics
+* minor indentation issue
+* use cob4-1 as cob4-2 without arms - copying configuration files
+* added cob4-3
+* remove simulated fake_diagnostics
+* consistent arg usage for raw
+* Merge branch 'hydro_dev' into indigo_dev
+* Contributors: Denis Štogl, Florian Weisshardt, ipa-fmw, ipa-fxm, ipa-nhg
+
 0.6.4 (2015-08-29)
 ------------------
 * making 'sim_enabled' a launch argument

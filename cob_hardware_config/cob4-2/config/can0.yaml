@@ -1,9 +1,0 @@
-bus:
-  device: can0
-  master_allocator: canopen::SimpleMaster::Allocator
-sync:
-  interval_ms: 10
-  overflow: 0
-heartbeat:
-  rate: 20
-  msg: "77f#05"

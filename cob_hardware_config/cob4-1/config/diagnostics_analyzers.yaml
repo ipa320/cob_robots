@@ -72,6 +72,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Left
         contains: 'laser_left'
+      battery:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Battery Status
+        contains: 'bms'
 
   motors:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -80,11 +84,15 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'torso_driver'
+        contains: 'torso/driver'
+#      head:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Head
+#        contains: 'head/driver'
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
-        contains: 'sensorring_driver'
+        contains: 'sensorring/driver'
       base:
         type: diagnostic_aggregator/AnalyzerGroup
         path: Base
@@ -92,7 +100,7 @@ analyzers:
           base:
             type: diagnostic_aggregator/GenericAnalyzer
             path: drives
-            startswith: '/base'
+            contains: 'base/driver'
           base_twist_mux:
             type: diagnostic_aggregator/GenericAnalyzer
             path: twist_mux

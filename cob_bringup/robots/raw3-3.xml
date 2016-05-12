@@ -35,8 +35,15 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="base_laser_rear" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<include file="$(find cob_bringup)/drivers/battery_voltage.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -88,24 +95,16 @@
 
 		<!-- script server -->
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
-
-		<!-- scan unifier -->
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		
 	</group>
 
 	<group>
 		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
 
-		<!-- light -->
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)"/>
 		</include>

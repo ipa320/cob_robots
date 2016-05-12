@@ -16,11 +16,11 @@ twist_controller:
 
   defaults: # default settings for all wheels, can per overwritten per wheel
     steer_ctrl: # Parameters for tuning Impedance-Controller
-      spring: 15.0 #10.0
-      damp: 2.75 #2.5
-      virt_mass: 0.1 #0.1
-      d_phi_max: 12.0 #100.0
-      dd_phi_max: 17.0 #100.0
+      spring: 15.0
+      damp: 2.75
+      virt_mass: 0.1
+      d_phi_max: 10.0
+      dd_phi_max: 40.0
 
   wheels: &wheels # start front left, counter-clockwise for base_drive_chain compatibility
     - steer: fl_caster_rotation_joint
@@ -34,4 +34,8 @@ twist_controller:
 odometry_controller:
   type: cob_omni_drive_controller/OdometryController
   publish_rate: 50
+  frame_id: "/odom_combined"
+  child_frame_id: "/base_footprint"
+  cov_pose: 0.1
+  cov_twist: 0.1
   wheels: *wheels

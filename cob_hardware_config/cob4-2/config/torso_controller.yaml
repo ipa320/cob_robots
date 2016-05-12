@@ -34,13 +34,6 @@ joint_group_position_controller:
      - torso_3_joint
   required_drive_mode: 1
 
-joint_group_interpol_position_controller:
-  type: position_controllers/JointGroupPositionController
-  joints:
-     - torso_2_joint
-     - torso_3_joint
-  required_drive_mode: 7
-
 torso_2_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: torso_2_joint
@@ -51,20 +44,19 @@ torso_3_joint_position_controller:
   required_drive_mode: 1
 
 
-### velocity controller
-### velicty controllers are not to be used with Elmo Devices as JointLimits are not considered!
-#joint_group_velocity_controller:
-#  type: velocity_controllers/JointGroupVelocityController
-#  joints:
-#     - torso_2_joint
-#     - torso_3_joint
-#  required_drive_mode: 3
-#
-#torso_2_joint_velocity_controller:
-#  type: velocity_controllers/JointVelocityController
-#  joint: torso_2_joint
-#  required_drive_mode: 3
-#torso_3_joint_velocity_controller:
-#  type: velocity_controllers/JointVelocityController
-#  joint: torso_3_joint
-#  required_drive_mode: 3
+## velocity controller
+joint_group_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+     - torso_2_joint
+     - torso_3_joint
+  required_drive_mode: 3
+
+torso_2_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: torso_2_joint
+  required_drive_mode: 3
+torso_3_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: torso_3_joint
+  required_drive_mode: 3

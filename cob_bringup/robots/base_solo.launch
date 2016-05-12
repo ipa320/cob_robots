@@ -3,29 +3,44 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)" />
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)" />
+	<arg name="use_old_base_drive_chain" default="false" />
 
 	<!-- upload robot_description -->
 	<include file="$(arg pkg_hardware_config)/common/upload_robot.launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
+	<include file="$(find cob_default_robot_config)/upload_param.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
 
-	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
-	
 	<!-- start robot_state_publisher -->
-	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
+	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher" />
 
-	<include file="$(find cob_script_server)/launch/script_server.launch" />
+	<group unless="$(arg use_old_base_drive_chain)" >
+		<!-- start base driver -->
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="base" />
+			<arg name="can_device" value="can0" />
+		</include>
 
-	<!-- start base driver -->
-	<include file="$(find cob_bringup)/drivers/base_driver.launch" >
-		<arg name="robot" value="$(arg robot)" />
-	</include>
+		<!-- start base controller -->
+		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
 
-	<!-- start base controller -->
-	<include file="$(find cob_bringup)/controllers/base_controller.launch" >
-		<arg name="robot" value="$(arg robot)" />
-	</include>
+	<group if="$(arg use_old_base_drive_chain)" >
+		<!-- start base driver -->
+		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- start base controller -->
+		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+	</group>
 
 
 	<!-- start relayboard -->
@@ -36,6 +51,12 @@
 
 	<!-- start teleop -->
 	<include file="$(find cob_bringup)/tools/teleop.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+	<include file="$(find cob_script_server)/launch/script_server.launch" />
+
+	<!-- start safe base controller -->
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)" />
 	</include>
 

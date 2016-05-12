@@ -1,8 +1,13 @@
-name: sensorring_controller
+sync:
+  interval_ms: 10
+  overflow: 0
+heartbeat:
+  rate: 20
+  msg: "77f#05"
 
 defaults:
   eds_pkg: cob_hardware_config
-  eds_file: "cob4-2/config/Elmo.dcf"
+  eds_file: "common/Elmo.dcf"
 
 nodes:
   - name: sensorring_joint

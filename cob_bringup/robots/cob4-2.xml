@@ -21,7 +21,6 @@
 	<group>
 		<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-b1)" />
@@ -40,25 +39,36 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="base_laser_left" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
-		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+		<include file="$(find cob_bringup)/tools/collision_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="base" />
+			<arg name="can_device" value="can0" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
@@ -71,36 +81,37 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="light_base" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/bms.launch">
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<!-- TMP START: recover grippers due to USB disconnect problem. Delete after USB problem is fixed. Recovers both grippers. -->
-		<node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/>
+		<!--node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/-->
 		<!-- TMP END -->
 
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
-		<!-- scan unifier -->
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		
 	</group>
 
 	<group>
 		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<include file="$(find cob_bringup)/tools/android.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>	
+		</include>
 		<include file="$(find cob_bringup)/tools/behavior.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-t1)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/obstacle_distance_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="use_sensors" value="false" />
 		</include>
 
 		<!-- startup hardware -->
@@ -113,6 +124,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+			<arg name="debug" value="false"/>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -133,6 +149,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_left"/>
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_left"/>
+			<arg name="debug" value="false"/>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -143,6 +164,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_right"/>
 		</include>
+		<!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_right"/>
+			<arg name="debug" value="false"/>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)" />
@@ -152,16 +178,16 @@
 
 	<group>
 		<machine name="cob4-2-t2" address="$(arg cob4-2-t2)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
-		<!-- pc monitor -->
+
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-t2)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
+		<!--include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="gripper_right" />
-		</include>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -178,16 +204,16 @@
 
 	<group>
 		<machine name="cob4-2-t3" address="$(arg cob4-2-t3)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
-		<!-- pc monitor -->
+
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-t3)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
+		<!--include file="$(find cob_bringup)/drivers/schunk_sdhx.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="gripper_left" />
-		</include>
+		</include-->
 
 		<include file="$(find cob_bringup)/drivers/openni2.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -208,7 +234,7 @@
 
 	<group>
 		<machine name="cob4-2-s1" address="$(arg cob4-2-s1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
-		<!-- pc monitor -->
+
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-s1)" />
@@ -229,16 +255,16 @@
 	<group>
 		<machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-h1)" />
 		</include>
 
-		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_bringup)/drivers/sound.launch" />
+		<include file="$(find cob_bringup)/drivers/sound.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
-		<include file="$(find cob_bringup)/drivers/mimic.launch" />
+		<!--include file="$(find cob_bringup)/drivers/mimic.launch" /--> <!-- mimic cannot be executed on the current head-pc -->
 	</group>
 
 	<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>

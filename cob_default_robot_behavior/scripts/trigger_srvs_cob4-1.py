@@ -3,43 +3,43 @@
 ##\file
 #
 # \note
-#	 Copyright (c) 2015 \n
-#	 Fraunhofer Institute for Manufacturing Engineering
-#	 and Automation (IPA) \n\n
+#    Copyright (c) 2015 \n
+#    Fraunhofer Institute for Manufacturing Engineering
+#    and Automation (IPA) \n\n
 #
 #################################################################
 #
 # \note
-#	 Project name: care-o-bot
+#    Project name: care-o-bot
 # \note
-#	 ROS stack name: cob_robots
+#    ROS stack name: cob_robots
 # \note
-#	 ROS package name: cob_default_robot_behavior
+#    ROS package name: cob_default_robot_behavior
 #
 # \author
-#	 Author: Nadia Hammoudeh Garcia, email:nadia.hammoudeh.garcia@ipa.fhg.de
+#    Author: Nadia Hammoudeh Garcia, email:nadia.hammoudeh.garcia@ipa.fhg.de
 # \author
-#	 Supervised by: Nadia Hammoudeh Garcia, email:nadia.hammoudeh.garcia@ipa.fhg.de
+#    Supervised by: Nadia Hammoudeh Garcia, email:nadia.hammoudeh.garcia@ipa.fhg.de
 #
 # \date Date of creation: Aug 2015
 #
 # \brief
-#	 Implements script server functionalities.
+#    Implements script server functionalities.
 #
 #################################################################
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
 #
-#		 - Redistributions of source code must retain the above copyright
-#			 notice, this list of conditions and the following disclaimer. \n
-#		 - Redistributions in binary form must reproduce the above copyright
-#			 notice, this list of conditions and the following disclaimer in the
-#			 documentation and/or other materials provided with the distribution. \n
-#		 - Neither the name of the Fraunhofer Institute for Manufacturing
-#			 Engineering and Automation (IPA) nor the names of its
-#			 contributors may be used to endorse or promote products derived from
-#			 this software without specific prior written permission. \n
+#       - Redistributions of source code must retain the above copyright
+#           notice, this list of conditions and the following disclaimer. \n
+#       - Redistributions in binary form must reproduce the above copyright
+#           notice, this list of conditions and the following disclaimer in the
+#           documentation and/or other materials provided with the distribution. \n
+#       - Neither the name of the Fraunhofer Institute for Manufacturing
+#           Engineering and Automation (IPA) nor the names of its
+#           contributors may be used to endorse or promote products derived from
+#           this software without specific prior written permission. \n
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License LGPL as 
@@ -64,32 +64,32 @@ import rospy
 from simple_script_server import *
 sss = simple_script_server()
 from std_msgs.msg import ColorRGBA
-from std_srvs.srv import Trigger
+from std_srvs.srv import Trigger, TriggerResponse
 
 def torso_front_cb(req):
     sss.move_base_rel("base",[0,0,1.57],False)
     sss.move("torso","front",True)
-    return
+    return TriggerResponse(True, "")
     
 def front_to_home_cb(req):
     sss.move_base_rel("base",[0,0,-1.57],False)
     sss.move("torso","home",False)
-    return
+    return TriggerResponse(True, "")
 
 def setLightCyan_cb(req):
     sss.set_light("light_base","cyan")
     sss.set_light("light_torso","cyan")
-    return
+    return TriggerResponse(True, "")
     
 def setLightRed_cb(req):
     sss.set_light("light_base","red")
     sss.set_light("light_torso","red")
-    return
+    return TriggerResponse(True, "")
     
 def setLightGreen_cb(req):
     sss.set_light("light_base","green")
     sss.set_light("light_torso","green")
-    return
+    return TriggerResponse(True, "")
     
 def setLightCyanSweep_cb(req):
     #rospy.wait_for_service('/light_torso/set_light')
@@ -108,9 +108,10 @@ def setLightCyanSweep_cb(req):
         light_mode.frequency = 30
         resp = set_light_torso(light_mode)
         print resp
-        return
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
+        return TriggerResponse(False, "Calling light service failed.")
+    return TriggerResponse(True, "")
 
 def setLightCyanBreath_cb(req):
     #rospy.wait_for_service('/light_torso/set_light')
@@ -129,60 +130,60 @@ def setLightCyanBreath_cb(req):
         light_mode.frequency = 0.25
         resp = set_light_torso(light_mode)
         print resp
-        return
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
+        return TriggerResponse(False, "Calling light service failed.")
+    return TriggerResponse(True, "")
 
 
 def setMimicLaughing_cb(req):
     sss.set_mimic("mimic",["laughing",0,1])
-    return
+    return TriggerResponse(True, "")
     
 def setMimicAsking_cb(req):
     sss.set_mimic("mimic",["asking",0,1])
-    return
+    return TriggerResponse(True, "")
     
 def setMimicYes_cb(req):
     sss.set_mimic("mimic",["yes",0,1])
-    return
+    return TriggerResponse(True, "")
     
 def setMimicBlinkingRight_cb(req):
     sss.set_mimic("mimic",["blinking_right",0,1])
-    return
+    return TriggerResponse(True, "")
 
 def setMimicConfused_cb(req):
     sss.set_mimic("mimic",["confused",0,1])
-    return
+    return TriggerResponse(True, "")
 
 def setMimicAngry_cb(req):
     sss.set_mimic("mimic",["angry",0,1])
-    return
+    return TriggerResponse(True, "")
 
 def setMimicFallingAsleep_cb(req):
     sss.set_mimic("mimic",["falling_asleep",0,1])
-    return
+    return TriggerResponse(True, "")
 
 def soundR2D2_cb(req):
     sss.play("R2D2")
-    return
+    return TriggerResponse(True, "")
 
 def soundNoConnection_cb(req):
     sss.set_mimic("mimic",["confused",0,1])
     sss.play("confused")
-    return
+    return TriggerResponse(True, "")
 
 def soundNegative_cb(req):
     sss.play("negative")
-    return
+    return TriggerResponse(True, "")
 
 def soundStarting_cb(req):
     sss.play("starting")
-    return
+    return TriggerResponse(True, "")
 
 def soundHello_cb(req):
-    sss.say(["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
-    sss.say(["I am at your command."])
-    return
+    sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
+    return TriggerResponse(True, "")
 
 def trigger_srvs():
     rospy.init_node('trigger_srvs')

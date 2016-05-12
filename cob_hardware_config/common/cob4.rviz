@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /TF1/Frames1
-      Splitter Ratio: 0.622896
+      Splitter Ratio: 0.804714
     Tree Height: 843
   - Class: rviz/Selection
     Name: Selection
@@ -298,10 +298,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         torso_2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         torso_3_link:
           Alpha: 1
           Show Axes: false
@@ -311,6 +313,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         torso_cam3d_down_frame:
           Alpha: 1
           Show Axes: false
@@ -346,6 +349,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -465,7 +469,13 @@ Visualization Manager:
       Class: rviz/Path
       Color: 0; 255; 0
       Enabled: true
+      Line Style: Lines
+      Line Width: 0.03
       Name: Path dwa global
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
       Topic: /move_base/DWAPlannerROS/global_plan
       Value: true
     - Alpha: 1
@@ -473,7 +483,13 @@ Visualization Manager:
       Class: rviz/Path
       Color: 0; 0; 255
       Enabled: true
+      Line Style: Lines
+      Line Width: 0.03
       Name: Path dwa local
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
       Topic: /move_base/DWAPlannerROS/local_plan
       Value: true
     - Alpha: 1
@@ -481,7 +497,13 @@ Visualization Manager:
       Class: rviz/Path
       Color: 0; 255; 0
       Enabled: true
+      Line Style: Lines
+      Line Width: 0.03
       Name: Path tr global
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
       Topic: /move_base/TrajectoryPlannerROS/global_plan
       Value: true
     - Alpha: 1
@@ -489,7 +511,13 @@ Visualization Manager:
       Class: rviz/Path
       Color: 0; 0; 255
       Enabled: true
+      Line Style: Lines
+      Line Width: 0.03
       Name: Path tr local
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
       Topic: /move_base/TrajectoryPlannerROS/local_plan
       Value: true
     - Class: rviz/Marker
@@ -497,7 +525,7 @@ Visualization Manager:
       Marker Topic: /sound/marker
       Name: SoundMarker
       Namespaces:
-        color: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
@@ -505,7 +533,7 @@ Visualization Manager:
       Marker Topic: /light_base/marker
       Name: LightBaseMarker
       Namespaces:
-        color: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
@@ -518,44 +546,44 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: false
-      Image Topic: /cam3d_down/rgb/image_raw
+      Image Topic: /torso_cam3d_down/rgb/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
-      Name: Image torso_cam3d_down
+      Name: TorsoCam3dDownImage
       Normalize Range: true
       Queue Size: 2
       Transport Hint: raw
       Value: false
     - Class: rviz/Image
       Enabled: false
-      Image Topic: /torso_cam3d_left/flip/rgb/image_raw
+      Image Topic: /torso_cam3d_left_upright/rgb/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
-      Name: Image torso_cam3d_left
+      Name: TorsoCam3dLeftImage
       Normalize Range: true
       Queue Size: 2
       Transport Hint: raw
       Value: false
     - Class: rviz/Image
       Enabled: false
-      Image Topic: /torso_cam3d_right/flip/rgb/image_raw
+      Image Topic: /torso_cam3d_right_upright/rgb/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
-      Name: Image torso_cam3d_right
+      Name: TorsoCam3dRightImage
       Normalize Range: true
       Queue Size: 2
       Transport Hint: raw
       Value: false
     - Class: rviz/Image
       Enabled: false
-      Image Topic: /sensorring_cam3d/rgb/image_raw
+      Image Topic: /sensorring_cam3d_upright/rgb/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
-      Name: Image sensorring_cam3d
+      Name: SensorringCam3dImage
       Normalize Range: true
       Queue Size: 2
       Transport Hint: raw
@@ -578,7 +606,7 @@ Visualization Manager:
       Max Intensity: 4096
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: PointCloud2 torso_cam3d_down
+      Name: TorsoCam3dDownPointCloud2
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -599,7 +627,7 @@ Visualization Manager:
       Channel Name: intensity
       Class: rviz/PointCloud2
       Color: 255; 255; 255
-      Color Transformer: Intensity
+      Color Transformer: RGB8
       Decay Time: 0
       Enabled: false
       Invert Rainbow: false
@@ -607,7 +635,7 @@ Visualization Manager:
       Max Intensity: 4096
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: PointCloud2 Left
+      Name: TorsoCam3dLeftPointCloud2
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -628,7 +656,7 @@ Visualization Manager:
       Channel Name: intensity
       Class: rviz/PointCloud2
       Color: 255; 255; 255
-      Color Transformer: Intensity
+      Color Transformer: RGB8
       Decay Time: 0
       Enabled: false
       Invert Rainbow: false
@@ -636,7 +664,7 @@ Visualization Manager:
       Max Intensity: 4096
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: PointCloud2 torso_cam3d_right
+      Name: TorsoCam3dRightPointCloud2
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -665,7 +693,7 @@ Visualization Manager:
       Max Intensity: 4096
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: PointCloud2 sensorring_cam3d
+      Name: SensorringCam3dPointCloud2
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -678,13 +706,13 @@ Visualization Manager:
       Value: false
     - Class: rviz/InteractiveMarkers
       Enable Transparency: true
-      Enabled: true
+      Enabled: false
       Name: InteractiveTeleop
       Show Axes: false
       Show Descriptions: true
       Show Visual Aids: false
       Update Topic: /cob_interactive_teleop/update
-      Value: true
+      Value: false
     - Alpha: 0.7
       Class: rviz/Map
       Color Scheme: map
@@ -717,7 +745,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom_combined
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -734,22 +762,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.09258
+      Distance: 19.5897
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.408188
-        Y: -0.0225992
-        Z: -0.23833
+        X: 0.891724
+        Y: -0.865633
+        Z: 1.0872
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.619797
+      Pitch: 0.509797
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.538123
+      Yaw: 4.28313
     Saved: ~
 Window Geometry:
   Displays:
@@ -757,20 +785,20 @@ Window Geometry:
   Height: 1056
   Hide Left Dock: false
   Hide Right Dock: false
-  Image sensorring_cam3d:
-    collapsed: false
-  Image torso_cam3d_down:
-    collapsed: false
-  Image torso_cam3d_left:
-    collapsed: false
-  Image torso_cam3d_right:
-    collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000012b000003befc0200000007fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000003be000000dd00fffffffb0000000c00430061006d00650072006100000002a5000000cd0000000000000000fb0000002c0049006d006100670065002000730065006e0073006f007200720069006e0067005f00630061006d00330064000000031e000000c80000001600ffffff0000000100000169000003bcfc0200000006fb0000002c0049006d00610067006500200074006f00720073006f005f00630061006d00330064005f0064006f0077006e00000000280000014e0000001600fffffffb0000002c0049006d00610067006500200074006f00720073006f005f00630061006d00330064005f006c0065006600740000000028000001db0000001600fffffffb0000002e0049006d00610067006500200074006f00720073006f005f00630061006d00330064005f007200690067006800740000000028000003bc0000001600fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000326000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002f600fffffffb0000000800540069006d006501000000000000045000000000000000000000026e000003be00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000141000003dafc0200000006fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000003da000000dd00fffffffb0000000c00430061006d00650072006100000002a5000000cd00000000000000000000000100000169000003dafc0200000007fb000000260054006f00720073006f00430061006d003300640044006f0077006e0049006d00610067006500000000280000010a0000001600fffffffb000000260054006f00720073006f00430061006d00330064004c0065006600740049006d0061006700650000000028000000f60000001600fffffffb000000280054006f00720073006f00430061006d00330064005200690067006800740049006d0061006700650000000028000001430000001600fffffffb0000002800530065006e0073006f007200720069006e006700430061006d003300640049006d0061006700650000000028000003da0000001600fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000326000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a0000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000005f8000003da00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
+    collapsed: false
+  SensorringCam3dImage:
     collapsed: false
   Time:
     collapsed: false
   Tool Properties:
+    collapsed: false
+  TorsoCam3dDownImage:
+    collapsed: false
+  TorsoCam3dLeftImage:
+    collapsed: false
+  TorsoCam3dRightImage:
     collapsed: false
   Views:
     collapsed: false
