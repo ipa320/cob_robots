@@ -43,7 +43,6 @@
   <exec_depend>cob_monitoring</exec_depend>
   <exec_depend>cob_moveit_config</exec_depend>
   <exec_depend>cob_obstacle_distance</exec_depend>
-  <exec_depend>cob_obstacle_distance_moveit</exec_depend>
   <exec_depend>cob_phidgets</exec_depend>
   <exec_depend>cob_relayboard</exec_depend>
   <exec_depend>cob_safety_controller</exec_depend>
