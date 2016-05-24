@@ -105,10 +105,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-1-t1)" />
 		</include>
-		<include file="$(find cob_bringup)/tools/obstacle_distance_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="use_sensors" value="false" />
-		</include>
 
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
