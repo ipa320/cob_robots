@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-
 	<!-- start collision monitor node -->
 	<node pkg="cob_collision_monitor" type="cob_collision_monitor_node" name="cob_collision_monitor_node">
 		<remap from="/cob_collision_monitor_node/state_is_valid" to="/safety_controller/state_is_valid"/>
