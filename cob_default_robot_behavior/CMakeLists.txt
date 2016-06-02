@@ -8,6 +8,7 @@ catkin_package()
 set(robotlist
     cob4-1
     cob4-2
+    cob4-7
 )
 
 foreach(robot ${robotlist})
