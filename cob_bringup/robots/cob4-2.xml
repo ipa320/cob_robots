@@ -45,9 +45,6 @@
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/tools/collision_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -108,10 +105,6 @@
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg cob4-2-t1)" />
-		</include>
-		<include file="$(find cob_bringup)/tools/obstacle_distance_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="use_sensors" value="false" />
 		</include>
 
 		<!-- startup hardware -->
