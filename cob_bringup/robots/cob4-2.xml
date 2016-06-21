@@ -9,6 +9,7 @@
 	<arg name="cob4-2-t3" default="localhost"/>
 	<arg name="cob4-2-s1" default="localhost"/>
 	<arg name="cob4-2-h1" default="localhost"/>
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -19,7 +20,7 @@
 	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
 
 	<group>
-		<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -95,7 +96,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 		<include file="$(find cob_bringup)/tools/android.launch" >
@@ -176,7 +177,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-t2" address="$(arg cob4-2-t2)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<machine name="cob4-2-t2" address="$(arg cob4-2-t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -202,7 +203,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-t3" address="$(arg cob4-2-t3)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<machine name="cob4-2-t3" address="$(arg cob4-2-t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -232,7 +233,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-s1" address="$(arg cob4-2-s1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<machine name="cob4-2-s1" address="$(arg cob4-2-s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -252,7 +253,8 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<!--machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="$(arg env-script)" default="true" timeout="30"/-->
+		<machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="~/.bashrc" default="true" timeout="30"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -266,6 +268,6 @@
 		<!--include file="$(find cob_bringup)/drivers/mimic.launch" /--> <!-- mimic cannot be executed on the current head-pc -->
 	</group>
 
-	<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+	<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>
