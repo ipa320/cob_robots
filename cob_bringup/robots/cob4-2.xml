@@ -45,8 +45,9 @@
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/tools/collision_monitor.launch" >
-		</include>
+		<!--include file="$(find cob_bringup)/tools/collision_monitor.launch" >
+		</include-->
+		<node pkg="rostopic" type="pub" args="/safety_controller/state_is_valid std_msgs/Bool 'data: false' -r10" name="fake_collission_monitor" output="screen"/>
 
 		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
 			<arg name="robot" value="$(arg robot)" />
