@@ -2,7 +2,7 @@ enable_light: true
 light_components: ['light_base']
 color_ok: cyan
 
-enable_sound: true
+enable_sound: false
 sound_components: ['sound']
 
 diagnostics_based: true
