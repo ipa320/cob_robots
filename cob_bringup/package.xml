@@ -77,6 +77,7 @@
   <exec_depend>prace_gripper_driver</exec_depend>
   <exec_depend>prosilica_camera</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rostopic</exec_depend>
   <exec_depend>rplidar_ros</exec_depend> <!-- from cob_substitute -->
   <exec_depend>rviz</exec_depend>
   <exec_depend>schunk_powercube_chain</exec_depend>
