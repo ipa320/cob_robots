@@ -4,27 +4,17 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-	<!-- start local costmap -->
-	<node name="local_costmap_node" pkg="costmap_2d" type="costmap_2d_node" output="screen">
-		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/local_costmap_params.yaml" command="load" ns="costmap" />
-		<remap from="scan_front" to="/base_laser_front/scan"/>
-		<remap from="scan_rear" to="/base_laser_rear/scan"/>
-	</node>
-
-	<!-- start footprint observer node -->
-	<node pkg="cob_footprint_observer" type="footprint_observer" name="footprint_observer" output="screen">
-		<!-- load parameter file -->
-		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/footprint_observer_params.yaml" command="load" />
-	</node>
-
-	<!-- start collision velocity filter node -->
+	<!-- start collision velocity filter node-->
 	<node pkg="cob_collision_velocity_filter" type="collision_velocity_filter" name="collision_velocity_filter" output="screen">
 		<!-- remap incoming variables -->
-		<remap from="~obstacles" to="/local_costmap_node/costmap/obstacles" />
-		<remap from="~teleop_twist" to="/base/collision_velocity_filter/command" />
+		<remap from="command_in" to="/base/collision_velocity_filter/command" />
 		<!-- remap outgoing variables -->
-		<remap from="~command" to="/base/twist_mux/command_safe" />
-		<remap from="~relevant_obstacles" to="/base/collision_velocity_filter/relevant_obstacles" />
+		<remap from="command" to="/base/twist_mux/command_safe" />
+		<remap from="relevant_obstacles" to="/base/collision_velocity_filter/relevant_obstacles" />
+		<!-- setup costmap -->
+		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/local_costmap_params.yaml" command="load" ns="anti_collision_costmap" />
+		<remap from="scan_front" to="/base_laser_front/scan"/>
+		<remap from="scan_rear" to="/base_laser_rear/scan"/>
 		<!-- load parameter file -->
 		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/collision_velocity_filter_params.yaml" command="load" />
 	</node>
