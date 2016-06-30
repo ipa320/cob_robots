@@ -194,9 +194,9 @@
 			<arg name="start_manager" value="false"/>
 		</include>
 
-		<!--include file="$(find cob_bringup)/drivers/softkinetic.launch" >
+		<include file="$(find cob_bringup)/drivers/softkinetic.launch" >
 			<arg name="name" value="torso_cam3d_down"/>
-		</include-->
+		</include>
 	</group>
 
 	<group>
