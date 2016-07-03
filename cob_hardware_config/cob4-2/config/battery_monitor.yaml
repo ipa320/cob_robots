@@ -2,7 +2,7 @@ threshold_warning: 20 # % of battery level
 threshold_error: 10 # % of battery level
 threshold_critical: 5 # % of battery level
 
-threshold_voltage_warning: 43 # voltage of battery level
+threshold_voltage_warn: 43 # voltage of battery level
 threshold_voltage_error: 41.0 # voltage of battery level
 threshold_voltage_critical: 40 # voltage of battery level
 threshold_voltage_mid: 48 # voltage of battery level
