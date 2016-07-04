@@ -8,7 +8,7 @@ threshold_voltage_critical: 40 # voltage of battery level
 threshold_voltage_mid: 48 # voltage of battery level
 threshold_voltage_full: 52 # voltage of battery level
 
-steady_current: 7  # amperes while no axis is moving
+steady_current: 10  # amperes while no axis is moving
 
 enable_light: false
 num_leds: 58
