@@ -169,6 +169,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="camera_name" value="torso_cam3d_right"/>
 			<arg name="nodelet_manager" value="torso_cam3d_right_nodelet_manager"/>
+			<arg name="start_manager" value="false"/>
 		</include>
 	</group>
 
@@ -190,6 +191,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="camera_name" value="torso_cam3d_left"/>
 			<arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
+			<arg name="start_manager" value="false"/>
 		</include>
 
 		<!--include file="$(find cob_bringup)/drivers/softkinetic.launch" >
