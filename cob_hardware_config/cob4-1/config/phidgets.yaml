@@ -9,3 +9,6 @@ boards:
       voltage:
         type: analog
         index: 0
+      current:
+        type: analog
+        index: 1
