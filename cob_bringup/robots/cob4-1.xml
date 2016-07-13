@@ -231,7 +231,7 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
- 		<include file="$(find cob_bringup)/drivers/usb_camera_node.launch" />
+		<include file="$(find cob_bringup)/drivers/usb_camera_node.launch" />
 
 		<include file="$(find cob_bringup)/drivers/image_flip.launch">
 			<arg name="robot" value="$(arg robot)"/>
