@@ -231,6 +231,14 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
+ 		<include file="$(find cob_bringup)/drivers/usb_camera_node.launch" />
+
+		<include file="$(find cob_bringup)/drivers/image_flip.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
+			<arg name="camera_name" value="head_cam" />
+		</include>
+
 		<!--include file="$(find cob_bringup)/drivers/mimic.launch" /--> <!-- mimic cannot be executed on the current head-pc -->
 	</group>
 
