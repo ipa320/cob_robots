@@ -2,3 +2,7 @@
     uri: 'https://github.com/ipa320/cob_driver.git'
     local-name: cob_driver
     version: indigo_dev
+- git:
+    uri: 'https://github.com/ipa320/cob_manipulation.git'
+    local-name: cob_manipulation
+    version: indigo_dev
