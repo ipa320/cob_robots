@@ -194,10 +194,6 @@
             <arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
             <arg name="start_manager" value="false"/>
         </include>
-
-        <!--include file="$(find cob_bringup)/drivers/softkinetic.launch" >
-            <arg name="name" value="torso_cam3d_down"/>
-        </include-->
     </group>
 
     <group>
@@ -231,9 +227,6 @@
         <include file="$(find cob_bringup)/drivers/sound.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
-
-        <!--include file="$(find cob_bringup)/drivers/mimic.launch" /-->
-        <!-- mimic cannot be executed on the current head-pc -->
     </group>
 
     <machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
