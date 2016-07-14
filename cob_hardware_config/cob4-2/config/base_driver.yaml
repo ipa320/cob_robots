@@ -28,7 +28,10 @@ drive_wheel: &drive_wheel
   pos_to_device: "rint(pos * 4096 * 21 * 1 / (2 * pi))" # rev * gear * belt / (2 * pi)
   vel_to_device: "rint(vel * 4096 * 21 * 1 / (2 * pi))" # rev * gear * belt / (2 * pi)
   pos_from_device: "obj6064 * 2 * pi / ( 4096 * 21 * 1)" # 2 * pi / (rev * gear * belt)
-  vel_from_device: "obj606c * 2 * pi / ( 4096 * 21 * 1)" # 2 * pi / (rev * gear * belt)
+  vel_from_device: "p1 != p1 ? 0 : ((obj6064-p1) * 2 * pi / ( 4096 * 21 * 1)) / (0.02*2), p1=p0, p0 = obj6064"
+
+
+
   motor_layer:
    homing_event: 0 # -> digin
    homing_speed: 0

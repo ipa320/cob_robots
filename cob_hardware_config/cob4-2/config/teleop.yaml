@@ -34,6 +34,7 @@ torso_sss_default_target_button: 1
 sensorring_sss_default_target_button: 3
 arm_right_sss_default_target_button: 2
 arm_left_sss_default_target_button: 0
+head_sss_default_target_button: 3
 
 #mode3: Velocity group controller
 torso_joint1_button: 0
@@ -46,6 +47,7 @@ arm_left_joint1_button: 0
 arm_left_joint2_button: 1
 arm_left_joint3_button: 2
 arm_left_joint4_button: 3
+head_joint1_button: 2
 
 right_indicator_button: 7
 left_indicator_button: 6
@@ -56,10 +58,12 @@ right_left_button: 4
 torso_twist_button: 1
 arm_right_twist_button: 2
 arm_left_twist_button: 0
+head_twist_button: 3
 
 components: {
   base: {
     twist_topic_name: '/base/twist_mux/command_teleop_joy',
+    twist_safety_topic_name: '/base/collision_velocity_filter/command',
     twist_max_velocity: [0.3, 0.2, 0.3],
     twist_max_acc: [0.5, 0.5, 0.7]
   },
@@ -68,6 +72,13 @@ components: {
     velocity_topic_name: "/torso/joint_group_velocity_controller/command",
     joint_velocity: [0.05, 0.05],
     twist_topic_name: '/torso/twist_controller/command_twist',
+    twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
+  },
+  head: {
+    sss_default_target: "front",
+    velocity_topic_name: "/head/joint_group_velocity_controller/command",
+    joint_velocity: [0.05, 0.05, 0.05],
+    twist_topic_name: '/head/twist_controller/command_twist',
     twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
   },
   sensorring: {

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<arg name="load_robot_description" default="false"/>
+	<arg name="pkg_moveit_config" default="$(find cob_moveit_config)"/>
+
+	<arg name="use_sensors" default="true"/>
+	<arg name="node_name" value="obstacle_distance_moveit"/>
+	
+	<!-- Load SRDF -->
+	<include file="$(arg pkg_moveit_config)/launch/planning_context.xml">
+		<arg name="load_robot_description" value="$(arg load_robot_description)" />
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="config_path" value="$(arg pkg_moveit_config)/$(arg robot)/config" />
+	</include>
+
+	<!-- Load Sensor Input Information -->
+	<include ns="$(arg node_name)" file="$(find cob_moveit_config)/launch/sensor_manager.xml">
+		<arg name="config_path" value="$(arg pkg_moveit_config)"/>
+		<arg name="use_sensors" value="$(arg use_sensors)"/>
+	</include>
+
+	<node pkg="cob_obstacle_distance_moveit" type="obstacle_distance_node" name="$(arg node_name)" output="screen">
+		<remap from="/obstacle_distances" to="/obstacle_distances"/>
+	</node>
+
+</launch>

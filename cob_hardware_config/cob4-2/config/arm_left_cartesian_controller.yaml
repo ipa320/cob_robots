@@ -6,6 +6,7 @@ root_frame: odom_combined
 # twist controller parameters
 twist_controller:
   controller_interface: 0    #Velocity 0, Position 1, Trajectory 2, JointStates 3
+  integrator_smoothing: 0.2
 
   # damping parameters
   numerical_filtering: false
@@ -46,27 +47,30 @@ twist_controller:
 
   # kinematic extensions
   kinematic_extension: 0    #OFF 0, BaseCompensation 1, BaseActive 2
-  extension_ratio: 0.05
-  max_vel_lin_base: 0.5
-  max_vel_rot_base: 0.5
+  lookat_axis_type: 2   #X_POSITIVE 0, Y_POSITIVE 1, Z_POSITIVE 2, X_NEGATIVE 3, Y_NEGATIVE 4, Z_NEGATIVE 5
+  lookat_offset: {translation: {x: 0.0, y: 0.0, z: 0.0}, rotation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}
+  extension_ratio: 0.02
+  max_vel_lin_base: 0.1
+  max_vel_rot_base: 0.1
 
   # the following links of the chain are considered for collision avoidance
   collision_check_links: [arm_left_3_link, arm_left_4_link, arm_left_5_link, arm_left_6_link, arm_left_7_link]
 
 # frame_tracker + interactive_marker
 frame_tracker:
-  update_rate: 50.0
+  update_rate: 100.0
   target_frame: arm_left_7_target
   marker_scale: 0.3
   movable_trans: true
   movable_rot: true
-  pid_trans_x: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_y: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_trans_z: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_x: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_y: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
-  pid_rot_z: {p: 2.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_x: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_y: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_z: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_x: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_y: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_rot_z: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   # abortion criteria - cfg
+  enable_abortion_checking: false
   cart_min_dist_threshold_lin: 0.4
   cart_min_dist_threshold_rot: 0.4
   twist_dead_threshold_lin: 0.05

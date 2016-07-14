@@ -73,7 +73,7 @@ def torso_front_cb(req):
     handle_arm_right.wait()
     if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
         sss.move_base_rel("base",[0,0,1.57],False)
-        sss.move("torso","front",True)
+        sss.move("torso","front_down_full",True)
     else:
         return TriggerResponse(False, "Could not move arms.")
 
@@ -101,7 +101,7 @@ def pick_cb(req):
     handle_arm_left.wait()
     handle_arm_right.wait()
     if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move("torso","front",False)
+        sss.move("torso","front_down_full",False)
         sss.move_base_rel("base",[0,0,1.57],False)
         rospy.loginfo("------------------1 arm right movement")
         handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
@@ -125,7 +125,7 @@ def pick_cb(req):
 
         handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]],True)
         #sss.sleep(1)
-        sss.move("torso","front",False)
+        sss.move("torso","front_down_full",False)
         handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
         sss.move_base_rel("base",[0,0,-0.3],False)
         sss.sleep(2)

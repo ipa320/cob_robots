@@ -7,4 +7,7 @@
     <!-- send cob urdf to param server -->
     <param name="robot_description" command="$(find xacro)/xacro.py '$(arg pkg_hardware_config)/$(arg robot)/urdf/$(arg robot).urdf.xacro'" />
 
+    <!-- The semantic description that corresponds to the URDF -->
+    <param name="robot_description_semantic" textfile="$(arg pkg_hardware_config)/$(arg robot)/srdf/$(arg robot).srdf" />
+
 </launch>
