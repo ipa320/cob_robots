@@ -227,13 +227,13 @@
         <include file="$(find cob_bringup)/drivers/sound.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
-		<include file="$(find cob_bringup)/drivers/usb_camera_node.launch" />
 
-		<include file="$(find cob_bringup)/drivers/image_flip.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
-			<arg name="camera_name" value="head_cam" />
-		</include>
+        <include file="$(find cob_bringup)/drivers/usb_camera_node.launch" />
+
+        <include file="$(find cob_bringup)/drivers/image_flip.launch">
+            <arg name="robot" value="$(arg robot)"/>
+            <arg name="camera_name" value="head_cam"/>
+        </include>
     </group>
 
     <machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
