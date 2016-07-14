@@ -14,7 +14,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
 
   <!-- torso -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso_2dof.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso_2dof_realsense.urdf.xacro" />
 
   <!-- head -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
