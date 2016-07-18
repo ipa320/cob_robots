@@ -228,11 +228,15 @@
             <arg name="robot" value="$(arg robot)"/>
         </include>
 
-        <include file="$(find cob_bringup)/drivers/usb_camera_node.launch"/>
+        <include file="$(find cob_bringup)/drivers/usb_camera_node.launch">
+            <arg name="camera_name" value="head_cam"/>
+        </include>
 
         <include file="$(find cob_bringup)/drivers/image_flip.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="camera_name" value="head_cam"/>
+            <arg name="colorimage_in" value="/head_cam/image_raw"/>
+            <arg name="colorimage_out" value="/head_cam_upright/image_raw"/>
         </include>
     </group>
 
