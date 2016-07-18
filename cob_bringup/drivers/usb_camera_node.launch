@@ -13,6 +13,6 @@
     <param name="framerate" value="20"/>
     <param name="camera_name" value="$(arg camera_name)"/>
     
-    <remap from="image_raw" to="rgb/image_raw"/>
+    <remap from="~image_raw" to="$(arg camera_name)/rgb/image_raw"/>
   </node>
 </launch>
