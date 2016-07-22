@@ -7,9 +7,9 @@ speed_lim_vx: 1.2
 speed_lim_vy: 1.0
 speed_lim_w: 1.2
 
-accel_lim_vx: 1.2
-accel_lim_vy: 1.2
-accel_lim_w: 1.2
+accel_lim_vx: 0.6
+accel_lim_vy: 0.6
+accel_lim_w: 0.6
 
 # Optional parameters
 frequency: 50.0
