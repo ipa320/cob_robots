@@ -127,7 +127,7 @@
             <arg name="debug" value="false"/>
         </include-->
 
-        <include file="$(find cob_bringup)/drivers/canopen_402.launch">
+        <!--include file="$(find cob_bringup)/drivers/canopen_402.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="sensorring"/>
             <arg name="can_device" value="can1"/>
@@ -135,9 +135,9 @@
         <include file="$(find cob_bringup)/controllers/generic_controller.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="sensorring"/>
-        </include>
+        </include-->
 
-        <include file="$(find cob_bringup)/drivers/canopen_402.launch">
+        <!--include file="$(find cob_bringup)/drivers/canopen_402.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="head"/>
             <arg name="can_device" value="can1"/>
@@ -145,7 +145,7 @@
         <include file="$(find cob_bringup)/controllers/generic_controller.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="head"/>
-        </include>
+        </include-->
 
         <include file="$(find cob_bringup)/drivers/light.launch">
             <arg name="robot" value="$(arg robot)"/>
