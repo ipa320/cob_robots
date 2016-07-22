@@ -4,8 +4,8 @@
 	<!-- send ROBOT parameters to parameter server -->
 	<rosparam command="load" ns="/script_server/base" file="$(find cob_default_robot_config)/cob4-1/base_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/torso" file="$(find cob_default_robot_config)/cob4-1/torso_joint_configurations.yaml"/>
-	<rosparam command="load" ns="/script_server/head" file="$(find cob_default_robot_config)/cob4-1/head_joint_configurations.yaml"/>
-	<rosparam command="load" ns="/script_server/sensorring" file="$(find cob_default_robot_config)/cob4-1/sensorring_joint_configurations.yaml"/>
+	<!--rosparam command="load" ns="/script_server/head" file="$(find cob_default_robot_config)/cob4-1/head_joint_configurations.yaml"/-->
+	<!--rosparam command="load" ns="/script_server/sensorring" file="$(find cob_default_robot_config)/cob4-1/sensorring_joint_configurations.yaml"/-->
 	<rosparam command="load" ns="/script_server/light_base" file="$(find cob_default_robot_config)/cob4-1/light_base_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/light_torso" file="$(find cob_default_robot_config)/cob4-1/light_torso_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/behavior" file="$(find cob_default_robot_config)/cob4-1/behavior.yaml"/>
