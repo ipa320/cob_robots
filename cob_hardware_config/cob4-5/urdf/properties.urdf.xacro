@@ -58,6 +58,22 @@
 	<property name="sensorring_pitch" value="${def_sensorring_pitch+offset_sensorring_pitch}"/>
 	<property name="sensorring_yaw" value="${def_sensorring_yaw+offset_sensorring_yaw}"/>
 
+	<!-- arm mount positions | relative to torso_3_link -->
+	<property name="arm_right_x" value="${def_arm_right_x+offset_arm_right_x}"/>
+	<property name="arm_right_y" value="${def_arm_right_y+offset_arm_right_y}"/>
+	<property name="arm_right_z" value="${def_arm_right_z+offset_arm_right_z}"/>
+	<property name="arm_right_roll" value="${def_arm_right_roll+offset_arm_right_roll}"/>
+	<property name="arm_right_pitch" value="${def_arm_right_pitch+offset_arm_right_pitch}"/>
+	<property name="arm_right_yaw" value="${def_arm_right_yaw+offset_arm_right_yaw}"/>
+
+	<!-- arm mount positions | relative to torso_3_link -->
+	<property name="arm_left_x" value="${def_arm_left_x+offset_arm_left_x}"/>
+	<property name="arm_left_y" value="${def_arm_left_y+offset_arm_left_y}"/>
+	<property name="arm_left_z" value="${def_arm_left_z+offset_arm_left_z}"/>
+	<property name="arm_left_roll" value="${def_arm_left_roll+offset_arm_left_roll}"/>
+	<property name="arm_left_pitch" value="${def_arm_left_pitch+offset_arm_left_pitch}"/>
+	<property name="arm_left_yaw" value="${def_arm_left_yaw+offset_arm_left_yaw}"/>
+
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
@@ -88,11 +104,18 @@
 	<property name="torso_cam3d_down_yaw" value="${def_torso_cam3d_down_yaw+offset_torso_cam3d_down_yaw}"/>
 	
 	<!-- cam3d | handeye calibration | relative to sensorring_link -->
-	<property name="sensorring_cam3d_x" value="${def_sensorring_cam3d_x+offset_sensorring_cam3d_x}"/>
-	<property name="sensorring_cam3d_y" value="${def_sensorring_cam3d_y+offset_sensorring_cam3d_y}"/>
-	<property name="sensorring_cam3d_z" value="${def_sensorring_cam3d_z+offset_sensorring_cam3d_z}"/>
-	<property name="sensorring_cam3d_roll" value="${def_sensorring_cam3d_roll+offset_sensorring_cam3d_roll}"/>
-	<property name="sensorring_cam3d_pitch" value="${def_sensorring_cam3d_pitch+offset_sensorring_cam3d_pitch}"/>
-	<property name="sensorring_cam3d_yaw" value="${def_sensorring_cam3d_yaw+offset_sensorring_cam3d_yaw}"/>
+	<property name="sensorring_cam3d_front_x" value="${def_sensorring_cam3d_front_x+offset_sensorring_cam3d_front_x}"/>
+	<property name="sensorring_cam3d_front_y" value="${def_sensorring_cam3d_front_y+offset_sensorring_cam3d_front_y}"/>
+	<property name="sensorring_cam3d_front_z" value="${def_sensorring_cam3d_front_z+offset_sensorring_cam3d_front_z}"/>
+	<property name="sensorring_cam3d_front_roll" value="${def_sensorring_cam3d_front_roll+offset_sensorring_cam3d_front_roll}"/>
+	<property name="sensorring_cam3d_front_pitch" value="${def_sensorring_cam3d_front_pitch+offset_sensorring_cam3d_front_pitch}"/>
+	<property name="sensorring_cam3d_front_yaw" value="${def_sensorring_cam3d_front_yaw+offset_sensorring_cam3d_front_yaw}"/>
 
+	<!-- cam3d | handeye calibration | relative to sensorring_link -->
+	<property name="sensorring_cam3d_back_x" value="${def_sensorring_cam3d_back_x+offset_sensorring_cam3d_back_x}"/>
+	<property name="sensorring_cam3d_back_y" value="${def_sensorring_cam3d_back_y+offset_sensorring_cam3d_back_y}"/>
+	<property name="sensorring_cam3d_back_z" value="${def_sensorring_cam3d_back_z+offset_sensorring_cam3d_back_z}"/>
+	<property name="sensorring_cam3d_back_roll" value="${def_sensorring_cam3d_back_roll+offset_sensorring_cam3d_back_roll}"/>
+	<property name="sensorring_cam3d_back_pitch" value="${def_sensorring_cam3d_back_pitch+offset_sensorring_cam3d_back_pitch}"/>
+	<property name="sensorring_cam3d_back_yaw" value="${def_sensorring_cam3d_back_yaw+offset_sensorring_cam3d_back_yaw}"/>
 </robot>

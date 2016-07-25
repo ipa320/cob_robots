@@ -20,26 +20,48 @@ group11:
     [back,move,back],
     [left,move,left],
     [right,move,right]]
-group16:
-  group_name: torso
-  component_name: torso
+group12:
+  group_name: arm_left
+  component_name: arm_left
   buttons: [[stop,stop],
     [init,init],
     [recover,recover],
     [home,move,home],
-    [front,move,front],
-    [front_down,move,front_down],
-    [back,move,back],
-    [back_down,move,back_down],
-    [left,move,left],
-    [right,move,right],
-    [nod,move,nod],
-    [shake,move,shake]]
-group17:
-  group_name: torso
-  component_name: behavior
-  buttons: [[torso_front,trigger,torso_front],
-    [torso_front_home,trigger,torso_front_home]]
+    [folded,move,folded],
+    [side, move, side],
+    [ship, move, ship],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
+group13:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [ship, move, ship],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
+group14:
+  group_name: gripper_left
+  component_name: gripper_left
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [open,move,open],
+    [close, move, close]]
+group15:
+  group_name: gripper_right
+  component_name: gripper_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [open,move,open],
+    [close, move, close]]
 group18:
   group_name: head
   component_name: head

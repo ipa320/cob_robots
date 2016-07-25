@@ -81,14 +81,6 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
-      torso:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Torso
-        contains: 'torso/driver'
-      sensorring:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Sensorring
-        contains: 'sensorring/driver'
       base:
         type: diagnostic_aggregator/AnalyzerGroup
         path: Base
@@ -101,7 +93,26 @@ analyzers:
             type: diagnostic_aggregator/GenericAnalyzer
             path: twist_mux
             contains: 'twist_mux'
-
+      arm_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Left
+        contains: 'arm_left/driver'
+      arm_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Right
+        contains: 'arm_right/driver'
+      hand_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Hand Left
+        contains: 'hand_left/driver'
+      hand_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Hand Right
+        contains: 'hand_right/driver'
+      sensorring:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sensorring
+        contains: 'sensorring/driver'
   safety:
     type: diagnostic_aggregator/GenericAnalyzer
     path: Safety
