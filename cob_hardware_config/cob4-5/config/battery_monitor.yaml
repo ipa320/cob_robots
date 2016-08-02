@@ -6,5 +6,5 @@ enable_light: false
 num_leds: 58
 light_components: ['light_torso']
 
-enable_sound: true
+enable_sound: false
 sound_components: ['sound']
