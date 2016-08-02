@@ -74,6 +74,22 @@
 	<property name="arm_left_pitch" value="${def_arm_left_pitch+offset_arm_left_pitch}"/>
 	<property name="arm_left_yaw" value="${def_arm_left_yaw+offset_arm_left_yaw}"/>
 
+	<!-- gripper mount positions | relative to arm_7_link -->
+	<property name="gripper_right_x" value="${def_gripper_right_x+offset_gripper_right_x}"/>
+	<property name="gripper_right_y" value="${def_gripper_right_y+offset_gripper_right_y}"/>
+	<property name="gripper_right_z" value="${def_gripper_right_z+offset_gripper_right_z}"/>
+	<property name="gripper_right_roll" value="${def_gripper_right_roll+offset_gripper_right_roll}"/>
+	<property name="gripper_right_pitch" value="${def_gripper_right_pitch+offset_gripper_right_pitch}"/>
+	<property name="gripper_right_yaw" value="${def_gripper_right_yaw+offset_gripper_right_yaw}"/>
+
+	<!-- gripper mount positions | relative to arm_7_link -->
+	<property name="gripper_left_x" value="${def_gripper_left_x+offset_gripper_left_x}"/>
+	<property name="gripper_left_y" value="${def_gripper_left_y+offset_gripper_left_y}"/>
+	<property name="gripper_left_z" value="${def_gripper_left_z+offset_gripper_left_z}"/>
+	<property name="gripper_left_roll" value="${def_gripper_left_roll+offset_gripper_left_roll}"/>
+	<property name="gripper_left_pitch" value="${def_gripper_left_pitch+offset_gripper_left_pitch}"/>
+	<property name="gripper_left_yaw" value="${def_gripper_left_yaw+offset_gripper_left_yaw}"/>
+
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
