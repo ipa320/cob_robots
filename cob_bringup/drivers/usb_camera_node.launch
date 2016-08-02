@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="camera_name" default="usb_cam"/>
+  
+  <node name="$(arg camera_name)" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="2048" />
+    <param name="image_height" value="1536" />
+
+    <param name="pixel_format" value="mjpeg" />
+    <param name="camera_frame_id" value="$(arg camera_name)_link" />
+    <param name="framerate" value="5"/>
+    <param name="camera_name" value="$(arg camera_name)"/>
+  </node>
+</launch>
