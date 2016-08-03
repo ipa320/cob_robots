@@ -1,2 +1,0 @@
-frequency: 30                       #nodes update frequency in hz
-update_mode: polling                #switch between poll and event driven processing [polling, event]
