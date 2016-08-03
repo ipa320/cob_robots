@@ -67,13 +67,29 @@ from std_msgs.msg import ColorRGBA
 from std_srvs.srv import Trigger, TriggerResponse
 
 def torso_front_cb(req):
-    sss.move_base_rel("base",[0,0,1.57],False)
-    sss.move("torso","front",True)
+    handle_arm_left = sss.move("arm_left","side", False)
+    handle_arm_right = sss.move("arm_right","side", False)
+    handle_arm_left.wait()
+    handle_arm_right.wait()
+    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
+        sss.move_base_rel("base",[0,0,1.57],False)
+        sss.move("torso","front_down_full",True)
+    else:
+        return TriggerResponse(False, "Could not move arms.")
+
     return TriggerResponse(True, "")
     
 def front_to_home_cb(req):
-    sss.move_base_rel("base",[0,0,-1.57],False)
-    sss.move("torso","home",False)
+    handle_arm_left = sss.move("arm_left","side", False)
+    handle_arm_right = sss.move("arm_right","side", False)
+    handle_arm_left.wait()
+    handle_arm_right.wait()
+    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
+        sss.move_base_rel("base",[0,0,-1.57],False)
+        sss.move("torso","home",False)
+    else:
+        return TriggerResponse(False, "Could not move arms.")
+
     return TriggerResponse(True, "")
 
 def setLightCyan_cb(req):
@@ -125,7 +141,7 @@ def setLightCyanBreath_cb(req):
         cyan_color.g = 1.0
         cyan_color.b = 0.5
         cyan_color.a = 0.4
-        light_mode.color = cyan_color
+        light_mode.colors.append(cyan_color)
         light_mode.mode = 3
         light_mode.frequency = 0.25
         resp = set_light_torso(light_mode)
