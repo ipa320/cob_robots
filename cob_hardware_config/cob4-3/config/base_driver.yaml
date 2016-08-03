@@ -19,11 +19,13 @@ defaults:
     "1803sub2" : "1" # enable TPDO3 on sync
     "1A03sub0" : "1" # one entry for TPDO3
     "1A03sub1" : "0x60780010" # actual current 
+  eff_from_device: "obj6078/1000.0*9.76" #CL[1]=9.76 
 
 drive_wheel: &drive_wheel
   dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
     "6098": "35" # homing method
   vel_from_device: "p1 != p1 || obj2041 == t1 ? 0 : deg2rad(1000*norm(obj6064-p1,-36000000,36000000)/norm(obj2041-t1,0,2^32)), p1=p0, p0 = obj6064, t1 = t0, t0 = obj2041"
+  eff_from_device: "obj6078/1000.0*14.14" #CL[1]=14.14
 
 nodes:
   ##Wheel 1
