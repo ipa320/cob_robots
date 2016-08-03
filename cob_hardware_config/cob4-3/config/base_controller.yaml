@@ -28,6 +28,7 @@ twist_controller:
       drive: fl_caster_r_wheel_joint
     - steer: b_caster_rotation_joint
       drive: b_caster_r_wheel_joint
+      steer_neutral_position: -180.0
     - steer: fr_caster_rotation_joint
       drive: fr_caster_r_wheel_joint
 
