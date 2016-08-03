@@ -93,7 +93,7 @@
 	<!-- this feature is no longer supported as urdfdom does not parse the according 'calibration_rising' tag -->
 
 	<!-- cam3d left | handeye calibration | relative to torso_3_link -->
-	<property name="def_torso_cam3d_left_x" value="0.12839"/>
+	<property name="def_torso_cam3d_left_x" value="0.125"/>
 	<property name="def_torso_cam3d_left_y" value="0.01802"/>
 	<property name="def_torso_cam3d_left_z" value="0.24214"/>
 	<property name="def_torso_cam3d_left_roll" value="0"/>
