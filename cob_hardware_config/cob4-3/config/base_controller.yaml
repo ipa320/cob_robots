@@ -12,6 +12,7 @@ twist_controller:
   required_drive_mode: 3
   #max_rot_velocity: 1.0
   #max_trans_velocity: 1.0
+  pub_divider: 1
   timeout: 0.5
 
   defaults: # default settings for all wheels, can per overwritten per wheel
@@ -27,6 +28,7 @@ twist_controller:
       drive: fl_caster_r_wheel_joint
     - steer: b_caster_rotation_joint
       drive: b_caster_r_wheel_joint
+      steer_neutral_position: -180.0
     - steer: fr_caster_rotation_joint
       drive: fr_caster_r_wheel_joint
 
