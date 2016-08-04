@@ -66,32 +66,6 @@ sss = simple_script_server()
 from std_msgs.msg import ColorRGBA
 from std_srvs.srv import Trigger, TriggerResponse
 
-def torso_front_cb(req):
-    handle_arm_left = sss.move("arm_left","side", False)
-    handle_arm_right = sss.move("arm_right","side", False)
-    handle_arm_left.wait()
-    handle_arm_right.wait()
-    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move_base_rel("base",[0,0,1.57],False)
-        sss.move("torso","front_down_full",True)
-    else:
-        return TriggerResponse(False, "Could not move arms.")
-
-    return TriggerResponse(True, "")
-    
-def front_to_home_cb(req):
-    handle_arm_left = sss.move("arm_left","side", False)
-    handle_arm_right = sss.move("arm_right","side", False)
-    handle_arm_left.wait()
-    handle_arm_right.wait()
-    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move_base_rel("base",[0,0,-1.57],False)
-        sss.move("torso","home",False)
-    else:
-        return TriggerResponse(False, "Could not move arms.")
-
-    return TriggerResponse(True, "")
-
 def setLightCyan_cb(req):
     sss.set_light("light_base","cyan")
     sss.set_light("light_torso","cyan")
@@ -180,31 +154,12 @@ def setMimicFallingAsleep_cb(req):
     sss.set_mimic("mimic",["falling_asleep",0,1])
     return TriggerResponse(True, "")
 
-def soundR2D2_cb(req):
-    sss.play("R2D2")
-    return TriggerResponse(True, "")
-
-def soundNoConnection_cb(req):
-    sss.set_mimic("mimic",["confused",0,1])
-    sss.play("confused")
-    return TriggerResponse(True, "")
-
-def soundNegative_cb(req):
-    sss.play("negative")
-    return TriggerResponse(True, "")
-
-def soundStarting_cb(req):
-    sss.play("starting")
-    return TriggerResponse(True, "")
-
 def soundHello_cb(req):
     sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
     return TriggerResponse(True, "")
 
 def trigger_srvs():
     rospy.init_node('trigger_srvs')
-    s = rospy.Service('/behavior/torso_front', Trigger, torso_front_cb)
-    s = rospy.Service('/behavior/torso_front_home', Trigger, front_to_home_cb)
     s = rospy.Service('/behavior/setLightCyan', Trigger, setLightCyan_cb)
     s = rospy.Service('/behavior/setLightRed', Trigger, setLightRed_cb)
     s = rospy.Service('/behavior/setLightGreen', Trigger, setLightGreen_cb)
@@ -217,10 +172,6 @@ def trigger_srvs():
     s = rospy.Service('/behavior/setMimicConfused', Trigger, setMimicConfused_cb)
     s = rospy.Service('/behavior/setMimicAngry', Trigger, setMimicAngry_cb)
     s = rospy.Service('/behavior/setMimicFallingAsleep', Trigger, setMimicFallingAsleep_cb)
-    s = rospy.Service('/behavior/soundR2D2', Trigger, soundR2D2_cb)
-    s = rospy.Service('/behavior/soundNoConnection',Trigger,soundNoConnection_cb)
-    s = rospy.Service('/behavior/soundNegative',Trigger,soundNegative_cb)
-    s = rospy.Service('/behavior/soundStarting',Trigger,soundStarting_cb)
     s = rospy.Service('/behavior/soundHello',Trigger,soundHello_cb)
 
     rospy.spin()
