@@ -39,15 +39,15 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/battery_voltage.launch" >
+		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
+		<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
+            <arg name="robot" value="$(arg robot)"/>
+        </include>
 
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
-		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
