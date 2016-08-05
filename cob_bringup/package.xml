@@ -32,6 +32,7 @@
   <exec_depend>cob_default_env_config</exec_depend>
   <exec_depend>cob_default_robot_behavior</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
+  <exec_depend>cob_docker_control</exec_depend>
   <exec_depend>cob_footprint_observer</exec_depend>
   <exec_depend>cob_frame_tracker</exec_depend>
   <exec_depend>cob_hand_bridge</exec_depend>
