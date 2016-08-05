@@ -11,6 +11,7 @@
     <include file="$(find cob_hand_bridge)/launch/serial_bridge.launch" ns="internal">
         <arg name="port" value="$(arg port)"/>
         <arg name="baud" value="$(arg baud)"/>
+        <arg name="check" value="true"/>
     </include>
 
     <node pkg="cob_hand_bridge" type="cob_hand_bridge_node" name="cob_hand_bridge">
