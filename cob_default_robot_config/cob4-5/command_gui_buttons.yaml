@@ -29,7 +29,6 @@ group12:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
-    [ship, move, ship],
     [wave_demo, move, wave_demo],
     [hello, move, hello]]
 group13:
@@ -41,7 +40,6 @@ group13:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
-    [ship, move, ship],
     [wave_demo, move, wave_demo],
     [hello, move, hello]]
 group14:
