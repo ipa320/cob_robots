@@ -1,12 +1,21 @@
 <?xml version="1.0"?>
 <launch>
+  <arg name="port" default="/dev/rfcomm0" />
+  <arg name="baud" default="57600" />
+  <arg name="component_name" default="gripper" />
+  <remap from="/$(arg component_name)/internal/recover" to="/$(arg component_name)/driver/recover"/>
+  <remap from="/$(arg component_name)/internal/halt" to="/$(arg component_name)/driver/halt"/>
+  
+  <group ns="/$(arg component_name)">
+    
+    <include file="$(find cob_hand_bridge)/launch/serial_bridge.launch" ns="internal">
+        <arg name="port" value="$(arg port)"/>
+        <arg name="baud" value="$(arg baud)"/>
+        <arg name="check" value="true"/>
+    </include>
 
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="component_name"/>
-
-	<node ns="$(arg component_name)" pkg="schunk_sdhx" type="sdhx_node.py" name="$(arg component_name)_node" respawn="true" output="screen" >
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
-	</node>
-
+    <node pkg="cob_hand_bridge" type="cob_hand_bridge_node" name="cob_hand_bridge">
+        <rosparam param="sdhx/joint_names" subst_value="True">[$(arg component_name)_finger_1_joint, $(arg component_name)_finger_2_joint]</rosparam>
+    </node>
+  </group>
 </launch>

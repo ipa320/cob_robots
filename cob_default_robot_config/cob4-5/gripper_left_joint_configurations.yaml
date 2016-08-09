@@ -1,0 +1,10 @@
+joint_names: ["gripper_left_finger_1_joint", "gripper_left_finger_2_joint"]
+action_name: /gripper_left/joint_trajectory_controller/follow_joint_trajectory
+service_ns: /gripper_left/driver
+default_vel: 0.3
+
+# single positions
+home: [[0.6, 0.4]]
+close: [[0.85, -0.1]]
+open: [[-0.85, 1.4]]
+spread: [[-1.0, 0.5]]

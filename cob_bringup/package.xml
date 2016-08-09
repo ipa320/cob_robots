@@ -32,8 +32,10 @@
   <exec_depend>cob_default_env_config</exec_depend>
   <exec_depend>cob_default_robot_behavior</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
+  <exec_depend>cob_docker_control</exec_depend>
   <exec_depend>cob_footprint_observer</exec_depend>
   <exec_depend>cob_frame_tracker</exec_depend>
+  <exec_depend>cob_hand_bridge</exec_depend>
   <exec_depend>cob_hardware_config</exec_depend>
   <exec_depend>cob_head_axis</exec_depend>
   <exec_depend>cob_image_flip</exec_depend>
@@ -78,20 +80,19 @@
   <exec_depend>position_controllers</exec_depend>
   <exec_depend>prace_gripper_driver</exec_depend>
   <exec_depend>prosilica_camera</exec_depend>
+  <exec_depend>realsense_camera</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rostopic</exec_depend>
   <exec_depend>rplidar_ros</exec_depend> <!-- from cob_substitute -->
   <exec_depend>rviz</exec_depend>
   <exec_depend>schunk_powercube_chain</exec_depend>
   <exec_depend>schunk_sdh</exec_depend>
-  <exec_depend>schunk_sdhx</exec_depend>
-  <exec_depend>softkinetic_camera</exec_depend>
+  <exec_depend>sick_3vistort_driver</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>topic_tools</exec_depend>
   <exec_depend>twist_mux</exec_depend>
   <exec_depend>ur_driver</exec_depend>
   <exec_depend>usb_cam</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
-  <!--exec_depend>softkinetic</exec_depend-->
 
 </package>
