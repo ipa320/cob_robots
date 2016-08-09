@@ -30,14 +30,16 @@ set(envlist
   ipa-factory
 )
 
+### TEST ###
 if(CATKIN_ENABLE_TESTING)
   foreach(robot ${robotlist})
-    #foreach(env ${envlist})
+    foreach(env ${envlist})
       message("testing for robot: ${robot} in env: ${env}")
-      #rosbuild_add_roslaunch_check(tools robot:=${robot} robot_env:=${env})
-      #rosbuild_add_roslaunch_check(tools ROBOT=${robot} ROBOT_ENV=${env})
-      roslaunch_add_file_check(robots/${robot}.xml robot_env:=ipa-apartment)
-    #endforeach()
+      roslaunch_add_file_check(tools robot:=${robot} robot_env:=${env})
+      roslaunch_add_file_check(tools ROBOT=${robot} ROBOT_ENV=${env})
+      #roslaunch_add_file_check(robots/${robot}.xml robot_env:=${env})
+      roslaunch_add_file_check(robots/${robot}.xml ROBOT_ENV=${env})
+    endforeach()
   endforeach()
 endif()
 
