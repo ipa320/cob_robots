@@ -2,6 +2,47 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.3 (2015-08-31)
+------------------
+
+0.6.2 (2015-08-29)
+------------------
+* migration to package format 2
+* remove trailing whitespaces
+* sort dependencies
+* Contributors: ipa-fxm
+
+0.6.1 (2015-06-17)
+------------------
+* updates to moveit config for cob4-2
+* update joint limits to cope with cob4-2 arms
+* fix install tag
+* updating joint_limits for cob4-2
+* update moveit_config cob4-2
+* update moveit_config cob3-6
+* Update .setup_assistant
+* moveit_config for cob3-9
+* set planning_time and planning_attempts for better moveit performance
+* update moveit config for cob4-1
+* update moveit config for cob4-2
+* Merge pull request `#48 <https://github.com/ipa320/cob_manipulation/issues/48>`_ from ipa320/indigo_release_candidate
+  Indigo release candidate
+* updating controller namespaces
+* updating self-collision matrix
+* rename controller according to new structure
+* missing dependency
+* adapt controller namespace
+* remove support for cob3-7
+* remove support for cob3-5
+* remove support for cob3-4
+* remove support for cob3-2
+* remove support for cob3-1
+* update moveit_config dependencies
+* tune joint_limits
+* install tags
+* moveit_configs for lwa4d and lwa4p_extended
+* Contributors: Florian Weisshardt, ipa-cob4-2, ipa-fxm
+
 0.6.0 (2014-09-18)
 ------------------
 * Merge branch 'hydro_dev' into hydro_release_candidate

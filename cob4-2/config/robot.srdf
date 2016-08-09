@@ -10,15 +10,15 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="arm_left">
-        <chain base_link="arm_left_base_link" tip_link="arm_left_7_link" />
+        <chain base_link="arm_left_base_link" tip_link="gripper_left_grasp_link" />
     </group>
     <group name="arm_right">
-        <chain base_link="arm_right_base_link" tip_link="arm_right_7_link" />
+        <chain base_link="arm_right_base_link" tip_link="gripper_right_grasp_link" />
     </group>
-    <group name="arm_both">
+    <!--group name="arm_both">
         <group name="arm_left" />
         <group name="arm_right" />
-    </group>
+    </group-->
     <group name="gripper_left">
         <joint name="gripper_left_finger_1_joint" />
         <joint name="gripper_left_finger_2_joint" />
@@ -37,16 +37,16 @@
         <joint name="gripper_right_finger_2_joint" value="-0.9" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="ee_arm_left" parent_link="arm_left_7_link" parent_group="arm_left" group="gripper_left" />
-    <end_effector name="ee_arm_right" parent_link="arm_right_7_link" parent_group="arm_right" group="gripper_right" />
+    <end_effector name="ee_arm_left" parent_link="gripper_left_grasp_link" parent_group="arm_left" group="gripper_left" />
+    <end_effector name="ee_arm_right" parent_link="gripper_right_grasp_link" parent_group="arm_right" group="gripper_right" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_joint" type="planar" parent_frame="odom_combined" child_link="base_footprint" />
 
     <passive_joint name="sensorring_joint"/>
     <passive_joint name="gripper_left_finger_1_joint"/>
     <passive_joint name="gripper_left_finger_2_joint"/>
-    <passive_joint name="gripper_right_finger_1_joint"/>
-    <passive_joint name="gripper_right_finger_2_joint"/>
+    <!--passive_joint name="gripper_right_finger_1_joint"/>
+    <passive_joint name="gripper_right_finger_2_joint"/-->
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="arm_left_1_link" link2="arm_left_2_link" reason="Adjacent" />
     <disable_collisions link1="arm_left_1_link" link2="arm_left_4_link" reason="Never" />
@@ -974,4 +974,8 @@
     <disable_collisions link1="torso_cam3d_left_link" link2="torso_cam3d_right_link" reason="Default" />
     <disable_collisions link1="torso_cam3d_left_link" link2="torso_center_link" reason="Never" />
     <disable_collisions link1="torso_cam3d_right_link" link2="torso_center_link" reason="Never" />
+
+    <!-- additional manual-->
+    <disable_collisions link1="gripper_left_finger_2_link" link2="gripper_left_palm_link" reason="Default" />
+    <disable_collisions link1="gripper_right_finger_2_link" link2="gripper_right_palm_link" reason="Default" />
 </robot>

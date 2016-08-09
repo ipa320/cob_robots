@@ -4,8 +4,8 @@
 	<!-- define arguments -->
 	<arg name="robot" default="$(env ROBOT)" />
 	<arg name="debug" default="false" />
-	
-	# The planning and execution components of MoveIt! configured to 
+
+	# The planning and execution components of MoveIt! configured to
 	# publish the current configuration of the robot (simulated or real)
 	# and the current state of the world as seen by the planner
 	<include file="$(find cob_moveit_config)/launch/move_group.launch">
@@ -13,11 +13,12 @@
 		<arg name="debug" value="$(arg debug)" />
 		<arg name="robot" value="$(arg robot)" />
 	</include>
-	
+
 	# The visualization component of MoveIt!
 	<include file="$(find cob_moveit_config)/launch/rviz.launch">
 		<arg name="robot" value="$(arg robot)" />
 		<arg name="debug" value="$(arg debug)"/>
 		<arg name="config" value="true"/>
 	</include>
+
 </launch>
