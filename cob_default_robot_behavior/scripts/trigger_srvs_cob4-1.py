@@ -68,7 +68,7 @@ from std_srvs.srv import Trigger, TriggerResponse
 
 def torso_front_cb(req):
     sss.move_base_rel("base",[0,0,1.57],False)
-    sss.move("torso","front",True)
+    sss.move("torso","front_down_full",True)
     return TriggerResponse(True, "")
     
 def front_to_home_cb(req):

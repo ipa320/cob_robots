@@ -80,9 +80,9 @@
 	<property name="def_torso_cam3d_down_x" value="0.15908"/>
 	<property name="def_torso_cam3d_down_y" value="0.0"/>
 	<property name="def_torso_cam3d_down_z" value="0.14005"/>
-	<property name="def_torso_cam3d_down_roll" value="2.18166"/> <!--2.18166-->
-	<property name="def_torso_cam3d_down_pitch" value="0.0"/>
-	<property name="def_torso_cam3d_down_yaw" value="1.57079"/> <!--1.57079-->
+	<property name="def_torso_cam3d_down_roll" value="0.0"/>
+	<property name="def_torso_cam3d_down_pitch" value="0.54"/>
+	<property name="def_torso_cam3d_down_yaw" value="0.0"/>
 
 	<!-- cam3d | handeye calibration | relative to sensorring_link -->
 	<property name="def_sensorring_cam3d_x" value="0.096"/>

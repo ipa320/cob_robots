@@ -41,6 +41,6 @@ analyzers:
     path: Sensors
     analyzers:
       battery:
-        type: diagnostic_aggregator/GenericAnalyzer
+        type: diagnostic_aggregator/IgnoreAnalyzer
         path: Battery Status
         contains: 'bms'

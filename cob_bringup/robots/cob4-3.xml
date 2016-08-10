@@ -31,6 +31,10 @@
 		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
+		<include file="$(find cob_omni_drive_controller)/launch/stuck_detector.launch">
+			<arg name="timeout" default="2.0" />
+			<arg name="threshold" default="0.174533" /> 
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
