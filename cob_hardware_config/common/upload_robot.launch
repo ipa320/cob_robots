@@ -4,7 +4,6 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="robot_description" default="robot_description"/>
-	<arg name="config_path" default="$(find cob_hardware_config)/$(arg robot)/config"/>
 	<arg name="planning_context" default="false"/>
 
 	<!-- send cob urdf to param server -->
@@ -17,17 +16,17 @@
 
 		<!-- Load to the parameter server yaml files -->
 		<group ns="robot_description_planning">
-			<rosparam command="load" file="$(arg config_path)/joint_limits.yaml"/>
+			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/joint_limits.yaml"/>
 		</group>
 
 		<!-- Load updated joint limits (override information from URDF) -->
 		<group ns="$(arg robot_description)_planning">
-			<rosparam command="load" file="$(arg config_path)/joint_limits.yaml"/>
+			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/joint_limits.yaml"/>
 		</group>
 
 		<!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
 		<group ns="$(arg robot_description)_kinematics">
-			<rosparam command="load" file="$(arg config_path)/kinematics.yaml"/>
+			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/kinematics.yaml"/>
 		</group>
 	</group>
 
