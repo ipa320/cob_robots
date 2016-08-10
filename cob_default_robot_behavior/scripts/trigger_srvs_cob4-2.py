@@ -191,7 +191,7 @@ def setLightCyanBreath_cb(req):
         cyan_color.g = 1.0
         cyan_color.b = 0.5
         cyan_color.a = 0.4
-        light_mode.color = cyan_color
+        light_mode.colors.append(cyan_color)
         light_mode.mode = 3
         light_mode.frequency = 0.25
         resp = set_light_torso(light_mode)
@@ -234,16 +234,6 @@ def soundR2D2_cb(req):
     sss.play("R2D2")
     return TriggerResponse(True, "")
 
-def showCamera_left_cb(req):
-    sss.move("arm_left",[[-1.7642137145009082, -1.2919974320813223, 1.3, 1.8777473823431394, -0.0, -0.24, -0.0]])
-    sss.move("gripper_left","open")
-    return TriggerResponse(True, "")
-
-def showCamera_right_cb(req):
-    sss.move("arm_right",[[1.7642137145009082, 1.2919974320813223, -1.3, -1.8777473823431394, 0.0, 0.24, 0.0]])
-    sss.move("gripper_right","open")
-    return TriggerResponse(True, "")
-
 def soundNoConnection_cb(req):
     sss.set_mimic("mimic",["confused",0,1])
     sss.play("confused")
@@ -283,8 +273,6 @@ def trigger_srvs():
     s = rospy.Service('/behavior/soundNegative',Trigger,soundNegative_cb)
     s = rospy.Service('/behavior/soundStarting',Trigger,soundStarting_cb)
     s = rospy.Service('/behavior/soundHello',Trigger,soundHello_cb)
-    s = rospy.Service('/gripper_left/driver/showCamera_left',Trigger, showCamera_left_cb)
-    s = rospy.Service('/gripper_right/driver/showCamera_right',Trigger, showCamera_right_cb)
 
     rospy.spin()
 

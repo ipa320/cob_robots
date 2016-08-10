@@ -1,0 +1,10 @@
+stations:
+- frame_id: station_charger
+  reflector_distance: 0.28
+- frame_id: station_travel_box
+  reflector_distance: 0.95
+
+distance_tolerance: 0.1
+intensity_lower_threshold: 200
+intensity_upper_threshold: 10000
+update_rate: 0.25
