@@ -8,4 +8,5 @@ stations:
     compare_value: True
 
 - frame_id: station_travel_box
-  approach_poses: [[-2.20, 0.0, 0.0], [-0.6, 0.0, 0.0], [-0.38, 0.0, 0.0], [-0.312, 0.0, 0.0]] # in frame_id coords
+  approach_poses: [[-2.20, 0.0, 0.0], [-0.6, 0.0, -0.035], [-0.38, 0.0, -0.035], [-0.312, 0.0, -0.035]] # in frame_id coords
+  departure_poses: [[-0.38, 0.0, -0.035], [-0.6, 0.0, -0.035], [-2.20, 0.0, 0.0]] # in frame_id coords
