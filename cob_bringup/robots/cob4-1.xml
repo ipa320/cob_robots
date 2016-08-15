@@ -84,7 +84,9 @@
         <!--include file="$(find cob_bringup)/drivers/bms.launch">
             <arg name="robot" value="$(arg robot)" />
         </include-->
-        <include file="$(find cob_bringup)/drivers/powerstate_phidget.launch"/>
+        <include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
+            <arg name="robot" value="$(arg robot)"/>
+        </include>
         <include file="$(find cob_bringup)/tools/docker_control.launch">
             <arg name="robot" value="$(arg robot)" />
             <arg name="multi_station" default="true"/>
@@ -150,13 +152,6 @@
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="light_torso"/>
         </include>
-        <include file="$(find realsense_camera)/launch/realsense_r200_rgbd.launch">
-             <arg name="camera" value="torso_cam3d_down"/>
-        </include>
-        <include file="$(find cob_bringup)/drivers/image_flip.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="camera_name" value="torso_cam3d_down"/>
-        </include>
     </group>
 
     <group>
@@ -214,6 +209,7 @@
             <arg name="robot" value="$(arg robot)"/>
             <arg name="name" value="sensorring_cam3d"/>
         </include>
+
         <include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="camera_name" value="sensorring_cam3d"/>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<node name="em_state_phidget" pkg="cob_phidget_em_state" type="em_state_phidget.py" output="screen">
+		<remap from="digital_sensors" to="/digital_sensors"/>
+		<remap from="em_stop_state" to="/emergency_stop_state"/>
+	</node>
+
+</launch>
