@@ -71,8 +71,18 @@
 	</include>
 
 	<include file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="torso_cam3d_down"/>
+	</include>
+
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="sensorring_cam3d_front"/>
+	</include>
+
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
 		<arg name="robot" value="$(arg robot)" />
-		<arg name="camera_name" value="sensorring_cam3d"/>
+		<arg name="camera_name" value="sensorring_cam3d_back"/>
 	</include>
 
 	<!-- start additional components -->
