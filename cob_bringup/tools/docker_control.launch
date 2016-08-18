@@ -12,7 +12,7 @@
         <remap from="scan_filtered" to="/station_detector/scan"/>
     </node>
     <node name="station_detector" pkg="cob_reflector_referencing" type="reflector_referencing_node" output="screen">
-        <rosparam command="load" file="$(arg pkg_hardware_config)/common/docking_reflector_referencing.yaml" />
+        <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/docking_stations.yaml" />
         <remap from="laser_scan_in" to="/station_detector/scan"/>
     </node>
 

@@ -16,7 +16,7 @@ goal_threshold_rot: 0.006 #0.08
 speed_threshold_rot: 0.01 #0.08
 
 #tf parameters
-global_frame: map #/map
+global_frame: odom_combined #/map
 robot_frame: base_link #/base_link
 
 slow_down_distance: 0.03 #0.5[m] distance from robot_center to goal at which robot starts slowing down
