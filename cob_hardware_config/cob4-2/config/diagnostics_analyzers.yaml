@@ -72,6 +72,26 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Left
         contains: 'laser_left'
+      torso_cam3d_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso Cam3d Left
+        contains: 'torso_cam3d_left'
+      torso_cam3d_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso Cam3d Right
+        contains: 'torso_cam3d_right'
+      torso_cam3d_down:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso Cam3d Down
+        contains: 'torso_cam3d_down'
+      sensorring_cam3d:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sensorring Cam3d
+        contains: 'sensorring_cam3d'
+      head_cam:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Head Cam
+        contains: 'head_cam'
 #      battery:
 #        type: diagnostic_aggregator/GenericAnalyzer
 #        path: Battery Status
