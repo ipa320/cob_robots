@@ -151,6 +151,10 @@
         <include file="$(find realsense_camera)/launch/r200_nodelet_rgbd.launch">
             <arg name="camera" value="torso_cam3d_down"/>
         </include>
+        <include file="$(find cob_bringup)/tools/hz_monitor.launch">
+            <arg name="robot" value="$(arg robot)"/>
+            <arg name="yaml_name" value="torso_cam3d_down"/>
+        </include>
         <include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="camera_name" value="torso_cam3d_down"/>
@@ -176,7 +180,10 @@
             <arg name="name" value="torso_cam3d_right"/>
             <arg name="device_id" value="#1"/>
         </include>
-
+        <include file="$(find cob_bringup)/tools/hz_monitor.launch">
+            <arg name="robot" value="$(arg robot)"/>
+            <arg name="yaml_name" value="torso_cam3d_right"/>
+        </include>
         <include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="camera_name" value="torso_cam3d_right"/>
@@ -198,7 +205,10 @@
             <arg name="name" value="torso_cam3d_left"/>
             <arg name="device_id" value="#1"/>
         </include>
-
+        <include file="$(find cob_bringup)/tools/hz_monitor.launch">
+            <arg name="robot" value="$(arg robot)"/>
+            <arg name="yaml_name" value="torso_cam3d_left"/>
+        </include>
         <include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="camera_name" value="torso_cam3d_left"/>
@@ -219,7 +229,10 @@
             <arg name="robot" value="$(arg robot)"/>
             <arg name="name" value="sensorring_cam3d"/>
         </include>
-
+        <include file="$(find cob_bringup)/tools/hz_monitor.launch">
+            <arg name="robot" value="$(arg robot)"/>
+            <arg name="yaml_name" value="sensorring_cam3d"/>
+        </include>
         <include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="camera_name" value="sensorring_cam3d"/>
@@ -242,7 +255,10 @@
         <include file="$(find cob_bringup)/drivers/usb_camera_node.launch">
             <arg name="camera_name" value="head_cam"/>
         </include>
-
+        <include file="$(find cob_bringup)/tools/hz_monitor.launch">
+            <arg name="robot" value="$(arg robot)"/>
+            <arg name="yaml_name" value="head_cam"/>
+        </include>
         <include file="$(find cob_bringup)/drivers/image_flip.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="camera_name" value="head_cam"/>
