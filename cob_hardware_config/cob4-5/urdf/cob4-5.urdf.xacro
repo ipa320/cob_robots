@@ -40,12 +40,6 @@
   <xacro:torso name="torso" parent="base_link">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
-  <gazebo>
-    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>torso</robotNamespace>
-      <filterJointsParam>joint_names</filterJointsParam>
-    </plugin>
-  </gazebo>
 
   <xacro:head name="head" parent="torso_3_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
