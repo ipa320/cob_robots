@@ -4,6 +4,7 @@
 	<!-- args -->
 	<arg name="robot" value="raw3-6"/>
 	<arg name="pc1" default="localhost"/>
+	<arg name="ur_ip" default="localhost" />
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -27,11 +28,11 @@
 		<!-- startup hardware -->
 		<!-- lower robot -->
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
-                        <arg name="robot" value="$(arg robot)" />
-                </include>
-                <include file="$(find cob_bringup)/controllers/base_controller.launch" >
-                        <arg name="robot" value="$(arg robot)" />
-                </include>
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="base_laser_front" />
@@ -44,23 +45,29 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-                <include file="$(find cob_bringup)/drivers/phidgets.launch" >
-                        <arg name="robot" value="$(arg robot)" />
-                </include>
+		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
-                <include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
-                        <arg name="robot" value="$(arg robot)"/>
-                </include>
+		<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
 
-                <include file="$(find cob_bringup)/drivers/emstate_phidget.launch">
-                        <arg name="robot" value="$(arg robot)"/>
-                </include>
+		<include file="$(find cob_bringup)/drivers/emstate_phidget.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
 
-                <include file="$(find cob_bringup)/tools/battery_monitor.launch" >
-                        <arg name="robot" value="$(arg robot)" />
-                </include>
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<!-- upper robot -->
+		<include file="$(find ur_bringup)/launch/ur_common.launch">
+			<arg name="robot_ip" value="$(arg ur_ip)"/>
+			<arg name="min_payload"  value="0.0"/>
+			<arg name="max_payload"  value="20.0"/>
+			<arg name="prefix" value="arm"/>
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
@@ -73,8 +80,8 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
-                        <arg name="robot" value="$(arg robot)" />
-                </include>
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
