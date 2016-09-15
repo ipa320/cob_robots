@@ -8,7 +8,7 @@
 	<arg name="prefix" default="arm_"/>
 
 	<!-- universal robot arm -->
-	<node ns="arm/driver" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg ur_ip) $(arg reverse_port)" output="screen">
+	<node ns="arm/driver" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
 		<remap from="/arm/driver/joint_states" to="/arm/joint_states"/>
 		<remap from="/arm/driver/robot_description" to="/robot_description"/>
 		<param name="min_payload" type="double" value="$(arg min_payload)"/>
