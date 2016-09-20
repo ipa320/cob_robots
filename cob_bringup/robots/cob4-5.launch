@@ -9,6 +9,7 @@
 		<arg name="cob4-5-t3" value="cob4-5-t3"/>
 		<arg name="cob4-5-s1" value="cob4-5-s1"/>
 		<arg name="cob4-5-h1" value="cob4-5-h1"/>
+		<arg name="env-script" value="$(find cob_bringup)/env.sh"/>
 	</include>
 
 </launch>
