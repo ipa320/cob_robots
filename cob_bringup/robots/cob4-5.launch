@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+
 	<include file="$(find cob_bringup)/robots/cob4-5.xml" >
 		<!-- cob4-5 is currently a special config setup of cob4-5 hardware -->
 		<arg name="cob4-5-b1" value="cob4-5-b1"/>
@@ -9,7 +11,7 @@
 		<arg name="cob4-5-t3" value="cob4-5-t3"/>
 		<arg name="cob4-5-s1" value="cob4-5-s1"/>
 		<arg name="cob4-5-h1" value="cob4-5-h1"/>
-		<arg name="env-script" value="$(find cob_bringup)/env.sh"/>
+		<arg name="env-script" value="$(arg env-script)"/>
 	</include>
 
 </launch>
