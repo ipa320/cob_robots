@@ -2,5 +2,6 @@
 <launch>
 	<!-- send ROBOT parameters to parameter server -->
 	<rosparam command="load" ns="/script_server/base" file="$(find cob_default_robot_config)/raw3-6/base_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/arm" file="$(find cob_default_robot_config)/raw3-6/arm_joint_configurations.yaml"/>
 
 </launch>
