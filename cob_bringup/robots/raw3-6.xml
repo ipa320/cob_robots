@@ -5,6 +5,7 @@
 	<arg name="robot" value="raw3-6"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+	<arg name="ur_ip" default="localhost" />
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -62,6 +63,11 @@
 		</include>
 
 		<!-- upper robot -->
+		<include file="$(find cob_bringup)/drivers/ur.launch">
+			<arg name="robot_ip" value="$(arg ur_ip)"/>
+			<arg name="min_payload"  value="0.0"/>
+			<arg name="max_payload"  value="20.0"/>
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
