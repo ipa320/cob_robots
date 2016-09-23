@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+
 	<include file="$(find cob_bringup)/robots/raw3-4.xml" >
 		<arg name="pc1" value="raw3-4-pc1"/>
 		<arg name="pc2" value="raw3-4-pc2"/>
 		<arg name="pc3" value="raw3-4-pc3"/>
 		<arg name="ur_ip" value="192.168.44.51"/>
+		<arg name="env-script" value="$(arg env-script)"/>
 	</include>
 
 </launch>
