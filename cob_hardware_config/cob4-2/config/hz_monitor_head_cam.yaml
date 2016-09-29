@@ -1,3 +1,3 @@
-topic: /head_cam/image_raw
+topic: /head_cam/camera_info
 hz: 3.5
 hzerror: 1
