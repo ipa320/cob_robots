@@ -1,3 +1,3 @@
-topic: /torso_cam3d_left/rgb/image_raw
+topic: /torso_cam3d_left/rgb/camera_info
 hz: 30
 hzerror: 5

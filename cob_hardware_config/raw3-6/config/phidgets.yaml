@@ -3,23 +3,12 @@ update_mode: polling                #switch between poll and event driven proces
 
 boards:
   ifk_general:
-    serial_num: 272849
+    serial_num: 265174
     ratiometric: true
     sensors:
       voltage:
         type: analog
         index: 1
-      current:
-        type: analog
-        index: 2
       em_stop_laser_rear:
         type: digital_in
         index: 1
-      em_stop_laser_front:
-        type: digital_in
-        index: 0
-      example1:
-        type: analog
-        index: 4
-        change_trigger: 10          #the sensors change trigger value (only event driven mode)
-        data_rate: 20               #ports data rate

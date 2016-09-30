@@ -14,6 +14,9 @@
   <!-- raw tower -->
   <xacro:include filename="$(find raw_description)/urdf/tower_symetric/tower.urdf.xacro" />
 
+  <!-- ur10 -->
+  <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
+
 
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
@@ -27,5 +30,16 @@
   <xacro:tower_symetric name="tower" parent="base_link">
       <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
   </xacro:tower_symetric>
+
+  <xacro:ur10 name="arm" parent="base_link">
+    <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
+  </xacro:ur10>
+
+  <gazebo>
+    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
+      <robotNamespace>arm</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
 
   </robot>

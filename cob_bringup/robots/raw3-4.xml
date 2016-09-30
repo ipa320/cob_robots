@@ -7,6 +7,7 @@
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
 	<arg name="ur_ip" default="localhost"/>
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -17,7 +18,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-4/upload_param_raw3-4.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -54,7 +55,9 @@
 
 		<!-- upper robot -->
 		<include file="$(find cob_bringup)/drivers/ur.launch" >
-			<arg name="ur_ip" value="$(arg ur_ip)"/>
+			<arg name="robot_ip" value="$(arg ur_ip)"/>
+			<arg name="min_payload" value="0.0"/>
+			<arg name="max_payload" value="20.0"/>
 		</include>
 
 		<!-- start additional packages -->
@@ -78,7 +81,7 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="$(arg env-script)" default="true"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -106,6 +109,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 </launch>
