@@ -19,12 +19,12 @@
 		</group>
 
 		<!-- Load updated joint limits (override information from URDF) -->
-		<group ns="$(arg robot_description)_planning">
+		<group ns="robot_description_planning">
 			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/moveit_config/joint_limits.yaml"/>
 		</group>
 
 		<!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
-		<group ns="$(arg robot_description)_kinematics">
+		<group ns="robot_description_kinematics">
 			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/moveit_config/kinematics.yaml"/>
 		</group>
 	</group>
