@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-  <arg name="robot"/>
+  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="camera_name" default="usb_cam"/>
   
   <node name="$(arg camera_name)" pkg="usb_cam" type="usb_cam_node" output="screen" >
