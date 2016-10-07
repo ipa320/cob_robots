@@ -1,3 +1,4 @@
-topic: /sensorring_cam3d/rgb/camera_info
+diagnostics_name: sensorring_cam3d
+topics: [/sensorring_cam3d/rgb/camera_info]
 hz: 7
 hzerror: 3
