@@ -217,7 +217,7 @@
             <arg name="camera_name" value="sensorring_cam3d_back"/>
             <arg name="nodelet_manager" value="sensorring_cam3d_back_nodelet_manager"/>
         </include>
-        <include file="$(find cob_bringup)/drivers/sick_3vistort.launch">
+        <include file="$(find cob_bringup)/drivers/sick_visionary_t.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="name" value="sensorring_cam3d_front"/>
         </include>
