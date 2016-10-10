@@ -22,8 +22,8 @@ Changelog for package cob_default_robot_behavior
 0.6.4 (2015-08-29)
 ------------------
 
-Forthcoming
------------
+0.6.6 (2016-10-10)
+------------------
 * clean behavior trigger services
 * cleanup behaviours
 * unify head and torso poses

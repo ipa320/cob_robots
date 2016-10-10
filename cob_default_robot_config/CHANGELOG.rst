@@ -50,8 +50,8 @@ Changelog for package cob_default_robot_config
 * unify cob3-X config and launch
 * Contributors: ipa-cob4-2, ipa-fxm
 
-Forthcoming
------------
+0.6.6 (2016-10-10)
+------------------
 * additional param files and modifications for raw3-6 ur10
 * remove unsafe ship buttons from command gui
 * add shipping pose for arms

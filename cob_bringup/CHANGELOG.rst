@@ -187,8 +187,8 @@ Changelog for package cob_bringup
 * added rplidar sensor to raw3-3 urdf and bringup
 * Contributors: Florian Mirus, ipa-cob4-2, ipa-fxm, ipa-fxm-mb, ipa-nhg
 
-Forthcoming
------------
+0.6.6 (2016-10-10)
+------------------
 * renamed visionary_t sensor by sick
 * Update usb_camera_node.launch
 * update cob4-2.xml

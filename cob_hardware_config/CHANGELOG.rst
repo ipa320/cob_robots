@@ -213,8 +213,8 @@ Changelog for package cob_hardware_config
 * added rplidar sensor to raw3-3 urdf and bringup
 * Contributors: Florian Mirus, ipa-cob4-2, ipa-fxm
 
-Forthcoming
------------
+0.6.6 (2016-10-10)
+------------------
 * adapt to multi topic hz monitor
 * reduce network load by using camera info instead of image for hz monitors
 * enable sound fading for cob4-1

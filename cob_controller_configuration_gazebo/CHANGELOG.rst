@@ -30,8 +30,8 @@ Changelog for package cob_controller_configuration_gazebo
 * unify cob3-X config and launch
 * Contributors: ipa-fxm
 
-Forthcoming
------------
+0.6.6 (2016-10-10)
+------------------
 * additional param files and modifications for raw3-6 ur10
 * fix error, repeated arms controllers
 * Merge github.com:ipa-cob4-5/cob_robots into cob4-5-sim
