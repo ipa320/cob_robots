@@ -1,0 +1,8 @@
+enable_light: false
+light_components: ['']
+color_ok: cyan
+
+enable_sound: false
+
+diagnostics_based: true
+motion_based: true

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="yaml_name"/>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<!-- start hz monitor node -->
+	<node name="hz_monitor_$(arg yaml_name)" pkg="cob_monitoring" type="hz_monitor.py" respawn="false" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/hz_monitor_$(arg yaml_name).yaml"/>
+		<remap from="~diagnostics" to="/diagnostics"/>
+	</node>
+
+</launch>

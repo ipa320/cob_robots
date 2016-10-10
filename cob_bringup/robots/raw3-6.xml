@@ -4,6 +4,8 @@
 	<!-- args -->
 	<arg name="robot" value="raw3-6"/>
 	<arg name="pc1" default="localhost"/>
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+	<arg name="ur_ip" default="localhost" />
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -14,7 +16,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-6/upload_param_raw3-6.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -26,6 +28,12 @@
 
 		<!-- startup hardware -->
 		<!-- lower robot -->
+		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="base_laser_front" />
@@ -38,17 +46,28 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/relayboard.launch" >
-			<arg name="sim" value="true" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
+		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+
+		<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/emstate_phidget.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<!-- upper robot -->
+		<include file="$(find cob_bringup)/drivers/ur.launch">
+			<arg name="robot_ip" value="$(arg ur_ip)"/>
+			<arg name="min_payload"  value="0.0"/>
+			<arg name="max_payload"  value="20.0"/>
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
@@ -58,6 +77,9 @@
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -70,6 +92,6 @@
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 </launch>

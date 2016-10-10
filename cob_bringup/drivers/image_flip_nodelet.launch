@@ -4,6 +4,10 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="camera_name"/>
+	<arg name="pointcloud_in" default="/$(arg camera_name)/depth_registered/points"/>
+	<arg name="pointcloud_out" default="/$(arg camera_name)_upright/depth_registered/points"/>
+	<arg name="colorimage_in" default="/$(arg camera_name)/rgb/image_raw"/>
+	<arg name="colorimage_out" default="/$(arg camera_name)_upright/rgb/image_raw"/>
 	<arg name="nodelet_manager"/>
 	<arg name="start_manager" default="true"/>
 
@@ -12,10 +16,10 @@
 
 	<node ns="image_flip_$(arg camera_name)" pkg="nodelet" type="nodelet" name="image_flip_$(arg camera_name)_nodelet" args="load cob_image_flip/ImageFlipNodelet /$(arg camera_name)/$(arg nodelet_manager)" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/image_flip_params_$(arg camera_name).yaml"/>
-		<remap from="~pointcloud_in" to="/$(arg camera_name)/depth_registered/points"/>
-		<remap from="~pointcloud_out" to="/$(arg camera_name)_upright/depth_registered/points"/>
-		<remap from="~colorimage_in" to="/$(arg camera_name)/rgb/image_raw"/>
-		<remap from="~colorimage_out" to="/$(arg camera_name)_upright/rgb/image_raw"/>
+		<remap from="~pointcloud_in" to="$(arg pointcloud_in)"/>
+		<remap from="~pointcloud_out" to="$(arg pointcloud_out)"/>
+		<remap from="~colorimage_in" to="$(arg colorimage_in)"/>
+		<remap from="~colorimage_out" to="$(arg colorimage_out)"/>
 	</node>
 
 </launch>

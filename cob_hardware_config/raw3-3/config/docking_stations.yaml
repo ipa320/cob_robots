@@ -1,0 +1,10 @@
+stations:
+- frame_id: station1
+  approach_poses: [[-1.02, 0.56, 0.0], [-0.86, 0.03, 0.0], [-0.762, 0.03, 0.0]] # in frame_id coords
+- frame_id: station2
+  approach_poses: [[-0.8, 0.02, 0.0], [-0.8, 0.02, 0.0], [-0.6, 0.02, 0.0]] # in frame_id coords
+
+distance_tolerance: 0.1
+intensity_lower_threshold: 200
+intensity_upper_threshold: 10000
+update_rate: 0.25

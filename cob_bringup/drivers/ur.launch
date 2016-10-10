@@ -1,13 +1,19 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="ur_ip" default="localhost"/>
+	<arg name="robot_ip" default="localhost"/>
+	<arg name="reverse_port" default="50001"/>
+	<arg name="min_payload"/>
+	<arg name="max_payload"/>
+	<arg name="prefix" default="arm_"/>
 
 	<!-- universal robot arm -->
-	<node ns="arm_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg ur_ip)" output="screen">
-		<remap from="/arm_controller/joint_states" to="/arm/joint_states"/>
-		<remap from="/arm_controller/robot_description" to="/robot_description"/>
-		<param name="prefix" value="arm_"/>
+	<node ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+		<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+		<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+		<param name="min_payload" type="double" value="$(arg min_payload)"/>
+		<param name="max_payload" type="double" value="$(arg max_payload)"/>
+		<param name="prefix" value="$(arg prefix)"/>
 	</node>
 
 </launch>

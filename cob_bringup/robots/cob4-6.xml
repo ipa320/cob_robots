@@ -4,6 +4,7 @@
 	<!-- args -->
 	<arg name="robot" value="cob4-6"/>
 	<arg name="cob4-6-b1" default="localhost"/>
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
 
 	<!-- upload robot description -->
@@ -15,7 +16,7 @@
 	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
 
 	<group>
-		<machine name="cob4-6-b1" address="$(arg cob4-6-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="cob4-6-b1" address="$(arg cob4-6-b1)" env-loader="$(arg env-script)" default="true"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -53,6 +54,6 @@
 		</include>
 	</group>
 
-	<machine name="cob4-6-b1" address="$(arg cob4-6-b1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="cob4-6-b1" address="$(arg cob4-6-b1)" env-loader="$(arg env-script)" default="true"/>
 
 </launch>

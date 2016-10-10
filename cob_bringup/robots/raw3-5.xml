@@ -4,6 +4,7 @@
 	<!-- args -->
 	<arg name="robot" value="raw3-5"/>
 	<arg name="pc1" default="localhost"/>
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -14,7 +15,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-5/upload_param_raw3-5.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -43,14 +44,14 @@
 		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-        
+
 		<!--<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
-		    <arg name="robot" value="$(arg robot)" />
+			<arg name="robot" value="$(arg robot)" />
 		</include>-->
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
-		    <arg name="robot" value="$(arg robot)" />
+			<arg name="robot" value="$(arg robot)" />
 		</include>
-		
+
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -78,6 +79,6 @@
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 </launch>

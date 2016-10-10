@@ -1,3 +1,5 @@
+bus:
+  master_allocator: canopen::UnrestrictedMaster::Allocator
 sync:
   interval_ms: 10
   overflow: 0
