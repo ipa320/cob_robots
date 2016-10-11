@@ -127,4 +127,12 @@
 	<property name="sensorring_cam3d_pitch" value="${def_sensorring_cam3d_pitch+offset_sensorring_cam3d_pitch}"/>
 	<property name="sensorring_cam3d_yaw" value="${def_sensorring_cam3d_yaw+offset_sensorring_cam3d_yaw}"/>
 
+	<!-- cam | handeye calibration | relative to head_3_link -->
+	<property name="head_cam_x" value="${def_head_cam_x+offset_head_cam_x}"/>
+	<property name="head_cam_y" value="${def_head_cam_y+offset_head_cam_y}"/>
+	<property name="head_cam_z" value="${def_head_cam_z+offset_head_cam_z}"/>
+	<property name="head_cam_roll" value="${def_head_cam_roll+offset_head_cam_roll}"/>
+	<property name="head_cam_pitch" value="${def_head_cam_pitch+offset_head_cam_pitch}"/>
+	<property name="head_cam_yaw" value="${def_head_cam_yaw+offset_head_cam_yaw}"/>
+
 </robot>
