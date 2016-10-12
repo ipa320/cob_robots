@@ -89,6 +89,14 @@
 		<arg name="camera_name" value="sensorring_cam3d"/>
 	</include>
 
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="head_cam"/>
+		<arg name="colorimage_in" value="/head_cam/image_rect_color"/>
+		<arg name="colorimage_out" value="/head_cam_upright/image_raw"/>
+	</include>
+	<node name="image_proc" pkg="image_proc" type="image_proc" ns="head_cam"/>
+
 	<!-- start additional components -->
 	<include file="$(find cob_bringup)/drivers/sound.launch" >
 		<arg name="robot" value="$(arg robot)"/>
