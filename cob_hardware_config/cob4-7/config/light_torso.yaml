@@ -1,7 +1,7 @@
 devicestring: /dev/ttyLED
 devicedriver: stageprofi
 baudrate: 38400
-num_leds: 58
+num_leds: 72
 led_offset: 5
 invert_output: false
 pubmarker: true

@@ -20,16 +20,39 @@ group11:
     [back,move,back],
     [left,move,left],
     [right,move,right]]
+group12:
+  group_name: arm_left
+  component_name: arm_left
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
+group13:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
 group16:
   group_name: torso
   component_name: torso
   buttons: [[stop,stop],
     [init,init],
     [recover,recover],
-    [home,move,home],
     [front,move,front],
+    [front_up,move,front_up],
     [front_down,move,front_down],
     [back,move,back],
+    [back_up,move,back_up],
     [back_down,move,back_down],
     [left,move,left],
     [right,move,right],

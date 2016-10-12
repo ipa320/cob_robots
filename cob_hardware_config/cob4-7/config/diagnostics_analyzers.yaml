@@ -21,14 +21,14 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t3
         contains: '-t3'
-      s1:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: s1
-        contains: '-s1'
-      h1:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: h1
-        contains: '-h1'
+#      s1:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: s1
+#        contains: '-s1'
+#      h1:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: h1
+#        contains: '-h1'
 #  network:
 #    type: diagnostic_aggregator/AnalyzerGroup
 #    path: Network
@@ -47,10 +47,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Joystick
         contains: 'joy'
-      sound:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Sound
-        contains: 'sound'
+#      sound:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Sound
+#        contains: 'sound'
       light:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Light
@@ -72,10 +72,30 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Scan Left
         contains: 'laser_left'
-      battery:
+      torso_cam3d_left:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: Battery Status
-        contains: 'bms'
+        path: Torso Cam3d Left
+        contains: 'torso_cam3d_left'
+      torso_cam3d_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso Cam3d Right
+        contains: 'torso_cam3d_right'
+      torso_cam3d_down:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso Cam3d Down
+        contains: 'torso_cam3d_down'
+#      sensorring_cam3d:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Sensorring Cam3d
+#        contains: 'sensorring_cam3d'
+#      head_cam:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Head Cam
+#        contains: 'head_cam'
+#      battery:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Battery Status
+#        contains: 'bms'
 
   motors:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -85,10 +105,22 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
         contains: 'torso/driver'
-      sensorring:
+      arm_right:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: Sensorring
-        contains: 'sensorring/driver'
+        path: Arm Right
+        contains: 'arm_right/driver'
+      arm_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Left
+        contains: 'arm_left/driver'
+#      head:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Head
+#        contains: 'head/driver'
+#      sensorring:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Sensorring
+#        contains: 'sensorring/driver'
       base:
         type: diagnostic_aggregator/AnalyzerGroup
         path: Base
