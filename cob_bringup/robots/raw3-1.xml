@@ -71,10 +71,14 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
 		</include>
-
-		<include file="$(find cob_bringup)/drivers/ur.launch" >
-			<arg name="ur_ip" value="$(arg ur_ip)"/>
+		
+		<!-- ARM CONTROLLER -->
+		<include file="$(find cob_bringup)/drivers/ur.launch">
+			<arg name="robot_ip" value="$(arg ur_ip)"/>
+			<arg name="min_payload"  value="0.0"/>
+			<arg name="max_payload"  value="20.0"/>
 		</include>
+
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
