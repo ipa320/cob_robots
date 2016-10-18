@@ -72,9 +72,9 @@
 			<arg name="component_name" value="torso" />
 		</include>
 
-		<!--include file="$(find cob_bringup)/drivers/ur.launch" >
+		<include file="$(find cob_bringup)/drivers/ur.launch" >
 			<arg name="ur_ip" value="$(arg ur_ip)"/>
-		</include-->
+		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >

@@ -34,16 +34,16 @@
 
 	<!-- Arm -->
 	<!-- simulated driver services -->
-<!--
+
 	<node ns="arm" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
--->
+
 	<!-- generic controllers -->
-<!--
+
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
 	</include>
--->
+
 
 
 	<!-- Torso -->
