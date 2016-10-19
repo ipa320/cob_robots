@@ -43,7 +43,11 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm"/>
 	</include>
-
+	<!-- Cartesian controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="arm"/>
+	</include>
 
 
 	<!-- Torso -->
