@@ -78,15 +78,15 @@
 			<arg name="min_payload"  value="0.0"/>
 			<arg name="max_payload"  value="20.0"/>
 		</include>
-		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<!--include file="$(find cob_bringup)/controllers/generic_controller.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="arm"/>
         </include>
-		 <!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		 <include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="arm"/>
             <arg name="debug" value="false"/>
-        </include-->
+        </include> -->
 
 
 		<!-- start additional packages -->
