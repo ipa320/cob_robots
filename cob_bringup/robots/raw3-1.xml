@@ -77,7 +77,13 @@
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="min_payload"  value="0.0"/>
 			<arg name="max_payload"  value="20.0"/>
-		</include>
+		</include> 
+		<!-- ARM Modern Driver 
+		<include file="$(find ur_modern_driver)/launch/ur10_bringup_joint_limited.launch">
+			<arg name="robot_ip" value="$(arg ur_ip)"/>
+			<arg name="min_payload"  value="0.0"/>
+			<arg name="max_payload"  value="20.0"/>
+		</include> -->
 		<!--include file="$(find cob_bringup)/controllers/generic_controller.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="arm"/>
