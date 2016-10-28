@@ -50,7 +50,7 @@
 	<!--arm mount positions | relative to base_link-->
 	<property name="def_arm_x" value="0.324"/>
 	<property name="def_arm_y" value="-0.191"/>
-	<property name="def_arm_z" value="0.565"/>
+	<property name="def_arm_z" value="0.585"/>  <!-- 0.565 -->
 	<property name="def_arm_roll" value="0.0"/>
 	<property name="def_arm_pitch" value="0.0"/>
 	<property name="def_arm_yaw" value="-2.3562"/>
