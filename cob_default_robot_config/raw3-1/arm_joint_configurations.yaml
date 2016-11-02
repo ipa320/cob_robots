@@ -3,7 +3,7 @@ joint_names: ['arm_shoulder_pan_joint', 'arm_shoulder_lift_joint', 'arm_elbow_jo
 action_name: /arm/joint_trajectory_controller/follow_joint_trajectory
 #service_ns: /arm_controller
 service_ns: /arm
-default_vel: 0.1
+default_vel: 0.3
 
 # back side positions
 home: [[-0.7854, -1.5707, 1.5707, 0.0, 1.5707, 1.5707]]
