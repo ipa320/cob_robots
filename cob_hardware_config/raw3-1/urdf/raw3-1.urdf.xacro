@@ -25,7 +25,12 @@
   <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
 
   <!-- raw boxgripper 
-  <xacro:include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" />-->
+  <xacro:include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" /> -->
+  
+  <!-- gripper -->
+  <xacro:include filename="$(find raw_description)/urdf/vacuum_gripper/gripper.urdf.xacro"/>
+
+  <xacro:property name="arm_prefix" value="arm_"/>
 
 
   <!-- composition of the robot -->
@@ -71,9 +76,17 @@
 
   <!--xacro:raw_boxgripper name="gripper" parent="arm_ee_link">
     <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
-  </xacro:raw_boxgripper-->
+  </xacro:raw_boxgripper> -->
 
-
+	<!-- arm-gripper coupling joint definitions 
+	<joint name="${arm_prefix}to_gripper" type="fixed">
+		<parent link="arm_ee_link"/>
+		<child link="${arm_prefix}gripper_frame"/>
+		<origin xyz="0 0 0" rpy="-1.57 0 -1.57"/> 
+	</joint>-->
+  <xacro:vacuum_gripper_definition name="gripper" parent="arm_ee_link" prefix="arm_">
+    <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="0 0 0" />
+  </xacro:vacuum_gripper_definition>
 
   <!-- IMU brick mount on raw3-1 -->
   <joint name="imu_brick_joint" type="fixed" >
