@@ -1,2 +1,2 @@
 rate: 100 #Hz
-source_list: [/base/joint_states]
+source_list: [/base/joint_states, /arm/joint_states]

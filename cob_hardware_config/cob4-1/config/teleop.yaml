@@ -7,7 +7,11 @@ joy_num_buttons: 12
 joy_num_axes: 6
 joy_num_modes: 4
 mode_switch_button: 8
+
+enable_light: true
 light_action_name: /light_torso/set_light
+enable_sound: true
+sound_action_name: /sound/say
 
 # axes
 axis_vx: 1
@@ -29,21 +33,11 @@ run_button: 7
 torso_sss_default_target_button: 1
 sensorring_sss_default_target_button: 3
 head_sss_default_target_button: 3
-arm_right_sss_default_target_button: 2
-arm_left_sss_default_target_button: 0
 
 #mode3: Velocity group controller
 torso_joint1_button: 0
 sensorring_joint1_button: 1
 head_joint1_button: 2
-arm_right_joint1_button: 0
-arm_right_joint2_button: 1
-arm_right_joint3_button: 2
-arm_right_joint4_button: 3
-arm_left_joint1_button: 0
-arm_left_joint2_button: 1
-arm_left_joint3_button: 2
-arm_left_joint4_button: 3
 
 right_indicator_button: 7
 left_indicator_button: 6
@@ -53,12 +47,11 @@ right_left_button: 4
 #mode4: Twist controller
 torso_twist_button: 1
 head_twist_button: 3
-arm_right_twist_button: 2
-arm_left_twist_button: 0
 
 components: {
   base: {
     twist_topic_name: '/base/twist_mux/command_teleop_joy',
+    twist_safety_topic_name: '/base/collision_velocity_filter/command',
     twist_max_velocity: [0.3, 0.2, 0.3],
     twist_max_acc: [0.5, 0.5, 0.7]
   },
@@ -68,10 +61,17 @@ components: {
     joint_velocity: [0.05, 0.05],
     twist_topic_name: '/torso/twist_controller/command_twist',
     twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
-  },
-  sensorring: {
-    sss_default_target: "front",
-    velocity_topic_name: "/sensorring/joint_group_velocity_controller/command",
-    joint_velocity: [0.05]
+#  },
+#  head: {
+#    sss_default_target: "front",
+#    velocity_topic_name: "/head/joint_group_velocity_controller/command",
+#    joint_velocity: [0.05, 0.05, 0.05],
+#    twist_topic_name: '/head/twist_controller/command_twist',
+#    twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
+#  },
+#  sensorring: {
+#    sss_default_target: "front",
+#    velocity_topic_name: "/sensorring/joint_group_velocity_controller/command",
+#    joint_velocity: [0.05]
   }
 }

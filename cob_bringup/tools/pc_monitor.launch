@@ -10,9 +10,7 @@
 	</node>
 
 	<!-- Monitor hard disk (temp, usage) -->
-	<!--node pkg="cob_monitoring" name="$(anon realtime_hd_monitor)" type="hd_monitor.py" args="-/-diag-hostname=$(arg pc)" output="screen" >
-		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/pc_monitor_$(arg pc).yaml"/>
-	</node-->
+	<node pkg="cob_monitoring" name="$(anon realtime_hd_monitor)" type="hd_monitor.py" args="--diag-hostname=$(arg pc)" output="screen" />
 
 	<!-- Monitor ntp -->
 	<!--node pkg="cob_monitoring" name="$(anon realtime_ntp_monitor)" type="ntp_monitor.py" args="$(arg pc) -/-diag-hostname=$(arg pc)" output="screen" >

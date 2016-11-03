@@ -83,8 +83,15 @@
 		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/tray_sensors_sim.yaml"/>
 	</node>
 
+	<!--include file="$(find cob_bringup)/drivers/image_flip.launch" >
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="camera_name" values="cam3d" />
+	</include-->
+
 	<!-- start additional components -->
-	<include file="$(find cob_bringup)/drivers/sound.launch" />
+	<include file="$(find cob_bringup)/drivers/sound.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
 	<include file="$(find cob_bringup)/drivers/light.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="light"/>

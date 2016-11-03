@@ -1,6 +1,6 @@
 <package format="2">
   <name>cob_bringup</name>
-  <version>0.6.4</version>
+  <version>0.6.5</version>
   <description>This package provides launch files for operating Care-O-bot.</description>
 
   <license>LGPL</license>
@@ -20,9 +20,11 @@
   <exec_depend>cob_android_script_server</exec_depend>
   <exec_depend>cob_base_drive_chain</exec_depend>
   <exec_depend>cob_base_velocity_smoother</exec_depend>
+  <exec_depend>cob_bms_driver</exec_depend>
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_cam3d_throttle</exec_depend>
   <exec_depend>cob_camera_sensors</exec_depend>
+  <exec_depend>cob_collision_monitor</exec_depend>
   <exec_depend>cob_collision_velocity_filter</exec_depend>
   <exec_depend>cob_command_gui</exec_depend>
   <exec_depend>cob_control_mode_adapter</exec_depend>
@@ -30,19 +32,27 @@
   <exec_depend>cob_default_env_config</exec_depend>
   <exec_depend>cob_default_robot_behavior</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
+  <exec_depend>cob_docker_control</exec_depend> <!-- from cob_substitute -->
   <exec_depend>cob_footprint_observer</exec_depend>
   <exec_depend>cob_frame_tracker</exec_depend>
+  <exec_depend>cob_hand_bridge</exec_depend>
   <exec_depend>cob_hardware_config</exec_depend>
   <exec_depend>cob_head_axis</exec_depend>
   <exec_depend>cob_image_flip</exec_depend>
-  <exec_depend>cob_lbr</exec_depend>
+  <exec_depend>cob_lbr</exec_depend> <!-- from cob_substitute -->
   <exec_depend>cob_light</exec_depend>
+  <exec_depend>cob_linear_nav</exec_depend>
   <exec_depend>cob_mimic</exec_depend>
   <exec_depend>cob_monitoring</exec_depend>
+  <exec_depend>cob_moveit_config</exec_depend>
   <exec_depend>cob_obstacle_distance</exec_depend>
+  <exec_depend>cob_omni_drive_controller</exec_depend>
   <exec_depend>cob_phidgets</exec_depend>
+  <exec_depend>cob_phidget_power_state</exec_depend>
+  <exec_depend>cob_phidget_em_state</exec_depend>
+  <exec_depend>cob_reflector_referencing</exec_depend> <!-- from cob_substitute -->
   <exec_depend>cob_relayboard</exec_depend>
-  <exec_depend>cob_safety_controller</exec_depend>
+  <exec_depend>cob_safety_controller</exec_depend> <!-- from cob_substitute -->
   <exec_depend>cob_scan_unifier</exec_depend>
   <exec_depend>cob_script_server</exec_depend>
   <exec_depend>cob_sick_lms1xx</exec_depend>
@@ -57,7 +67,7 @@
   <exec_depend>costmap_2d</exec_depend>
   <exec_depend>diagnostic_aggregator</exec_depend>
   <exec_depend>effort_controllers</exec_depend>
-  <exec_depend>frida_driver</exec_depend>
+  <exec_depend>frida_driver</exec_depend> <!-- from cob_substitute -->
   <exec_depend>hokuyo_node</exec_depend>
   <exec_depend>image_proc</exec_depend>
   <exec_depend>joint_state_controller</exec_depend>
@@ -65,24 +75,29 @@
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
   <exec_depend>joy</exec_depend>
+  <exec_depend>laser_filters</exec_depend>
   <exec_depend>nodelet</exec_depend>
   <exec_depend>openni_launch</exec_depend>
   <exec_depend>openni2_launch</exec_depend>
   <exec_depend>position_controllers</exec_depend>
   <exec_depend>position_controllers</exec_depend>
-  <exec_depend>prace_gripper_driver</exec_depend>
+  <exec_depend>prace_gripper_driver</exec_depend> <!-- from cob_substitute -->
   <exec_depend>prosilica_camera</exec_depend>
+  <exec_depend>realsense_camera</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rosserial_python</exec_depend>
+  <exec_depend>rosserial_server</exec_depend>
+  <exec_depend>rostopic</exec_depend>
   <exec_depend>rplidar_ros</exec_depend> <!-- from cob_substitute -->
   <exec_depend>rviz</exec_depend>
   <exec_depend>schunk_powercube_chain</exec_depend>
   <exec_depend>schunk_sdh</exec_depend>
-  <exec_depend>schunk_sdhx</exec_depend>
+  <exec_depend>sick_visionary_t_driver</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>topic_tools</exec_depend>
   <exec_depend>twist_mux</exec_depend>
   <exec_depend>ur_driver</exec_depend>
+  <exec_depend>usb_cam</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
-  <!--exec_depend>softkinetic</exec_depend-->
 
 </package>

@@ -2,6 +2,166 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.5 (2016-04-01)
+------------------
+* adjust launch file to current head-pc setup
+* Merge pull request `#448 <https://github.com/ipa320/cob_robots/issues/448>`_ from ipa-nhg/BMSintegration
+  added bms driver to bringup
+* added bms driver to bringup
+* MLR actual version
+* Merge branch 'indigo_dev' of github.com:ipa320/cob_robots into feature_canopen_node_name
+  Conflicts:
+  cob_bringup/drivers/canopen_402.launch
+* add missing image_flip nodes to simulation
+* adjust launch and yamls
+* unify battery_monitor and battery_light_monitor
+* rename canopen node and adjust diagnostics
+* restructure canopen driver yamls and remove canX yamls
+* readded batter_light_monitor to cob4-1 bringup
+* Merge branch 'indigo_dev' of github.com:ipa320/cob_robots into feature/battery_light_mode
+  Conflicts:
+  cob_bringup/robots/cob4-1.xml
+  cob_bringup/robots/cob4-2.xml
+  cob_bringup/robots/raw3-3.xml
+* temporarily do not use head on cob4-2
+* temporarily do not use head on cob4-1
+* comment overkill
+* changed service name remap to component name param
+* Merge branch 'indigo_dev' of github.com:ipa-bnm/cob_robots into feature/battery_light_mode
+* further tests with torso
+* tabs vs spaces
+* tabs vs spaces
+* use launch arg to switch between old and new base driver
+* tabs vs. spaces
+* using canopen for base_solo
+* update diagnostics analyzer
+* add new_base_chain config for cob4-1
+* launch ros_canopen for cob4-2 base
+* twist_controller base commands cannot go through smoother
+* Removed releyboard
+* Merge pull request `#397 <https://github.com/ipa320/cob_robots/issues/397>`_ from ipa-nhg/NewTorsoPcs
+  [cob4-2] New torso pcs
+* remap battery_light_monitor topic and service name
+* start battery_light_monitor on raw3-3 bringup
+* load battery light config to param server
+* Update cob4-1.launch
+* added battery_light_monitor launch to cob4-1 bringup
+* added battery light monitor to cob4-2s bringup
+* Revert namespace of sick LMS1xx nodes
+* Further files corrected
+* Corrected odometry topic remapping, error done in 8868a5c
+* Correct LMS1xx topic remapping
+* Revert indentation changes.
+* Change namespace of parameters for laser scanner driver to work properly.
+* base collision observer setup
+* Merge remote-tracking branch 'origin/raw3-5_battery_voltage' into update_raw3-5
+* Merge branch 'indigo_dev' of github.com:iirob/cob_robots into indigo_dev
+* review image_flip parameters
+* updated base solo
+* emergency_stop_state has to be a global topic
+* emergency_stop_state has to be a global topic
+* remove env config in all robot launch files
+* parameterizable scaling factor
+* provide twist_mux topic for base_active mode of twist_controller
+* update cob4-3 according to lastest updates in cob_robots (twist_mux, vel_smoother, laser_topics)
+* Merge branch 'indigo_dev' of github.com:ipa320/cob_robots into feature_cob4-1_without_arms
+* Merge pull request `#383 <https://github.com/ipa320/cob_robots/issues/383>`_ from ipa-fxm/restructure_laser_topics_unifier
+  Restructure laser topics unifier
+* Merge pull request `#21 <https://github.com/ipa320/cob_robots/issues/21>`_ from ipa320/indigo_dev
+  updates from ipa320
+* Merge pull request `#36 <https://github.com/ipa320/cob_robots/issues/36>`_ from ipa320/indigo_dev
+  updates from ipa320
+* add missing exec_depends
+* rename laser scanner topics
+* prepare remapping for twist_mux in cartesian controller
+* fix identation
+* fix identation
+* Merge pull request `#371 <https://github.com/ipa320/cob_robots/issues/371>`_ from ipa-bnm/fix/raw3-1_bringup
+  fix raw3-1 bringup
+* moved collision_velocity_filter to base namespace
+* fix typo
+* restructure laser topics
+* added collision_velocity_filter to twist_mux
+* removed yocs_velocity_smoother dependency
+* readded group tag
+* changed velocity smoother topic name
+* added twist_mux and new velocity_smoother to controller launch
+* added velocity_smoother launch file and velocity_smoother configs for all robots
+* added twist_mux launch file and twist_mux configs for all robots
+* Merge branch 'indigo_dev' into feature/twist_mux_vel_smoother
+* added twist_mux and vel smoother dependency
+* use correct pc names
+* fix machine tag
+* use cob4-1 as cob4-2 without arms - copying configuration files
+* do not stabelize/deadband spacenav twist
+* add scan_unifier for cob4-3
+* added dependency to cob_scan_unifier
+* Merge pull request `#364 <https://github.com/ipa320/cob_robots/issues/364>`_ from ipa-bnm/feature/scan_unifier
+  added scan unifier to bringup layer
+* added missing exec dependency to cob_default_robot_behaviour
+* added cob4-3
+* fixed launch tag
+* added scan unifier to bringup layer
+* changed name relayboard to powerboard
+* indentation
+* start cob_voltage_monitor instead of simulated relayboard
+* remap input topics
+* removed prosilica cams from raw3-1 startup
+* correct topic remaps
+* fix copy-and-paste comment
+* remove old teleop leftover
+* tabs vs spaces
+* remove obsolete argument and remap
+* Adapt cob4-6 configuration
+* test sensorring cam3d on cob4-2
+* removed leading / from tf frame names. They are no longer supported in tf2
+* addapt cob4-4 configuration
+* use relative namespaces
+* added script_server bringup to all robots
+* changed base namespace from 'base_controller' to 'base' for cob4 and raw3
+* do not respawn phidgets, because if no phidget is connected the driver will restart all the time
+* start cob_script_server at bringup because new teleop node needs it
+* fix xml format in cartesian_controller.launch
+* remove trailing whitespaces
+* add nodes for debugging
+* added new behavior trigger services
+* add launch file for teleop_spacenav
+* merge
+* use local namespaces
+* merge error
+* merge error
+* updated cob_teleop and renamed behaviour package
+* new teleop node
+* proper remapping for old_base_driver
+* merge
+* merge
+* fix typo
+* new trigger srv and addapted  android.launch file
+* fix for int16 overflow in vl mode
+* Merge branch 'cob_behaviour' of https://github.com/ipa-cob4-2/cob_robots into indigo_dev
+* Adapted launch and params.
+* cob_behaviour
+* robot test
+* added mimic.launch
+* cob_behaviour
+* last update
+* Update raw3-4.xml
+* teleop parameters
+* defined teleop parameters
+* setup cob4-4
+* merge
+* cob4-4 setup
+* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into indigo_dev
+* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into raw3-5_battery_voltage
+* Updated data for raw3-5
+* Raw3-5 phidgets is read properly, data calcualtion/remapping is corrected.
+* Enabled and corrected
+* Change file name from laser_lms1xx to sick_lms1xx
+* Corrected remapping and cleaned config file.
+* laser_rear namespace corrected
+* Merge branch 'hydro_dev' into indigo_dev
+* Contributors: Benjamin Maidel, Denis Štogl, Felix Messmer, Florian Weisshardt, Marco Bezzon, Nadia Hammoudeh García, bnm, ipa-bnm, ipa-cob4-2, ipa-cob4-4, ipa-fmw, ipa-fxm, ipa-fxm-mb, ipa-nhg
+
 0.6.4 (2015-08-29)
 ------------------
 * renamed parameter

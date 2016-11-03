@@ -68,7 +68,7 @@ from std_srvs.srv import Trigger, TriggerResponse
 
 def torso_front_cb(req):
     sss.move_base_rel("base",[0,0,1.57],False)
-    sss.move("torso","front",True)
+    sss.move("torso","front_down_full",True)
     return TriggerResponse(True, "")
     
 def front_to_home_cb(req):
@@ -125,7 +125,7 @@ def setLightCyanBreath_cb(req):
         cyan_color.g = 1.0
         cyan_color.b = 0.5
         cyan_color.a = 0.4
-        light_mode.color = cyan_color
+        light_mode.colors.append(cyan_color)
         light_mode.mode = 3
         light_mode.frequency = 0.25
         resp = set_light_torso(light_mode)
@@ -182,7 +182,7 @@ def soundStarting_cb(req):
     return TriggerResponse(True, "")
 
 def soundHello_cb(req):
-    sss.say(["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
+    sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
     return TriggerResponse(True, "")
 
 def trigger_srvs():

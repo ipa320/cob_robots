@@ -7,6 +7,8 @@
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -17,7 +19,7 @@
 	<include file="$(find cob_default_robot_config)/raw3-3/upload_param_raw3-3.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
@@ -35,12 +37,23 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="name" value="base_laser_rear" />
 		</include>
-
-		<include file="$(find cob_bringup)/drivers/battery_voltage.launch" >
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/emstate_phidget.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
@@ -88,29 +101,21 @@
 
 		<!-- script server -->
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
-
-		<!-- scan unifier -->
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="$(arg env-script)" default="true"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
 		</include>
 
-		<!-- light -->
 		<include file="$(find cob_bringup)/drivers/light.launch" >
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 </launch>

@@ -8,23 +8,23 @@ group1:
   group_name: base
   component_name: base
   buttons: [[stop,stop,omni],
-    [init,trigger,init],
-    [recover,trigger,recover]]
+    [init,init],
+    [recover,recover]]
 group2:
   group_name: arm pos
   component_name: arm
-  buttons: [[stop,trigger,stop],
+  buttons: [[stop,stop],
     [home,move,home],
     [upright,move,upright]]
 group3:
   group_name: arm traj
   component_name: arm
-  buttons: [[stop,trigger,stop]]
+  buttons: [[stop,stop]]
 group4:
   group_name: torso
   component_name: torso
-  buttons: [[stop,trigger,stop],
-    [init,trigger,init],
-    [recover,trigger,recover],
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
     [home,move,home]]
 

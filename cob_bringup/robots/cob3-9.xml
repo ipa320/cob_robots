@@ -6,6 +6,7 @@
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 	<arg name="pc3" default="localhost"/>
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -16,9 +17,8 @@
 	<include file="$(find cob_default_robot_config)/cob3-9/upload_param_cob3-9.launch" />
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc1)" />
@@ -121,9 +121,8 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<machine name="pc2" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc2)" />
@@ -159,6 +158,7 @@
 		</include>
 		<!--include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="camera_name" values="cam3d" />
 			<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
 			<arg name="start_manager" value="false"/>
 		</include-->
@@ -170,14 +170,14 @@
 		</include>
 
 		<!-- start additional packages -->
-		<param name="/sound_controller/mode" value="cepstral" />
-		<include file="$(find cob_bringup)/drivers/sound.launch" />
+		<include file="$(find cob_bringup)/drivers/sound.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
 	</group>
 
 	<group>
-		<machine name="pc3" address="$(arg pc3)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+		<machine name="pc3" address="$(arg pc3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
-		<!-- pc monitor -->
 		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc3)" />
@@ -191,6 +191,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true" timeout="30"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

@@ -4,8 +4,10 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="name" default="cam3d"/>
 	<arg name="device_id" default="#1"/>
+	<arg name="data_skip" default="0"/>
+	<arg name="num_worker_threads" default="4" />
 
-	<param name="/$(arg name)/driver/data_skip" type="int" value="5"/>
+	<param name="/$(arg name)/driver/data_skip" type="int" value="$(arg data_skip)"/>
 	<param name="/$(arg name)/driver/image_mode" type="int" value="5"/>
 	<param name="/$(arg name)/driver/depth_mode" type="int" value="5"/>
 	<param name="/$(arg name)/driver/z_offset_mm" type="int" value="20"/>
@@ -18,6 +20,7 @@
 		<arg name="publish_tf" value="false" />
 		<arg name="depth_registration" value="true"/>
 		<arg name="rgb_camera_info_url" value="file:///$(find cob_calibration_data)/$(arg robot)/calibration/cameras/$(arg name).yaml" />
+		<arg name="num_worker_threads" default="$(arg num_worker_threads)" />
 	</include>
 
 </launch>

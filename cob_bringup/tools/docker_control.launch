@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+    <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+    <arg name="multi_station" default="true"/>
+
+    <!-- station detection -->
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
+        <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/docking_laser_filter.yaml" />
+        <remap from="scan" to="/base_laser_front/scan"/>
+        <remap from="scan_filtered" to="/station_detector/scan"/>
+    </node>
+    <node name="station_detector" pkg="cob_reflector_referencing" type="reflector_referencing_node" output="screen">
+        <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/docking_stations.yaml" />
+        <remap from="laser_scan_in" to="/station_detector/scan"/>
+    </node>
+
+    <!-- navigation -->
+    <node ns="docker_control" pkg="cob_linear_nav" type="cob_linear_nav" respawn="false" name="move_base_linear" output="log">
+        <!-- remap inputs -->
+        <remap from="odom" to="/base/odometry_controller/odometry"/>
+        <!-- remap outputs -->
+        <remap from="cmd_vel" to="/base/twist_mux/command_navigation"/>
+        <rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/docking_linear_nav.yaml" command="load" />
+    </node>
+
+    <!-- docker control -->
+    <node pkg="cob_docker_control" type="multi_station_docker_control.py" respawn="false" name="docker_control" output="screen" if="$(arg multi_station)">
+      <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/docking_stations.yaml"/>
+    </node>
+    <node pkg="cob_docker_control" type="docker_control.py" respawn="false" name="docker_control" output="screen" unless="$(arg multi_station)">
+    </node>
+
+</launch>

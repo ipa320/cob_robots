@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<robot name="cob4-2">
+    <disable_collisions link1="base_link" link2="torso_1_link" reason="Never" />
+    <disable_collisions link1="base_link" link2="torso_2_link" reason="Never" />
+    <disable_collisions link1="base_link" link2="torso_3_link" reason="Never" />
+    <disable_collisions link1="torso_3_link" link2="head_1_link" reason="Never" />
+    <disable_collisions link1="torso_3_link" link2="head_2_link" reason="Never" />
+    <disable_collisions link1="torso_3_link" link2="head_3_link" reason="Never" />
+</robot>

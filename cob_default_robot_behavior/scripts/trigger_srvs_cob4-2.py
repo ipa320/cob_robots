@@ -73,7 +73,7 @@ def torso_front_cb(req):
     handle_arm_right.wait()
     if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
         sss.move_base_rel("base",[0,0,1.57],False)
-        sss.move("torso","front",True)
+        sss.move("torso","front_down_full",True)
     else:
         return TriggerResponse(False, "Could not move arms.")
 
@@ -101,7 +101,7 @@ def pick_cb(req):
     handle_arm_left.wait()
     handle_arm_right.wait()
     if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move("torso","front",False)
+        sss.move("torso","front_down_full",False)
         sss.move_base_rel("base",[0,0,1.57],False)
         rospy.loginfo("------------------1 arm right movement")
         handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
@@ -125,7 +125,7 @@ def pick_cb(req):
 
         handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]],True)
         #sss.sleep(1)
-        sss.move("torso","front",False)
+        sss.move("torso","front_down_full",False)
         handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
         sss.move_base_rel("base",[0,0,-0.3],False)
         sss.sleep(2)
@@ -191,7 +191,7 @@ def setLightCyanBreath_cb(req):
         cyan_color.g = 1.0
         cyan_color.b = 0.5
         cyan_color.a = 0.4
-        light_mode.color = cyan_color
+        light_mode.colors.append(cyan_color)
         light_mode.mode = 3
         light_mode.frequency = 0.25
         resp = set_light_torso(light_mode)
@@ -234,16 +234,6 @@ def soundR2D2_cb(req):
     sss.play("R2D2")
     return TriggerResponse(True, "")
 
-def showCamera_left_cb(req):
-    sss.move("arm_left",[[-1.7642137145009082, -1.2919974320813223, 1.3, 1.8777473823431394, -0.0, -0.24, -0.0]])
-    sss.move("gripper_left","open")
-    return TriggerResponse(True, "")
-
-def showCamera_right_cb(req):
-    sss.move("arm_right",[[1.7642137145009082, 1.2919974320813223, -1.3, -1.8777473823431394, 0.0, 0.24, 0.0]])
-    sss.move("gripper_right","open")
-    return TriggerResponse(True, "")
-
 def soundNoConnection_cb(req):
     sss.set_mimic("mimic",["confused",0,1])
     sss.play("confused")
@@ -258,7 +248,7 @@ def soundStarting_cb(req):
     return TriggerResponse(True, "")
 
 def soundHello_cb(req):
-    sss.say(["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
+    sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
     return TriggerResponse(True, "")
 
 def trigger_srvs():
@@ -283,8 +273,6 @@ def trigger_srvs():
     s = rospy.Service('/behavior/soundNegative',Trigger,soundNegative_cb)
     s = rospy.Service('/behavior/soundStarting',Trigger,soundStarting_cb)
     s = rospy.Service('/behavior/soundHello',Trigger,soundHello_cb)
-    s = rospy.Service('/gripper_left/driver/showCamera_left',Trigger, showCamera_left_cb)
-    s = rospy.Service('/gripper_right/driver/showCamera_right',Trigger, showCamera_right_cb)
 
     rospy.spin()
 

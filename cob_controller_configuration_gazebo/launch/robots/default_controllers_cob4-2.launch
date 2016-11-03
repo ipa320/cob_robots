@@ -50,6 +50,20 @@
 		<arg name="component_name" value="torso"/>
 	</include>
 
+	<!-- Head -->
+	<!-- simulated driver services -->
+	<node ns="head" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<!-- generic controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="head"/>
+	</include>
+	<!-- Cartesian controllers -->
+	<include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="head"/>
+	</include>
+
 	<!-- Sensorring -->
 	<!-- simulated driver services -->
 	<node ns="sensorring" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
@@ -112,12 +126,37 @@
 		<arg name="camera_name" value="torso_cam3d_right"/>
 	</include>
 
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="torso_cam3d_down"/>
+	</include>
+
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)" />
+		<arg name="camera_name" value="sensorring_cam3d"/>
+	</include>
+
+	<include file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="head_cam"/>
+		<arg name="colorimage_in" value="/head_cam/image_rect_color"/>
+		<arg name="colorimage_out" value="/head_cam_upright/image_raw"/>
+	</include>
+	<node name="image_proc" pkg="image_proc" type="image_proc" ns="head_cam"/>
+
 	<!-- start additional components -->
+	<include file="$(find cob_bringup)/drivers/sound.launch" >
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
 	<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include-->
 	<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 		<arg name="robot" value="$(arg robot)"/>
+	</include>
+
+	<include file="$(find cob_bringup)/tools/behavior.launch" >
+		<arg name="robot" value="$(arg robot)" />
 	</include>
 
 	<include file="$(find cob_script_server)/launch/script_server.launch" />

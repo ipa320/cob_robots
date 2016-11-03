@@ -1,9 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="component_name" default="sound"/>
+
 	<!-- start sound -->
-	<node ns="sound" pkg="cob_sound" type="sound" name="sound_node" cwd="node" respawn="false" output="screen" >
-		<remap from="diagnostics" to="/diagnostics"/>
+	<node pkg="cob_sound" type="sound" name="$(arg component_name)" respawn="false" output="screen" >
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/sound.yaml"/>
+		<remap from="~diagnostics" to="/diagnostics"/>
 	</node>
 
 </launch>
