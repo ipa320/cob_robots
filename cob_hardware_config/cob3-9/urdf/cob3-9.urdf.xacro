@@ -78,7 +78,7 @@
     </plugin>
   </gazebo>
 
-  <xacro:schunk_pg70 name="pg70" parent="arm_7_link">
+  <xacro:schunk_pg70 name="pg70" parent="arm_7_link" has_podest="false">
     <origin xyz="${pg70_x} ${pg70_y} ${pg70_z}" rpy="${pg70_roll} ${pg70_pitch} ${pg70_yaw}" />
   </xacro:schunk_pg70>
   <gazebo>
