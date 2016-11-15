@@ -36,6 +36,8 @@
 		<arg name="sim" value="true"/>
 	</include>
 
+        <node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
+
 	<!-- Torso -->
 	<!-- simulated driver services -->
 	<node ns="torso" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
@@ -113,5 +115,8 @@
 	</include>
 
 	<include file="$(find cob_script_server)/launch/script_server.launch" />
+	
+	<node name="fake_monitor" pkg="cob_controller_configuration_gazebo" type="fake_monitoring.py" args="--diag-hostnames='light, safety, base_laser_front, base_laser_right, base_laser_left, -b1, -t1, -t2, -t3, -s1, -h32, torso_cam3d_right, torso_cam3d_left, head_cam, sensorring_cam3d, torso/driver, torso_cam3d_down, base/driver, joystick'"/>
+	
 
 </launch>
