@@ -36,7 +36,7 @@
 		<arg name="sim" value="true"/>
 	</include>
 
-        <node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
+	<node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
 
 	<!-- Torso -->
 	<!-- simulated driver services -->
