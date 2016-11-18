@@ -1,5 +1,5 @@
 #all
-joint_names: [head_1_joint, head_2_joint, head_3_joint]
+joint_names: [head_2_joint, head_3_joint] #[head_1_joint, head_2_joint, head_3_joint]
 
 ## control_mode_adapter
 max_command_silence: 0.5
@@ -13,13 +13,13 @@ joint_state_controller:
 joint_trajectory_controller:
   type: position_controllers/JointTrajectoryController
   joints:
-     - head_1_joint
+#     - head_1_joint
      - head_2_joint
      - head_3_joint
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
-      head_1_joint: {trajectory: 0.1, goal: 0.1}
+#      head_1_joint: {trajectory: 0.1, goal: 0.1}
       head_2_joint: {trajectory: 0.1, goal: 0.1}
       head_3_joint: {trajectory: 0.1, goal: 0.1}
   stop_trajectory_duration: 0.5
@@ -32,15 +32,15 @@ joint_trajectory_controller:
 joint_group_position_controller:
   type: position_controllers/JointGroupPositionController
   joints:
-     - head_1_joint
+#     - head_1_joint
      - head_2_joint
      - head_3_joint
   required_drive_mode: 1
 
-head_1_joint_position_controller:
-  type: position_controllers/JointPositionController
-  joint: head_1_joint
-  required_drive_mode: 1
+#head_1_joint_position_controller:
+#  type: position_controllers/JointPositionController
+#  joint: head_1_joint
+#  required_drive_mode: 1
 head_2_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: head_2_joint
@@ -55,15 +55,15 @@ head_3_joint_position_controller:
 joint_group_velocity_controller:
   type: velocity_controllers/JointGroupVelocityController
   joints:
-     - head_1_joint
+#     - head_1_joint
      - head_2_joint
      - head_3_joint
   required_drive_mode: 3
 
-head_1_joint_velocity_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: head_1_joint
-  required_drive_mode: 3
+#head_1_joint_velocity_controller:
+#  type: velocity_controllers/JointVelocityController
+#  joint: head_1_joint
+#  required_drive_mode: 3
 head_2_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: head_2_joint
