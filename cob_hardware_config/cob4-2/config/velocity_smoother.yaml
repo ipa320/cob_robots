@@ -20,4 +20,4 @@ decel_factor_safe: 2.5  #used if no velocity commands received (eg. no deadman o
 #  0 - none
 #  1 - odometry
 #  2 - end robot commands
-robot_feedback: 2
+robot_feedback: 1
