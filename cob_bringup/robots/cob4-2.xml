@@ -89,10 +89,6 @@
             <arg name="robot" value="$(arg robot)"/>
         </include>
 
-        <!-- TMP START: recover grippers due to USB disconnect problem. Delete after USB problem is fixed. Recovers both grippers. -->
-        <!--node name="recover_grippers" pkg="schunk_sdhx" type="recover_gripper.py" respawn="false" output="screen"/-->
-        <!-- TMP END -->
-
         <!-- aggregated robot_state_publisher -->
         <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
             <arg name="robot" value="$(arg robot)"/>
