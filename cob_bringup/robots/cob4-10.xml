@@ -256,7 +256,9 @@
             <arg name="robot" value="$(arg robot)"/>
         </include>
 
-        <include file="$(find cob_bringup)/drivers/mimic.launch"/>
+        <include file="$(find cob_bringup)/drivers/mimic.launch">
+            <arg name="rotation" value="270"/>
+        </include>
 
        <include file="$(find cob_bringup)/drivers/usb_camera_node.launch">
             <arg name="robot" value="$(arg robot)"/>
