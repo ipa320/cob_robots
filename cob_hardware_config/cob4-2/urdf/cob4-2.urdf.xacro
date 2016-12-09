@@ -14,7 +14,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
 
   <!-- torso -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso_2dof.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
 
   <!-- arm -->
   <xacro:include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
@@ -42,7 +42,7 @@
     </plugin>
   </gazebo>
 
-  <xacro:torso name="torso" parent="base_link">
+  <xacro:torso name="torso" parent="base_link" dof1="false" dof2="true" dof3="true">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
   <!-- left camera -->
