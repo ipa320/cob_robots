@@ -125,7 +125,7 @@
         </include>
 
 
-        <group name="sensorring">
+        <group ns="sensorring">
 	          <node name="sensorring_init_relay" pkg="service_tools" type="service_relay" args="driver/init /head/driver/init" respawn="false" output="screen"/>
 	          <node name="sensorring_recover_relay" pkg="service_tools" type="service_relay" args="driver/recover /head/driver/recover" respawn="false" output="screen"/>
 	          <node name="sensorring_load_relay" pkg="service_tools" type="service_relay" args="controller_manager/load_controller /head/controller_manager/load_controller" respawn="false" output="screen"/>
@@ -133,8 +133,8 @@
 	          <node name="sensorring_joint_states_relay" pkg="topic_tools" type="relay" args="/head/joint_states joint_states" respawn="false" output="screen"/>
 
 	          <rosparam param="joint_names">[sensorring_joint]</rosparam>
-	          <param name="joint_trajectory_controller_name" value="sensorring_joint_trajectory_controller">
-	          <param name="sensorring_joint_trajectory_controller" value="forward">
+	          <param name="joint_trajectory_controller_name" value="sensorring_joint_trajectory_controller"/>
+	          <param name="sensorring_joint_trajectory_controller" value="forward"/>
 	          <node pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" name="control_mode_adapter" cwd="node" respawn="false" output="screen"/>
         </group>
         <remap from="/head/sensorring_joint_trajectory_controller/follow_joint_trajectory" to="/sensorring/joint_trajectory_controller/follow_joint_trajectory"/>
