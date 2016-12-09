@@ -124,15 +124,11 @@
             <arg name="component_name" value="torso"/>
         </include>
 
-        <include file="$(find cob_bringup)/drivers/canopen_402.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="sensorring"/>
-            <arg name="can_device" value="can1"/>
-        </include>
-        <include file="$(find cob_bringup)/controllers/generic_controller.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="sensorring"/>
-        </include>
+	<remap from="/head/sensorring_joint_trajectory_controller/follow_joint_trajectory" to="/sensorring/joint_trajectory_controller/follow_joint_trajectory"/>
+	<node name="sensorring_init_relay" pkg="service_tools" type="service_relay" args="/sensorring/driver/init /head/driver/init" respawn="false" output="screen"/>
+	<node name="sensorring_recover_relay" pkg="service_tools" type="service_relay" args="/sensorring/driver/recover /head/driver/recover" respawn="false" output="screen"/>
+	<node name="sensorring_joint_states_relay" pkg="topic_tools" type="relay" args="/head/joint_states /sensorring/joint_states" respawn="false" output="screen"/>
+	<node ns="/head" pkg="controller_manager" type="spawner" name="sensorring_controller_spawner" args="sensorring_joint_trajectory_controller" respawn="false" output="screen"/>
 
         <include file="$(find cob_bringup)/drivers/canopen_402.launch">
             <arg name="robot" value="$(arg robot)"/>
