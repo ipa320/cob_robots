@@ -23,7 +23,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_gripper/gripper.urdf.xacro" />
 
   <!-- head -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head_static.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/usb_cam.urdf.xacro" />
 
   <!-- sensorring -->
@@ -42,7 +42,7 @@
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
 
-  <xacro:head name="head" parent="torso_3_link">
+  <xacro:head name="head" parent="torso_3_link" dof1="false" dof2="false" dof3="false">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam">
