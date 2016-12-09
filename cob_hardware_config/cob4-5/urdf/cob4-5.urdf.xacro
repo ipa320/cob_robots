@@ -28,6 +28,8 @@
 
   <!-- sensorring -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring_3dcs_asus.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/sensors/sick_3dcs.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/sensors/kinect.urdf.xacro" />
 
   <!-- composition of the robot -->
   <xacro:base name="base" use_old_joint_names="false"/>
@@ -52,6 +54,13 @@
   <xacro:sensorring name="sensorring" parent="head_3_link">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
+  <!-- cameras -->
+  <xacro:sick_3dcs name="sensorring_cam3d_front" ros_topic="sensorring_cam3d_front" parent="sensorring_link">
+    <origin xyz="${sensorring_cam3d_front_x} ${sensorring_cam3d_front_y} ${sensorring_cam3d_front_z}" rpy="${sensorring_cam3d_front_roll} ${sensorring_cam3d_front_pitch} ${sensorring_cam3d_front_yaw}" />
+  </xacro:sick_3dcs>
+  <xacro:cob_kinect_v0 name="sensorring_cam3d_back" ros_topic="sensorring_cam3d_back" parent="sensorring_link">
+    <origin xyz="${sensorring_cam3d_back_x} ${sensorring_cam3d_back_y} ${sensorring_cam3d_back_z}" rpy="${sensorring_cam3d_back_roll} ${sensorring_cam3d_back_pitch} ${sensorring_cam3d_back_yaw}" />
+  </xacro:cob_kinect_v0>
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>sensorring</robotNamespace>
