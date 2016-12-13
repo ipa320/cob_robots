@@ -7,6 +7,7 @@
   <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
 
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)" />
+
   <!-- Run -->
   <node pkg="moveit_setup_assistant" type="moveit_setup_assistant" name="moveit_setup_assistant"
 	args="--config_pkg=$(find cob_moveit_config)/$(arg robot)/"
