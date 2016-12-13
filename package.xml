@@ -10,19 +10,11 @@
 
   <license>BSD</license>
 
-  <url type="website">http://moveit.ros.org/</url>
-  <url type="bugtracker">https://github.com/ros-planning/moveit_setup_assistant/issues</url>
-  <url type="repository">https://github.com/ros-planning/moveit_setup_assistant</url>
-
   <buildtool_depend>catkin</buildtool_depend>
 
+
   <exec_depend>cob_hardware_config</exec_depend>
-  <exec_depend>joint_state_publisher</exec_depend>
-  <exec_depend>moveit_planners_ompl</exec_depend>
-  <exec_depend>moveit_plugins</exec_depend>
-  <exec_depend>moveit_ros_move_group</exec_depend>
-  <exec_depend>moveit_ros_visualization</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>moveit_setup_assistant</exec_depend>
   <exec_depend>xacro</exec_depend>
 
 </package>
