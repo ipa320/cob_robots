@@ -2,6 +2,144 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.6 (2016-10-10)
+------------------
+* renamed visionary_t sensor by sick
+* Update usb_camera_node.launch
+* update cob4-2.xml
+* hd monitor active
+* worker threads for openni2 and calibration for head cam
+* corrected ur ip address
+* fixed namespaces
+* Fix usb_cam warning: set the pixel format to yuyv
+* Merge github.com:ipa320/cob_robots into fix/env-loader-script
+  Conflicts:
+  cob_bringup/robots/raw3-6.launch
+  cob_bringup/robots/raw3-6.xml
+* expand env argument to all robots
+* fixed raw3-4 ur bringup
+* added env.sh plath as argument
+* fix argument naming
+* adapted ur.launch to actual ur package
+* removed multiple robot_state_publishers by using own ur launch
+* added ur10, phidgets, battery monitor, em monitor to robot bringup for raw3-6
+* added configs for bringup
+* reduce number of nodelet worker to not overload cpu
+* add data skip launch argument for openni2 to limit CPU load
+* add diagnostics hz monitor to cob4-1 and cob4-2 for cameras
+* add nodelet version of realsense to bringup
+* unify docking configuration, now only one station config file per robot
+* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into indigo_dev
+  Conflicts:
+  cob_bringup/robots/cob4-1.xml
+* Merge branch 'indigo_dev' of github.com:ipa-fmw/cob_robots into indigo_dev
+  Conflicts:
+  cob_bringup/robots/cob4-1.xml
+* add dependency to cob_phidget_em_state
+* Merge branch 'feature/em_state_phidget' of github.com:ipa-bnm/cob_robots into indigo_dev
+* Merge branch 'feature/power_state' of github.com:ipa-bnm/cob_robots into feature/power_state
+* beautify
+* tabs vs spaces
+* use imageflip with torso_cam3d_down camera
+* use docking on cob4-2
+* tabs vs spaces
+* Merge branch 'feature/power_state' into feature/em_state_phidget
+* tabs vs spaces
+* Merge pull request `#469 <https://github.com/ipa320/cob_robots/issues/469>`_ from ipa-cob4-5/indigo_dev
+  Setup cob4-5
+* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into RemoveDistanceMoveit
+  Conflicts:
+  cob_bringup/package.xml
+  cob_bringup/robots/cob4-1.xml
+  cob_bringup/robots/cob4-2.xml
+* disable roslaunch check for tools
+* fix dependencies
+* move hand launch file to bringup
+* enable roslaunch tests for robot xmls
+* Merge branch 'indigo_dev' of https://github.com/ipa-cob4-5/cob_robots into indigo_dev
+* proper remapping
+* typo
+* bringup emstate from phidget node for raw3-1 raw3-3
+* use powerstate from phidget node
+* move docking config and launch to cob_hardware_config and cob_bringup
+* set check to true for rosserial
+* explicit dependency on cob_omni_drive_controller
+* Setup cob4-5 : final launch file version
+* new schunk_sdhx launch file
+* Revert "respawn bms driver"
+  This reverts commit a067a923f76fde4264dc42da1d1e987636200f58.
+* include/configure stuck detector
+* Merge branch 'indigo_dev' of github.com:ipa-cob4-5/cob_robots into indigo_dev
+* add cob_hand_bridge to bringup dependencies
+* Merge branch 'indigo_dev' of https://github.com/ipa-cob4-5/cob_robots into merge-cob4-5
+  Conflicts:
+  cob_bringup/package.xml
+* added arms, hands and cameras
+* harmonize cob4-1.xml and cob4-2.xml
+* disable head and sensorring
+* reduce framerate of usb camera to lower CPU load
+* rename launch arguments
+* fix remapping
+* publish true with fake collission monitor
+* fix diagnostics remapping for sound
+* Merge branch 'Feature/SoftkineticParams' of github.com:ipa-nhg/cob_robots into feature/softkinetic
+  Conflicts:
+  cob_bringup/drivers/softkinetic.launch
+  cob_bringup/robots/cob4-1.xml
+* add missing dep to usb_cam
+* tabs vs spaces
+* Merge branch 'indigo_dev' into feature/usb_head_cam
+* removed pkg_hardware_cfg from cob4-1.xml
+* removed unused line
+* cleanup
+* tabs vs spaces
+* typos
+* use camera_name argument as frame_id and camera name
+* changed default camera_name to usb_cam
+* create softlink instead of copy
+* added usb head cam launch file and added it to cob4 bringup
+* moved power_state phidget driver to extra package
+* removed bms launch + added power_state from phidget launch
+* respawn bms driver
+* cob4-2 imageflip on same nodeletmanager as cam
+* removed data_skipping => higher framerate
+* start image flip in same nodeletmanager as the cam
+* changed softkinetic_params
+* include base collision observer
+* add dep to rostopic
+* fix launch syntax
+* use fake collission monitor for cob4-2 too
+* use dummy state publisher instead of real collission monitor (not working reliably yet)
+* removed unused arguments
+* removed unnecesary argument
+* remove in xml files the include
+* update collision monitor launch file
+* remove dependency to cob_obstacle_distance_moveit
+* missed dependency
+* robot test
+* set softkinetic parameters
+* Changed namespace of topics
+* Renamed incoming command topic to command_in and removed obstacles topic
+* test Head 3dof
+* Cleaned up base_collision_observer.launch
+* setup cob4-5
+* Intermediate state
+* Adapted base_collision_observer.launch
+* add collision_monitor to cob4-1 and cob4-2
+* rename launch file
+* add obstacle_monitor launch file
+* Merge pull request `#456 <https://github.com/ipa320/cob_robots/issues/456>`_ from ipa-fxm/cartesian_controller_updates
+  prepare using robots with cartesian controller
+* Merge pull request `#460 <https://github.com/ipa320/cob_robots/issues/460>`_ from ipa-fxm/add_obstacle_distance_moveit_monitor
+  prepare obstacle_distance_monitor launch file
+* move sound into namespace
+* load sound parameter from yaml file
+* load sound parameter from yaml file
+* add dependencies
+* prepare obstacle_distance_monitor launch file
+* prepare using robots with cartesian controller
+* Contributors: Benjamin Maidel, Denis Štogl, Felix Messmer, Florian Mirus, Florian Weisshardt, Marco Bezzon, Mathias Lüdtke, Nadia Hammoudeh García, bnm, fmw-hb, ipa-bnm, ipa-cob4-2, ipa-cob4-4, ipa-cob4-5, ipa-cob4-6, ipa-fmw, ipa-fxm, ipa-fxm-mb, ipa-nhg, msh, raw3-6, teddy
+
 0.6.5 (2016-04-01)
 ------------------
 * adjust launch file to current head-pc setup
@@ -186,326 +324,6 @@ Changelog for package cob_bringup
 * cob_bringup: added run_dependency for rplidar_ros
 * added rplidar sensor to raw3-3 urdf and bringup
 * Contributors: Florian Mirus, ipa-cob4-2, ipa-fxm, ipa-fxm-mb, ipa-nhg
-
-0.6.6 (2016-10-10)
-------------------
-* renamed visionary_t sensor by sick
-* Update usb_camera_node.launch
-* update cob4-2.xml
-* hd monitor active
-* worker threads for openni2 and calibration for head cam
-* corrected ur ip address
-* fixed namespaces
-* Fix usb_cam warning: set the pixel format to yuyv
-* Merge github.com:ipa320/cob_robots into fix/env-loader-script
-  Conflicts:
-  cob_bringup/robots/raw3-6.launch
-  cob_bringup/robots/raw3-6.xml
-* expand env argument to all robots
-* fixed raw3-4 ur bringup
-* added env.sh plath as argument
-* fix argument naming
-* adapted ur.launch to actual ur package
-* removed multiple robot_state_publishers by using own ur launch
-* added ur10, phidgets, battery monitor, em monitor to robot bringup for raw3-6
-* added configs for bringup
-* reduce number of nodelet worker to not overload cpu
-* add data skip launch argument for openni2 to limit CPU load
-* add diagnostics hz monitor to cob4-1 and cob4-2 for cameras
-* add nodelet version of realsense to bringup
-* unify docking configuration, now only one station config file per robot
-* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into indigo_dev
-  Conflicts:
-  cob_bringup/robots/cob4-1.xml
-* Merge branch 'indigo_dev' of github.com:ipa-fmw/cob_robots into indigo_dev
-  Conflicts:
-  cob_bringup/robots/cob4-1.xml
-* add dependency to cob_phidget_em_state
-* Merge branch 'feature/em_state_phidget' of github.com:ipa-bnm/cob_robots into indigo_dev
-* Merge branch 'feature/power_state' of github.com:ipa-bnm/cob_robots into feature/power_state
-* beautify
-* tabs vs spaces
-* use imageflip with torso_cam3d_down camera
-* use docking on cob4-2
-* tabs vs spaces
-* Merge branch 'feature/power_state' into feature/em_state_phidget
-* tabs vs spaces
-* Merge pull request `#469 <https://github.com/ipa320/cob_robots/issues/469>`_ from ipa-cob4-5/indigo_dev
-  Setup cob4-5
-* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into RemoveDistanceMoveit
-  Conflicts:
-  cob_bringup/package.xml
-  cob_bringup/robots/cob4-1.xml
-  cob_bringup/robots/cob4-2.xml
-* disable roslaunch check for tools
-* fix dependencies
-* move hand launch file to bringup
-* enable roslaunch tests for robot xmls
-* Merge branch 'indigo_dev' of https://github.com/ipa-cob4-5/cob_robots into indigo_dev
-* proper remapping
-* typo
-* bringup emstate from phidget node for raw3-1 raw3-3
-* use powerstate from phidget node
-* move docking config and launch to cob_hardware_config and cob_bringup
-* set check to true for rosserial
-* explicit dependency on cob_omni_drive_controller
-* Setup cob4-5 : final launch file version
-* new schunk_sdhx launch file
-* Revert "respawn bms driver"
-  This reverts commit a067a923f76fde4264dc42da1d1e987636200f58.
-* include/configure stuck detector
-* Merge branch 'indigo_dev' of github.com:ipa-cob4-5/cob_robots into indigo_dev
-* add cob_hand_bridge to bringup dependencies
-* Merge branch 'indigo_dev' of https://github.com/ipa-cob4-5/cob_robots into merge-cob4-5
-  Conflicts:
-  cob_bringup/package.xml
-* added arms, hands and cameras
-* harmonize cob4-1.xml and cob4-2.xml
-* disable head and sensorring
-* reduce framerate of usb camera to lower CPU load
-* rename launch arguments
-* fix remapping
-* publish true with fake collission monitor
-* fix diagnostics remapping for sound
-* Merge branch 'Feature/SoftkineticParams' of github.com:ipa-nhg/cob_robots into feature/softkinetic
-  Conflicts:
-  cob_bringup/drivers/softkinetic.launch
-  cob_bringup/robots/cob4-1.xml
-* add missing dep to usb_cam
-* tabs vs spaces
-* Merge branch 'indigo_dev' into feature/usb_head_cam
-* removed pkg_hardware_cfg from cob4-1.xml
-* removed unused line
-* cleanup
-* tabs vs spaces
-* typos
-* use camera_name argument as frame_id and camera name
-* changed default camera_name to usb_cam
-* create softlink instead of copy
-* added usb head cam launch file and added it to cob4 bringup
-* moved power_state phidget driver to extra package
-* removed bms launch + added power_state from phidget launch
-* respawn bms driver
-* cob4-2 imageflip on same nodeletmanager as cam
-* removed data_skipping => higher framerate
-* start image flip in same nodeletmanager as the cam
-* changed softkinetic_params
-* include base collision observer
-* add dep to rostopic
-* fix launch syntax
-* use fake collission monitor for cob4-2 too
-* use dummy state publisher instead of real collission monitor (not working reliably yet)
-* removed unused arguments
-* removed unnecesary argument
-* remove in xml files the include
-* update collision monitor launch file
-* remove dependency to cob_obstacle_distance_moveit
-* missed dependency
-* robot test
-* set softkinetic parameters
-* Changed namespace of topics
-* Renamed incoming command topic to command_in and removed obstacles topic
-* test Head 3dof
-* Cleaned up base_collision_observer.launch
-* setup cob4-5
-* Intermediate state
-* Adapted base_collision_observer.launch
-* add collision_monitor to cob4-1 and cob4-2
-* rename launch file
-* add obstacle_monitor launch file
-* Merge pull request `#456 <https://github.com/ipa320/cob_robots/issues/456>`_ from ipa-fxm/cartesian_controller_updates
-  prepare using robots with cartesian controller
-* Merge pull request `#460 <https://github.com/ipa320/cob_robots/issues/460>`_ from ipa-fxm/add_obstacle_distance_moveit_monitor
-  prepare obstacle_distance_monitor launch file
-* move sound into namespace
-* load sound parameter from yaml file
-* load sound parameter from yaml file
-* add dependencies
-* prepare obstacle_distance_monitor launch file
-* prepare using robots with cartesian controller
-* 0.6.5
-* update changelog
-* adjust launch file to current head-pc setup
-* Merge pull request `#448 <https://github.com/ipa320/cob_robots/issues/448>`_ from ipa-nhg/BMSintegration
-  added bms driver to bringup
-* added bms driver to bringup
-* MLR actual version
-* Merge branch 'indigo_dev' of github.com:ipa320/cob_robots into feature_canopen_node_name
-  Conflicts:
-  cob_bringup/drivers/canopen_402.launch
-* add missing image_flip nodes to simulation
-* adjust launch and yamls
-* unify battery_monitor and battery_light_monitor
-* rename canopen node and adjust diagnostics
-* restructure canopen driver yamls and remove canX yamls
-* readded batter_light_monitor to cob4-1 bringup
-* Merge branch 'indigo_dev' of github.com:ipa320/cob_robots into feature/battery_light_mode
-  Conflicts:
-  cob_bringup/robots/cob4-1.xml
-  cob_bringup/robots/cob4-2.xml
-  cob_bringup/robots/raw3-3.xml
-* temporarily do not use head on cob4-2
-* temporarily do not use head on cob4-1
-* comment overkill
-* changed service name remap to component name param
-* Merge branch 'indigo_dev' of github.com:ipa-bnm/cob_robots into feature/battery_light_mode
-* further tests with torso
-* tabs vs spaces
-* tabs vs spaces
-* use launch arg to switch between old and new base driver
-* tabs vs. spaces
-* using canopen for base_solo
-* update diagnostics analyzer
-* add new_base_chain config for cob4-1
-* launch ros_canopen for cob4-2 base
-* twist_controller base commands cannot go through smoother
-* Removed releyboard
-* Merge pull request `#397 <https://github.com/ipa320/cob_robots/issues/397>`_ from ipa-nhg/NewTorsoPcs
-  [cob4-2] New torso pcs
-* remap battery_light_monitor topic and service name
-* start battery_light_monitor on raw3-3 bringup
-* load battery light config to param server
-* Update cob4-1.launch
-* use phidgets rather than simulated relayboard on raw3-1
-* added battery_light_monitor launch to cob4-1 bringup
-* added battery light monitor to cob4-2s bringup
-* Revert namespace of sick LMS1xx nodes
-* Further files corrected
-* Corrected odometry topic remapping, error done in 8868a5c
-* Correct LMS1xx topic remapping
-* Revert indentation changes.
-* Change namespace of parameters for laser scanner driver to work properly.
-* base collision observer setup
-* Merge remote-tracking branch 'origin/raw3-5_battery_voltage' into update_raw3-5
-* Merge branch 'indigo_dev' of github.com:iirob/cob_robots into indigo_dev
-* review image_flip parameters
-* updated base solo
-* emergency_stop_state has to be a global topic
-* emergency_stop_state has to be a global topic
-* remove env config in all robot launch files
-* parameterizable scaling factor
-* provide twist_mux topic for base_active mode of twist_controller
-* update cob4-3 according to lastest updates in cob_robots (twist_mux, vel_smoother, laser_topics)
-* Merge branch 'indigo_dev' of github.com:ipa320/cob_robots into feature_cob4-1_without_arms
-* Merge pull request `#383 <https://github.com/ipa320/cob_robots/issues/383>`_ from ipa-fxm/restructure_laser_topics_unifier
-  Restructure laser topics unifier
-* Merge pull request `#21 <https://github.com/ipa320/cob_robots/issues/21>`_ from ipa320/indigo_dev
-  updates from ipa320
-* Merge pull request `#36 <https://github.com/ipa320/cob_robots/issues/36>`_ from ipa320/indigo_dev
-  updates from ipa320
-* add missing exec_depends
-* rename laser scanner topics
-* prepare remapping for twist_mux in cartesian controller
-* fix identation
-* fix identation
-* Merge pull request `#371 <https://github.com/ipa320/cob_robots/issues/371>`_ from ipa-bnm/fix/raw3-1_bringup
-  fix raw3-1 bringup
-* moved collision_velocity_filter to base namespace
-* fix typo
-* restructure laser topics
-* added collision_velocity_filter to twist_mux
-* removed yocs_velocity_smoother dependency
-* readded group tag
-* changed velocity smoother topic name
-* added twist_mux and new velocity_smoother to controller launch
-* added velocity_smoother launch file and velocity_smoother configs for all robots
-* added twist_mux launch file and twist_mux configs for all robots
-* Merge branch 'indigo_dev' into feature/twist_mux_vel_smoother
-* added twist_mux and vel smoother dependency
-* use correct pc names
-* fix machine tag
-* use cob4-1 as cob4-2 without arms - copying configuration files
-* do not stabelize/deadband spacenav twist
-* add scan_unifier for cob4-3
-* added dependency to cob_scan_unifier
-* Merge pull request `#364 <https://github.com/ipa320/cob_robots/issues/364>`_ from ipa-bnm/feature/scan_unifier
-  added scan unifier to bringup layer
-* added missing exec dependency to cob_default_robot_behaviour
-* added cob4-3
-* fixed launch tag
-* added scan unifier to bringup layer
-* changed name relayboard to powerboard
-* indentation
-* start cob_voltage_monitor instead of simulated relayboard
-* remap input topics
-* removed prosilica cams from raw3-1 startup
-* correct topic remaps
-* fix copy-and-paste comment
-* remove old teleop leftover
-* tabs vs spaces
-* remove obsolete argument and remap
-* Adapt cob4-6 configuration
-* test sensorring cam3d on cob4-2
-* removed leading / from tf frame names. They are no longer supported in tf2
-* addapt cob4-4 configuration
-* use relative namespaces
-* added script_server bringup to all robots
-* changed base namespace from 'base_controller' to 'base' for cob4 and raw3
-* do not respawn phidgets, because if no phidget is connected the driver will restart all the time
-* start cob_script_server at bringup because new teleop node needs it
-* fix xml format in cartesian_controller.launch
-* remove trailing whitespaces
-* add nodes for debugging
-* added new behavior trigger services
-* add launch file for teleop_spacenav
-* merge
-* use local namespaces
-* merge error
-* merge error
-* updated cob_teleop and renamed behaviour package
-* new teleop node
-* proper remapping for old_base_driver
-* merge
-* merge
-* fix typo
-* 0.6.4
-* update changelog
-* renamed parameter
-* new trigger srv and addapted  android.launch file
-* making 'sim_enabled' a launch argument
-* migrate to package format 2
-* remove trailing whitespaces
-* remove obsolete autogenerated mainpage.dox files
-* fix for int16 overflow in vl mode
-* Merge branch 'cob_behaviour' of https://github.com/ipa-cob4-2/cob_robots into indigo_dev
-* Adapted launch and params.
-* cob_behaviour
-* robot test
-* Torso->can0
-* sort dependencies
-* revies dependencies
-* added mimic.launch
-* renamed launch-argument to use_rplidar in raw3-3.xml
-* fix indentation in raw3-3.xml
-* cob_behaviour
-* merge
-* include torso in bringup
-* Separate launch file for cob_obstacle_distance.
-* updates for cartesian_controller yaml
-* torso setup
-* moved base components of cob3-9 to correct machine tag
-* cob_bringup: removed run-dependency of rplidar_ros and trigger start of rplidar-driver via launch-argument as suggested
-* unify cob3-X config and launch
-* use controller_manager spawn
-* last update
-* Update raw3-4.xml
-* teleop parameters
-* defined teleop parameters
-* setup cob4-4
-* merge
-* cob4-4 setup
-* cob_bringup: added run_dependency for rplidar_ros
-* added rplidar sensor to raw3-3 urdf and bringup
-* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into indigo_dev
-* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into raw3-5_battery_voltage
-* Updated data for raw3-5
-* Raw3-5 phidgets is read properly, data calcualtion/remapping is corrected.
-* Enabled and corrected
-* Change file name from laser_lms1xx to sick_lms1xx
-* Corrected remapping and cleaned config file.
-* laser_rear namespace corrected
-* Merge branch 'hydro_dev' into indigo_dev
-* Contributors: Benjamin Maidel, Denis Štogl, Felix Messmer, Florian Mirus, Florian Weisshardt, Marco Bezzon, Mathias Lüdtke, Nadia Hammoudeh García, bnm, fmw-hb, ipa-bnm, ipa-cob4-2, ipa-cob4-4, ipa-cob4-5, ipa-cob4-6, ipa-fmw, ipa-fxm, ipa-fxm-mb, ipa-nhg, msh, raw3-6, teddy
 
 0.6.3 (2015-06-17)
 ------------------
