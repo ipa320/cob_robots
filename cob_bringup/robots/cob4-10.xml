@@ -123,6 +123,8 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 			<arg name="can_device" value="can1"/>
+			<arg name="use_external_sync" value="true"/>
+
 			<arg name="cartesian_control" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
@@ -130,6 +132,9 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="head"/>
 			<arg name="can_device" value="can1"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="false"/>
+
 			<arg name="cartesian_control" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
