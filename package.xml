@@ -12,7 +12,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <exec_depend>cob_hardware_config</exec_depend>
   <exec_depend>moveit_setup_assistant</exec_depend>
   <exec_depend>xacro</exec_depend>
 

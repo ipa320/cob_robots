@@ -3,18 +3,12 @@
 
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="config_path" default="$(find cob_moveit_config)/$(arg robot)/config"/>
-  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-  <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
-  <arg name="load_robot_description" default="false"/>
   <arg name="load_semantic_description" default="true"/>
   <arg name="load_planning_context" default="true"/>
 
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
-
-  <!-- Load universal robotic description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="robot_description" command="$(find xacro)/xacro.py '$(arg pkg_hardware_config)/$(arg robot)/urdf/$(arg robot).urdf.xacro'"/>
 
   <!-- The semantic description that corresponds to the URDF -->
   <param if="$(arg load_semantic_description)" name="$(arg robot_description)_semantic" textfile="$(arg config_path)/$(arg robot).srdf"/>
