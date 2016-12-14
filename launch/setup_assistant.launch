@@ -1,5 +1,6 @@
-<!-- Re-launch the MoveIt Setup Assistant with this configuration package already loaded -->
+<?xml version="1.0"?>
 <launch>
+  <!-- Re-launch the MoveIt Setup Assistant with this configuration package already loaded -->
 
   <!-- Debug Info -->
   <arg name="debug" default="false" />
