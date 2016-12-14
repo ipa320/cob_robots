@@ -5,7 +5,7 @@
   <arg name="config_path" default="$(find cob_moveit_config)/$(arg robot)/config"/>
 
   <arg name="load_semantic_description" default="true"/>
-  <arg name="load_planning_context" default="true"/>
+  <arg name="load_planning_context" default="false"/>
 
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
