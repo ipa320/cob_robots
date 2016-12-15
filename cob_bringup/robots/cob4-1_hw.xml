@@ -12,25 +12,26 @@
     <arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
     <!-- upload robot description -->
+<!--
     <include file="$(find cob_hardware_config)/common/upload_robot.launch">
         <arg name="robot" value="$(arg robot)"/>
     </include>
+-->
 
     <!-- upload default configuration parameters -->
+<!--
     <include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch"/>
+-->
 
     <group>
         <machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
-<!--
         <include file="$(find cob_bringup)/tools/pc_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="pc" value="$(arg cob4-1-b1)"/>
         </include>
--->
 
         <!-- startup hardware -->
-<!--
         <include file="$(find cob_bringup)/drivers/sick_s300.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="name" value="base_laser_front"/>
@@ -43,36 +44,36 @@
             <arg name="robot" value="$(arg robot)"/>
             <arg name="name" value="base_laser_left"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/drivers/scan_unifier.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
-<!--
+-->
         <include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
--->
         <!--include file="$(find cob_bringup)/tools/collision_monitor.launch">
         </include-->
-        <node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
-
 <!--
+        <node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
+-->
+
         <include file="$(find cob_bringup)/drivers/canopen_402.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="base"/>
             <arg name="can_device" value="can0"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
+-->
 
         <!-- start additional packages -->
-<!--
         <include file="$(find cob_bringup)/drivers/phidgets.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
@@ -92,27 +93,31 @@
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="light_base"/>
         </include>
+-->
         <!--include file="$(find cob_bringup)/drivers/bms.launch">
             <arg name="robot" value="$(arg robot)" />
         </include-->
-<!--
         <include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/tools/docker_control.launch">
             <arg name="robot" value="$(arg robot)" />
             <arg name="multi_station" default="true"/>
         </include>
+-->
         <!-- aggregated robot_state_publisher -->
+<!--
         <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
+-->
     </group>
 
     <group>
         <machine name="cob4-1-t1" address="$(arg cob4-1-t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
+<!--
         <include file="$(find cob_script_server)/launch/script_server.launch"/>
         <include file="$(find cob_bringup)/tools/android.launch">
             <arg name="robot" value="$(arg robot)"/>
@@ -120,21 +125,19 @@
         <include file="$(find cob_bringup)/tools/behavior.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
-<!--
+-->
         <include file="$(find cob_bringup)/tools/pc_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="pc" value="$(arg cob4-1-t1)"/>
         </include>
--->
 
         <!-- startup hardware -->
-<!--
         <include file="$(find cob_bringup)/drivers/canopen_402.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="torso"/>
             <arg name="can_device" value="can0"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/controllers/generic_controller.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="torso"/>
@@ -144,8 +147,8 @@
             <arg name="component_name" value="torso"/>
             <arg name="debug" value="false"/>
         </include>
+-->
 
-		<!-- not yet used in hardware -->
         <!--include file="$(find cob_bringup)/drivers/canopen_402.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="sensorring"/>
@@ -156,7 +159,6 @@
             <arg name="component_name" value="sensorring"/>
         </include-->
 
-		<!-- not yet used in hardware -->
         <!--include file="$(find cob_bringup)/drivers/canopen_402.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="head"/>
@@ -167,14 +169,14 @@
             <arg name="component_name" value="head"/>
         </include-->
 
-<!--
         <include file="$(find cob_bringup)/drivers/openni2.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="name" value="torso_cam3d_right"/>
             <arg name="device_id" value="#1"/>
+            <!--arg name="data_skip" value="1"/-->
             <arg name="num_worker_threads" value="2"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/tools/hz_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="yaml_name" value="torso_cam3d_right"/>
@@ -190,23 +192,21 @@
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="light_torso"/>
         </include>
+-->
     </group>
 
     <group>
         <machine name="cob4-1-t2" address="$(arg cob4-1-t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
-<!--
         <include file="$(find cob_bringup)/tools/pc_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="pc" value="$(arg cob4-1-t2)"/>
         </include>
--->
 
-<!--
         <include file="$(find realsense_camera)/launch/r200_nodelet_rgbd.launch">
             <arg name="camera" value="torso_cam3d_down"/>
             <arg name="num_worker_threads" value="2"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/tools/hz_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="yaml_name" value="torso_cam3d_down"/>
@@ -217,26 +217,25 @@
             <arg name="nodelet_manager" value="torso_cam3d_down_nodelet_manager"/>
             <arg name="start_manager" value="false"/>
         </include>
+-->
     </group>
 
     <group>
         <machine name="cob4-1-t3" address="$(arg cob4-1-t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
-<!--
         <include file="$(find cob_bringup)/tools/pc_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="pc" value="$(arg cob4-1-t3)"/>
         </include>
--->
 
-<!--
         <include file="$(find cob_bringup)/drivers/openni2.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="name" value="torso_cam3d_left"/>
             <arg name="device_id" value="#1"/>
+            <!--arg name="data_skip" value="1"/-->
             <arg name="num_worker_threads" value="2" />
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/tools/hz_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="yaml_name" value="torso_cam3d_left"/>
@@ -247,26 +246,24 @@
             <arg name="nodelet_manager" value="torso_cam3d_left_nodelet_manager"/>
             <arg name="start_manager" value="false"/>
         </include>
+-->
     </group>
 
     <group>
         <machine name="cob4-1-s1" address="$(arg cob4-1-s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
-<!--
         <include file="$(find cob_bringup)/tools/pc_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="pc" value="$(arg cob4-1-s1)"/>
         </include>
--->
 
-<!--
         <include file="$(find cob_bringup)/drivers/openni2.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="name" value="sensorring_cam3d"/>
             <arg name="data_skip" value="3"/>
             <arg name="num_worker_threads" value="2"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/tools/hz_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="yaml_name" value="sensorring_cam3d"/>
@@ -276,28 +273,28 @@
             <arg name="camera_name" value="sensorring_cam3d"/>
             <arg name="nodelet_manager" value="sensorring_cam3d_nodelet_manager"/>
         </include>
+-->
     </group>
 
     <group>
         <machine name="cob4-1-h1" address="$(arg cob4-1-h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
-<!--
         <include file="$(find cob_bringup)/tools/pc_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="pc" value="$(arg cob4-1-h1)"/>
         </include>
--->
 
+<!--
         <include file="$(find cob_bringup)/drivers/sound.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
+-->
 
-<!--
         <include file="$(find cob_bringup)/drivers/usb_camera_node.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="camera_name" value="head_cam"/>
         </include>
--->
+<!--
         <include file="$(find cob_bringup)/tools/hz_monitor.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="yaml_name" value="head_cam"/>
@@ -308,6 +305,7 @@
             <arg name="colorimage_in" value="/head_cam/image_rect_color"/>
             <arg name="colorimage_out" value="/head_cam_upright/image_rect_color"/>
         </include>
+-->
     </group>
 
     <machine name="cob4-1-b1" address="$(arg cob4-1-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
