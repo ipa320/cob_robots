@@ -109,14 +109,10 @@
         </include>
 
         <!-- startup hardware -->
-        <include file="$(find cob_bringup)/drivers/canopen_402.launch">
+        <include file="$(find cob_bringup)/components/canopen_generic.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="torso"/>
             <arg name="can_device" value="can0"/>
-        </include>
-        <include file="$(find cob_bringup)/controllers/generic_controller.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="torso"/>
         </include>
         <!--include file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
             <arg name="robot" value="$(arg robot)"/>
@@ -124,24 +120,16 @@
             <arg name="debug" value="false"/>
         </include-->
 
-        <!--include file="$(find cob_bringup)/drivers/canopen_402.launch">
+        <!--include file="$(find cob_bringup)/components/canopen_generic.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="sensorring"/>
             <arg name="can_device" value="can1"/>
-        </include>
-        <include file="$(find cob_bringup)/controllers/generic_controller.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="sensorring"/>
-        </include-->
+        </include-->>
 
-        <!--include file="$(find cob_bringup)/drivers/canopen_402.launch">
+        <!--include file="$(find cob_bringup)/components/canopen_generic.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="head"/>
             <arg name="can_device" value="can1"/>
-        </include>
-        <include file="$(find cob_bringup)/controllers/generic_controller.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="head"/>
         </include-->
 
         <include file="$(find cob_bringup)/drivers/openni2.launch">
