@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="robot"/>
+    <arg name="has_phidget" default="true"/>
+    <arg name="use_bms" default="false"/>
+    <arg name="use_powerstate_phidget" default="$(arg has_phidget)"/>
+    
+    <!-- pyhisical parts -->    
+    <include file="$(find cob_bringup)/drivers/sick_s300.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="name" value="base_laser_front"/>
+    </include>
+    <include file="$(find cob_bringup)/drivers/sick_s300.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="name" value="base_laser_right"/>
+    </include>
+    <include file="$(find cob_bringup)/drivers/sick_s300.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="name" value="base_laser_left"/>
+    </include>
+    <include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+    <include file="$(find cob_bringup)/components/canopen_base.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+    
+    <include file="$(find cob_bringup)/drivers/light.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="light_base"/>
+    </include>
+
+    <include file="$(find cob_bringup)/drivers/phidgets.launch" if="$(arg has_phidget)">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+
+    <include file="$(find cob_bringup)/drivers/bms.launch" if="$(arg use_bms)">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+    
+    <include file="$(find cob_bringup)/drivers/powerstate_phidget.launch" if="$(arg use_powerstate_phidget)">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+
+    <include file="$(find cob_bringup)/tools/teleop.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+ 
+    <!-- utilities -->
+    <include file="$(find cob_bringup)/drivers/scan_unifier.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+    <include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+    <include file="$(find cob_bringup)/tools/battery_monitor.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+
+    <include file="$(find cob_bringup)/tools/base_collision_observer.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+
+    
+</launch>

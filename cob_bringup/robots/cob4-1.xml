@@ -28,59 +28,15 @@
         </include>
 
         <!-- startup hardware -->
-        <include file="$(find cob_bringup)/drivers/sick_s300.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="name" value="base_laser_front"/>
-        </include>
-        <include file="$(find cob_bringup)/drivers/sick_s300.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="name" value="base_laser_right"/>
-        </include>
-        <include file="$(find cob_bringup)/drivers/sick_s300.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="name" value="base_laser_left"/>
-        </include>
-        <include file="$(find cob_bringup)/drivers/scan_unifier.launch">
-            <arg name="robot" value="$(arg robot)"/>
-        </include>
-        <include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
-            <arg name="robot" value="$(arg robot)"/>
-        </include>
-        <!--include file="$(find cob_bringup)/tools/collision_monitor.launch">
-        </include-->
-        <node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
-
-        <include file="$(find cob_bringup)/components/canopen_base.launch">
+        <include file="$(find cob_bringup)/components/cob4_base.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
 
         <!-- start additional packages -->
-        <include file="$(find cob_bringup)/drivers/phidgets.launch">
-            <arg name="robot" value="$(arg robot)"/>
-        </include>
-        <include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
-            <arg name="robot" value="$(arg robot)"/>
-        </include>
-        <include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
-            <arg name="robot" value="$(arg robot)"/>
-        </include>
-        <include file="$(find cob_bringup)/tools/battery_monitor.launch">
-            <arg name="robot" value="$(arg robot)"/>
-        </include>
-        <include file="$(find cob_bringup)/tools/teleop.launch">
-            <arg name="robot" value="$(arg robot)"/>
-        </include>
-        <include file="$(find cob_bringup)/tools/base_collision_observer.launch">
-            <arg name="robot" value="$(arg robot)"/>
-        </include>
-        <include file="$(find cob_bringup)/drivers/light.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="light_base"/>
-        </include>
-        <!--include file="$(find cob_bringup)/drivers/bms.launch">
-            <arg name="robot" value="$(arg robot)" />
+        <!--include file="$(find cob_bringup)/tools/collision_monitor.launch">
         </include-->
-        <include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
+        <node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
+        <include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
         <include file="$(find cob_bringup)/tools/docker_control.launch">
