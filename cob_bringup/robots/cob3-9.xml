@@ -54,47 +54,31 @@
 		</include>
 
 		<!-- upper robot -->
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
 			<arg name="can_device" value="can2" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="torso"/>
-		</include>
 
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="tray" />
 			<arg name="can_device" value="can0" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="tray"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/tray_sensors.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="arm" />
 			<arg name="can_device" value="can1" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="arm" />
-		</include>
 
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="gripper" />
 			<arg name="can_device" value="can3" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="gripper"/>
 		</include>
 
 		<!-- start additional packages -->
