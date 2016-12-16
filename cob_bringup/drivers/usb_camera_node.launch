@@ -13,7 +13,7 @@
     <param name="camera_frame_id" value="$(arg camera_name)_link" />
     <param name="framerate" value="5"/>
     <param name="camera_name" value="$(arg camera_name)"/>
-    <param name="camera_info_url" value="package://cob_calibration_data/$(arg robot)/calibration/$(arg camera_name).yaml"/>
+    <param name="camera_info_url" value="package://cob_calibration_data/$(arg robot)/calibration/cameras/$(arg camera_name).yaml"/>
   </node>
   <node name="image_proc" pkg="image_proc" type="image_proc" ns="$(arg camera_name)"/>
 </launch>
