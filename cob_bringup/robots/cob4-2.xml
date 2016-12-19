@@ -183,17 +183,9 @@
             <arg name="component_name" value="gripper_right"/>
         </include-->
 
-        <include file="$(find realsense_camera)/launch/r200_nodelet_rgbd.launch">
-            <arg name="camera" value="torso_cam3d_down"/>
-        </include>
-        <include file="$(find cob_bringup)/tools/hz_monitor.launch">
+        <include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
             <arg name="robot" value="$(arg robot)"/>
-            <arg name="yaml_name" value="torso_cam3d_down"/>
-        </include>
-        <include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="camera_name" value="torso_cam3d_down"/>
-            <arg name="nodelet_manager" value="torso_cam3d_down_nodelet_manager"/>
+            <arg name="name" value="torso_cam3d_down"/>
             <arg name="start_manager" value="false"/>
         </include>
     </group>
