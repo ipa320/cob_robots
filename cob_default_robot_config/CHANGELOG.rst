@@ -2,6 +2,29 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.6 (2016-10-10)
+------------------
+* additional param files and modifications for raw3-6 ur10
+* remove unsafe ship buttons from command gui
+* add shipping pose for arms
+* review configuration files
+* clean behavior trigger services
+* remove torso from cob4-5
+* remove head (is static for cob4-5)
+* added arms, hands and cameras
+* disable head and sensorring for cob4-2
+* disable head and sensorring
+* unify head and torso poses
+* updated urdf model--> addapt the joint configurations
+* add 3dof head to cob4-2
+* test Head 3dof
+* removed unnecessary command gui buttons
+* setup cob4-5
+* add head to cob4-2
+* use symlinks for cob4-1
+* improve head and torso joint configurations
+* Contributors: Benjamin Maidel, Florian Weisshardt, fmw-hb, ipa-cob4-5, ipa-fmw, ipa-fxm, ipa-nhg, msh
+
 0.6.5 (2016-04-01)
 ------------------
 * proper stop, init and recover via command_gui

@@ -8,7 +8,7 @@
   <xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- calibration -->
-  <xacro:include filename="$(find cob_hardware_config)/cob4-7/urdf/properties.urdf.xacro" />
+  <xacro:include filename="$(find cob_hardware_config)/cob4-10/urdf/properties.urdf.xacro" />
 
   <!-- base -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
