@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="robot"/>
+    <arg name="component_name"/>
+    <arg name="can_device"/>
+    <arg name="sim" default="false"/>
+ 
+    <include file="$(find cob_bringup)/drivers/canopen_402.launch" unless="$(arg sim)">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="$(arg component_name)"/>
+        <arg name="can_device" value="$(arg can_device)"/>
+    </include>
+    <include file="$(find cob_bringup)/controllers/generic_controller.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="$(arg component_name)"/>
+    </include>
+</launch>
