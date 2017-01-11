@@ -16,6 +16,8 @@
   <depend>roslaunch</depend>
   <depend>rostest</depend>
 
+  <build_depend>cob_supported_robots</build_depend>
+  
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_description</exec_depend>
   <exec_depend>cob_omni_drive_controller</exec_depend>

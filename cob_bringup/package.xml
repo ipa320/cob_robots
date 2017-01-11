@@ -15,6 +15,8 @@
 
   <depend>roslaunch</depend>
 
+  <build_depend>cob_supported_robots</build_depend>
+
   <exec_depend>camera1394</exec_depend>
   <exec_depend>canopen_motor_node</exec_depend>
   <exec_depend>cob_android_script_server</exec_depend>
