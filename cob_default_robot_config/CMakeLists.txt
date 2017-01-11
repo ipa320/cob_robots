@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_default_robot_config)
 
-find_package(catkin REQUIRED COMPONENTS cob_supported_robots roslaunch)
+find_package(catkin REQUIRED COMPONENTS cob_supported_robots)
 
 catkin_package()
 
 if(CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
   foreach(robot ${cob_supported_robots_ROBOTLIST})
     message("testing for robot: ${robot}")
     #roslaunch_add_file_check(upload_param.launch robot:=${robot})
