@@ -16,8 +16,10 @@
 
   <exec_depend>cob_bringup</exec_depend>
   <exec_depend>cob_controller_configuration_gazebo</exec_depend>
+  <exec_depend>cob_default_robot_behavior</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
   <exec_depend>cob_hardware_config</exec_depend>
+  <exec_depend>cob_moveit_config</exec_depend>
 
   <export>
     <metapackage/>
