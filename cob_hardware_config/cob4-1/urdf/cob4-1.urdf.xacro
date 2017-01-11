@@ -16,10 +16,10 @@
   <!-- torso -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso_2dof.urdf.xacro" />
 
-  <!-- head -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
+  <!-- head --> <!--  not yet in hardware -->
+  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head_static.urdf.xacro" />
 
-  <!-- sensorring -->
+  <!-- sensorring --> <!--  not yet in hardware -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring_asus.urdf.xacro" />
 
   <!-- composition of the robot -->
@@ -44,21 +44,25 @@
   <xacro:head name="head" parent="torso_3_link">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
+<!-- currently not used in hardware
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>head</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
+-->
 
   <xacro:sensorring name="sensorring" parent="head_3_link">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
+<!-- currently not used in hardware
   <gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>sensorring</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
   </gazebo>
+-->
 
 </robot>
