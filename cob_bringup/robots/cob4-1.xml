@@ -15,6 +15,12 @@
     <include file="$(find cob_hardware_config)/common/upload_robot.launch">
         <arg name="robot" value="$(arg robot)"/>
     </include>
+    <!-- upload semantic description -->
+    <include file="$(find cob_moveit_config)/launch/upload_config.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="load_semantic_description" value="true"/>
+        <arg name="load_planning_context" value="false"/>
+    </include>
 
     <!-- upload default configuration parameters -->
     <include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch"/>
@@ -46,8 +52,7 @@
         <include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
             <arg name="robot" value="$(arg robot)"/>
         </include>
-        <!--include file="$(find cob_bringup)/tools/collision_monitor.launch">
-        </include-->
+        <!-- <include file="$(find cob_bringup)/tools/collision_monitor.launch"> -->
         <node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
 
         <include file="$(find cob_bringup)/drivers/canopen_402.launch">
