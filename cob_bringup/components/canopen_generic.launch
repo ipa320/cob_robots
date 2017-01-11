@@ -3,7 +3,10 @@
     <arg name="robot"/>
     <arg name="component_name"/>
     <arg name="can_device"/>
-    <include file="$(find cob_bringup)/drivers/canopen_402.launch">
+    <arg name="twist_control" default="false"/>
+    <arg name="sim" default="false"/>
+
+    <include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="component_name" value="$(arg component_name)"/>
         <arg name="can_device" value="$(arg can_device)"/>
@@ -11,5 +14,10 @@
     <include file="$(find cob_bringup)/controllers/generic_controller.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="component_name" value="$(arg component_name)"/>
+    </include>
+    <include if="$(arg twist_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="$(arg component_name)"/>
+        <arg name="debug" value="false"/>
     </include>
 </launch>

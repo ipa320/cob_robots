@@ -6,8 +6,9 @@
     <arg name="data_skip" default="0"/>
     <arg name="num_worker_threads" default="4" />
     <arg name="start_manager" default="true"/>
+    <arg name="sim" default="false"/>
 
-    <include file="$(find cob_bringup)/drivers/openni2.launch">
+    <include unless="$(arg sim)" file="$(find cob_bringup)/drivers/openni2.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="device_id" default="$(arg device_id)"/>
         <arg name="name" value="$(arg name)"/>

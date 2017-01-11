@@ -2,8 +2,9 @@
 <launch>
     <arg name="robot"/>
     <arg name="name" default="head_cam"/>
+    <arg name="sim" default="false"/>
 
-   <include file="$(find cob_bringup)/drivers/usb_camera_node.launch">
+   <include unless="$(arg sim)" file="$(find cob_bringup)/drivers/usb_camera_node.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="camera_name" value="$(arg name)"/>
     </include>
