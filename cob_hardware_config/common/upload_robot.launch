@@ -1,13 +1,32 @@
 <?xml version="1.0"?>
 <launch>
 
-    <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-    <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="planning_context" default="false"/>
 
-    <!-- send cob urdf to param server -->
-    <param name="robot_description" command="$(find xacro)/xacro.py '$(arg pkg_hardware_config)/$(arg robot)/urdf/$(arg robot).urdf.xacro'" />
+	<!-- send cob urdf to param server -->
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(arg pkg_hardware_config)/$(arg robot)/urdf/$(arg robot).urdf.xacro'" />
 
-    <!-- The semantic description that corresponds to the URDF -->
-    <param name="robot_description_semantic" textfile="$(arg pkg_hardware_config)/$(arg robot)/srdf/$(arg robot).srdf" />
+	<!-- The semantic description that corresponds to the URDF -->
+	<param name="robot_description_semantic" textfile="$(arg pkg_hardware_config)/$(arg robot)/srdf/$(arg robot).srdf" />
+
+	<group if="$(arg planning_context)">
+
+		<!-- Load to the parameter server yaml files -->
+		<group ns="robot_description_planning">
+			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/moveit_config/joint_limits.yaml"/>
+		</group>
+
+		<!-- Load updated joint limits (override information from URDF) -->
+		<group ns="robot_description_planning">
+			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/moveit_config/joint_limits.yaml"/>
+		</group>
+
+		<!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
+		<group ns="robot_description_kinematics">
+			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/moveit_config/kinematics.yaml"/>
+		</group>
+	</group>
 
 </launch>

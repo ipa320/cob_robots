@@ -1,0 +1,10 @@
+controller_list:
+  - name: fake_torso_controller
+    joints:
+      - torso_2_joint
+      - torso_3_joint
+#  - name: fake_head_controller
+#    joints:
+#      - head_1_joint
+#      - head_2_joint
+#      - head_3_joint

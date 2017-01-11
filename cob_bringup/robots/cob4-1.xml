@@ -14,6 +14,7 @@
     <!-- upload robot description -->
     <include file="$(find cob_hardware_config)/common/upload_robot.launch">
         <arg name="robot" value="$(arg robot)"/>
+        <arg name="planning_context" value="true" />
     </include>
 
     <!-- upload default configuration parameters -->
