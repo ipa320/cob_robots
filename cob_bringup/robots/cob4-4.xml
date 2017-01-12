@@ -5,6 +5,7 @@
 	<arg name="robot" value="cob4-4"/>
 	<arg name="cob4-4-b1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+	<arg name="sim" default="false"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -17,17 +18,23 @@
 	<group>
 		<machine name="cob4-4-b1" address="$(arg cob4-4-b1)" env-loader="$(arg env-script)" default="true"/>
 
-		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg cob4-4-b1)" />
-		</include>
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
+				<arg name="robot" value="$(arg robot)" />
+				<arg name="pc" value="$(arg cob4-4-b1)" />
+			</include>
+			<include file="$(find cob_bringup)/drivers/bms.launch">
+				<arg name="robot" value="$(arg robot)" />
+			</include>
+		</group>
 
-		<!-- startup hardware -->
 		<include file="$(find cob_bringup)/components/canopen_base.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<!-- start additional packages -->
+		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -38,11 +45,6 @@
 		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include-->
-		<include file="$(find cob_bringup)/drivers/bms.launch">
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
-		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)" />
 		</include>
