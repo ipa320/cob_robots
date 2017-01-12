@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="robot"/>
-    <arg name="component_name"/>
-    <arg name="can_device"/>
-    <arg name="cartesian_control" default="false"/>
-    <arg name="sim" default="false"/>
+	<arg name="robot"/>
+	<arg name="component_name"/>
+	<arg name="can_device"/>
+	<arg name="cartesian_control" default="false"/>
+	<arg name="sim" default="false"/>
 
-    <include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
-        <arg name="robot" value="$(arg robot)"/>
-        <arg name="component_name" value="$(arg component_name)"/>
-        <arg name="can_device" value="$(arg can_device)"/>
-    </include>
-    <include file="$(find cob_bringup)/controllers/generic_controller.launch">
-        <arg name="robot" value="$(arg robot)"/>
-        <arg name="component_name" value="$(arg component_name)"/>
-    </include>
-    <include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
-        <arg name="robot" value="$(arg robot)"/>
-        <arg name="component_name" value="$(arg component_name)"/>
-        <arg name="debug" value="false"/>
-    </include>
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+		<arg name="can_device" value="$(arg can_device)"/>
+	</include>
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+	</include>
+	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+		<arg name="debug" value="false"/>
+	</include>
 </launch>

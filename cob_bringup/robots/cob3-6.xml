@@ -73,6 +73,7 @@
 		</include>
 		<include file="$(find cob_bringup)/components/legacy_sdh.launch" >
 			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="gripper" />
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/components/legacy_head_axis.launch" >

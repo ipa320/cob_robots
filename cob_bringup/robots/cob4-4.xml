@@ -6,8 +6,6 @@
 	<arg name="cob4-4-b1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
-
-
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
 		<arg name="robot" value="$(arg robot)" />

@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="robot"/>
-    <arg name="sim" default="false"/>
+	<arg name="robot"/>
+	<arg name="sim" default="false"/>
 
-    <include unless="$(arg sim)" file="$(find cob_bringup)/drivers/head_axis.launch" >
-        <arg name="robot" value="$(arg robot)" />
-    </include>
-    <include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
-        <arg name="robot" value="$(arg robot)"/>
-        <arg name="component_name" value="head"/>
-    </include>
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/head_axis.launch" >
+		<arg name="robot" value="$(arg robot)" />
+	</include>
+	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="head"/>
+	</include>
 </launch>
