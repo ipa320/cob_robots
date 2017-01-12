@@ -1,0 +1,4 @@
+diagnostics_name: cam3d
+topics: [/cam3d/rgb/camera_info]
+hz: 7
+hzerror: 3
