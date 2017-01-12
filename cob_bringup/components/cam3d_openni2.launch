@@ -6,6 +6,7 @@
     <arg name="data_skip" default="0"/>
     <arg name="num_worker_threads" default="4" />
     <arg name="start_manager" default="true"/>
+    <arg name="flip" default="true"/>
     <arg name="sim" default="false"/>
 
     <include unless="$(arg sim)" file="$(find cob_bringup)/drivers/openni2.launch">
@@ -19,7 +20,7 @@
         <arg name="robot" value="$(arg robot)"/>
         <arg name="yaml_name" value="$(arg name)"/>
     </include>
-    <include file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+    <include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="camera_name" value="$(arg name)"/>
         <arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>

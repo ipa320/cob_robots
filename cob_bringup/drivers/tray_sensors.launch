@@ -3,9 +3,13 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="sim" default="false"/>
 
-	<node ns="tray_sensors" pkg="cob_phidgets" type="range_sensors" name="tray_sensor_node" cwd="node" respawn="true" output="screen">
+	<node unless="$(arg sim)" ns="tray_sensors" pkg="cob_phidgets" type="range_sensors" name="tray_sensor_node" cwd="node" respawn="true" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/tray_sensors.yaml" />
+	</node>
+	<node if="$(arg sim)" ns="tray_sensors" pkg="cob_phidgets" type="simulated_range_sensors.py" name="tray_sensors" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/tray_sensors_sim.yaml"/>
 	</node>
 
 </launch>
