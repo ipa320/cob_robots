@@ -122,21 +122,21 @@
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="torso"/>
             <arg name="can_device" value="can0"/>
-            <arg name="twist_control" value="true"/>
+            <arg name="cartesian_control" value="true"/>
             <arg name="sim" value="$(arg sim)"/>
         </include>
         <include file="$(find cob_bringup)/components/canopen_generic.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="sensorring"/>
             <arg name="can_device" value="can1"/>
-            <arg name="twist_control" value="false"/>
+            <arg name="cartesian_control" value="false"/>
             <arg name="sim" value="$(arg sim)"/>
         </include>
         <include file="$(find cob_bringup)/components/canopen_generic.launch">
             <arg name="robot" value="$(arg robot)"/>
             <arg name="component_name" value="head"/>
             <arg name="can_device" value="can1"/>
-            <arg name="twist_control" value="true"/>
+            <arg name="cartesian_control" value="true"/>
             <arg name="sim" value="$(arg sim)"/>
         </include>
         <include file="$(find cob_bringup)/components/cam3d_openni2.launch">
