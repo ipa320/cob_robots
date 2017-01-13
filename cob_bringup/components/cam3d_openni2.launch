@@ -4,7 +4,7 @@
 	<arg name="name"/>
 	<arg name="device_id" default="#1"/>
 	<arg name="data_skip" default="0"/>
-	<arg name="num_worker_threads" default="4" />
+	<arg name="num_worker_threads" default="4"/>
 	<arg name="start_manager" default="true"/>
 	<arg name="flip" default="true"/>
 	<arg name="sim" default="false"/>

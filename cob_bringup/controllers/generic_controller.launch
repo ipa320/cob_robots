@@ -8,7 +8,7 @@
 	<group ns="$(arg component_name)">
 
 		<!-- load controller configs -->
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml"/>
 		<!--rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_joint_limits.yaml"/-->
 
 		<!-- start_controllers -->

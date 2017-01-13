@@ -8,24 +8,24 @@
 	<arg name="sim" default="false"/>
 
 	<!-- upload robot description -->
-	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
-		<arg name="robot" value="$(arg robot)" />
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch">
+		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
+	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch"/>
 
 	<group>
 		<machine name="cob4-4-b1" address="$(arg cob4-4-b1)" env-loader="$(arg env-script)" default="true"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
-			<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-				<arg name="robot" value="$(arg robot)" />
-				<arg name="pc" value="$(arg cob4-4-b1)" />
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg cob4-4-b1)"/>
 			</include>
 			<include file="$(find cob_bringup)/drivers/bms.launch">
-				<arg name="robot" value="$(arg robot)" />
+				<arg name="robot" value="$(arg robot)"/>
 			</include>
 		</group>
 
@@ -35,18 +35,18 @@
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
-		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/tools/teleop.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/tools/teleop.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_script_server)/launch/script_server.launch" />
-		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_script_server)/launch/script_server.launch"/>
+		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include-->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-			<arg name="robot" value="$(arg robot)" />
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
 	</group>
 

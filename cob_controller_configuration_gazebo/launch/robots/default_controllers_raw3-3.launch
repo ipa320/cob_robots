@@ -5,12 +5,12 @@
 
 	<!-- aggregated robot_state_publisher -->
 	<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-		<arg name="robot" value="$(arg robot)" />
+		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
 	<!-- Base -->
 	<!-- simulated driver services -->
-	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
 	<!-- base controllers -->
 	<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -24,8 +24,8 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="name" value="base_laser_rear"/>
 	</include>
-	<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-		<arg name="robot" value="$(arg robot)" />
+	<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
+		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
 	<include file="$(find cob_bringup)/drivers/relayboard.launch">
@@ -35,7 +35,7 @@
 	<!-- Arms -->
 	<!-- simulated driver services -->
 <!--
-	<node ns="arm_left" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node ns="arm_left" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
 -->
 	<!-- generic controllers -->
 <!--
@@ -46,7 +46,7 @@
 -->
 	<!-- simulated driver services -->
 <!--
-	<node ns="arm_right" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node ns="arm_right" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
 -->
 	<!-- generic controllers -->
 <!--
@@ -59,7 +59,7 @@
 	<!-- Grippers -->
 	<!-- simulated driver services -->
 <!--
-	<node ns="gripper_left" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node ns="gripper_left" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
 -->
 	<!-- generic controllers -->
 <!--
@@ -70,7 +70,7 @@
 -->
 	<!-- simulated driver services -->
 <!--
-	<node ns="gripper_right" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node ns="gripper_right" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
 -->
 	<!-- generic controllers -->
 <!--
@@ -83,7 +83,7 @@
 	<!-- Head/Torso -->
 	<!-- simulated driver services -->
 <!--
-	<node ns="torso" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
+	<node ns="torso" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
 -->
 	<!-- generic controllers -->
 <!--
@@ -94,10 +94,10 @@
 -->
 
 	<!-- start additional components -->
-	<!--include file="$(find cob_bringup)/drivers/sound.launch" >
+	<!--include file="$(find cob_bringup)/drivers/sound.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include-->
-	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+	<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 </launch>

@@ -11,38 +11,38 @@
 
 
 	<!-- upload robot description -->
-	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
-		<arg name="robot" value="$(arg robot)" />
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch">
+		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/raw3-3/upload_param_raw3-3.launch" />
+	<include file="$(find cob_default_robot_config)/raw3-3/upload_param_raw3-3.launch"/>
 
 	<group>
 		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/drivers/base_driver.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="base_laser_front" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="base_laser_rear" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/controllers/base_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="base_laser_front"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="base_laser_rear"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/phidgets.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
@@ -53,13 +53,13 @@
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
 
 <!--
-		<include file="$(find cob_bringup)/drivers/frida.launch" >
-			<arg name="robot_ip" value="192.168.125.1" />
+		<include file="$(find cob_bringup)/drivers/frida.launch">
+			<arg name="robot_ip" value="192.168.125.1"/>
 		</include>
 		<node ns="arm" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 -->
@@ -67,47 +67,47 @@
 		<!--include file="$(find cob_bringup)/drivers/prace_grippers.launch"/-->
 
 		<!-- start additional packages -->
-		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/tools/teleop.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/tools/teleop.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
 
 		<group if="$(arg use_rplidar)">
-			<include file="$(find rplidar_ros)/launch/rplidar.launch" />
+			<include file="$(find rplidar_ros)/launch/rplidar.launch"/>
 		</group>
 
 		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="torso" />
-			<arg name="can_device" value="can1" />
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+			<arg name="can_device" value="can1"/>
 		</include-->
-		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
 
 		<!-- aggregated robot_state_publisher -->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-			<arg name="robot" value="$(arg robot)" />
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
 
 		<!-- script server -->
-		<include file="$(find cob_script_server)/launch/script_server.launch" />
+		<include file="$(find cob_script_server)/launch/script_server.launch"/>
 	</group>
 
 	<group>
 		<machine name="pc2" address="$(arg pc2)" env-loader="$(arg env-script)" default="true"/>
 
-		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc2)" />
+		<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="pc" value="$(arg pc2)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/drivers/light.launch" >
+		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 	</group>

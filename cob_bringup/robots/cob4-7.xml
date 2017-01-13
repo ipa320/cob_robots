@@ -43,7 +43,7 @@
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
 			<!--include file="$(find cob_bringup)/drivers/bms.launch">
-				<arg name="robot" value="$(arg robot)" />
+				<arg name="robot" value="$(arg robot)"/>
 			</include-->
 			<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
 				<arg name="robot" value="$(arg robot)"/>

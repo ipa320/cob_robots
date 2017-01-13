@@ -3,8 +3,8 @@
 	<arg name="robot"/>
 	<arg name="sim" default="false"/>
 
-	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/head_axis.launch" >
-		<arg name="robot" value="$(arg robot)" />
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/head_axis.launch">
+		<arg name="robot" value="$(arg robot)"/>
 	</include>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>

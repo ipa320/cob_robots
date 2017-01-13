@@ -9,7 +9,7 @@
 	<!-- parameters for CANopen node -->
 	<node ns="$(arg component_name)" pkg="canopen_motor_node" type="canopen_motor_node" name="driver" output="screen" clear_params="true">
 		<rosparam param="bus/device" subst_value="True">$(arg can_device)</rosparam>
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml" />
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
 	</node>
 
 </launch>

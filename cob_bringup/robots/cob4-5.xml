@@ -39,7 +39,7 @@
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
 			<!--include file="$(find cob_bringup)/drivers/bms.launch">
-				<arg name="robot" value="$(arg robot)" />
+				<arg name="robot" value="$(arg robot)"/>
 			</include-->
 		</group>
 
@@ -92,7 +92,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/docker_control.launch">
-			<arg name="robot" value="$(arg robot)" />
+			<arg name="robot" value="$(arg robot)"/>
 			<arg name="multi_station" default="true"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
