@@ -27,9 +27,9 @@
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg pc1)"/>
 			</include>
-			<include file="$(find cob_bringup)/tools/wifi_monitor.launch">
+			<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
-			</include>
+			</include-->
 			<include file="$(find cob_bringup)/drivers/phidgets.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
@@ -72,6 +72,9 @@
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">

@@ -12,12 +12,6 @@
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
-	<!-- upload semantic description -->
-	<include file="$(find cob_moveit_config)/launch/upload_config.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="load_semantic_description" value="true"/>
-		<arg name="load_planning_context" value="false"/>
-	</include>
 
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch"/>
@@ -127,6 +121,15 @@
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="name" value="right"/>
 			</include>
+			<include file="$(find cob_bringup)/drivers/openni.launch" >
+				<arg name="robot" value="$(arg robot)" />
+			</include>
+			<include file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+				<arg name="namespace" value="/cam3d" />
+				<arg name="rate" value="1.0" />
+				<arg name="start_manager" value="false"/>
+				<arg name="nodelet_manager" value="cam3d_nodelet_manager"/>
+			</include>
 		</group>
 
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
@@ -134,16 +137,6 @@
 			<arg name="component_name" value="tray"/>
 			<arg name="can_device" value="can1"/>
 			<arg name="cartesian_control" value="false"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="cam3d"/>
-			<arg name="device_id" value="#1"/>
-			<!--arg name="data_skip" value="1"/-->
-			<arg name="num_worker_threads" value="2"/>
-			<arg name="start_manager" value="false"/>
-			<arg name="flip" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/light.launch">

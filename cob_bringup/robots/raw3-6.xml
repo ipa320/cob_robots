@@ -31,18 +31,11 @@
 			<include file="$(find cob_bringup)/drivers/phidgets.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
-
 			<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
-
 			<include file="$(find cob_bringup)/drivers/emstate_phidget.launch">
 				<arg name="robot" value="$(arg robot)"/>
-			</include>
-			<include file="$(find cob_bringup)/drivers/ur.launch">
-				<arg name="robot_ip" value="$(arg ur_ip)"/>
-				<arg name="min_payload"  value="0.0"/>
-				<arg name="max_payload"  value="20.0"/>
 			</include>
 		</group>
 
@@ -58,6 +51,14 @@
 		</include>
 		<include file="$(find cob_bringup)/components/legacy_base.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/ur.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm"/>
+			<arg name="robot_ip" value="$(arg ur_ip)"/>
+			<arg name="min_payload"  value="0.0"/>
+			<arg name="max_payload"  value="20.0"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 

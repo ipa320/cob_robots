@@ -27,9 +27,6 @@
 			<include file="$(find cob_bringup)/tools/wifi_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
-			<include file="$(find cob_bringup)/drivers/openni.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include>
 		</group>
 
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch">

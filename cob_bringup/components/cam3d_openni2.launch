@@ -6,6 +6,7 @@
 	<arg name="data_skip" default="0"/>
 	<arg name="num_worker_threads" default="4"/>
 	<arg name="start_manager" default="true"/>
+	<arg name="throttle" default="false"/>
 	<arg name="flip" default="true"/>
 	<arg name="sim" default="false"/>
 
@@ -25,5 +26,11 @@
 		<arg name="camera_name" value="$(arg name)"/>
 		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
 		<arg name="start_manager" value="$(arg start_manager)"/>
+	</include>
+	<include if="$(arg throttle)" file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+		<arg name="namespace" value="$(arg name)" />
+		<arg name="rate" value="1.0" />
+		<arg name="start_manager" value="$(arg start_manager)"/>
+		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
 	</include>
 </launch>
