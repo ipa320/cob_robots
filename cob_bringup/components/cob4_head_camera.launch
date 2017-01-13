@@ -19,4 +19,3 @@
 		<arg name="colorimage_out" value="/$(arg name)_upright/image_rect_color"/>
 	</include>
 </launch>
-

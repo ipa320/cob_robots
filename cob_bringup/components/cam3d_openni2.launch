@@ -27,4 +27,3 @@
 		<arg name="start_manager" value="$(arg start_manager)"/>
 	</include>
 </launch>
-
