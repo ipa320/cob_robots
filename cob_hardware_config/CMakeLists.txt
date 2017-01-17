@@ -3,8 +3,6 @@ project(cob_hardware_config)
 
 find_package(catkin REQUIRED COMPONENTS roslaunch rostest)
 
-catkin_package()
-
 set(robotlist
     cob3-2
     cob3-6
@@ -23,6 +21,10 @@ set(robotlist
     raw3-4
     raw3-5
     raw3-6
+)
+
+catkin_package(
+    CFG_EXTRAS cob_hardware_config-extras.cmake
 )
 
 ### TESTING ###

@@ -15,4 +15,6 @@
 
   <depend>roslaunch</depend>
 
+  <build_depend>cob_hardware_config</build_depend>
+
 </package>
