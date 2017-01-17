@@ -64,31 +64,35 @@
     </plugin>
   </gazebo>
 
-  <xacro:head name="head" parent="torso_3_link" dof1="true" dof2="true" dof3="true">
+  <!-- not yet active on cob4-2 hardware -->
+  <!--xacro:head name="head" parent="torso_3_link" dof1="true" dof2="true" dof3="true"-->
+  <xacro:head name="head" parent="torso_3_link" dof1="false" dof2="false" dof3="false">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam">
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
-  <gazebo>
+  <!--gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>head</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
-  </gazebo>
+  </gazebo-->
 
-  <xacro:sensorring name="sensorring" parent="head_3_link">
+  <!-- not yet active on cob4-2 hardware -->
+  <!--xacro:sensorring name="sensorring" parent="head_3_link" active="true" -->
+  <xacro:sensorring name="sensorring" parent="head_3_link" active="false" >
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
   <xacro:cob_kinect_v0 name="sensorring_cam3d" ros_topic="sensorring_cam3d" parent="sensorring_link">
     <origin xyz="${sensorring_cam3d_x} ${sensorring_cam3d_y} ${sensorring_cam3d_z}" rpy="${sensorring_cam3d_roll} ${sensorring_cam3d_pitch} ${sensorring_cam3d_yaw}" />
   </xacro:cob_kinect_v0>
-  <gazebo>
+  <!--gazebo>
     <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
       <robotNamespace>sensorring</robotNamespace>
       <filterJointsParam>joint_names</filterJointsParam>
     </plugin>
-  </gazebo>
+  </gazebo-->
 
 
   <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" has_podest="false">

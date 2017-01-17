@@ -94,7 +94,7 @@
     </plugin>
   </gazebo>
 
-  <xacro:sensorring name="sensorring" parent="head_3_link">
+  <xacro:sensorring name="sensorring" parent="head_3_link" active="true">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
   <xacro:cob_kinect_v0 name="sensorring_cam3d" ros_topic="sensorring_cam3d" parent="sensorring_link">
