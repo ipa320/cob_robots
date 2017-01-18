@@ -15,7 +15,6 @@
 
   <depend>roslaunch</depend>
 
-  <exec_depend>camera1394</exec_depend>
   <exec_depend>canopen_chain_node</exec_depend>
   <exec_depend>canopen_motor_node</exec_depend>
   <exec_depend>cob_android_script_server</exec_depend>
@@ -24,7 +23,6 @@
   <exec_depend>cob_bms_driver</exec_depend>
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_cam3d_throttle</exec_depend>
-  <exec_depend>cob_camera_sensors</exec_depend>
   <exec_depend>cob_collision_monitor</exec_depend>
   <exec_depend>cob_collision_velocity_filter</exec_depend>
   <exec_depend>cob_command_gui</exec_depend>
@@ -38,9 +36,7 @@
   <exec_depend>cob_frame_tracker</exec_depend>
   <exec_depend>cob_hand_bridge</exec_depend>
   <exec_depend>cob_hardware_config</exec_depend>
-  <exec_depend>cob_head_axis</exec_depend>
   <exec_depend>cob_image_flip</exec_depend>
-  <exec_depend>cob_lbr</exec_depend> <!-- from cob_substitute -->
   <exec_depend>cob_light</exec_depend>
   <exec_depend>cob_linear_nav</exec_depend>
   <exec_depend>cob_mimic</exec_depend>
@@ -67,11 +63,7 @@
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>costmap_2d</exec_depend>
   <exec_depend>diagnostic_aggregator</exec_depend>
-  <exec_depend>effort_controllers</exec_depend>
-  <exec_depend>frida_driver</exec_depend> <!-- from cob_substitute -->
-  <exec_depend>hokuyo_node</exec_depend>
   <exec_depend>image_proc</exec_depend>
-  <exec_depend>joint_state_controller</exec_depend>
   <exec_depend>joint_state_controller</exec_depend>
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
@@ -81,18 +73,14 @@
   <exec_depend>openni_launch</exec_depend>
   <exec_depend>openni2_launch</exec_depend>
   <exec_depend>position_controllers</exec_depend>
-  <exec_depend>position_controllers</exec_depend>
-  <exec_depend>prace_gripper_driver</exec_depend> <!-- from cob_substitute -->
-  <exec_depend>prosilica_camera</exec_depend>
   <exec_depend>realsense_camera</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rosserial_python</exec_depend>
   <exec_depend>rosserial_server</exec_depend>
   <exec_depend>rostopic</exec_depend>
-  <exec_depend>rplidar_ros</exec_depend> <!-- from cob_substitute -->
+  <exec_depend>rplidar_ros</exec_depend>
   <exec_depend>rviz</exec_depend>
   <exec_depend>schunk_powercube_chain</exec_depend>
-  <exec_depend>schunk_sdh</exec_depend>
   <exec_depend>sick_visionary_t_driver</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>topic_tools</exec_depend>

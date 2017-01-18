@@ -17,15 +17,10 @@
   <depend>roslaunch</depend>
 
   <exec_depend>cob_bringup</exec_depend>
-  <exec_depend>cob_cam3d_throttle</exec_depend>
-  <exec_depend>cob_hardware_config</exec_depend>
-  <exec_depend>cob_phidgets</exec_depend>
-  <exec_depend>cob_script_server</exec_depend>
   <exec_depend>diagnostic_msgs</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>std_srvs</exec_depend>
-  <exec_depend>topic_tools</exec_depend>
 
   <test_depend>cob_supported_robots</test_depend>
 
