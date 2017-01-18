@@ -100,4 +100,6 @@
   <exec_depend>usb_cam</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
 
+  <test_depend>cob_supported_robots</test_depend>
+
 </package>

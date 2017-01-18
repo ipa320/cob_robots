@@ -1,0 +1,15 @@
+<package format="2">
+  <name>cob_supported_robots</name>
+  <version>0.6.6</version>
+  <description>This package contains the list of supported robots within the care-o-bot family.</description>
+
+  <license>LGPL</license>
+
+  <url type="website">http://ros.org/wiki/cob_supported_robots</url>
+
+  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <author email="mathias.luedtke@ipa.fraunhofer.de">Mathias Lüdtke</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

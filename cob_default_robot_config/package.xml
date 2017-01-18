@@ -15,4 +15,6 @@
 
   <depend>roslaunch</depend>
 
+  <build_depend>cob_supported_robots</build_depend>
+
 </package>
