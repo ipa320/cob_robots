@@ -92,6 +92,7 @@
   <exec_depend>rviz</exec_depend>
   <exec_depend>schunk_powercube_chain</exec_depend>
   <exec_depend>schunk_sdh</exec_depend>
+  <exec_depend>service_tools</exec_depend>
   <exec_depend>sick_visionary_t_driver</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>topic_tools</exec_depend>

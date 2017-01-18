@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+    <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+    <arg name="can_device"/>
+    <arg name="master_component"/>
+    <arg name="slave_component"/>
+
+    <group ns="$(arg slave_component)">
+        <!-- relays for script server and custom scripts -->
+        <node name="$(arg slave_component)_init_relay" pkg="service_tools" type="service_relay" args="driver/init /$(arg master_component)/driver/init" respawn="false" output="screen"/>
+        <node name="$(arg slave_component)_recover_relay" pkg="service_tools" type="service_relay" args="driver/recover /$(arg master_component)/driver/recover" respawn="false" output="screen"/>
+        <node name="$(arg slave_component)_joint_states_relay" pkg="topic_tools" type="relay" args="/$(arg master_component)/joint_states joint_states" respawn="false" output="screen"/>
+
+        <!-- load controller config -->
+        <rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg slave_component)_controller.yaml" />
+
+        <!-- force absolute controller names -->
+        <param name="joint_trajectory_controller_name" value="/$(arg slave_component)/joint_trajectory_controller"/>
+        <param name="joint_group_position_controller_name" value="/$(arg slave_component)/joint_group_position_controller"/>
+        <param name="joint_group_velocity_controller_name" value="/$(arg slave_component)/joint_group_velocity_controller"/>
+
+        <remap from="controller_manager/load_controller" to="/$(arg master_component)/controller_manager/load_controller"/>
+        <remap from="controller_manager/switch_controller" to="/$(arg master_component)/controller_manager/switch_controller"/>
+
+        <node pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" name="control_mode_adapter" cwd="node" respawn="false" output="screen"/>
+    </group>
+
+    <!-- remaps for rqt_joint_trajectory_controller -->
+    <remap from="/$(arg slave_component)/joint_trajectory_controller/command" to="/$(arg master_component)/$(arg slave_component)/joint_trajectory_controller/command"/>
+    <remap from="/$(arg slave_component)/joint_trajectory_controller/state" to="/$(arg master_component)/$(arg slave_component)/joint_trajectory_controller/state"/>
+
+    <include file="$(find cob_bringup)/drivers/canopen_402.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="$(arg master_component)"/>
+        <arg name="can_device" value="$(arg can_device)"/>
+    </include>
+    <include file="$(find cob_bringup)/controllers/generic_controller.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="$(arg master_component)"/>
+    </include>
+</launch>

@@ -129,24 +129,11 @@
             <arg name="component_name" value="torso"/>
         </include>
 
-        <include file="$(find cob_bringup)/drivers/canopen_402.launch">
+        <include file="$(find cob_bringup)/drivers/canopen_shared_bus.launch">
             <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="sensorring"/>
+            <arg name="master_component" value="head"/>
+            <arg name="slave_component" value="sensorring"/>
             <arg name="can_device" value="can1"/>
-        </include>
-        <include file="$(find cob_bringup)/controllers/generic_controller.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="sensorring"/>
-        </include>
-
-        <include file="$(find cob_bringup)/drivers/canopen_402.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="head"/>
-            <arg name="can_device" value="can1"/>
-        </include>
-        <include file="$(find cob_bringup)/controllers/generic_controller.launch">
-            <arg name="robot" value="$(arg robot)"/>
-            <arg name="component_name" value="head"/>
         </include>
 
         <include file="$(find cob_bringup)/drivers/openni2.launch">
