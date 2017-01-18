@@ -81,14 +81,10 @@
 			<include file="$(find rplidar_ros)/launch/rplidar.launch" />
 		</group>
 
-		<!--include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="torso" />
 			<arg name="can_device" value="can1" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="torso"/>
 		</include-->
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />

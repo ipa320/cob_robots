@@ -23,14 +23,10 @@
 		</include>
 
 		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="base" />
-			<arg name="can_device" value="can0" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
+		<include file="$(find cob_bringup)/components/canopen_base.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
+
 		<include file="$(find cob_omni_drive_controller)/launch/stuck_detector.launch">
 			<arg name="timeout" default="2.0" />
 			<arg name="threshold" default="0.174533" /> 
