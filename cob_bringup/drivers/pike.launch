@@ -16,7 +16,7 @@
 		<rosparam command="load" file="$(find cob_calibration_data)/$(arg robot)/calibration/cameras/$(arg name).yaml"/>
 	</node>
 
-	<node ns="stereo/$(arg name)" pkg="image_proc" type="image_proc" name="$(arg name)_image_proc" respawn="false" />
+	<node ns="stereo/$(arg name)" pkg="image_proc" type="image_proc" name="$(arg name)_image_proc" respawn="false"/>
 
 </launch>
 

@@ -8,7 +8,7 @@
 		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/bms.yaml"/>
 	</node>
 	<node ns="bms" name="power_state_aggregator" pkg="cob_bms_driver" type="power_state_aggregator.py" output="screen">
-	    <remap from="power_state" to="/power_state"/>
+			<remap from="power_state" to="/power_state"/>
 	</node>
 
 </launch>

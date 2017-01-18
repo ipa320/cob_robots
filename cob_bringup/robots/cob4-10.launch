@@ -3,7 +3,7 @@
 
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
-	<include file="$(find cob_bringup)/robots/cob4-10.xml" >
+	<include file="$(find cob_bringup)/robots/cob4-10.xml">
 		<!-- cob4-10 is currently a special config setup of cob4-7 hardware -->
 		<arg name="cob4-10-b1" value="cob4-7-b1"/>
 		<arg name="cob4-10-t1" value="cob4-7-t1"/>
