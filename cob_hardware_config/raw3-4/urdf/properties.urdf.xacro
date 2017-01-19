@@ -7,35 +7,35 @@
 	<!-- base calibration -->
 	<!-- ***************** -->
 	<!-- laser front mount positions | relative to base_link -->
-	<property name="laser_front_x" value="${def_laser_front_x+offset_laser_front_x}"/>
-	<property name="laser_front_y" value="${def_laser_front_y+offset_laser_front_y}"/>
-	<property name="laser_front_z" value="${def_laser_front_z+offset_laser_front_z}"/>
-	<property name="laser_front_roll" value="${def_laser_front_roll+offset_laser_front_roll}"/>
-	<property name="laser_front_pitch" value="${def_laser_front_pitch+offset_laser_front_pitch}"/>
-	<property name="laser_front_yaw" value="${def_laser_front_yaw+offset_laser_front_yaw}"/>
+	<xacro:property name="laser_front_x" value="${def_laser_front_x+offset_laser_front_x}"/>
+	<xacro:property name="laser_front_y" value="${def_laser_front_y+offset_laser_front_y}"/>
+	<xacro:property name="laser_front_z" value="${def_laser_front_z+offset_laser_front_z}"/>
+	<xacro:property name="laser_front_roll" value="${def_laser_front_roll+offset_laser_front_roll}"/>
+	<xacro:property name="laser_front_pitch" value="${def_laser_front_pitch+offset_laser_front_pitch}"/>
+	<xacro:property name="laser_front_yaw" value="${def_laser_front_yaw+offset_laser_front_yaw}"/>
 
 	<!-- laser rear mount positions | relative to base_link -->
-	<property name="laser_rear_x" value="${def_laser_rear_x+offset_laser_rear_x}"/>
-	<property name="laser_rear_y" value="${def_laser_rear_y+offset_laser_rear_y}"/>
-	<property name="laser_rear_z" value="${def_laser_rear_z+offset_laser_rear_z}"/>
-	<property name="laser_rear_roll" value="${def_laser_rear_roll+offset_laser_rear_roll}"/>
-	<property name="laser_rear_pitch" value="${def_laser_rear_pitch+offset_laser_rear_pitch}"/>
-	<property name="laser_rear_yaw" value="${def_laser_rear_yaw+offset_laser_rear_yaw}"/>
+	<xacro:property name="laser_rear_x" value="${def_laser_rear_x+offset_laser_rear_x}"/>
+	<xacro:property name="laser_rear_y" value="${def_laser_rear_y+offset_laser_rear_y}"/>
+	<xacro:property name="laser_rear_z" value="${def_laser_rear_z+offset_laser_rear_z}"/>
+	<xacro:property name="laser_rear_roll" value="${def_laser_rear_roll+offset_laser_rear_roll}"/>
+	<xacro:property name="laser_rear_pitch" value="${def_laser_rear_pitch+offset_laser_rear_pitch}"/>
+	<xacro:property name="laser_rear_yaw" value="${def_laser_rear_yaw+offset_laser_rear_yaw}"/>
 
 	<!-- tower mount positions | relative to base_link -->
-	<property name="tower_x" value="${def_tower_x+offset_tower_x}"/>
-	<property name="tower_y" value="${def_tower_y+offset_tower_y}"/>
-	<property name="tower_z" value="${def_tower_z+offset_tower_z}"/>
-	<property name="tower_roll" value="${def_tower_roll+offset_tower_roll}"/>
-	<property name="tower_pitch" value="${def_tower_pitch+offset_tower_pitch}"/>
-	<property name="tower_yaw" value="${def_tower_yaw+offset_tower_yaw}"/>
+	<xacro:property name="tower_x" value="${def_tower_x+offset_tower_x}"/>
+	<xacro:property name="tower_y" value="${def_tower_y+offset_tower_y}"/>
+	<xacro:property name="tower_z" value="${def_tower_z+offset_tower_z}"/>
+	<xacro:property name="tower_roll" value="${def_tower_roll+offset_tower_roll}"/>
+	<xacro:property name="tower_pitch" value="${def_tower_pitch+offset_tower_pitch}"/>
+	<xacro:property name="tower_yaw" value="${def_tower_yaw+offset_tower_yaw}"/>
 
 	<!-- arm mount positions | relative to base_link -->
-	<property name="arm_x" value="${def_arm_x+offset_arm_x}"/>
-	<property name="arm_y" value="${def_arm_y+offset_arm_y}"/>
-	<property name="arm_z" value="${def_arm_z+offset_arm_z}"/>
-	<property name="arm_roll" value="${def_arm_roll+offset_arm_roll}"/>
-	<property name="arm_pitch" value="${def_arm_pitch+offset_arm_pitch}"/>
-	<property name="arm_yaw" value="${def_arm_yaw+offset_arm_yaw}"/>
+	<xacro:property name="arm_x" value="${def_arm_x+offset_arm_x}"/>
+	<xacro:property name="arm_y" value="${def_arm_y+offset_arm_y}"/>
+	<xacro:property name="arm_z" value="${def_arm_z+offset_arm_z}"/>
+	<xacro:property name="arm_roll" value="${def_arm_roll+offset_arm_roll}"/>
+	<xacro:property name="arm_pitch" value="${def_arm_pitch+offset_arm_pitch}"/>
+	<xacro:property name="arm_yaw" value="${def_arm_yaw+offset_arm_yaw}"/>
 
 </robot>
