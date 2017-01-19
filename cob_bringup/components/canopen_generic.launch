@@ -2,7 +2,12 @@
 <launch>
 	<arg name="robot"/>
 	<arg name="component_name"/>
+
 	<arg name="can_device"/>
+	<arg name="interval_ms" default="10"/>
+	<arg name="use_external_sync" default="false"/>
+	<arg name="start_external_sync" default="$(arg use_external_sync)"/>
+
 	<arg name="cartesian_control" default="false"/>
 	<arg name="sim" default="false"/>
 
@@ -10,6 +15,9 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
 		<arg name="can_device" value="$(arg can_device)"/>
+		<arg name="interval_ms" value="$(arg interval_ms)"/>
+		<arg name="use_external_sync" value="$(arg use_external_sync)"/>
+		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
 	</include>
 	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
