@@ -73,7 +73,7 @@ def torso_front_cb(req):
     handle_arm_right.wait()
     if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
         sss.move_base_rel("base",[0,0,1.57],False)
-        sss.move("torso","front",True)
+        sss.move("torso","front_down_full",True)
     else:
         return TriggerResponse(False, "Could not move arms.")
 
@@ -89,7 +89,6 @@ def front_to_home_cb(req):
         sss.move("torso","home",False)
     else:
         return TriggerResponse(False, "Could not move arms.")
-
     return TriggerResponse(True, "")
 
 def pick_cb(req):
