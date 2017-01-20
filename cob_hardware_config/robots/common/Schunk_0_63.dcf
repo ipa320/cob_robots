@@ -332,6 +332,7 @@ PDOMapping=0
 LowLimit=0
 HighLimit=32767
 ObjFlags=0x0
+ParameterValue=100
 
 [1200]
 ParameterName=1. Server SDO parameter
