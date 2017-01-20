@@ -10,7 +10,7 @@
 		<param name="image_height" value="1536"/>
 		<param name="pixel_format" value="yuyv"/>
 		<param name="camera_frame_id" value="$(arg camera_name)_link"/>
-		<param name="framerate" value="5"/>
+		<param name="framerate" value="3.5"/>   <!-- at 2048x1536 3.6hz is maximum on hw -->
 		<param name="camera_name" value="$(arg camera_name)"/>
 		<param name="camera_info_url" value="package://cob_calibration_data/$(arg robot)/calibration/cameras/$(arg camera_name).yaml"/>
 	</node>
