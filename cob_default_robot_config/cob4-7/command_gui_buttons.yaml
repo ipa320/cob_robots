@@ -98,7 +98,4 @@ group22:
 group23:
   group_name: sound
   component_name: behavior
-  buttons: [[starting,trigger,soundStarting],
-    [noConnection,trigger,soundNoConnection],
-    [negative,trigger,soundNegative],
-    [hello,trigger,soundHello]]
+  buttons: [[hello,trigger,soundHello]]
