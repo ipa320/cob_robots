@@ -164,23 +164,6 @@ def setMimicFallingAsleep_cb(req):
     sss.set_mimic("mimic",["falling_asleep",0,1])
     return TriggerResponse(True, "")
 
-def soundR2D2_cb(req):
-    sss.play("R2D2")
-    return TriggerResponse(True, "")
-
-def soundNoConnection_cb(req):
-    sss.set_mimic("mimic",["confused",0,1])
-    sss.play("confused")
-    return TriggerResponse(True, "")
-
-def soundNegative_cb(req):
-    sss.play("negative")
-    return TriggerResponse(True, "")
-
-def soundStarting_cb(req):
-    sss.play("starting")
-    return TriggerResponse(True, "")
-
 def soundHello_cb(req):
     sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
     return TriggerResponse(True, "")
@@ -201,10 +184,6 @@ def trigger_srvs():
     s = rospy.Service('/behavior/setMimicConfused', Trigger, setMimicConfused_cb)
     s = rospy.Service('/behavior/setMimicAngry', Trigger, setMimicAngry_cb)
     s = rospy.Service('/behavior/setMimicFallingAsleep', Trigger, setMimicFallingAsleep_cb)
-    s = rospy.Service('/behavior/soundR2D2', Trigger, soundR2D2_cb)
-    s = rospy.Service('/behavior/soundNoConnection',Trigger,soundNoConnection_cb)
-    s = rospy.Service('/behavior/soundNegative',Trigger,soundNegative_cb)
-    s = rospy.Service('/behavior/soundStarting',Trigger,soundStarting_cb)
     s = rospy.Service('/behavior/soundHello',Trigger,soundHello_cb)
 
     rospy.spin()
