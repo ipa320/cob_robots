@@ -16,6 +16,7 @@
   <depend>roslaunch</depend>
 
   <exec_depend>camera1394</exec_depend>
+  <exec_depend>canopen_chain_node</exec_depend>
   <exec_depend>canopen_motor_node</exec_depend>
   <exec_depend>cob_android_script_server</exec_depend>
   <exec_depend>cob_base_drive_chain</exec_depend>

@@ -24,17 +24,9 @@ analyzers:
     path: Actuators
     analyzers:
       base:
-        type: diagnostic_aggregator/AnalyzerGroup
+        type: diagnostic_aggregator/GenericAnalyzer
         path: Base
-        analyzers:
-          base:
-            type: diagnostic_aggregator/GenericAnalyzer
-            path: drives
-            startswith: 'base/driver'
-          base_twist_mux:
-            type: diagnostic_aggregator/GenericAnalyzer
-            path: twist_mux
-            contains: 'twist_mux'
+        contains: 'base/'
 
   sensors:
     type: diagnostic_aggregator/AnalyzerGroup

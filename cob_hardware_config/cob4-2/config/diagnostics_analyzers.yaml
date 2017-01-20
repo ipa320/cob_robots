@@ -104,35 +104,27 @@ analyzers:
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
-        contains: 'torso/driver'
+        contains: 'torso/'
       arm_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Right
-        contains: 'arm_right/driver'
+        contains: 'arm_right/'
       arm_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Left
-        contains: 'arm_left/driver'
+        contains: 'arm_left/'
 #      sensorring:
 #        type: diagnostic_aggregator/GenericAnalyzer
 #        path: Sensorring
-#        contains: 'sensorring/driver'
+#        contains: 'sensorring/'
 #      head:
 #        type: diagnostic_aggregator/GenericAnalyzer
 #        path: Head
-#        contains: 'head/driver'
+#        contains: 'head/'
       base:
-        type: diagnostic_aggregator/AnalyzerGroup
+        type: diagnostic_aggregator/GenericAnalyzer
         path: Base
-        analyzers:
-          base:
-            type: diagnostic_aggregator/GenericAnalyzer
-            path: drives
-            contains: 'base/driver'
-          base_twist_mux:
-            type: diagnostic_aggregator/GenericAnalyzer
-            path: twist_mux
-            contains: 'twist_mux'
+        contains: 'base/'
 
   safety:
     type: diagnostic_aggregator/GenericAnalyzer
