@@ -97,6 +97,7 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/docker_control.launch">
 			<arg name="robot" value="$(arg robot)"/>
