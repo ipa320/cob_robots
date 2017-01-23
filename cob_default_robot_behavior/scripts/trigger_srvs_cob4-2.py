@@ -71,12 +71,13 @@ def torso_front_cb(req):
     handle_arm_right = sss.move("arm_right","side", False)
     handle_arm_left.wait()
     handle_arm_right.wait()
-    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move_base_rel("base",[0,0,1.57],False)
-        sss.move("torso","front_down_full",True)
-    else:
+    if not (handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arms.")
-
+    handle_torso = sss.move("torso","front_down_full",False)
+    handle_base = sss.move_base_rel("base",[0,0,1.57],True)
+    handle_torso.wait()
+    if not (handle_torso.get_error_code() == 0 and handle_base.get_error_code() == 0):
+        return TriggerResponse(False, "Could not move torso and base.")
     return TriggerResponse(True, "")
     
 def front_to_home_cb(req):
@@ -84,11 +85,13 @@ def front_to_home_cb(req):
     handle_arm_right = sss.move("arm_right","side", False)
     handle_arm_left.wait()
     handle_arm_right.wait()
-    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move_base_rel("base",[0,0,-1.57],False)
-        sss.move("torso","home",False)
-    else:
+    if not (handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arms.")
+    handle_torso = sss.move("torso","home", False)
+    handle_base = sss.move_base_rel("base",[0,0,-1.57], True)
+    handle_torso.wait()
+    if not (handle_torso.get_error_code() == 0 and handle_base.get_error_code() == 0):
+        return TriggerResponse(False, "Could not move torso and base.")
     return TriggerResponse(True, "")
 
 def pick_cb(req):
@@ -104,83 +107,68 @@ def pick_cb(req):
 
     rospy.loginfo("------------------torso movement")
     handle_torso = sss.move("torso","front_down_full",False)
-    handle_base = sss.move_base_rel("base",[0,0,1.57],False)
+    handle_base = sss.move_base_rel("base",[0,0,1.57],True)
     handle_torso.wait()
-    handle_base.wait()
     if not(handle_torso.get_error_code() == 0 and handle_base.get_error_code() == 0):
         return TriggerResponse(False, "Could not move torso.")
 
     rospy.loginfo("------------------1 arm right movement")
-    handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
-    handle_arm_right.wait()
+    handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], True)
     if not(handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arm_right.")
 
-    handle_base = sss.move_base_rel("base",[0,0,0.5],False)
-    handle_base.wait()
+    handle_base = sss.move_base_rel("base",[0,0,0.5],True)
     if not(handle_base.get_error_code() == 0):
         return TriggerResponse(False, "Could not move base.")
 
     rospy.loginfo("------------------2 arm right movement")
-    handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
-    handle_arm_right.wait()
+    handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], True)
     if not(handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arm_right.")
 
     rospy.loginfo("------------------3 arm left movement")
-    handle_arm_left = sss.move("arm_left",[[-0.9599, -1.5708, 0.12, -1.0, -1.38, -0.75, 1.36]], False)
-    handle_arm_left.wait()
+    handle_arm_left = sss.move("arm_left",[[-0.9599, -1.5708, 0.12, -1.0, -1.38, -0.75, 1.36]], True)
     if not(handle_arm_left.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arm_left.")
 
     rospy.loginfo("------------------torso movement")
-    handle_torso = sss.move("torso",[[-3.14,2.7]],False)
-    handle_torso.wait()
+    handle_torso = sss.move("torso",[[-3.14,2.7]],True)
     if not(handle_torso.get_error_code() == 0):
         return TriggerResponse(False, "Could not move torso.")
 
     handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]], True)
-    handle_arm_right.wait()
     if not(handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arm_right.")
 
     handle_arm_right = sss.move("arm_right",[[2.929988935078001, 0.9391791237906687, -2.940007124984448, -0.8784067592362261, -0.2899864552188579, -0.23357741379440114, 0.2800031718974503]], True)
-    handle_arm_right.wait()
     if not(handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arm_right.")
 
     handle_arm_right = sss.move("arm_right",[[2.9300063883705207, 0.41079814604190534, -2.4999747139716377, -1.4999883190414864, -0.2899864552188579, -0.40999529458598793, 0.2800031718974503]],True)
-    handle_arm_right.wait()
     if not(handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arm_right.")
 
-    handle_torso = sss.move("torso","front_down_full",False)
-    handle_torso.wait()
+    handle_torso = sss.move("torso","front_down_full",True)
     if not(handle_torso.get_error_code() == 0):
         return TriggerResponse(False, "Could not move torso.")
 
-    handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], False)
-    handle_arm_right.wait()
+    handle_arm_right = sss.move("arm_right",[[2.929779495567761, 0.9417796643761402, -2.5, -1.5, -0.28560567879635207, -0.41160099749782275, 0.2752035164544659]], True)
     if not(handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arm_right.")
 
-    handle_base = sss.move_base_rel("base",[0,0,-0.3],False)
-    handle_base.wait()
+    handle_base = sss.move_base_rel("base",[0,0,-0.3],True)
     if not(handle_base.get_error_code() == 0):
         return TriggerResponse(False, "Could not move base.")
 
-    sss.move("torso","home",False)
-    handle_torso.wait()
+    sss.move("torso","home",True)
     if not(handle_torso.get_error_code() == 0):
         return TriggerResponse(False, "Could not move torso.")
 
-    handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], False)
-    handle_arm_right.wait()
+    handle_arm_right = sss.move("arm_right",[[1.2, 0.85, -1.0499900779997886, -1.660000104864327, -1.0499900779997886, -0.6999817498048457, 1.0699740979351238]], True)
     if not(handle_arm_right.get_error_code() == 0):
         return TriggerResponse(False, "Could not move arm_right.")
 
-    handle_base = sss.move_base_rel("base",[0,0,-1.2],False)
-    handle_base.wait()
+    handle_base = sss.move_base_rel("base",[0,0,-1.2],True)
     if not(handle_base.get_error_code() == 0):
         return TriggerResponse(False, "Could not move base.")
 

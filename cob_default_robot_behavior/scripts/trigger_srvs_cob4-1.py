@@ -67,13 +67,19 @@ from std_msgs.msg import ColorRGBA
 from std_srvs.srv import Trigger, TriggerResponse
 
 def torso_front_cb(req):
-    sss.move_base_rel("base",[0,0,1.57],False)
-    sss.move("torso","front_down_full",True)
+    handle_torso = sss.move("torso","front_down_full",False)
+    handle_base = sss.move_base_rel("base",[0,0,1.57],True)
+    handle_torso.wait()
+    if not (handle_torso.get_error_code() == 0 and handle_base.get_error_code() == 0):
+        return TriggerResponse(False, "Could not move torso and base.")
     return TriggerResponse(True, "")
     
 def front_to_home_cb(req):
-    sss.move_base_rel("base",[0,0,-1.57],False)
-    sss.move("torso","home",False)
+    handle_torso = sss.move("torso","home", False)
+    handle_base = sss.move_base_rel("base",[0,0,-1.57], True)
+    handle_torso.wait()
+    if not (handle_torso.get_error_code() == 0 and handle_base.get_error_code() == 0):
+        return TriggerResponse(False, "Could not move torso and base.")
     return TriggerResponse(True, "")
 
 def setLightCyan_cb(req):
