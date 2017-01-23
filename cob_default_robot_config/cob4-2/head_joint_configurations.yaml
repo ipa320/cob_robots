@@ -1,4 +1,4 @@
-joint_names: ["head_1_joint","head_2_joint","head_3_joint"]
+joint_names: ["head_1_joint", "head_2_joint", "head_3_joint"]
 action_name: /head/joint_trajectory_controller/follow_joint_trajectory
 service_ns: /head/driver
 default_vel: 0.6
@@ -17,8 +17,8 @@ back_up_full: [[1.57, -3.14, 4.71]]
 back_down: [[-0.5, 1.0, 2.64]]
 back_down_full: [[-1.57, 3.14, 1.57]]
 
-left: [[1.57, 0.0, 0.0]]
-right: [[-1.57, 0.0, 0.0]]
+left: [[0.0, 0.0, 1.57]]
+right: [[0.0, 0.0, -1.57]]
 
 nod: [front_down, front]
 shake: [left, right, left, home]

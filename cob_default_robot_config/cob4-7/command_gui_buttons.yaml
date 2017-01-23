@@ -69,7 +69,6 @@ group18:
   buttons: [[stop,stop],
     [init,init],
     [recover,recover],
-    [home,move,home],
     [front,move,front],
     [front_down,move,front_down],
     [back,move,back],

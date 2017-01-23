@@ -29,7 +29,6 @@ group12:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
-    [ship, move, ship],
     [wave_demo, move, wave_demo],
     [hello, move, hello]]
 group13:
@@ -41,7 +40,6 @@ group13:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
-    [ship, move, ship],
     [wave_demo, move, wave_demo],
     [hello, move, hello]]
 #group14:
@@ -88,10 +86,8 @@ group17:
 #    [init,init],
 #    [recover,recover],
 #    [front,move,front],
-#    [front_up,move,front_up],
 #    [front_down,move,front_down],
 #    [back,move,back],
-#    [back_up,move,back_up],
 #    [back_down,move,back_down],
 #    [left,move,left],
 #    [right,move,right],
