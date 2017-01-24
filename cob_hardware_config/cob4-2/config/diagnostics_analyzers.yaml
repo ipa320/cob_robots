@@ -25,10 +25,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: s1
         contains: '-s1'
-      h32:
+      h1:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: h32
-        contains: '-h32'
+        path: h1
+        contains: '-h1'
 #  network:
 #    type: diagnostic_aggregator/AnalyzerGroup
 #    path: Network
@@ -92,10 +92,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Head Cam
         contains: 'head_cam'
-#      battery:
-#        type: diagnostic_aggregator/GenericAnalyzer
-#        path: Battery Status
-#        contains: 'bms'
+      battery:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Battery Status
+        contains: 'bms'
 
   motors:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -105,22 +105,14 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
         contains: 'torso/'
-      arm_right:
+      sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: Arm Right
-        contains: 'arm_right/'
-      arm_left:
+        path: Sensorring
+        contains: 'sensorring/'
+      head:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: Arm Left
-        contains: 'arm_left/'
-#      sensorring:
-#        type: diagnostic_aggregator/GenericAnalyzer
-#        path: Sensorring
-#        contains: 'sensorring/'
-#      head:
-#        type: diagnostic_aggregator/GenericAnalyzer
-#        path: Head
-#        contains: 'head/'
+        path: Head
+        contains: 'head/'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base
