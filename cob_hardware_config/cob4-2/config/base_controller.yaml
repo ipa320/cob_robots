@@ -1,5 +1,5 @@
 ## joint_names
-joint_names: [fl_caster_rotation_joint, fl_caster_r_wheel_joint, b_caster_rotation_joint, b_caster_r_wheel_joint, fr_caster_rotation_joint, fr_caster_r_wheel_joint]
+joint_names: [fl_caster_rotation_joint, fl_caster_r_wheel_joint, fr_caster_rotation_joint, fr_caster_r_wheel_joint, b_caster_rotation_joint, b_caster_r_wheel_joint]
 
 ## joint_state_controller
 joint_state_controller:
@@ -27,7 +27,6 @@ twist_controller:
       drive: fl_caster_r_wheel_joint
     - steer: b_caster_rotation_joint
       drive: b_caster_r_wheel_joint
-      steer_neutral_position: -180.0
     - steer: fr_caster_rotation_joint
       drive: fr_caster_r_wheel_joint
 
@@ -40,14 +39,3 @@ odometry_controller:
   cov_pose: 0.1
   cov_twist: 0.1
   wheels: *wheels
-
-joint_group_velocity_controller:
-  type: velocity_controllers/JointGroupVelocityController
-  joints:
-     - fl_caster_rotation_joint
-     - fl_caster_r_wheel_joint
-     - b_caster_rotation_joint
-     - b_caster_r_wheel_joint
-     - fr_caster_rotation_joint
-     - fr_caster_r_wheel_joint
-  required_drive_mode: 2
