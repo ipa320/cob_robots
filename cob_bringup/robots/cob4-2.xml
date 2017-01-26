@@ -35,15 +35,15 @@
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-2-b1)"/>
 			</include>
-
-			<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include>
-			<include file="$(find cob_bringup)/drivers/bms.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include>
 		</group>
 
+		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/bms.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="base_laser_front"/>
@@ -91,6 +91,7 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/docker_control.launch">
 			<arg name="robot" value="$(arg robot)"/>
