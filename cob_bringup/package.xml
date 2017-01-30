@@ -63,7 +63,6 @@
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>costmap_2d</exec_depend>
   <exec_depend>diagnostic_aggregator</exec_depend>
-  <exec_depend>image_proc</exec_depend>
   <exec_depend>joint_state_controller</exec_depend>
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
