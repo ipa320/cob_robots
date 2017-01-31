@@ -38,7 +38,7 @@ analyzers:
           base:
             type: diagnostic_aggregator/GenericAnalyzer
             path: drives
-            startswith: '/base'
+            contains: 'base_driver'
           base_twist_mux:
             type: diagnostic_aggregator/GenericAnalyzer
             path: twist_mux

@@ -41,25 +41,30 @@
 		<include file="$(find cob_bringup)/drivers/battery_voltage.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-<!--
+		<!--
 		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
--->    
+		-->    
 		<!--<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>-->
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-
-		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
+		<!--<include file="$(find cob_bringup)/drivers/base_driver.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>-->
+		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="component_name" value="base" />
+			<arg name="can_device" value="can1" />
+		</include>
+		<!--<include file="$(find cob_bringup)/controllers/base_controller.launch" >
+		-->
+		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
