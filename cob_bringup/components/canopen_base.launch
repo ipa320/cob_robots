@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 	<arg name="robot"/>
-	<arg name="component_name" default="base"/>
+	<arg name="component_name" value="base"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<arg name="can_device" default="can0"/>
-	<arg name="interval_ms" default="20"/>
-	<arg name="use_external_sync" default="false"/>
-	<arg name="start_external_sync" default="false"/>
+	<arg name="interval_ms" value="20"/>
+	<arg name="use_external_sync" value="false"/>
+	<arg name="start_external_sync" value="false"/>
 
 	<arg name="sim" default="false"/>
 

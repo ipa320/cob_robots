@@ -20,7 +20,7 @@ defaults:
 
 drive_wheel: &drive_wheel
   dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
-  #  "6098": "35" # homing method
+  # "6098": "35" # homing method
     "607Bsub1": "-1290240000" # min position range limit XM[1]
     "607Bsub2": "1290240000" # max position range limit XM[2]
     "607Dsub1": "-1290240000" # min position software limit VL[3]
