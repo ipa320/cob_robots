@@ -5,37 +5,46 @@
 	<arg name="robot" value="raw3-5"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+	<arg name="sim" default="false"/>
 
 	<!-- upload robot description -->
-	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
-		<arg name="robot" value="$(arg robot)" />
+	<include file="$(find cob_hardware_config)/common/upload_robot.launch">
+		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/raw3-5/upload_param_raw3-5.launch" />
+	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch"/>
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
+		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
-		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg pc1)" />
-		</include>
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg pc1)"/>
+			</include>
+			<include file="$(find cob_bringup)/drivers/phidgets.launch">
+				<arg name="robot" value="$(arg robot)"/>
+			</include>
+		</group>
 
-		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="base_laser_front" />
+		<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="base_laser_front"/>
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="name" value="base_laser_rear" />
+		<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="base_laser_rear"/>
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
+<!--		<include file="$(find cob_bringup)/components/legacy_base.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>-->
 
-		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
 		<include file="$(find cob_bringup)/drivers/battery_voltage.launch" >
@@ -49,38 +58,32 @@
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
+		<include file="$(find cob_bringup)/components/canopen_base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="component_name" value="base" />
 			<arg name="can_device" value="can1" />
-		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch" >
-			<arg name="robot" value="$(arg robot)" />
+			<arg name="interval_ms" value="20" />
+			<arg name="use_external_sync" value="true" />
+			<arg name="start_external_sync" value="true" />
 		</include>
 		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/tools/teleop.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
 
-		<!-- aggregated robot_state_publisher -->
+		</include>
+		<include file="$(find cob_bringup)/tools/teleop.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-			<arg name="robot" value="$(arg robot)" />
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
-
-		<!-- script server -->
-		<include file="$(find cob_script_server)/launch/script_server.launch" />
+		<include file="$(find cob_script_server)/launch/script_server.launch"/>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
+	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

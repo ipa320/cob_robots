@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="port" default="/dev/rfcomm0" />
-  <arg name="baud" default="57600" />
-  <arg name="component_name" default="gripper" />
-  <arg name="check" default="true" />
+
+  <arg name="port" default="/dev/rfcomm0"/>
+  <arg name="baud" default="57600"/>
+  <arg name="component_name" default="gripper"/>
+  <arg name="check" default="true"/>
   <remap from="/$(arg component_name)/internal/recover" to="/$(arg component_name)/driver/recover"/>
   <remap from="/$(arg component_name)/internal/halt" to="/$(arg component_name)/driver/halt"/>
-  
+
   <group ns="/$(arg component_name)">
 
     <node pkg="rosserial_server" type="serial_node" name="rosserial_server">
-      <param name="port" value="$(arg port)" />
-      <param name="baud" value="$(arg baud)" />
+      <param name="port" value="$(arg port)"/>
+      <param name="baud" value="$(arg baud)"/>
       <rosparam if="$(arg check)">
        require:
           publishers: [ status ]
@@ -20,10 +21,11 @@
       </rosparam>
     </node>
 
-    <node pkg="rosserial_python" type="message_info_service.py" name="rosserial_message_info" />
+    <node pkg="rosserial_python" type="message_info_service.py" name="rosserial_message_info"/>
 
     <node pkg="cob_hand_bridge" type="cob_hand_bridge_node" name="cob_hand_bridge">
       <rosparam param="sdhx/joint_names" subst_value="True">[$(arg component_name)_finger_1_joint, $(arg component_name)_finger_2_joint]</rosparam>
     </node>
   </group>
+
 </launch>

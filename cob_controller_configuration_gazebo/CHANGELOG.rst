@@ -2,6 +2,20 @@
 Changelog for package cob_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.6 (2016-10-10)
+------------------
+* additional param files and modifications for raw3-6 ur10
+* fix error, repeated arms controllers
+* Merge github.com:ipa-cob4-5/cob_robots into cob4-5-sim
+* review cob4-5 simulation
+* fix simulation
+* fix camera names for cob4-5 simulation
+* remove torso from cob4-5 config
+* add 3dof head to cob4-2
+* setup cob4-5
+* fix sound args in gazebo launch files
+* Contributors: Benjamin Maidel, Florian Weisshardt, ipa-cob4-5, ipa-fmw, ipa-nhg, msh
+
 0.6.5 (2016-04-01)
 ------------------
 * add missing image_flip nodes to simulation

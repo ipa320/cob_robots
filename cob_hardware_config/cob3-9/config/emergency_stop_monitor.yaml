@@ -1,9 +1,0 @@
-enable_light: true
-light_components: ['light']
-color_ok: green
-
-enable_sound: true
-sound_components: ['sound']
-
-diagnostics_based: False
-motion_based: False

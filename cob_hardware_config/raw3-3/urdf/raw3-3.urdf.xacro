@@ -15,9 +15,6 @@
   <xacro:include filename="$(find raw_description)/urdf/tower_symetric/tower.urdf.xacro" />
 -->
 
-  <!-- frida -->
-  <xacro:include filename="$(find prace_common)/urdf/prace.urdf.xacro" />
-
 
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
@@ -34,8 +31,6 @@
   </xacro:tower_symetric>
 -->
 
-  <!-- prace macros -->
-  <xacro:prace/>
 
   <!-- scan top mount -->
     <joint name="base_laser_top_joint" type="fixed" >

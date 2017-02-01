@@ -1,50 +1,22 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_bringup)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch)
+find_package(catkin REQUIRED)
 
 catkin_package()
 
-set(robotlist
-  cob3-2
-  cob3-6
-  cob3-9
-  cob4-1
-  cob4-2
-  cob4-3
-  cob4-4
-  cob4-5
-  cob4-6
-  raw3-1
-  raw3-2
-  raw3-3
-  raw3-4
-  raw3-5
-  raw3-6
-)
-
-set(envlist
-  empty
-  ipa-kitchen
-  ipa-apartment
-  ipa-factory
-)
-
 ### TEST ###
 if(CATKIN_ENABLE_TESTING)
-  foreach(robot ${robotlist})
-    foreach(env ${envlist})
-      message("testing for robot: ${robot} in env: ${env}")
-      #roslaunch_add_file_check(tools robot:=${robot} robot_env:=${env})
-      #roslaunch_add_file_check(tools ROBOT=${robot} ROBOT_ENV=${env})
-      #roslaunch_add_file_check(robots/${robot}.xml robot_env:=${env})
-      roslaunch_add_file_check(robots/${robot}.xml ROBOT_ENV=${env})
-    endforeach()
+  find_package(cob_supported_robots REQUIRED)
+  find_package(roslaunch REQUIRED)
+  foreach(robot ${cob_supported_robots_ROBOTLIST})
+    message("testing for robot: ${robot}")
+    roslaunch_add_file_check(robots/${robot}.xml)
   endforeach()
 endif()
 
 ### INSTALL ###
-install(DIRECTORY robots drivers controllers tools
+install(DIRECTORY components controllers drivers robots tools
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

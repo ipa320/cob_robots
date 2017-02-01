@@ -81,26 +81,14 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
-      base:
-        type: diagnostic_aggregator/AnalyzerGroup
-        path: Base
-        analyzers:
-          base:
-            type: diagnostic_aggregator/GenericAnalyzer
-            path: drives
-            contains: 'base/driver'
-          base_twist_mux:
-            type: diagnostic_aggregator/GenericAnalyzer
-            path: twist_mux
-            contains: 'twist_mux'
       arm_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Left
-        contains: 'arm_left/driver'
+        contains: 'arm_left/'
       arm_right:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Right
-        contains: 'arm_right/driver'
+        contains: 'arm_right/'
       gripper_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Gripper Left
@@ -112,7 +100,12 @@ analyzers:
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
-        contains: 'sensorring/driver'
+        contains: 'sensorring/'
+      base:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Base
+        contains: 'base/'
+
   safety:
     type: diagnostic_aggregator/GenericAnalyzer
     path: Safety
