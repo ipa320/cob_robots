@@ -39,10 +39,6 @@
 			<arg name="name" value="base_laser_rear"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-<!--		<include file="$(find cob_bringup)/components/legacy_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>-->
 
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
@@ -60,11 +56,7 @@
 		</include>
 		<include file="$(find cob_bringup)/components/canopen_base.launch" >
 			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="base" />
 			<arg name="can_device" value="can1" />
-			<arg name="interval_ms" value="20" />
-			<arg name="use_external_sync" value="true" />
-			<arg name="start_external_sync" value="true" />
 		</include>
 		
 		<!-- start additional packages -->
