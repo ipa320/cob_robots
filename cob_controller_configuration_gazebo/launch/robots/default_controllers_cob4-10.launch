@@ -7,6 +7,4 @@
 		<arg name="sim" value="true"/>
 	</include>
 
-	<node name="image_proc" pkg="image_proc" type="image_proc" ns="head_cam"/>
-
 </launch>
