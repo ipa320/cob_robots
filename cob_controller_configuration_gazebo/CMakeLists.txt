@@ -19,6 +19,6 @@ install(DIRECTORY launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(PROGRAMS src/fake_monitoring.py src/gazebo_services.py src/gazebo_topics.py
+install(PROGRAMS src/fake_monitoring.py src/gazebo_services.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/src
 )
