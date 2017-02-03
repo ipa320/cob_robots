@@ -18,12 +18,6 @@
 
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
-  <gazebo>
-    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>base</robotNamespace>
-      <filterJointsParam>joint_names</filterJointsParam>
-    </plugin>
-  </gazebo>
 
 <!--
   <xacro:tower_symetric name="tower" parent="base_link">
@@ -31,24 +25,23 @@
   </xacro:tower_symetric>
 -->
 
-
   <!-- scan top mount -->
-    <joint name="base_laser_top_joint" type="fixed" >
-      <origin xyz="0.28 0.0 0.885" rpy="0.0 0.0 0.0" />
-      <parent link="base_link" />
-      <child link="base_laser_top_link" />
-    </joint>
+  <joint name="base_laser_top_joint" type="fixed" >
+    <origin xyz="0.28 0.0 0.885" rpy="0.0 0.0 0.0" />
+    <parent link="base_link" />
+    <child link="base_laser_top_link" />
+  </joint>
 
-    <link name="base_laser_top_link">
+  <link name="base_laser_top_link">
     <xacro:default_inertial />
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
       <geometry>
-      <box size="0.10 0.03 0.03" />
+        <box size="0.10 0.03 0.03" />
       </geometry>
       <material name="IPA/Black" />
     </visual>
-    </link>
+  </link>
   <!-- END: scan top mount -->
 
 </robot>
