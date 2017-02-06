@@ -23,3 +23,12 @@ boards:
         index: 4
         change_trigger: 10          #the sensors change trigger value (only event driven mode)
         data_rate: 20               #ports data rate
+      run:
+        type: digital_out
+        index: 0
+      backward:
+        type: digital_out
+        index: 1
+      forward:
+        type: digital_out
+        index: 2
