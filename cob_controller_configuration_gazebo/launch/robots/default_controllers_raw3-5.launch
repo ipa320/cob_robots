@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<arg name="robot" default="raw3-5"/>
-
-	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
-
-</launch>

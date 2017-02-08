@@ -25,7 +25,7 @@
 				<arg name="pc" value="$(arg cob4-6-b1)"/>
 			</include>
 		</group>
-		
+
 		<include file="$(find cob_bringup)/drivers/bms.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
