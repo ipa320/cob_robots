@@ -35,14 +35,16 @@
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-5-b1)"/>
 			</include>
-			<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include>
-			<!--include file="$(find cob_bringup)/drivers/bms.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include-->
 		</group>
 
+		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/bms.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="base_laser_front"/>
@@ -90,6 +92,7 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/docker_control.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -115,21 +118,18 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 			<arg name="can_device" value="can1"/>
-			<arg name="cartesian_control" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_left"/>
 			<arg name="can_device" value="can3"/>
-			<arg name="cartesian_control" value="true"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_right"/>
 			<arg name="can_device" value="can2"/>
-			<arg name="cartesian_control" value="true"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">

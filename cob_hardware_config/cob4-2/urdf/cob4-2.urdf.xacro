@@ -29,12 +29,6 @@
 
   <!-- composition of the robot -->
   <xacro:base name="base" use_old_joint_names="false"/>
-  <gazebo>
-    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>base</robotNamespace>
-      <filterJointsParam>joint_names</filterJointsParam>
-    </plugin>
-  </gazebo>
 
   <xacro:torso name="torso" parent="base_link" dof1="false" dof2="true" dof3="true">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
@@ -51,12 +45,6 @@
   <xacro:realsense name="torso_cam3d_down" ros_topic="torso_cam3d_down" parent="torso_3_link">
     <origin xyz="${torso_cam3d_down_x} ${torso_cam3d_down_y} ${torso_cam3d_down_z}" rpy="${torso_cam3d_down_roll} ${torso_cam3d_down_pitch} ${torso_cam3d_down_yaw}" />
   </xacro:realsense>
-  <gazebo>
-    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>torso</robotNamespace>
-      <filterJointsParam>joint_names</filterJointsParam>
-    </plugin>
-  </gazebo>
 
   <xacro:head name="head" parent="torso_3_link" dof1="true" dof2="true" dof3="true">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
@@ -64,12 +52,6 @@
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam">
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
-  <gazebo>
-    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>head</robotNamespace>
-      <filterJointsParam>joint_names</filterJointsParam>
-    </plugin>
-  </gazebo>
 
   <xacro:sensorring name="sensorring" parent="head_3_link" active="true">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
@@ -77,11 +59,5 @@
   <xacro:cob_kinect_v0 name="sensorring_cam3d" ros_topic="sensorring_cam3d" parent="sensorring_link">
     <origin xyz="${sensorring_cam3d_x} ${sensorring_cam3d_y} ${sensorring_cam3d_z}" rpy="${sensorring_cam3d_roll} ${sensorring_cam3d_pitch} ${sensorring_cam3d_yaw}" />
   </xacro:cob_kinect_v0>
-  <gazebo>
-    <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
-      <robotNamespace>sensorring</robotNamespace>
-      <filterJointsParam>joint_names</filterJointsParam>
-    </plugin>
-  </gazebo>
 
 </robot>

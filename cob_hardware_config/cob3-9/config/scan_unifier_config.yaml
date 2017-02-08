@@ -1,4 +1,0 @@
-#Scan_unifier_config-parameters
-
-input_scans: ["scan_front","scan_rear"]
-loop_rate: 100.0

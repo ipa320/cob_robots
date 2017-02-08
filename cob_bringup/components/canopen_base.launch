@@ -19,6 +19,8 @@
 		<arg name="use_external_sync" value="$(arg use_external_sync)"/>
 		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
 	</include>
+	<node if="$(arg sim)" ns="$(arg component_name)" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
+
 	<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>

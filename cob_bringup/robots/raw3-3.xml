@@ -33,13 +33,6 @@
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
 			<include if="$(arg use_rplidar)" file="$(find rplidar_ros)/launch/rplidar.launch"/>
-			<!--
-				<include file="$(find cob_bringup)/drivers/frida.launch">
-					<arg name="robot_ip" value="192.168.125.1"/>
-				</include>
-				<node ns="arm" pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
-				<include file="$(find cob_bringup)/drivers/prace_grippers.launch"/>
-			-->
 		</group>
 
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
