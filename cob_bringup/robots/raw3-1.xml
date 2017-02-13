@@ -39,9 +39,6 @@
 			<include file="$(find cob_bringup)/drivers/emstate_phidget.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
-			<!--include file="$(find cob_bringup)/drivers/ur.launch">
-				<arg name="ur_ip" value="$(arg ur_ip)"/>
-			</include-->
 			<include file="$(find cob_bringup)/drivers/openni.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
@@ -64,6 +61,12 @@
 		<include file="$(find cob_bringup)/components/legacy_schunk_powercube.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/ur.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="use_modern_driver" value="false"/>
+			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
