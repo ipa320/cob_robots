@@ -48,8 +48,8 @@
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:ur10>
 
-  <xacro:vacuum_gripper_definition name="gripper" parent="arm_ee_link" prefix="${arm_prefix}">
+  <xacro:vacuum_gripper name="gripper" parent="arm_ee_link">
     <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
-  </xacro:vacuum_gripper_definition>
+  </xacro:vacuum_gripper>
 
 </robot>
