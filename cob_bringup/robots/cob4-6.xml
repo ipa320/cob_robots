@@ -52,7 +52,7 @@
 
 		<!-- simulation only -->
 		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
-			<arg name="fake_diagnostics" value="'-b1, joy, safety, bms'"/>
+			<arg name="fake_diagnostics" value="'-b1, joy, safety'"/>
 		</include>
 	</group>
 

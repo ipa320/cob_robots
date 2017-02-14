@@ -104,7 +104,7 @@
 
 		<!-- simulation only -->
 		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
-			<arg name="fake_diagnostics" value="'base_laser_front, base_laser_right, base_laser_left, -b1, -t1, -t2, -t3, -s1, -h1, joy, safety, bms'"/>
+			<arg name="fake_diagnostics" value="'base_laser_front, base_laser_right, base_laser_left, -b1, -t1, -t2, -t3, -s1, -h1, joy, safety'"/>
 		</include>
 	</group>
 
