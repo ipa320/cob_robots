@@ -3,11 +3,11 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="component_name" default="arm"/>
-	<arg name="use_modern_driver" default="false"/>
+	<arg name="use_modern_driver" default="true"/>
 	<arg name="robot_ip" default="localhost"/>
 	<arg name="reverse_port" default="50001"/>
-	<arg name="min_payload"/>
-	<arg name="max_payload"/>
+	<arg name="min_payload" default="0.0"/>
+	<arg name="max_payload" default="10.0"/>
 	<arg name="prefix" default="arm_"/>
 	<arg name="sim" default="false"/>
 
