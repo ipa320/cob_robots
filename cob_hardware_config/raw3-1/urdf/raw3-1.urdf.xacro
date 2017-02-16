@@ -26,8 +26,6 @@
   <!-- vacuum gripper -->
   <xacro:include filename="$(find raw_description)/urdf/vacuum_gripper/gripper.urdf.xacro" />
 
-  <xacro:property name="arm_prefix" value="arm_"/>
-
 
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
