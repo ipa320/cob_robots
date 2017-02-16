@@ -3,7 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="component_name" default="arm"/>
-	<arg name="use_modern_driver" default="true"/>
+	<arg name="use_modern_driver" default="false"/>
 	<arg name="robot_ip" default="localhost"/>
 	<arg name="reverse_port" default="50001"/>
 	<arg name="min_payload" default="0.0"/>
@@ -21,13 +21,13 @@
 			<param name="prefix" value="$(arg prefix)"/>
 		</node>
 		<!-- universal robot arm modern driver -->
-		<node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+		<!--node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
 			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
 			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
 			<param name="min_payload" type="double" value="$(arg min_payload)"/>
 			<param name="max_payload" type="double" value="$(arg max_payload)"/>
 			<param name="prefix" value="$(arg prefix)"/>
-		</node>
+		</node-->
 	</group>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
