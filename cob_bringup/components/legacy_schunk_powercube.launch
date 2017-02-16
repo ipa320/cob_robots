@@ -20,5 +20,6 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="$(arg component_name)"/>
 		</include>
+		<node ns="$(arg component_name)" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
 	</group>
 </launch>
