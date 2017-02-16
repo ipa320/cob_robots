@@ -16,8 +16,7 @@
 	<!-- start robot_state_publisher -->
 	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
-	<include unless="$(arg use_old_base_drive_chain)" file="$(find cob_bringup)/components/canopen_base.launch">
-		<arg name="robot" value="$(arg robot)"/>
+	<include unless="$(arg use_old_base_drive_chain)" file="$(find cob_bringup)/components/cob4_base.launch">
 	</include>
 
 	<include if="$(arg use_old_base_drive_chain)" file="$(find cob_bringup)/components/legacy_base.launch">
