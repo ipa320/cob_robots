@@ -16,6 +16,7 @@
 		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
+		<node ns="base" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
 	</group>
 
 	<group ns="base">
