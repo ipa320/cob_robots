@@ -4,6 +4,7 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="multi_station" default="true"/>
+	<arg name="sim" default="false"/>
 
 	<!-- station detection -->
 	<node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
@@ -31,5 +32,9 @@
 	</node>
 	<node pkg="cob_docker_control" type="docker_control.py" respawn="false" name="docker_control" output="screen" unless="$(arg multi_station)">
 	</node>
+
+	<!-- virtual charging and power usage for simulation -->
+	<node if="$(arg sim)" pkg="cob_docker_control" type="fake_docking.py" respawn="false" name="fake_docker_control" output="screen" >
+	</node> 
 
 </launch>
