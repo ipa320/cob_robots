@@ -34,7 +34,6 @@
 	</node>
 
 	<!-- virtual charging and power usage for simulation -->
-	<node if="$(arg sim)" pkg="cob_docker_control" type="fake_docking.py" respawn="false" name="fake_docker_control" output="screen" >
-	</node> 
+	<node if="$(arg sim)" pkg="cob_docker_control" type="fake_docking.py" respawn="false" name="fake_docker_control" output="screen" />
 
 </launch>
