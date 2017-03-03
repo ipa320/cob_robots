@@ -10,18 +10,20 @@
 
   <group ns="/$(arg component_name)">
 
-    <node pkg="rosserial_server" type="serial_node" name="rosserial_server">
-      <param name="port" value="$(arg port)"/>
-      <param name="baud" value="$(arg baud)"/>
-      <rosparam if="$(arg check)">
-       require:
-          publishers: [ status ]
-          subscribers: [ command, set_pin, clear_pin ]
-          service_servers: [ init_finger, halt, init_pins, update_pins, set_pwm, recover ]
-      </rosparam>
-    </node>
+    <group ns="internal">
+      <node pkg="rosserial_server" type="serial_node" name="rosserial_server">
+        <param name="port" value="$(arg port)"/>
+        <param name="baud" value="$(arg baud)"/>
+        <rosparam if="$(arg check)">
+         require:
+            publishers: [ status ]
+            subscribers: [ command, set_pin, clear_pin ]
+            service_servers: [ init_finger, halt, init_pins, update_pins, set_pwm, recover ]
+        </rosparam>
+      </node>
 
-    <node pkg="rosserial_python" type="message_info_service.py" name="rosserial_message_info"/>
+      <node pkg="rosserial_python" type="message_info_service.py" name="rosserial_message_info"/>
+    </group>
 
     <node pkg="cob_hand_bridge" type="cob_hand_bridge_node" name="cob_hand_bridge">
       <rosparam param="sdhx/joint_names" subst_value="True">[$(arg component_name)_finger_1_joint, $(arg component_name)_finger_2_joint]</rosparam>
