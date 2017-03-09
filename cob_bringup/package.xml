@@ -61,6 +61,8 @@
   <exec_depend>cob_twist_controller</exec_depend>
   <exec_depend>cob_undercarriage_ctrl</exec_depend>
   <exec_depend>cob_voltage_control</exec_depend>
+  <exec_depend>compressed_depth_image_transport</exec_depend> <!-- needed by the cameras to publish the compressed topics -->
+  <exec_depend>compressed_image_transport </exec_depend> <!-- needed by the cameras to publish the compressed topics -->
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>costmap_2d</exec_depend>
   <exec_depend>diagnostic_aggregator</exec_depend>
@@ -84,6 +86,7 @@
   <exec_depend>schunk_powercube_chain</exec_depend>
   <exec_depend>sick_visionary_t_driver</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
+  <exec_depend>theora_image_transport</exec_depend> <!-- needed by the cameras to publish the compressed topics -->
   <exec_depend>topic_tools</exec_depend>
   <exec_depend>twist_mux</exec_depend>
   <exec_depend>ur_driver</exec_depend>
