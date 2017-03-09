@@ -35,6 +35,10 @@
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-2-b1)"/>
 			</include>
+                        <include file="$(find cob_omni_drive_controller)/launch/stuck_detector.launch">
+                                <arg name="timeout" default="2.0"/>
+                                <arg name="threshold" default="0.174533"/>
+                        </include>
 		</group>
 
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
@@ -126,22 +130,22 @@
 			<arg name="can_device" value="can0"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 			<arg name="can_device" value="can1"/>
 			<arg name="use_external_sync" value="true"/>
 			<arg name="start_external_sync" value="true"/>
 			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		</include-->
+		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="head"/>
 			<arg name="can_device" value="can1"/>
 			<arg name="use_external_sync" value="true"/>
 			<arg name="start_external_sync" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
-		</include>
+		</include-->
 		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_right"/>

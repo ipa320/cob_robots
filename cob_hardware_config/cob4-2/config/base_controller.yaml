@@ -12,6 +12,7 @@ twist_controller:
   required_drive_mode: 3
   #max_rot_velocity: 1.0
   #max_trans_velocity: 1.0
+  pub_divider: 1
   timeout: 0.5
 
   defaults: # default settings for all wheels, can per overwritten per wheel
