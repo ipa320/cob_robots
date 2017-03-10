@@ -21,4 +21,20 @@
 		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
 		<arg name="start_manager" value="$(arg start_manager)"/>
 	</include>
+
+
+	<!-- static frames broadcasted by camera driver -->
+	<group if="$(arg sim)">
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_rgb_frame" args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_rgb_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_rgb_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_rgb_frame /$(arg name)_rgb_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_depth_frame" args="0.0 0.059 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_depth_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_depth_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_depth_frame /$(arg name)_depth_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir_frame" args="0.0 0.059 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_ir_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_ir_frame /$(arg name)_ir_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir2_frame" args="0.0 -0.011 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_ir2_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir2_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_ir2_frame /$(arg name)_ir2_optical_frame"/>
+	</group>
 </launch>
