@@ -15,3 +15,8 @@ controller_list:
     joints:
       - torso_pan_joint
       - torso_tilt_joint
+  - name: multi_dof_joint_trajectory_action
+    type: MultiDofFollowJointTrajectory
+    default: true
+    joints:
+      - Base

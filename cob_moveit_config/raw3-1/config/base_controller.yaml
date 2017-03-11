@@ -1,0 +1,6 @@
+controller_list:
+  - name: base_controller
+    joints:
+      - virtual/x
+      - virtual/y
+      - virtual/theta
