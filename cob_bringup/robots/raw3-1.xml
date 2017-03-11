@@ -9,6 +9,7 @@
 	<arg name="ur_ip" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
+	<arg name="cartesian_control" default="true"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch">
@@ -58,7 +59,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_schunk_powercube.launch">
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -68,6 +69,7 @@
 			<arg name="use_modern_driver" value="false"/>
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="cartesian_control" value="$(arg cartesian_control)"/>
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
