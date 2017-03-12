@@ -1,43 +1,43 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="component_name" default="arm"/>
-	<arg name="use_modern_driver" default="false"/>
-	<arg name="robot_ip" default="localhost"/>
-	<arg name="reverse_port" default="50001"/>
-	<arg name="min_payload" default="0.0"/>
-	<arg name="max_payload" default="10.0"/>
-	<arg name="prefix" default="arm_"/>
-	<arg name="sim" default="false"/>
+    <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+    <arg name="component_name" default="arm"/>
+    <arg name="use_modern_driver" default="false"/>
+    <arg name="robot_ip" default="localhost"/>
+    <arg name="reverse_port" default="50001"/>
+    <arg name="min_payload" default="0.0"/>
+    <arg name="max_payload" default="10.0"/>
+    <arg name="prefix" default="arm_"/>
+    <arg name="sim" default="false"/>
     <arg name="cartesian_control" default="false"/>
 
-	<group unless="$(arg sim)">
-		<!-- universal robot arm -->
-		<node unless="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-			<param name="min_payload" type="double" value="$(arg min_payload)"/>
-			<param name="max_payload" type="double" value="$(arg max_payload)"/>
-			<param name="prefix" value="$(arg prefix)"/>
-		</node>
-		<!-- universal robot arm modern driver -->
-		<!--node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-			<param name="min_payload" type="double" value="$(arg min_payload)"/>
-			<param name="max_payload" type="double" value="$(arg max_payload)"/>
-			<param name="prefix" value="$(arg prefix)"/>
-		</node-->
-	</group>
-	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="$(arg component_name)"/>
-	</include>
-	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="$(arg component_name)"/>
-		<arg name="debug" value="false"/>
-	</include>
+    <group unless="$(arg sim)">
+        <!-- universal robot arm -->
+        <node unless="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+            <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+            <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+            <param name="min_payload" type="double" value="$(arg min_payload)"/>
+            <param name="max_payload" type="double" value="$(arg max_payload)"/>
+            <param name="prefix" value="$(arg prefix)"/>
+        </node>
+        <!-- universal robot arm modern driver -->
+        <!--node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+            <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+            <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+            <param name="min_payload" type="double" value="$(arg min_payload)"/>
+            <param name="max_payload" type="double" value="$(arg max_payload)"/>
+            <param name="prefix" value="$(arg prefix)"/>
+        </node-->
+    </group>
+    <include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="$(arg component_name)"/>
+    </include>
+    <include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="$(arg component_name)"/>
+        <arg name="debug" value="false"/>
+    </include>
 
 </launch>

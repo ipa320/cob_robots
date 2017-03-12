@@ -54,7 +54,7 @@ twist_controller:
   max_vel_rot_base: 0.1
 
   # the following links of the chain are considered for collision avoidance
-  collision_check_links: [arm_left_3_link, arm_left_4_link, arm_left_5_link, arm_left_6_link, arm_left_7_link]
+  collision_check_links: []
 
 # frame_tracker + interactive_marker
 frame_tracker:
