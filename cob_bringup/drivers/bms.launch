@@ -5,14 +5,14 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
 
-	<group unless="$(arg sim)">
-		<node name="bms" pkg="cob_bms_driver" type="bms_driver_node" output="screen" clear_params="true">
-			<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/bms.yaml"/>
-		</node>
-		<node ns="bms" name="power_state_aggregator" pkg="cob_bms_driver" type="power_state_aggregator.py" output="screen">
-			<remap from="power_state" to="/power_state"/>
-		</node>
-	</group>
-	<node if="$(arg sim)" pkg="rostopic" type="rostopic" args="pub /power_state cob_msgs/PowerState '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: ''}, voltage: 0.0, current: 0.0, power_consumption: 0.0, remaining_capacity: 50.0, relative_remaining_capacity: 50.0, charging: false, time_remaining: 0.0, temperature: 0.0}' -r 10" name="fake_bms" output="screen"/>
+	<node unless="$(arg sim)" name="bms" pkg="cob_bms_driver" type="bms_driver_node" output="screen" clear_params="true">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/bms.yaml"/>
+	</node>
+	<node if="$(arg sim)" name="bms" pkg="cob_bms_driver" type="fake_bms.py" output="screen" clear_params="true">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/bms.yaml"/>
+	</node>
 
+	<node ns="bms" name="power_state_aggregator" pkg="cob_bms_driver" type="power_state_aggregator.py" output="screen">
+		<remap from="power_state" to="/power_state"/>
+	</node>
 </launch>

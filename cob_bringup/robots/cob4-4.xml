@@ -25,7 +25,7 @@
 				<arg name="pc" value="$(arg cob4-4-b1)"/>
 			</include>
 		</group>
-		
+
 		<include file="$(find cob_bringup)/drivers/bms.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -48,6 +48,11 @@
 		</include-->
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)"/>
+		</include>
+
+		<!-- simulation only -->
+		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
+			<arg name="fake_diagnostics" value="'-b1, joy, safety'"/>
 		</include>
 	</group>
 

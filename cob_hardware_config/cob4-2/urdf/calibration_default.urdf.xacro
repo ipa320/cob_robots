@@ -80,9 +80,9 @@
 	<xacro:property name="def_torso_cam3d_down_x" value="0.15908"/>
 	<xacro:property name="def_torso_cam3d_down_y" value="0.0"/>
 	<xacro:property name="def_torso_cam3d_down_z" value="0.14005"/>
-	<xacro:property name="def_torso_cam3d_down_roll" value="2.18166"/> <!--2.18166-->
-	<xacro:property name="def_torso_cam3d_down_pitch" value="0.0"/>
-	<xacro:property name="def_torso_cam3d_down_yaw" value="1.57079"/> <!--1.57079-->
+	<xacro:property name="def_torso_cam3d_down_roll" value="0.0"/>
+	<xacro:property name="def_torso_cam3d_down_pitch" value="0.61086"/>
+	<xacro:property name="def_torso_cam3d_down_yaw" value="0.0"/>
 
 	<!-- cam3d | handeye calibration | relative to sensorring_link -->
 	<xacro:property name="def_sensorring_cam3d_x" value="0.096"/>
@@ -98,6 +98,6 @@
 	<xacro:property name="def_head_cam_z" value="0.325"/>
 	<xacro:property name="def_head_cam_roll" value="0.0"/>
 	<xacro:property name="def_head_cam_pitch" value="-0.73"/>
-	<xacro:property name="def_head_cam_yaw" value="3.14"/> 
+	<xacro:property name="def_head_cam_yaw" value="3.14"/>
 
 </robot>

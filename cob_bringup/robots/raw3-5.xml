@@ -39,29 +39,30 @@
 			<arg name="name" value="base_laser_rear"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
 
-		<!-- start common nodes used in hardware and simulation -->
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/drivers/battery_voltage.launch" >
+			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/battery_voltage.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<!-- problems when using battery_filter
+		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch" >
+			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/drivers/battery_voltage_filter.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		-->
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
+			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!--<include file="$(find cob_bringup)/tools/battery_monitor.launch">
-			<arg name="robot" value="$(arg robot)"/>
-		</include>-->
-		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/components/canopen_base.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="can_device" value="can1" />
+		</include>
+		
+		<!-- start additional packages -->
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+			<arg name="robot" value="$(arg robot)" />
+
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -73,6 +74,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 		<include file="$(find cob_script_server)/launch/script_server.launch"/>
+
+		<!-- simulation only -->
+		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
+			<arg name="fake_diagnostics" value="'base_laser_front, base_laser_rear, -pc1, joy'"/>
+		</include>
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>

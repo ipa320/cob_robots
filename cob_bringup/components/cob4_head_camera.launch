@@ -9,6 +9,7 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="camera_name" value="$(arg name)"/>
 	</include>
+	<node name="image_proc" pkg="image_proc" type="image_proc" ns="$(arg name)"/>
 	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="yaml_name" value="$(arg name)"/>
