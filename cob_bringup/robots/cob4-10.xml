@@ -41,10 +41,10 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/drivers/bms.launch">
+		<!--include file="$(find cob_bringup)/drivers/bms.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
-		</include>
+		</include-->
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="base_laser_front"/>
@@ -87,9 +87,9 @@
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/tools/battery_monitor.launch">
+		<!--include file="$(find cob_bringup)/tools/battery_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
-		</include>
+		</include-->
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -136,15 +136,6 @@
 			<arg name="start_external_sync" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="torso_cam3d_right"/>
-			<arg name="device_id" value="#1"/>
-			<!--arg name="data_skip" value="1"/-->
-			<arg name="num_worker_threads" value="2"/>
-			<arg name="start_manager" value="false"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="light_torso"/>
@@ -175,6 +166,15 @@
 		<include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_down"/>
+			<arg name="num_worker_threads" value="2"/>
+			<arg name="start_manager" value="false"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="torso_cam3d_right"/>
+			<arg name="device_id" value="#1"/>
+			<!--arg name="data_skip" value="1"/-->
 			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
