@@ -11,7 +11,7 @@
 	<arg name="cob4-5-h1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
-	<arg name="cartesian_control" default="false"/>
+
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch">
@@ -132,7 +132,7 @@
 			<arg name="component_name" value="arm_left"/>
 			<arg name="can_device" value="can3"/>
 			<arg name="sim" value="$(arg sim)"/>
-			<arg name="cartesian_control" value="$(arg cartesian_control)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="$(arg cartesian_control)"/>
 		</include>
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>

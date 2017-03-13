@@ -59,7 +59,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<include file="$(find cob_bringup)/components/legacy_schunk_powercube.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 			<arg name="sim" value="$(arg sim)"/>

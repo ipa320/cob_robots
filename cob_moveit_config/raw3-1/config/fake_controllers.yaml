@@ -7,3 +7,8 @@ controller_list:
       - arm_wrist_1_joint
       - arm_wrist_2_joint
       - arm_wrist_3_joint
+      
+  - name: fake_torso_controller
+    joints:
+      - torso_pan_joint
+      - torso_tilt_joint
