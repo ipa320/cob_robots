@@ -89,6 +89,7 @@ def front_to_home_cb(req):
         sss.move("torso","home",False)
     else:
         return TriggerResponse(False, "Could not move arms.")
+
     return TriggerResponse(True, "")
 
 def setLightCyan_cb(req):
@@ -140,7 +141,7 @@ def setLightCyanBreath_cb(req):
         cyan_color.g = 1.0
         cyan_color.b = 0.5
         cyan_color.a = 0.4
-        light_mode.color = cyan_color
+        light_mode.colors.append(cyan_color)
         light_mode.mode = 3
         light_mode.frequency = 0.25
         resp = set_light_torso(light_mode)

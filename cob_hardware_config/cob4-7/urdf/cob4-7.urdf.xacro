@@ -16,9 +16,6 @@
   <!-- torso -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
 
-  <!-- arm -->
-  <xacro:include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
-
   <!-- head -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
 
@@ -49,22 +46,14 @@
     <origin xyz="${torso_cam3d_down_x} ${torso_cam3d_down_y} ${torso_cam3d_down_z}" rpy="${torso_cam3d_down_roll} ${torso_cam3d_down_pitch} ${torso_cam3d_down_yaw}" />
   </xacro:realsense>
 
-  <xacro:schunk_lwa4p_extended name="arm_right" parent="torso_3_link" has_podest="false">
-    <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
-  </xacro:schunk_lwa4p_extended>
-
-  <xacro:schunk_lwa4p_extended name="arm_left" parent="torso_3_link" has_podest="false">
-    <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
-  </xacro:schunk_lwa4p_extended>
-
-  <xacro:head name="head" parent="torso_3_link" dof1="true" dof2="true" dof3="true">
+  <xacro:head name="head" parent="torso_3_link" dof1="false" dof2="false" dof3="false">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam">
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
 
-  <xacro:sensorring name="sensorring" parent="head_3_link" active="true">
+  <xacro:sensorring name="sensorring" parent="head_3_link" active="false">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
   <xacro:cob_kinect_v0 name="sensorring_cam3d" ros_topic="sensorring_cam3d" parent="sensorring_link">
