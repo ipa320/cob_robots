@@ -44,27 +44,27 @@ joint_group_position_controller:
      - arm_wrist_3_joint
   required_drive_mode: 1
 
-arm_1_joint_position_controller:
+arm_shoulder_pan_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: arm_shoulder_pan_joint
   required_drive_mode: 1
-arm_2_joint_position_controller:
+arm_shoulder_lift_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: arm_shoulder_lift_joint
   required_drive_mode: 1
-arm_3_joint_position_controller:
+arm_elbow_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: arm_elbow_joint
   required_drive_mode: 1
-arm_4_joint_position_controller:
+arm_wrist_1_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: arm_wrist_1_joint
   required_drive_mode: 1
-arm_5_joint_position_controller:
+arm_wrist_2_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: arm_wrist_2_joint
   required_drive_mode: 1
-arm_6_joint_position_controller:
+arm_wrist_3_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: arm_wrist_3_joint
   required_drive_mode: 1
@@ -81,27 +81,27 @@ joint_group_velocity_controller:
      - arm_wrist_3_joint
   required_drive_mode: 2
 
-arm_1_joint_velocity_controller:
+arm_shoulder_pan_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: arm_shoulder_pan_joint
   required_drive_mode: 1
-arm_2_joint_velocity_controller:
+arm_shoulder_lift_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: arm_shoulder_lift_joint
   required_drive_mode: 1
-arm_3_joint_velocity_controller:
+arm_elbow_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: arm_elbow_joint
   required_drive_mode: 1
-arm_4_joint_velocity_controller:
+arm_wrist_1_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: arm_wrist_1_joint
   required_drive_mode: 1
-arm_5_joint_velocity_controller:
+arm_wrist_2_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: arm_wrist_2_joint
   required_drive_mode: 1
-arm_6_joint_velocity_controller:
+arm_wrist_3_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: arm_wrist_3_joint
   required_drive_mode: 1

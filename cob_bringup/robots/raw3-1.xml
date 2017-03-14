@@ -69,7 +69,7 @@
 			<arg name="use_modern_driver" value="false"/>
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>
-			<arg name="cartesian_control" value="$(arg cartesian_control)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
