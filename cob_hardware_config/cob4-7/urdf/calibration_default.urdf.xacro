@@ -55,22 +55,6 @@
 	<xacro:property name="def_sensorring_pitch" value="0.0"/>
 	<xacro:property name="def_sensorring_yaw" value="0.0"/>
 
-	<!-- arm right mount positions | relative to torso_3_link -->
-	<xacro:property name="def_arm_right_x" value="0.0"/>
-	<xacro:property name="def_arm_right_y" value="-0.014"/>
-	<xacro:property name="def_arm_right_z" value="0.55"/>
-	<xacro:property name="def_arm_right_roll" value="1.57097"/>
-	<xacro:property name="def_arm_right_pitch" value="0"/>
-	<xacro:property name="def_arm_right_yaw" value="0.0"/>
-
-	<!-- arm left mount positions | relative to torso_3_link -->
-	<xacro:property name="def_arm_left_x" value="0.0"/>
-	<xacro:property name="def_arm_left_y" value="0.014"/>
-	<xacro:property name="def_arm_left_z" value="0.55"/>
-	<xacro:property name="def_arm_left_roll" value="1.57097"/>
-	<xacro:property name="def_arm_left_pitch" value="0"/>
-	<xacro:property name="def_arm_left_yaw" value="3.14159"/>
-
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
