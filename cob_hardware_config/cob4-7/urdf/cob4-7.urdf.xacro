@@ -46,14 +46,14 @@
     <origin xyz="${torso_cam3d_down_x} ${torso_cam3d_down_y} ${torso_cam3d_down_z}" rpy="${torso_cam3d_down_roll} ${torso_cam3d_down_pitch} ${torso_cam3d_down_yaw}" />
   </xacro:realsense>
 
-  <xacro:head name="head" parent="torso_3_link" dof1="true" dof2="true" dof3="true">
+  <xacro:head name="head" parent="torso_3_link" dof1="false" dof2="false" dof3="false">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam">
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
 
-  <xacro:sensorring name="sensorring" parent="head_3_link" active="true">
+  <xacro:sensorring name="sensorring" parent="head_3_link" active="false">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
   <xacro:cob_kinect_v0 name="sensorring_cam3d" ros_topic="sensorring_cam3d" parent="sensorring_link">
