@@ -31,11 +31,9 @@ run_button: 7
 
 #mode2: Trajectory controller
 torso_sss_default_target_button: 1
-sensorring_sss_default_target_button: 3
 
 #mode3: Velocity group controller
 torso_joint1_button: 0
-sensorring_joint1_button: 1
 
 right_indicator_button: 7
 left_indicator_button: 6
@@ -58,10 +56,5 @@ components: {
 #    joint_velocity: [0.05, 0.05],
 #    twist_topic_name: '/torso/twist_controller/command_twist',
 #    twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
-#  },
-#  sensorring: {
-#    sss_default_target: "front",
-#    velocity_topic_name: "/sensorring/joint_group_velocity_controller/command",
-#    joint_velocity: [0.05]
-  }
+#  }
 }
