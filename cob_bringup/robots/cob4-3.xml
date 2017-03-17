@@ -23,17 +23,13 @@
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-3-b1)"/>
 			</include>
-			<include file="$(find cob_omni_drive_controller)/launch/stuck_detector.launch">
-				<arg name="timeout" default="2.0"/>
-				<arg name="threshold" default="0.174533"/>
-			</include>
 		</group>
 
 		<include file="$(find cob_bringup)/drivers/bms.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/canopen_base.launch">
+		<include file="$(find cob_bringup)/components/cob4_base.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>

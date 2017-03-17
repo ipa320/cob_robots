@@ -10,7 +10,10 @@ joint_state_controller:
 twist_controller:
   type: cob_omni_drive_controller/WheelController
   required_drive_mode: 3
-  publish_rate: 50
+  #max_rot_velocity: 1.0
+  #max_trans_velocity: 1.0
+  pub_divider: 1
+  timeout: 0.5
 
   defaults: # default settings for all wheels, can per overwritten per wheel
     # wheel_radius: 0.080 # Radius of the wheels in [m]

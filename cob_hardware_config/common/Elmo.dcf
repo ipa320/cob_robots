@@ -1256,6 +1256,7 @@ ObjectType=0x7
 DataType=0x0005
 AccessType=rw
 DefaultValue=255
+ParameterValue=1
 PDOMapping=0
 LowLimit=0
 HighLimit=255
@@ -1523,6 +1524,7 @@ AccessType=rw
 PDOMapping=0
 LowLimit=0
 HighLimit=8
+ParameterValue=1
 
 [1A03sub1]
 ParameterName=PDO Mapping Entry
@@ -1530,6 +1532,7 @@ ObjectType=0x7
 DataType=0x0007
 AccessType=rw
 PDOMapping=0
+ParameterValue=0x60780010
 
 [1A03sub2]
 ParameterName=PDO Mapping Entry_2
