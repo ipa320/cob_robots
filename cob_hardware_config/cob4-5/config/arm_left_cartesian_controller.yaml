@@ -5,7 +5,7 @@ root_frame: odom_combined
 
 # twist controller parameters
 twist_controller:
-  controller_interface: 0    #Velocity 0, Position 1, Trajectory 2, JointStates 3
+  controller_interface: cob_twist_controller/ControllerInterfaceVelocity
   integrator_smoothing: 0.2
 
   # damping parameters
@@ -39,11 +39,14 @@ twist_controller:
 
   # limit enforcing
   keep_direction: true
+  enforce_input_limits: true
   enforce_pos_limits: true
   enforce_vel_limits: true
   enforce_acc_limits: false
   limits_tolerance: 5.0    #for position limits [deg]
   #limits_acc: [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]    #[rad/s2]
+  max_lin_twist: 0.5
+  max_rot_twist: 0.5
 
   # kinematic extensions
   kinematic_extension: 0    #OFF 0, BaseCompensation 1, BaseActive 2
