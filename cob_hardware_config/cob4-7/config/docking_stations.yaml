@@ -1,7 +1,7 @@
 stations:
 - frame_id: station_charger
   reflector_distance: 0.28
-  approach_poses: [[-0.76, 0.0, 0.0], [-0.56, 0.0, 0.0], [-0.46, 0.0, 0.0]] # in frame_id coords
+  approach_poses: [[-0.76, 0.0, 0.0], [-0.56, 0.0, 0.0], [-0.47, 0.0, -0.02]] # in frame_id coords
   departure_poses: [[-0.8, 0.0, 0.0]]
   stop_condition:
     topic: '/power_state'
