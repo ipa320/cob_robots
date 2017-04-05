@@ -57,171 +57,26 @@
 #
 #################################################################
 
-from cob_light.srv import *
-from cob_light.msg import *
 
 import rospy
-from simple_script_server import *
-sss = simple_script_server()
-from std_msgs.msg import ColorRGBA
+from cob_default_robot_behavior import default_behavior
 from std_srvs.srv import Trigger, TriggerResponse
-
-def torso_front_cb(req):
-    handle_arm_left = sss.move("arm_left","side", False)
-    handle_arm_right = sss.move("arm_right","side", False)
-    handle_arm_left.wait()
-    handle_arm_right.wait()
-    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move_base_rel("base",[0,0,1.57],False)
-        sss.move("torso","front_down_full",True)
-    else:
-        return TriggerResponse(False, "Could not move arms.")
-
-    return TriggerResponse(True, "")
-    
-def front_to_home_cb(req):
-    handle_arm_left = sss.move("arm_left","side", False)
-    handle_arm_right = sss.move("arm_right","side", False)
-    handle_arm_left.wait()
-    handle_arm_right.wait()
-    if handle_arm_left.get_error_code() == 0 and handle_arm_right.get_error_code() == 0:
-        sss.move_base_rel("base",[0,0,-1.57],False)
-        sss.move("torso","home",False)
-    else:
-        return TriggerResponse(False, "Could not move arms.")
-
-    return TriggerResponse(True, "")
-
-def setLightCyan_cb(req):
-    sss.set_light("light_base","cyan")
-    sss.set_light("light_torso","cyan")
-    return TriggerResponse(True, "")
-    
-def setLightRed_cb(req):
-    sss.set_light("light_base","red")
-    sss.set_light("light_torso","red")
-    return TriggerResponse(True, "")
-    
-def setLightGreen_cb(req):
-    sss.set_light("light_base","green")
-    sss.set_light("light_torso","green")
-    return TriggerResponse(True, "")
-    
-def setLightCyanSweep_cb(req):
-    #rospy.wait_for_service('/light_torso/set_light')
-    sss.set_light("light_base","cyan")
-
-    try:
-        set_light_torso = rospy.ServiceProxy("/light_torso/set_light",SetLightMode)
-        light_mode = LightMode()
-        cyan_color = ColorRGBA()
-        cyan_color.r = 0.0
-        cyan_color.g = 1.0
-        cyan_color.b = 0.5
-        cyan_color.a = 0.4
-        light_mode.colors.append(cyan_color)
-        light_mode.mode = 8
-        light_mode.frequency = 30
-        resp = set_light_torso(light_mode)
-        print resp
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
-        return TriggerResponse(False, "Calling light service failed.")
-    return TriggerResponse(True, "")
-
-def setLightCyanBreath_cb(req):
-    #rospy.wait_for_service('/light_torso/set_light')
-    sss.set_light("light_base","cyan")
-
-    try:
-        set_light_torso = rospy.ServiceProxy("/light_torso/set_light",SetLightMode)
-        light_mode = LightMode()
-        cyan_color = ColorRGBA()
-        cyan_color.r = 0.0
-        cyan_color.g = 1.0
-        cyan_color.b = 0.5
-        cyan_color.a = 0.4
-        light_mode.colors.append(cyan_color)
-        light_mode.mode = 3
-        light_mode.frequency = 0.25
-        resp = set_light_torso(light_mode)
-        print resp
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
-        return TriggerResponse(False, "Calling light service failed.")
-    return TriggerResponse(True, "")
-
-
-def setMimicLaughing_cb(req):
-    sss.set_mimic("mimic",["laughing",0,1])
-    return TriggerResponse(True, "")
-    
-def setMimicAsking_cb(req):
-    sss.set_mimic("mimic",["asking",0,1])
-    return TriggerResponse(True, "")
-    
-def setMimicYes_cb(req):
-    sss.set_mimic("mimic",["yes",0,1])
-    return TriggerResponse(True, "")
-    
-def setMimicBlinkingRight_cb(req):
-    sss.set_mimic("mimic",["blinking_right",0,1])
-    return TriggerResponse(True, "")
-
-def setMimicConfused_cb(req):
-    sss.set_mimic("mimic",["confused",0,1])
-    return TriggerResponse(True, "")
-
-def setMimicAngry_cb(req):
-    sss.set_mimic("mimic",["angry",0,1])
-    return TriggerResponse(True, "")
-
-def setMimicFallingAsleep_cb(req):
-    sss.set_mimic("mimic",["falling_asleep",0,1])
-    return TriggerResponse(True, "")
-
-def soundR2D2_cb(req):
-    sss.play("R2D2")
-    return TriggerResponse(True, "")
-
-def soundNoConnection_cb(req):
-    sss.set_mimic("mimic",["confused",0,1])
-    sss.play("confused")
-    return TriggerResponse(True, "")
-
-def soundNegative_cb(req):
-    sss.play("negative")
-    return TriggerResponse(True, "")
-
-def soundStarting_cb(req):
-    sss.play("starting")
-    return TriggerResponse(True, "")
-
-def soundHello_cb(req):
-    sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
-    return TriggerResponse(True, "")
 
 def trigger_srvs():
     rospy.init_node('trigger_srvs')
-    s = rospy.Service('/behavior/torso_front', Trigger, torso_front_cb)
-    s = rospy.Service('/behavior/torso_front_home', Trigger, front_to_home_cb)
-    s = rospy.Service('/behavior/setLightCyan', Trigger, setLightCyan_cb)
-    s = rospy.Service('/behavior/setLightRed', Trigger, setLightRed_cb)
-    s = rospy.Service('/behavior/setLightGreen', Trigger, setLightGreen_cb)
-    s = rospy.Service('/behavior/setLightCyanSweep', Trigger, setLightCyanSweep_cb)
-    s = rospy.Service('/behavior/setLightCyanBreath', Trigger, setLightCyanBreath_cb)
-    s = rospy.Service('/behavior/setMimicLaughing', Trigger, setMimicLaughing_cb)
-    s = rospy.Service('/behavior/setMimicAsking', Trigger, setMimicAsking_cb)
-    s = rospy.Service('/behavior/setMimicYes', Trigger, setMimicYes_cb)
-    s = rospy.Service('/behavior/setMimicBlinkingRight', Trigger, setMimicBlinkingRight_cb)
-    s = rospy.Service('/behavior/setMimicConfused', Trigger, setMimicConfused_cb)
-    s = rospy.Service('/behavior/setMimicAngry', Trigger, setMimicAngry_cb)
-    s = rospy.Service('/behavior/setMimicFallingAsleep', Trigger, setMimicFallingAsleep_cb)
-    s = rospy.Service('/behavior/soundR2D2', Trigger, soundR2D2_cb)
-    s = rospy.Service('/behavior/soundNoConnection',Trigger,soundNoConnection_cb)
-    s = rospy.Service('/behavior/soundNegative',Trigger,soundNegative_cb)
-    s = rospy.Service('/behavior/soundStarting',Trigger,soundStarting_cb)
-    s = rospy.Service('/behavior/soundHello',Trigger,soundHello_cb)
+    s = rospy.Service('/behavior/setLightCyan',Trigger,default_behavior.setLightCyan_cb)
+    s = rospy.Service('/behavior/setLightRed',Trigger,default_behavior.setLightRed_cb)
+    s = rospy.Service('/behavior/setLightGreen',Trigger,default_behavior.setLightGreen_cb)
+    s = rospy.Service('/behavior/setLightCyanSweep',Trigger,default_behavior.setLightCyanSweep_cb)
+    s = rospy.Service('/behavior/setLightCyanBreath',Trigger,default_behavior.setLightCyanBreath_cb)
+    s = rospy.Service('/behavior/setMimicLaughing',Trigger,default_behavior.setMimicLaughing_cb)
+    s = rospy.Service('/behavior/setMimicAsking',Trigger,default_behavior.setMimicAsking_cb)
+    s = rospy.Service('/behavior/setMimicYes',Trigger,default_behavior.setMimicYes_cb)
+    s = rospy.Service('/behavior/setMimicBlinkingRight',Trigger,default_behavior.setMimicBlinkingRight_cb)
+    s = rospy.Service('/behavior/setMimicConfused',Trigger,default_behavior.setMimicConfused_cb)
+    s = rospy.Service('/behavior/setMimicAngry',Trigger,default_behavior.setMimicAngry_cb)
+    s = rospy.Service('/behavior/setMimicFallingAsleep',Trigger,default_behavior.setMimicFallingAsleep_cb)
+    s = rospy.Service('/behavior/soundHello',Trigger,default_behavior.soundHello_cb)
 
     rospy.spin()
 

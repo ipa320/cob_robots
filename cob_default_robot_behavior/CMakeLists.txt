@@ -3,6 +3,8 @@ project(cob_default_robot_behavior)
 
 find_package(catkin REQUIRED COMPONENTS)
 
+catkin_python_setup()
+
 catkin_package()
 
 set(robotlist
