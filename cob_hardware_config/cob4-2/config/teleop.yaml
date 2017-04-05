@@ -31,13 +31,9 @@ run_button: 7
 
 #mode2: Trajectory controller
 torso_sss_default_target_button: 1
-sensorring_sss_default_target_button: 3
-head_sss_default_target_button: 3
 
 #mode3: Velocity group controller
 torso_joint1_button: 0
-sensorring_joint1_button: 1
-head_joint1_button: 2
 
 right_indicator_button: 7
 left_indicator_button: 6
@@ -46,7 +42,6 @@ right_left_button: 4
 
 #mode4: Twist controller
 torso_twist_button: 1
-head_twist_button: 3
 
 components: {
   base: {
