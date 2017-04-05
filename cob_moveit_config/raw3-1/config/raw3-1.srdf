@@ -12,6 +12,9 @@
     <group name="arm">
         <chain base_link="arm_base_link" tip_link="arm_ee_link" />
     </group>
+    <group name="endeffector">
+        <link name="arm_ee_link"/>
+    </group>
     <group name="robot">
         <joint name="base" />
         <joint name="arm_shoulder_pan_joint" />
@@ -21,6 +24,8 @@
         <joint name="arm_wrist_2_joint" />
         <joint name="arm_wrist_3_joint" />
     </group>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="moveit_ee" parent_link="arm_ee_link" group="endeffector" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="base" type="planar" parent_frame="odom_combined" child_link="base_footprint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
