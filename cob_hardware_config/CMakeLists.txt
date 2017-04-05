@@ -14,7 +14,7 @@ if(CATKIN_ENABLE_TESTING)
         message("testing for robot: ${robot}")
         roslaunch_add_file_check(common robot:=${robot})
         roslaunch_add_file_check(common ROBOT=${robot})
-        add_rostest(test/urdf_${robot}.test)
+        add_rostest(test/urdf.test ARGS robot:=${robot})
     endforeach()
 endif()
 
