@@ -39,6 +39,8 @@ twist_controller:
 
   # limit enforcing
   keep_direction: true
+  enforce_input_limits: true
+  enforce_pos_limits: true
   enforce_pos_limits: true
   enforce_vel_limits: true
   enforce_acc_limits: false
