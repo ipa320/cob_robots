@@ -30,7 +30,7 @@
 		<!-- velocity smoother -->
 		<include file="$(find cob_bringup)/tools/velocity_smoother.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="config_file"           default="$(arg pkg_hardware_config)/$(arg robot)/config/velocity_smoother.yaml"/>
+			<arg name="config_file"           default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
 			<arg name="raw_cmd_vel_topic"     default="velocity_smoother/command"/>
 			<arg name="smooth_cmd_vel_topic"  default="twist_controller/command"/>
 			<arg name="robot_cmd_vel_topic"   default="twist_controller/command"/>

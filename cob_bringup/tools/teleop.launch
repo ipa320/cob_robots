@@ -11,7 +11,7 @@
 	</include>
 
 	<node ns="teleop" pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" cwd="node" respawn="false" output="screen">
-		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/teleop.yaml" command="load"/>
+		<rosparam file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/teleop.yaml" command="load"/>
 	</node>
 
 </launch>

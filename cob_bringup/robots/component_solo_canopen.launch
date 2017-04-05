@@ -12,7 +12,7 @@
 	</include>
 
 	<!-- upload robot_description -->
-	<include file="$(arg pkg_hardware_config)/common/upload_robot.launch">
+	<include file="$(arg pkg_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 
