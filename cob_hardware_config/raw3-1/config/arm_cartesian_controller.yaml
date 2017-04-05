@@ -5,7 +5,7 @@ root_frame: odom_combined
 
 # twist controller parameters
 twist_controller:
-  controller_interface: 0    #Velocity 0, Position 1, Trajectory 2, JointStates 3
+  controller_interface: cob_twist_controller/ControllerInterfaceVelocity
   integrator_smoothing: 0.2
 
   # damping parameters

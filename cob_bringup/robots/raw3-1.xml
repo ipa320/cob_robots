@@ -9,7 +9,6 @@
 	<arg name="ur_ip" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
-	<arg name="cartesian_control" default="true"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch">

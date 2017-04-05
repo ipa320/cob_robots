@@ -138,6 +138,7 @@
 			<arg name="component_name" value="arm_right"/>
 			<arg name="can_device" value="can2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
 		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">
 			<arg name="robot" value="$(arg robot)"/>
