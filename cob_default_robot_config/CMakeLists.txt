@@ -10,16 +10,14 @@ if(CATKIN_ENABLE_TESTING)
   foreach(robot ${cob_supported_robots_ROBOTLIST})
     message("testing for robot: ${robot}")
     #roslaunch_add_file_check(upload_param.launch robot:=${robot})
-    roslaunch_add_file_check(${robot}/upload_param_${robot}.launch robot:=${robot})
+    roslaunch_add_file_check(robots/${robot}/upload_param_${robot}.launch robot:=${robot})
   endforeach()
 endif()
 
 ### INSTALL ###
-foreach(robot ${cob_supported_robots_ROBOTLIST})
-  install(DIRECTORY ${robot}
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-  )
-endforeach()
+install(DIRECTORY robots
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 install(FILES upload_param.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}

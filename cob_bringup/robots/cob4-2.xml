@@ -22,9 +22,10 @@
 		<arg name="load_semantic_description" value="true"/>
 		<arg name="load_planning_context" value="false"/>
 	</include>
-
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch"/>
+	<include file="$(find cob_default_robot_config)/upload_param.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
 
 	<group>
 		<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
