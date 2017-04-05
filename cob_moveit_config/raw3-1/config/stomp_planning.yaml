@@ -19,11 +19,11 @@ write_to_file: false
 use_openmp: false
 
 noise_coefficients:
- - group_name: manipulator_rail
+ - group_name: arm
    stddev: [0.3, 1.0, 1.0, 0.8, 0.3, 0.3, 0.3]
    min_stddev: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
    decay:  [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
- - group_name: manipulator
+ - group_name: robot
    stddev: [1.2, 1.0, 1.0, 0.8, 0.3, 0.3]
    min_stddev: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
    decay:  [0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
