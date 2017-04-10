@@ -7,7 +7,7 @@ heartbeat:
 
 defaults:
   eds_pkg: cob_hardware_config
-  eds_file: "robos/common/Elmo.dcf"
+  eds_file: "robots/common/Elmo.dcf"
   vel_from_device: "v != v ? v=0 : v=smooth(deg2rad(obj606c/1000.0),v,0.3)" # for smoother current velocity in joint_states
   motor_layer:
     switching_state: 4 # switched on - stop controller before switching modes
