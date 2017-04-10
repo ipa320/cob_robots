@@ -6,7 +6,7 @@
 
 	<!-- start relayboard node -->
 	<node pkg="cob_voltage_control" type="cob_voltage_control" name="voltage_controller" respawn="false" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/battery_voltage.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/battery_voltage.yaml"/>
 		<!--remap from="pub_powerstate_" to="power_state"/-->
 		<remap from="em_stop_state" to="/emergency_stop_state"/>
 		<remap from="powerboard_state" to="/power_board/state"/>

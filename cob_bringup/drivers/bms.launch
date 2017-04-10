@@ -6,10 +6,10 @@
 	<arg name="sim" default="false"/>
 
 	<node unless="$(arg sim)" name="bms" pkg="cob_bms_driver" type="bms_driver_node" output="screen" clear_params="true">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/bms.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/bms.yaml"/>
 	</node>
 	<node if="$(arg sim)" name="bms" pkg="cob_bms_driver" type="fake_bms.py" output="screen" clear_params="true">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/bms.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/bms.yaml"/>
 	</node>
 
 	<node ns="bms" name="power_state_aggregator" pkg="cob_bms_driver" type="power_state_aggregator.py" output="screen">

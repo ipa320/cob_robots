@@ -10,7 +10,7 @@
 
 	<!-- start relayboard node -->
 	<node unless="$(arg sim)" pkg="cob_relayboard" type="cob_relayboard_node" name="relayboard_controller" respawn="false" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/relayboard.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/relayboard.yaml"/>
 	</node>
 
 </launch>

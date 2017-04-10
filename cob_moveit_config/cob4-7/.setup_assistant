@@ -1,6 +1,0 @@
-moveit_setup_assistant_config:
-  URDF:
-    package: cob_hardware_config
-    relative_path: cob4-7/urdf/cob4-7.urdf.xacro
-  SRDF:
-    relative_path: config/cob4-7.srdf

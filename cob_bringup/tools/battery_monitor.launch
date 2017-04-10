@@ -6,7 +6,7 @@
 
 	<!-- start battery monitor node -->
 	<node name="battery_monitor" pkg="cob_monitoring" type="battery_monitor.py" respawn="false" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/battery_monitor.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/battery_monitor.yaml"/>
 		<remap from="power_state" to="/power_state"/>
 	</node>
 

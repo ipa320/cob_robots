@@ -7,7 +7,7 @@
 	<group ns="base">
 
 		<!-- upload parameters -->
-		<param name="IniDirectory" value="$(arg pkg_hardware_config)/$(arg robot)/config/base/"/>
+		<param name="IniDirectory" value="$(arg pkg_hardware_config)/robots/$(arg robot)/config/base/"/>
 		<param name="timeout" value="0.2"/>
 		<param name="PublishEffort" value="false"/>
 		<param name="max_trans_velocity" value="1.1"/>	<!-- default: 1.1 m/s -->

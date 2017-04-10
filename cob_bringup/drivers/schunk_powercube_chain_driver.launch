@@ -6,7 +6,7 @@
 	<arg name="component_name"/>
 
 	<node ns="$(arg component_name)" pkg="schunk_powercube_chain" type="schunk_powercube_chain" name="$(arg component_name)_driver" respawn="false" output="screen" >
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
 		<remap from="diagnostics" to="/diagnostics"/>
 	</node>
 

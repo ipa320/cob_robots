@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: cob_hardware_config
+    relative_path: robots/raw3-1/urdf/raw3-1.urdf.xacro
+  SRDF:
+    relative_path: config/raw3-1.srdf
+  CONFIG:
+    generated_timestamp: 1369838033

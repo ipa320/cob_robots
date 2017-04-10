@@ -7,7 +7,7 @@
 	<arg name="sim" default="false"/>
 
 	<!-- load parameter -->
-	<rosparam ns="$(arg name)" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg name).yaml"/>
+	<rosparam ns="$(arg name)" command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg name).yaml"/>
 
 	<!-- start laser driver -->
 	<node unless="$(arg sim)" ns="$(arg name)" pkg="cob_sick_s300" type="cob_sick_s300" name="driver" respawn="false" output="screen">

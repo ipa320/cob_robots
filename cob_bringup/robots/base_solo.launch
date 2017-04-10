@@ -6,7 +6,7 @@
 	<arg name="use_old_base_drive_chain" default="false"/>
 
 	<!-- upload robot_description -->
-	<include file="$(arg pkg_hardware_config)/common/upload_robot.launch">
+	<include file="$(arg pkg_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
 	<include file="$(find cob_default_robot_config)/upload_param.launch">

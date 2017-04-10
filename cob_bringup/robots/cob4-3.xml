@@ -7,12 +7,13 @@
 	<arg name="sim" default="false"/>
 
 	<!-- upload robot description -->
-	<include file="$(find cob_hardware_config)/common/upload_robot.launch">
+	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
-
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch"/>
+	<include file="$(find cob_default_robot_config)/upload_param.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
 
 	<group>
 		<machine name="cob4-3-b1" address="$(arg cob4-3-b1)" env-loader="$(arg env-script)" default="true"/>
