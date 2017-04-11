@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="fake_diagnostics" default=""/>
+
+	<node pkg="cob_helper_tools" type="fake_diagnostics.py" name="fake_diagnostics" args="--diag-hostnames=$(arg fake_diagnostics)"/>
+
+</launch>

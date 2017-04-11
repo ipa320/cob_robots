@@ -1,7 +1,7 @@
 <package format="2">
   <name>cob_hardware_config</name>
-  <version>0.6.5</version>
-  <description>This package contains configuration for each robot instance (e.g. cob3-1, cob3-2,...). There is a directory for each robot with configuration about urdf and hardware/device configurations.</description>
+  <version>0.6.6</version>
+  <description>This package contains configuration for each robot instance (e.g. cob4-X, raw3-X). There is a directory for each robot with configuration about urdf and hardware/device configurations.</description>
 
   <license>LGPL</license>
 
@@ -16,20 +16,19 @@
   <depend>roslaunch</depend>
   <depend>rostest</depend>
 
+  <build_depend>cob_supported_robots</build_depend>
+  
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_description</exec_depend>
   <exec_depend>cob_omni_drive_controller</exec_depend>
   <exec_depend>diagnostic_aggregator</exec_depend>
-  <exec_depend>effort_controllers</exec_depend>
   <exec_depend>joint_state_controller</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
   <exec_depend>position_controllers</exec_depend>
-  <exec_depend>prace_common</exec_depend>
   <exec_depend>raw_description</exec_depend>
   <exec_depend>schunk_description</exec_depend>
   <exec_depend>ur_description</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
-  <exec_depend>visualization_msgs</exec_depend>
   <exec_depend>xacro</exec_depend>
 
 </package>

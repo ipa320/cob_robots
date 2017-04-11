@@ -1,7 +1,0 @@
-devicestring: /dev/ttyUSB0
-baudrate: 230400
-invert_output: true
-pubmarker: false
-marker_frame: /base_link # marker will be publised at [0.5,0,0] with respect to marker_frame
-startup_color: [0.0, 0.0, 0.0, 0.0] #rgba value
-startup_mode: None #possible values: None, Static, Breath, BreathColor, Flash, FadeColor

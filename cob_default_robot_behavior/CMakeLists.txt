@@ -3,12 +3,14 @@ project(cob_default_robot_behavior)
 
 find_package(catkin REQUIRED COMPONENTS)
 
+catkin_python_setup()
+
 catkin_package()
 
 set(robotlist
-    cob4-1
     cob4-2
     cob4-5
+    cob4-7
 )
 
 foreach(robot ${robotlist})

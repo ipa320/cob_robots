@@ -6,7 +6,7 @@
 
 	<!-- run joystick -->
 	<node pkg="joy" type="joy_node" name="$(anon joy_node)">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/joy.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/joy.yaml"/>
 	</node>
 
 </launch>

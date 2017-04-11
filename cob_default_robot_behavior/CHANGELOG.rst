@@ -2,6 +2,14 @@
 Changelog for package cob_default_robot_behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.6 (2016-10-10)
+------------------
+* clean behavior trigger services
+* cleanup behaviours
+* unify head and torso poses
+* setup cob4-5
+* Contributors: Florian Weisshardt, fmw-hb, ipa-cob4-5, ipa-fmw, ipa-nhg
+
 0.6.5 (2016-04-01)
 ------------------
 * adjust cob_default_robot_behavior to new sss.say

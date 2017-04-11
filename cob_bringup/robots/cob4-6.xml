@@ -5,52 +5,55 @@
 	<arg name="robot" value="cob4-6"/>
 	<arg name="cob4-6-b1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
-
+	<arg name="sim" default="false"/>
 
 	<!-- upload robot description -->
-	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
-		<arg name="robot" value="$(arg robot)" />
+	<include file="$(find cob_hardware_config)/upload_robot.launch">
+		<arg name="robot" value="$(arg robot)"/>
 	</include>
-
 	<!-- upload default configuration parameters -->
-	<include file="$(find cob_default_robot_config)/$(arg robot)/upload_param_$(arg robot).launch" />
+	<include file="$(find cob_default_robot_config)/upload_param.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
 
 	<group>
 		<machine name="cob4-6-b1" address="$(arg cob4-6-b1)" env-loader="$(arg env-script)" default="true"/>
 
-		<include file="$(find cob_bringup)/tools/pc_monitor.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="pc" value="$(arg cob4-6-b1)" />
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg cob4-6-b1)"/>
+			</include>
+		</group>
+
+		<include file="$(find cob_bringup)/drivers/bms.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/components/cob4_base.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<!-- startup hardware -->
-		<include file="$(find cob_bringup)/drivers/canopen_402.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="component_name" value="base" />
-			<arg name="can_device" value="can0" />
+		<!-- start common nodes used in hardware and simulation -->
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
+			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
+		<include file="$(find cob_bringup)/tools/teleop.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		<include file="$(find cob_script_server)/launch/script_server.launch"/>
+		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include-->
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 
-		<!-- start additional packages -->
-		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_bringup)/tools/teleop.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-		<include file="$(find cob_script_server)/launch/script_server.launch" />
-		<!--include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include-->
-		<include file="$(find cob_bringup)/drivers/bms.launch">
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
-		<!-- aggregated robot_state_publisher -->
-		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-			<arg name="robot" value="$(arg robot)" />
+		<!-- simulation only -->
+		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
+			<arg name="fake_diagnostics" value="'-b1, joy, safety'"/>
 		</include>
 	</group>
 

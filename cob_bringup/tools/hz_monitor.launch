@@ -7,7 +7,7 @@
 
 	<!-- start hz monitor node -->
 	<node name="hz_monitor_$(arg yaml_name)" pkg="cob_monitoring" type="hz_monitor.py" respawn="false" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/hz_monitor_$(arg yaml_name).yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/hz_monitor_$(arg yaml_name).yaml"/>
 		<remap from="~diagnostics" to="/diagnostics"/>
 	</node>
 

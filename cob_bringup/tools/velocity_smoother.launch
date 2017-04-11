@@ -8,7 +8,7 @@
 
 	<arg name="node_name"             default="velocity_smoother"/>
 	<arg name="nodelet_manager_name"  default="base_nodelet_manager"/>
-	<arg name="config_file"           default="$(arg pkg_hardware_config)/$(arg robot)/config/velocity_smoother.yaml"/>
+	<arg name="config_file"           default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
 	<arg name="raw_cmd_vel_topic"     default="base/velocity_smoother/raw_cmd_vel"/>
 	<arg name="smooth_cmd_vel_topic"  default="base/twist_controller/command"/>
 	<arg name="robot_cmd_vel_topic"   default="base/twist_controller/command"/>

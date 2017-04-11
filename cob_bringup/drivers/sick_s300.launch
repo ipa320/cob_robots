@@ -4,12 +4,13 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="name"/>
+	<arg name="sim" default="false"/>
 
 	<!-- load parameter -->
-	<rosparam ns="$(arg name)" command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg name).yaml"/>
+	<rosparam ns="$(arg name)" command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg name).yaml"/>
 
 	<!-- start laser driver -->
-	<node ns="$(arg name)" pkg="cob_sick_s300" type="cob_sick_s300" name="driver" respawn="false" output="screen" >
+	<node unless="$(arg sim)" ns="$(arg name)" pkg="cob_sick_s300" type="cob_sick_s300" name="driver" respawn="false" output="screen">
 		<remap from="scan" to="scan_raw"/>
 	</node>
 

@@ -2,6 +2,110 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.6 (2016-10-10)
+------------------
+* adapt to multi topic hz monitor
+* reduce network load by using camera info instead of image for hz monitors
+* enable sound fading for cob4-1
+* added sound config for fading
+* fix framerate setting for head cam
+* adapt phidget config to raw3-6
+* aggregate arm joint states
+* additional param files and modifications for raw3-6 ur10
+* added ur10 to raw3-6 urdf
+* fix cob homeing velocity sign
+* added configs for bringup
+* introduced param to set homing velocity
+* review cob4-5 simulation
+* increase error rate for hz monitor
+* increase velocity thresholds for safety fields
+* fix framerate for head cam
+* add diagnostics hz monitor to cob4-1 and cob4-2 for cameras
+* remove now unused reflector referencing config (is now in stations.yaml
+* unify docking configuration, now only one station config file per robot
+* fix powerstate full voltage
+* add image flip config for sensorring front and back
+* add image flip for tordo down camera for cob4-5
+* fix softlink
+* use imageflip with torso_cam3d_down camera
+* use docking on cob4-2
+* corrected empty voltage for cob
+* enable roslaunch check for cob_hardware_config
+* changed params
+* use powerstate from phidget node
+* move docking config and launch to cob_hardware_config and cob_bringup
+* made diagnostics consistent with command gui
+* review configuration files
+* use current values in joint states
+* do not turn back wheel after homing
+* include/configure stuck detector
+* read currents from Elmos
+* base calibration
+* ignore BMS entry for diagnostic_aggregator
+* calibration torso_3dcam_left
+* update rviz configuration
+* add grippers to teleop
+* remove torso from cob4-5
+* remove phidget from cob4-5
+* use common dcf
+* no homing for sensorring
+* fix light setting for cob4-5
+* fix color code for cyan
+* add arms and grippers to joint state aggregator
+* disable sound for battery monitor
+* comment bms in diagnostics
+* rename hand to gripper
+* add grippers to urdf
+* add grippers to urdf
+* Merge github.com:ipa-fmw/cob_robots into indigo_dev
+  Conflicts:
+  cob_hardware_config/cob4-2/config/battery_monitor.yaml
+* adapted num_leds for battery_monitor
+* enable light in battery monitor
+* make base move smoother
+* added arms, hands and cameras
+* disable head and sensorring for cob4-2
+* disable head and sensorring
+* move base smoother
+* fix diagnostics analyser
+* added realsense camera to cob4-1 description
+* create softlink instead of copy
+* added usb head cam launch file and added it to cob4 bringup
+* moved phidget config to cob4-2 and created softlink in cob4-1 config
+* added current to phidget config
+* added phidget config for cob4-1
+* changed params for new led ring
+* disabled battery monitor sound/light and emmonitor sound
+* Set enable sound false
+* never allow collissions for base/torso and torso/head
+* load srdf in upload_robot.launch
+* add SRDF to cob_hardware_config (initially empty)
+* add safe mode for teleop
+* tuned vel smoother params
+* robot test
+* add 3dof head to cob4-2
+* test Head 3dof
+* Migrated local_costmap_params.yaml to new layout
+* Removed obstacle_threshold as for now it's not really relevant
+* Removed topic parameter
+* Reverted test settings to previous values
+* added head controller files
+* Remove inflation_layer from costmap for collision_velocity_filter
+* removed arms and hands calibration
+* setup cob4-5
+* Changed raw3-3 config for new collision_velocity_filter
+* Intermediate state
+* add missing sound config files
+* use cepstral
+* load sound parameter from yaml file
+* use cepstral
+* load sound parameter from yaml file
+* reduce laser fiel of view to not see robot casing
+* add pc monitor config for h32
+* use base_controller values from ini file
+* prepare using robots with cartesian controller
+* Contributors: Benjamin Maidel, Florian Weisshardt, Mathias Lüdtke, Nadia Hammoudeh García, fmw-hb, ipa-cob3-9, ipa-cob4-2, ipa-cob4-4, ipa-cob4-5, ipa-cob4-6, ipa-fmw, ipa-fxm, ipa-nhg, msh
+
 0.6.5 (2016-04-01)
 ------------------
 * use lowercase instead capital letters for the analyzers

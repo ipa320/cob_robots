@@ -1,2 +1,0 @@
-rate: 100 #Hz
-source_list: [/base/joint_states]

@@ -4,11 +4,11 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
-	<node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" >
+	<node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator">
 		<rosparam command="delete" ns="diagnostic_aggregator"/>
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/diagnostics_analyzers.yaml" />
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/diagnostics_analyzers.yaml"/>
 	</node>
 
-	<node pkg="cob_dashboard" type="cob_dashboard_aggregator.py" name="dashboard_aggregator" />
+	<node pkg="cob_dashboard" type="cob_dashboard_aggregator.py" name="dashboard_aggregator"/>
 
 </launch>

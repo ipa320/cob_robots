@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-  <arg name="param_file" default="$(find cob_hardware_config)/$(arg robot)/config/scan_unifier_config.yaml"/>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="param_file" default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/scan_unifier_config.yaml"/>
 
-  <!-- run scan unifier -->
-  <node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" output="log">
-    <rosparam file="$(arg param_file)" command="load"/>
-    <remap from="scan_unified" to="/scan_unified"/>
-  </node>
+	<!-- run scan unifier -->
+	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" output="log">
+		<rosparam file="$(arg param_file)" command="load"/>
+		<remap from="scan_unified" to="/scan_unified"/>
+	</node>
 
 </launch>
