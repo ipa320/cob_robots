@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="sim" default="false"/>
+
+	<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch">
+		<arg name="name" value="base_laser_left"/>
+		<arg name="host" value="141.3.80.116"/>
+		<arg name="inverted" value="true"/>
+		<arg name="scan_intervals" value="[[-2.0, 2.0]]"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch">
+		<arg name="name" value="base_laser_rear"/>
+		<arg name="host" value="141.3.80.115"/>
+		<arg name="inverted" value="true"/>
+		<arg name="scan_intervals" value="[[-2.0, 2.0]]"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+
+</launch>

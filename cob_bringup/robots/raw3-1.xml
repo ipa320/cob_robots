@@ -10,6 +10,8 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
+	<arg name="base" value="raw3-b1"/>
+
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -45,16 +47,10 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_front"/>
+		<include file="$(find cob_bringup)/modules/$(arg base).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_rear"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
+
 		<include file="$(find cob_bringup)/components/legacy_base.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
