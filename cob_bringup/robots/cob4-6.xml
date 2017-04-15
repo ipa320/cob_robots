@@ -29,7 +29,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/modules/$(arg base).launch">
+		<include file="$(find cob_bringup)/modules/base/$(arg base).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
