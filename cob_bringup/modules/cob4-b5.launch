@@ -27,4 +27,8 @@
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
 
+	<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
+		<arg name="input_scans" value="['base_laser_front/scan','base_laser_left/scan','base_laser_right/scan']"/>
+	</include>
+
 </launch>
