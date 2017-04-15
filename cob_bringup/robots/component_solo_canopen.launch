@@ -17,7 +17,7 @@
 	</include>
 
 	<!-- start driver -->
-	<include file="$(find cob_bringup)/components/canopen_generic.launch">
+	<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 		<arg name="component_name" value="$(arg component_name)"/>

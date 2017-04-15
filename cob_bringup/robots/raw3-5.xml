@@ -50,7 +50,7 @@
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/raw3_base.launch" >
+		<include file="$(find cob_bringup)/bundles/base_raw3.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="can_device" value="can1" />
 			<arg name="sim" value="$(arg sim)"/>

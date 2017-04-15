@@ -53,7 +53,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/components/cob4_base.launch">
+		<include file="$(find cob_bringup)/bundles/base_cob4.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
@@ -109,27 +109,27 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 			<arg name="can_device" value="can1"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_left"/>
 			<arg name="can_device" value="can3"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_right"/>
 			<arg name="can_device" value="can2"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">
+		<include file="$(find cob_bringup)/bundles/gripper_sdhx_legacy.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_right"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -158,7 +158,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/bundles/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="device_id" value="#1"/>
@@ -178,21 +178,21 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/bundles/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="device_id" value="#1"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
+		<include file="$(find cob_bringup)/bundles/cam3d_r200_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_down"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">
+		<include file="$(find cob_bringup)/bundles/gripper_sdhx_legacy.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_left"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -214,7 +214,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/bundles/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="sensorring_cam3d_back"/>
 			<arg name="device_id" value="#1"/>

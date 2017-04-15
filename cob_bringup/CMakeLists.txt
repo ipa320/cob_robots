@@ -16,7 +16,7 @@ if(CATKIN_ENABLE_TESTING)
 endif()
 
 ### INSTALL ###
-install(DIRECTORY components controllers drivers modules robots tools
+install(DIRECTORY bundles controllers drivers modules robots tools
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
