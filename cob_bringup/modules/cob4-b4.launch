@@ -2,4 +2,9 @@
 <launch>
 	<arg name="sim" default="false"/>
 
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch"/>
+		<arg name="dev" value="/dev/joypad"/>
+		<arg name="deadzone" value="0.12"/>
+	</include>
+
 </launch>

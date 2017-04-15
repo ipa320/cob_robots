@@ -30,6 +30,10 @@
 	</include>
 
 	<!-- start teleop -->
+	<include file="$(find cob_bringup)/drivers/joy.launch"/>
+		<arg name="dev" value="/dev/input/js0"/>
+		<arg name="deadzone" value="0.12"/>
+	</include>
 	<include file="$(find cob_bringup)/tools/teleop.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
