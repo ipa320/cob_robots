@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="robot"/>
+	<arg name="base"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
 
 	<group unless="$(arg sim)">
 		<include file="$(find cob_bringup)/drivers/base_driver.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="base" value="$(arg base)"/>
 		</include>
 		<include file="$(find cob_bringup)/controllers/base_controller.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="base" value="$(arg base)"/>
 		</include>
 	</group>
 	<group if="$(arg sim)">
 		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="base" value="$(arg base)"/>
 		</include>
 		<node ns="base" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
 	</group>
@@ -28,8 +28,8 @@
 
 		<!-- velocity smoother -->
 		<include file="$(find cob_bringup)/tools/velocity_smoother.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="config_file"           default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
+			<arg name="base" value="$(arg base)"/>
+			<arg name="config_file"           default="$(arg pkg_hardware_config)/modules/base/$(arg base)/velocity_smoother.yaml"/>
 			<arg name="raw_cmd_vel_topic"     default="velocity_smoother/command"/>
 			<arg name="smooth_cmd_vel_topic"  default="twist_controller/command"/>
 			<arg name="robot_cmd_vel_topic"   default="twist_controller/command"/>

@@ -4,7 +4,7 @@ sync:
 
 defaults:
   eds_pkg: cob_hardware_config
-  eds_file: "robots/common/Schunk_0_63.dcf"
+  eds_file: "modules/common/Schunk_0_63.dcf"
 
   #the following scaling is due to 16bit value range limitation of velocity command in vl mode (2)
   vel_to_device: "rint(rad2deg(vel)*250)"

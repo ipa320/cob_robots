@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+	<arg name="base" value="cob4-b7"/>
 	<arg name="sim" default="false"/>
 
 	<include file="$(find cob_bringup)/drivers/sick_s300.launch">
@@ -29,6 +30,11 @@
 
 	<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
 		<arg name="input_scans" value="['base_laser_front/scan','base_laser_left/scan','base_laser_right/scan']"/>
+	</include>
+
+	<include file="$(find cob_bringup)/bundles/base_cob4.launch">
+		<arg name="base" value="$(arg base)"/>
+		<arg name="sim" value="$(arg sim)"/>
 	</include>
 
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch"/>

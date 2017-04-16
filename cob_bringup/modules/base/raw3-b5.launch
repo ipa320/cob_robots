@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+	<arg name="base" value="raw3-b5"/>
 	<arg name="sim" default="false"/>
 
 	<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch">
@@ -19,6 +20,12 @@
 
 	<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
 		<arg name="input_scans" value="['base_laser_front/scan','base_laser_rear/scan']"/>
+	</include>
+
+	<include file="$(find cob_bringup)/bundles/base_raw3.launch">
+		<arg name="base" value="$(arg base)"/>
+		<arg name="can_device" value="can1" />
+		<arg name="sim" value="$(arg sim)"/>
 	</include>
 
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch"/>

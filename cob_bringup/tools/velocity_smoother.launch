@@ -3,12 +3,12 @@
 	YOCS velocity smoother launcher
 	-->
 <launch>
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="base"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<arg name="node_name"             default="velocity_smoother"/>
 	<arg name="nodelet_manager_name"  default="base_nodelet_manager"/>
-	<arg name="config_file"           default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
+	<arg name="config_file"           default="$(arg pkg_hardware_config)/modules/base/$(arg base)/velocity_smoother.yaml"/>
 	<arg name="raw_cmd_vel_topic"     default="base/velocity_smoother/raw_cmd_vel"/>
 	<arg name="smooth_cmd_vel_topic"  default="base/twist_controller/command"/>
 	<arg name="robot_cmd_vel_topic"   default="base/twist_controller/command"/>

@@ -1,16 +1,15 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="robot"/>	
+	<arg name="base"/>
 	<arg name="can_device"/>
-
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
 
-	<arg name="driver_yaml" value="$(arg pkg_hardware_config)/robots/common/base_raw3_driver.yaml"/>
-	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/base_raw3_controller.yaml"/>
+	<arg name="driver_yaml" value="$(arg pkg_hardware_config)/modules/base/common/base_raw3_driver.yaml"/>
+	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/modules/base/common/base_raw3_controller.yaml"/>
 
 	<include file="$(find cob_bringup)/bundles/base_ros_control.launch">
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="base" value="$(arg base)"/>
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 		<arg name="driver_yaml" value="$(arg driver_yaml)"/>
 		<arg name="controller_yaml" value="$(arg controller_yaml)"/>

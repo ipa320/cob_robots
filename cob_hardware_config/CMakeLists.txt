@@ -18,7 +18,7 @@ if(CATKIN_ENABLE_TESTING)
 endif()
 
 ### INSTALL ###
-install(DIRECTORY components robots test
+install(DIRECTORY components modules robots test
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

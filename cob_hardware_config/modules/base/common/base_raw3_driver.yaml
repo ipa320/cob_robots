@@ -7,7 +7,7 @@ heartbeat:
 
 defaults:
   eds_pkg: cob_hardware_config
-  eds_file: "robots/common/ElmoSimplIQ.dcf"
+  eds_file: "modules/common/ElmoSimplIQ.dcf"
   dcf_overlay:
     "606A": "1" # read velocity from velocity sensor
     "607F": "240000" # max profile velocity

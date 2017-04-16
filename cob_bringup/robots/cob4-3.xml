@@ -28,10 +28,6 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/modules/base/$(arg base).launch">
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-
 		<include file="$(find cob_bringup)/drivers/bms.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>

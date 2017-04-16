@@ -7,7 +7,7 @@ heartbeat:
 
 defaults:
   eds_pkg: cob_hardware_config
-  eds_file: "robots/common/Elmo.dcf"
+  eds_file: "modules/common/Elmo.dcf"
   dcf_overlay:
     "6083": "1000000" # profile acceleration
     "6084": "1000000" # profile deceleration

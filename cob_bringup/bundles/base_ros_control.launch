@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="robot"/>
+	<arg name="base"/>
 	<arg name="driver_yaml"/>
 	<arg name="controller_yaml"/>
 
@@ -14,7 +14,7 @@
 	<arg name="start_external_sync" value="false"/>
 
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="base" value="$(arg base)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
 		<arg name="can_device" value="$(arg can_device)"/>
 		<arg name="interval_ms" value="$(arg interval_ms)"/>
@@ -43,8 +43,8 @@
 
 		<!-- velocity smoother -->
 		<include file="$(find cob_bringup)/tools/velocity_smoother.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="config_file"           default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
+			<arg name="base" value="$(arg base)"/>
+			<arg name="config_file"           default="$(arg pkg_hardware_config)/modules/base/$(arg base)/velocity_smoother.yaml"/>
 			<arg name="raw_cmd_vel_topic"     default="velocity_smoother/command"/>
 			<arg name="smooth_cmd_vel_topic"  default="twist_controller/command"/>
 			<arg name="robot_cmd_vel_topic"   default="twist_controller/command"/>
