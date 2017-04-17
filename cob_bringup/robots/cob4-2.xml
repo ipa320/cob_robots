@@ -13,6 +13,7 @@
 	<arg name="sim" default="false"/>
 
 	<arg name="base" value="cob4-b7"/>
+	<arg name="torso" value="cob4-t7"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
@@ -49,7 +50,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/bms.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="base" value="$(arg base)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
@@ -77,7 +78,6 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/docker_control.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -105,12 +105,10 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="torso"/>
-			<arg name="can_device" value="can0"/>
+		<include file="$(find cob_bringup)/modules/torso/$(arg torso).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
+
 		<include file="$(find cob_bringup)/bundles/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_right"/>

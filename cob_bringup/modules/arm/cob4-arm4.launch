@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="arm" value="cob4-arm4"/>
+	<arg name="component_name"/>
+	<arg name="sim" default="false"/>
+
+	<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
+		<arg name="module" value="$(arg arm)"/>
+		<arg name="module_type" value="arm"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+		<arg name="can_device" value="can2"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+
+</launch>

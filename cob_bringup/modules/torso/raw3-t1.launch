@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="torso" value="raw3-t1"/>
+	<arg name="sim" default="false"/>
+
+	<include file="$(find cob_bringup)/bundles/schunk_powercube_legacy.launch">
+		<arg name="module" value="$(arg torso)"/>
+		<arg name="module_type" value="torso"/>
+		<arg name="component_name" value="torso"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+
+</launch>

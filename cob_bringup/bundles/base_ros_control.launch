@@ -14,7 +14,8 @@
 	<arg name="start_external_sync" value="false"/>
 
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
-		<arg name="base" value="$(arg base)"/>
+		<arg name="module" value="$(arg base)"/>
+		<arg name="module_type" value="base"/>
 		<arg name="component_name" value="$(arg component_name)"/>
 		<arg name="can_device" value="$(arg can_device)"/>
 		<arg name="interval_ms" value="$(arg interval_ms)"/>

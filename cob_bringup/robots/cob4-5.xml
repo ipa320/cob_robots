@@ -13,6 +13,11 @@
 	<arg name="sim" default="false"/>
 
 	<arg name="base" value="cob4-b5"/>
+	<arg name="sensorring" value="cob4-s3"/>
+	<arg name="arm_left" value="cob4-arm3"/>
+	<arg name="arm_right" value="cob4-arm4"/>
+	<arg name="gripper_left" value="cob4-hand3"/>
+	<arg name="gripper_right" value="cob4-hand4"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
@@ -49,7 +54,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/bms.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="base" value="$(arg base)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
@@ -77,7 +82,6 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/docker_control.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -105,28 +109,22 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="sensorring"/>
-			<arg name="can_device" value="can1"/>
+		<include file="$(find cob_bringup)/modules/sensorring/$(arg sensorring).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
+
+		<include file="$(find cob_bringup)/modules/arm/$(arg arm_left).launch">
 			<arg name="component_name" value="arm_left"/>
-			<arg name="can_device" value="can3"/>
 			<arg name="sim" value="$(arg sim)"/>
-			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
+
+		<include file="$(find cob_bringup)/modules/arm/$(arg arm_right).launch">
 			<arg name="component_name" value="arm_right"/>
-			<arg name="can_device" value="can2"/>
 			<arg name="sim" value="$(arg sim)"/>
-			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
+
 		<include file="$(find cob_bringup)/bundles/gripper_sdhx_legacy.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="module" value="$(arg gripper_right)"/>
 			<arg name="component_name" value="gripper_right"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
@@ -189,7 +187,7 @@
 		</include>
 
 		<include file="$(find cob_bringup)/bundles/gripper_sdhx_legacy.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="module" value="$(arg gripper_left)"/>
 			<arg name="component_name" value="gripper_left"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>

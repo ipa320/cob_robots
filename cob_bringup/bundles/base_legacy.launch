@@ -8,9 +8,7 @@
 		<include file="$(find cob_bringup)/drivers/base_driver.launch">
 			<arg name="base" value="$(arg base)"/>
 		</include>
-		<include file="$(find cob_bringup)/controllers/base_controller.launch">
-			<arg name="base" value="$(arg base)"/>
-		</include>
+		<include file="$(find cob_bringup)/controllers/base_controller.launch"/>
 	</group>
 	<group if="$(arg sim)">
 		<include file="$(find cob_bringup)/controllers/base_controller_plugin.launch">

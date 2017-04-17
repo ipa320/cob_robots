@@ -4,7 +4,7 @@
 	<arg name="sim" default="false"/>
 
 	<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch">
-		<arg name="name" value="base_laser_left"/>
+		<arg name="name" value="base_laser_front"/>
 		<arg name="host" value="141.3.80.116"/>
 		<arg name="inverted" value="true"/>
 		<arg name="scan_intervals" value="[[-2.0, 2.0]]"/>
@@ -28,7 +28,7 @@
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
 
-	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch"/>
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch">
 		<arg name="dev" value="/dev/input/js0"/>
 		<arg name="deadzone" value="0.12"/>
 	</include>

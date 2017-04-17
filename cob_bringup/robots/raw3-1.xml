@@ -11,6 +11,8 @@
 	<arg name="sim" default="false"/>
 
 	<arg name="base" value="raw3-b1"/>
+	<arg name="torso" value="raw3-t1"/>
+	<arg name="arm" value="raw3-ur1"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
@@ -51,13 +53,12 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/bundles/schunk_powercube_legacy.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="torso"/>
+		<include file="$(find cob_bringup)/modules/torso/$(arg torso).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
+
 		<include file="$(find cob_bringup)/drivers/ur.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="module" value="$(arg arm)"/>
 			<arg name="use_modern_driver" value="false"/>
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>

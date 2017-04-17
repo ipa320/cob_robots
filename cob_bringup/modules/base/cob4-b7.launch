@@ -37,7 +37,7 @@
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
 
-	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch"/>
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch">
 		<arg name="dev" value="/dev/joypad"/>
 		<arg name="deadzone" value="0.12"/>
 	</include>

@@ -5,7 +5,7 @@
 
 	<include file="$(find cob_bringup)/drivers/sick_s300.launch">
 		<arg name="name" value="base_laser_front"/>
-		<arg name="port" value="/dev/ttyScan0"/>
+		<arg name="port" value="/dev/ttyUSB1"/>
 		<arg name="inverted" value="false"/>
 		<arg name="scan_id" value="7"/>
 		<arg name="scan_intervals" value=" [[-2.0, 2.0]]"/>
@@ -13,7 +13,7 @@
 	</include>
 	<include file="$(find cob_bringup)/drivers/sick_s300.launch">
 		<arg name="name" value="base_laser_rear"/>
-		<arg name="port" value="/dev/ttyScan1"/>
+		<arg name="port" value="/dev/ttyUSB0"/>
 		<arg name="inverted" value="false"/>
 		<arg name="scan_id" value="7"/>
 		<arg name="scan_intervals" value="[[-2.0, 2.0]]"/>
@@ -29,7 +29,7 @@
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
 
-	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch"/>
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch">
 		<arg name="dev" value="/dev/input/js0"/>
 		<arg name="deadzone" value="0.12"/>
 	</include>

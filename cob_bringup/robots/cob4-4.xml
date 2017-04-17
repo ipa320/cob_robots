@@ -34,7 +34,7 @@
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/bms.launch">
-			<arg name="robot" value="$(arg robot)"/>
+			<arg name="base" value="$(arg base)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
