@@ -26,6 +26,6 @@ install(FILES upload_robot.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(FILES xacrodisplay.launch
+install(FILES display_robot.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
