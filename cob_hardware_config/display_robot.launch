@@ -3,7 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="gui" default="false" />
-	<arg name="rvizconfig" default="$(find cob_hardware_config)/robots/config/display_robot.rviz" />
+	<arg name="rvizconfig" default="$(find cob_hardware_config)/robots/common/display_robot.rviz" />
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
