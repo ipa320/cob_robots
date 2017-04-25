@@ -25,3 +25,7 @@ install(DIRECTORY robots test
 install(FILES upload_robot.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+install(FILES display_robot.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
