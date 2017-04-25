@@ -7,6 +7,8 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
+	<arg name="base" value="cob4-b6"/>
+
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -27,12 +29,12 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/drivers/bms.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/modules/base/$(arg base).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/cob4_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
+
+		<include file="$(find cob_bringup)/drivers/bms.launch">
+			<arg name="base" value="$(arg base)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 

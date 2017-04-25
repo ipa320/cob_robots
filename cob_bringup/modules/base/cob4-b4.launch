@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="base" value="cob4-b4"/>
+	<arg name="sim" default="false"/>
+
+	<include file="$(find cob_bringup)/bundles/base_cob4.launch">
+		<arg name="base" value="$(arg base)"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch">
+		<arg name="dev" value="/dev/joypad"/>
+		<arg name="deadzone" value="0.12"/>
+	</include>
+
+</launch>

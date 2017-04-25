@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="base" value="raw3-b3"/>
+	<arg name="sim" default="false"/>
+
+	<include file="$(find cob_bringup)/drivers/sick_s300.launch">
+		<arg name="name" value="base_laser_front"/>
+		<arg name="port" value="/dev/ttyUSB1"/>
+		<arg name="inverted" value="false"/>
+		<arg name="scan_id" value="7"/>
+		<arg name="scan_intervals" value=" [[-2.0, 2.0]]"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+	<include file="$(find cob_bringup)/drivers/sick_s300.launch">
+		<arg name="name" value="base_laser_rear"/>
+		<arg name="port" value="/dev/ttyUSB0"/>
+		<arg name="inverted" value="false"/>
+		<arg name="scan_id" value="7"/>
+		<arg name="scan_intervals" value="[[-2.0, 2.0]]"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+
+	<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
+		<arg name="input_scans" value="['base_laser_front/scan','base_laser_rear/scan']"/>
+	</include>
+
+	<include file="$(find cob_bringup)/bundles/base_legacy.launch">
+		<arg name="base" value="$(arg base)"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch">
+		<arg name="dev" value="/dev/input/js0"/>
+		<arg name="deadzone" value="0.12"/>
+	</include>
+
+</launch>

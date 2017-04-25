@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="torso" value="cob4-t2"/>
+	<arg name="sim" default="false"/>
+
+	<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
+		<arg name="module" value="$(arg torso)"/>
+		<arg name="module_type" value="torso"/>
+		<arg name="component_name" value="torso"/>
+		<arg name="can_device" value="can0"/>
+		<arg name="sim" value="$(arg sim)"/>
+		<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+	</include>
+
+</launch>

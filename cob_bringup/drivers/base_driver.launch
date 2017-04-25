@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="base"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<group ns="base">
 
 		<!-- upload parameters -->
-		<param name="IniDirectory" value="$(arg pkg_hardware_config)/robots/$(arg robot)/config/base/"/>
+		<param name="IniDirectory" value="$(arg pkg_hardware_config)/modules/base/$(arg base)/base/"/>
 		<param name="timeout" value="0.2"/>
 		<param name="PublishEffort" value="false"/>
 		<param name="max_trans_velocity" value="1.1"/>	<!-- default: 1.1 m/s -->

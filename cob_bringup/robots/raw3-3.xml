@@ -10,6 +10,8 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
+	<arg name="base" value="raw3-b3"/>
+
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -36,21 +38,11 @@
 			<include if="$(arg use_rplidar)" file="$(find rplidar_ros)/launch/rplidar.launch"/>
 		</group>
 
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_front"/>
+		<include file="$(find cob_bringup)/modules/base/$(arg base).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_rear"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<include file="$(find cob_bringup)/components/legacy_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
+
+		<!--include file="$(find cob_bringup)/bundles/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
 			<arg name="can_device" value="can1"/>
@@ -58,9 +50,6 @@
 		</include-->
 
 		<!-- start common nodes used in hardware and simulation -->
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
-			<arg name="robot" value="$(arg robot)"/>
-		</include>
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>

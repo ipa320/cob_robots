@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="module"/>
+	<arg name="module_type"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
 	<arg name="can_device"/>
@@ -17,7 +18,7 @@
 
 	<!-- start canopen node -->
 	<node ns="$(arg component_name)" pkg="canopen_motor_node" type="canopen_motor_node" name="driver" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/modules/$(arg module_type)/$(arg module)/$(arg component_name)_driver.yaml"/>
 		<rosparam subst_value="True">{bus: { device: $(arg can_device) } }</rosparam>
 		<rosparam subst_value="True" if="$(arg use_external_sync)">{sync: { interval_ms: $(arg interval_ms), overflow: $(arg overflow) } }</rosparam>
 		<param name="bus/master_allocator" value="canopen::ExternalMaster::Allocator" if="$(arg use_external_sync)"/>

@@ -7,6 +7,8 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
+	<arg name="base" value="raw3-b5"/>
+
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -30,14 +32,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_front"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<include file="$(find cob_bringup)/drivers/sick_lms1xx.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_rear"/>
+		<include file="$(find cob_bringup)/modules/base/$(arg base).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
@@ -55,16 +50,10 @@
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/raw3_base.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="can_device" value="can1" />
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
-
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>

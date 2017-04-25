@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="module"/>
+	<arg name="module_type" value="arm"/>
 	<arg name="component_name" default="arm"/>
 	<arg name="use_modern_driver" default="false"/>
 	<arg name="robot_ip" default="localhost"/>
@@ -31,11 +32,13 @@
 		</node-->
 	</group>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="module" value="$(arg module)"/>
+		<arg name="module_type" value="$(arg module_type)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
 	</include>
 	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
+		<arg name="module" value="$(arg module)"/>
+		<arg name="module_type" value="$(arg module_type)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
 		<arg name="debug" value="false"/>
 	</include>

@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<arg name="cmd_vel_out" default="base/velocity_smoother/raw_cmd_vel"/>
 	<arg name="marker_out" default="base/twist_mux/marker"/>
-	<arg name="config_locks"  default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/twist_mux_locks.yaml"/>
-	<arg name="config_topics" default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/twist_mux_topics.yaml"/>
+	<arg name="config_locks"  default="$(find cob_hardware_config)/modules/base/common/twist_mux_locks.yaml"/>
+	<arg name="config_topics" default="$(find cob_hardware_config)/modules/base/common/twist_mux_topics.yaml"/>
 
 	<node pkg="twist_mux" type="twist_mux" name="twist_mux" output="screen">
 		<remap from="cmd_vel_out" to="$(arg cmd_vel_out)"/>

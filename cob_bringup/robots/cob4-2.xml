@@ -12,6 +12,9 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
+	<arg name="base" value="cob4-b7"/>
+	<arg name="torso" value="cob4-t7"/>
+
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -38,34 +41,19 @@
 			</include>
 		</group>
 
+		<include file="$(find cob_bringup)/modules/base/$(arg base).launch">
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/bms.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_front"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_right"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="base_laser_left"/>
+			<arg name="base" value="$(arg base)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/components/cob4_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="light_base"/>
@@ -73,9 +61,6 @@
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
-		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
-			<arg name="robot" value="$(arg robot)"/>
-		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
@@ -93,7 +78,6 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/docker_control.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -121,13 +105,11 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="torso"/>
-			<arg name="can_device" value="can0"/>
+		<include file="$(find cob_bringup)/modules/torso/$(arg torso).launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+
+		<include file="$(find cob_bringup)/bundles/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="device_id" value="#1"/>
@@ -163,7 +145,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
+		<include file="$(find cob_bringup)/bundles/cam3d_r200_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_down"/>
 			<arg name="num_worker_threads" value="2"/>
@@ -183,7 +165,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/bundles/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="device_id" value="#1"/>
@@ -205,7 +187,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/bundles/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="sensorring_cam3d"/>
 			<arg name="data_skip" value="3"/>
@@ -225,7 +207,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
+		<include file="$(find cob_bringup)/bundles/camera_cob4_head.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>

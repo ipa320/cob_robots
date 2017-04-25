@@ -1,0 +1,3 @@
+angle_resolution: 0.25 #deg
+scan_frequency: 25 #hz
+set_config: false

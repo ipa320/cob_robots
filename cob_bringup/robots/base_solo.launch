@@ -2,6 +2,7 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="base"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="use_old_base_drive_chain" default="false"/>
 
@@ -16,11 +17,12 @@
 	<!-- start robot_state_publisher -->
 	<node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher"/>
 
-	<include unless="$(arg use_old_base_drive_chain)" file="$(find cob_bringup)/components/cob4_base.launch">
+	<include unless="$(arg use_old_base_drive_chain)" file="$(find cob_bringup)/bundles/base_cob4.launch"/>
+		<arg name="base" value="$(arg base)"/>
 	</include>
 
-	<include if="$(arg use_old_base_drive_chain)" file="$(find cob_bringup)/components/legacy_base.launch">
-		<arg name="robot" value="$(arg robot)"/>
+	<include if="$(arg use_old_base_drive_chain)" file="$(find cob_bringup)/bundles/base_legacy.launch">
+		<arg name="base" value="$(arg base)"/>
 	</include>
 
 	<!-- start relayboard -->
@@ -30,6 +32,10 @@
 	</include>
 
 	<!-- start teleop -->
+	<include file="$(find cob_bringup)/drivers/joy.launch"/>
+		<arg name="dev" value="/dev/input/js0"/>
+		<arg name="deadzone" value="0.12"/>
+	</include>
 	<include file="$(find cob_bringup)/tools/teleop.launch">
 		<arg name="robot" value="$(arg robot)"/>
 	</include>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="sensorring" value="cob4-s3"/>
+	<arg name="sim" default="false"/>
+
+	<include file="$(find cob_bringup)/bundles/canopen_generic.launch">
+		<arg name="module" value="$(arg sensorring)"/>
+		<arg name="module_type" value="sensorring"/>
+		<arg name="component_name" value="sensorring"/>
+		<arg name="can_device" value="can1"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+
+</launch>
