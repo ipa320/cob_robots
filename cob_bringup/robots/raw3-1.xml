@@ -30,15 +30,6 @@
 			<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include-->
-			<!--include file="$(find cob_bringup)/drivers/phidgets.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include>
-			<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include>
-			<include file="$(find cob_bringup)/drivers/emstate_phidget.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include-->
 			<!-- Relayboard with sim:=true is necessary because the robot does not have a phidgets board for checking the emergency status -->
 			<include file="$(find cob_bringup)/drivers/relayboard.launch">
 				<arg name="robot" value="$(arg robot)"/>
