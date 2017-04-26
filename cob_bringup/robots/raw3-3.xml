@@ -24,6 +24,10 @@
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg pc1)"/>
+			</include>
 			<include file="$(find cob_bringup)/drivers/phidgets.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
@@ -46,8 +50,9 @@
 			<arg name="name" value="base_laser_rear"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/components/raw3_base.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="can_device" value="can0" />
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">

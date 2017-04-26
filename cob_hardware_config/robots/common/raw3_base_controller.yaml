@@ -29,16 +29,16 @@ twist_controller:
   wheels: &wheels
     - steer: fl_caster_rotation_joint
       drive: fl_caster_r_wheel_joint
-      steer_neutral_position: -180.0
+      steer_neutral_position: 180.0
     - steer: bl_caster_rotation_joint
       drive: bl_caster_r_wheel_joint
-      steer_neutral_position: -180.0
+      steer_neutral_position: 180.0
     - steer: br_caster_rotation_joint
       drive: br_caster_r_wheel_joint
-      steer_neutral_position: -180.0
+      steer_neutral_position: 180.0
     - steer: fr_caster_rotation_joint
       drive: fr_caster_r_wheel_joint
-      steer_neutral_position: 0.0
+      steer_neutral_position: 180.0
 
 
 ## odometry_controller
