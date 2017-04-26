@@ -1,9 +1,0 @@
-device: /dev/pcan1
-baudrate: 500K
-sync_interval: 10
-chains: ["torso_controller"]
-torso_controller:
-  joint_names: [head_powerball_bottom_joint, head_powerball_side_joint]
-  motor_direction: [1, 1]
-  module_ids: [7, 8]
-

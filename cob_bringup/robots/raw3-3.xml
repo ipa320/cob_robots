@@ -6,7 +6,6 @@
 	<arg name="use_rplidar" default="false"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
-	<arg name="pc3" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
@@ -55,12 +54,6 @@
 			<arg name="can_device" value="can0" />
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="torso"/>
-			<arg name="can_device" value="can1"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include-->
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
