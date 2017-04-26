@@ -142,6 +142,23 @@
 			<arg name="sim_enabled" value="$(arg sim)"/>
 		</include>
 
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="sensorring"/>
+			<arg name="can_device" value="can1"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="true"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="head"/>
+			<arg name="can_device" value="can1"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="false"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_script_server)/launch/script_server.launch"/>
 		<include file="$(find cob_bringup)/tools/android.launch">
