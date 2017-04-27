@@ -60,6 +60,8 @@
 			<arg name="can_device" value="can1" />
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
+		<!-- overwrite control parameters with non-default values -->
+		<rosparam ns="base/driver" command="load" file="$(find cob_hardware_config)/robots/$(arg robot)/config/base_controller.yaml"/>
 
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >

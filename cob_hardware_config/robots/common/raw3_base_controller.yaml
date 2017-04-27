@@ -16,17 +16,14 @@ twist_controller:
   timeout: 0.5
 
   defaults: # default settings for all wheels, can per overwritten per wheel
-    # wheel_radius: 0.080 # Radius of the wheels in [m]
-    # wheel_offset: 0  # Distance of the wheels steering axis to the wheel center in [m], read from URDF is not specified
-    # steer_drive_coupling: 0.0
-    # steer_neutral_position: 0.0  # [deg]
     steer_ctrl: # Parameters for tuning Impedance-Controller
-      spring: 9.5
-      damp: 2.25
+      spring: 15.0
+      damp: 2.75
       virt_mass: 0.1 
-      d_phi_max: 12.0 #100.0
-      dd_phi_max: 40.0 #100.0
-  wheels: &wheels
+      d_phi_max: 12.0
+      dd_phi_max: 40.0
+
+  wheels: &wheels # start front left, counter-clockwise for base_drive_chain compatibility
     - steer: fl_caster_rotation_joint
       drive: fl_caster_r_wheel_joint
       steer_neutral_position: 180.0
@@ -39,7 +36,6 @@ twist_controller:
     - steer: fr_caster_rotation_joint
       drive: fr_caster_r_wheel_joint
       steer_neutral_position: 180.0
-
 
 ## odometry_controller
 odometry_controller:
