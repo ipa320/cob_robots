@@ -150,6 +150,7 @@
 			<arg name="use_external_sync" value="true"/>
 			<arg name="start_external_sync" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
 		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">
 			<arg name="robot" value="$(arg robot)"/>
