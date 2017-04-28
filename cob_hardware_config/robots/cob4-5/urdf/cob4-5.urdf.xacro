@@ -69,7 +69,7 @@
   <xacro:head name="head" parent="torso_3_link" dof1="false" dof2="false" dof3="false">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
-  <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam">
+  <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam" update_rate="3.5" height="1536" width="2048" > <!-- get this from config/head_cam.yaml -->
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
 
