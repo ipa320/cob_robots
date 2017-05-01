@@ -12,6 +12,8 @@
 	<arg name="prefix" default="arm_"/>
 	<arg name="sim" default="false"/>
 	<arg name="cartesian_control" default="false"/>
+	<arg name="base_frame" default="$(arg prefix)base" />
+	<arg name="tool_frame" default="$(arg prefix)tool0_controller" />
 
 	<group unless="$(arg sim)">
 		<!-- universal robot python driver -->
@@ -25,18 +27,33 @@
 		</node>
 		<!-- universal robot modern driver -->
 		<!--node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+			<param name="robot_ip_address" type="str" value="$(arg robot_ip)"/>
 			<param name="min_payload" type="double" value="$(arg min_payload)"/>
 			<param name="max_payload" type="double" value="$(arg max_payload)"/>
 			<param name="max_velocity" type="double" value="$(arg max_velocity)"/>
-			<param name="prefix" value="$(arg prefix)"/>
+			<param name="use_ros_control" type="bool" value="True"/>
+			<param name="servoj_gain" type="double" value="750" />
+			<param name="prefix" value="$(arg prefix)" />
+			<param name="base_frame" type="str" value="$(arg base_frame)"/>
+			<param name="tool_frame" type="str" value="$(arg tool_frame)"/>
+			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+			<remap from="/arm/joint_trajectory_controller/joint_names" to="/arm/joint_names"/>
 		</node-->
 	</group>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
 	</include>
+	
+	<group if="$(arg use_modern_driver)">
+	<!-- load other controller --> 
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="$(arg component_name)"/>
+		</include>
+	</group>
+	
 	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
