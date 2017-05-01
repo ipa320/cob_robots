@@ -61,10 +61,10 @@
 		</include>
 		<include file="$(find cob_bringup)/drivers/ur.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="use_modern_driver" value="false"/>
+			<arg name="use_modern_driver" value="true"/>
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>
-			<arg if="$(arg sim)" name="cartesian_control" value="false"/>
+			<arg name="cartesian_control" value="true"/>
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
