@@ -8,6 +8,7 @@
 	<arg name="reverse_port" default="50001"/>
 	<arg name="min_payload" default="0.0"/>
 	<arg name="max_payload" default="10.0"/>
+	<arg name="max_velocity" default="5.0"/>
 	<arg name="prefix" default="arm_"/>
 	<arg name="sim" default="false"/>
 	<arg name="cartesian_control" default="false"/>
@@ -17,8 +18,9 @@
 		<node unless="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
 			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
 			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-			<param name="min_payload" type="double" value="$(arg min_payload)"/>
-			<param name="max_payload" type="double" value="$(arg max_payload)"/>
+			<param name="min_payload"  type="double" value="$(arg min_payload) "/>
+			<param name="max_payload"  type="double" value="$(arg max_payload) "/>
+			<param name="max_velocity" type="double" value="$(arg max_velocity)"/>
 			<param name="prefix" value="$(arg prefix)"/>
 		</node>
 		<!-- universal robot modern driver -->
@@ -27,6 +29,7 @@
 			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
 			<param name="min_payload" type="double" value="$(arg min_payload)"/>
 			<param name="max_payload" type="double" value="$(arg max_payload)"/>
+			<param name="max_velocity" type="double" value="$(arg max_velocity)"/>
 			<param name="prefix" value="$(arg prefix)"/>
 		</node-->
 	</group>
