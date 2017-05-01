@@ -3,13 +3,13 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="component_name" default="arm"/>
-	<arg name="use_modern_driver" default="false"/>
+	<arg name="use_modern_driver" default="true"/>
 	<arg name="robot_ip" default="localhost"/>
 	<arg name="reverse_port" default="50001"/>
 	<arg name="min_payload" default="0.0"/>
 	<arg name="max_payload" default="10.0"/>
 	<arg name="max_velocity" default="5.0"/>
-	<arg name="prefix" default="arm_"/>
+	<arg name="prefix" default="arm"/>
 	<arg name="sim" default="false"/>
 	<arg name="cartesian_control" default="false"/>
 	<arg name="base_frame" default="$(arg prefix)base" />
@@ -26,7 +26,7 @@
 			<param name="prefix" value="$(arg prefix)"/>
 		</node>
 		<!-- universal robot modern driver -->
-		<!--node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+		<node if="$(arg use_modern_driver)" ns="arm" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
 			<param name="robot_ip_address" type="str" value="$(arg robot_ip)"/>
 			<param name="min_payload" type="double" value="$(arg min_payload)"/>
 			<param name="max_payload" type="double" value="$(arg max_payload)"/>
@@ -38,8 +38,7 @@
 			<param name="tool_frame" type="str" value="$(arg tool_frame)"/>
 			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
 			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-			<remap from="/arm/joint_trajectory_controller/joint_names" to="/arm/joint_names"/>
-		</node-->
+		</node>
 	</group>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -50,6 +49,7 @@
 	<!-- load other controller --> 
 		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="ns" value="arm/joint_trajectory_controller/"/>
 			<arg name="component_name" value="$(arg component_name)"/>
 		</include>
 	</group>
