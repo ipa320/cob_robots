@@ -1,5 +1,5 @@
 ## joint_names
-joint_names: [arm_shoulder_pan_joint, arm_shoulder_lift_joint, arm_elbow_joint, arm_wrist_1_joint, arm_wrist_2_joint, arm_wrist_3_joint]
+joint_names: [arm_shoulder_1_joint, arm_shoulder_2_joint, arm_shoulder_3_joint, arm_wrist_1_joint, arm_wrist_2_joint, arm_wrist_3_joint]
 
 # Settings for ros_control control loop
 hardware_control_loop:
@@ -8,9 +8,9 @@ hardware_control_loop:
 # Settings for ros_control hardware interface
 hardware_interface:
    joints:
-     - arm_shoulder_pan_joint
-     - arm_shoulder_lift_joint
-     - arm_elbow_joint
+     - arm_shoulder_1_joint
+     - arm_shoulder_2_joint
+     - arm_shoulder_3_joint
      - arm_wrist_1_joint
      - arm_wrist_2_joint
      - arm_wrist_3_joint
@@ -32,18 +32,18 @@ force_torque_sensor_controller:
 joint_trajectory_controller:
    type: position_controllers/JointTrajectoryController
    joints:
-     - arm_shoulder_pan_joint
-     - arm_shoulder_lift_joint
-     - arm_elbow_joint
+     - arm_shoulder_1_joint
+     - arm_shoulder_2_joint
+     - arm_shoulder_3_joint
      - arm_wrist_1_joint
      - arm_wrist_2_joint
      - arm_wrist_3_joint
    constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
-      arm_shoulder_pan_joint: {trajectory: 0.1, goal: 0.1}
-      arm_shoulder_lift_joint: {trajectory: 0.1, goal: 0.1}
-      arm_elbow_joint: {trajectory: 0.1, goal: 0.1}
+      arm_shoulder_1_joint: {trajectory: 0.1, goal: 0.1}
+      arm_shoulder_2_joint: {trajectory: 0.1, goal: 0.1}
+      arm_shoulder_3_joint: {trajectory: 0.1, goal: 0.1}
       arm_wrist_1_joint: {trajectory: 0.1, goal: 0.1}
       arm_wrist_2_joint: {trajectory: 0.1, goal: 0.1}
       arm_wrist_3_joint: {trajectory: 0.1, goal: 0.1}
@@ -54,9 +54,9 @@ joint_trajectory_controller:
 joint_group_velocity_controller:
   type: velocity_controllers/JointGroupVelocityController
   joints:
-     - arm_shoulder_pan_joint
-     - arm_shoulder_lift_joint
-     - arm_elbow_joint
+     - arm_shoulder_1_joint
+     - arm_shoulder_2_joint
+     - arm_shoulder_3_joint
      - arm_wrist_1_joint
      - arm_wrist_2_joint
      - arm_wrist_3_joint

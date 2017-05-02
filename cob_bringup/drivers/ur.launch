@@ -36,8 +36,6 @@
 			<param name="prefix" value="$(arg prefix)" />
 			<param name="base_frame" type="str" value="$(arg base_frame)"/>
 			<param name="tool_frame" type="str" value="$(arg tool_frame)"/>
-			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
 		</node>
 	</group>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
