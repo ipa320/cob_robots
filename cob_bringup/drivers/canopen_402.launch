@@ -9,10 +9,12 @@
 	<arg name="overflow" default="0"/>
 	<arg name="use_external_sync"/>
 	<arg name="start_external_sync"/>
+	<arg name="reset_errors_before_recover" default="false"/>
 	
 	<!-- start external sync node if requested -->
 	<node ns="$(arg component_name)" pkg="canopen_chain_node" type="canopen_sync_node" name="sync_$(arg can_device)" output="screen" if="$(arg start_external_sync)">
 		<rosparam subst_value="True">{bus: { device: $(arg can_device) }, sync: { interval_ms: $(arg interval_ms), overflow: $(arg overflow) } }</rosparam>
+		<param name="reset_errors_before_recover" value="$(arg reset_errors_before_recover)"/>
 	</node>
 
 	<!-- start canopen node -->
@@ -21,6 +23,7 @@
 		<rosparam subst_value="True">{bus: { device: $(arg can_device) } }</rosparam>
 		<rosparam subst_value="True" if="$(arg use_external_sync)">{sync: { interval_ms: $(arg interval_ms), overflow: $(arg overflow) } }</rosparam>
 		<param name="bus/master_allocator" value="canopen::ExternalMaster::Allocator" if="$(arg use_external_sync)"/>
+		<param name="reset_errors_before_recover" value="$(arg reset_errors_before_recover)"/>
 	</node>
 
 </launch>

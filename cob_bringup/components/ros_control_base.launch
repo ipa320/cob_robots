@@ -7,6 +7,7 @@
 	<arg name="can_device" default="can0"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
+	<arg name="reset_errors_before_recover" default="false"/>
 
 	<arg name="component_name" value="base"/>
 	<arg name="interval_ms" value="20"/>
@@ -20,6 +21,7 @@
 		<arg name="interval_ms" value="$(arg interval_ms)"/>
 		<arg name="use_external_sync" value="$(arg use_external_sync)"/>
 		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
+		<arg name="reset_errors_before_recover" value="$(arg reset_errors_before_recover)"/>
 	</include>
 	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 
