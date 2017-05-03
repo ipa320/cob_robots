@@ -27,7 +27,7 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="moveit_ee" parent_link="arm_ee_link" group="endeffector" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
-    <virtual_joint name="base" type="planar" parent_frame="odom_combined" child_link="base_footprint" />
+    <!--virtual_joint name="base" type="planar" parent_frame="odom_combined" child_link="base_footprint" / -->
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="arm_base_link" link2="arm_shoulder_link" reason="Adjacent" />
     <disable_collisions link1="arm_base_link" link2="arm_upper_arm_link" reason="Never" />
