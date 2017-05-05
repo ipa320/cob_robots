@@ -60,6 +60,20 @@ group15:
     [home,move,home],
     [open,move,open],
     [close, move, close]]
+group18:
+  group_name: head
+  component_name: head
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [front_down,move,front_down],
+    [back,move,back],
+    [back_down,move,back_down],
+    [left,move,left],
+    [right,move,right],
+    [nod,move,nod],
+    [shake,move,shake]]
 group21:
   group_name: mimic
   component_name: behavior

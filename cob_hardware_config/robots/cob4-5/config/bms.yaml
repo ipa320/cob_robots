@@ -1,4 +1,38 @@
 diagnostics: 
+  - id: 0x01
+    fields:
+      - name: "battery_empty"
+        offset: 0
+        len: 2
+        bit_mask: 0x01
+      - name: "battery_almost_empty"
+        offset: 0
+        len: 2
+        bit_mask: 0x02
+      - name: "charging_fet_active"
+        offset: 0
+        len: 2
+        bit_mask: 0x04
+      - name: "discharging_fet_active"
+        offset: 0
+        len: 2
+        bit_mask: 0x08
+      - name: "battery_learning"
+        offset: 0
+        len: 2
+        bit_mask: 0x10
+      - name: "battery_discharging"
+        offset: 0
+        len: 2
+        bit_mask: 0x20
+      - name: "battery_full"
+        offset: 0
+        len: 2
+        bit_mask: 0x40
+      - name: "battery_charging"
+        offset: 0
+        len: 2
+        bit_mask: 0x80
   - id: 0x02
     fields:
       - name: "current"
@@ -78,8 +112,7 @@ diagnostics:
         factor: 0.1
         unit: "Celsius"
 
-
-topics: ["current", "voltage", "remaining_capacity", "full_charge_capacity", "temperature"]
+topics: ["current", "voltage", "remaining_capacity", "full_charge_capacity", "temperature", "battery_charging", "battery_full", "battery_learning", "battery_almost_empty"]
 
 can_device: "can1"
 bms_id_to_poll: 0x200
