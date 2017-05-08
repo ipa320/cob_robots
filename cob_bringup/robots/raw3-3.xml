@@ -6,7 +6,6 @@
 	<arg name="use_rplidar" default="false"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
-	<arg name="pc3" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
@@ -24,6 +23,10 @@
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg pc1)"/>
+			</include>
 			<include file="$(find cob_bringup)/drivers/phidgets.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
@@ -46,16 +49,11 @@
 			<arg name="name" value="base_laser_rear"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/components/raw3_base.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="can_device" value="can0" />
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="torso"/>
-			<arg name="can_device" value="can1"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include-->
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
