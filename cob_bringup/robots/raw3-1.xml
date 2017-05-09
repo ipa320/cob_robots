@@ -5,7 +5,6 @@
 	<arg name="robot" value="raw3-1"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
-	<arg name="pc3" default="localhost"/>
 	<arg name="ur_ip" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
@@ -29,15 +28,6 @@
 				<arg name="pc" value="$(arg pc1)"/>
 			</include>
 			<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include-->
-			<!--include file="$(find cob_bringup)/drivers/phidgets.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include>
-			<include file="$(find cob_bringup)/drivers/powerstate_phidget.launch">
-				<arg name="robot" value="$(arg robot)"/>
-			</include>
-			<include file="$(find cob_bringup)/drivers/emstate_phidget.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include-->
 			<!-- Relayboard with sim:=true is necessary because the robot does not have a phidgets board for checking the emergency status -->
@@ -74,7 +64,7 @@
 			<arg name="use_modern_driver" value="false"/>
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>
-			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="false"/>
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
