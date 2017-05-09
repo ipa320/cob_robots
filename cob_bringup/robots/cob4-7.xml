@@ -126,12 +126,13 @@
 			<arg name="component_name" value="torso"/>
 			<arg name="can_device" value="can0"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
 		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="device_id" value="#1"/>
-			<!--arg name="data_skip" value="1"/-->
+			<arg name="data_skip" value="0"/>
 			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -140,6 +141,24 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="light_torso"/>
 			<arg name="sim_enabled" value="$(arg sim)"/>
+		</include>
+
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="sensorring"/>
+			<arg name="can_device" value="can1"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="true"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="head"/>
+			<arg name="can_device" value="can1"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="false"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
@@ -187,7 +206,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="device_id" value="#1"/>
-			<!--arg name="data_skip" value="1"/-->
+			<arg name="data_skip" value="0"/>
 			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -223,11 +242,11 @@
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-7-h1)"/>
 			</include>
-			<include file="$(find cob_bringup)/drivers/mimic.launch">
-				<arg name="rotation" value="270"/>
-			</include>
 		</group>
 
+		<include file="$(find cob_bringup)/drivers/mimic.launch">
+			<arg unless="$(arg sim)" name="rotation" value="270"/>
+		</include>
 		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
