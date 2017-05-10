@@ -20,6 +20,7 @@
 	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="yaml_name" value="$(arg name)"/>
+		<arg name="sim" value="$(arg sim)"/>
 	</include>
 	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -33,4 +34,18 @@
 		<arg name="start_manager" value="$(arg start_manager)"/>
 		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
 	</include>
+
+
+	<group ns="$(arg name)" if="$(arg sim)">
+		<!-- relay additional topics not available from sensor plugin -->
+		<node pkg="topic_tools" type="relay" name="camera_info_relay" args="depth_registered/camera_info depth/camera_info">
+			<param name="lazy" value="true"/>
+		</node>
+		<node pkg="topic_tools" type="relay" name="image_raw_relay" args="depth_registered/image_raw depth/image_raw">
+			<param name="lazy" value="true"/>
+		</node>
+		<node pkg="topic_tools" type="relay" name="points_relay" args="depth_registered/points depth/points">
+			<param name="lazy" value="true"/>
+		</node>
+	</group>
 </launch>

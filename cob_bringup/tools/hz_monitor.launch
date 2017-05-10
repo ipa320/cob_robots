@@ -4,11 +4,11 @@
 	<arg name="yaml_name"/>
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="sim" default="false"/>
 
-	<!-- start hz monitor node -->
-	<node name="hz_monitor_$(arg yaml_name)" pkg="cob_monitoring" type="hz_monitor.py" respawn="false" output="screen">
+	<node name="hz_monitor_$(arg yaml_name)" pkg="cob_monitoring" type="topic_status_monitor" respawn="false" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/hz_monitor_$(arg yaml_name).yaml"/>
-		<remap from="~diagnostics" to="/diagnostics"/>
+		<rosparam if="$(arg sim)" subst_value="True">{hz: 50, hzerror: 50}</rosparam>	<!-- due to high cpu load gazebo cannot achieve desired update_rates -->
 	</node>
 
 </launch>
