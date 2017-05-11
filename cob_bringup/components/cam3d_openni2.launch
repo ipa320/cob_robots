@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot"/>
+	<arg name="name"/>
+	<arg name="device_id" default="#1"/>
+	<arg name="data_skip" default="0"/>
+	<arg name="num_worker_threads" default="4"/>
+	<arg name="start_manager" default="true"/>
+	<arg name="throttle" default="false"/>
+	<arg name="flip" default="true"/>
+	<arg name="sim" default="false"/>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/openni2.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="device_id" default="$(arg device_id)"/>
+		<arg name="name" value="$(arg name)"/>
+		<arg name="data_skip" value="$(arg data_skip)"/>
+		<arg name="num_worker_threads" value="$(arg num_worker_threads)"/>
+	</include>
+	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="yaml_name" value="$(arg name)"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="$(arg name)"/>
+		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
+		<arg name="start_manager" value="$(arg start_manager)"/>
+	</include>
+	<include if="$(arg throttle)" file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+		<arg name="namespace" value="$(arg name)" />
+		<arg name="rate" value="1.0" />
+		<arg name="start_manager" value="$(arg start_manager)"/>
+		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
+	</include>
+
+
+	<group ns="$(arg name)" if="$(arg sim)">
+		<!-- relay additional topics not available from sensor plugin -->
+		<node pkg="topic_tools" type="relay" name="camera_info_relay" args="depth_registered/camera_info depth/camera_info">
+			<param name="lazy" value="true"/>
+		</node>
+		<node pkg="topic_tools" type="relay" name="image_raw_relay" args="depth_registered/image_raw depth/image_raw">
+			<param name="lazy" value="true"/>
+		</node>
+		<node pkg="topic_tools" type="relay" name="points_relay" args="depth_registered/points depth/points">
+			<param name="lazy" value="true"/>
+		</node>
+	</group>
+</launch>

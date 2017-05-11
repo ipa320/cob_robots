@@ -5,13 +5,13 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
 
-	<group ns="$(arg component_name)" >
+	<group ns="$(arg component_name)">
 
 		<!-- parameter description of the trajectory controller -->
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/$(arg component_name)_controller.yaml" />
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name)_controller.yaml"/>
 
 		<!-- The trajectory controller listens for JointTrajectoryFollowAction and sends velocity commands to the CANopen node -->
-		<node pkg="cob_trajectory_controller" type="cob_trajectory_controller" name="joint_trajectory_controller" cwd="node" respawn="false" output="screen" />
+		<node pkg="cob_trajectory_controller" type="cob_trajectory_controller" name="joint_trajectory_controller" cwd="node" respawn="false" output="screen"/>
 
 	</group>
 

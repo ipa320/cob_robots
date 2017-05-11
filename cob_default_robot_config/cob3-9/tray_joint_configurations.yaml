@@ -1,7 +1,0 @@
-joint_names: ["tray_joint"]
-action_name: /tray/joint_trajectory_controller/follow_joint_trajectory
-service_ns: /tray/driver
-default_vel: 0.4
-
-up: [[0.0]]
-down: [[-3.14]]

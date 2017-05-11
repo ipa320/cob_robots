@@ -6,8 +6,8 @@
 	<arg name="component_name" default="sound"/>
 
 	<!-- start sound -->
-	<node pkg="cob_sound" type="sound" name="$(arg component_name)" respawn="false" output="screen" >
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/sound.yaml"/>
+	<node pkg="cob_sound" type="sound" name="$(arg component_name)" respawn="false" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/sound.yaml"/>
 		<remap from="~diagnostics" to="/diagnostics"/>
 	</node>
 

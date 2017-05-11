@@ -5,7 +5,7 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<node name="power_state_phidget" pkg="cob_phidget_power_state" type="power_state_phidget.py" output="screen">
-		<rosparam file="$(arg pkg_hardware_config)/$(arg robot)/config/powerstate_phidget.yaml" command="load" />
+		<rosparam file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/powerstate_phidget.yaml" command="load"/>
 		<remap from="power_state" to="/power_state"/>
 		<remap from="analog_sensors" to="/analog_sensors"/>
 	</node>

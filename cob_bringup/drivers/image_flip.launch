@@ -11,7 +11,7 @@
 
 	<!-- sensor message gateway node (forwards sensor messages in a desired rate) -->
 	<node ns="image_flip_$(arg camera_name)" pkg="cob_image_flip" type="image_flip" name="image_flip_$(arg camera_name)" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/image_flip_params_$(arg camera_name).yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/image_flip_params_$(arg camera_name).yaml"/>
 		<remap from="~pointcloud_in" to="$(arg pointcloud_in)"/>
 		<remap from="~pointcloud_out" to="$(arg pointcloud_out)"/>
 		<remap from="~colorimage_in" to="$(arg colorimage_in)"/>

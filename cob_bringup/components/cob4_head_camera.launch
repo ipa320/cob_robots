@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot"/>
+	<arg name="name" default="head_cam"/>
+	<arg name="flip" default="true"/>
+	<arg name="sim" default="false"/>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/usb_camera_node.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="$(arg name)"/>
+	</include>
+	<node name="image_proc" pkg="image_proc" type="image_proc" ns="$(arg name)"/>
+	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="yaml_name" value="$(arg name)"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="$(arg name)"/>
+		<arg name="colorimage_in" value="/$(arg name)/image_rect_color"/>
+		<arg name="colorimage_out" value="/$(arg name)_upright/image_rect_color"/>
+	</include>
+</launch>

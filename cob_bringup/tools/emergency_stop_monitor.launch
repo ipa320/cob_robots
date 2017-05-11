@@ -6,7 +6,7 @@
 
 	<!-- start relayboard node -->
 	<node name="emergency_stop_monitor" pkg="cob_monitoring" type="emergency_stop_monitor.py" respawn="false" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/emergency_stop_monitor.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/emergency_stop_monitor.yaml"/>
 	</node>
 
 </launch>

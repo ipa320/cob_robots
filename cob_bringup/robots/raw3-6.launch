@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<include file="$(find cob_bringup)/robots/raw3-6.xml" >
-		<arg name="pc1" value="raw3-6-pc1"/>
-	</include>
-
-</launch>

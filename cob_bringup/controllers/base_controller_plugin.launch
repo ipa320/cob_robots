@@ -7,28 +7,11 @@
 	<group ns="base">
 
 		<!-- load controller configs -->
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_controller.yaml"/>
-		<rosparam command="load" file="$(arg pkg_hardware_config)/$(arg robot)/config/base_joint_limits.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/base_controller.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/base_joint_limits.yaml"/>
 
 		<!-- start controllers -->
 		<node pkg="controller_manager" type="controller_manager" name="base_controller_spawner" args="spawn joint_state_controller twist_controller odometry_controller" respawn="false" output="screen"/>
-
-		<!-- twist mux -->
-		<include file="$(find cob_bringup)/tools/twist_mux.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="cmd_vel_out" default="velocity_smoother/command"/>
-			<arg name="marker_out" default="twist_mux/marker"/>
-		</include>
-
-		<!-- velocity smoother -->
-		<include file="$(find cob_bringup)/tools/velocity_smoother.launch" >
-			<arg name="robot" value="$(arg robot)" />
-			<arg name="config_file"           default="$(arg pkg_hardware_config)/$(arg robot)/config/velocity_smoother.yaml"/>
-			<arg name="raw_cmd_vel_topic"     default="velocity_smoother/command"/>
-			<arg name="smooth_cmd_vel_topic"  default="twist_controller/command"/>
-			<arg name="robot_cmd_vel_topic"   default="twist_controller/command"/>
-			<arg name="odom_topic"            default="odometry_controller/odometry"/>
-		</include>
 
 	</group>
 

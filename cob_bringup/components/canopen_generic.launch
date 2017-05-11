@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot"/>
+	<arg name="component_name"/>
+
+	<arg name="can_device"/>
+	<arg name="interval_ms" default="10"/>
+	<arg name="use_external_sync" default="false"/>
+	<arg name="start_external_sync" default="$(arg use_external_sync)"/>
+
+	<arg name="cartesian_control" default="false"/>
+	<arg name="sim" default="false"/>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+		<arg name="can_device" value="$(arg can_device)"/>
+		<arg name="interval_ms" value="$(arg interval_ms)"/>
+		<arg name="use_external_sync" value="$(arg use_external_sync)"/>
+		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
+	</include>
+	<node if="$(arg sim)" ns="$(arg component_name)" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
+
+	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+	</include>
+	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+		<arg name="debug" value="false"/>
+	</include>
+</launch>

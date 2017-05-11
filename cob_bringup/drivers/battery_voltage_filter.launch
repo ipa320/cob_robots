@@ -2,12 +2,13 @@
 <launch>
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="mode" default="update"/>
 
 	<node pkg="cob_voltage_control" type="savitzky_golay.py" name="voltage_filter" output="screen">
-		<rosparam command="load" file="$(find cob_hardware_config)/$(arg robot)/config/battery_voltage_filter.yaml" />
-		<param name="robot_name" value="$(arg robot)" />
-		<param name="mode" value="$(arg mode)" />
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/battery_voltage_filter.yaml"/>
+		<param name="robot_name" value="$(arg robot)"/>
+		<param name="mode" value="$(arg mode)"/>
 	</node>
 
 </launch>
