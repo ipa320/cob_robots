@@ -4,7 +4,7 @@
 	<arg name="name"/>
 	<arg name="sim" default="false"/>
 
-	<include file="$(find cob_bringup)/drivers/sick_visionary_t.launch">
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/sick_visionary_t.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="name" value="$(arg name)"/>
 	</include>
