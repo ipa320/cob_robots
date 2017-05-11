@@ -7,12 +7,14 @@
 	<arg name="can_device" default="can0"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
+	<arg name="reset_errors_before_recover" default="false"/>
 
 	<arg name="component_name" value="base"/>
 	<arg name="interval_ms" value="20"/>
 	<arg name="use_external_sync" value="false"/>
 	<arg name="start_external_sync" value="false"/>
 
+	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
@@ -20,8 +22,8 @@
 		<arg name="interval_ms" value="$(arg interval_ms)"/>
 		<arg name="use_external_sync" value="$(arg use_external_sync)"/>
 		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
+		<arg name="reset_errors_before_recover" value="$(arg reset_errors_before_recover)"/>
 	</include>
-	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 
 	<include unless="$(arg sim)" file="$(find cob_omni_drive_controller)/launch/stuck_detector.launch">
 		<arg name="timeout" default="2.0"/>

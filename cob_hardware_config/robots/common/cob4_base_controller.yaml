@@ -3,8 +3,8 @@ joint_names: [fl_caster_rotation_joint, fl_caster_r_wheel_joint, fr_caster_rotat
 
 ## joint_state_controller
 joint_state_controller:
-    type: joint_state_controller/JointStateController
-    publish_rate: 50
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
 
 ## twist_controller
 twist_controller:
