@@ -14,6 +14,7 @@
 	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="yaml_name" value="$(arg name)"/>
+		<arg name="sim" value="$(arg sim)"/>
 	</include>
 	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -23,8 +24,8 @@
 	</include>
 
 
-	<!-- static frames broadcasted by camera driver -->
-	<group if="$(arg sim)">
+	<group ns="$(arg name)" if="$(arg sim)">
+		<!-- static frames broadcasted by camera driver -->
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_rgb_frame" args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_rgb_frame"/>
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_rgb_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_rgb_frame /$(arg name)_rgb_optical_frame"/>
 
@@ -36,5 +37,16 @@
 
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir2_frame" args="0.0 -0.011 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_ir2_frame"/>
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir2_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_ir2_frame /$(arg name)_ir2_optical_frame"/>
+
+		<!-- relay additional topics not available from sensor plugin -->
+		<node pkg="topic_tools" type="relay" name="camera_info_relay" args="depth_registered/camera_info depth/camera_info">
+			<param name="lazy" value="true"/>
+		</node>
+		<node pkg="topic_tools" type="relay" name="image_raw_relay" args="depth_registered/image_raw depth/image_raw">
+			<param name="lazy" value="true"/>
+		</node>
+		<node pkg="topic_tools" type="relay" name="points_relay" args="depth_registered/points depth/points">
+			<param name="lazy" value="true"/>
+		</node>
 	</group>
 </launch>
