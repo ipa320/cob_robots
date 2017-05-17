@@ -2,10 +2,12 @@
 <launch>
 
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+	<arg name="use_fts" default="true"/>
 
 	<include file="$(find cob_bringup)/robots/raw3-5.xml">
 		<arg name="pc1" value="i60sr2"/>
 		<arg name="env-script" value="$(arg env-script)"/>
+		<arg name="use_fts" value="$(arg use_fts)"/>
 	</include>
 
 </launch>
