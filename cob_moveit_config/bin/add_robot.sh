@@ -16,5 +16,5 @@ moveit_setup_assistant_config:
     package: cob_hardware_config
     relative_path: robots/ROBOT/urdf/ROBOT.urdf.xacro
   SRDF:
-    relative_path: moveit/config/ROBOT.srdf
+    relative_path: config/ROBOT.srdf
 CONFIG_TEMPLATE
