@@ -69,7 +69,6 @@ group18:
     [front,move,front],
     [front_down,move,front_down],
     [back,move,back],
-    [back_down,move,back_down],
     [left,move,left],
     [right,move,right],
     [nod,move,nod],
