@@ -7,7 +7,7 @@
 	<arg name="sim_enabled" default="false"/>
 
 	<!-- start light controller -->
-	<node pkg="cob_light" type="cob_light" name="$(arg component_name)" respawn="false" output="screen">
+	<node pkg="cob_light" type="cob_light" name="$(arg component_name)" respawn="true" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name).yaml"/>
 		<param name="sim_enabled" value="$(arg sim_enabled)"/>
 	</node>

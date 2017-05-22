@@ -3,4 +3,4 @@ check_ipmi_tool: False
 enforce_clock_speed: False
 num_cores: 4
 load1_threshold: 6
-load5_threshold: 4
+load5_threshold: 5

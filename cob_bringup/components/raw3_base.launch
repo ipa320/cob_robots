@@ -14,7 +14,7 @@
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 		<arg name="driver_yaml" value="$(arg driver_yaml)"/>
 		<arg name="controller_yaml" value="$(arg controller_yaml)"/>
-
+		<arg name="reset_errors_before_recover" value="true"/>
 		<arg name="can_device" value="$(arg can_device)"/>
 
 		<arg name="sim" value="$(arg sim)"/>
