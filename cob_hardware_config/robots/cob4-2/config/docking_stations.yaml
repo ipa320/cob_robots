@@ -13,7 +13,7 @@ stations:
   approach_poses: [[-2.20, 0.0, 0.0], [-0.6, 0.0, -0.035], [-0.38, 0.0, -0.035], [-0.312, 0.0, -0.035]] # in frame_id coords
   departure_poses: [[-0.38, 0.0, -0.035], [-0.6, 0.0, -0.035], [-2.20, 0.0, 0.0]] # in frame_id coords
 
-distance_tolerance: 0.05
+distance_tolerance: 0.1
 intensity_lower_threshold: 200
 intensity_upper_threshold: 10000
 update_rate: 0.25
