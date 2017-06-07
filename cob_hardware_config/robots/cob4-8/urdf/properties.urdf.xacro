@@ -120,20 +120,12 @@
 	<xacro:property name="torso_cam3d_down_yaw" value="${def_torso_cam3d_down_yaw+offset_torso_cam3d_down_yaw}"/>
 	
 	<!-- cam3d | handeye calibration | relative to sensorring_link -->
-	<xacro:property name="sensorring_cam3d_front_x" value="${def_sensorring_cam3d_front_x+offset_sensorring_cam3d_front_x}"/>
-	<xacro:property name="sensorring_cam3d_front_y" value="${def_sensorring_cam3d_front_y+offset_sensorring_cam3d_front_y}"/>
-	<xacro:property name="sensorring_cam3d_front_z" value="${def_sensorring_cam3d_front_z+offset_sensorring_cam3d_front_z}"/>
-	<xacro:property name="sensorring_cam3d_front_roll" value="${def_sensorring_cam3d_front_roll+offset_sensorring_cam3d_front_roll}"/>
-	<xacro:property name="sensorring_cam3d_front_pitch" value="${def_sensorring_cam3d_front_pitch+offset_sensorring_cam3d_front_pitch}"/>
-	<xacro:property name="sensorring_cam3d_front_yaw" value="${def_sensorring_cam3d_front_yaw+offset_sensorring_cam3d_front_yaw}"/>
-
-	<!-- cam3d | handeye calibration | relative to sensorring_link -->
-	<xacro:property name="sensorring_cam3d_back_x" value="${def_sensorring_cam3d_back_x+offset_sensorring_cam3d_back_x}"/>
-	<xacro:property name="sensorring_cam3d_back_y" value="${def_sensorring_cam3d_back_y+offset_sensorring_cam3d_back_y}"/>
-	<xacro:property name="sensorring_cam3d_back_z" value="${def_sensorring_cam3d_back_z+offset_sensorring_cam3d_back_z}"/>
-	<xacro:property name="sensorring_cam3d_back_roll" value="${def_sensorring_cam3d_back_roll+offset_sensorring_cam3d_back_roll}"/>
-	<xacro:property name="sensorring_cam3d_back_pitch" value="${def_sensorring_cam3d_back_pitch+offset_sensorring_cam3d_back_pitch}"/>
-	<xacro:property name="sensorring_cam3d_back_yaw" value="${def_sensorring_cam3d_back_yaw+offset_sensorring_cam3d_back_yaw}"/>
+	<xacro:property name="sensorring_cam3d_x" value="${def_sensorring_cam3d_x+offset_sensorring_cam3d_x}"/>
+	<xacro:property name="sensorring_cam3d_y" value="${def_sensorring_cam3d_y+offset_sensorring_cam3d_y}"/>
+	<xacro:property name="sensorring_cam3d_z" value="${def_sensorring_cam3d_z+offset_sensorring_cam3d_z}"/>
+	<xacro:property name="sensorring_cam3d_roll" value="${def_sensorring_cam3d_roll+offset_sensorring_cam3d_roll}"/>
+	<xacro:property name="sensorring_cam3d_pitch" value="${def_sensorring_cam3d_pitch+offset_sensorring_cam3d_pitch}"/>
+	<xacro:property name="sensorring_cam3d_yaw" value="${def_sensorring_cam3d_yaw+offset_sensorring_cam3d_yaw}"/>
 
 	<!-- cam | handeye calibration | relative to head_3_link -->
 	<xacro:property name="head_cam_x" value="${def_head_cam_x+offset_head_cam_x}"/>

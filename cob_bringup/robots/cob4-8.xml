@@ -239,7 +239,7 @@
 
 		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="sensorring_cam3d_front"/>
+			<arg name="name" value="sensorring_cam3d"/>
 			<arg name="device_id" value="#1"/>
 			<arg name="data_skip" value="0"/>
 			<arg name="start_manager" value="false"/>
