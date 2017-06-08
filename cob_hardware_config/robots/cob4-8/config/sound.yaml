@@ -1,4 +1,4 @@
-mode: "festival"
+mode: "cepstral"
 cepstral_voice: "David"
 cepstral_settings: "\"speech/rate=170\""
 fade_volume: true   #fade volume on play and on track transition

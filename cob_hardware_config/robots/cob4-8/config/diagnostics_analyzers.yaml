@@ -84,10 +84,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso Cam3d Down
         contains: 'torso_cam3d_down'
-      sensorring_cam3d_front:
+      sensorring_cam3d:
         type: diagnostic_aggregator/GenericAnalyzer
-        path: Sensorring Cam3d Front
-        contains: 'sensorring_cam3d_front'
+        path: Sensorring Cam3d
+        contains: 'sensorring_cam3d'
       head_cam:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Head Cam
