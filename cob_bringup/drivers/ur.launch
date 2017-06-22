@@ -8,7 +8,7 @@
 	<arg name="reverse_port" default="50001"/>
 	<arg name="min_payload" default="0.0"/>
 	<arg name="max_payload" default="10.0"/>
-	<arg name="max_velocity" default="1.0"/>
+	<arg name="max_velocity" default="2.0"/>
 	<arg name="prefix" default="arm_"/>
 	<arg name="sim" default="false"/>
 	<arg name="cartesian_control" default="false"/>
