@@ -23,6 +23,7 @@
 
   <!-- sensors -->
   <xacro:include filename="$(find cob_description)/urdf/sensors/realsense.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/sensors/realsense_zr300.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/kinect.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/usb_cam.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
@@ -57,6 +58,10 @@
   <xacro:realsense name="torso_cam3d_down" ros_topic="torso_cam3d_down" parent="torso_3_link">
     <origin xyz="${torso_cam3d_down_x} ${torso_cam3d_down_y} ${torso_cam3d_down_z}" rpy="${torso_cam3d_down_roll} ${torso_cam3d_down_pitch} ${torso_cam3d_down_yaw}" />
   </xacro:realsense>
+  
+  <xacro:realsense_zr300 name="torso_cam3d_zr300" ros_topic="torso_cam3d_zr300" parent="torso_3_link">
+    <origin xyz="${torso_cam3d_zr300_x} ${torso_cam3d_zr300_y} ${torso_cam3d_zr300_z}" rpy="${torso_cam3d_zr300_roll} ${torso_cam3d_zr300_pitch} ${torso_cam3d_zr300_yaw}" />
+  </xacro:realsense_zr300>
 
   <xacro:head name="head" parent="torso_3_link" dof1="true" dof2="true" dof3="true">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
