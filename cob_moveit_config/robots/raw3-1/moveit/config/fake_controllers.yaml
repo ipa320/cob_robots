@@ -7,15 +7,8 @@ controller_list:
       - arm_wrist_1_joint
       - arm_wrist_2_joint
       - arm_wrist_3_joint
-  - name: fake_endeffector_controller
+      
+  - name: fake_torso_controller
     joints:
-      []
-  - name: fake_robot_controller
-    joints:
-      - base
-      - arm_shoulder_pan_joint
-      - arm_shoulder_lift_joint
-      - arm_elbow_joint
-      - arm_wrist_1_joint
-      - arm_wrist_2_joint
-      - arm_wrist_3_joint
+      - torso_pan_joint
+      - torso_tilt_joint
