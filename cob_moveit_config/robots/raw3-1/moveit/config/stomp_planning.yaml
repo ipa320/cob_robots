@@ -12,6 +12,8 @@ max_iterations_after_collision_free: 1
 max_rollouts: 100
 min_rollouts: 30
 num_rollouts_per_iteration: 10
+start_state_max_bounds_error: 1.0
+start_state_max_dt: 2.0
 
 # STOMP (optional)
 use_noise_adaptation: true

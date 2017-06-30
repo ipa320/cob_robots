@@ -1,9 +1,18 @@
 # no sensors configured yet
-sensors:
-  - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
-    point_cloud_topic: /cam3d/depth_registered/points
-    max_range: 5.0
-    point_subsample: 1
-    padding_offset: 0.1
-    padding_scale: 1.0
-    filtered_cloud_topic: filtered_cloud
+#sensors:
+#  - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+#    point_cloud_topic: /camera/depth_registered/points
+#    max_range: 2.0
+#   point_subsample: 10
+#    padding_offset: 0.01
+#    padding_scale: 0.01
+#    filtered_cloud_topic: filtered_cloud
+#  - sensor_plugin: occupancy_map_monitor/DepthImageOctomapUpdater
+#    image_topic: /cam3d/rgb/image_rect_mono/compressedDepth
+#    queue_size: 5
+#    near_clipping_plane_distance: 0.3
+#    far_clipping_plane_distance: 5.0
+#    shadow_threshold: 0.2
+#    padding_scale: 4.0
+#   padding_offset: 0.03
+#    filtered_cloud_topic: filtered_cloud2
