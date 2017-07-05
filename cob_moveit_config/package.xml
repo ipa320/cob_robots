@@ -13,5 +13,6 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <exec_depend>xacro</exec_depend>
+  <exec_depend>trac_ik</exec_depend>	
 
 </package>
