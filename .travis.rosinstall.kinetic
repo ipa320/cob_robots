@@ -32,7 +32,7 @@
     version: indigo_dev
 - git:
     uri: 'https://github.com/ipa320/cob_hand.git'
-    local-name: cob-hand
+    local-name: cob_hand
     version: indigo_dev
 - git:
     uri: 'https://github.com/ipa320/cob_manipulation.git'
@@ -65,14 +65,6 @@
     local-name: sick_visionary_t
     version: indigo-devel
 - git:
-    uri: 'https://github.com/ros-industrial/ros_canopen.git'
-    local-name: ros_canopen
-    version: jade-devel
-- git:
     uri: 'https://github.com/ros-industrial/universal_robot.git'
     local-name: universal_robot
     version: kinetic-devel
-- git:
-    uri: 'https://github.com/bosch-ros-pkg/usb_cam.git'
-    local-name: usb_cam
-    version: develop
