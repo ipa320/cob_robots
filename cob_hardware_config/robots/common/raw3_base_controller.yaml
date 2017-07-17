@@ -8,6 +8,7 @@ joint_state_controller:
 
 ## twist_controller
 twist_controller:
+  use_fts: false
   type: cob_omni_drive_controller/WheelController
   required_drive_mode: 3
   #max_rot_velocity: 1.0
