@@ -11,6 +11,7 @@ set(robotlist
     cob4-2
     cob4-5
     cob4-7
+    cob4-8
 )
 
 foreach(robot ${robotlist})
