@@ -244,9 +244,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/drivers/mimic.launch">
-			<arg unless="$(arg sim)" name="rotation" value="270"/>
-		</include>
+		<include file="$(find cob_bringup)/drivers/mimic.launch"/>
 		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>

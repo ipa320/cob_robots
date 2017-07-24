@@ -1,11 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-
-	<arg name="rotation" default="0"/>
-
-	<!-- start mimic -->
-	<node pkg="cob_mimic" type="mimic_node.py" name="mimic" cwd="node" respawn="false">
-		<param name="rotation" value="$(arg rotation)"/>
-	</node>
-
+    <!-- start mimic -->
+    <node pkg="cob_mimic" type="mimic" name="mimic" cwd="node" respawn="false"/>
 </launch>
