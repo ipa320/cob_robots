@@ -245,6 +245,7 @@
 		</group>
 
 		<include file="$(find cob_bringup)/drivers/mimic.launch"/>
+
 		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
