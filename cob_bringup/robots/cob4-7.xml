@@ -128,11 +128,9 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="torso_cam3d_right"/>
-			<arg name="device_id" value="#1"/>
-			<arg name="data_skip" value="0"/>
+			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -202,23 +200,12 @@
 				<arg name="pc" value="$(arg cob4-7-t3)"/>
 			</include>
 		</group>
-
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="torso_cam3d_left"/>
-			<arg name="device_id" value="#1"/>
-			<arg name="data_skip" value="0"/>
-			<arg name="num_worker_threads" value="2"/>
-			<arg name="start_manager" value="false"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
 		<include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="torso_cam3d_zr300"/>
+			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
-			<arg name="serial_no" value="3481802029"/>
 		</include>
 	</group>
 
