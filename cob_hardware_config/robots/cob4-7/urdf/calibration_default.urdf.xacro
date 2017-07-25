@@ -64,16 +64,16 @@
 	<xacro:property name="def_torso_cam3d_left_x" value="0.12839"/>
 	<xacro:property name="def_torso_cam3d_left_y" value="0.01802"/>
 	<xacro:property name="def_torso_cam3d_left_z" value="0.24214"/>
-	<xacro:property name="def_torso_cam3d_left_roll" value="0"/>
-	<xacro:property name="def_torso_cam3d_left_pitch" value="1.57079"/>
+	<xacro:property name="def_torso_cam3d_left_roll" value="-1.57079"/>
+	<xacro:property name="def_torso_cam3d_left_pitch" value="0.0"/>
 	<xacro:property name="def_torso_cam3d_left_yaw" value="0.418879"/>
 
 	<!-- cam3d right | handeye calibration | relative to torso_3_link -->
 	<xacro:property name="def_torso_cam3d_right_x" value="0.12839"/>
 	<xacro:property name="def_torso_cam3d_right_y" value="-0.01802"/>
 	<xacro:property name="def_torso_cam3d_right_z" value="0.24214"/>
-	<xacro:property name="def_torso_cam3d_right_roll" value="0"/>
-	<xacro:property name="def_torso_cam3d_right_pitch" value="1.57079"/>
+	<xacro:property name="def_torso_cam3d_right_roll" value="-1.57079"/>
+	<xacro:property name="def_torso_cam3d_right_pitch" value="0.0"/>
 	<xacro:property name="def_torso_cam3d_right_yaw" value="-0.418879"/>
 
 	<!-- cam3d down | handeye calibration | relative to torso_3_link -->
@@ -83,14 +83,6 @@
 	<xacro:property name="def_torso_cam3d_down_roll" value="0.0"/>
 	<xacro:property name="def_torso_cam3d_down_pitch" value="0.61086"/>
 	<xacro:property name="def_torso_cam3d_down_yaw" value="0.0"/>
-	
-	<!-- cam3d zr300 | handeye calibration | relative to torso_3_link -->
-	<xacro:property name="def_torso_cam3d_zr300_x" value="0.12"/>
-	<xacro:property name="def_torso_cam3d_zr300_y" value="-0.06"/>
-	<xacro:property name="def_torso_cam3d_zr300_z" value="0.24214"/>
-	<xacro:property name="def_torso_cam3d_zr300_roll" value="-1.5908"/>
-	<xacro:property name="def_torso_cam3d_zr300_pitch" value="0.0"/>
-	<xacro:property name="def_torso_cam3d_zr300_yaw" value="-0.418879"/>
 
 	<!-- cam3d | handeye calibration | relative to sensorring_link -->
 	<xacro:property name="def_sensorring_cam3d_x" value="0.096"/>
