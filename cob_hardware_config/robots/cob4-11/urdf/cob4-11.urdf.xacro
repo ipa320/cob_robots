@@ -5,7 +5,6 @@
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
-  <xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <!-- calibration -->
   <xacro:include filename="$(find cob_hardware_config)/robots/cob4-11/urdf/properties.urdf.xacro" />
