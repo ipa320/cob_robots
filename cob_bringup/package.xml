@@ -49,7 +49,6 @@
   <exec_depend>cob_phidget_power_state</exec_depend>
   <exec_depend>cob_phidget_em_state</exec_depend>
   <exec_depend>cob_reflector_referencing</exec_depend> <!-- from cob_substitute -->
-  <exec_depend>cob_relayboard</exec_depend>
   <exec_depend>cob_safety_controller</exec_depend> <!-- from cob_substitute -->
   <exec_depend>cob_scan_unifier</exec_depend>
   <exec_depend>cob_script_server</exec_depend>
