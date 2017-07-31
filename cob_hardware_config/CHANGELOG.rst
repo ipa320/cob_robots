@@ -2,8 +2,8 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.7 (2017-07-31)
+------------------
 * Update teleop.yaml
 * add initial config for cob4-10
 * add initial cob4-11 serodi config

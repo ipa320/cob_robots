@@ -2,8 +2,8 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.7 (2017-07-31)
+------------------
 * switch back to default moveit_config for raw3-1
 * Add configs file and update srdf to operate the robot with MoveIt!
 * setup cob4-8

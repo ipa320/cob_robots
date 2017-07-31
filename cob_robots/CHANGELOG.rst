@@ -2,8 +2,8 @@
 Changelog for package cob_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.7 (2017-07-31)
+------------------
 * moved cob_supported_robots to standalone repo
 * remove obsolete package cob_controller_configuration_gazebo
 * added cob_supported_robots package

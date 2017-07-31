@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.7 (2017-07-31)
+------------------
 * add initial config for cob4-10
 * add initial cob4-11 serodi config
 * cob4-8 setup

@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.7 (2017-07-31)
+------------------
 * missed install tag
 * setup cob4-8
 * unify default behaviors

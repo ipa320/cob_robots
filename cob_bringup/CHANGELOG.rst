@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.7 (2017-07-31)
+------------------
 * add missing bringup launch file for cob4-11
 * add missing bringup launch file for cob4-10
 * switch to mimic cpp implementation
