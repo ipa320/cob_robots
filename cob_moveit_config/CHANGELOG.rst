@@ -2,6 +2,65 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* switch back to default moveit_config for raw3-1
+* Add configs file and update srdf to operate the robot with MoveIt!
+* setup cob4-8
+* updated the srdf model
+* fix CONFIG_TEMPLATE in add_robot
+* restructure moveit config
+* restructure cob_hardware_config
+* Stomp planner (`#631 <https://github.com/ipa320/cob_robots/issues/631>`_)
+  * merged stomp configuration with actual indigo_dev
+  * controllers for moveit namespace corrected
+  * stomp configuration for raw3-1 created and tested
+  * few corrections before pull request
+  * twist controller config for raw3-1
+  * changes from pull request
+  * new change from pull request
+  * whole-body planning group: robot
+  * stomp configuration for robot group
+  * pull request changes
+  * stomp plannning yaml file correct group names
+  * twist controller config file updated to include input limits parameters
+  * finalizing PR
+* cob4-7 hardware updates
+* remove cob4-10
+* update collision matrix in moveit_config
+* ompl planning file was fixed from last merge process
+* update collision matrix in moveit configs
+* remove cob4-1
+* remove unsupported robots - launch and config
+* [WIP] Use grouped low level components for simulation (`#583 <https://github.com/ipa320/cob_robots/issues/583>`_)
+  * refactored generic canopen&config into canopen_generic.launch
+  * refactored base driver+config into canopen_base.launch
+  * added components/cob4_head_camera.launch
+  * added components/cam3d_openni2.launch
+  * added components/cam3d_r200_rgbd.launch
+  * introduce sim arg for components
+  * use sim arg in robot.xml
+  * remove nodes started within robot.xml from default_controllers_robot.launch
+  * introducing legacy components
+  * reorganize and sim toggle for more components
+  * adjust cob4-1 to latest changes
+  * use new structure for cob3-2
+  * use new structure for cob3-6
+  * use new structure for cob3-9
+  * use new structure for cob4-2
+  * use new structure for remaining cob4s
+  * travis fixes
+  * syntax styling
+  * use new structure for raws
+  * more travis fixes
+  * harmonize old vs. new behavior cob4-1
+  * guarantee same hw behavior as before
+  * add flip argument
+* move setup_assistant launch file
+* adjust version + add to meta-package
+* moved cob_moveit_config
+* Contributors: Bruno Brito, Felix Messmer, MattiaRacca, ipa-bfb-sc, ipa-cob4-5, ipa-cob4-8, ipa-fxm, ipa-nhg
+
 0.6.4 (2016-04-01)
 ------------------
 * make 'robot' argument optenv
