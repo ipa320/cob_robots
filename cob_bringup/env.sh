@@ -13,4 +13,7 @@ else
     source /opt/ros/indigo/setup.bash
 fi
 
+export ROS_IP=`hostname -I | awk '{print $1}'`
+export DISPLAY=:0
+
 exec "$@"

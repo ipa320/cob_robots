@@ -162,6 +162,14 @@
 			<arg name="component_name" value="light_torso"/>
 			<arg name="sim_enabled" value="$(arg sim)"/>
 		</include>
+		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="torso_cam3d_right"/>
+			<arg name="device_id" value="#1"/>
+			<arg name="data_skip" value="0"/>
+			<arg name="start_manager" value="false"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_script_server)/launch/script_server.launch"/>
@@ -181,11 +189,10 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="torso_cam3d_right"/>
-			<arg name="device_id" value="#1"/>
-			<arg name="data_skip" value="0"/>
+			<arg name="name" value="torso_cam3d_down"/>
+			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
@@ -207,12 +214,7 @@
 			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="device_id" value="#1"/>
 			<arg name="data_skip" value="0"/>
-			<arg name="start_manager" value="false"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
-		<include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="torso_cam3d_down"/>
+			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
@@ -233,11 +235,13 @@
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-5-s1)"/>
 			</include>
-			<include file="$(find cob_bringup)/drivers/sick_visionary_t.launch">
-				<arg name="robot" value="$(arg robot)"/>
-				<arg name="name" value="sensorring_cam3d_front"/>
-			</include>
 		</group>
+
+		<include file="$(find cob_bringup)/components/cam3d_visionary_t.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="sensorring_cam3d_front"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
 
 		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -260,8 +264,10 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/drivers/mimic.launch">
-			<arg unless="$(arg sim)" name="rotation" value="270"/>
+		<include file="$(find cob_bringup)/drivers/mimic.launch"/>
+		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->

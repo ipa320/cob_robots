@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot"/>
+	<arg name="name"/>
+	<arg name="sim" default="false"/>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/sick_visionary_t.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="name" value="$(arg name)"/>
+	</include>
+	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="yaml_name" value="$(arg name)"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+
+</launch>
