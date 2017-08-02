@@ -8,6 +8,7 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
 	<arg name="reset_errors_before_recover" default="false"/>
+	<arg name="disable_stuck_detector" default="false"/>
 
 	<arg name="component_name" value="base"/>
 	<arg name="interval_ms" value="20"/>
@@ -25,10 +26,12 @@
 		<arg name="reset_errors_before_recover" value="$(arg reset_errors_before_recover)"/>
 	</include>
 
-	<include unless="$(arg sim)" file="$(find cob_omni_drive_controller)/launch/stuck_detector.launch">
-		<arg name="timeout" default="2.0"/>
-		<arg name="threshold" default="0.174533"/>
-	</include>
+	<group unless="$(arg disable_stuck_detector)">
+		<include unless="$(arg sim)" file="$(find cob_omni_drive_controller)/launch/stuck_detector.launch">
+			<arg name="timeout" default="2.0"/>
+			<arg name="threshold" default="0.174533"/>
+		</include>
+	</group>
 	<node if="$(arg sim)" ns="$(arg component_name)" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
 
 	<group ns="base">

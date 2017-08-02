@@ -5,6 +5,7 @@
 
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
+	<arg name="disable_stuck_detector" default="false"/>
 
 	<arg name="driver_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_driver.yaml"/>
 	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_controller.yaml"/>
@@ -16,6 +17,7 @@
 		<arg name="controller_yaml" value="$(arg controller_yaml)"/>
 		<arg name="reset_errors_before_recover" value="true"/>
 		<arg name="can_device" value="$(arg can_device)"/>
+		<arg name="disable_stuck_detector" value="$(arg disable_stuck_detector)"/>
 
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
