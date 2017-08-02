@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <launch>
-    <!-- start mimic -->
-    <node pkg="cob_mimic" type="mimic" name="mimic" cwd="node" respawn="false"/>
+
+	<!-- start mimic -->
+	<node pkg="cob_mimic" type="mimic" name="mimic" cwd="node" respawn="false"/>
+
 </launch>
