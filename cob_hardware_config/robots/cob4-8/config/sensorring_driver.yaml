@@ -15,8 +15,8 @@ nodes:
     #publish: ["60C1sub1"]   #trajectory
     #publish: ["60FF"]       #velocity
     dcf_overlay: # "ObjectID": "ParameterValue" (both as strings)
-      "6083": "300000" # profile acceleration, mgrad/sec^2
-      "6084": "300000" # profile deceleration, mgrad/sec^2
-      "60C5": "300000" # max acceleration, mgrad/sec^2
+      "6083": "150000" # profile acceleration, mgrad/sec^2
+      "6084": "150000" # profile deceleration, mgrad/sec^2
+      "60C5": "150000" # max acceleration, mgrad/sec^2
       "60C6": "1000000" # max deceleration, mgrad/sec^2
 
