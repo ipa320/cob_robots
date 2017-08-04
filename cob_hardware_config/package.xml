@@ -26,7 +26,6 @@
   <exec_depend>joint_trajectory_controller</exec_depend>
   <exec_depend>position_controllers</exec_depend>
   <exec_depend>raw_description</exec_depend>
-  <exec_depend>schunk_description</exec_depend>
   <exec_depend>ur_description</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
   <exec_depend>xacro</exec_depend>
