@@ -271,7 +271,9 @@
 
 	<group> <!-- this is a special group to assign DISPLAY:=0 only to the mimic node (and not to all other nodes, e.g. sound node) -->
 		<machine name="cob4-8-h1-display" address="$(arg cob4-8-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
-		<include file="$(find cob_bringup)/drivers/mimic.launch"/>
+		<include file="$(find cob_bringup)/drivers/mimic.launch">
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
 	</group>
 
 	<machine name="cob4-8-b1" address="$(arg cob4-8-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
