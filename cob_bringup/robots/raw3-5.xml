@@ -11,6 +11,7 @@
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
+<!-- 		<arg name="pkg_hardware_config" value="sr2_bringup"/> -->
 	</include>
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch">
@@ -42,6 +43,14 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
+        <include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+
+		<include file="$(find cob_bringup)/drivers/phidgets.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+        
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>

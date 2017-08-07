@@ -5,14 +5,20 @@
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
+  
+  <xacro:include filename="$(find ati_force_torque)/description/urdf/ftm115.urdf.xacro" />
+  <xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <xacro:include filename="$(find cob_hardware_config)/robots/raw3-5/urdf/properties.urdf.xacro" />
 
   <!-- raw base -->
   <xacro:include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
-
-
+  
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
 
+  <xacro:ati_ftm115 name="fts" parent="base_link">
+    <origin xyz="-0.348 0  0.96" rpy="0 0 0" />
+  </xacro:ati_ftm115>
+  
 </robot>
