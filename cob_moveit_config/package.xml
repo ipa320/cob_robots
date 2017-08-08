@@ -8,7 +8,7 @@
   <maintainer email="mdl@ipa.fhg.de">Mathias Luedtke</maintainer>
   <maintainer email="fxm@ipa.fhg.de">Felix Messmer</maintainer>
 
-  <license>BSD</license>
+  <license>Apache 2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
 
