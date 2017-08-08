@@ -64,16 +64,16 @@
 	<xacro:property name="def_torso_cam3d_left_x" value="0.12839"/>
 	<xacro:property name="def_torso_cam3d_left_y" value="0.01802"/>
 	<xacro:property name="def_torso_cam3d_left_z" value="0.24214"/>
-	<xacro:property name="def_torso_cam3d_left_roll" value="0"/>
-	<xacro:property name="def_torso_cam3d_left_pitch" value="1.57079"/>
+	<xacro:property name="def_torso_cam3d_left_roll" value="-1.57079"/>
+	<xacro:property name="def_torso_cam3d_left_pitch" value="0.0"/>
 	<xacro:property name="def_torso_cam3d_left_yaw" value="0.418879"/>
 
 	<!-- cam3d right | handeye calibration | relative to torso_3_link -->
 	<xacro:property name="def_torso_cam3d_right_x" value="0.12839"/>
 	<xacro:property name="def_torso_cam3d_right_y" value="-0.01802"/>
 	<xacro:property name="def_torso_cam3d_right_z" value="0.24214"/>
-	<xacro:property name="def_torso_cam3d_right_roll" value="0"/>
-	<xacro:property name="def_torso_cam3d_right_pitch" value="1.57079"/>
+	<xacro:property name="def_torso_cam3d_right_roll" value="-1.57079"/>
+	<xacro:property name="def_torso_cam3d_right_pitch" value="0.0"/>
 	<xacro:property name="def_torso_cam3d_right_yaw" value="-0.418879"/>
 
 	<!-- cam3d down | handeye calibration | relative to torso_3_link -->
