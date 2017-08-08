@@ -20,7 +20,9 @@ install(DIRECTORY components controllers drivers robots tools
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(PROGRAMS env.sh
+install(PROGRAMS 
+  env.sh
+  env.sh.display
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
