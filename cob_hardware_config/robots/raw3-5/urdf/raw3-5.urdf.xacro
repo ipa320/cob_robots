@@ -17,8 +17,4 @@
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
 
-  <xacro:ati_ftm115 name="fts" parent="base_link">
-    <origin xyz="-0.348 0  0.96" rpy="0 0 0" />
-  </xacro:ati_ftm115>
-  
 </robot>

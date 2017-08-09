@@ -7,11 +7,13 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 	<arg name="use_fts" default="false"/>
+    <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
-<!-- 		<arg name="pkg_hardware_config" value="sr2_bringup"/> -->
+        <arg name="sim" default="$(arg sim)"/>
+        <arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/> 
 	</include>
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch">
