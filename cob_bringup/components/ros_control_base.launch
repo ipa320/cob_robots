@@ -15,6 +15,9 @@
 	<arg name="use_external_sync" value="false"/>
 	<arg name="start_external_sync" value="false"/>
 
+	<arg name="stuck_detector_timeout" default="2.0"/>
+	<arg name="stuck_detector_threshold" default="0.174533"/>
+
 	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -28,8 +31,8 @@
 
 	<group if="$(arg enable_stuck_detector)">
 		<include unless="$(arg sim)" file="$(find cob_omni_drive_controller)/launch/stuck_detector.launch">
-			<arg name="timeout" default="2.0"/>
-			<arg name="threshold" default="0.174533"/>
+			<arg name="timeout" value="$(arg stuck_detector_timeout)"/>
+			<arg name="threshold" value="$(arg stuck_detector_threshold)"/>
 		</include>
 	</group>
 	<node if="$(arg sim)" ns="$(arg component_name)" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>

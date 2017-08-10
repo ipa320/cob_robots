@@ -8,7 +8,6 @@
 	<arg name="ur_ip" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
-	<arg name="enable_stuck_detector" default="false"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
@@ -55,7 +54,6 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="can_device" value="can2" />
 			<arg name="sim" value="$(arg sim)"/>
-			<arg name="enable_stuck_detector" value="$(arg enable_stuck_detector)"/>
 		</include>
 		<include file="$(find cob_bringup)/components/legacy_schunk_powercube.launch">
 			<arg name="robot" value="$(arg robot)"/>
