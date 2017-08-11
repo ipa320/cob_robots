@@ -55,7 +55,7 @@
 			<arg name="component_name" value="torso"/>
 			<arg name="can_device" value="can0"/>
 			<arg name="sim" value="$(arg sim)"/>
-			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+			<arg name="cartesian_control" value="true"/>
 		</include>
 		<!--include file="$(find cob_bringup)/drivers/ur.launch">
 			<arg name="robot" value="$(arg robot)"/>

@@ -50,7 +50,7 @@ twist_controller:
 
   # kinematic extensions
   kinematic_extension: 0    #OFF 0, BaseCompensation 1, BaseActive 2
-  lookat_axis_type: 2   #X_POSITIVE 0, Y_POSITIVE 1, Z_POSITIVE 2, X_NEGATIVE 3, Y_NEGATIVE 4, Z_NEGATIVE 5
+  lookat_axis_type: 0   #X_POSITIVE 0, Y_POSITIVE 1, Z_POSITIVE 2, X_NEGATIVE 3, Y_NEGATIVE 4, Z_NEGATIVE 5
   lookat_offset: {translation: {x: 0.0, y: 0.0, z: 0.0}, rotation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}
   extension_ratio: 0.02
   max_vel_lin_base: 0.1
