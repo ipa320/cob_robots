@@ -50,8 +50,9 @@
 			<arg name="name" value="base_laser_rear"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/components/raw3_base.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="can_device" value="can2" />
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/components/legacy_schunk_powercube.launch">

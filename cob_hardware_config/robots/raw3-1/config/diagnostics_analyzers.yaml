@@ -54,8 +54,8 @@ analyzers:
         analyzers:
           base:
             type: diagnostic_aggregator/GenericAnalyzer
-            path: drives
-            startswith: '/base'
+            path: Base
+            contains: 'base/'
           base_twist_mux:
             type: diagnostic_aggregator/GenericAnalyzer
             path: twist_mux
