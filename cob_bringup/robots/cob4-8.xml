@@ -258,10 +258,6 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/drivers/mimic.launch">
-			<arg unless="$(arg sim)" name="rotation" value="0"/>
-		</include>
-
 		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -270,6 +266,13 @@
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/sound.launch">
 			<arg name="robot" value="$(arg robot)"/>
+		</include>
+	</group>
+
+	<group> <!-- this is a special group to assign DISPLAY:=0 only to the mimic node (and not to all other nodes, e.g. sound node) -->
+		<machine name="cob4-8-h1-display" address="$(arg cob4-8-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
+		<include file="$(find cob_bringup)/drivers/mimic.launch">
+			<arg name="sim" value="$(arg sim)"/>
 		</include>
 	</group>
 

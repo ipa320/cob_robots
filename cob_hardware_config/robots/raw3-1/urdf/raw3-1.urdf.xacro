@@ -21,7 +21,7 @@
   <xacro:include filename="$(find raw_description)/urdf/head/head.urdf.xacro" />
 
   <!-- ur_arm -->
-  <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
+  <xacro:include filename="$(find raw_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
 
   <!-- vacuum gripper -->
   <xacro:include filename="$(find raw_description)/urdf/vacuum_gripper/gripper.urdf.xacro" />

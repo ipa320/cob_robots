@@ -1,0 +1,33 @@
+controller_list:
+  - name: fake_arm_left_controller
+    joints:
+      - arm_left_1_joint
+      - arm_left_2_joint
+      - arm_left_3_joint
+      - arm_left_4_joint
+      - arm_left_5_joint
+      - arm_left_6_joint
+      - arm_left_7_joint
+  - name: fake_arm_right_controller
+    joints:
+      - arm_right_1_joint
+      - arm_right_2_joint
+      - arm_right_3_joint
+      - arm_right_4_joint
+      - arm_right_5_joint
+      - arm_right_6_joint
+      - arm_right_7_joint
+  - name: fake_head_controller
+    joints:
+      - head_1_joint
+      - head_2_joint
+      - head_3_joint
+  - name: fake_gripper_left_controller
+    joints:
+      []
+  - name: fake_gripper_right_controller
+    joints:
+      []
+  - name: fake_ee_head_controller
+    joints:
+      []
