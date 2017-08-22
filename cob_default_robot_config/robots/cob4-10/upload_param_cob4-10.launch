@@ -12,4 +12,5 @@
 	<rosparam command="load" ns="/script_server/light_torso" file="$(find cob_default_robot_config)/robots/cob4-10/script_server/light_torso_configurations.yaml"/>
 	<rosparam command="load" ns="/script_server/behavior" file="$(find cob_default_robot_config)/robots/cob4-10/script_server/behavior.yaml"/>
 	<rosparam command="load" ns="/script_server/sound" file="$(find cob_default_robot_config)/robots/cob4-10/script_server/sound.yaml"/>
+
 </launch>
