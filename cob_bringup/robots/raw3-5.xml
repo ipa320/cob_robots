@@ -7,6 +7,7 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 	<arg name="use_fts" default="false"/>
+    <arg name="real_fts" default="false"/>
     <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<!-- upload robot description -->
@@ -68,6 +69,7 @@
 			<arg name="can_device" value="can1" />
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="use_fts" value="$(arg use_fts)" />
+            <arg name="real_fts" value="$(arg real_fts)"/>
 		</include>
 		<!-- overwrite control parameters with non-default values -->
 		<rosparam ns="base" command="load" file="$(find cob_hardware_config)/robots/$(arg robot)/config/base_controller.yaml"/>
