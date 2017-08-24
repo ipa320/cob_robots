@@ -9,10 +9,10 @@
 
 	<arg name="driver" value="true" unless="$(arg use_fts)"/>
 	<arg name="driver" value="false" if="$(arg use_fts)"/>
-	
 
 	<arg name="driver_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_driver.yaml"/>
 	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_controller.yaml" if="$(arg driver)"/>
+    
 	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_controller_fts.yaml" unless="$(arg sim)" />
 	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_controller_fts_sim.yaml" if="$(arg sim)"  />
     
