@@ -4,8 +4,6 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
 	<include file="$(find cob_bringup)/robots/raw3-3.xml">
-		<arg name="pc1" value="raw3-3-pc1"/>
-		<arg name="pc2" value="raw3-3-pc2"/>
 		<arg name="env-script" value="$(arg env-script)"/>
 	</include>
 
