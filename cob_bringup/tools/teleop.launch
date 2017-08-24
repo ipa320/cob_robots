@@ -5,16 +5,13 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
     
-    <arg name="teleop_yaml" value="$(arg pkg_hardware_config)/robots/$(arg robot)/config/teleop.yaml" unless="$(arg sim)"/>
-    <arg name="teleop_yaml" value="$(find ati_force_torque)/config/teleop_sim.yaml" if="$(arg sim)"/>
-    
 	<include file="$(find cob_bringup)/drivers/joy.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 	</include>
 
 	<node ns="teleop" pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" cwd="node" respawn="false" output="screen">
-		<rosparam file="$(arg teleop_yaml)" command="load"/>
+		<rosparam file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/teleop.yaml" command="load"/>
 	</node>
 
 </launch>
