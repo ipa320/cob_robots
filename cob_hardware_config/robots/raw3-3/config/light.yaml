@@ -1,5 +1,5 @@
 devicedriver: ms-35
-devicestring: /dev/ttyUSB0
+devicestring: /dev/ttyLED
 baudrate: 38400
 invert_output: false
 pubmarker: false
