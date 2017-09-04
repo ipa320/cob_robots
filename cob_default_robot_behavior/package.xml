@@ -5,7 +5,9 @@
 
   <license>Apache 2.0</license>
 
-  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <maintainer email="fxm@ipa.fhg.de">Felix Messmer</maintainer>
+  <author email="fxm@ipa.fhg.de">Felix Messmer</author>
+  <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 

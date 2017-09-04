@@ -4,8 +4,9 @@
   <description>
      MoveIt config files for all cob and raw
   </description>
+
   <author email="mdl@ipa.fhg.de">Mathias Luedtke</author>
-  <maintainer email="mdl@ipa.fhg.de">Mathias Luedtke</maintainer>
+  <author email="fxm@ipa.fhg.de">Felix Messmer</author>
   <maintainer email="fxm@ipa.fhg.de">Felix Messmer</maintainer>
 
   <license>Apache 2.0</license>
