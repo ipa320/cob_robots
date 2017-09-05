@@ -5,7 +5,7 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="pc" default="localhost"/>
 	<arg name="diag_hostname" default="$(arg pc)"/>
-        <arg name="ntp_server" default="localhost"/>
+	<arg name="ntp_server" default="localhost"/>
 
 	<!-- Monitor CPU (temp, usage) -->
 	<node pkg="cob_monitoring" name="$(anon cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg diag_hostname)" output="screen">
