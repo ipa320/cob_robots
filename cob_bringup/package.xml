@@ -59,7 +59,6 @@
   <exec_depend>cob_sick_s300</exec_depend>
   <exec_depend>cob_sound</exec_depend>
   <exec_depend>cob_teleop</exec_depend>
-  <exec_depend>cob_trajectory_controller</exec_depend>
   <exec_depend>cob_twist_controller</exec_depend>
   <exec_depend>cob_undercarriage_ctrl</exec_depend>
   <exec_depend>cob_voltage_control</exec_depend>
