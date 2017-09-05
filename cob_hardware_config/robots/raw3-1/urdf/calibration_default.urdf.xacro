@@ -35,9 +35,9 @@
 	<xacro:property name="def_torso_x" value="0.166"/>
 	<xacro:property name="def_torso_y" value="0.2175"/>
 	<xacro:property name="def_torso_z" value="0.5405"/>
-	<xacro:property name="def_torso_roll" value="0"/>
-	<xacro:property name="def_torso_pitch" value="0"/>
-	<xacro:property name="def_torso_yaw" value="-0.445"/>
+	<xacro:property name="def_torso_roll" value="0.0"/>
+	<xacro:property name="def_torso_pitch" value="0.0"/>
+	<xacro:property name="def_torso_yaw" value="0.0"/>
 
 	<!-- head mount positions | relative to head_cover_link -->
 	<xacro:property name="def_head_x" value="0.0"/>
