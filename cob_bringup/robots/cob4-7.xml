@@ -35,6 +35,7 @@
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-7-b1)"/>
+				<arg name="ntp_server" value="de.pool.ntp.org"/>
 			</include>
 		</group>
 
@@ -118,6 +119,7 @@
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-7-t1)"/>
+				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
 			</include>
 		</group>
 
@@ -179,6 +181,7 @@
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-7-t2)"/>
+				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
 			</include>
 		</group>
 
@@ -199,6 +202,7 @@
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-7-t3)"/>
+				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
 			</include>
 		</group>
 
@@ -221,6 +225,7 @@
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-7-s1)"/>
+				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
 			</include>
 		</group>
 
@@ -241,6 +246,7 @@
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-7-h1)"/>
+				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
 			</include>
 		</group>
 
