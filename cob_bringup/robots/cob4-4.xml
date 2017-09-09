@@ -24,7 +24,7 @@
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-4-b1)"/>
-				<arg name="ntp_server" value="de.pool.ntp.org"/>
+				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
 		</group>
 
