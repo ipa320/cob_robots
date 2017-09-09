@@ -121,6 +121,10 @@
 				<arg name="pc" value="$(arg cob4-10-t1)"/>
 				<arg name="ntp_server" value="$(arg cob4-10-b1)"/>
 			</include>
+			<include file="$(find cob_bringup)/tools/wlan_monitor.launch">
+				<arg name="diag_hostname" value="$(arg cob4-10-b1)"/>
+				<arg name="interface" value="wlan0"/>
+			</include>
 		</group>
 
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">

@@ -26,6 +26,10 @@
 				<arg name="pc" value="$(arg cob4-11-b1)"/>
 				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
+			<include file="$(find cob_bringup)/tools/wlan_monitor.launch">
+				<arg name="diag_hostname" value="$(arg cob4-11-b1)"/>
+				<arg name="interface" value="wlan0"/>
+			</include>
 		</group>
 
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">

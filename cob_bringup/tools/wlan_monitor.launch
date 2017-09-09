@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="diag_hostname" default="localhost"/>
+	<arg name="interface" default="wlan0"/>
+
+	<!-- WLAN Monitor -->
+	<node pkg="cob_monitoring" name="wlan_monitor" type="wlan_monitor.py" output="screen">
+		<param name="diag_hostname" type="string" value="$(arg diag_hostname)"/>
+		<param name="interface" type="string" value="$(arg interface)"/>
+	</node>
+
+</launch>
