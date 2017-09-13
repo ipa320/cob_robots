@@ -28,7 +28,7 @@
 	</include>
 
 	<group>
-		<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon b1)" address="$(arg cob4-2-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -112,7 +112,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-t1" address="$(arg cob4-2-t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t1)" address="$(arg cob4-2-t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -155,7 +155,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-t2" address="$(arg cob4-2-t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t2)" address="$(arg cob4-2-t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -176,7 +176,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-t3" address="$(arg cob4-2-t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t3)" address="$(arg cob4-2-t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -199,7 +199,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-s1" address="$(arg cob4-2-s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon s1)" address="$(arg cob4-2-s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -220,7 +220,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-2-h1" address="$(arg cob4-2-h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon h1)" address="$(arg cob4-2-h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -243,12 +243,12 @@
 	</group>
 
 	<group> <!-- this is a special group to assign DISPLAY:=0 only to the mimic node (and not to all other nodes, e.g. sound node) -->
-		<machine name="cob4-2-h1-display" address="$(arg cob4-2-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
+		<machine name="$(anon h1-display)" address="$(arg cob4-2-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
 		<include file="$(find cob_bringup)/drivers/mimic.launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 	</group>
 
-	<machine name="cob4-2-b1" address="$(arg cob4-2-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon b1)" address="$(arg cob4-2-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

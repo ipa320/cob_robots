@@ -19,7 +19,7 @@
 	</include>
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -97,7 +97,7 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc2)" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -114,6 +114,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>
