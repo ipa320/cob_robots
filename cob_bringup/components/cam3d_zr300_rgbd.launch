@@ -25,7 +25,6 @@
 		<arg name="start_manager" value="$(arg start_manager)"/>
 	</include>
 
-
 	<group ns="$(arg name)" if="$(arg sim)">
 		<!-- static frames broadcasted by camera driver -->
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_rgb_frame" args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_rgb_frame"/>
@@ -56,6 +55,11 @@
 		</node>
 		<node pkg="topic_tools" type="relay" name="points_relay" args="depth_registered/points depth/points">
 			<param name="lazy" value="true"/>
+		</node>
+
+		<!-- start nodelet manager in simulation -->
+		<node pkg="nodelet" type="nodelet" name="$(arg name)_nodelet_manager" args="manager" output="screen">
+			<param name="num_worker_threads" value="2" />
 		</node>
 	</group>
 </launch>
