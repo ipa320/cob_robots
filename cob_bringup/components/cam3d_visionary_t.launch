@@ -2,6 +2,7 @@
 <launch>
 	<arg name="robot"/>
 	<arg name="name"/>
+	<arg name="flip" default="true"/>
 	<arg name="sim" default="false"/>
 
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/sick_visionary_t.launch">
@@ -13,5 +14,10 @@
 		<arg name="yaml_name" value="$(arg name)"/>
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
-
+	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="$(arg name)"/>
+		<arg name="pointcloud_in" default="/$(arg camera_name)/depth/points"/>
+		<arg name="pointcloud_out" default="/$(arg camera_name)_upright/depth/points"/>
+	</include>
 </launch>
