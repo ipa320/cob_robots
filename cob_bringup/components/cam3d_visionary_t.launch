@@ -17,7 +17,10 @@
 	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="camera_name" value="$(arg name)"/>
-		<arg name="pointcloud_in" default="/$(arg name)/depth/points"/>
-		<arg name="pointcloud_out" default="/$(arg name)_upright/depth/points"/>
+		<arg name="pointcloud_in" value="/$(arg name)/depth/points"/>
+		<arg name="pointcloud_out" value="/$(arg name)_upright/depth/points"/>
+		<!-- Sick3DCS does not have color image, and image flip cannot process images that are not CV_8UC3 -->
+		<!--arg name="colorimage_in" value="/$(arg name)/depth/image"/>
+		<arg name="colorimage_out" value="/$(arg name)_upright/depth/image"/-->
 	</include>
 </launch>
