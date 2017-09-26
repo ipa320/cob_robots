@@ -12,7 +12,7 @@ reference_frame: base_link
 
 # flip color image
 # bool
-flip_color_image: true
+flip_color_image: false
 
 # flip point cloud (usually unnecessary because tf takes care of this with original point cloud)
 # bool

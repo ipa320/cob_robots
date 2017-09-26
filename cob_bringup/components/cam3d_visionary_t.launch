@@ -2,6 +2,7 @@
 <launch>
 	<arg name="robot"/>
 	<arg name="name"/>
+	<arg name="flip" default="true"/>
 	<arg name="sim" default="false"/>
 
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/sick_visionary_t.launch">
@@ -13,5 +14,13 @@
 		<arg name="yaml_name" value="$(arg name)"/>
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
-
+	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="camera_name" value="$(arg name)"/>
+		<arg name="pointcloud_in" value="/$(arg name)/depth/points"/>
+		<arg name="pointcloud_out" value="/$(arg name)_upright/depth/points"/>
+		<!-- Sick3DCS does not have color image, and image flip cannot process images that are not CV_8UC3 -->
+		<!--arg name="colorimage_in" value="/$(arg name)/depth/image"/>
+		<arg name="colorimage_out" value="/$(arg name)_upright/depth/image"/-->
+	</include>
 </launch>
