@@ -23,6 +23,7 @@
 
   <!-- sensors -->
   <xacro:include filename="$(find cob_description)/urdf/sensors/realsense.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/sensors/realsense_zr300.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/kinect.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/usb_cam.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
@@ -46,13 +47,13 @@
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
   <!-- left camera -->
-  <xacro:cob_kinect_v0 name="torso_cam3d_left" ros_topic="torso_cam3d_left" parent="torso_3_link"  update_rate="30" data_skip="9">
+  <xacro:realsense_zr300 name="torso_cam3d_left" ros_topic="torso_cam3d_left" parent="torso_3_link">
     <origin xyz="${torso_cam3d_left_x} ${torso_cam3d_left_y} ${torso_cam3d_left_z}" rpy="${torso_cam3d_left_roll} ${torso_cam3d_left_pitch} ${torso_cam3d_left_yaw}" />
-  </xacro:cob_kinect_v0>
+  </xacro:realsense_zr300>
   <!-- right camera -->
-  <xacro:cob_kinect_v0 name="torso_cam3d_right" ros_topic="torso_cam3d_right" parent="torso_3_link" update_rate="30" data_skip="9">
+  <xacro:realsense_zr300 name="torso_cam3d_right" ros_topic="torso_cam3d_right" parent="torso_3_link">
     <origin xyz="${torso_cam3d_right_x} ${torso_cam3d_right_y} ${torso_cam3d_right_z}" rpy="${torso_cam3d_right_roll} ${torso_cam3d_right_pitch} ${torso_cam3d_right_yaw}" />
-  </xacro:cob_kinect_v0>
+  </xacro:realsense_zr300>
   <!-- down camera -->
   <xacro:realsense name="torso_cam3d_down" ros_topic="torso_cam3d_down" parent="torso_3_link">
     <origin xyz="${torso_cam3d_down_x} ${torso_cam3d_down_y} ${torso_cam3d_down_z}" rpy="${torso_cam3d_down_roll} ${torso_cam3d_down_pitch} ${torso_cam3d_down_yaw}" />

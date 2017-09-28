@@ -37,6 +37,16 @@
 
 
 	<group ns="$(arg name)" if="$(arg sim)">
+		<!-- static frames broadcasted by camera driver -->
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_rgb_frame" args="0.0 -0.045 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_rgb_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_rgb_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_rgb_frame /$(arg name)_rgb_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_depth_frame" args="0.0 -0.020 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_depth_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_depth_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_depth_frame /$(arg name)_depth_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_frame" args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_depth_frame /$(arg name)_optical_frame"/>
+
 		<!-- relay additional topics not available from sensor plugin -->
 		<node pkg="topic_tools" type="relay" name="camera_info_relay" args="depth_registered/camera_info depth/camera_info">
 			<param name="lazy" value="true"/>
@@ -46,6 +56,11 @@
 		</node>
 		<node pkg="topic_tools" type="relay" name="points_relay" args="depth_registered/points depth/points">
 			<param name="lazy" value="true"/>
+		</node>
+
+		<!-- start nodelet manager in simulation -->
+		<node pkg="nodelet" type="nodelet" name="$(arg name)_nodelet_manager" args="manager" output="screen">
+			<param name="num_worker_threads" value="2" />
 		</node>
 	</group>
 </launch>

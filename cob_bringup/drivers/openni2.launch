@@ -15,9 +15,9 @@
 	<include file="$(find openni2_launch)/launch/openni2.launch">
 		<arg name="camera" value="$(arg name)"/>
 		<arg name="device_id" value="$(arg device_id)"/>
-		<arg name="rgb_frame_id" value="$(arg name)_link"/>
-		<arg name="depth_frame_id" value="$(arg name)_link"/>
-		<arg name="publish_tf" value="false"/>
+		<arg name="rgb_frame_id" value="$(arg name)_rgb_optical_frame"/>
+		<arg name="depth_frame_id" value="$(arg name)_depth_optical_frame"/>
+		<arg name="publish_tf" value="true"/>
 		<arg name="depth_registration" value="true"/>
 		<arg name="rgb_camera_info_url" value="file:///$(find cob_calibration_data)/$(arg robot)/calibration/cameras/$(arg name).yaml"/>
 		<arg name="num_worker_threads" default="$(arg num_worker_threads)"/>

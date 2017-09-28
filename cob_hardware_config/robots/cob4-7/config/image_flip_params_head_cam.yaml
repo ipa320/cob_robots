@@ -4,7 +4,7 @@ rotation_mode: 1
 
 # image rotation [in deg] (especially efficient with 0, 90, 180, 270 deg)
 # double
-rotation_angle: 270
+rotation_angle: 0
 
 # reference world coordinate frame with z-axis pointing upwards (= against gravity direction)
 # string

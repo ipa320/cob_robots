@@ -47,6 +47,10 @@
     local-name: cob_perception_common
     version: indigo_dev
 - git:
+    uri: 'https://github.com/ipa320/realsense.git'
+    local-name: realsense
+    version: indigo-devel
+- git:
     uri: 'https://github.com/ipa320/cob_substitute.git'
     local-name: cob_substitute
     version: indigo_dev
