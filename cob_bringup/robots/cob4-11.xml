@@ -56,6 +56,11 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
+		<include file="$(find cob_bringup)/drivers/light.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="light_base"/>
+			<arg name="sim_enabled" value="$(arg sim)"/>
+		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
