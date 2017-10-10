@@ -36,7 +36,7 @@
 
 
   <!-- composition of the robot -->
-  <xacro:base name="base" use_old_joint_names="false"/>
+  <xacro:base name="base"/>
   <!-- laser scanners -->
   <xacro:sick_s300_laser_v0 name="base_laser_front" parent="base">
     <origin xyz="${laser_front_x} ${laser_front_y} ${laser_front_z}" rpy="${laser_front_roll} ${laser_front_pitch} ${laser_front_yaw}" />
