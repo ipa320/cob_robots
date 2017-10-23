@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 	<node pkg="cob_helper_tools" type="auto_init.py" name="auto_init" output="screen">
-		<rosparam param="components">[base]</rosparam>
+		<rosparam param="components">{base: '/Actuators/Base'}</rosparam>
 	</node>
 
 	<node pkg="cob_helper_tools" type="auto_recover.py" name="auto_recover" output="screen">
-		<rosparam param="components">[base]</rosparam>
+		<rosparam param="components">{base: '/Actuators/Base'}</rosparam>
 	</node>
 </launch>
