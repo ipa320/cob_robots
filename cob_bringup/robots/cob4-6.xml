@@ -17,7 +17,7 @@
 	</include>
 
 	<group>
-		<machine name="cob4-6-b1" address="$(arg cob4-6-b1)" env-loader="$(arg env-script)" default="true"/>
+		<machine name="$(anon b1)" address="$(arg cob4-6-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -58,6 +58,6 @@
 		</include>
 	</group>
 
-	<machine name="cob4-6-b1" address="$(arg cob4-6-b1)" env-loader="$(arg env-script)" default="true"/>
+	<machine name="$(anon b1)" address="$(arg cob4-6-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

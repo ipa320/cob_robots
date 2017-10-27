@@ -10,16 +10,38 @@ group10:
   buttons: [[stop,stop,omni],
     [init,init],
     [recover,recover]]
-group11:
-  group_name: sensorring
-  component_name: sensorring
+#group11:
+#  group_name: sensorring
+#  component_name: sensorring
+#  buttons: [[stop,stop],
+#    [init,init],
+#    [recover,recover],
+#    [front,move,front],
+#    [back,move,back],
+#    [left,move,left],
+#    [right,move,right]]
+group12:
+  group_name: arm_left
+  component_name: arm_left
   buttons: [[stop,stop],
     [init,init],
     [recover,recover],
-    [front,move,front],
-    [back,move,back],
-    [left,move,left],
-    [right,move,right]]
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
+group13:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
 group16:
   group_name: torso
   component_name: torso
@@ -41,20 +63,20 @@ group17:
   component_name: behavior
   buttons: [[torso_front,trigger,torso_front],
     [torso_front_home,trigger,torso_front_home]]
-group18:
-  group_name: head
-  component_name: head
-  buttons: [[stop,stop],
-    [init,init],
-    [recover,recover],
-    [front,move,front],
-    [front_down,move,front_down],
-    [back,move,back],
-    [back_down,move,back_down],
-    [left,move,left],
-    [right,move,right],
-    [nod,move,nod],
-    [shake,move,shake]]
+#group18:
+#  group_name: head
+#  component_name: head
+#  buttons: [[stop,stop],
+#    [init,init],
+#    [recover,recover],
+#    [front,move,front],
+#    [front_down,move,front_down],
+#    [back,move,back],
+#    [back_down,move,back_down],
+#    [left,move,left],
+#    [right,move,right],
+#    [nod,move,nod],
+#    [shake,move,shake]]
 group21:
   group_name: mimic
   component_name: behavior

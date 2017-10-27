@@ -28,7 +28,7 @@
 	</include>
 
 	<group>
-		<machine name="cob4-7-b1" address="$(arg cob4-7-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon b1)" address="$(arg cob4-7-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -112,7 +112,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-7-t1" address="$(arg cob4-7-t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t1)" address="$(arg cob4-7-t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -130,11 +130,24 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="torso_cam3d_right"/>
-			<arg name="device_id" value="#1"/>
-			<arg name="data_skip" value="0"/>
+			<arg name="component_name" value="arm_left"/>
+			<arg name="can_device" value="can3"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+		</include>
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_right"/>
+			<arg name="can_device" value="can2"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+		</include>
+		<include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -145,7 +158,7 @@
 			<arg name="sim_enabled" value="$(arg sim)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 			<arg name="can_device" value="can1"/>
@@ -161,7 +174,7 @@
 			<arg name="start_external_sync" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
-		</include>
+		</include-->
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_script_server)/launch/script_server.launch"/>
@@ -174,7 +187,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-7-t2" address="$(arg cob4-7-t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t2)" address="$(arg cob4-7-t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -195,7 +208,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-7-t3" address="$(arg cob4-7-t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t3)" address="$(arg cob4-7-t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -205,12 +218,9 @@
 				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
 			</include>
 		</group>
-
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="name" value="torso_cam3d_left"/>
-			<arg name="device_id" value="#1"/>
-			<arg name="data_skip" value="0"/>
+			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="num_worker_threads" value="2"/>
 			<arg name="start_manager" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -218,7 +228,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-7-s1" address="$(arg cob4-7-s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon s1)" address="$(arg cob4-7-s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -239,7 +249,7 @@
 	</group>
 
 	<group>
-		<machine name="cob4-7-h1" address="$(arg cob4-7-h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon h1)" address="$(arg cob4-7-h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -262,12 +272,12 @@
 	</group>
 
 	<group> <!-- this is a special group to assign DISPLAY:=0 only to the mimic node (and not to all other nodes, e.g. sound node) -->
-		<machine name="cob4-7-h1-display" address="$(arg cob4-7-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
+		<machine name="$(anon h1-display)" address="$(arg cob4-7-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
 		<include file="$(find cob_bringup)/drivers/mimic.launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 	</group>
 
-	<machine name="cob4-7-b1" address="$(arg cob4-7-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon b1)" address="$(arg cob4-7-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

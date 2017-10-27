@@ -19,7 +19,7 @@
 	</include>
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -58,13 +58,13 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="cartesian_control" value="true"/>
 		</include>
-		<!--include file="$(find cob_bringup)/drivers/ur.launch">
+		<include file="$(find cob_bringup)/drivers/ur.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="use_modern_driver" value="false"/>
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="false"/>
-		</include-->
+		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
@@ -97,7 +97,7 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc2)" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
@@ -114,6 +114,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

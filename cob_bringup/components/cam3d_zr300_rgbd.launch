@@ -8,10 +8,10 @@
 	<arg name="sim" default="false"/>
 	<arg name="serial_no" default=""/>
 
-	<include unless="$(arg sim)" file="$(find realsense_camera)/launch/r200_nodelet_rgbd.launch">
+	<include unless="$(arg sim)" file="$(find realsense_camera)/launch/zr300_nodelet_rgbd.launch">
 		<arg name="camera" value="$(arg name)"/>
 		<arg name="num_worker_threads" value="$(arg num_worker_threads)" />
-		<arg name="serial_no" value="$(arg serial_no)" />
+		<arg name="serial_no" value="$(arg serial_no)"/>
 	</include>
 	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -25,7 +25,6 @@
 		<arg name="start_manager" value="$(arg start_manager)"/>
 	</include>
 
-
 	<group ns="$(arg name)" if="$(arg sim)">
 		<!-- static frames broadcasted by camera driver -->
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_rgb_frame" args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_rgb_frame"/>
@@ -34,11 +33,18 @@
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_depth_frame" args="0.0 0.059 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_depth_frame"/>
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_depth_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_depth_frame /$(arg name)_depth_optical_frame"/>
 
+		<!-- realsense_camera currently has an issue with frame prefixing for ir, ir2, imu and fisheye (see https://github.com/intel-ros/realsense/issues/258) -->
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir_frame" args="0.0 0.059 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_ir_frame"/>
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_ir_frame /$(arg name)_ir_optical_frame"/>
 
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir2_frame" args="0.0 -0.011 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_ir2_frame"/>
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir2_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_ir2_frame /$(arg name)_ir2_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_imu_frame" args="0.0 0.070 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_imu_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_imu_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_imu_frame /$(arg name)_imu_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_fisheye_frame" args="0.0 0.088 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_fisheye_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_fisheye_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_fisheye_frame /$(arg name)_fisheye_optical_frame"/>
 
 		<!-- relay additional topics not available from sensor plugin -->
 		<node pkg="topic_tools" type="relay" name="camera_info_relay" args="depth_registered/camera_info depth/camera_info">

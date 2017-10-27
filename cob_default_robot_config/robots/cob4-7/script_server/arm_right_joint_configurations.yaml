@@ -1,0 +1,24 @@
+joint_names: ["arm_right_1_joint","arm_right_2_joint","arm_right_3_joint","arm_right_4_joint","arm_right_5_joint","arm_right_6_joint","arm_right_7_joint"]
+action_name: /arm_right/joint_trajectory_controller/follow_joint_trajectory
+service_ns: /arm_right/driver
+default_vel: 0.3
+
+# single positions
+home: [[0,0,0,0,0,0,0]]
+folded: [[0.9599, 1.5708, -0.1200, 1.0000, 1.3800, 0.7500, -1.3600]]
+side: [[0.9599, 1.6581, -1.0472, -1.6581, -1.0472, -0.6981, 1.0700]]
+ship: [[1.57, 1.45, -1.57, -2.55, 0.0, 2.4, 0.0]]
+
+hello1: [[1.69,1.19,-0.48,-2.09,-0.34,0.16,0.12]]
+hello2 : [[1.69, 1.19, -0.48, -2.61, -0.34, -0.38, -0.5]]
+arm_to_tray : [[-1.06, -1.2, 1.4, -1.9, 1.84, 1.12, 0.64]]
+
+hello: [hello1, hello2, hello1, hello2, side]
+
+wave1: [[1.5, 0, 0, 0, 0, 0, 0]]
+wave2: [[1.5, 0.3, 0, -1, 0, 0.7, 0]]
+wave3: [[1.5, -0.3, 0, 1, 0, -0.7, 0]]
+
+
+grasp: [[-1.3132031824930537, -1.2095829848021502, 1.0000038482226712, -2.229989731980635, 0.7600036227809308, 0.4699822609770331, 1.2200026004365563]]
+wave_demo: [home,wave1,wave2,wave3,wave2,wave1,home,side]

@@ -18,10 +18,10 @@
   <xacro:include filename="$(find raw_description)/urdf/torso/torso_v2.urdf.xacro" />
 
   <!-- ur_arm -->
-  <!--xacro:include filename="$(find raw_description)/urdf/ur_arm/ur10_arm.urdf.xacro" /-->
+  <xacro:include filename="$(find raw_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
 
   <!-- vacuum gripper -->
-  <!--xacro:include filename="$(find raw_description)/urdf/vacuum_gripper/gripper.urdf.xacro" /-->
+  <xacro:include filename="$(find raw_description)/urdf/vacuum_gripper/gripper.urdf.xacro" />
 
   <!-- sensors -->
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
@@ -46,12 +46,12 @@
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:raw_torso_v2>
 
-  <!--xacro:ur10 name="arm" parent="base_link">
+  <xacro:ur10 name="arm" parent="base_link">
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
-  </xacro:ur10-->
+  </xacro:ur10>
 
-  <!--xacro:vacuum_gripper name="gripper" parent="arm_ee_link">
+  <xacro:vacuum_gripper name="gripper" parent="arm_ee_link">
     <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
-  </xacro:vacuum_gripper-->
+  </xacro:vacuum_gripper>
 
 </robot>

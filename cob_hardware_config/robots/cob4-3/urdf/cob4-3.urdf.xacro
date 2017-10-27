@@ -14,6 +14,6 @@
 
 
   <!-- composition of the robot -->
-  <xacro:base name="base" use_old_joint_names="false"/>
+  <xacro:base name="base"/>
 
 </robot>
