@@ -18,7 +18,6 @@
 
 	<!-- start canopen node -->
 	<node ns="$(arg component_name)" pkg="canopen_motor_node" type="canopen_motor_node" name="driver" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name)_driver.yaml"/>
 		<rosparam subst_value="True">{bus: { device: $(arg can_device) } }</rosparam>
 		<rosparam subst_value="True" if="$(arg use_external_sync)">{sync: { interval_ms: $(arg interval_ms), overflow: $(arg overflow) } }</rosparam>
 		<param name="bus/master_allocator" value="canopen::ExternalMaster::Allocator" if="$(arg use_external_sync)"/>
