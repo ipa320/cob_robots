@@ -31,10 +31,10 @@
 	<xacro:property name="def_tower_pitch" value="0.0"/>
 	<xacro:property name="def_tower_yaw" value="3.14159265359"/>
 
-	<!--torso mount positions | relative to base_link-->
-	<xacro:property name="def_torso_x" value="0.100"/>
-	<xacro:property name="def_torso_y" value="0.2425"/>
-	<xacro:property name="def_torso_z" value="0.57"/>
+	<!--torso mount positions (torso_0_link) | relative to base_link-->
+	<xacro:property name="def_torso_x" value="0.166"/>
+	<xacro:property name="def_torso_y" value="0.2175"/>
+	<xacro:property name="def_torso_z" value="0.302"/>
 	<xacro:property name="def_torso_roll" value="0.0"/>
 	<xacro:property name="def_torso_pitch" value="0.0"/>
 	<xacro:property name="def_torso_yaw" value="1.57079632679"/>
