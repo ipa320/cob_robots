@@ -11,9 +11,9 @@
     local-name: cob_command_tools
     version: indigo_dev
 - git:
-    uri: 'https://github.com/ipa320/cob_common.git'
+    uri: 'https://github.com/ipa-fxm/cob_common.git'
     local-name: cob_common
-    version: indigo_dev
+    version: fix/test_urdf_travis
 - git:
     uri: 'https://github.com/ipa320/cob_control.git'
     local-name: cob_control
