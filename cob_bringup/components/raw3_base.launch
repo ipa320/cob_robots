@@ -2,18 +2,13 @@
 <launch>
 	<arg name="robot"/>	
 	<arg name="can_device"/>
-	<arg name="use_fts" default="false"/>
-    <arg name="real_fts" default="false"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
 
 
 	<arg name="driver_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_driver.yaml"/>
-	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_controller.yaml" unless="$(arg use_fts)"/>
-    
-	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_controller_fts.yaml" if="$(arg real_fts)" />
-	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/raw3_base_controller_fts_sim.yaml" if="$(arg sim)"  />
-    
+	<arg name="controller_yaml" default="$(arg pkg_hardware_config)/robots/common/raw3_base_controller.yaml" />
+
 	<include file="$(find cob_bringup)/components/ros_control_base.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
