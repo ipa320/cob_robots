@@ -8,7 +8,7 @@ nodes:
   ##Wheel 1
   fl_caster_rotation_joint:
     motor_layer:
-      homing_event: 19 # -> digin
+      homing_event: 17 # -> digin
       homing_speed: -5093 # -1.0 rs/s
       homing_offset: -12880
   fl_caster_r_wheel_joint:
