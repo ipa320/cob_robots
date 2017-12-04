@@ -5,7 +5,6 @@
 	<arg name="device_id" default="#1"/>
 	<arg name="data_skip" default="0"/>
 	<arg name="num_worker_threads" default="4"/>
-	<arg name="start_manager" default="true"/>
 	<arg name="throttle" default="false"/>
 	<arg name="flip" default="true"/>
 	<arg name="sim" default="false"/>
@@ -17,23 +16,27 @@
 		<arg name="data_skip" value="$(arg data_skip)"/>
 		<arg name="num_worker_threads" value="$(arg num_worker_threads)"/>
 	</include>
-	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="yaml_name" value="$(arg name)"/>
-		<arg name="sim" value="$(arg sim)"/>
-	</include>
-	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="camera_name" value="$(arg name)"/>
-		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
-		<arg name="start_manager" value="$(arg start_manager)"/>
-	</include>
-	<include if="$(arg throttle)" file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
-		<arg name="namespace" value="$(arg name)" />
-		<arg name="rate" value="1.0" />
-		<arg name="start_manager" value="$(arg start_manager)"/>
-		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
-	</include>
+	<group ns="$(arg name)">
+		<include file="$(find cob_bringup)/tools/hz_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="yaml_name" value="$(arg name)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="camera_name" value="$(arg name)"/>
+			<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
+			<arg name="start_manager" value="false"/>
+			<arg name="pointcloud_in" default="/$(arg name)/depth_registered/points"/>
+			<arg name="pointcloud_out" default="/$(arg name)_upright/depth_registered/points"/>
+		</include>
+		<include if="$(arg throttle)" file="$(find cob_cam3d_throttle)/launch/cam3d_throttle.launch" >
+			<arg name="namespace" value="$(arg name)" />
+			<arg name="rate" value="1.0" />
+			<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
+			<arg name="start_manager" value="false"/>
+		</include>
+	</group>
 
 
 	<group ns="$(arg name)" if="$(arg sim)">
@@ -60,7 +63,7 @@
 
 		<!-- start nodelet manager in simulation -->
 		<node pkg="nodelet" type="nodelet" name="$(arg name)_nodelet_manager" args="manager" output="screen">
-			<param name="num_worker_threads" value="2" />
+			<param name="num_worker_threads" value="$(arg num_worker_threads)" />
 		</node>
 	</group>
 </launch>
