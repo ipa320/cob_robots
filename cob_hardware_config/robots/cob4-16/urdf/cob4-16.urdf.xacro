@@ -80,7 +80,7 @@
     <origin xyz="${sensorring_cam3d_x} ${sensorring_cam3d_y} ${sensorring_cam3d_z}" rpy="${sensorring_cam3d_roll} ${sensorring_cam3d_pitch} ${sensorring_cam3d_yaw}" />
   </xacro:cob_kinect_v0>
 
-  <!--xacro:cob4_arm name="arm_right" parent="torso_3_link" has_podest="false">
+  <xacro:cob4_arm name="arm_right" parent="torso_3_link" has_podest="false">
     <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
   </xacro:cob4_arm>
 
@@ -88,7 +88,7 @@
     <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
   </xacro:cob4_arm>
 
-  <xacro:gripper name="gripper_right" parent="arm_right_7_link">
+  <!--xacro:gripper name="gripper_right" parent="arm_right_7_link">
     <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />
   </xacro:gripper>
 
