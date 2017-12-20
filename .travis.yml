@@ -9,6 +9,7 @@ env:
   global:
     - ROS_REPO=ros
     - NOT_TEST_INSTALL=true
+    - STRICT_TEST_DEPENDS=true
   matrix:
     - ROS_DISTRO=indigo UPSTREAM_WORKSPACE=file
     - ROS_DISTRO=indigo UPSTREAM_WORKSPACE=debian
@@ -19,7 +20,7 @@ matrix:
     - env: ROS_DISTRO=indigo UPSTREAM_WORKSPACE=debian
     - env: ROS_DISTRO=kinetic UPSTREAM_WORKSPACE=debian
 install:
-  - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config
+  - git clone -b enhancement/106 https://github.com/ipa-mdl/industrial_ci.git .ci_config
 script:
   - .ci_config/travis.sh
 #  - ./travis.sh  # Enable this when you have a package-local script
