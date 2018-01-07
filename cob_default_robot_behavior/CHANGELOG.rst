@@ -2,6 +2,25 @@
 Changelog for package cob_default_robot_behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.7 (2017-07-31)
+------------------
+* missed install tag
+* setup cob4-8
+* unify default behaviors
+* remove pick behavior
+* remove cob4-10 behavior
+* update cob4-paul-stuttgart
+* remove cob4-10
+* remove cob4-1
+* cob4-7 - update behavior script to move the arms
+* manually fix changelog
+* setup cob4-10
+* Merge github.com:ipa320/cob_robots into indigo_dev
+  Conflicts:
+  cob_default_robot_behavior/CMakeLists.txt
+* setup cob4-7
+* Contributors: ipa-cob4-8, ipa-fxm, ipa-nhg, robot
+
 0.6.6 (2016-10-10)
 ------------------
 * clean behavior trigger services
