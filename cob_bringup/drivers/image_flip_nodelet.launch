@@ -12,9 +12,9 @@
 	<arg name="start_manager" default="true"/>
 
 
-	<node if="$(arg start_manager)" ns="image_flip_$(arg camera_name)" pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen"/>
+	<node if="$(arg start_manager)" pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen"/>
 
-	<node ns="image_flip_$(arg camera_name)" pkg="nodelet" type="nodelet" name="image_flip_$(arg camera_name)_nodelet" args="load cob_image_flip/ImageFlipNodelet /$(arg camera_name)/$(arg nodelet_manager)" output="screen">
+	<node pkg="nodelet" type="nodelet" name="image_flip_nodelet" args="load cob_image_flip/ImageFlipNodelet $(arg nodelet_manager)" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/image_flip_params_$(arg camera_name).yaml"/>
 		<remap from="~pointcloud_in" to="$(arg pointcloud_in)"/>
 		<remap from="~pointcloud_out" to="$(arg pointcloud_out)"/>

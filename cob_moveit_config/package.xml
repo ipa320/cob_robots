@@ -1,14 +1,15 @@
 <package format="2">
   <name>cob_moveit_config</name>
-  <version>0.6.7</version>
+  <version>0.6.8</version>
   <description>
      MoveIt config files for all cob and raw
   </description>
+
   <author email="mdl@ipa.fhg.de">Mathias Luedtke</author>
-  <maintainer email="mdl@ipa.fhg.de">Mathias Luedtke</maintainer>
+  <author email="fxm@ipa.fhg.de">Felix Messmer</author>
   <maintainer email="fxm@ipa.fhg.de">Felix Messmer</maintainer>
 
-  <license>BSD</license>
+  <license>Apache 2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
 

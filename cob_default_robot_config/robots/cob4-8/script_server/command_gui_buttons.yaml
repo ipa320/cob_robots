@@ -50,29 +50,29 @@ group15:
     [home,move,home],
     [open,move,open],
     [close, move, close]]
-#group17:
-#  group_name: sensorring
-#  component_name: sensorring
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [front,move,front],
-#    [back,move,back],
-#    [left,move,left],
-#    [right,move,right]]
-#group18:
-#  group_name: head
-#  component_name: head
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [front,move,front],
-#    [front_down,move,front_down],
-#    [back,move,back],
-#    [left,move,left],
-#    [right,move,right],
-#    [nod,move,nod],
-#    [shake,move,shake]]
+group17:
+  group_name: sensorring
+  component_name: sensorring
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right]]
+group18:
+  group_name: head
+  component_name: head
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [front_down,move,front_down],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right],
+    [nod,move,nod],
+    [shake,move,shake]]
 group21:
   group_name: mimic
   component_name: behavior

@@ -17,13 +17,14 @@
 	</include>
 
 	<group>
-		<machine name="cob4-11-b1" address="$(arg cob4-11-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon b1)" address="$(arg cob4-11-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-11-b1)"/>
+				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
 		</group>
 
@@ -54,6 +55,11 @@
 		<include file="$(find cob_bringup)/components/cob4_base.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/light.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="light_base"/>
+			<arg name="sim_enabled" value="$(arg sim)"/>
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
@@ -90,10 +96,8 @@
 		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
 			<arg name="fake_diagnostics" value="'base_laser_front, base_laser_right, base_laser_left, -b1, joy, safety'"/>
 		</include>
-
 	</group>
 
-
-	<machine name="cob4-11-b1" address="$(arg cob4-11-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon b1)" address="$(arg cob4-11-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

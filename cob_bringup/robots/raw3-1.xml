@@ -19,22 +19,18 @@
 	</include>
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg pc1)"/>
+				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
 			<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include-->
-			<!-- Relayboard with sim:=true is necessary because the robot does not have a phidgets board for checking the emergency status -->
-			<include file="$(find cob_bringup)/drivers/relayboard.launch">
-				<arg name="robot" value="$(arg robot)"/>
-				<arg name="sim" value="true"/>
-			</include>
 			<include file="$(find cob_bringup)/drivers/openni.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
@@ -50,14 +46,17 @@
 			<arg name="name" value="base_laser_rear"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_base.launch">
-			<arg name="robot" value="$(arg robot)"/>
+		<include file="$(find cob_bringup)/components/raw3_base.launch" >
+			<arg name="robot" value="$(arg robot)" />
+			<arg name="can_device" value="can2" />
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_schunk_powercube.launch">
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="torso"/>
+			<arg name="can_device" value="can0"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="cartesian_control" value="true"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/ur.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -98,13 +97,14 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc2)" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg pc2)"/>
+				<arg name="ntp_server" value="$(arg pc1)"/>
 			</include>
 		</group>
 
@@ -114,6 +114,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

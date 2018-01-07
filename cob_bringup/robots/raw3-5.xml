@@ -17,13 +17,14 @@
 	</include>
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg pc1)"/>
+				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
 			<include file="$(find cob_bringup)/drivers/phidgets.launch">
 				<arg name="robot" value="$(arg robot)"/>
@@ -85,6 +86,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>

@@ -1,14 +1,16 @@
 <package format="2">
   <name>cob_bringup</name>
-  <version>0.6.7</version>
+  <version>0.6.8</version>
   <description>This package provides launch files for operating Care-O-bot.</description>
 
-  <license>LGPL</license>
+  <license>Apache 2.0</license>
 
   <url type="website">http://ros.org/wiki/cob_bringup</url>
   <!-- <url type="bugtracker"></url> -->
 
-  <maintainer email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</maintainer>
+  <maintainer email="fxm@ipa.fhg.de">Felix Messmer</maintainer>
+  <author email="fxm@ipa.fhg.de">Felix Messmer</author>
+  <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
 
   <buildtool_depend>catkin</buildtool_depend>
@@ -18,7 +20,6 @@
   <exec_depend>canopen_chain_node</exec_depend>
   <exec_depend>canopen_motor_node</exec_depend>
   <exec_depend>cob_android_script_server</exec_depend>
-  <exec_depend>cob_base_drive_chain</exec_depend>
   <exec_depend>cob_base_velocity_smoother</exec_depend>
   <exec_depend>cob_bms_driver</exec_depend>
   <exec_depend>cob_calibration_data</exec_depend>
@@ -32,7 +33,6 @@
   <exec_depend>cob_default_robot_behavior</exec_depend>
   <exec_depend>cob_default_robot_config</exec_depend>
   <exec_depend>cob_docker_control</exec_depend> <!-- from cob_substitute -->
-  <exec_depend>cob_footprint_observer</exec_depend>
   <exec_depend>cob_frame_tracker</exec_depend>
   <exec_depend>cob_hand_bridge</exec_depend>
   <exec_depend>cob_hardware_config</exec_depend>
@@ -49,7 +49,6 @@
   <exec_depend>cob_phidget_power_state</exec_depend>
   <exec_depend>cob_phidget_em_state</exec_depend>
   <exec_depend>cob_reflector_referencing</exec_depend> <!-- from cob_substitute -->
-  <exec_depend>cob_relayboard</exec_depend>
   <exec_depend>cob_safety_controller</exec_depend> <!-- from cob_substitute -->
   <exec_depend>cob_scan_unifier</exec_depend>
   <exec_depend>cob_script_server</exec_depend>
@@ -57,9 +56,7 @@
   <exec_depend>cob_sick_s300</exec_depend>
   <exec_depend>cob_sound</exec_depend>
   <exec_depend>cob_teleop</exec_depend>
-  <exec_depend>cob_trajectory_controller</exec_depend>
   <exec_depend>cob_twist_controller</exec_depend>
-  <exec_depend>cob_undercarriage_ctrl</exec_depend>
   <exec_depend>cob_voltage_control</exec_depend>
   <exec_depend>compressed_depth_image_transport</exec_depend> <!-- needed by the cameras to publish the compressed topics -->
   <exec_depend>compressed_image_transport </exec_depend> <!-- needed by the cameras to publish the compressed topics -->
@@ -83,7 +80,6 @@
   <exec_depend>rostopic</exec_depend>
   <exec_depend>rplidar_ros</exec_depend>
   <exec_depend>rviz</exec_depend>
-  <exec_depend>schunk_powercube_chain</exec_depend>
   <exec_depend>sick_visionary_t_driver</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>tf2_ros</exec_depend>

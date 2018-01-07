@@ -5,6 +5,8 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="pc" default="localhost"/>
 	<arg name="diag_hostname" default="$(arg pc)"/>
+	<arg name="enable_ntp_monitoring" default="true"/>
+	<arg name="ntp_server" default="de.pool.ntp.org"/>
 
 	<!-- Monitor CPU (temp, usage) -->
 	<node pkg="cob_monitoring" name="$(anon cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg diag_hostname)" output="screen">
@@ -15,9 +17,9 @@
 	<node pkg="cob_monitoring" name="$(anon hd_monitor)" type="hd_monitor.py" args="--diag-hostname=$(arg diag_hostname)" output="screen"/>
 
 	<!-- Monitor ntp -->
-	<!--node pkg="cob_monitoring" name="$(anon realtime_ntp_monitor)" type="ntp_monitor.py" args="$(arg pc) -/-diag-hostname=$(arg pc)" output="screen">
-		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/pc_monitor_$(arg pc).yaml"/>
-	</node-->
+	<node if="$(arg enable_ntp_monitoring)" pkg="cob_monitoring" name="$(anon ntp_monitor)" type="ntp_monitor.py" args="$(arg ntp_server) --diag-hostname=$(arg diag_hostname)" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/ntp_monitor.yaml"/>
+	</node>
 
 
 </launch>

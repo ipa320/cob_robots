@@ -15,7 +15,7 @@
 		<remap from="diagnostics" to="/diagnostics"/>
 	</node>
 
-	<!-- FIXME remove relayboard_sim with a cob_safety_controller_sim which makes use of simulated safety fields from laser -->
-	<node if="$(arg sim)" pkg="cob_relayboard" type="relayboard_sim.py" name="relayboard_node" respawn="false" output="screen"/>
+	<!-- FIXME remove flexisoft_sim with a cob_safety_controller_sim which makes use of simulated safety fields from laser -->
+	<node if="$(arg sim)" pkg="cob_safety_controller" type="flexisoft_sim.py" name="safety_controller" respawn="false" output="screen"/>
 
 </launch>
