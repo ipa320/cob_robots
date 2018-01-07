@@ -2,6 +2,113 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.8 (2018-01-07)
+------------------
+* Merge pull request `#744 <https://github.com/ipa320/cob_robots/issues/744>`_ from ipa320/indigo_release_candidate
+  Indigo release candidate
+* Merge pull request `#743 <https://github.com/ipa320/cob_robots/issues/743>`_ from ipa-fxm/laser_range_filter
+  introduce laser range filter
+* introduce laser range filter
+* Merge pull request `#740 <https://github.com/ipa320/cob_robots/issues/740>`_ from ipa-fxm/fix_cam3d_nodelet_namespaces
+  fix nodelet and topic namespaces
+* fix nodelet and topic namespaces
+* Merge pull request `#731 <https://github.com/ipa320/cob_robots/issues/731>`_ from ipa-fxm/enhance_auto_recover_logic
+  enhance auto_recover logic
+* Merge pull request `#733 <https://github.com/ipa320/cob_robots/issues/733>`_ from ipa-fxm/add_cob4-16_uh
+  add cob4-16 uh
+* add cob4-16 uh
+* enhance auto_recover logic
+* Merge pull request `#728 <https://github.com/ipa320/cob_robots/issues/728>`_ from ipa-nhg/cob47-setup
+  setup cob4-7
+* setup cob4-7
+* Merge pull request `#725 <https://github.com/ipa320/cob_robots/issues/725>`_ from ipa-fmw/cob4-11_add_light
+  add light to cob4-11
+* add light to cob4-11
+* Merge pull request `#723 <https://github.com/ipa320/cob_robots/issues/723>`_ from ipa-fxm/move_cob4-2
+  move cob4-2 to unity-robotics
+* Merge pull request `#722 <https://github.com/ipa320/cob_robots/issues/722>`_ from ipa-mjp/uncomment_ur_arm
+  uncomment ur arm
+* move cob4-2 to unity-robotics
+* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into correct_torso_param
+* uncomment ur_arm
+* Merge pull request `#720 <https://github.com/ipa320/cob_robots/issues/720>`_ from ipa-fxm/fix_camera_coord_frames
+  fix camera coord frames for all cameras and all robots for hw and sim
+* fix frame_id
+* fix image flip for 3dcs
+* consistency for all robots
+* fix frames for usb_camera and sick_3dcs
+* add missing frames for asus
+* add nodelet manager for simulation
+* fix camera coord frames for asus and zr300 on cob4-7
+* add static transforms for zr300
+* remove serial number (only needed for multi-camera setup)
+* fix torso zr300 camera
+* add zr300 launch file
+* use zr300 for torso_right camera
+* Merge pull request `#719 <https://github.com/ipa320/cob_robots/issues/719>`_ from ipa-fxm/anon_machine_tag
+  anon machine tags
+* Merge pull request `#716 <https://github.com/ipa320/cob_robots/issues/716>`_ from ipa-fxm/spacenav_launch_args
+  introduce launch args for parameters
+* anon machine tags
+* Merge pull request `#717 <https://github.com/ipa320/cob_robots/issues/717>`_ from ipa-fxm/ntp_monitor_toggle
+  do not monitor ntp offset for base pcs
+* do not monitor ntp offset for base pcs
+* introduce launch args for parameters
+* Merge pull request `#698 <https://github.com/ipa320/cob_robots/issues/698>`_ from ipa-fxm/add_ntp_monitor
+  add ntp monitor
+* Merge pull request `#714 <https://github.com/ipa320/cob_robots/issues/714>`_ from ipa-fxm/legacy_cleanup
+  remove legacy stuff and cleanup dependencies
+* remove legacy stuff and cleanup dependencies
+* add ntp_server for additional pcs of cob4-10
+* fix indentation
+* add ntp monitor
+* Merge pull request `#708 <https://github.com/ipa320/cob_robots/issues/708>`_ from ipa-fxm/feature/powerball_raw3-1
+  Feature/powerball raw3 1
+* Merge pull request `#707 <https://github.com/ipa320/cob_robots/issues/707>`_ from ipa-fxm/update_maintainer
+  update maintainer
+* Merge pull request `#712 <https://github.com/ipa320/cob_robots/issues/712>`_ from ipa-jba/feature/kinetic_raw
+  single computer for raw, fix ports
+* autoinit/autorecover launch file
+* single computer for raw, fix ports
+* Merge pull request `#709 <https://github.com/ipa320/cob_robots/issues/709>`_ from ipa-nhg/cob4-10
+  Full configuration cob4-10
+* harmonize configuration with current status
+* support old mimic node
+* Merge github.com:ipa320/cob_robots into indigo_dev
+  Conflicts:
+  cob_default_robot_config/robots/cob4-8/script_server/command_gui_buttons.yaml
+* Configuration for cob4-10
+* setup cob4-10
+* turn on twist control, corrected axis
+* actuate powerball via canopen
+* remove unavailable components
+* Merge pull request `#702 <https://github.com/ipa320/cob_robots/issues/702>`_ from ipa-fez/feature/raw3-1-canopen
+  Migrate raw3-1 base to canopen
+* pass loosened stuck_detector parameters for all raws
+* setup cob4-10
+* Merge pull request `#706 <https://github.com/ipa320/cob_robots/issues/706>`_ from ipa-fmw/feature/docking
+  use scan unified and laser filter for docking
+* update maintainer
+* Merge pull request `#704 <https://github.com/ipa320/cob_robots/issues/704>`_ from ipa-bnm/feature/mimic_sim
+  Add sim argument to mimic launch
+* use scan unified and laser filter for docking
+* add sim argument to mimic launch
+* Merge pull request `#705 <https://github.com/ipa320/cob_robots/issues/705>`_ from ipa-fmw/feature/mimic
+  fix mimic vs sound issue
+* fix typo
+* fix mimic for all robots
+* adapt mimic changes to all mimic robots
+* fix mimic vs sound issue
+* Merge pull request `#686 <https://github.com/ipa320/cob_robots/issues/686>`_ from ipa-fxm/APACHE_license
+  use license apache 2.0
+* change disable_stuck_detector to enable_stuck_detector
+* add setting to disable stuck detector for raws and disable it for raw3-1
+* tabs vs. spaces
+* set proper can device for raw3-1 base
+* WIP migration to canopen
+* use license apache 2.0
+* Contributors: Benjamin Maidel, Felix, Felix Messmer, Florian Weisshardt, Nadia Hammoudeh García, Richard Bormann, cob4-11, ipa-fmw, ipa-fxm, ipa-mjp, ipa-nhg, ipa-uhr-mk, raw3-1, rob@work robot, robot
+
 0.6.7 (2017-07-31)
 ------------------
 * add missing bringup launch file for cob4-11
