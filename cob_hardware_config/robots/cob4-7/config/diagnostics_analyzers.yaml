@@ -101,18 +101,26 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
+      arm_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Left
+        contains: 'arm_left/'
+      arm_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Right
+        contains: 'arm_right/'
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
         contains: 'torso/'
-      sensorring:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Sensorring
-        contains: 'sensorring/'
-      head:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Head
-        contains: 'head/'
+#      sensorring:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Sensorring
+#        contains: 'sensorring/'
+#      head:
+#        type: diagnostic_aggregator/GenericAnalyzer
+#        path: Head
+#        contains: 'head/'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base

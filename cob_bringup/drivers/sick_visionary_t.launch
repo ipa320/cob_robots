@@ -6,7 +6,7 @@
 
 	<node pkg="sick_visionary_t_driver" type="sick_visionary_t_driver_node" name="$(arg name)_node" output="screen">
 		<param name="remote_device_ip" value="192.168.1.10"/>
-		<param name="frame_id" value="$(arg name)_link"/>
+		<param name="frame_id" value="$(arg name)_optical_frame"/>
 		<remap from="$(arg name)_node/camera_info" to="$(arg name)/depth/camera_info"/>
 		<remap from="$(arg name)_node/confidence" to="$(arg name)/depth/image"/>
 		<remap from="$(arg name)_node/depth" to="$(arg name)/depth/image_rect"/>

@@ -3,14 +3,21 @@
 
 	<arg name="component_name"/>
 
+	<arg name="zero_when_static" default="false"/>
+	<arg name="static_count_threshold" default="0"/>
+	<arg name="static_trans_deadband" default="0.1"/>
+	<arg name="static_rot_deadband" default="0.1"/>
+
+	<arg name="scaling_factor" default="0.5"/>
+
 	<node pkg="spacenav_node" type="spacenav_node" name="spacenav_node" cwd="node" respawn="false" output="screen">
-		<param name="zero_when_static" value="false"/>
-		<param name="static_count_threshold" value="0"/>
-		<param name="static_trans_deadband" value="0.1"/>
-		<param name="static_rot_deadband" value="0.1"/>
+		<param name="zero_when_static" value="$(arg zero_when_static)"/>
+		<param name="static_count_threshold" value="$(arg static_count_threshold)"/>
+		<param name="static_trans_deadband" value="$(arg static_trans_deadband)"/>
+		<param name="static_rot_deadband" value="$(arg static_rot_deadband)"/>
 	</node>
 	<node ns="$(arg component_name)" pkg="cob_frame_tracker" type="spacenav_commander" name="spacenav_commander" cwd="node" respawn="false" output="screen">
-		<param name="scaling_factor" value="0.5"/> <!-- default: 0.1 -->
+		<param name="scaling_factor" value="$(arg scaling_factor)"/>
 	</node>
 
 </launch>

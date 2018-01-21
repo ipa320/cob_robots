@@ -19,6 +19,10 @@
     local-name: cob_driver
     version: indigo_dev
 - git:
+    uri: 'https://github.com/ipa320/realsense.git'
+    local-name: realsense
+    version: indigo-devel
+- git:
     uri: 'https://github.com/ipa320/cob_substitute.git'
     local-name: cob_substitute
     version: indigo_dev
@@ -30,7 +34,3 @@
     uri: 'https://github.com/ipa320/schunk_modular_robotics.git'
     local-name: schunk_modular_robotics
     version: indigo_dev
-- git:
-    uri: 'https://github.com/ros-industrial/ros_canopen.git'
-    local-name: ros_canopen
-    version: indigo-devel

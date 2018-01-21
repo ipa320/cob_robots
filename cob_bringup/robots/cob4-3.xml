@@ -16,13 +16,14 @@
 	</include>
 
 	<group>
-		<machine name="cob4-3-b1" address="$(arg cob4-3-b1)" env-loader="$(arg env-script)" default="true"/>
+		<machine name="$(anon b1)" address="$(arg cob4-3-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg cob4-3-b1)"/>
+				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
 		</group>
 
@@ -56,6 +57,6 @@
 		</include>
 	</group>
 
-	<machine name="cob4-3-b1" address="$(arg cob4-3-b1)" env-loader="$(arg env-script)" default="true"/>
+	<machine name="$(anon b1)" address="$(arg cob4-3-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>
