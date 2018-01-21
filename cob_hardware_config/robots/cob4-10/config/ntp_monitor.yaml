@@ -1,2 +1,2 @@
-offset: 500          #us
+offset: 5000         #us
 error_offset: 25000  #us

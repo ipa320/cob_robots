@@ -3,7 +3,6 @@
 	<arg name="robot"/>
 	<arg name="name"/>
 	<arg name="num_worker_threads" default="4"/>
-	<arg name="start_manager" default="true"/>
 	<arg name="flip" default="true"/>
 	<arg name="sim" default="false"/>
 	<arg name="serial_no" default=""/>
@@ -13,18 +12,21 @@
 		<arg name="num_worker_threads" value="$(arg num_worker_threads)" />
 		<arg name="serial_no" value="$(arg serial_no)" />
 	</include>
-	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="yaml_name" value="$(arg name)"/>
-		<arg name="sim" value="$(arg sim)"/>
-	</include>
-	<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="camera_name" value="$(arg name)"/>
-		<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
-		<arg name="start_manager" value="$(arg start_manager)"/>
-	</include>
-
+	<group ns="$(arg name)">
+		<include file="$(find cob_bringup)/tools/hz_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="yaml_name" value="$(arg name)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="camera_name" value="$(arg name)"/>
+			<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
+			<arg name="start_manager" value="false"/>
+			<arg name="pointcloud_in" value="/$(arg name)/depth/points"/>
+			<arg name="pointcloud_out" value="/$(arg name)_upright/depth/points"/>
+		</include>
+	</group>
 
 	<group ns="$(arg name)" if="$(arg sim)">
 		<!-- static frames broadcasted by camera driver -->
@@ -40,20 +42,9 @@
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir2_frame" args="0.0 -0.011 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_ir2_frame"/>
 		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_ir2_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_ir2_frame /$(arg name)_ir2_optical_frame"/>
 
-		<!-- relay additional topics not available from sensor plugin -->
-		<node pkg="topic_tools" type="relay" name="camera_info_relay" args="depth_registered/camera_info depth/camera_info">
-			<param name="lazy" value="true"/>
-		</node>
-		<node pkg="topic_tools" type="relay" name="image_raw_relay" args="depth_registered/image_raw depth/image_raw">
-			<param name="lazy" value="true"/>
-		</node>
-		<node pkg="topic_tools" type="relay" name="points_relay" args="depth_registered/points depth/points">
-			<param name="lazy" value="true"/>
-		</node>
-
 		<!-- start nodelet manager in simulation -->
 		<node pkg="nodelet" type="nodelet" name="$(arg name)_nodelet_manager" args="manager" output="screen">
-			<param name="num_worker_threads" value="2" />
+			<param name="num_worker_threads" value="$(arg num_worker_threads)" />
 		</node>
 	</group>
 </launch>

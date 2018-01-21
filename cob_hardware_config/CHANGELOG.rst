@@ -2,6 +2,318 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.8 (2018-01-07)
+------------------
+* Merge pull request `#744 <https://github.com/ipa320/cob_robots/issues/744>`_ from ipa320/indigo_release_candidate
+  Indigo release candidate
+* Merge pull request `#743 <https://github.com/ipa320/cob_robots/issues/743>`_ from ipa-fxm/laser_range_filter
+  introduce laser range filter
+* introduce laser range filter
+* Merge pull request `#742 <https://github.com/ipa320/cob_robots/issues/742>`_ from ipa-fxm/adjust_ntp_thresholds
+  adjust ntp thresholds
+* adjust ntp thresholds
+* Merge pull request `#739 <https://github.com/ipa320/cob_robots/issues/739>`_ from ipa-rmb/wheel-update
+  updated homing digital input for wheel
+* updated homing digital input for wheel
+* Merge pull request `#736 <https://github.com/ipa320/cob_robots/issues/736>`_ from ipa-fmw/calibrate_cob4-7_base
+  calibrate cob4-7 base
+* calibrate cob4-7 base
+* Merge pull request `#735 <https://github.com/ipa320/cob_robots/issues/735>`_ from ipa-fxm/indigo_dev_rmb
+  corrected torso definition
+* Added a clarifying comment which link is referred to
+* Merge pull request `#733 <https://github.com/ipa320/cob_robots/issues/733>`_ from ipa-fxm/add_cob4-16_uh
+  add cob4-16 uh
+* corrected torso definition
+* add cob4-16 uh
+* Merge pull request `#728 <https://github.com/ipa320/cob_robots/issues/728>`_ from ipa-nhg/cob47-setup
+  setup cob4-7
+* update URDF to static head and sensorring
+* setup cob4-7
+* Merge pull request `#727 <https://github.com/ipa320/cob_robots/issues/727>`_ from ipa-fxm/remove_use_old_joint_name
+  remove obsolete use_old_joint_names argument
+* remove obsolete use_old_joint_names argument
+* Merge pull request `#726 <https://github.com/ipa320/cob_robots/issues/726>`_ from ipa-bnm/cob4-7-homing-offsets
+  use homing offsets from cob4-2 for cob4-7
+* use homing offsets from cob4-2
+* Merge pull request `#725 <https://github.com/ipa320/cob_robots/issues/725>`_ from ipa-fmw/cob4-11_add_light
+  add light to cob4-11
+* add light to cob4-11
+* Merge pull request `#723 <https://github.com/ipa320/cob_robots/issues/723>`_ from ipa-fxm/move_cob4-2
+  move cob4-2 to unity-robotics
+* Merge pull request `#722 <https://github.com/ipa320/cob_robots/issues/722>`_ from ipa-mjp/uncomment_ur_arm
+  uncomment ur arm
+* move cob4-2 to unity-robotics
+* Merge branch 'indigo_dev' of https://github.com/ipa320/cob_robots into correct_torso_param
+* uncomment ur_arm
+* Merge pull request `#720 <https://github.com/ipa320/cob_robots/issues/720>`_ from ipa-fxm/fix_camera_coord_frames
+  fix camera coord frames for all cameras and all robots for hw and sim
+* Merge pull request `#721 <https://github.com/ipa320/cob_robots/issues/721>`_ from ipa-mjp/correct_torso_param
+  Correct torso param
+* correct torso calibration param
+* fix head_cam mount position
+* fix image flip for 3dcs
+* consistency for all robots
+* fix frames for usb_camera and sick_3dcs
+* fix camera coord frames for asus and zr300 on cob4-7
+* finalize zr300 transformations
+* use zr300 for torso_right camera
+* Merge pull request `#698 <https://github.com/ipa320/cob_robots/issues/698>`_ from ipa-fxm/add_ntp_monitor
+  add ntp monitor
+* proper error threshold
+* add ntp monitor
+* Merge pull request `#708 <https://github.com/ipa320/cob_robots/issues/708>`_ from ipa-fxm/feature/powerball_raw3-1
+  Feature/powerball raw3 1
+* Merge pull request `#707 <https://github.com/ipa320/cob_robots/issues/707>`_ from ipa-fxm/update_maintainer
+  update maintainer
+* Merge pull request `#712 <https://github.com/ipa320/cob_robots/issues/712>`_ from ipa-jba/feature/kinetic_raw
+  single computer for raw, fix ports
+* ttyLED for LED
+* single computer for raw, fix ports
+* Merge pull request `#709 <https://github.com/ipa320/cob_robots/issues/709>`_ from ipa-nhg/cob4-10
+  Full configuration cob4-10
+* harmonize configuration with current status
+* Merge pull request `#711 <https://github.com/ipa320/cob_robots/issues/711>`_ from ipa-bnm/fix/homing_offset
+  reverted homing offsets for cob4-b7
+* reverted homing offsets for cob4-b7
+* unify arm driver configuration
+* Merge github.com:ipa320/cob_robots into indigo_dev
+  Conflicts:
+  cob_default_robot_config/robots/cob4-8/script_server/command_gui_buttons.yaml
+* Configuration for cob4-10
+* setup cob4-10
+* turn on twist control, corrected axis
+* actuate powerball via canopen
+* adjust urdf
+* remove unavailable components
+* Merge pull request `#702 <https://github.com/ipa320/cob_robots/issues/702>`_ from ipa-fez/feature/raw3-1-canopen
+  Migrate raw3-1 base to canopen
+* setup cob4-10
+* update maintainer
+* Merge pull request `#686 <https://github.com/ipa320/cob_robots/issues/686>`_ from ipa-fxm/APACHE_license
+  use license apache 2.0
+* Merge pull request `#694 <https://github.com/ipa320/cob_robots/issues/694>`_ from ipa-fxm/use_cob4_arm
+  use cob4_arm description
+* Merge pull request `#701 <https://github.com/ipa320/cob_robots/issues/701>`_ from ipa-fxm/config_cob4-8_aalto
+  some fixes cob4-8
+* some fixes cob4-8
+* Merge pull request `#699 <https://github.com/ipa320/cob_robots/issues/699>`_ from ipa-fxm/move_ur_arm
+  move ur_arm to raw_description
+* fix direction of left side wheels
+* restore torso configs
+* adjust motor configs based on deleted inis
+* move ur_arm to raw_description
+* WIP migration to canopen
+* use cob4_arm description
+* use license apache 2.0
+* Contributors: Benjamin Maidel, Felix, Felix Messmer, Florian Weisshardt, Nadia Hammoudeh García, Richard Bormann, cob4-11, ipa-fmw, ipa-fxm, ipa-mjp, ipa-nhg, ipa-uhr-mk, raw3-1, rob@work robot
+
+0.6.7 (2017-07-31)
+------------------
+* Update teleop.yaml
+* add initial config for cob4-10
+* add initial cob4-11 serodi config
+* use cob4-b12 for paul-stuttgart
+* use cob4-b2 instead of cob4-b7 for paul-ingolstadt
+* cob4-8 setup
+* renamed sensorring camera
+* renamed sensorring camera
+* setup cob4-8
+* tune sensorring parameters for cob4-5 (kinect+sick sensor)
+* revert docking distance_tolerance introduced in https://github.com/ipa320/cob_robots/commit/814d3947bd4c01098f509db98e92acd9fb40aea3
+* update teleop config to init the head
+* reset pc monitors
+* reset hz monitor for cam3d
+* local changes from cob4-7
+* update cob4-5 setup
+* merge
+* invert right wheels and change ordering of config (needed after retuning and `UM=2`)
+* steer_ctrl param handling
+* final cleanup
+* canopen config for raw3-3 base
+* cleanup files
+* finalize cob4-9
+* remove obsolete scan_unifier parameter
+* Setup cob4-9
+* finalizing configs
+* added head for cob4-7
+* update cob4-5 configs
+* added joint_states for the head
+* added head for cob4-5
+* larger data_skip for simulation
+* pass camera settings to gazebo plugins
+* parameterizable usb_cam
+* added 10 Hz heartbeat to Schunk DCF
+* adjust pc_monitor
+* fxm change requests
+* fixed path
+* copy the rviz config file
+* fix identantion
+* rename display launch file
+* added a launch file to display a urdf.xacro model
+* remove obsolete files raw3-5
+* remove obsolete rviz displays
+* remove obsolete laser config files
+* separate laser scanner from base
+* fix typo
+* restructure cob_hardware_config
+* configuration via yaml file
+* Stomp planner (`#631 <https://github.com/ipa320/cob_robots/issues/631>`_)
+  * merged stomp configuration with actual indigo_dev
+  * controllers for moveit namespace corrected
+  * stomp configuration for raw3-1 created and tested
+  * few corrections before pull request
+  * twist controller config for raw3-1
+  * changes from pull request
+  * new change from pull request
+  * whole-body planning group: robot
+  * stomp configuration for robot group
+  * pull request changes
+  * stomp plannning yaml file correct group names
+  * twist controller config file updated to include input limits parameters
+  * finalizing PR
+* harmonize cob4-2 and cob4-7
+* unify tests
+* reduce station tolerance
+* cob4-7 hardware updates
+* renamed voltage_max to voltage_divider_factor
+* update cartesian controller parameters
+* disable head and sensorring for cob4-2
+* read current from Elmos, add it to base joint states
+* unified ros control base driver and controller config
+* update cob4-paul-stuttgart
+* remove cob4-10
+* speedup docking process
+* changed docker position
+* Revert "added stuck_detector to bringup"
+  This reverts commit 8c06a19ff64510837c9f127e3dc2d121c143972e.
+* disable head
+* changed Impedance-Controller Parameter for roboter
+* Raw3 5 config for ros_canopen (`#609 <https://github.com/ipa320/cob_robots/issues/609>`_)
+  * Updated raw3-5 launch and description
+  * changes for test raw3-5
+  * config for raw 3-5 with ros_canopen
+  * uncommenting code and optimizing neutral positions
+  * delete .dae and .urdf for raw3-5
+  * Cleanded files
+  * changed diagnostics_analyzers to match with cob4 config
+* change u_max to meet the measured values
+* Update raw3-1.urdf.xacro
+* Update raw3-1.urdf.xacro
+* Update arm_controller.yaml
+* set light parameters
+* cleanup arm_controller
+* fix diagnostics
+* requested changes in pull request
+* gripper macro name changed and prefix removed as argument
+* make simulation work preliminarily
+* added vacuum gripper
+* adaptations to current configuration for order-picking
+* undid old files from ipa-rmb
+* update for raw3-1 torso driver configuration
+* added arm in bringup, corrected torso mounting angle
+* twist controller configuration for raw3-1
+* added arm joint limits file
+* Added controller for gazebo. Arm gripper removed
+* Arm uncommented to be added in the URDF file
+* do not specify num_cores for localhost
+* added stuck_detector to bringup
+* fixed camera down camera calibration for all robots
+* disabled head and sensorring
+* fixed camera down camera calibration
+* updated phidgets config for raw3-3
+* move gazebo_ros_control plugin
+* use xacro --inorder
+* remove cob4-2 leftover
+* remove cob4-1
+* fix cpu monitor
+* upgrade cob4-2
+* remove obsolete components and dependencies
+* remove unsupported robots - launch and config
+* Merge pull request `#596 <https://github.com/ipa320/cob_robots/issues/596>`_ from ipa-fmw/feature/bms_diagnostics
+  enable bms in diagnostics
+* enable bms in diagnostics
+* activate 3dof head
+* adapt diagnostics
+* use latest xacro syntax
+* limit for pc monitors
+* new bms config
+* [WIP] Use grouped low level components for simulation (`#583 <https://github.com/ipa320/cob_robots/issues/583>`_)
+  * refactored generic canopen&config into canopen_generic.launch
+  * refactored base driver+config into canopen_base.launch
+  * added components/cob4_head_camera.launch
+  * added components/cam3d_openni2.launch
+  * added components/cam3d_r200_rgbd.launch
+  * introduce sim arg for components
+  * use sim arg in robot.xml
+  * remove nodes started within robot.xml from default_controllers_robot.launch
+  * introducing legacy components
+  * reorganize and sim toggle for more components
+  * adjust cob4-1 to latest changes
+  * use new structure for cob3-2
+  * use new structure for cob3-6
+  * use new structure for cob3-9
+  * use new structure for cob4-2
+  * use new structure for remaining cob4s
+  * travis fixes
+  * syntax styling
+  * use new structure for raws
+  * more travis fixes
+  * harmonize old vs. new behavior cob4-1
+  * guarantee same hw behavior as before
+  * add flip argument
+* use test_depends where applicable
+* use cob_supported_robots_ROBOTLIST in dependent packages
+* use additional sensorring argument
+* updated BMS config with StatusRegister bits
+* Merge pull request `#565 <https://github.com/ipa320/cob_robots/issues/565>`_ from ipa-fxm/separate_sensors_actors
+  Separate sensors actors
+* remove moveit_config files from cob_hardware_config
+* upload semantic description using new moveit_config structure
+* cob4-10 fixes
+* manually fix changelog
+* use unified torso xacro
+* move sensors from torso xacro to robot xacro
+* use unified sensorring xacro
+* move sensors from sensorring xacro to robot xacro
+* use unified head xacro
+* move sensors from head xacro to robot xacro
+* fix self-collision for twist control with cob3-6
+* disable warning for wireless em stop bridged
+* update velocity smoother parameters
+* use same velocity smoother settings for all cob4
+* smooth acceleration after emergency stop
+* cleanup
+* setup cob4-10
+* cob4-7 setup: final test
+* fake monitoring for simulation to work with msh scenario
+* fix cob3-9 urdf
+* added vacuum gripper
+* adaptations to current configuration for order-picking
+* increase load threshold
+* added phidgets
+* undid old files from ipa-rmb
+* added arm in bringup, corrected torso mounting angle
+* increase load threshold
+* twist controller configuration for raw3-1
+* added arm joint limits file
+* Added controller for gazebo. Arm gripper removed
+* fix image_flip to be compatible with head_cam kinematic
+* simulation test
+* Arm uncommented to be added in the URDF file
+* Twist cartesian controller configuration files for cob3-6
+* Twist controller configuration files for cob3-6
+* realsense as default torso down camera
+* build torso with arms
+* Merge github.com:ipa320/cob_robots into indigo_dev
+  Conflicts:
+  cob_default_robot_behavior/CMakeLists.txt
+* missing image_flip confog for cob4-5
+* added head_cam frame to urdf
+* Set enable_sounf to false
+* setup cob4-7
+* update for raw3-1 torso driver configuration
+* Contributors: Andreea Tulbure, Benjamin Maidel, Bruno Brito, Felipe Garcia Lopez, Felix Messmer, Florian Weisshardt, Jannik Abbenseth, Mathias Lüdtke, Nadia Hammoudeh García, Richard Bormann, andreeatulbure, cob4-10, cob4-11, cob4-7, hannes, ipa-cob4-1, ipa-cob4-5, ipa-cob4-7, ipa-cob4-8, ipa-fmw, ipa-fxm, ipa-nhg, ipa-raw3-3, ipa-rmb, msh, robot
+
 0.6.6 (2016-10-10)
 ------------------
 * adapt to multi topic hz monitor

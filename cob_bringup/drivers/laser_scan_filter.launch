@@ -5,11 +5,17 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="name"/>
 
-	<!-- scan filters-->
+	<!-- angular bounds filter-->
 	<rosparam ns="$(arg name)" command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg name).yaml"/>
 	<node ns="$(arg name)" pkg="cob_sick_s300" type="cob_scan_filter" name="scan_filter" respawn="false" output="screen">
 		<remap from="scan_in" to="scan_raw"/>
-		<remap from="scan_out" to="scan"/>
+		<remap from="scan_out" to="scan_bound_filtered"/>
+	</node>
+	<!-- filter chain -->
+	<node ns="$(arg name)" pkg="laser_filters" type="scan_to_scan_filter_chain" name="base_laser_filter">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/base_laser_filter.yaml"/>
+		<remap from="scan" to="scan_bound_filtered"/>
+		<remap from="scan_filtered" to="scan"/>
 	</node>
 
 </launch>
