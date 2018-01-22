@@ -15,7 +15,7 @@
 
   <depend>roslaunch</depend>
   <depend>rostest</depend>
-  <depend>schunk_modular_robotics</depend>
+  <depend>schunk_description</depend>
 
   <build_depend>cob_supported_robots</build_depend>
   
