@@ -2,6 +2,91 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.8 (2018-01-07)
+------------------
+* Merge pull request `#744 <https://github.com/ipa320/cob_robots/issues/744>`_ from ipa320/indigo_release_candidate
+  Indigo release candidate
+* Merge pull request `#733 <https://github.com/ipa320/cob_robots/issues/733>`_ from ipa-fxm/add_cob4-16_uh
+  add cob4-16 uh
+* add cob4-16 uh
+* Merge pull request `#728 <https://github.com/ipa320/cob_robots/issues/728>`_ from ipa-nhg/cob47-setup
+  setup cob4-7
+* setup cob4-7
+* Merge pull request `#723 <https://github.com/ipa320/cob_robots/issues/723>`_ from ipa-fxm/move_cob4-2
+  move cob4-2 to unity-robotics
+* move cob4-2 to unity-robotics
+* Merge pull request `#721 <https://github.com/ipa320/cob_robots/issues/721>`_ from ipa-mjp/correct_torso_param
+  Correct torso param
+* change torso joint name
+* Merge pull request `#707 <https://github.com/ipa320/cob_robots/issues/707>`_ from ipa-fxm/update_maintainer
+  update maintainer
+* Merge pull request `#709 <https://github.com/ipa320/cob_robots/issues/709>`_ from ipa-nhg/cob4-10
+  Full configuration cob4-10
+* harmonize configuration with current status
+* Merge pull request `#710 <https://github.com/ipa320/cob_robots/issues/710>`_ from ipa-nhg/indigo_dev
+  Add head positon buttons for cob4-8 command_gui
+* Merge github.com:ipa320/cob_robots into indigo_dev
+  Conflicts:
+  cob_default_robot_config/robots/cob4-8/script_server/command_gui_buttons.yaml
+* add command_gui buttons for head - aalto
+* setup cob4-10
+* update maintainer
+* Merge pull request `#686 <https://github.com/ipa320/cob_robots/issues/686>`_ from ipa-fxm/APACHE_license
+  use license apache 2.0
+* Merge pull request `#701 <https://github.com/ipa320/cob_robots/issues/701>`_ from ipa-fxm/config_cob4-8_aalto
+  some fixes cob4-8
+* some fixes cob4-8
+* restore torso configs
+* WIP migration to canopen
+* use license apache 2.0
+* Contributors: Benjamin Maidel, Felix, Felix Messmer, Florian Weisshardt, Nadia Hammoudeh García, ipa-cob4-8, ipa-fxm, ipa-mjp, ipa-nhg, ipa-uhr-mk
+
+0.6.7 (2017-07-31)
+------------------
+* add initial config for cob4-10
+* add initial cob4-11 serodi config
+* cob4-8 setup
+* setup cob4-8
+* removed unsafed positions
+* update cob4-5 setup
+* final cleanup
+* finalize cob4-9
+* Setup cob4-9
+* added head for cob4-7
+* update cob4-5 configs
+* added head for cob4-5
+* fxm change requests
+* restructure cob_default_robot_config
+* cob4-7 hardware updates
+* update cob4-paul-stuttgart
+* remove cob4-10
+* remove sound buttons
+* arm speed
+* added vacuum gripper
+* updated the arm configuration (topics, default vel) in cob_default_hardware_config
+* remove cob4-1
+* upgrade cob4-2
+* remove unsupported robots - launch and config
+* harmonize default robot config
+* remove home button for head
+* remove home button for head
+* activate 3dof head
+* use test_depends where applicable
+* use cob_supported_robots_ROBOTLIST in dependent packages
+* manually fix changelog
+* setup cob4-10
+* cob4-7 setup: final test
+* added back_left and back_right
+* arm speed
+* added vacuum gripper
+* updated the arm configuration (topics, default vel) in cob_default_hardware_config
+* build torso with arms
+* Merge github.com:ipa320/cob_robots into indigo_dev
+  Conflicts:
+  cob_default_robot_behavior/CMakeLists.txt
+* setup cob4-7
+* Contributors: Mathias Lüdtke, Richard Bormann, cob4-10, cob4-11, cob4-7, hannes, ipa-cob4-5, ipa-cob4-8, ipa-fxm, ipa-nhg, robot
+
 0.6.6 (2016-10-10)
 ------------------
 * additional param files and modifications for raw3-6 ur10

@@ -2,6 +2,96 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.8 (2018-01-07)
+------------------
+* Merge pull request `#744 <https://github.com/ipa320/cob_robots/issues/744>`_ from ipa320/indigo_release_candidate
+  Indigo release candidate
+* Merge pull request `#733 <https://github.com/ipa320/cob_robots/issues/733>`_ from ipa-fxm/add_cob4-16_uh
+  add cob4-16 uh
+* add cob4-16 uh
+* Merge pull request `#730 <https://github.com/ipa320/cob_robots/issues/730>`_ from ipa-fxm/moveit_setup_assistant_xacro
+  fix setup assistant jade xacro support
+* Merge pull request `#729 <https://github.com/ipa320/cob_robots/issues/729>`_ from ipa-fxm/remove_add_robot_helper
+  remove add_robot helper
+* fix setup assistant jade xacro support
+* remove add_robot helper
+* Merge pull request `#723 <https://github.com/ipa320/cob_robots/issues/723>`_ from ipa-fxm/move_cob4-2
+  move cob4-2 to unity-robotics
+* move cob4-2 to unity-robotics
+* Merge pull request `#707 <https://github.com/ipa320/cob_robots/issues/707>`_ from ipa-fxm/update_maintainer
+  update maintainer
+* Merge pull request `#709 <https://github.com/ipa320/cob_robots/issues/709>`_ from ipa-nhg/cob4-10
+  Full configuration cob4-10
+* harmonize configuration with current status
+* Merge github.com:ipa320/cob_robots into indigo_dev
+  Conflicts:
+  cob_default_robot_config/robots/cob4-8/script_server/command_gui_buttons.yaml
+* setup cob4-10
+* update maintainer
+* Merge pull request `#686 <https://github.com/ipa320/cob_robots/issues/686>`_ from ipa-fxm/APACHE_license
+  use license apache 2.0
+* use license apache 2.0
+* Contributors: Felix Messmer, Florian Weisshardt, Nadia Hammoudeh García, ipa-fxm, ipa-nhg, ipa-uhr-mk
+
+0.6.7 (2017-07-31)
+------------------
+* switch back to default moveit_config for raw3-1
+* Add configs file and update srdf to operate the robot with MoveIt!
+* setup cob4-8
+* updated the srdf model
+* fix CONFIG_TEMPLATE in add_robot
+* restructure moveit config
+* restructure cob_hardware_config
+* Stomp planner (`#631 <https://github.com/ipa320/cob_robots/issues/631>`_)
+  * merged stomp configuration with actual indigo_dev
+  * controllers for moveit namespace corrected
+  * stomp configuration for raw3-1 created and tested
+  * few corrections before pull request
+  * twist controller config for raw3-1
+  * changes from pull request
+  * new change from pull request
+  * whole-body planning group: robot
+  * stomp configuration for robot group
+  * pull request changes
+  * stomp plannning yaml file correct group names
+  * twist controller config file updated to include input limits parameters
+  * finalizing PR
+* cob4-7 hardware updates
+* remove cob4-10
+* update collision matrix in moveit_config
+* ompl planning file was fixed from last merge process
+* update collision matrix in moveit configs
+* remove cob4-1
+* remove unsupported robots - launch and config
+* [WIP] Use grouped low level components for simulation (`#583 <https://github.com/ipa320/cob_robots/issues/583>`_)
+  * refactored generic canopen&config into canopen_generic.launch
+  * refactored base driver+config into canopen_base.launch
+  * added components/cob4_head_camera.launch
+  * added components/cam3d_openni2.launch
+  * added components/cam3d_r200_rgbd.launch
+  * introduce sim arg for components
+  * use sim arg in robot.xml
+  * remove nodes started within robot.xml from default_controllers_robot.launch
+  * introducing legacy components
+  * reorganize and sim toggle for more components
+  * adjust cob4-1 to latest changes
+  * use new structure for cob3-2
+  * use new structure for cob3-6
+  * use new structure for cob3-9
+  * use new structure for cob4-2
+  * use new structure for remaining cob4s
+  * travis fixes
+  * syntax styling
+  * use new structure for raws
+  * more travis fixes
+  * harmonize old vs. new behavior cob4-1
+  * guarantee same hw behavior as before
+  * add flip argument
+* move setup_assistant launch file
+* adjust version + add to meta-package
+* moved cob_moveit_config
+* Contributors: Bruno Brito, Felix Messmer, MattiaRacca, ipa-bfb-sc, ipa-cob4-5, ipa-cob4-8, ipa-fxm, ipa-nhg
+
 0.6.4 (2016-04-01)
 ------------------
 * make 'robot' argument optenv

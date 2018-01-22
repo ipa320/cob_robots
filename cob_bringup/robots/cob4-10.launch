@@ -5,6 +5,11 @@
 
 	<include file="$(find cob_bringup)/robots/cob4-10.xml">
 		<arg name="cob4-10-b1" value="cob4-10-b1"/>
+		<arg name="cob4-10-t1" value="cob4-10-t1"/>
+		<arg name="cob4-10-t2" value="cob4-10-t2"/>
+		<arg name="cob4-10-t3" value="cob4-10-t3"/>
+		<arg name="cob4-10-s1" value="cob4-10-s1"/>
+		<arg name="cob4-10-h1" value="cob4-10-h1"/>
 		<arg name="env-script" value="$(arg env-script)"/>
 	</include>
 

@@ -8,10 +8,11 @@ catkin_python_setup()
 catkin_package()
 
 set(robotlist
-    cob4-2
     cob4-5
     cob4-7
     cob4-8
+    cob4-10
+    cob4-16
 )
 
 foreach(robot ${robotlist})

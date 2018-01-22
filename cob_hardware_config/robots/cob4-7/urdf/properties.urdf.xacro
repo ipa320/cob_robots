@@ -58,6 +58,22 @@
 	<xacro:property name="sensorring_pitch" value="${def_sensorring_pitch+offset_sensorring_pitch}"/>
 	<xacro:property name="sensorring_yaw" value="${def_sensorring_yaw+offset_sensorring_yaw}"/>
 
+	<!-- arm mount positions | relative to torso_3_link -->
+	<xacro:property name="arm_right_x" value="${def_arm_right_x+offset_arm_right_x}"/>
+	<xacro:property name="arm_right_y" value="${def_arm_right_y+offset_arm_right_y}"/>
+	<xacro:property name="arm_right_z" value="${def_arm_right_z+offset_arm_right_z}"/>
+	<xacro:property name="arm_right_roll" value="${def_arm_right_roll+offset_arm_right_roll}"/>
+	<xacro:property name="arm_right_pitch" value="${def_arm_right_pitch+offset_arm_right_pitch}"/>
+	<xacro:property name="arm_right_yaw" value="${def_arm_right_yaw+offset_arm_right_yaw}"/>
+
+	<!-- arm mount positions | relative to torso_3_link -->
+	<xacro:property name="arm_left_x" value="${def_arm_left_x+offset_arm_left_x}"/>
+	<xacro:property name="arm_left_y" value="${def_arm_left_y+offset_arm_left_y}"/>
+	<xacro:property name="arm_left_z" value="${def_arm_left_z+offset_arm_left_z}"/>
+	<xacro:property name="arm_left_roll" value="${def_arm_left_roll+offset_arm_left_roll}"/>
+	<xacro:property name="arm_left_pitch" value="${def_arm_left_pitch+offset_arm_left_pitch}"/>
+	<xacro:property name="arm_left_yaw" value="${def_arm_left_yaw+offset_arm_left_yaw}"/>
+
 	<!-- *********************************** -->
 	<!-- kinematic chain reference positions -->
 	<!-- *********************************** -->
@@ -86,7 +102,7 @@
 	<xacro:property name="torso_cam3d_down_roll" value="${def_torso_cam3d_down_roll+offset_torso_cam3d_down_roll}"/>
 	<xacro:property name="torso_cam3d_down_pitch" value="${def_torso_cam3d_down_pitch+offset_torso_cam3d_down_pitch}"/>
 	<xacro:property name="torso_cam3d_down_yaw" value="${def_torso_cam3d_down_yaw+offset_torso_cam3d_down_yaw}"/>
-	
+
 	<!-- cam3d | handeye calibration | relative to sensorring_link -->
 	<xacro:property name="sensorring_cam3d_x" value="${def_sensorring_cam3d_x+offset_sensorring_cam3d_x}"/>
 	<xacro:property name="sensorring_cam3d_y" value="${def_sensorring_cam3d_y+offset_sensorring_cam3d_y}"/>
