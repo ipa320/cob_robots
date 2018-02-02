@@ -88,12 +88,12 @@
     <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
   </xacro:cob4_arm>
 
-  <!--xacro:gripper name="gripper_right" parent="arm_right_7_link">
+  <xacro:gripper name="gripper_right" parent="arm_right_7_link">
     <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />
   </xacro:gripper>
 
   <xacro:gripper name="gripper_left" parent="arm_left_7_link">
     <origin xyz="${gripper_left_x} ${gripper_left_y} ${gripper_left_z}" rpy="${gripper_left_roll} ${gripper_left_pitch} ${gripper_left_yaw}" />
-  </xacro:gripper-->
+  </xacro:gripper>
 
 </robot>
