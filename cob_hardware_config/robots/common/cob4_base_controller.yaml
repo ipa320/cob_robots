@@ -8,8 +8,12 @@ joint_state_controller:
 
 ## twist_controller
 twist_controller:
-  type: cob_omni_drive_controller/WheelController
+  type: cob_omni_drive_controller/WheelMultiController
   required_drive_mode: 3
+  required_drive_modes:
+    fl_caster_rotation_joint: 1
+    b_caster_rotation_joint: 1
+    fr_caster_rotation_joint: 1
   #max_rot_velocity: 1.0
   #max_trans_velocity: 1.0
   pub_divider: 1
@@ -41,3 +45,30 @@ odometry_controller:
   cov_pose: 0.1
   cov_twist: 0.1
   wheels: *wheels
+
+fl_caster_rotation_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: fl_caster_rotation_joint
+  required_drive_mode: 1
+b_caster_rotation_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: b_caster_rotation_joint
+  required_drive_mode: 1
+fr_caster_rotation_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: fr_caster_rotation_joint
+  required_drive_mode: 1
+
+fl_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: fl_caster_r_wheel_joint
+  required_drive_mode: 3
+b_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: b_caster_r_wheel_joint
+  required_drive_mode: 3
+fr_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: fr_caster_r_wheel_joint
+  required_drive_mode: 3
+
