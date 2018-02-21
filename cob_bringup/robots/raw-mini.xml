@@ -39,15 +39,12 @@
 		</include>
 
 		<!--
-		<!-- Unused 
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!-- Unused 
 		<include file="$(find cob_bringup)/drivers/battery_voltage.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<!-- Unused
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
