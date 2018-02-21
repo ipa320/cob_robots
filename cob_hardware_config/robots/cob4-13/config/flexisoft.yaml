@@ -12,3 +12,6 @@ footprint_angular_slow: [[0.4,0.4], [-0.4,0.4], [-0.4,-0.4], [0.4,-0.4]]
 footprint_angular_fast: [[0.5,0.5], [-0.5,0.5], [-0.5,-0.5], [0.5,-0.5]]
 footprint_linear_slow: [[0.6,0.4], [-0.4,0.4], [-0.4,-0.4], [0.6,-0.4]]
 footprint_linear_fast: [[0.8,0.4], [-0.4,0.4], [-0.4,-0.4], [0.8,-0.4]]
+has_wireless_emstop: true
+warn_for_wireless_bridged: false
+warn_for_laser_bridged: false
