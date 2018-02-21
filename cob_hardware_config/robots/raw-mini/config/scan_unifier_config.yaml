@@ -1,0 +1,3 @@
+#Scan_unifier_config-parameters
+
+input_scans: ["base_laser_front/scan","base_laser_rear/scan"]
