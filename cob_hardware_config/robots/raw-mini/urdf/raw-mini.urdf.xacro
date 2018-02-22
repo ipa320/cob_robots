@@ -16,7 +16,7 @@
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
   <!-- base laser front -->
-  <xacro:rplidar name="base_laser" parent="base">
+  <xacro:rplidar name="laser" parent="base">
     <origin xyz="${laser_front_x} ${laser_front_y} ${laser_front_z}" rpy="${laser_front_roll} ${laser_front_pitch} ${laser_front_yaw}" />
   </xacro:rplidar>
 
