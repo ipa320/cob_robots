@@ -3,9 +3,6 @@
 
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
-	<include file="$(find cob_bringup)/robots/raw-mini.xml">
-		<arg name="pc1" value="i60sr2"/>
-		<arg name="env-script" value="$(arg env-script)"/>
-	</include>
+	<include file="$(find cob_bringup)/robots/raw-mini.xml"/>
 
 </launch>
