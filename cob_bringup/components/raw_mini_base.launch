@@ -12,10 +12,10 @@
 		<param name="port" value="/dev/ttyACM0"/>
 		<param name="baud" value="115200"/>
 
-		<remap from="/cmd_vel" to="/base/velocity_smoother/command">
+		<remap from="/cmd_vel" to="/base/velocity_smoother/command"/>
 	</node>
 
-	<group ns="$(arg component_name)">
+	<group ns="base">
 		<!-- twist mux -->
 		<include file="$(find cob_bringup)/tools/twist_mux.launch">
 			<arg name="robot" value="$(arg robot)"/>

@@ -7,7 +7,7 @@
 	<!-- laser front mount positions | relative to base_link -->
 	<xacro:property name="laser_front_x" value="-0.1"/>
 	<xacro:property name="laser_front_y" value="0.0"/>
-	<xacro:property name="laser_front_z" value="0.05"/>
+	<xacro:property name="laser_front_z" value="0.15"/>
 	<xacro:property name="laser_front_roll" value="0.0"/>
 	<xacro:property name="laser_front_pitch" value="0.0"/>
 	<xacro:property name="laser_front_yaw" value="0.0"/>
