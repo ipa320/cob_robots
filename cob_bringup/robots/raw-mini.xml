@@ -33,10 +33,6 @@
 		<rosparam ns="base" command="load" file="$(find cob_hardware_config)/robots/$(arg robot)/config/base_controller.yaml"/>
 
 		<!-- start additional packages -->
-		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
-			<arg name="robot" value="$(arg robot)" />
-		</include>
-
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>

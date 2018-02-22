@@ -27,7 +27,7 @@ plugins:
 obstacle_layer:
 
   # Definition of the sensors/observation sources
-  observation_sources: laser_scan_front laser_scan_rear
+  observation_sources: laser_scan_front
 
   # Parameters of the source: laser_scan_front
   laser_scan_front:
