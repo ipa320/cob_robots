@@ -29,9 +29,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<!-- overwrite control parameters with non-default values -->
-		<rosparam ns="base" command="load" file="$(find cob_hardware_config)/robots/$(arg robot)/config/base_controller.yaml"/>
-
+		
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -42,6 +40,7 @@
 		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
+		<include file="$(find cob_script_server)/launch/script_server.launch"/>
 			<!-- simulation only -->
 		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
 			<arg name="fake_diagnostics" value="'base_laser_front, base_laser_rear, -pc1, joy'"/>
