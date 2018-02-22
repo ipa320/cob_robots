@@ -16,9 +16,7 @@
 
 	<!-- start hardware -->
 	<group unless="$(arg sim)">
-		<include file="$(find rplidar_ros)/launch/rplidar.launch">
-			<arg name="frame_id" value="base_laser"/>
-		</include>
+		<include file="$(find cob_bringup)/components/rplidar_mini.launch"/>
 	</group>
 
 	<include file="$(find cob_bringup)/components/raw_mini_base.launch" >
