@@ -14,16 +14,16 @@ defaults:
 
 nodes:
   - name: arm_left_1_joint
-    id: 61
+    id: 51
   - name: arm_left_2_joint
-    id: 62
+    id: 52
   - name: arm_left_3_joint
-    id: 63
+    id: 53
   - name: arm_left_4_joint
-    id: 64
+    id: 54
   - name: arm_left_5_joint
-    id: 65
+    id: 55
   - name: arm_left_6_joint
-    id: 66
+    id: 56
   - name: arm_left_7_joint
-    id: 67
+    id: 57
