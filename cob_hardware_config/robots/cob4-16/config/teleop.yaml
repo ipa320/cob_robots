@@ -77,25 +77,25 @@ components: {
     sss_default_target: "front",
     velocity_topic_name: "/head/joint_group_velocity_controller/command",
     joint_velocity: [0.05]
-#  },
-#  arm_left: {
-#    sss_default_target: "folded",
-#    velocity_topic_name: "/arm_left/joint_group_velocity_controller/command",
-#    joint_velocity: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
-#    twist_topic_name: '/arm_left/twist_controller/command_twist',
-#    twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
-#  },
-#  gripper_left: {
-#    sss_default_target: "home"
-#  },
-#  arm_right: {
-#    sss_default_target: "folded",
-#    velocity_topic_name: "/arm_right/joint_group_velocity_controller/command",
-#    joint_velocity: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
-#    twist_topic_name: '/arm_right/twist_controller/command_twist',
-#    twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
-#  },
-#  gripper_right: {
-#    sss_default_target: "home"
+  },
+  arm_left: {
+    sss_default_target: "folded",
+    velocity_topic_name: "/arm_left/joint_group_velocity_controller/command",
+    joint_velocity: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
+    twist_topic_name: '/arm_left/twist_controller/command_twist',
+    twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
+  },
+  gripper_left: {
+    sss_default_target: "home"
+  },
+  arm_right: {
+    sss_default_target: "folded",
+    velocity_topic_name: "/arm_right/joint_group_velocity_controller/command",
+    joint_velocity: [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05],
+    twist_topic_name: '/arm_right/twist_controller/command_twist',
+    twist_max_velocity: [0.3, 0.2, 0.3, 0.3, 0.2, 0.3]
+  },
+  gripper_right: {
+    sss_default_target: "home"
   }
 }

@@ -57,6 +57,11 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="multi_robot" value="$(arg multi_robot)" />
 		</include>
+		<include file="$(find cob_bringup)/drivers/light.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="light_base"/>
+			<arg name="sim_enabled" value="$(arg sim)"/>
+		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
@@ -69,6 +74,9 @@
 		<node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
 
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch">
