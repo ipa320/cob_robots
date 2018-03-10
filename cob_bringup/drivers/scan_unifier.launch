@@ -8,7 +8,6 @@
 	<!-- run scan unifier -->
 	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="scan_unifier" output="log">
 		<rosparam file="$(arg param_file)" command="load"/>
-		<remap from="scan_unified" to="/scan_unified"/>
 	</node>
 
 </launch>
