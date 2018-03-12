@@ -8,6 +8,7 @@
 	<arg name="pc2" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
+	<arg name="multi_robot" default="false"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
@@ -54,6 +55,7 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="can_device" value="can0" />
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="multi_robot" value="$(arg multi_robot)"/>
 		</include>
 
 		<!-- start common nodes used in hardware and simulation -->
