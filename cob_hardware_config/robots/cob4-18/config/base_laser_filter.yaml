@@ -2,6 +2,6 @@ scan_filter_chain:
   - name: range
     type: LaserScanRangeFilter
     params:
-      use_message_range_limits: false
-      upper_threshold: 10.0
-      upper_replacement_value: 10.0
+      use_message_range_limits: true
+      upper_threshold: 29.5
+      upper_replacement_value: 29.5
