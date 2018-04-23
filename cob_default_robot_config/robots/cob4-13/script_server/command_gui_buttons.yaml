@@ -57,14 +57,9 @@ group16:
     [init,init],
     [recover,recover],
     [front,move,front],
-    [front_up,move,front_up],
-    [front_down,move,front_down],
     [back,move,back],
-    [back_up,move,back_up],
-    [back_down,move,back_down],
     [left,move,left],
     [right,move,right],
-    [nod,move,nod],
     [shake,move,shake]]
 group17:
   group_name: sensorring
