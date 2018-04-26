@@ -30,7 +30,6 @@
   <!-- sensors -->
   <xacro:include filename="$(find cob_description)/urdf/sensors/realsense.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/realsense_zr300.urdf.xacro" />
-  <xacro:include filename="$(find cob_description)/urdf/sensors/kinect.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/usb_cam.urdf.xacro" />
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
 
