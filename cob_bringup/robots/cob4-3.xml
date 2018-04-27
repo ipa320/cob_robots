@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <launch>
+
 	<!-- args -->
 	<arg name="robot" value="cob4-3"/>
 	<arg name="cob4-3-b1" default="localhost"/>

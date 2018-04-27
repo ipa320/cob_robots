@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-
-	<!-- start relayboard node -->
-	<node name="behavior" pkg="cob_default_robot_behavior" type="trigger_srvs_$(arg robot).py" respawn="false" output="screen"/>
+	<node name="behavior" pkg="cob_default_robot_behavior" type="trigger_srvs.py" respawn="false" output="screen"/>
 
 </launch>

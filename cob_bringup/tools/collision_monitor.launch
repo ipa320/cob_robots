@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-	<!-- start collision monitor node -->
 	<node pkg="cob_collision_monitor" type="cob_collision_monitor_node" name="cob_collision_monitor_node">
 		<remap from="/cob_collision_monitor_node/state_is_valid" to="/safety_controller/state_is_valid"/>
 	</node>

@@ -1,10 +1,1 @@
-threshold_warning: 20 # % of battery level
-threshold_error: 10 # % of battery level
-threshold_critical: 5 # % of battery level
-
-enable_light: false
-num_leds: 58
-light_components: ['light_torso']
-
-enable_sound: false
-sound_components: ['sound']
+../../cob4/config/battery_monitor.yaml

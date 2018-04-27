@@ -6,8 +6,8 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
 
-	<arg name="driver_yaml" value="$(arg pkg_hardware_config)/robots/common/cob4_base_driver.yaml"/>
-	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/cob4_base_controller.yaml"/>
+	<arg name="driver_yaml" default="$(arg pkg_hardware_config)/robots/cob4/config/cob4_base_driver.yaml"/>
+	<arg name="controller_yaml" default="$(arg pkg_hardware_config)/robots/cob4/config/cob4_base_controller.yaml"/>
 
 	<include file="$(find cob_bringup)/components/ros_control_base.launch">
 		<arg name="robot" value="$(arg robot)"/>

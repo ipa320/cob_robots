@@ -4,6 +4,8 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 
 	<!-- include robot specific launch file -->
-	<include file="$(find cob_default_robot_config)/robots/$(arg robot)/upload_param_$(arg robot).launch" />
+	<include file="$(find cob_default_robot_config)/robots/$(arg robot)/upload_param.xml">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
 
 </launch>

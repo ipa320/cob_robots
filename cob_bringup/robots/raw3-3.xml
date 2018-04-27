@@ -59,6 +59,8 @@
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="input_scans" value="['base_laser_front/scan','base_laser_rear/scan']"/>
+			<arg name="output_scan" value="/scan_unified"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
