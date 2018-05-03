@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <package format="2">
   <name>cob_default_robot_config</name>
   <version>0.6.8</version>
@@ -16,7 +17,6 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <depend>roslaunch</depend>
-
-  <build_depend>cob_supported_robots</build_depend>
+  <depend>cob_supported_robots</depend>
 
 </package>

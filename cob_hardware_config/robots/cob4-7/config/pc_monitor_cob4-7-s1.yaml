@@ -1,6 +1,1 @@
-check_core_temps: False
-check_ipmi_tool: False
-enforce_clock_speed: False
-num_cores: 4
-load1_threshold: 6
-load5_threshold: 4
+../../cob4/config/pc_monitor_cob4-s1.yaml

@@ -1,8 +1,1 @@
-#color_name: [r, g, b, a]
-red: [1,0,0,1]
-green: [0,1,0,1]
-blue: [0,0,1,1]
-yellow: [1,0.5,0,1]
-white: [1,1,1,1]
-black: [0,0,0,1]
-led_off: [0,0,0,1]
+../../raw3/script_server/light_configurations.yaml

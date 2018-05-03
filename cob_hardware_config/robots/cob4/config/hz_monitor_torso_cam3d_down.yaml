@@ -1,0 +1,4 @@
+diagnostics_name: torso_cam3d_down
+topics: [/torso_cam3d_down/rgb/camera_info]
+hz: 30
+hzerror: 5

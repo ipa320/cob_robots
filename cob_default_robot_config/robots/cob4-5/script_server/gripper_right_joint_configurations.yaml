@@ -1,10 +1,1 @@
-joint_names: ["gripper_right_finger_1_joint", "gripper_right_finger_2_joint"]
-action_name: /gripper_right/joint_trajectory_controller/follow_joint_trajectory
-service_ns: /gripper_right/driver
-default_vel: 0.3
-
-# single positions
-home: [[0.6, 0.4]]
-close: [[0.85, -0.1]]
-open: [[-0.85, 1.4]]
-spread: [[-1.0, 0.5]]
+../../cob4/script_server/gripper_right_joint_configurations.yaml
