@@ -11,6 +11,7 @@
 	<arg name="prefix" default="arm_"/>
 	<arg name="sim" default="false"/>
 	<arg name="cartesian_control" default="false"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<group unless="$(arg sim)">
 		<!-- universal robot python driver -->
@@ -33,6 +34,7 @@
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
+		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 	</include>
 	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
