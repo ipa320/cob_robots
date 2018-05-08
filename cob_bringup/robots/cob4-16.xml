@@ -117,10 +117,12 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_left"/>
 		</include>
+		<rosparam unless="$(arg sim)" command="load" ns="gripper_left" file="$(find cob_hardware_config)/robots/$(arg robot)/config/gripper_left_controller.yaml"/>
 		<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_right"/>
 		</include>
+		<rosparam unless="$(arg sim)" command="load" ns="gripper_right" file="$(find cob_hardware_config)/robots/$(arg robot)/config/gripper_right_controller.yaml"/>
 	</group>
 
 	<group>
