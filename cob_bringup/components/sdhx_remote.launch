@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot"/>
+	<arg name="component_name"/>
+	<arg name="sim" default="false"/>
+
+	<!-- gripper driver is started remotely on raspberry directly -->
+	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+	</include>
+</launch>
