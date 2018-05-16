@@ -1,3 +1,4 @@
+joint_names: [sensorring_joint]
 action_name: /sensorring/joint_trajectory_controller/follow_joint_trajectory
 service_ns: /sensorring/driver
 default_vel: 0.6

@@ -112,15 +112,6 @@
 		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
 			<arg name="fake_diagnostics" value="'base_laser_front, base_laser_right, base_laser_left, -b1, -t1, -t2, -t3, -s1, -h1, joy, safety'"/>
 		</include>
-		<!-- gripper driver is started locally on raspberry -->
-		<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="gripper_left"/>
-		</include>
-		<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="gripper_right"/>
-		</include>
 	</group>
 
 	<group>
@@ -163,6 +154,11 @@
 			<arg name="can_device" value="can1"/>
 			<arg name="use_external_sync" value="true"/>
 			<arg name="start_external_sync" value="true"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/components/sdhx_remote.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="gripper_right"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/light.launch">
@@ -214,6 +210,11 @@
 			</include>
 		</group>
 
+		<include file="$(find cob_bringup)/components/sdhx_remote.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="gripper_left"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
 		<include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_right"/>
