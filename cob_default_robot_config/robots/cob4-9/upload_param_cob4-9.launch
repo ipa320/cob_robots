@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<!-- send ROBOT parameters to parameter server -->
-	<rosparam command="load" ns="/script_server/base" file="$(find cob_default_robot_config)/robots/cob4-9/script_server/base_configurations.yaml"/>
-
-</launch>

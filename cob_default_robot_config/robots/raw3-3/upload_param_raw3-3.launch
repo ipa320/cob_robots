@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-
-	<!-- send ROBOT parameters to parameter server -->
-	<rosparam command="load" ns="/script_server/base" file="$(find cob_default_robot_config)/robots/raw3-3/script_server/base_configurations.yaml"/>
-	<rosparam command="load" ns="/script_server/light" file="$(find cob_default_robot_config)/robots/raw3-3/script_server/light_configurations.yaml"/>
-
-</launch>

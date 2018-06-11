@@ -125,6 +125,14 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring
         contains: 'sensorring/'
+      head:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Head
+        contains: 'head/'
+      torso:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Torso
+        contains: 'torso/'
       base:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Base

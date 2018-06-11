@@ -1,3 +1,1 @@
-check_core_temps: False
-check_ipmi_tool: False
-enforce_clock_speed: False
+../../raw3/config/pc_monitor_localhost.yaml

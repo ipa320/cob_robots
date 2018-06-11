@@ -23,11 +23,16 @@
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_description</exec_depend>
   <exec_depend>cob_omni_drive_controller</exec_depend>
+  <exec_depend>costmap_2d</exec_depend>
   <exec_depend>diagnostic_aggregator</exec_depend>
   <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>laser_filters</exec_depend>
   <exec_depend>position_controllers</exec_depend>
   <exec_depend>raw_description</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
   <exec_depend>ur_description</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
   <exec_depend>xacro</exec_depend>
