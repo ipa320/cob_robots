@@ -28,6 +28,10 @@
 				<arg name="pc" value="$(arg pc1)"/>
 				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
+			<include file="$(find cob_bringup)/tools/wlan_monitor.launch">
+				<arg name="diag_hostname" value="$(arg pc1)"/>
+				<arg name="interface" value="wlan0"/>
+			</include>
 			<include file="$(find cob_bringup)/drivers/phidgets.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include>
