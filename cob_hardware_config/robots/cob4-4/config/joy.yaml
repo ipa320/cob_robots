@@ -1,2 +1,1 @@
-dev: /dev/joypad
-deadzone: 0.12
+../../cob4/config/joy.yaml

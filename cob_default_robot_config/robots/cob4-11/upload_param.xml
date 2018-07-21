@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+
+	<!-- send ROBOT parameters to parameter server -->
+	<rosparam command="load" ns="/script_server/base" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/base_configurations.yaml"/>
+
+</launch>

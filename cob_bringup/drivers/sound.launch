@@ -4,10 +4,12 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name" default="sound"/>
+	<arg name="voice" default="David"/>
 
 	<!-- start sound -->
 	<node pkg="cob_sound" type="sound" name="$(arg component_name)" respawn="false" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/sound.yaml"/>
+		<rosparam subst_value="True">{cepstral_voice: $(arg voice) }</rosparam>
 		<remap from="~diagnostics" to="/diagnostics"/>
 	</node>
 

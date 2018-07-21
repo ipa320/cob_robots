@@ -3,9 +3,11 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="host"/>
 	<arg name="sim" default="false"/>
 
 	<node unless="$(arg sim)" ns="safety_controller" pkg="cob_safety_controller" type="safety_controller" name="safety_controller" respawn="false" output="screen">
+		<param name="host" value="$(arg host)"/>
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/flexisoft.yaml"/>
 		<param name="front_xml" value="$(arg pkg_hardware_config)/robots/$(arg robot)/config/base_laser_front.xml"/>
 		<param name="left_xml" value="$(arg pkg_hardware_config)/robots/$(arg robot)/config/base_laser_left.xml"/>
