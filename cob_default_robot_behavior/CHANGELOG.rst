@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.9 (2018-07-21)
+------------------
 * update maintainer
 * Merge pull request `#763 <https://github.com/ipa320/cob_robots/issues/763>`_ from HannesBachter/fix/mojin
   say mojin

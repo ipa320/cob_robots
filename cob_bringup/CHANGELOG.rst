@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.9 (2018-07-21)
+------------------
 * update maintainer
 * Merge pull request `#764 <https://github.com/ipa320/cob_robots/issues/764>`_ from fmessmer/dualdistro_compatible_env_sh
   select rosdistro in env.sh

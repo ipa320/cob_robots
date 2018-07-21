@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.9 (2018-07-21)
+------------------
 * update maintainer
 * Merge pull request `#760 <https://github.com/ipa320/cob_robots/issues/760>`_ from ipa-fxm/cob4-10_hw_upgrade
   cob4-10 hw upgrade

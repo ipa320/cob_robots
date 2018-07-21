@@ -2,8 +2,8 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.9 (2018-07-21)
+------------------
 * update maintainer
 * Merge pull request `#761 <https://github.com/ipa320/cob_robots/issues/761>`_ from ipa-fxm/cob4-7_mods
   cob4-7 without arms
