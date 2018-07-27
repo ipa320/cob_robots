@@ -3,12 +3,12 @@
 
 	<!-- args -->
 	<arg name="robot" value="cob4-7"/>
-	<arg name="cob4-7-b1" default="localhost"/>
-	<arg name="cob4-7-t1" default="localhost"/>
-	<arg name="cob4-7-t2" default="localhost"/>
-	<arg name="cob4-7-t3" default="localhost"/>
-	<arg name="cob4-7-s1" default="localhost"/>
-	<arg name="cob4-7-h1" default="localhost"/>
+	<arg name="b1" default="localhost"/>
+	<arg name="t1" default="localhost"/>
+	<arg name="t2" default="localhost"/>
+	<arg name="t3" default="localhost"/>
+	<arg name="s1" default="localhost"/>
+	<arg name="h1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
@@ -28,13 +28,13 @@
 	</include>
 
 	<group>
-		<machine name="$(anon b1)" address="$(arg cob4-7-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon b1)" address="$(arg b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
-				<arg name="pc" value="$(arg cob4-7-b1)"/>
+				<arg name="pc" value="$(arg b1)"/>
 				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
 		</group>
@@ -115,14 +115,14 @@
 	</group>
 
 	<group>
-		<machine name="$(anon t1)" address="$(arg cob4-7-t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t1)" address="$(arg t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
-				<arg name="pc" value="$(arg cob4-7-t1)"/>
-				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
+				<arg name="pc" value="$(arg t1)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
 			</include>
 		</group>
 
@@ -187,14 +187,14 @@
 	</group>
 
 	<group>
-		<machine name="$(anon t2)" address="$(arg cob4-7-t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t2)" address="$(arg t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
-				<arg name="pc" value="$(arg cob4-7-t2)"/>
-				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
+				<arg name="pc" value="$(arg t2)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
 			</include>
 		</group>
 
@@ -207,14 +207,14 @@
 	</group>
 
 	<group>
-		<machine name="$(anon t3)" address="$(arg cob4-7-t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon t3)" address="$(arg t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
-				<arg name="pc" value="$(arg cob4-7-t3)"/>
-				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
+				<arg name="pc" value="$(arg t3)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
 			</include>
 		</group>
 		<include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
@@ -226,14 +226,14 @@
 	</group>
 
 	<group>
-		<machine name="$(anon s1)" address="$(arg cob4-7-s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon s1)" address="$(arg s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
-				<arg name="pc" value="$(arg cob4-7-s1)"/>
-				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
+				<arg name="pc" value="$(arg s1)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
 			</include>
 		</group>
 
@@ -247,14 +247,14 @@
 	</group>
 
 	<group>
-		<machine name="$(anon h1)" address="$(arg cob4-7-h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon h1)" address="$(arg h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
-				<arg name="pc" value="$(arg cob4-7-h1)"/>
-				<arg name="ntp_server" value="$(arg cob4-7-b1)"/>
+				<arg name="pc" value="$(arg h1)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
 			</include>
 		</group>
 
@@ -270,12 +270,12 @@
 	</group>
 
 	<group> <!-- this is a special group to assign DISPLAY:=0 only to the mimic node (and not to all other nodes, e.g. sound node) -->
-		<machine name="$(anon h1_display)" address="$(arg cob4-7-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
+		<machine name="$(anon h1_display)" address="$(arg h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
 		<include file="$(find cob_bringup)/drivers/mimic.launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 	</group>
 
-	<machine name="$(anon b1)" address="$(arg cob4-7-b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon b1)" address="$(arg b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>
