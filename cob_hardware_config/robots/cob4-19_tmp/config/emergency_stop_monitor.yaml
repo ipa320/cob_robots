@@ -1,0 +1,19 @@
+enable_light: true
+light_components: ['light_base']
+color_ok: cyan
+
+enable_sound: true
+sound_components: ['']  # use odp to verbalize
+
+sound_em_ready_laser_released: ""
+sound_em_ready_button_released: "Danke. Jetzt kann es weiter gehen."
+sound_em_acknowledged: ""
+sound_em_stop_laser_released: ""
+sound_em_stop_button_released: "Danke. Jetzt kann es weiter gehen."
+sound_em_stop_laser_issued: ""
+sound_em_stop_button_issued: "Notausknopf gedrueckt. Bitte loese den Knopf wieder durch leichtes Drehen, falls keine Notsituation mehr besteht."
+sound_em_stop_issued: ""
+sound_em_unknown_issued: ""
+
+diagnostics_based: true
+motion_based: true
