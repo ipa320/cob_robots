@@ -62,7 +62,6 @@
 		</include>
 		<include file="$(find cob_bringup)/drivers/ur.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 			<arg name="use_modern_driver" value="false"/>
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>
