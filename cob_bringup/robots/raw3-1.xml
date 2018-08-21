@@ -67,6 +67,8 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="false"/>
 		</include>
+		<!-- Schmalz CobotPump driver -->
+		<include file="$(find schmalz_ecbpi)/launch/schmalz_ecbpi_server.launch" />
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
