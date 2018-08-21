@@ -1,3 +1,4 @@
+joint_names: [gripper_left_finger_1_joint, gripper_left_finger_2_joint]
 action_name: /gripper_left/joint_trajectory_controller/follow_joint_trajectory
 service_ns: /gripper_left/driver
 default_vel: 0.3

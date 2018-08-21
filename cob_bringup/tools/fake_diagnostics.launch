@@ -3,6 +3,6 @@
 
 	<arg name="fake_diagnostics" default=""/>
 
-	<node pkg="cob_helper_tools" type="fake_diagnostics.py" name="fake_diagnostics" args="--diag-hostnames=$(arg fake_diagnostics)"/>
+	<node pkg="cob_helper_tools" type="fake_diagnostics.py" name="$(anon fake_diagnostics)" args="--diag-hostnames=$(arg fake_diagnostics)"/>
 
 </launch>

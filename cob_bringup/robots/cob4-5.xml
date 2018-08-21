@@ -157,7 +157,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">
+		<include file="$(find cob_bringup)/components/sdhx_legacy.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_right"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -221,7 +221,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">
+		<include file="$(find cob_bringup)/components/sdhx_legacy.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_left"/>
 			<arg name="sim" value="$(arg sim)"/>

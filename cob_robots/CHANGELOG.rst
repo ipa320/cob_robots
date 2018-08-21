@@ -2,6 +2,11 @@
 Changelog for package cob_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.9 (2018-07-21)
+------------------
+* update maintainer
+* Contributors: fmessmer
+
 0.6.8 (2018-01-07)
 ------------------
 * Merge pull request `#744 <https://github.com/ipa320/cob_robots/issues/744>`_ from ipa320/indigo_release_candidate
