@@ -1,4 +1,0 @@
-diagnostics_name: torso_cam3d_right
-topics: [/torso_cam3d_right/rgb/camera_info]
-hz: 30
-hzerror: 5
