@@ -2,6 +2,23 @@
 Changelog for package cob_default_robot_behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.9 (2018-07-21)
+------------------
+* update maintainer
+* Merge pull request `#763 <https://github.com/ipa320/cob_robots/issues/763>`_ from HannesBachter/fix/mojin
+  say mojin
+* Merge pull request `#762 <https://github.com/ipa320/cob_robots/issues/762>`_ from ipa-fxm/behaviors_for_all_mimics
+  provide behaviors for all available mimics
+* provide behaviors for all available mimics
+* say mojin
+* Merge pull request `#757 <https://github.com/ipa320/cob_robots/issues/757>`_ from ipa-fxm/migrate_unity_structure
+  simplify config structure
+* simplify config structure
+* Merge pull request `#747 <https://github.com/ipa320/cob_robots/issues/747>`_ from ipa-fxm/add_cob4-13_cardiff
+  add cob4-13 cardiff
+* add cob4-13 cardiff
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer, ipa-fxm, robot@cob4-16
+
 0.6.8 (2018-01-07)
 ------------------
 * Merge pull request `#744 <https://github.com/ipa320/cob_robots/issues/744>`_ from ipa320/indigo_release_candidate

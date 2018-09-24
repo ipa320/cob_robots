@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>cob_default_robot_config</name>
-  <version>0.6.8</version>
+  <version>0.6.9</version>
   <description>Default configuration of the different robots supported by the Care-O-bot stacks. Configuration is e.g. preconfigured joint positions.</description>
 
   <license>Apache 2.0</license>
@@ -9,7 +9,7 @@
   <url type="website">http://ros.org/wiki/cob_default_robot_config</url>
   <!-- <url type="bugtracker"></url> -->
 
-  <maintainer email="fxm@ipa.fhg.de">Felix Messmer</maintainer>
+  <maintainer email="felixmessmer@gmail.com">Felix Messmer</maintainer>
   <author email="fxm@ipa.fhg.de">Felix Messmer</author>
   <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>

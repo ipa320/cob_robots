@@ -2,6 +2,51 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.9 (2018-07-21)
+------------------
+* update maintainer
+* Merge pull request `#764 <https://github.com/ipa320/cob_robots/issues/764>`_ from fmessmer/dualdistro_compatible_env_sh
+  select rosdistro in env.sh
+* select rosdistro in env.sh
+* Merge pull request `#760 <https://github.com/ipa320/cob_robots/issues/760>`_ from ipa-fxm/cob4-10_hw_upgrade
+  cob4-10 hw upgrade
+* cob4-10 hw upgrade
+* Merge pull request `#759 <https://github.com/ipa320/cob_robots/issues/759>`_ from ipa-fxm/fix_grippers_onboard_driver
+  re-add joint_names param + consistent launch structure for sdhx with remote driver
+* add fake_diagnostics for grippers in sim
+* prepare launch file for sdhx with remote driver
+* fix joint_names params for robots with onboard gripper driver
+* Merge pull request `#713 <https://github.com/ipa320/cob_robots/issues/713>`_ from bbrito/ur_launch_pkg_config
+  adding pkg_hardware_config arg
+* Merge pull request `#757 <https://github.com/ipa320/cob_robots/issues/757>`_ from ipa-fxm/migrate_unity_structure
+  simplify config structure
+* simplify config structure
+* Merge pull request `#756 <https://github.com/ipa320/cob_robots/issues/756>`_ from HannesBachter/add_cob4-13_cardiff
+  changes for cob4-13
+* enable grippers in simulation
+* undo post shipping changes
+* add cob4-cardiff
+* Merge pull request `#747 <https://github.com/ipa320/cob_robots/issues/747>`_ from ipa-fxm/add_cob4-13_cardiff
+  add cob4-13 cardiff
+* Merge pull request `#753 <https://github.com/ipa320/cob_robots/issues/753>`_ from ipa-bnm/feature/sdhx_local
+  launch local sdhx driver on cob4-16 gripper computer
+* added launch to start sdhx localy on raspbarry and removed launch from bringup
+  fixed typo
+* Merge pull request `#741 <https://github.com/ipa320/cob_robots/issues/741>`_ from ipa-fxm/cob-uh_final
+  [WIP] cob-uh final
+* Merge pull request `#750 <https://github.com/ipa320/cob_robots/issues/750>`_ from ipa-fxm/add_missing_components_cob4-18
+  add light and em monitor
+* add light and em monitor
+* cob4-13 config fixes
+* Merge pull request `#746 <https://github.com/ipa320/cob_robots/issues/746>`_ from ipa-fxm/add_cob4-18_323
+  add cob4-18 323
+* add grippers cob-uh
+* add arms cob-uh
+* add cob4-18 323
+* add cob4-13 cardiff
+* adding pkg_hardware_config arg
+* Contributors: Benjamin Maidel, Bruno Brito, Felix Messmer, Florian Weisshardt, Richard Bormann, cob4-13, fmessmer, ipa-fmw, ipa-fxm
+
 0.6.8 (2018-01-07)
 ------------------
 * Merge pull request `#744 <https://github.com/ipa320/cob_robots/issues/744>`_ from ipa320/indigo_release_candidate
