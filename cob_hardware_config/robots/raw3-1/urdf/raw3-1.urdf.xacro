@@ -38,20 +38,20 @@
     <origin xyz="${laser_rear_x} ${laser_rear_y} ${laser_rear_z}" rpy="${laser_rear_roll} ${laser_rear_pitch} ${laser_rear_yaw}" />
   </xacro:sick_s300_laser_v0>
 
-  <!--<xacro:tower_asymetric name="tower" parent="base_link">-->
-    <!--<origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />-->
-  <!--</xacro:tower_asymetric>-->
+  <xacro:tower_asymetric name="tower" parent="base_link">
+    <origin xyz="${tower_x} ${tower_y} ${tower_z}" rpy="${tower_roll} ${tower_pitch} ${tower_yaw}" />
+  </xacro:tower_asymetric>
 
-  <!--<xacro:raw_torso_v2 name="torso" parent="base_link">-->
-    <!--<origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />-->
-  <!--</xacro:raw_torso_v2>-->
+  <xacro:raw_torso_v2 name="torso" parent="base_link">
+    <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
+  </xacro:raw_torso_v2>
 
-  <!--<xacro:ur10 name="arm" parent="base_link">-->
-    <!--<origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />-->
-  <!--</xacro:ur10>-->
+  <xacro:ur10 name="arm" parent="base_link">
+    <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
+  </xacro:ur10>
 
-  <!--<xacro:vacuum_gripper name="gripper" parent="arm_ee_link">-->
-    <!--<origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />-->
-  <!--</xacro:vacuum_gripper>-->
+  <xacro:vacuum_gripper name="gripper" parent="arm_ee_link">
+    <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
+  </xacro:vacuum_gripper>
 
 </robot>

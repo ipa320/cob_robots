@@ -8,6 +8,7 @@
 	<arg name="ur_ip" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="multi_robot" default="false"/>
 
 	<!-- upload robot description -->
@@ -62,6 +63,7 @@
 		</include>
 		<include file="$(find cob_bringup)/drivers/ur.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 			<arg name="use_modern_driver" value="false"/>
 			<arg name="robot_ip" value="$(arg ur_ip)"/>
 			<arg name="sim" value="$(arg sim)"/>

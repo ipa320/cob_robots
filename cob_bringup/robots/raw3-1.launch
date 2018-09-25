@@ -6,6 +6,10 @@
 	<arg name="multi_robot" default="false"/>
 
 	<include file="$(find cob_bringup)/robots/raw3-1.xml">
+		<arg unless="$(arg sim)" name="pc1" value="raw3-1-pc1"/>
+		<arg unless="$(arg sim)" name="pc2" value="raw3-1-pc2"/>
+		<arg unless="$(arg sim)" name="ur_ip" value="192.168.141.40"/>
+
 		<arg name="env-script" value="$(arg env-script)"/>
 		<arg name="sim" value="$(arg sim)"/>
 		<arg name="multi_robot" value="$(arg multi_robot)" />
