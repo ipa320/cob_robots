@@ -148,11 +148,12 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_left"/>
-			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412070119"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -198,11 +199,12 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_down"/>
-			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412071213"/>
 		</include>
 	</group>
 
@@ -217,11 +219,12 @@
 				<arg name="ntp_server" value="$(arg b1)"/>
 			</include>
 		</group>
-		<include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_right"/>
-			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817512070265"/>
 		</include>
 	</group>
 
@@ -237,12 +240,12 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="sensorring_cam3d"/>
-			<arg name="data_skip" value="3"/>
-			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412071179"/>
 		</include>
 	</group>
 
