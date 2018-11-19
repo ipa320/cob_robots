@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot"/>
+	<arg name="name"/>
+	<arg name="flip" default="true"/>
+	<arg name="sim" default="false"/>
+	<arg name="serial_no" default=""/>
+
+	<!-- parameters to guarantee compatibility with sensorprocessing pipeline -->
+	<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
+	<arg name="num_worker_threads" default="4"/>
+	<arg name="rgb" value="rgb"/>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/realsense_d400_rgbd.launch">
+		<arg name="namespace" value="$(arg name)"/>
+		<arg name="nodelet_manager" value="$(arg nodelet_manager)"/>
+		<arg name="num_worker_threads" value="$(arg num_worker_threads)"/>
+		<arg name="serial_no" value="$(arg serial_no)"/>
+                <arg name="rgb" value="$(arg rgb)"/>
+	</include>
+	<group ns="$(arg name)">
+		<include file="$(find cob_bringup)/tools/hz_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="yaml_name" value="$(arg name)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="camera_name" value="$(arg name)"/>
+			<arg name="nodelet_manager" value="$(arg nodelet_manager)"/>
+			<arg name="start_manager" value="false"/>
+			<arg name="pointcloud_in" value="/$(arg name)/depth/points"/>
+			<arg name="pointcloud_out" value="/$(arg name)_upright/depth/points"/>
+			<arg name="colorimage_in" default="/$(arg name)/$(arg rgb)/image_raw"/>
+			<arg name="colorimage_out" default="/$(arg name)_upright/$(arg rgb)/image_raw"/>
+		</include>
+	</group>
+
+	<group ns="$(arg name)" if="$(arg sim)">
+		<!-- static frames broadcasted by camera driver -->
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_color_frame" args="0.0 -0.015 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_color_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_color_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_color_frame /$(arg name)_color_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_depth_frame" args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_depth_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_depth_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_depth_frame /$(arg name)_depth_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_infra1_frame" args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_infra1_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_infra1_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_infra1_frame /$(arg name)_infra1_optical_frame"/>
+
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_infra2_frame" args="0.0 0.050 0.0 0.0 0.0 0.0 1.0 /$(arg name)_link /$(arg name)_infra2_frame"/>
+		<node pkg="tf2_ros" type="static_transform_publisher" name="stp_infra2_optical_frame" args="0.0 0.0 0.0 -0.5 0.5 -0.5 0.5 /$(arg name)_infra2_frame /$(arg name)_infra2_optical_frame"/>
+
+		<!-- start nodelet manager in simulation -->
+		<node pkg="nodelet" type="nodelet" name="$(arg name)_camera_manager" args="manager" output="screen"/>
+	</group>
+</launch>
