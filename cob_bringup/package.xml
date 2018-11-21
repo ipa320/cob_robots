@@ -20,6 +20,7 @@
   <exec_depend>canopen_chain_node</exec_depend>
   <exec_depend>canopen_motor_node</exec_depend>
   <exec_depend>cob_android_script_server</exec_depend>
+  <exec_depend>cob_base_controller_utils</exec_depend>
   <exec_depend>cob_base_velocity_smoother</exec_depend>
   <exec_depend>cob_bms_driver</exec_depend>
   <exec_depend>cob_calibration_data</exec_depend>

@@ -72,15 +72,15 @@
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
 
-  <!--xacro:cob4_arm name="arm_right" parent="torso_3_link" has_podest="false">
+  <xacro:cob4_arm name="arm_right" parent="torso_3_link" has_podest="false">
     <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
   </xacro:cob4_arm>
 
   <xacro:cob4_arm name="arm_left" parent="torso_3_link" has_podest="false">
     <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
-  </xacro:cob4_arm-->
+  </xacro:cob4_arm>
 
-  <xacro:sensorring name="sensorring" parent="head_3_link" active="false">  <!-- HotFix: set active to true when the HW is repaired -->
+  <xacro:sensorring name="sensorring" parent="head_3_link" active="true">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
   <xacro:cob_kinect_v0 name="sensorring_cam3d" ros_topic="sensorring_cam3d" parent="sensorring_link" update_rate="30" data_skip="9">
