@@ -84,34 +84,90 @@ def setLightCyanBreath_cb(req):
     return TriggerResponse(True, "")
 
 
-def setMimicLaughing_cb(req):
-    sss.set_mimic("mimic",["laughing",0,1])
-    return TriggerResponse(True, "")
-    
-def setMimicAsking_cb(req):
-    sss.set_mimic("mimic",["asking",0,1])
-    return TriggerResponse(True, "")
-    
-def setMimicYes_cb(req):
-    sss.set_mimic("mimic",["yes",0,1])
-    return TriggerResponse(True, "")
-    
-def setMimicBlinkingRight_cb(req):
-    sss.set_mimic("mimic",["blinking_right",0,1])
-    return TriggerResponse(True, "")
-
-def setMimicConfused_cb(req):
-    sss.set_mimic("mimic",["confused",0,1])
+def setMimicAfraid_cb(req):
+    sss.set_mimic("mimic",["afraid",0,1])
     return TriggerResponse(True, "")
 
 def setMimicAngry_cb(req):
     sss.set_mimic("mimic",["angry",0,1])
     return TriggerResponse(True, "")
 
+def setMimicAsking_cb(req):
+    sss.set_mimic("mimic",["asking",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicBlinkingLeft_cb(req):
+    sss.set_mimic("mimic",["blinking_left",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicBlinking_cb(req):
+    sss.set_mimic("mimic",["blinking",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicBlinkingRight_cb(req):
+    sss.set_mimic("mimic",["blinking_right",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicBored_cb(req):
+    sss.set_mimic("mimic",["bored",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicBusy_cb(req):
+    sss.set_mimic("mimic",["busy",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicConfused_cb(req):
+    sss.set_mimic("mimic",["confused",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicDefault_cb(req):
+    sss.set_mimic("mimic",["default",0,1])
+    return TriggerResponse(True, "")
+
 def setMimicFallingAsleep_cb(req):
     sss.set_mimic("mimic",["falling_asleep",0,1])
     return TriggerResponse(True, "")
 
+def setMimicHappy_cb(req):
+    sss.set_mimic("mimic",["happy",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicLaughing_cb(req):
+    sss.set_mimic("mimic",["laughing",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicNo_cb(req):
+    sss.set_mimic("mimic",["no",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicSad_cb(req):
+    sss.set_mimic("mimic",["sad",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicSearching_cb(req):
+    sss.set_mimic("mimic",["searching",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicSleeping_cb(req):
+    sss.set_mimic("mimic",["sleeping",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicSurprised_cb(req):
+    sss.set_mimic("mimic",["surprised",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicTired_cb(req):
+    sss.set_mimic("mimic",["tired",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicWakingUp_cb(req):
+    sss.set_mimic("mimic",["waking_up",0,1])
+    return TriggerResponse(True, "")
+
+def setMimicYes_cb(req):
+    sss.set_mimic("mimic",["yes",0,1])
+    return TriggerResponse(True, "")
+
 def soundHello_cb(req):
-    sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Fraunhofer I.P.A."])
+    sss.say("sound", ["Hello, my name is Care O bot, a mobile service robot from Mojin Robotics."])
     return TriggerResponse(True, "")

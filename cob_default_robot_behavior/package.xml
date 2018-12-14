@@ -1,11 +1,11 @@
 <package format="2">
   <name>cob_default_robot_behavior</name>
-  <version>0.6.8</version>
+  <version>0.6.9</version>
   <description>The cob_default_robot_behavior package</description>
 
   <license>Apache 2.0</license>
 
-  <maintainer email="fxm@ipa.fhg.de">Felix Messmer</maintainer>
+  <maintainer email="felixmessmer@gmail.com">Felix Messmer</maintainer>
   <author email="fxm@ipa.fhg.de">Felix Messmer</author>
   <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
 

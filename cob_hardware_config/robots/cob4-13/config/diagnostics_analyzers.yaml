@@ -101,22 +101,22 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
-      #arm_left:
-      #  type: diagnostic_aggregator/GenericAnalyzer
-      #  path: Arm Left
-      #  contains: 'arm_left/'
-      #arm_right:
-      #  type: diagnostic_aggregator/GenericAnalyzer
-      #  path: Arm Right
-      #  contains: 'arm_right/'
-      #gripper_left:
-      #  type: diagnostic_aggregator/GenericAnalyzer
-      #  path: Gripper Left
-      #  contains: 'gripper_left'
-      #gripper_right:
-      #  type: diagnostic_aggregator/GenericAnalyzer
-      #  path: Gripper Right
-      #  contains: 'gripper_right'
+      arm_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Left
+        contains: 'arm_left/'
+      arm_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Arm Right
+        contains: 'arm_right/'
+      gripper_left:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Gripper Left
+        contains: 'gripper_left'
+      gripper_right:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Gripper Right
+        contains: 'gripper_right'
       sensorring:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Sensorring

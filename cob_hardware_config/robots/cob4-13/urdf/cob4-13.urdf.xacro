@@ -16,10 +16,10 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
 
   <!-- arm -->
-  <!-- xacro:include filename="$(find cob_description)/urdf/cob4_arm/cob4_arm.urdf.xacro" /-->
+  <xacro:include filename="$(find cob_description)/urdf/cob4_arm/cob4_arm.urdf.xacro" />
 
   <!-- hand -->
-  <!-- xacro:include filename="$(find cob_description)/urdf/cob4_gripper/gripper.urdf.xacro" /-->
+  <xacro:include filename="$(find cob_description)/urdf/cob4_gripper/gripper.urdf.xacro" />
 
   <!-- head -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
@@ -77,5 +77,21 @@
   <xacro:realsense_zr300 name="sensorring_cam3d" ros_topic="sensorring_cam3d" parent="sensorring_link">
     <origin xyz="${sensorring_cam3d_x} ${sensorring_cam3d_y} ${sensorring_cam3d_z}" rpy="${sensorring_cam3d_roll} ${sensorring_cam3d_pitch} ${sensorring_cam3d_yaw}" />
   </xacro:realsense_zr300>
+
+  <xacro:cob4_arm name="arm_right" parent="torso_3_link" has_podest="false">
+    <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
+  </xacro:cob4_arm>
+
+  <xacro:cob4_arm name="arm_left" parent="torso_3_link" has_podest="false">
+    <origin xyz="${arm_left_x} ${arm_left_y} ${arm_left_z}" rpy="${arm_left_roll} ${arm_left_pitch} ${arm_left_yaw}" />
+  </xacro:cob4_arm>
+
+  <xacro:gripper name="gripper_right" parent="arm_right_7_link">
+    <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />
+  </xacro:gripper>
+
+  <xacro:gripper name="gripper_left" parent="arm_left_7_link">
+    <origin xyz="${gripper_left_x} ${gripper_left_y} ${gripper_left_z}" rpy="${gripper_left_roll} ${gripper_left_pitch} ${gripper_left_yaw}" />
+  </xacro:gripper>
 
 </robot>

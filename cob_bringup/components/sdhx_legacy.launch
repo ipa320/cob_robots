@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot"/>
+	<arg name="component_name"/>
+	<arg name="sim" default="false"/>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/schunk_sdhx.launch">
+		<arg name="component_name" value="$(arg component_name)"/>
+	</include>
+	<group if="$(arg sim)" >
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="$(arg component_name)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/fake_diagnostics.launch">
+			<arg name="fake_diagnostics" value="'$(arg component_name)'"/>
+		</include>
+	</group>
+</launch>

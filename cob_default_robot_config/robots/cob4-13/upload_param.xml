@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+
+	<!-- send ROBOT parameters to parameter server -->
+	<rosparam command="load" ns="/script_server/arm_left" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/arm_left_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/arm_right" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/arm_right_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/base" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/base_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/behavior" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/behavior.yaml"/>
+	<rosparam command="load" ns="/script_server/gripper_left" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/gripper_left_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/gripper_right" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/gripper_right_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/light_base" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/light_base_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/light_torso" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/light_torso_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/sensorring" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/sensorring_joint_configurations.yaml"/>
+	<rosparam command="load" ns="/script_server/sound" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/sound.yaml"/>
+	<rosparam command="load" ns="/script_server/torso" file="$(find cob_default_robot_config)/robots/$(arg robot)/script_server/torso_joint_configurations.yaml"/>
+
+</launch>

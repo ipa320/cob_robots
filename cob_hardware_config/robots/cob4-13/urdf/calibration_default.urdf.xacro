@@ -30,6 +30,7 @@
 	<!-- *********************** -->
 	<!-- upper robot calibration -->
 	<!-- *********************** -->
+
 	<!-- torso mount positions | relative to base_link -->
 	<xacro:property name="def_torso_x" value="0.0"/>
 	<xacro:property name="def_torso_y" value="0.0"/>

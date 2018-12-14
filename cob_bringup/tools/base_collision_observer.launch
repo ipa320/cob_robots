@@ -13,8 +13,6 @@
 		<remap from="relevant_obstacles" to="/base/collision_velocity_filter/relevant_obstacles"/>
 		<!-- setup costmap -->
 		<rosparam file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/local_costmap_params.yaml" command="load" ns="anti_collision_costmap"/>
-		<remap from="scan_front" to="/base_laser_front/scan"/>
-		<remap from="scan_rear" to="/base_laser_rear/scan"/>
 		<!-- load parameter file -->
 		<rosparam file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/collision_velocity_filter_params.yaml" command="load"/>
 	</node>

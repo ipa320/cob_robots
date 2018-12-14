@@ -2,6 +2,14 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.9 (2018-07-21)
+------------------
+* update maintainer
+* Merge pull request `#747 <https://github.com/ipa320/cob_robots/issues/747>`_ from ipa-fxm/add_cob4-13_cardiff
+  add cob4-13 cardiff
+* add cob4-13 cardiff
+* Contributors: Florian Weisshardt, fmessmer, ipa-fxm
+
 0.6.8 (2018-01-07)
 ------------------
 * Merge pull request `#744 <https://github.com/ipa320/cob_robots/issues/744>`_ from ipa320/indigo_release_candidate
