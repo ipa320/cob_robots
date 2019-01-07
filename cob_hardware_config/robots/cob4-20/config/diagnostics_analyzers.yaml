@@ -8,7 +8,7 @@ analyzers:
       b1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: b1
-        contains: '-b1'
+        contains: ['b1 CPU Info', 'b1 CPU Usage', 'b1 HD Usage', 'b1 Memory Usage']
 #  network:
 #    type: diagnostic_aggregator/AnalyzerGroup
 #    path: Network
@@ -27,6 +27,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Joystick
         contains: 'joy'
+      light:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Light
+        contains: 'light'
 
   sensors:
     type: diagnostic_aggregator/AnalyzerGroup
