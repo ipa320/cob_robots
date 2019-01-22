@@ -5,6 +5,7 @@
 
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
+	<arg name="multi_robot" default="false"/>
 
 	<arg name="driver_yaml" value="$(arg pkg_hardware_config)/robots/raw3/config/raw3_base_driver.yaml"/>
 	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/raw3/config/raw3_base_controller.yaml"/>
@@ -19,6 +20,7 @@
 	        <arg name="stuck_detector_timeout" value="4.0" />
 		<arg name="stuck_detector_threshold" value="0.5" />
 
+		<arg name="multi_robot" value="$(arg multi_robot)"/>
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
 </launch>

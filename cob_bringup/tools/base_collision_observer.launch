@@ -7,10 +7,10 @@
 	<!-- start collision velocity filter node-->
 	<node pkg="cob_collision_velocity_filter" type="collision_velocity_filter" name="collision_velocity_filter" output="screen">
 		<!-- remap incoming variables -->
-		<remap from="command_in" to="/base/collision_velocity_filter/command"/>
+		<remap from="command_in" to="base/collision_velocity_filter/command"/>
 		<!-- remap outgoing variables -->
-		<remap from="command" to="/base/twist_mux/command_safe"/>
-		<remap from="relevant_obstacles" to="/base/collision_velocity_filter/relevant_obstacles"/>
+		<remap from="command" to="base/twist_mux/command_safe"/>
+		<remap from="relevant_obstacles" to="base/collision_velocity_filter/relevant_obstacles"/>
 		<!-- setup costmap -->
 		<rosparam file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/local_costmap_params.yaml" command="load" ns="anti_collision_costmap"/>
 		<!-- load parameter file -->
