@@ -34,6 +34,22 @@ drive_wheel: &drive_wheel
    homing_speed: 0
    homing_offset: 0
 
+drive_wheel_inverse: &drive_wheel_inverse
+  dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
+  # "6098": "35" # homing method
+    "607Bsub1": "-1290240000" # min position range limit XM[1]
+    "607Bsub2": "1290240000" # max position range limit XM[2]
+    "607Dsub1": "-1290240000" # min position software limit VL[3]
+    "607Dsub2": "1290240000" # max position software limit VH[3]
+  pos_to_device: "rint(pos * 4096 * 21 * 1 / (2 * pi))" # rev * gear * belt / (2 * pi)
+  vel_to_device: "rint(vel * 4096 * 21 * -1 / (2 * pi))" # rev * gear * belt / (2 * pi)
+  pos_from_device: "obj6064 * 2 * pi / ( 4096 * 21 * 1)" # 2 * pi / (rev * gear * belt)
+  vel_from_device: "obj606c * 2 * pi / ( 4096 * 21 * -1)" # 2 * pi / (rev * gear * belt)
+  motor_layer:
+   homing_event: 0 # -> digin
+   homing_speed: 0
+   homing_offset: 0
+   
 steer_wheel: &steer_wheel
   dcf_overlay:
     "607Bsub1": "-480000000" # min position range limit XM[1]
@@ -67,7 +83,7 @@ nodes:
     <<: *steer_wheel
     id: 5
   br_caster_r_wheel_joint:
-    <<: *drive_wheel
+    <<: *drive_wheel_inverse
     id: 6  
 
   ##Wheel 4
