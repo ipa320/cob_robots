@@ -1,4 +1,1 @@
-diagnostics_name: sensorring_cam3d
-topics: [/sensorring_cam3d/rgb/camera_info]
-hz: 30 
-hzerror: 5
+../../cob4/config/hz_monitor_sensorring_cam3d.yaml

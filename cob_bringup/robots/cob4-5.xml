@@ -41,6 +41,7 @@
 
 		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="host" value="10.4.5.99"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 		<include file="$(find cob_bringup)/drivers/bms.launch">
@@ -76,6 +77,8 @@
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="input_scans" value="['base_laser_front/scan','base_laser_left/scan','base_laser_right/scan']"/>
+			<arg name="output_scan" value="/scan_unified"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -154,7 +157,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">
+		<include file="$(find cob_bringup)/components/sdhx_legacy.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_right"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -174,9 +177,7 @@
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_script_server)/launch/script_server.launch"/>
-		<include file="$(find cob_bringup)/tools/behavior.launch">
-			<arg name="robot" value="$(arg robot)"/>
-		</include>
+		<include file="$(find cob_bringup)/tools/behavior.launch"/>
 	</group>
 
 	<group>
@@ -220,7 +221,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<include file="$(find cob_bringup)/components/legacy_sdhx.launch">
+		<include file="$(find cob_bringup)/components/sdhx_legacy.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_left"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -278,7 +279,7 @@
 	</group>
 
 	<group> <!-- this is a special group to assign DISPLAY:=0 only to the mimic node (and not to all other nodes, e.g. sound node) -->
-		<machine name="$(anon h1-display)" address="$(arg cob4-5-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
+		<machine name="$(anon h1_display)" address="$(arg cob4-5-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
 		<include file="$(find cob_bringup)/drivers/mimic.launch">
 			<arg name="sim" value="$(arg sim)"/>
 		</include>

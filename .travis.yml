@@ -16,6 +16,7 @@ env:
     - ROS_DISTRO=kinetic UPSTREAM_WORKSPACE=debian
 matrix:
   allow_failures:
+    - env: ROS_DISTRO=indigo UPSTREAM_WORKSPACE=file
     - env: ROS_DISTRO=indigo UPSTREAM_WORKSPACE=debian
     - env: ROS_DISTRO=kinetic UPSTREAM_WORKSPACE=debian
 install:
