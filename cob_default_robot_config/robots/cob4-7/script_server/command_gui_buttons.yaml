@@ -10,38 +10,38 @@ group10:
   buttons: [[stop,stop,omni],
     [init,init],
     [recover,recover]]
-#group11:
-#  group_name: sensorring
-#  component_name: sensorring
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [front,move,front],
-#    [back,move,back],
-#    [left,move,left],
-#    [right,move,right]]
-#group12:
-#  group_name: arm_left
-#  component_name: arm_left
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [home,move,home],
-#    [folded,move,folded],
-#    [side, move, side],
-#    [wave_demo, move, wave_demo],
-#    [hello, move, hello]]
-#group13:
-#  group_name: arm_right
-#  component_name: arm_right
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [home,move,home],
-#    [folded,move,folded],
-#    [side, move, side],
-#    [wave_demo, move, wave_demo],
-#    [hello, move, hello]]
+group11:
+  group_name: sensorring
+  component_name: sensorring
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right]]
+group12:
+  group_name: arm_left
+  component_name: arm_left
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
+group13:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
 group16:
   group_name: torso
   component_name: torso

@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="namespace"           default="camera"/>
+    <arg name="nodelet_manager"     default="$(arg namespace)_nodelet_manager"/>
+    <arg name="num_worker_threads"  default="4" />
+
+    <!-- Camera device specific arguments -->
+    <arg name="serial_no"           default=""/>
+    <arg name="json_file_path"      default=""/>
+
+    <arg name="fisheye_width"       default="1280"/>
+    <arg name="fisheye_height"      default="720"/>
+    <arg name="enable_fisheye"      default="false"/>
+
+    <arg name="depth_width"         default="1280"/>
+    <arg name="depth_height"        default="720"/>
+    <arg name="enable_depth"        default="true"/>
+
+    <arg name="infra1_width"        default="1280"/>
+    <arg name="infra1_height"       default="720"/>
+    <arg name="enable_infra1"       default="false"/>
+
+    <arg name="infra2_width"        default="1280"/>
+    <arg name="infra2_height"       default="720"/>
+    <arg name="enable_infra2"       default="false"/>
+
+    <arg name="color_width"         default="1280"/>
+    <arg name="color_height"        default="720"/>
+    <arg name="enable_color"        default="true"/>
+
+    <arg name="fisheye_fps"         default="15"/>
+    <arg name="depth_fps"           default="15"/>
+    <arg name="infra1_fps"          default="15"/>
+    <arg name="infra2_fps"          default="15"/>
+    <arg name="color_fps"           default="15"/>
+    <arg name="gyro_fps"            default="1000"/>
+    <arg name="accel_fps"           default="1000"/>
+    <arg name="enable_imu"          default="true"/>
+
+    <arg name="enable_pointcloud"   default="true"/>
+    <arg name="enable_sync"         default="false"/>
+    <arg name="align_depth"         default="false"/>
+
+    <!-- rgbd_launch specific arguments -->
+
+    <!-- Arguments for remapping all device namespaces -->
+    <arg name="depth"                           default="depth" />
+    <arg name="infra1"                          default="infra1" />
+    <arg name="infra2"                          default="infra2" />
+    <arg name="rgb"                             default="color" />
+    <arg name="fisheye"                         default="fisheye" />
+    <arg name="accel"                           default="accel" />
+    <arg name="gyro"                            default="gyro" />
+
+    <arg name="depth_registered_pub"            default="depth_registered" />
+    <arg name="depth_registered"                default="depth_registered" unless="$(arg align_depth)" />
+    <arg name="depth_registered"                default="aligned_depth_to_color" if="$(arg align_depth)" />
+    <arg name="depth_registered_filtered"       default="$(arg depth_registered)" />
+    <arg name="projector"                       default="projector" />
+
+    <!-- Disable bond topics by default -->
+    <arg name="bond"                            default="false" />
+    <arg name="respawn"                         default="$(arg bond)" />
+
+    <!-- Processing Modules -->
+    <arg name="rgb_processing"                  default="false"/>
+    <arg name="debayer_processing"              default="false" />
+    <arg name="ir_processing"                   default="false"/>
+    <arg name="depth_processing"                default="false"/>
+    <arg name="depth_registered_processing"     default="false"/>
+    <arg name="disparity_processing"            default="false"/>
+    <arg name="disparity_registered_processing" default="false"/>
+    <arg name="hw_registered_processing"        default="$(arg align_depth)" />
+    <arg name="sw_registered_processing"        default="true" unless="$(arg align_depth)" />
+    <arg name="sw_registered_processing"        default="false" if="$(arg align_depth)" />
+
+    <group ns="$(arg namespace)">
+        <!-- Launch the camera device nodelet-->
+        <include file="$(find cob_bringup)/drivers/realsense_d400_nodelet.xml">
+            <arg name="manager"                  value="$(arg nodelet_manager)"/>
+            <arg name="num_worker_threads"       value="$(arg num_worker_threads)"/>
+            <arg name="serial_no"                value="$(arg serial_no)"/>
+            <arg name="json_file_path"           value="$(arg json_file_path)"/>
+
+            <arg name="depth"                    value="$(arg depth)"/>
+            <arg name="infra1"                   value="$(arg infra1)"/>
+            <arg name="infra2"                   value="$(arg infra2)"/>
+            <arg name="rgb"                      value="$(arg rgb)"/>
+            <arg name="fisheye"                  value="$(arg fisheye)"/>
+            <arg name="accel"                    value="$(arg accel)"/>
+            <arg name="gyro"                     value="$(arg gyro)"/>
+
+            <arg name="fisheye_width"            value="$(arg fisheye_width)"/>
+            <arg name="fisheye_height"           value="$(arg fisheye_height)"/>
+            <arg name="enable_fisheye"           value="$(arg enable_fisheye)"/>
+
+            <arg name="depth_width"              value="$(arg depth_width)"/>
+            <arg name="depth_height"             value="$(arg depth_height)"/>
+            <arg name="enable_depth"             value="$(arg enable_depth)"/>
+
+            <arg name="infra1_width"             value="$(arg infra1_width)"/>
+            <arg name="infra1_height"            value="$(arg infra1_height)"/>
+            <arg name="enable_infra1"            value="$(arg enable_infra1)"/>
+
+            <arg name="infra2_width"             value="$(arg infra2_width)"/>
+            <arg name="infra2_height"            value="$(arg infra2_height)"/>
+            <arg name="enable_infra2"            value="$(arg enable_infra2)"/>
+
+            <arg name="color_width"              value="$(arg color_width)"/>
+            <arg name="color_height"             value="$(arg color_height)"/>
+            <arg name="enable_color"             value="$(arg enable_color)"/>
+
+            <arg name="fisheye_fps"              value="$(arg fisheye_fps)"/>
+            <arg name="depth_fps"                value="$(arg depth_fps)"/>
+            <arg name="infra1_fps"               value="$(arg infra1_fps)"/>
+            <arg name="infra2_fps"               value="$(arg infra2_fps)"/>
+            <arg name="color_fps"                value="$(arg color_fps)"/>
+            <arg name="gyro_fps"                 value="$(arg gyro_fps)"/>
+            <arg name="accel_fps"                value="$(arg accel_fps)"/>
+            <arg name="enable_imu"               value="$(arg enable_imu)"/>
+
+            <arg name="enable_pointcloud"        value="$(arg enable_pointcloud)"/>
+            <arg name="enable_sync"              value="$(arg enable_sync)"/>
+            <arg name="align_depth"              value="$(arg align_depth)"/>
+
+            <arg name="base_frame_id"               value="$(arg namespace)_link"/>
+            <arg name="depth_frame_id"              value="$(arg namespace)_depth_frame"/>
+            <arg name="infra1_frame_id"             value="$(arg namespace)_infra1_frame"/>
+            <arg name="infra2_frame_id"             value="$(arg namespace)_infra2_frame"/>
+            <arg name="color_frame_id"              value="$(arg namespace)_color_frame"/>
+            <arg name="fisheye_frame_id"            value="$(arg namespace)_fisheye_frame"/>
+            <arg name="imu_gyro_frame_id"           value="$(arg namespace)_gyro_frame"/>
+            <arg name="imu_accel_frame_id"          value="$(arg namespace)_accel_frame"/>
+
+            <arg name="depth_optical_frame_id"      value="$(arg namespace)_depth_optical_frame"/>
+            <arg name="infra1_optical_frame_id"     value="$(arg namespace)_infra1_optical_frame"/>
+            <arg name="infra2_optical_frame_id"     value="$(arg namespace)_infra2_optical_frame"/>
+            <arg name="color_optical_frame_id"      value="$(arg namespace)_color_optical_frame"/>
+            <arg name="fisheye_optical_frame_id"    value="$(arg namespace)_fisheye_optical_frame"/>
+            <arg name="accel_optical_frame_id"      value="$(arg namespace)_accel_optical_frame"/>
+            <arg name="gyro_optical_frame_id"       value="$(arg namespace)_gyro_optical_frame"/>
+
+            <arg name="aligned_depth_to_color_frame_id"      value="$(arg namespace)_aligned_depth_to_color_frame"/>
+            <arg name="aligned_depth_to_infra1_frame_id"     value="$(arg namespace)_aligned_depth_to_infra1_frame"/>
+            <arg name="aligned_depth_to_infra2_frame_id"     value="$(arg namespace)_aligned_depth_to_infra2_frame"/>
+            <arg name="aligned_depth_to_fisheye_frame_id"    value="$(arg namespace)_aligned_depth_to_fisheye_frame"/>
+        </include>
+
+        <!-- RGB processing -->
+
+        <include if="$(arg rgb_processing)"
+                file="$(find rgbd_launch)/launch/includes/rgb.launch.xml">
+            <arg name="manager"                       value="$(arg nodelet_manager)" />
+            <arg name="respawn"                       value="$(arg respawn)" />
+            <arg name="rgb"                           value="$(arg rgb)" />
+            <arg name="debayer_processing"            value="$(arg debayer_processing)" />
+        </include>
+
+        <group if="$(arg depth_registered_processing)">
+            <group if="$(arg sw_registered_processing)">
+                <node pkg="nodelet" type="nodelet" name="register_depth"
+                        args="load depth_image_proc/register $(arg nodelet_manager) $(arg bond)" respawn="$(arg respawn)">
+                    <remap from="rgb/camera_info"             to="$(arg rgb)/camera_info" />
+                    <remap from="depth/camera_info"           to="$(arg depth)/camera_info" />
+                    <remap from="depth/image_rect"            to="$(arg depth)/image_rect_raw" />
+                    <remap from="depth_registered/image_rect" to="$(arg depth_registered)/sw_registered/image_rect_raw" />
+                </node>
+
+                <!-- Publish registered XYZRGB point cloud with software registered input -->
+                <node pkg="nodelet" type="nodelet" name="points_xyzrgb_sw_registered"
+                        args="load depth_image_proc/point_cloud_xyzrgb $(arg nodelet_manager) $(arg bond)" respawn="$(arg respawn)">
+                    <remap from="rgb/image_rect_color"        to="$(arg rgb)/image_rect_color" />
+                    <remap from="rgb/camera_info"             to="$(arg rgb)/camera_info" />
+                    <remap from="depth_registered/image_rect" to="$(arg depth_registered_filtered)/sw_registered/image_rect_raw" />
+                    <remap from="depth_registered/points"     to="$(arg depth_registered)/points" />
+                </node>
+            </group>
+
+            <group if="$(arg hw_registered_processing)">
+                <!-- Publish registered XYZRGB point cloud with hardware registered input (ROS Realsense depth alignment) -->
+                <node pkg="nodelet" type="nodelet" name="points_xyzrgb_hw_registered"
+                        args="load depth_image_proc/point_cloud_xyzrgb $(arg nodelet_manager) $(arg bond)" respawn="$(arg respawn)">
+                    <remap from="rgb/image_rect_color"        to="$(arg rgb)/image_rect_color" />
+                    <remap from="rgb/camera_info"             to="$(arg rgb)/camera_info" />
+                    <remap from="depth_registered/image_rect" to="$(arg depth_registered)/image_raw" />
+                    <remap from="depth_registered/points"     to="$(arg depth_registered_pub)/points" />
+                </node>
+            </group>
+        </group>
+
+    </group>
+</launch>

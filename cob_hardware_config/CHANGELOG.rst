@@ -2,6 +2,25 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.10 (2019-03-14)
+-------------------
+* Merge pull request `#770 <https://github.com/ipa320/cob_robots/issues/770>`_ from fmessmer/finalize_cob4-20
+  finalize cob4-20 config
+* finalize cob4-20 config
+* Merge pull request `#769 <https://github.com/ipa320/cob_robots/issues/769>`_ from fmessmer/add_cob4-20
+  add cob4-20 ipa 340
+* add cob4-20 ipa 340
+* Merge pull request `#768 <https://github.com/ipa320/cob_robots/issues/768>`_ from fmessmer/update_cob4-7
+  setup new cob4-7
+* finalize config
+* enable d435 cameras
+* enable actuators
+* Merge pull request `#765 <https://github.com/ipa320/cob_robots/issues/765>`_ from fmessmer/update_paul_stuttgart
+  Update paul stuttgart
+* update hostnames
+* update pc_monitor config
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer, ipa-foj
+
 0.6.9 (2018-07-21)
 ------------------
 * update maintainer

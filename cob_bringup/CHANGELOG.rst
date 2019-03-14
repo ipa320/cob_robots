@@ -2,6 +2,25 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.10 (2019-03-14)
+-------------------
+* Merge pull request `#772 <https://github.com/ipa320/cob_robots/issues/772>`_ from fmessmer/nav_command_buttons
+  upload nav and command buttons for dashboard
+* upload nav and command buttons for dashboard
+* Merge pull request `#769 <https://github.com/ipa320/cob_robots/issues/769>`_ from fmessmer/add_cob4-20
+  add cob4-20 ipa 340
+* add cob4-20 ipa 340
+* Merge pull request `#768 <https://github.com/ipa320/cob_robots/issues/768>`_ from fmessmer/update_cob4-7
+  setup new cob4-7
+* enable d435 cameras
+* add realsense d435 launch files
+* enable actuators
+* move stuck_detector
+* Merge pull request `#765 <https://github.com/ipa320/cob_robots/issues/765>`_ from fmessmer/update_paul_stuttgart
+  Update paul stuttgart
+* update hostnames
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer, ipa-foj
+
 0.6.9 (2018-07-21)
 ------------------
 * update maintainer

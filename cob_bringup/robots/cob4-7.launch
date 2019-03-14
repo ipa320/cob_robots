@@ -4,12 +4,12 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
 	<include file="$(find cob_bringup)/robots/cob4-7.xml">
-		<arg name="cob4-7-b1" value="cob4-7-b1"/>
-		<arg name="cob4-7-t1" value="cob4-7-t1"/>
-		<arg name="cob4-7-t2" value="cob4-7-t2"/>
-		<arg name="cob4-7-t3" value="cob4-7-t3"/>
-		<arg name="cob4-7-s1" value="cob4-7-s1"/>
-		<arg name="cob4-7-h1" value="cob4-7-h1"/>
+		<arg name="b1" value="b1"/>
+		<arg name="t1" value="t1"/>
+		<arg name="t2" value="t2"/>
+		<arg name="t3" value="t3"/>
+		<arg name="s1" value="s1"/>
+		<arg name="h1" value="h1"/>
 		<arg name="env-script" value="$(arg env-script)"/>
 	</include>
 
