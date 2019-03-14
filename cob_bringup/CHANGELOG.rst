@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.10 (2019-03-14)
+-------------------
 * Merge pull request `#772 <https://github.com/ipa320/cob_robots/issues/772>`_ from fmessmer/nav_command_buttons
   upload nav and command buttons for dashboard
 * upload nav and command buttons for dashboard

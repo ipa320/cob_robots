@@ -2,8 +2,8 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.10 (2019-03-14)
+-------------------
 * Merge pull request `#770 <https://github.com/ipa320/cob_robots/issues/770>`_ from fmessmer/finalize_cob4-20
   finalize cob4-20 config
 * finalize cob4-20 config
