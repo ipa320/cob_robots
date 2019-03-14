@@ -2,6 +2,16 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#769 <https://github.com/ipa320/cob_robots/issues/769>`_ from fmessmer/add_cob4-20
+  add cob4-20 ipa 340
+* add cob4-20 ipa 340
+* Merge pull request `#768 <https://github.com/ipa320/cob_robots/issues/768>`_ from fmessmer/update_cob4-7
+  setup new cob4-7
+* enable actuators
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer
+
 0.6.9 (2018-07-21)
 ------------------
 * update maintainer
