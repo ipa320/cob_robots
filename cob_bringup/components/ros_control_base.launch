@@ -17,6 +17,7 @@
 
 	<arg name="stuck_detector_timeout" default="2.0"/>
 	<arg name="stuck_detector_threshold" default="0.174533"/>
+	<arg name="stuck_detector_shutdown" default="false"/>
 
 	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
@@ -33,6 +34,7 @@
 		<include unless="$(arg sim)" file="$(find cob_base_controller_utils)/launch/stuck_detector.launch">
 			<arg name="timeout" value="$(arg stuck_detector_timeout)"/>
 			<arg name="threshold" value="$(arg stuck_detector_threshold)"/>
+			<arg name="shutdown" value="$(arg stuck_detector_shutdown)"/>
 		</include>
 	</group>
 	<node if="$(arg sim)" ns="$(arg component_name)" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
