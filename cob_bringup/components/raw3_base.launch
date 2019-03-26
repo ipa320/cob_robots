@@ -18,7 +18,7 @@
 		<arg name="can_device" value="$(arg can_device)"/>
 	        <arg name="stuck_detector_timeout" value="4.0" />
 		<arg name="stuck_detector_threshold" value="0.5" />
-
+		<arg name="stuck_detector_shutdown" value="false" />
 		<arg name="sim" value="$(arg sim)"/>
 	</include>
 </launch>
