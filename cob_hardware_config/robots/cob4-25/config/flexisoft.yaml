@@ -14,3 +14,5 @@ footprint_linear_fast: [[0.8,0.4], [-0.4,0.4], [-0.4,-0.4], [0.8,-0.4]]
 has_wireless_emstop: false # has fall sensors
 warn_for_laser_bridged: false
 warn_for_wireless_bridged: false
+reconnect_attempts: 5
+reconnect_duration: 5
