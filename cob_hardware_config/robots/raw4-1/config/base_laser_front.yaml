@@ -1,0 +1,33 @@
+# !!! copy pasted, needs to be adjusted !!!
+
+# Sensor IP address. Can be passed as an argument to the launch file.
+sensor_ip: 192.168.10.10
+# Sensor TCP Port. Can be passed as an argument to the launch file.
+sensor_tcp_port: 2122
+# Host IP address. Can be passed as an argument to the launch file.
+host_ip: 192.160.10.39
+# Host UDP Port. Can be passed as an argument to the launch file. Zero allows system chosen port.
+host_udp_port: 6060
+# The frame name of the sensor message
+frame_id: "base_laser_front_link"
+#laser_scan_frame_name: "base_laser_front_link"
+# The number of scans to skip between each measured scan. For a 25Hz laser, setting 'skip' to 0 makes it publish at 25Hz, 'skip' to 1 makes it publish at 12.5Hz.
+skip: 0
+# Start angle of scan in radians, if both start and end angle are equal, all angels are regarded
+angle_start: -0.75 #-2.27
+# End angle of scan in radians, if both start and end angle are equal, all angels are regarded
+angle_end: 0.75 # 2.44
+# If the channel should be enabled
+channel_enabled: true
+# If the general system state should be published
+general_system_state: true
+# If the derived settings should be published
+derived_settings: true
+# If the measurement data should be published
+measurement_data: true
+# If the intrusion data should be published
+intrusion_data: true
+# If the application IO data should be published
+application_io_data: true
+# If this flag is set, the predefined angles from SICK are used. If this flag is set to false an offset of -90° is added to the angles so that 0° is at the front of the scanner.
+use_sick_angles: false
