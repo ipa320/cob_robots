@@ -8,7 +8,7 @@
 
   <xacro:include filename="$(find cob_hardware_config)/robots/raw4-1/urdf/properties.urdf.xacro" />
   <!-- raw base -->
-  <xacro:include filename="$(find raw_description)/urdf/raw4_base/raw4_base.urdf.xacro" />
+  <xacro:include filename="$(find raw_description)/urdf/raw4_base/base.urdf.xacro" />
 
   <!-- sensors -->
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_microscan3.urdf.xacro"/>

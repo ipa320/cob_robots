@@ -8,7 +8,7 @@
 
   <xacro:include filename="$(find cob_hardware_config)/robots/raw3-3/urdf/properties.urdf.xacro" />
   <!-- raw base -->
-  <xacro:include filename="$(find raw_description)/urdf/base_short/base.urdf.xacro" />
+  <xacro:include filename="$(find raw_description)/urdf/raw3_base_short/base.urdf.xacro" />
 
   <!-- raw tower -->
   <!--xacro:include filename="$(find raw_description)/urdf/tower_symetric/tower.urdf.xacro" /-->
