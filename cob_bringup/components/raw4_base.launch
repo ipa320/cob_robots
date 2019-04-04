@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot"/>
+	<arg name="can_device"/>
+
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+	<arg name="sim" default="false"/>
+
+	<arg name="driver_yaml" value="$(arg pkg_hardware_config)/robots/raw4/config/raw4_base_driver.yaml"/>
+	<arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/raw4/config/raw4_base_controller.yaml"/>
+
+	<include file="$(find cob_bringup)/components/ros_control_base.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
+		<arg name="driver_yaml" value="$(arg driver_yaml)"/>
+		<arg name="controller_yaml" value="$(arg controller_yaml)"/>
+		<arg name="reset_errors_before_recover" value="true"/>
+		<arg name="can_device" value="$(arg can_device)"/>
+	        <arg name="stuck_detector_timeout" value="4.0" />
+		<arg name="stuck_detector_threshold" value="0.5" />
+		<arg name="stuck_detector_shutdown" value="false" />
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
+</launch>
