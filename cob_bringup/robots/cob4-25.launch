@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+
+	<include file="$(find cob_bringup)/robots/cob4-25.xml">
+		<arg name="b1" value="b1"/>
+		<arg name="t1" value="t1"/>
+		<arg name="t2" value="t2"/>
+		<arg name="t3" value="t3"/>
+		<arg name="s1" value="s1"/>
+		<arg name="h1" value="h1"/>
+		<arg name="env-script" value="$(arg env-script)"/>
+	</include>
+
+</launch>

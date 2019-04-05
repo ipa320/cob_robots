@@ -2,6 +2,15 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.11 (2019-04-05)
+-------------------
+* Merge pull request `#775 <https://github.com/ipa320/cob_robots/issues/775>`_ from fmessmer/add_cob4-25
+  add cob4-25
+* update rviz config cob4-25
+* additional flexisoft params
+* add cob4-25
+* Contributors: Felix Messmer, fmessmer
+
 0.6.10 (2019-03-14)
 -------------------
 * Merge pull request `#770 <https://github.com/ipa320/cob_robots/issues/770>`_ from fmessmer/finalize_cob4-20

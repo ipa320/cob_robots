@@ -2,6 +2,17 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.11 (2019-04-05)
+-------------------
+* Merge pull request `#775 <https://github.com/ipa320/cob_robots/issues/775>`_ from fmessmer/add_cob4-25
+  add cob4-25
+* assign d435 serial numbers cob4-25
+* add cob4-25
+* Merge pull request `#776 <https://github.com/ipa320/cob_robots/issues/776>`_ from iirob/stuck_detector_shutdown
+  Repaired missing shutdown on stuck detector
+* Repaired missing shutdown on stuck detector
+* Contributors: Felix Messmer, andreeatulbure, fmessmer
+
 0.6.10 (2019-03-14)
 -------------------
 * Merge pull request `#772 <https://github.com/ipa320/cob_robots/issues/772>`_ from fmessmer/nav_command_buttons
