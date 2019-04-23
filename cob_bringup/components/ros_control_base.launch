@@ -19,6 +19,8 @@
 	<arg name="stuck_detector_threshold" default="0.174533"/>
 	<arg name="stuck_detector_shutdown" default="false"/>
 
+        <arg name="base_controllers_to_spawn" default="joint_state_controller odometry_controller"/>
+
 	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -41,7 +43,7 @@
 
 	<group ns="base">
 		<rosparam command="load" file="$(arg controller_yaml)"/>
-		<node pkg="controller_manager" type="controller_manager" name="base_controller_spawner" args="spawn joint_state_controller twist_controller odometry_controller" respawn="false" output="screen"/>
+		<node pkg="controller_manager" type="controller_manager" name="base_controller_spawner" args="spawn $(arg base_controllers_to_spawn)" respawn="false" output="screen"/>
 	</group>
 
 	<group ns="$(arg component_name)">
