@@ -6,6 +6,7 @@
 	<arg name="sim" default="false"/>
 
 	<arg name="driver_yaml" default="$(arg pkg_hardware_config)/robots/raw3/config/raw3_base_driver.yaml"/>
+        <arg name="canopen_driver_yaml" default="$(arg pkg_hardware_config)/robots/raw3-5/config/base_driver.yaml"/>
 	<arg name="controller_yaml" default="$(arg pkg_hardware_config)/robots/raw3/config/raw3_base_controller.yaml" />
 
         <arg name="base_controllers_to_spawn" default="joint_state_controller odometry_controller"/>
@@ -14,6 +15,7 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 		<arg name="driver_yaml" value="$(arg driver_yaml)"/>
+		<arg name="canopen_driver_yaml" value="$(arg canopen_driver_yaml)"/>
 		<arg name="controller_yaml" value="$(arg controller_yaml)"/>
 		<arg name="reset_errors_before_recover" value="true"/>
 		<arg name="can_device" value="$(arg can_device)"/>

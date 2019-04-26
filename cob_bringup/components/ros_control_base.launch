@@ -2,6 +2,7 @@
 <launch>
 	<arg name="robot"/>
 	<arg name="driver_yaml"/>
+        <arg name="canopen_driver_yaml"/>
 	<arg name="controller_yaml"/>
 
 	<arg name="can_device" default="can0"/>
@@ -21,6 +22,10 @@
 
         <arg name="base_controllers_to_spawn" default="joint_state_controller odometry_controller"/>
 
+        <arg name="velocity_smoother_config_file"   default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
+        <arg name="twist_mux_config_locks"          default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/twist_mux_locks.yaml"/>
+        <arg name="twist_mux_config_topics"         default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/twist_mux_topics.yaml"/>
+
 	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -30,6 +35,7 @@
 		<arg name="use_external_sync" value="$(arg use_external_sync)"/>
 		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
 		<arg name="reset_errors_before_recover" value="$(arg reset_errors_before_recover)"/>
+		<arg name="canopen_driver_yaml" value="$(arg canopen_driver_yaml)"/>
 	</include>
 
 	<group if="$(arg enable_stuck_detector)">
@@ -50,6 +56,8 @@
 		<!-- twist mux -->
 		<include file="$(find cob_bringup)/tools/twist_mux.launch">
 			<arg name="robot" value="$(arg robot)"/>
+			<arg name="config_locks"  default="$(arg twist_mux_config_locks)"/>
+                        <arg name="config_topics" default="$(arg twist_mux_config_topics)"/>
 			<arg name="cmd_vel_out" default="velocity_smoother/command"/>
 			<arg name="marker_out" default="twist_mux/marker"/>
 		</include>
@@ -57,7 +65,7 @@
 		<!-- velocity smoother -->
 		<include file="$(find cob_bringup)/tools/velocity_smoother.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="config_file"           default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
+			<arg name="config_file"           default="$(arg velocity_smoother_config_file)"/>
 			<arg name="raw_cmd_vel_topic"     default="velocity_smoother/command"/>
 			<arg name="smooth_cmd_vel_topic"  default="twist_controller/command"/>
 			<arg name="robot_cmd_vel_topic"   default="twist_controller/command"/>
