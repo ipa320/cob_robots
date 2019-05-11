@@ -2,7 +2,7 @@
 <launch>
 
 	<!-- args -->
-	<arg name="robot" value="raw4-1"/>
+	<arg name="robot" value="raw4-0"/>
 	<arg name="pc1" default="localhost"/>
 	<arg name="pc2" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>

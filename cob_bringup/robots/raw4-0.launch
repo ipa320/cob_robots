@@ -3,8 +3,8 @@
 
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 
-	<include file="$(find cob_bringup)/robots/raw4-1.xml">
-		<arg name="pc1" value="i60sr2"/> <!-- todo --> 
+	<include file="$(find cob_bringup)/robots/raw4-0.xml">
+		<!--arg name="pc1" value="i60sr2"/--> <!-- todo --> 
 		<arg name="env-script" value="$(arg env-script)"/>
 	</include>
 

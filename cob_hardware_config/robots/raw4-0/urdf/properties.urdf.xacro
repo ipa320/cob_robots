@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-	<xacro:include filename="$(find cob_hardware_config)/robots/raw4-1/urdf/calibration_default.urdf.xacro" />
-	<xacro:include filename="$(find cob_calibration_data)/raw4-1/calibration/calibration_offset.urdf.xacro" />>
+	<xacro:include filename="$(find cob_hardware_config)/robots/raw4-0/urdf/calibration_default.urdf.xacro" />
+	<xacro:include filename="$(find cob_calibration_data)/raw4-0/calibration/calibration_offset.urdf.xacro" />>
 
 	<!-- ***************** -->
 	<!-- base calibration -->

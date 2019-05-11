@@ -1,11 +1,11 @@
 # !!! copy pasted, needs to be adjusted !!!
 
 # Sensor IP address. Can be passed as an argument to the launch file.
-sensor_ip: 192.168.10.10
+sensor_ip: 10.44.0.201
 # Sensor TCP Port. Can be passed as an argument to the launch file.
 sensor_tcp_port: 2122
 # Host IP address. Can be passed as an argument to the launch file.
-host_ip: 192.160.10.39
+host_ip: 10.44.0.11
 # Host UDP Port. Can be passed as an argument to the launch file. Zero allows system chosen port.
 host_udp_port: 6060
 # The frame name of the sensor message
@@ -14,9 +14,9 @@ frame_id: "base_laser_front_link"
 # The number of scans to skip between each measured scan. For a 25Hz laser, setting 'skip' to 0 makes it publish at 25Hz, 'skip' to 1 makes it publish at 12.5Hz.
 skip: 0
 # Start angle of scan in radians, if both start and end angle are equal, all angels are regarded
-angle_start: -0.75 #-2.27
+angle_start: 0.0 #-2.27
 # End angle of scan in radians, if both start and end angle are equal, all angels are regarded
-angle_end: 0.75 # 2.44
+angle_end: 0.0 # 2.44
 # If the channel should be enabled
 channel_enabled: true
 # If the general system state should be published
