@@ -10,9 +10,14 @@
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 	</include>
 
-	<node ns="teleop" pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" cwd="node" respawn="false" output="screen">
+	<node ns="teleop" pkg="teleop_twist_joy" type="teleop_node" name="$(anon teleop_node)" cwd="node" respawn="false" output="screen">
+		<rosparam file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/teleop_joy.yaml" command="load"/>
+    <remap from="joy" to="/joy"/>
+    <remap from="cmd_vel" to="/base/twist_mux/command_teleop_joy"/>
+  </node>
+	<!--node ns="teleop" pkg="cob_teleop" type="cob_teleop" name="$(anon teleop_node)" cwd="node" respawn="false" output="screen">
 		<rosparam file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/teleop.yaml" command="load"/>
-	</node>
+	</node-->
 
 </launch>
 
