@@ -10,7 +10,7 @@ nodes:
     motor_layer:
       homing_event: 19 # -> digin
       homing_speed: -5093 # -1.0 rs/s
-      homing_offset: -12700
+      homing_offset: 0
 
 
   ##Wheel 2
@@ -18,14 +18,14 @@ nodes:
     motor_layer:
       homing_event: 19 # -> digin
       homing_speed: -5093 # -1.0 rs/s
-      homing_offset: -12673
+      homing_offset: 0
 
   ##Wheel 3
   br_caster_rotation_joint:
     motor_layer:
       homing_event: 17 # -> digin
       homing_speed: -5093 # -1.0 rs/s
-      homing_offset: 14093
+      homing_offset: 0
 
   br_caster_r_wheel_joint:
     <<: *drive_wheel
@@ -34,6 +34,6 @@ nodes:
     motor_layer:
       homing_event: 19 # -> digin
       homing_speed: -5093 # -1.0 rs/s
-      homing_offset: 13972
+      homing_offset: 0
   fr_caster_r_wheel_joint:
     <<: *drive_wheel
