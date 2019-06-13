@@ -1,5 +1,5 @@
 - git:
-    uri: https://github.com/ipa320/cob_calibration_data.git
+    uri: https://github.com/ipa-jba/cob_calibration_data.git
     local-name: cob_calibration_data
     version: indigo_dev
 - git:
@@ -8,8 +8,8 @@
     version: indigo_dev
 - git:
     local-name: cob_common
-    uri: https://github.com/ipa320/cob_common.git
-    version: indigo_dev
+    uri: https://github.com/ipa-jba/cob_common.git
+    version: feature/raw4
 - git:
     local-name: cob_control
     uri: https://github.com/ipa320/cob_control.git
@@ -19,6 +19,6 @@
     uri: https://github.com/ipa320/cob_driver.git
     version: indigo_dev
 - git:
-    uri: https://github.com/ipa320/cob_supported_robots.git
+    uri: https://github.com/ipa-jba/cob_supported_robots.git
     local-name: cob_supported_robots
     version: indigo_dev
