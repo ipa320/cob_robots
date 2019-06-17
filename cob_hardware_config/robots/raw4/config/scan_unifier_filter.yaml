@@ -1,7 +1,18 @@
 scan_filter_chain:
-  - name: range
-    type: LaserScanRangeFilter
+        #  - name: range
+        #type: LaserScanRangeFilter
+        #params:
+        #use_message_range_limits: false
+        #upper_threshold: 10.0
+        #upper_replacement_value: 10.0
+  - name: box
+    type: laser_filters/LaserScanBoxFilter
     params:
-      use_message_range_limits: false
-      upper_threshold: 10.0
-      upper_replacement_value: 10.0
+      box_frame: base_link
+      min_x: -0.68
+      max_x: 0.68
+      min_y: -0.38
+      max_y: 0.38
+      min_z: -1.0
+      max_z: 1.0
+
