@@ -48,7 +48,7 @@
 			<arg name="name" value="base_laser_rear"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/raw4_base.launch" >
+		<include file="$(find cob_bringup)/components/raw4_base.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="can_device" value="can0" />
 			<arg name="sim" value="$(arg sim)"/>
@@ -69,7 +69,7 @@
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/tools/teleop.launch">
+		<include file="$(find cob_bringup)/tools/teleop_twist_joy.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">

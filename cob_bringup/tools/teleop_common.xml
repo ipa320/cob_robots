@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot"/>
+	<arg name="pkg_hardware_config"/>
+	<arg name="sim"/>
+
+	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/joy.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
+	</include>
+</launch>
+
