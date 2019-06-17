@@ -82,6 +82,7 @@
   <exec_depend>rostopic</exec_depend>
   <exec_depend>rplidar_ros</exec_depend>
   <exec_depend>rviz</exec_depend>
+  <exec_depend>sick_safetyscanners</exec_depend>
   <exec_depend>sick_visionary_t_driver</exec_depend>
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>teleop_twist_joy</exec_depend>
