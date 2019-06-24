@@ -1,5 +1,3 @@
-# !!! copy pasted, needs to be adjusted !!!
-
 # Sensor IP address. Can be passed as an argument to the launch file.
 sensor_ip: 10.44.0.201
 # Sensor TCP Port. Can be passed as an argument to the launch file.
