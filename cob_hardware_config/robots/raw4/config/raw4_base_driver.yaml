@@ -30,7 +30,6 @@ nodes:
     id: 3
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "139350"
   fl_caster_r_wheel_joint:
     <<: *drive_wheel
     id: 4
@@ -40,7 +39,6 @@ nodes:
     id: 5
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "140000"
   bl_caster_r_wheel_joint:
     <<: *drive_wheel
     id: 6
@@ -50,7 +48,6 @@ nodes:
     id: 7
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
       "6098": "19" # homing method
-      "607C": "-39500" #140500
   fr_caster_r_wheel_joint:
     <<: *drive_wheel
     id: 8
@@ -58,7 +55,6 @@ nodes:
     id: 1
     dcf_overlay:
      "6098": "19"
-     "607C": "-38800"
   br_caster_r_wheel_joint:
     <<: *drive_wheel
     id: 2

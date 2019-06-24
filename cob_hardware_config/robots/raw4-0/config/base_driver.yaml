@@ -1,29 +1,15 @@
 nodes:
-  ##Wheel 1
   fl_caster_rotation_joint:
-    motor_layer:
-      homing_event: 19 # -> digin
-      homing_speed: -5093 # -1.0 rs/s
-      homing_offset: 0
+    dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
+      "607C": "139350.5" # home offset
 
-
-  ##Wheel 2
   bl_caster_rotation_joint:
-    motor_layer:
-      homing_event: 19 # -> digin
-      homing_speed: -5093 # -1.0 rs/s
-      homing_offset: 0
+    dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
+      "607C": "140000.0" # home offset
 
-  ##Wheel 3
-  br_caster_rotation_joint:
-    motor_layer:
-      homing_event: 17 # -> digin
-      homing_speed: -5093 # -1.0 rs/s
-      homing_offset: 0
-
-  ##Wheel 4
   fr_caster_rotation_joint:
-    motor_layer:
-      homing_event: 19 # -> digin
-      homing_speed: -5093 # -1.0 rs/s
-      homing_offset: 0
+    dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
+      "607C": "-39500.0" # home offset
+  br_caster_rotation_joint:
+    dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
+      "607C": "-38800" # home offset
