@@ -11,11 +11,8 @@
 
 	<!-- start laser driver -->
 	<node unless="$(arg sim)" ns="$(arg name)" pkg="sick_safetyscanners" type="sick_safetyscanners_node" name="driver" respawn="false" output="screen">
-			<!-- topic remaps -->
-			<remap from="scan"         to="scan_raw"/>
-			<!-- <remap from="extended_laser_scan"   to="laser_$(arg name)/extended_laser_scan"/>
-			<remap from="output_paths"          to="laser_$(arg name)/output_paths"/>
-			<remap from="raw_data"              to="laser_$(arg name)/raw_data" /> -->
+		<!-- topic remaps -->
+		<remap from="scan" to="scan_raw"/>
 	</node>
 
 	<!-- laser filter -->
