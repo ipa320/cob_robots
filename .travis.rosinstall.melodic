@@ -34,3 +34,13 @@
     local-name: cob_supported_robots
     uri: https://github.com/ipa320/cob_supported_robots.git
     version: indigo_dev
+
+
+- git:
+    local-name: realsense
+    uri: https://github.com/IntelRealSense/realsense-ros.git
+    version: indigo-devel
+- git:
+    local-name: realsense2
+    uri: https://github.com/IntelRealSense/realsense-ros.git
+    version: development
