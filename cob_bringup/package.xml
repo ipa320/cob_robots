@@ -82,7 +82,7 @@
   <exec_depend>rostopic</exec_depend>
   <exec_depend>rplidar_ros</exec_depend>
   <exec_depend>rviz</exec_depend>
-  <exec_depend>sick_visionary_t_driver</exec_depend>
+  <!--exec_depend>sick_visionary_t_driver</exec_depend-->
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>theora_image_transport</exec_depend> <!-- needed by the cameras to publish the compressed topics -->
