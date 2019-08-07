@@ -2,8 +2,8 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.0 (2019-08-07)
+------------------
 * Merge pull request `#780 <https://github.com/ipa320/cob_robots/issues/780>`_ from fmessmer/melodic_checks
   [Melodic] add melodic checks
 * added laser_filters prefix for melodic
