@@ -2,6 +2,9 @@
 Changelog for package cob_default_robot_behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.6.11 (2019-04-05)
 -------------------
 

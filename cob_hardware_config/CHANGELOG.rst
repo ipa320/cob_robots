@@ -2,6 +2,17 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#780 <https://github.com/ipa320/cob_robots/issues/780>`_ from fmessmer/melodic_checks
+  [Melodic] add melodic checks
+* added laser_filters prefix for melodic
+* fixed xacro:if condition for melodic
+* Merge pull request `#779 <https://github.com/ipa320/cob_robots/issues/779>`_ from HannesBachter/add_cob4-22
+  add cob4-22
+* add cob4-22
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer, hyb
+
 0.6.11 (2019-04-05)
 -------------------
 * Merge pull request `#775 <https://github.com/ipa320/cob_robots/issues/775>`_ from fmessmer/add_cob4-25
