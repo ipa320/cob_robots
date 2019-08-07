@@ -48,7 +48,7 @@
   </xacro:sick_s300_laser_v0>
 
 
-  <xacro:torso name="torso" parent="base_link" dof1="false" dof2="true" dof3="true">
+  <xacro:torso name="torso" parent="base_link" dof1="${False}" dof2="${True}" dof3="${True}">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
   <!-- left camera -->
@@ -64,14 +64,14 @@
     <origin xyz="${torso_cam3d_down_x} ${torso_cam3d_down_y} ${torso_cam3d_down_z}" rpy="${torso_cam3d_down_roll} ${torso_cam3d_down_pitch} ${torso_cam3d_down_yaw}" />
   </xacro:realsense>
 
-  <xacro:head name="head" parent="torso_3_link" dof1="false" dof2="false" dof3="false">
+  <xacro:head name="head" parent="torso_3_link" dof1="${False}" dof2="${False}" dof3="${False}">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam" update_rate="3.5" height="1536" width="2048" > <!-- get this from config/head_cam.yaml -->
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
 
-  <xacro:sensorring name="sensorring" parent="head_3_link" active="true">
+  <xacro:sensorring name="sensorring" parent="head_3_link" active="${True}">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
   <xacro:realsense_zr300 name="sensorring_cam3d" ros_topic="sensorring_cam3d" parent="sensorring_link">
