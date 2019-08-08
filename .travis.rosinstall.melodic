@@ -37,10 +37,10 @@
 
 
 - git:
-    local-name: realsense
-    uri: https://github.com/IntelRealSense/realsense-ros.git
-    version: indigo-devel
+    local-name: realsense_substitute
+    uri: https://github.com/ipa320/realsense.git
+    version: realsense_substitute
 - git:
-    local-name: realsense2
-    uri: https://github.com/IntelRealSense/realsense-ros.git
-    version: development
+    local-name: realsense2_substitute
+    uri: https://github.com/ipa320/realsense.git
+    version: realsense2_substitute
