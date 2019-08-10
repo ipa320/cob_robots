@@ -2,6 +2,17 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#782 <https://github.com/ipa320/cob_robots/issues/782>`_ from fmessmer/comment_ur_dependencies
+  [Melodic] workaround missing dependencies
+* comment unused dependency cob_collision_monitor
+* comment realsense2_camera dependency
+* add missing dependency to realsense2_camera
+* comment sick_visionary_t
+* comment ur dependencies
+* Contributors: Felix Messmer, fmessmer
+
 0.7.0 (2019-08-07)
 ------------------
 * Merge pull request `#779 <https://github.com/ipa320/cob_robots/issues/779>`_ from HannesBachter/add_cob4-22

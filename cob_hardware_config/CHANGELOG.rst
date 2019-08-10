@@ -2,6 +2,13 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#782 <https://github.com/ipa320/cob_robots/issues/782>`_ from fmessmer/comment_ur_dependencies
+  [Melodic] workaround missing dependencies
+* comment ur dependencies
+* Contributors: Felix Messmer, fmessmer
+
 0.7.0 (2019-08-07)
 ------------------
 * Merge pull request `#780 <https://github.com/ipa320/cob_robots/issues/780>`_ from fmessmer/melodic_checks
