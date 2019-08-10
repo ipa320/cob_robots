@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.1 (2019-08-10)
+------------------
 * Merge pull request `#782 <https://github.com/ipa320/cob_robots/issues/782>`_ from fmessmer/comment_ur_dependencies
   [Melodic] workaround missing dependencies
 * comment unused dependency cob_collision_monitor
