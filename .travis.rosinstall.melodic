@@ -1,4 +1,8 @@
 - git:
+    local-name: cob_android
+    uri: https://github.com/ipa320/cob_android
+    version: indigo_dev
+- git:
     local-name: cob_calibration_data
     uri: https://github.com/ipa320/cob_calibration_data.git
     version: indigo_dev
@@ -23,6 +27,14 @@
     uri: https://github.com/ipa320/cob_extern.git
     version: indigo_dev
 - git:
+    local-name: cob_hand
+    uri: https://github.com/ipa320/cob_hand
+    version: indigo_dev
+- git:
+    local-name: cob_navigation
+    uri: https://github.com/ipa320/cob_navigation
+    version: indigo_dev
+- git:
     local-name: cob_perception_common
     uri: https://github.com/ipa320/cob_perception_common.git
     version: indigo_dev
@@ -34,3 +46,13 @@
     local-name: cob_supported_robots
     uri: https://github.com/ipa320/cob_supported_robots.git
     version: indigo_dev
+
+
+- git:
+    local-name: realsense_substitute
+    uri: https://github.com/ipa320/realsense.git
+    version: realsense_substitute
+- git:
+    local-name: realsense2_substitute
+    uri: https://github.com/ipa320/realsense.git
+    version: realsense2_substitute

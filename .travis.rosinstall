@@ -22,3 +22,8 @@
     local-name: cob_supported_robots
     uri: https://github.com/ipa320/cob_supported_robots.git
     version: indigo_dev
+
+- git:
+    local-name: realsense2_substitute
+    uri: https://github.com/ipa320/realsense.git
+    version: realsense2_substitute
