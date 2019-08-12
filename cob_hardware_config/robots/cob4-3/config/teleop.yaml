@@ -3,20 +3,31 @@
 # common params
 run_factor: 2.0
 apply_ramp: false
+joy_num_buttons: 12
 joy_num_axes: 6
-joy_num_modes: 1
+joy_num_modes: 4
+mode_switch_button: 8
+
+enable_light: false
+light_action_name: /light_base/set_light
+enable_sound: false
+sound_action_name: /sound/say
 
 # axes
 axis_vx: 1
 axis_vy: 0
-axis_yaw: 3
+axis_vz: 5
+axis_roll: 4
+axis_pitch: 3
+axis_yaw: 2
 
 # buttons
 deadman_button: 5
 safety_button: 4
-init_button: 7
+init_button: 9
 
 #mode1: Base
+run_button: 7
 
 components: {
   base: {
