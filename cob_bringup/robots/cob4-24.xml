@@ -139,12 +139,16 @@
 			<arg name="component_name" value="arm_left"/>
 			<arg name="can_device" value="can2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="true"/>
 		</include>
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_right"/>
 			<arg name="can_device" value="can3"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="true"/>
 		</include>
 
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
@@ -152,12 +156,16 @@
 			<arg name="component_name" value="gripper_left"/>
 			<arg name="can_device" value="can2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="false"/>
 		</include>
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="gripper_right"/>
 			<arg name="can_device" value="can3"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="use_external_sync" value="true"/>
+			<arg name="start_external_sync" value="false"/>
 		</include>
 
 		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
