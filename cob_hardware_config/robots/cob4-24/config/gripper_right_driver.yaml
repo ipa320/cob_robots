@@ -3,8 +3,8 @@ sync:
   overflow: 0
 
 defaults:
-  eds_pkg: schunk_pg70
-  eds_file: "config/Schunk_0_63.dcf"
+  eds_pkg: cob_hardware_config
+  eds_file: "robots/common/Schunk_0_63.dcf"
 
   pos_to_device: "rint(pos*1000000*2)" # m -> µm
   pos_from_device: "obj6064/1000000/2" # actual position [µm] -> m
