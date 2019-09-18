@@ -1,0 +1,90 @@
+
+##################################
+#joint constraint
+##################################
+
+joint_constraint_limits:
+#  arm_elbow_joint: 
+#    center_position: 0 
+#    tolerance_above: 0
+#    tolerance_below:  0
+#  arm_shoulder_lift_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+  arm_shoulder_pan_joint:
+    center_position: -0.675
+    tolerance_above: 0.830
+    tolerance_below: 1.05
+  arm_wrist_1_joint:
+    center_position: -3.14
+    tolerance_above: 1.57
+    tolerance_below: 3.14
+  arm_wrist_2_joint:
+    center_position: -1.5
+    tolerance_above: 1.03
+    tolerance_below: 1.15
+#  arm_wrist_3_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+  
+##################################
+#position constraint --> check what required
+##################################
+
+#position_constraint_limits:
+#  arm_elbow_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+#  arm_shoulder_lift_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+#  arm_shoulder_pan_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+#  arm_wrist_1_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+#  arm_wrist_2_joint:
+#    center_position: -1.5
+#    tolerance_above: 0.7652
+#    tolerance_below: 1.15
+#  arm_wrist_3_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+
+##################################
+#orientation constraint --> check what required
+##################################
+
+#joint_constraint_limits:
+#  arm_elbow_joint:
+#    center_position: -0.675
+#    tolerance_above: 0.785
+#    tolerance_below: 1.05
+#  arm_shoulder_lift_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+#  arm_shoulder_pan_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
+#  arm_wrist_1_joint:
+#    center_position: -3.14
+#    tolerance_above: 1.57
+#    tolerance_below: 3.14
+#  arm_wrist_2_joint:
+#    center_position: -1.5
+#    tolerance_above: 0.7652
+#    tolerance_below: 1.15
+#  arm_wrist_3_joint:
+#    center_position: 0
+#    tolerance_above: 0
+#    tolerance_below: 0
