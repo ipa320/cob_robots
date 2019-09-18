@@ -20,8 +20,11 @@
   <!-- ur_arm -->
   <xacro:include filename="$(find raw_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
 
-  <!-- vacuum gripper -->
-  <xacro:include filename="$(find raw_description)/urdf/vacuum_gripper/gripper.urdf.xacro" />
+  <!-- schmaltz vacuum gripper -->
+  <xacro:include filename="$(find raw_description)/urdf/schmaltz_gripper/gripper.urdf.xacro" />
+
+  <!-- arm camera -->
+  <xacro:include filename="$(find raw_description)/urdf/kinect_camera/kinect_camera.urdf.xacro" />
 
   <!-- sensors -->
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
@@ -53,5 +56,10 @@
   <xacro:vacuum_gripper name="gripper" parent="arm_ee_link">
     <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="${gripper_roll} ${gripper_pitch} ${gripper_yaw}" />
   </xacro:vacuum_gripper>
+
+  <xacro:kinect_camera name="arm_camera" ros_topic="arm_kinect_camera" parent="gripper_coupling_link" update_rate="30" data_skip="9">
+    <origin xyz="${arm_camera_x} ${arm_camera_y} ${arm_camera_z}" rpy="${arm_camera_roll} ${arm_camera_pitch} ${arm_camera_yaw}" />
+  </xacro:kinect_camera>
+  
 
 </robot>

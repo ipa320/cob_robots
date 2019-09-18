@@ -100,4 +100,13 @@
 	<xacro:property name="cam3d_roll" value="${def_cam3d_roll+offset_cam3d_roll}"/>
 	<xacro:property name="cam3d_pitch" value="${def_cam3d_pitch+offset_cam3d_pitch}"/>
 	<xacro:property name="cam3d_yaw" value="${def_cam3d_yaw+offset_cam3d_yaw}"/>
+
+        <!-- arm camera | handeye calibration | relative to cam_reference_link -->
+        <xacro:property name="arm_camera_x" value="${def_arm_camera_x}"/>
+        <xacro:property name="arm_camera_y" value="${def_arm_camera_y}"/>
+        <xacro:property name="arm_camera_z" value="${def_arm_camera_z}"/>
+        <xacro:property name="arm_camera_roll" value="${def_arm_camera_roll}"/>
+        <xacro:property name="arm_camera_pitch" value="${def_arm_camera_pitch}"/>
+        <xacro:property name="arm_camera_yaw" value="${def_arm_camera_yaw}"/>
+
 </robot>

@@ -26,7 +26,7 @@ planner_configs:
     min_valid_path_fraction: 0.5  # Accept partially valid moves above fraction. default: 0.5
   RRTkConfigDefault:
     type: geometric::RRT
-    range: 0.1  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
+    range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
     goal_bias: 0.05  # When close to goal select goal, with this probability? default: 0.05
   RRTConnectkConfigDefault:
     type: geometric::RRTConnect
