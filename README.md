@@ -11,7 +11,7 @@ cob_robots
 
 ## Travis - Continuous Integration
 
-Status: [![Build Status](https://travis-ci.org/ipa320/cob_robots.svg?branch=kinetic_dev)](https://travis-ci.org/ipa320/cob_robots)
+Status: [![Build Status](https://travis-ci.com/ipa320/cob_robots.svg?branch=kinetic_dev)](https://travis-ci.com/ipa320/cob_robots)
 
 ## ROS Buildfarm
 
