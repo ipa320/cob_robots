@@ -2,6 +2,16 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#786 <https://github.com/ipa320/cob_robots/issues/786>`_ from fmessmer/add_cob4-24
+  [WIP] add cob4 24
+* add cob4-24
+* Merge pull request `#783 <https://github.com/ipa320/cob_robots/issues/783>`_ from HannesBachter/update_cob4-3
+  update cob4-3 to regular cob base
+* update cob4-3 to regular cob base
+* Contributors: Benjamin Maidel, Felix Messmer, fmessmer, hyb
+
 0.7.1 (2019-08-10)
 ------------------
 
