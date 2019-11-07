@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.2 (2019-11-07)
+------------------
 * Merge pull request `#788 <https://github.com/ipa320/cob_robots/issues/788>`_ from HannesBachter/add_cob4-24
   Add cob4 24
 * add default acc and vel for grippers
