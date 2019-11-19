@@ -8,27 +8,27 @@ analyzers:
       b1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: b1
-        contains: '-b1'
+        contains: 'b1'
       t1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t1
-        contains: '-t1'
+        contains: 't1'
       t2:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t2
-        contains: '-t2'
+        contains: 't2'
       t3:
         type: diagnostic_aggregator/GenericAnalyzer
         path: t3
-        contains: '-t3'
+        contains: 't3'
       s1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: s1
-        contains: '-s1'
+        contains: 's1'
       h1:
         type: diagnostic_aggregator/GenericAnalyzer
         path: h1
-        contains: '-h1'
+        contains: 'h1'
 #  network:
 #    type: diagnostic_aggregator/AnalyzerGroup
 #    path: Network
@@ -55,6 +55,10 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Light
         contains: 'light'
+      mimic:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Mimic
+        contains: 'mimic'
 
   sensors:
     type: diagnostic_aggregator/AnalyzerGroup
@@ -101,6 +105,14 @@ analyzers:
     type: diagnostic_aggregator/AnalyzerGroup
     path: Actuators
     analyzers:
+      head:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Head
+        contains: 'head/'
+      sensorring:
+        type: diagnostic_aggregator/GenericAnalyzer
+        path: Sensorring
+        contains: 'sensorring/'
       arm_left:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Arm Left
@@ -117,14 +129,6 @@ analyzers:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Gripper Right
         contains: 'gripper_right'
-      sensorring:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Sensorring
-        contains: 'sensorring/'
-      head:
-        type: diagnostic_aggregator/GenericAnalyzer
-        path: Head
-        contains: 'head/'
       torso:
         type: diagnostic_aggregator/GenericAnalyzer
         path: Torso
