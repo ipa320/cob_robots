@@ -9,5 +9,6 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 	</include>
+  <node ns="teleop" pkg="cob_teleop" type="joy_init" name="init_base" />
 </launch>
 
