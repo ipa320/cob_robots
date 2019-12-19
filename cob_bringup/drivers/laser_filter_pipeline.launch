@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot"/>
+  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+  <arg name="name"/>
+
+  <!-- angular bounds filter-->
+  <node ns="$(arg name)" pkg="laser_filters" type="scan_to_scan_filter_chain" name="scan_filter" output="screen" respawn="true">
+    <rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg name)_filter.yaml" />
+    <remap from="scan" to="scan_raw" />
+    <remap from="scan_filtered" to="scan" />
+
+  </node>
+</launch>

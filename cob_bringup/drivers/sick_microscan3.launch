@@ -7,16 +7,16 @@
 	<arg name="sim" default="false"/>
 
 	<!-- load parameter -->
-	<rosparam ns="$(arg name)/driver" command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg name).yaml"/>
 
 	<!-- start laser driver -->
 	<node unless="$(arg sim)" ns="$(arg name)" pkg="sick_safetyscanners" type="sick_safetyscanners_node" name="driver" respawn="false" output="screen">
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg name).yaml"/>
 		<!-- topic remaps -->
 		<remap from="scan" to="scan_raw"/>
 	</node>
 
 	<!-- laser filter -->
-	<include file="$(find cob_bringup)/drivers/laser_scan_filter.launch">
+	<include file="$(find cob_bringup)/drivers/laser_filter_pipeline.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/>
 		<arg name="name" value="$(arg name)"/>
