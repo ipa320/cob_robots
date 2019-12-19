@@ -13,8 +13,10 @@ accel_lim_w: 0.5
 
 # Optional parameters
 frequency: 100.0
-decel_factor: 1.5       #used if zero velocity is received or goal velocity is far away from current velocity
-decel_factor_safe: 3.5  #used if no velocity commands received (eg. no deadman on joystick)
+# decel_factor: 1.5       #used if zero velocity is received or goal velocity is far away from current velocity
+# decel_factor_safe: 3.5  #used if no velocity commands received (eg. no deadman on joystick)
+decel_factor: 1.0  # vastly reduced because of voltage peaking
+decel_factor_safe: 1.0  # vastly reduced because of voltage peaking
 
 # Robot velocity feedback type:
 #  0 - none
