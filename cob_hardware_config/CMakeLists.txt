@@ -1,13 +1,11 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cob_hardware_config)
 
-find_package(catkin REQUIRED COMPONENTS cob_supported_robots)
-
+find_package(catkin REQUIRED COMPONENTS)
 catkin_package()
 
 ### TESTING ###
 if(CATKIN_ENABLE_TESTING)
-    find_package(roslaunch REQUIRED)
     find_package(rostest REQUIRED)
     # loop through list of robots for testing
     foreach(robot ${cob_supported_robots_ROBOTLIST})

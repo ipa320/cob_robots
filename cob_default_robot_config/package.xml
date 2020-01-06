@@ -16,7 +16,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>roslaunch</depend>
-  <depend>cob_supported_robots</depend>
+  <test_depend>cob_supported_robots</test_depend>
+  <test_depend>roslaunch</test_depend>
 
 </package>
