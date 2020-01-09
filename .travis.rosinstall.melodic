@@ -1,8 +1,4 @@
 - git:
-    local-name: cob_android
-    uri: https://github.com/ipa320/cob_android.git
-    version: indigo_dev
-- git:
     local-name: cob_calibration_data
     uri: https://github.com/ipa320/cob_calibration_data.git
     version: indigo_dev
@@ -22,26 +18,6 @@
     local-name: cob_driver
     uri: https://github.com/ipa320/cob_driver.git
     version: kinetic_dev
-- git:
-    local-name: cob_extern
-    uri: https://github.com/ipa320/cob_extern.git
-    version: indigo_dev
-- git:
-    local-name: cob_hand
-    uri: https://github.com/ipa320/cob_hand.git
-    version: indigo_dev
-- git:
-    local-name: cob_navigation
-    uri: https://github.com/ipa320/cob_navigation.git
-    version: indigo_dev
-- git:
-    local-name: cob_perception_common
-    uri: https://github.com/ipa320/cob_perception_common.git
-    version: indigo_dev
-- git:
-    local-name: cob_substitute
-    uri: https://github.com/ipa320/cob_substitute.git
-    version: indigo_dev
 - git:
     local-name: cob_supported_robots
     uri: https://github.com/ipa320/cob_supported_robots.git
