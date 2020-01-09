@@ -7,6 +7,6 @@ catkin_python_setup()
 
 catkin_package()
 
-install(PROGRAMS scripts/trigger_srvs.py
+catkin_install_python(PROGRAMS scripts/trigger_srvs.py
      DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
