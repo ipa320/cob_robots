@@ -5,7 +5,6 @@ update_frequency: 5.0
 publish_frequency: 5.0
 
 # local map settings
-static_map: false
 rolling_window: true
 width: 5.0
 height: 5.0
