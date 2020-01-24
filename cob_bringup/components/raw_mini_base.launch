@@ -5,17 +5,15 @@
   <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
   <arg name="sim" default="false"/>
 
-  <arg name="driver_yaml" value="$(arg pkg_hardware_config)/robots/common/raw_mini_base_driver.yaml"/>
-  <arg name="controller_yaml" value="$(arg pkg_hardware_config)/robots/common/raw_mini_base_controller.yaml"/>
-
-  <node pkg="rosserial_python" type="serial_node.py" name ="rosserial" output="screen">
-    <param name="port" value="/dev/ttyACM0"/>
-    <param name="baud" value="115200"/>
-
-    <remap from="/cmd_vel" to="/base/velocity_smoother/command"/>
-  </node>
 
   <group ns="base">
+    <node pkg="rosserial_python" type="serial_node.py" name ="rosserial" output="screen">
+      <param name="port" value="/dev/ttyACM0"/>
+      <param name="baud" value="115200"/>
+    </node>
+
+    <node pkg="cob_mecanum_controller" type="cob_mecanum_controller_node" name="mecanum_controller" output="log">
+    </node>
     <!-- twist mux -->
     <include file="$(find cob_bringup)/tools/twist_mux.launch">
       <arg name="robot" value="$(arg robot)"/>
@@ -26,11 +24,11 @@
     <!-- velocity smoother -->
     <include file="$(find cob_bringup)/tools/velocity_smoother.launch">
       <arg name="robot" value="$(arg robot)"/>
-      <arg name="config_file"           default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
-      <arg name="raw_cmd_vel_topic"     default="velocity_smoother/command"/>
-      <arg name="smooth_cmd_vel_topic"  default="twist_controller/command"/>
-      <arg name="robot_cmd_vel_topic"   default="twist_controller/command"/>
-      <arg name="odom_topic"            default="odometry_controller/odometry"/>
+      <arg name="config_file" default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
+      <arg name="raw_cmd_vel_topic" default="velocity_smoother/command"/>
+      <arg name="smooth_cmd_vel_topic" default="cmd_vel"/>
+      <arg name="robot_cmd_vel_topic" default="cmd_vel"/>
+      <arg name="odom_topic" default="odom"/>
     </include>
   </group>
 </launch>
