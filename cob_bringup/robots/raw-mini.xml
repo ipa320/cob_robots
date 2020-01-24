@@ -9,17 +9,13 @@
   <include file="$(find cob_hardware_config)/upload_robot.launch">
     <arg name="robot" value="$(arg robot)"/>
   </include>
-  <!-- upload default configuration parameters -->
-  <include file="$(find cob_default_robot_config)/upload_param.launch">
-    <arg name="robot" value="$(arg robot)"/>
-  </include>
 
   <!-- start hardware -->
   <group unless="$(arg sim)">
-    <include file="$(find cob_bringup)/components/rplidar_mini.launch"/>
+    <include file="$(find cob_bringup)/drivers/rplidar.launch"/>
   </group>
 
-  <include file="$(find cob_bringup)/components/raw_mini_base.launch" >
+  <include file="$(find cob_bringup)/components/raw_mini_base.launch">
     <arg name="robot" value="$(arg robot)" />
     <arg name="sim" value="$(arg sim)"/>
   </include>
@@ -28,11 +24,8 @@
   <include file="$(find cob_bringup)/tools/teleop.launch">
     <arg name="robot" value="$(arg robot)"/>
   </include>
-  <include file="$(find cob_bringup)/tools/base_collision_observer.launch">
-    <arg name="robot" value="$(arg robot)"/>
-  </include>
+
   <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
     <arg name="robot" value="$(arg robot)"/>
   </include>
-  <include file="$(find cob_script_server)/launch/script_server.launch"/>
 </launch>
