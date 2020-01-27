@@ -7,13 +7,18 @@
 
 
   <group ns="base">
-    <node pkg="rosserial_python" type="serial_node.py" name ="rosserial" output="screen">
-      <param name="port" value="/dev/ttyACM0"/>
-      <param name="baud" value="115200"/>
-    </node>
+    <group unless="$(arg sim)">
+      <node pkg="rosserial_python" type="serial_node.py" name ="rosserial" output="screen">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="115200"/>
+      </node>
 
-    <node pkg="cob_mecanum_controller" type="cob_mecanum_controller_node" name="mecanum_controller" output="log">
-    </node>
+      <node pkg="cob_mecanum_controller" type="cob_mecanum_controller_node" name="mecanum_controller" output="log">
+        <param name="lx" value="0.115" />
+        <param name="ly" value="0.09" />
+        <param name="r" value="0.1" />
+      </node>
+    </group>
     <!-- twist mux -->
     <include file="$(find cob_bringup)/tools/twist_mux.launch">
       <arg name="robot" value="$(arg robot)"/>
