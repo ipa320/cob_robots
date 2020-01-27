@@ -1,9 +1,9 @@
 <launch>
-  <node name="rplidar_node" pkg="rplidar_ros" type="rplidarNode" output="screen">
-    <param name="serial_port" type="string" value="/dev/ttyUSB0"/>
-    <param name="serial_baudrate" type="int" value="115200"/>
-    <param name="frame_id" type="string" value="laser_link"/>
-    <param name="inverted" type="bool" value="false"/>
-    <param name="angle_compensate" type="bool" value="true"/>
+  <arg name="pkg_hardware_config" />
+  <arg name="robot" />
+
+  <node pkg="rplidar_ros" type="rplidarNode" name="rplidar_node" output="screen">
+    <rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/rplidar.yaml"/>
   </node>
+
 </launch>
