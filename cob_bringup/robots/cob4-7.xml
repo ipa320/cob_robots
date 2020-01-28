@@ -245,7 +245,7 @@
 			<arg name="name" value="sensorring_cam3d"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="flip" value="true"/>
-			<arg name="serial_no" value="817412071179"/>
+			<arg name="serial_no" value="817412070851"/>
 		</include>
 	</group>
 
