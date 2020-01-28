@@ -6,10 +6,15 @@
 	<arg name="pc1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
+	<arg name="use_fts" default="false"/>
+    <arg name="real_fts" default="false"/>
+    <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
+        <arg name="sim" default="$(arg sim)"/>
+        <arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)"/> 
 	</include>
 	<!-- upload default configuration parameters -->
 	<include file="$(find cob_default_robot_config)/upload_param.launch">
@@ -42,6 +47,10 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
+        <include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
+			<arg name="robot" value="$(arg robot)" />
+		</include>
+        
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -56,10 +65,12 @@
 		<include file="$(find cob_bringup)/tools/battery_monitor.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
-		<include file="$(find cob_bringup)/components/raw3_base.launch" >
+		<include file="$(find cob_bringup)/components/raw3_base.launch">
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="can_device" value="can1" />
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="use_fts" value="$(arg use_fts)" />
+            <arg name="real_fts" value="$(arg real_fts)"/>
 		</include>
 		<!-- overwrite control parameters with non-default values -->
 		<rosparam ns="base" command="load" file="$(find cob_hardware_config)/robots/$(arg robot)/config/base_controller.yaml"/>
@@ -70,7 +81,7 @@
 
 		</include>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
-			<arg name="robot" value="$(arg robot)"/>
+            <arg name="robot" value="$(arg robot)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
 			<arg name="robot" value="$(arg robot)"/>

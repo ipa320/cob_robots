@@ -2,6 +2,32 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.2 (2019-11-07)
+------------------
+* Merge pull request `#788 <https://github.com/ipa320/cob_robots/issues/788>`_ from HannesBachter/add_cob4-24
+  Add cob4 24
+* add default acc and vel for grippers
+* Merge pull request `#786 <https://github.com/ipa320/cob_robots/issues/786>`_ from fmessmer/add_cob4-24
+  [WIP] add cob4 24
+* Merge pull request `#24 <https://github.com/ipa320/cob_robots/issues/24>`_ from HannesBachter/add_cob4-24
+  fix gripper
+* fix gripper can, driver, ...
+* add cob4-24
+* Merge pull request `#783 <https://github.com/ipa320/cob_robots/issues/783>`_ from HannesBachter/update_cob4-3
+  update cob4-3 to regular cob base
+* update cob4-3 to regular cob base
+* Contributors: Benjamin Maidel, Felix Messmer, fmessmer, hyb
+
+0.7.1 (2019-08-10)
+------------------
+
+0.7.0 (2019-08-07)
+------------------
+* Merge pull request `#779 <https://github.com/ipa320/cob_robots/issues/779>`_ from HannesBachter/add_cob4-22
+  add cob4-22
+* add cob4-22
+* Contributors: Florian Weisshardt, hyb
+
 0.6.11 (2019-04-05)
 -------------------
 * Merge pull request `#775 <https://github.com/ipa320/cob_robots/issues/775>`_ from fmessmer/add_cob4-25

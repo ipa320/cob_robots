@@ -13,7 +13,7 @@ pot_ctrl_virt_mass: 0.5 #default: 0.8
 max_acceleration: [0.3, 0.3, 0.4]
 
 #Parameters specifying collision velocity filter
-influence_radius: 2.0 #[m] distance from robot_center
-obstacle_damping_dist: 0.3 # used as slow-down dist
-stop_threshold: 0.05 #[m]
+influence_radius: 3.0 #[m] distance from robot_center, default: 2.0
+obstacle_damping_dist: 0.5 # used as slow-down dist, default: 0.3
+stop_threshold: 0.12 #[m] #default: 0.05
 use_circumscribed_threshold: 0.2 #[rad/s] scan for obstacles in circumscribed radius of robot even when tube filter is enabled during fast rotations

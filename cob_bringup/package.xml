@@ -1,6 +1,6 @@
 <package format="2">
   <name>cob_bringup</name>
-  <version>0.6.11</version>
+  <version>0.7.2</version>
   <description>This package provides launch files for operating Care-O-bot.</description>
 
   <license>Apache 2.0</license>
@@ -15,8 +15,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <depend>roslaunch</depend>
-
   <exec_depend>canopen_chain_node</exec_depend>
   <exec_depend>canopen_motor_node</exec_depend>
   <exec_depend>cob_android_script_server</exec_depend>
@@ -25,7 +23,7 @@
   <exec_depend>cob_bms_driver</exec_depend>
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_cam3d_throttle</exec_depend>
-  <exec_depend>cob_collision_monitor</exec_depend>
+  <!--exec_depend>cob_collision_monitor</exec_depend-->
   <exec_depend>cob_collision_velocity_filter</exec_depend>
   <exec_depend>cob_command_gui</exec_depend>
   <exec_depend>cob_control_mode_adapter</exec_depend>
@@ -76,22 +74,24 @@
   <exec_depend>openni2_launch</exec_depend>
   <exec_depend>position_controllers</exec_depend>
   <exec_depend>realsense_camera</exec_depend>
+  <!--exec_depend>realsense2_camera</exec_depend--> <!-- not released into kinetic -->
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rosserial_python</exec_depend>
   <exec_depend>rosserial_server</exec_depend>
   <exec_depend>rostopic</exec_depend>
   <exec_depend>rplidar_ros</exec_depend>
   <exec_depend>rviz</exec_depend>
-  <exec_depend>sick_visionary_t_driver</exec_depend>
+  <!--exec_depend>sick_visionary_t_driver</exec_depend-->
   <exec_depend>spacenav_node</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>theora_image_transport</exec_depend> <!-- needed by the cameras to publish the compressed topics -->
   <exec_depend>topic_tools</exec_depend>
   <exec_depend>twist_mux</exec_depend>
-  <exec_depend>ur_driver</exec_depend>
+  <!--exec_depend>ur_driver</exec_depend-->
   <exec_depend>usb_cam</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
 
   <test_depend>cob_supported_robots</test_depend>
+  <test_depend>roslaunch</test_depend>
 
 </package>

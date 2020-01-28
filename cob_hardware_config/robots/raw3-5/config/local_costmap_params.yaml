@@ -5,7 +5,6 @@ update_frequency: 5.0
 publish_frequency: 5.0
 
 # local map settings
-static_map: false
 rolling_window: true
 width: 5.0
 height: 5.0
@@ -13,7 +12,7 @@ resolution: 0.07
 
 # footprint and range
 footprint: [[0.39,0.3],[-0.39,0.3],[-0.39,-0.3],[0.39,-0.3]] #[m]
-footprint_padding: 0.02 #[m]
+footprint_padding: 0.07 #[m] # default: 0.02
 
 #layers
 plugins:
