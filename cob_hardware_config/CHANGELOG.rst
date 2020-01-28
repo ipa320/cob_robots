@@ -2,6 +2,73 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.2 (2019-11-07)
+------------------
+* Merge pull request `#786 <https://github.com/ipa320/cob_robots/issues/786>`_ from fmessmer/add_cob4-24
+  [WIP] add cob4 24
+* Merge pull request `#24 <https://github.com/ipa320/cob_robots/issues/24>`_ from HannesBachter/add_cob4-24
+  fix gripper
+* fix gripper can, driver, ...
+* fix velocity filter and costmap config
+* add cob4-24
+* Merge pull request `#785 <https://github.com/ipa320/cob_robots/issues/785>`_ from HannesBachter/calibrate_cob4-3
+  correct typo for fl FDM
+* correct typo for fl FDM
+* Merge pull request `#784 <https://github.com/ipa320/cob_robots/issues/784>`_ from HannesBachter/calibrate_cob4-3
+  Calibrate cob4 3
+* harmonize config appearance
+* calibrate cob4-3 base
+* Merge pull request `#783 <https://github.com/ipa320/cob_robots/issues/783>`_ from HannesBachter/update_cob4-3
+  update cob4-3 to regular cob base
+* update cob4-3 to regular cob base
+* Contributors: Benjamin Maidel, Felix Messmer, fmessmer, hyb
+
+0.7.1 (2019-08-10)
+------------------
+* Merge pull request `#782 <https://github.com/ipa320/cob_robots/issues/782>`_ from fmessmer/comment_ur_dependencies
+  [Melodic] workaround missing dependencies
+* comment ur dependencies
+* Contributors: Felix Messmer, fmessmer
+
+0.7.0 (2019-08-07)
+------------------
+* Merge pull request `#780 <https://github.com/ipa320/cob_robots/issues/780>`_ from fmessmer/melodic_checks
+  [Melodic] add melodic checks
+* added laser_filters prefix for melodic
+* fixed xacro:if condition for melodic
+* Merge pull request `#779 <https://github.com/ipa320/cob_robots/issues/779>`_ from HannesBachter/add_cob4-22
+  add cob4-22
+* add cob4-22
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer, hyb
+
+0.6.11 (2019-04-05)
+-------------------
+* Merge pull request `#775 <https://github.com/ipa320/cob_robots/issues/775>`_ from fmessmer/add_cob4-25
+  add cob4-25
+* update rviz config cob4-25
+* additional flexisoft params
+* add cob4-25
+* Contributors: Felix Messmer, fmessmer
+
+0.6.10 (2019-03-14)
+-------------------
+* Merge pull request `#770 <https://github.com/ipa320/cob_robots/issues/770>`_ from fmessmer/finalize_cob4-20
+  finalize cob4-20 config
+* finalize cob4-20 config
+* Merge pull request `#769 <https://github.com/ipa320/cob_robots/issues/769>`_ from fmessmer/add_cob4-20
+  add cob4-20 ipa 340
+* add cob4-20 ipa 340
+* Merge pull request `#768 <https://github.com/ipa320/cob_robots/issues/768>`_ from fmessmer/update_cob4-7
+  setup new cob4-7
+* finalize config
+* enable d435 cameras
+* enable actuators
+* Merge pull request `#765 <https://github.com/ipa320/cob_robots/issues/765>`_ from fmessmer/update_paul_stuttgart
+  Update paul stuttgart
+* update hostnames
+* update pc_monitor config
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer, ipa-foj
+
 0.6.9 (2018-07-21)
 ------------------
 * update maintainer

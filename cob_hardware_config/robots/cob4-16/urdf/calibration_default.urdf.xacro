@@ -11,7 +11,7 @@
 	<xacro:property name="def_laser_front_pitch" value="0.0"/>
 	<xacro:property name="def_laser_front_yaw" value="0.0"/>
 
-	<!-- laser rear mount positions | relative to base_link -->
+	<!-- laser left mount positions | relative to base_link -->
 	<xacro:property name="def_laser_left_x" value="-0.122"/>
 	<xacro:property name="def_laser_left_y" value="0.21131"/>
 	<xacro:property name="def_laser_left_z" value="0.20858"/>
@@ -19,7 +19,7 @@
 	<xacro:property name="def_laser_left_pitch" value="0.0"/>
 	<xacro:property name="def_laser_left_yaw" value="2.094"/>
 
-	<!-- laser top mount positions | relative to base_link -->
+	<!-- laser right mount positions | relative to base_link -->
 	<xacro:property name="def_laser_right_x" value="-0.122"/>
 	<xacro:property name="def_laser_right_y" value="-0.21131"/>
 	<xacro:property name="def_laser_right_z" value="0.20858"/>
@@ -96,27 +96,27 @@
 	<!-- extrinsic camera calibration  -->
 	<!-- ***************************** -->
 	<!-- torso cam3d left mount positions | relative to torso_3_link -->
-	<xacro:property name="def_torso_cam3d_left_x" value="0.12839"/>
-	<xacro:property name="def_torso_cam3d_left_y" value="0.01802"/>
-	<xacro:property name="def_torso_cam3d_left_z" value="0.24214"/>
-	<xacro:property name="def_torso_cam3d_left_roll" value="1.57079"/>
+	<xacro:property name="def_torso_cam3d_left_x" value="0.14873"/>
+	<xacro:property name="def_torso_cam3d_left_y" value="0.01293"/>
+	<xacro:property name="def_torso_cam3d_left_z" value="0.27008"/>
+	<xacro:property name="def_torso_cam3d_left_roll" value="-1.57079"/>
 	<xacro:property name="def_torso_cam3d_left_pitch" value="0.0"/>
-	<xacro:property name="def_torso_cam3d_left_yaw" value="0.418879"/>
+	<xacro:property name="def_torso_cam3d_left_yaw" value="0.61"/>
 
 	<!-- torso cam3d right mount positions | relative to torso_3_link -->
-	<xacro:property name="def_torso_cam3d_right_x" value="0.12839"/>
-	<xacro:property name="def_torso_cam3d_right_y" value="-0.01802"/>
-	<xacro:property name="def_torso_cam3d_right_z" value="0.24214"/>
-	<xacro:property name="def_torso_cam3d_right_roll" value="1.57079"/>
+	<xacro:property name="def_torso_cam3d_right_x" value="0.14873"/>
+	<xacro:property name="def_torso_cam3d_right_y" value="-0.01293"/>
+	<xacro:property name="def_torso_cam3d_right_z" value="0.27008"/>
+	<xacro:property name="def_torso_cam3d_right_roll" value="-1.57079"/>
 	<xacro:property name="def_torso_cam3d_right_pitch" value="0.0"/>
-	<xacro:property name="def_torso_cam3d_right_yaw" value="-0.418879"/>
+	<xacro:property name="def_torso_cam3d_right_yaw" value="-0.61"/>
 
 	<!-- torso cam3d down mount positions | relative to torso_3_link -->
-	<xacro:property name="def_torso_cam3d_down_x" value="0.15908"/>
+	<xacro:property name="def_torso_cam3d_down_x" value="0.15203"/>
 	<xacro:property name="def_torso_cam3d_down_y" value="0.0"/>
-	<xacro:property name="def_torso_cam3d_down_z" value="0.14005"/>
+	<xacro:property name="def_torso_cam3d_down_z" value="0.1307"/>
 	<xacro:property name="def_torso_cam3d_down_roll" value="0.0"/>
-	<xacro:property name="def_torso_cam3d_down_pitch" value="0.61086"/>
+	<xacro:property name="def_torso_cam3d_down_pitch" value="0.56"/>
 	<xacro:property name="def_torso_cam3d_down_yaw" value="0.0"/>
 
 	<!-- sensorring cam3d | handeye calibration | relative to sensorring_link -->

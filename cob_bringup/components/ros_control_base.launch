@@ -19,12 +19,11 @@
 	<arg name="stuck_detector_timeout" default="2.0"/>
 	<arg name="stuck_detector_threshold" default="0.174533"/>
 	<arg name="stuck_detector_shutdown" default="false"/>
+    <arg name="base_controllers_to_spawn" default="joint_state_controller odometry_controller"/>
 
-        <arg name="base_controllers_to_spawn" default="joint_state_controller odometry_controller"/>
-
-        <arg name="velocity_smoother_config_file"   default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
-        <arg name="twist_mux_config_locks"          default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/twist_mux_locks.yaml"/>
-        <arg name="twist_mux_config_topics"         default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/twist_mux_topics.yaml"/>
+    <arg name="velocity_smoother_config_file"   default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
+    <arg name="twist_mux_config_locks"          default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/twist_mux_locks.yaml"/>
+    <arg name="twist_mux_config_topics"         default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/twist_mux_topics.yaml"/>
 
 	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
