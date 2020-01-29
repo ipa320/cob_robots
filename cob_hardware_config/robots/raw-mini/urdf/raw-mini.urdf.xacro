@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-       name="raw-mini" >
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="raw-mini">
 
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
@@ -14,7 +13,7 @@
   <xacro:include filename="$(find cob_description)/urdf/sensors/rplidar.urdf.xacro"/>
 
   <!-- composition of the robot -->
-  <xacro:raw_base name="base"/>
+  <xacro:raw_mini_base name="base"/>
   <!-- base laser front -->
   <xacro:rplidar name="laser" parent="base">
     <origin xyz="${laser_front_x} ${laser_front_y} ${laser_front_z}" rpy="${laser_front_roll} ${laser_front_pitch} ${laser_front_yaw}" />
