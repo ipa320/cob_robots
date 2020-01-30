@@ -13,6 +13,15 @@ if(CATKIN_ENABLE_TESTING)
     message("testing for robot: ${robot}")
     roslaunch_add_file_check(robots/${robot}.xml)
   endforeach()
+
+  # additional robots not officially supported
+  set(test_list
+    raw-mini
+  )
+  foreach(robot ${test_list})
+    message("testing for robot: ${robot}")
+    roslaunch_add_file_check(robots/${robot}.xml)
+  endforeach()
 endif()
 
 ### INSTALL ###
