@@ -55,9 +55,9 @@ def setLightCyanSweep_cb(req):
         light_mode.mode = 8
         light_mode.frequency = 30
         resp = set_light_torso(light_mode)
-        print resp
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
+        print(resp)
+    except rospy.ServiceException as e:
+        print("Service call failed: %s"%e)
         return TriggerResponse(False, "Calling light service failed.")
     return TriggerResponse(True, "")
 
@@ -77,9 +77,9 @@ def setLightCyanBreath_cb(req):
         light_mode.mode = 3
         light_mode.frequency = 0.25
         resp = set_light_torso(light_mode)
-        print resp
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
+        print(resp)
+    except rospy.ServiceException as e:
+        print("Service call failed: %s"%e)
         return TriggerResponse(False, "Calling light service failed.")
     return TriggerResponse(True, "")
 
