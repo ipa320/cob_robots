@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot"/>
+
+  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+  <arg name="sim" default="false"/>
+
+
+  <group ns="base">
+    <group unless="$(arg sim)">
+      <node pkg="rosserial_python" type="serial_node.py" name ="rosserial" output="screen">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="115200"/>
+      </node>
+
+      <node pkg="cob_mecanum_controller" type="cob_mecanum_controller_node" name="mecanum_controller" output="log">
+        <param name="lx" value="0.115" />
+        <param name="ly" value="0.09" />
+        <param name="r" value="0.1" />
+      </node>
+    </group>
+    <!-- twist mux -->
+    <include file="$(find cob_bringup)/tools/twist_mux.launch">
+      <arg name="robot" value="$(arg robot)"/>
+      <arg name="cmd_vel_out" default="velocity_smoother/command"/>
+      <arg name="marker_out" default="twist_mux/marker"/>
+    </include>
+
+    <!-- velocity smoother -->
+    <include file="$(find cob_bringup)/tools/velocity_smoother.launch">
+      <arg name="robot" value="$(arg robot)"/>
+      <arg name="config_file" default="$(arg pkg_hardware_config)/robots/$(arg robot)/config/velocity_smoother.yaml"/>
+      <arg name="raw_cmd_vel_topic" default="velocity_smoother/command"/>
+      <arg name="smooth_cmd_vel_topic" default="cmd_vel"/>
+      <arg name="robot_cmd_vel_topic" default="cmd_vel"/>
+      <arg name="odom_topic" default="odom"/>
+    </include>
+  </group>
+</launch>
