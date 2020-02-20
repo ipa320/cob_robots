@@ -16,7 +16,7 @@
 	<arg name="start_external_sync" value="false"/>
 
 	<arg name="stuck_detector_timeout" default="2.0"/>
-	<arg name="stuck_detector_threshold" default="0.174533"/>
+	<arg name="stuck_detector_threshold" default="0.54"/>
 
 	<rosparam unless="$(arg sim)" ns="$(arg component_name)/driver" command="load" file="$(arg driver_yaml)"/>
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">

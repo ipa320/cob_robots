@@ -21,8 +21,8 @@ defaults:
 rotation_joint: &rotation_joint
   dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
     "6098": "19" # homing method
-    "6083": "10000000" # profile acceleration
-    "6084": "10000000" # profile deceleration
+    "6083": "1600000" # profile acceleration
+    "6084": "1600000" # profile deceleration
     "60C5": "10000000" # maximum acceleration
     "60C6": "10000000" # maximum deceleration
 
