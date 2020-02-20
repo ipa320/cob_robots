@@ -57,6 +57,9 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
+		<node pkg="cob_helper_tools" type="auto_recover.py"  name="auto_recover_base" output="screen">
+			<rosparam param="components" subst_value="True">{base: /Actuators/base}</rosparam>
+		</node>
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="light_base"/>
