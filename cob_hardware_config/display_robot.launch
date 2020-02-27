@@ -11,10 +11,13 @@
 	</include>
 
 	<!-- fake joint_states -->
-	<node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen">
+	<node unless="$(arg gui)" pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen">
 		<remap from="robot_description" to="/robot_description"/>
 		<remap from="joint_states" to="/joint_states"/>
-		<param name="use_gui" value="$(arg gui)"/>
+	</node>
+	<node if="$(arg gui)" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher" output="screen">
+		<remap from="robot_description" to="/robot_description"/>
+		<remap from="joint_states" to="/joint_states"/>
 	</node>
 	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen"/>
 
