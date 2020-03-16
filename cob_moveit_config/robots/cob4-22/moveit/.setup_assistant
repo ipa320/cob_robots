@@ -1,7 +1,0 @@
-moveit_setup_assistant_config:
-  URDF:
-    package: cob_hardware_config
-    relative_path: robots/cob4-22/urdf/cob4-22.urdf.xacro
-    use_jade_xacro: true
-  SRDF:
-    relative_path: config/cob4-22.srdf
