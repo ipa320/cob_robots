@@ -293,7 +293,6 @@
 		<machine name="$(anon h1_display)" address="$(arg cob4-10-h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
 		<include file="$(find cob_bringup)/drivers/mimic.launch">
 			<arg name="sim" value="$(arg sim)"/>
-			<arg name="old" value="true"/>
 		</include>
 	</group>
 
