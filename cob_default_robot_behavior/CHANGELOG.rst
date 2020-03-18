@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.3 (2020-03-18)
+------------------
 * Merge pull request `#797 <https://github.com/ipa320/cob_robots/issues/797>`_ from fmessmer/feature/python3_compatibility
   [ci_updates] pylint + Python3 compatibility
 * python3 compatibility via 2to3
