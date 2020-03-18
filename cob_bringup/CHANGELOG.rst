@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.4 (2020-03-18)
+------------------
 * Merge pull request `#807 <https://github.com/ipa320/cob_robots/issues/807>`_ from fmessmer/remove_mimic_python
   remove cob_mimic python driver
 * remove cob_mimic python driver
