@@ -2,6 +2,49 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#806 <https://github.com/ipa320/cob_robots/issues/806>`_ from fmessmer/remove_cob4-22
+  remove cob4-22
+* remove cob4-22
+* Backup kevins (`#804 <https://github.com/ipa320/cob_robots/issues/804>`_)
+  add auto init and auto recover for cob4-20 and cob4-23
+* Merge pull request `#799 <https://github.com/ipa320/cob_robots/issues/799>`_ from HannesBachter/add_cob4-23
+  Add cob4 23
+* add cob4-23
+* Merge pull request `#798 <https://github.com/ipa320/cob_robots/issues/798>`_ from ipa-jba/feature/raw-mini
+  Feature/raw mini
+* add roslaunch checks for additional robots
+* add cob_mecanum_controller to dependencies; sort
+* don't launch controllers in simulation
+* make rplidar launchfile use a config file
+* cleanup for now
+* rename and move rplidar launchfile
+* use new mecanum controller
+* Unified indentation to spaces
+* Clean-up
+* Added RPLidar Launch file
+* Laserframe id
+* Fixed bugs
+* Modified files for raw-mini
+* Added remapping
+* Updated launch xml
+* Removed unused files
+* Modified launch files
+* Deleted comments
+* Added bringup files for raw-mini
+* Merge pull request `#796 <https://github.com/ipa320/cob_robots/issues/796>`_ from HannesBachter/fix/changed_heads
+  update serial no of sensorring d435 of cob4-7
+* due to changed head, serial no of sensorring d435 has changed
+* Merge pull request `#792 <https://github.com/ipa320/cob_robots/issues/792>`_ from fmessmer/ci_updates
+  [travis] ci updates
+* fix test dependendies
+* catkin_lint fixes
+* Merge pull request `#791 <https://github.com/ipa320/cob_robots/issues/791>`_ from HannesBachter/update_cob4-16
+  update cob4-16
+* update cob4-16 (is now running kinetic with d435 cams)
+* Contributors: Felix Messmer, Florian Weisshardt, HannesBachter, Jannik Abbenseth, flg-vs, fmessmer, hyb
+
 0.7.2 (2019-11-07)
 ------------------
 * Merge pull request `#788 <https://github.com/ipa320/cob_robots/issues/788>`_ from HannesBachter/add_cob4-24
