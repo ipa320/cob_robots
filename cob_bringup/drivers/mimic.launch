@@ -2,12 +2,9 @@
 <launch>
 
 	<arg name="sim" default="false"/>
-	<arg name="old" default="false"/>
 
 	<!-- start mimic -->
-	<node if="$(arg old)" pkg="cob_mimic" type="mimic_node.py" name="mimic" cwd="node" respawn="false"/>
-
-	<node unless="$(arg old)" pkg="cob_mimic" type="mimic" name="mimic" cwd="node" respawn="false">
+	<node pkg="cob_mimic" type="mimic" name="mimic" cwd="node" respawn="false">
 		<param name="sim" value="$(arg sim)"/>
 	</node>
 

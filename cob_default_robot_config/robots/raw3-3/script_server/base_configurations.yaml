@@ -1,2 +1,1 @@
-service_ns: /base/driver
-topic_name: /base/twist_mux/command_script_server
+../../raw3/script_server/base_configurations.yaml

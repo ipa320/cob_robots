@@ -1,4 +1,1 @@
-diagnostics_name: torso_cam3d_down
-topics: [/torso_cam3d_down/rgb/camera_info]
-hz: 30
-hzerror: 5
+../../cob4/config/hz_monitor_torso_cam3d_down.yaml

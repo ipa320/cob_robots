@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- args -->
+	<arg name="robot" value="cob4-25"/>
+	<arg name="b1" default="localhost"/>
+	<arg name="t1" default="localhost"/>
+	<arg name="t2" default="localhost"/>
+	<arg name="t3" default="localhost"/>
+	<arg name="s1" default="localhost"/>
+	<arg name="h1" default="localhost"/>
+	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+	<arg name="sim" default="false"/>
+
+	<!-- upload robot description -->
+	<include file="$(find cob_hardware_config)/upload_robot.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+	<!-- upload semantic description -->
+	<include file="$(find cob_moveit_config)/launch/upload_config.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="load_semantic_description" value="true"/>
+		<arg name="load_planning_context" value="false"/>
+	</include>
+	<!-- upload default configuration parameters -->
+	<include file="$(find cob_default_robot_config)/upload_param.launch">
+		<arg name="robot" value="$(arg robot)"/>
+	</include>
+
+	<group>
+		<machine name="$(anon b1)" address="$(arg b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg b1)"/>
+				<arg name="enable_ntp_monitoring" value="false"/>
+			</include>
+		</group>
+
+		<include file="$(find cob_bringup)/drivers/sick_flexisoft.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="host" value="10.4.25.99"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/bms.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="base_laser_front"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="base_laser_right"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="base_laser_left"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+
+		<include file="$(find cob_bringup)/components/cob4_base.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/light.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="light_base"/>
+			<arg name="sim_enabled" value="$(arg sim)"/>
+		</include>
+
+		<!-- start common nodes used in hardware and simulation -->
+		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="input_scans" value="['base_laser_front/scan','base_laser_left/scan','base_laser_right/scan']"/>
+			<arg name="output_scan" value="/scan_unified"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		<!-- <include file="$(find cob_bringup)/tools/collision_monitor.launch"> -->
+		<node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
+
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/battery_monitor.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/teleop.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/docker_control.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="multi_station" default="true"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+		<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+
+		<!-- simulation only -->
+		<include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
+			<arg name="fake_diagnostics" value="'base_laser_front, base_laser_right, base_laser_left, b1, t1, t2, t3, s1, h1, joy, safety'"/>
+		</include>
+	</group>
+
+	<group>
+		<machine name="$(anon t1)" address="$(arg t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg t1)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
+			</include>
+		</group>
+
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="torso"/>
+			<arg name="can_device" value="can0"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+		</include>
+
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="torso_cam3d_left"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817512071590"/>
+		</include>
+		<include file="$(find cob_bringup)/drivers/light.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="light_torso"/>
+			<arg name="sim_enabled" value="$(arg sim)"/>
+		</include>
+
+		<!-- start common nodes used in hardware and simulation -->
+		<include file="$(find cob_script_server)/launch/script_server.launch"/>
+		<include file="$(find cob_bringup)/tools/behavior.launch"/>
+		<include file="$(find cob_bringup)/tools/android.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+	</group>
+
+	<group>
+		<machine name="$(anon t2)" address="$(arg t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg t2)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
+			</include>
+		</group>
+
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="torso_cam3d_down"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412071048"/>
+		</include>
+	</group>
+
+	<group>
+		<machine name="$(anon t3)" address="$(arg t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg t3)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
+			</include>
+		</group>
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="torso_cam3d_right"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412070571"/>
+		</include>
+	</group>
+
+	<group>
+		<machine name="$(anon s1)" address="$(arg s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg s1)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
+			</include>
+		</group>
+
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="name" value="sensorring_cam3d"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412070851"/>
+		</include>
+	</group>
+
+	<group>
+		<machine name="$(anon h1)" address="$(arg h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+
+		<!-- start hardware -->
+		<group unless="$(arg sim)">
+			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
+				<arg name="robot" value="$(arg robot)"/>
+				<arg name="pc" value="$(arg h1)"/>
+				<arg name="ntp_server" value="$(arg b1)"/>
+			</include>
+		</group>
+
+		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+
+		<!-- start common nodes used in hardware and simulation -->
+		<include file="$(find cob_bringup)/drivers/sound.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
+	</group>
+
+	<group> <!-- this is a special group to assign DISPLAY:=0 only to the mimic node (and not to all other nodes, e.g. sound node) -->
+		<machine name="$(anon h1_display)" address="$(arg h1)" env-loader="$(arg env-script).display" default="true" timeout="30"/>
+		<include file="$(find cob_bringup)/drivers/mimic.launch">
+			<arg name="sim" value="$(arg sim)"/>
+		</include>
+	</group>
+
+	<machine name="$(anon b1)" address="$(arg b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+
+</launch>

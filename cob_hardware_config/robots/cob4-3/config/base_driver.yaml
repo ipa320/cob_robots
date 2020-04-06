@@ -1,15 +1,12 @@
 nodes:
-  ##Wheel 1
   fl_caster_rotation_joint:
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
-      "607C": "-51776"# home offset
+      "607C": "132218.1" # home offset
 
-  ##Wheel 2
   b_caster_rotation_joint:
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
-      "607C": "-173177" # home offset
+      "607C": "11179.7" # home offset
 
-  ##Wheel 3
   fr_caster_rotation_joint:
     dcf_overlay: # "ObjectID" : "ParameterValue" (both as strings)
-      "607C": "67565" # home offset
+      "607C": "-108902.4" # home offset

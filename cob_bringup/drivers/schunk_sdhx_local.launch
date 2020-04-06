@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="port" default="/dev/ttyACM0"/>
+  <arg name="component_name" default="gripper"/>
+
+  <group ns="/$(arg component_name)">
+    <node pkg="cob_hand_bridge" type="cob_hand_node" name="cob_hand">
+      <rosparam param="sdhx/joint_names" subst_value="True">[$(arg component_name)_finger_1_joint, $(arg component_name)_finger_2_joint]</rosparam>
+      <param name="sdhx/port" value="$(arg port)"/>
+    </node>
+  </group>
+
+</launch>

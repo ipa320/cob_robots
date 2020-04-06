@@ -13,7 +13,8 @@
 	<node ns="command_gui" pkg="cob_command_gui" type="knoeppkes.py" name="$(anon command_gui_node)" cwd="node" respawn="false" output="screen">
 		<!-- upload button parameters -->
 		<rosparam command="load" ns="control_buttons" file="$(arg pkg_robot_config)/robots/$(arg robot)/script_server/command_gui_buttons.yaml"/>
-		<rosparam command="load" ns="nav_buttons" file="$(arg pkg_env_config)/envs/$(arg robot_env)/command_gui_buttons.yaml"/>
+		<rosparam command="load" ns="control_buttons" file="$(arg pkg_env_config)/envs/$(arg robot_env)/command_gui_buttons.yaml"/>
+		<rosparam command="load" ns="nav_buttons" file="$(arg pkg_env_config)/envs/$(arg robot_env)/nav_buttons.yaml"/>
 	</node>
 
 </launch>

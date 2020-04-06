@@ -49,7 +49,7 @@
   </xacro:sick_s300_laser_v0>
 
 
-  <xacro:torso name="torso" parent="base_link" dof1="false" dof2="true" dof3="true">
+  <xacro:torso name="torso" parent="base_link" dof1="${False}" dof2="${True}" dof3="${True}">
     <origin xyz="${torso_x} ${torso_y} ${torso_z}" rpy="${torso_roll} ${torso_pitch} ${torso_yaw}" />
   </xacro:torso>
   <!-- left camera -->
@@ -65,14 +65,14 @@
     <origin xyz="${torso_cam3d_down_x} ${torso_cam3d_down_y} ${torso_cam3d_down_z}" rpy="${torso_cam3d_down_roll} ${torso_cam3d_down_pitch} ${torso_cam3d_down_yaw}" />
   </xacro:realsense>
 
-  <xacro:head name="head" parent="torso_3_link" dof1="true" dof2="true" dof3="true">
+  <xacro:head name="head" parent="torso_3_link" dof1="${True}" dof2="${True}" dof3="${True}">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
   </xacro:head>
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam" update_rate="3.5" height="1536" width="2048" > <!-- get this from config/head_cam.yaml -->
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
 
-  <xacro:sensorring name="sensorring" parent="head_3_link" active="true">
+  <xacro:sensorring name="sensorring" parent="head_3_link" active="${True}">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
   </xacro:sensorring>
   <!-- cameras -->
@@ -80,7 +80,7 @@
     <origin xyz="${sensorring_cam3d_x} ${sensorring_cam3d_y} ${sensorring_cam3d_z}" rpy="${sensorring_cam3d_roll} ${sensorring_cam3d_pitch} ${sensorring_cam3d_yaw}" />
   </xacro:cob_kinect_v0>
 
-  <!--xacro:cob4_arm name="arm_right" parent="torso_3_link" has_podest="false">
+  <xacro:cob4_arm name="arm_right" parent="torso_3_link" has_podest="false">
     <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
   </xacro:cob4_arm>
 
@@ -94,6 +94,6 @@
 
   <xacro:gripper name="gripper_left" parent="arm_left_7_link">
     <origin xyz="${gripper_left_x} ${gripper_left_y} ${gripper_left_z}" rpy="${gripper_left_roll} ${gripper_left_pitch} ${gripper_left_yaw}" />
-  </xacro:gripper-->
+  </xacro:gripper>
 
 </robot>

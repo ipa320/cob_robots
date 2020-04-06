@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- args -->
+  <arg name="robot" value="raw-mini"/>
+  <arg name="sim" default="false"/>
+  <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+
+  <!-- upload robot description -->
+  <include file="$(find cob_hardware_config)/upload_robot.launch">
+    <arg name="robot" value="$(arg robot)"/>
+  </include>
+
+  <!-- start hardware -->
+  <group unless="$(arg sim)">
+    <include file="$(find cob_bringup)/drivers/rplidar.launch">
+      <arg name="robot" value="$(arg robot)" />
+      <arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
+    </include>
+  </group>
+
+  <include file="$(find cob_bringup)/components/raw_mini_base.launch">
+    <arg name="robot" value="$(arg robot)" />
+    <arg name="sim" value="$(arg sim)"/>
+  </include>
+
+  <!-- start additional packages -->
+  <include file="$(find cob_bringup)/tools/teleop.launch">
+    <arg name="robot" value="$(arg robot)"/>
+  </include>
+
+  <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+    <arg name="robot" value="$(arg robot)"/>
+  </include>
+</launch>

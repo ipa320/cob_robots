@@ -4,7 +4,7 @@
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="name" default="cam3d"/>
 
-	<node pkg="sick_visionary_t_driver" type="sick_visionary_t_driver_node" name="$(arg name)_node" output="screen">
+	<!--node pkg="sick_visionary_t_driver" type="sick_visionary_t_driver_node" name="$(arg name)_node" output="screen">
 		<param name="remote_device_ip" value="192.168.1.10"/>
 		<param name="frame_id" value="$(arg name)_optical_frame"/>
 		<remap from="$(arg name)_node/camera_info" to="$(arg name)/depth/camera_info"/>
@@ -13,6 +13,6 @@
 		<remap from="$(arg name)_node/intensity" to="$(arg name)/depth/intensity"/>
 		<remap from="$(arg name)_node/ios" to="$(arg name)/depth/ios"/>
 		<remap from="$(arg name)_node/points" to="$(arg name)/depth/points"/>
-	</node>
+	</node-->
 
 </launch>

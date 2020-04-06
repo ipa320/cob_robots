@@ -1,0 +1,9 @@
+<launch>
+  <arg name="pkg_hardware_config" />
+  <arg name="robot" />
+
+  <node pkg="rplidar_ros" type="rplidarNode" name="rplidar_node" output="screen">
+    <rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/rplidar.yaml"/>
+  </node>
+
+</launch>
