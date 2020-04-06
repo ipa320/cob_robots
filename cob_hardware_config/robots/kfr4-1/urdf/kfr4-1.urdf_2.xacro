@@ -1,0 +1,799 @@
+<!---->
+<robot name="kfr_base_2">
+
+  <link name="base_footprint"/>
+  <joint name="base_footprint_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00387559412809352 -0.000757791662060713 0.312694654298402"
+        rpy="0 0 0" />
+      <mass
+        value="44.8015004343534" />
+      <inertia
+        ixx="1.22820452387807"
+        ixy="0.00458082007695039"
+        ixz="-0.0148412306273"
+        iyy="2.52263936876694"
+        iyz="0.0174634408569094"
+        izz="3.09868698902377" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fw_steer_link">
+    <inertial>
+      <origin
+        xyz="-3.82740866067061E-08 -0.0252574655595215 -0.0654817938168757"
+        rpy="0 0 0" />
+      <mass
+        value="2.81695742534619" />
+      <inertia
+        ixx="0.0293342885590328"
+        ixy="-7.25736562732525E-09"
+        ixz="-2.77336200502594E-09"
+        iyy="0.0264435713639277"
+        iyz="-0.0062095402815585"
+        izz="0.0203616738187202" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fw_steer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fw_steer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fw_steer_joint"
+    type="continuous">
+    <origin
+      xyz="0.34 0 0.313"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fw_steer_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <transmission name="fw_steer_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fw_steer_joint">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fw_steer_motor">
+      <mechanicalReduction>79.2380952381</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo reference="fw_steer_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+<!--____________________________________________________________________________-->
+
+  <link
+    name="fw_drive_link">
+    <inertial>
+      <origin
+        xyz="-1.95679382818905E-18 -0.038 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="3.1576147761231" />
+      <inertia
+        ixx="0.0119597290991309"
+        ixy="4.59331532198848E-19"
+        ixz="-2.70853803783894E-34"
+        iyy="0.020879727707114"
+        iyz="1.39475013575224E-50"
+        izz="0.0119597290991309" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fw_drive_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fw_drive_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fw_drive_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.038 -0.198"
+      rpy="0 0 0" />
+    <parent
+      link="fw_steer_link" />
+    <child
+      link="fw_drive_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+
+  <transmission name="fw_drive_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fw_drive_joint">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fw_drive_motor">
+      <mechanicalReduction>79.2380952381</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo reference="fw_drive_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+<!--____________________________________________________________________________-->
+
+
+  <link
+    name="bw_steer_link">
+    <inertial>
+      <origin
+        xyz="-3.82740865667586E-08 -0.0298632133825617 -0.0424817938168757"
+        rpy="0 0 0" />
+      <mass
+        value="2.81695742534619" />
+      <inertia
+        ixx="0.0293342885590328"
+        ixy="-7.25736562717539E-09"
+        ixz="-2.77336200515512E-09"
+        iyy="0.0264435713639276"
+        iyz="-0.0062095402815585"
+        izz="0.0203616738187202" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/bw_steer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/bw_steer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bw_steer_joint"
+    type="continuous">
+    <origin
+      xyz="-0.355 0.00460574782304013 0.29"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bw_steer_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <transmission name="bw_steer_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bw_steer_joint">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bw_steer_motor">
+      <mechanicalReduction>79.2380952381</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo reference="bw_steer_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+<!--____________________________________________________________________________-->
+
+  <link
+    name="bw_drive_link">
+    <inertial>
+      <origin
+        xyz="0 -0.038 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="3.1576147761231" />
+      <inertia
+        ixx="0.0119597290991309"
+        ixy="4.59331532198848E-19"
+        ixz="-7.97419126945766E-35"
+        iyy="0.020879727707114"
+        iyz="4.10627585812468E-51"
+        izz="0.0119597290991309" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/bw_drive_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/bw_drive_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bw_drive_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0333942521769598 -0.175"
+      rpy="0 0 0" />
+    <parent
+      link="bw_steer_link" />
+    <child
+      link="bw_drive_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+
+  <transmission name="bw_drive_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bw_drive_joint">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bw_drive_motor">
+      <mechanicalReduction>79.2380952381</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo reference="bw_drive_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+<!--____________________________________________________________________________-->
+
+  <link
+    name="fl_caster_steer_link">
+    <inertial>
+      <origin
+        xyz="-8.20328106554413E-08 0.0240215551359712 -0.0417562634640246"
+        rpy="0 0 0" />
+      <mass
+        value="0.244903590708829" />
+      <inertia
+        ixx="0.00056762934544838"
+        ixy="1.41353150265557E-11"
+        ixz="2.02489285733195E-10"
+        iyy="0.000434075020350187"
+        iyz="0.000168623167398467"
+        izz="0.000349023170347095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fl_caster_steer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fl_caster_steer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_caster_steer_joint"
+    type="continuous">
+    <origin
+      xyz="0.481500277110702 0.29554745088825 0.135499999996273"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl_caster_steer_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fl_caster_drive_link">
+    <inertial>
+      <origin
+        xyz="0.0125000000000001 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.125726537996663" />
+      <inertia
+        ixx="0.000122363353105252"
+        ixy="-4.04158202907808E-20"
+        ixz="4.36201553424979E-20"
+        iyy="8.31838207020419E-05"
+        iyz="3.34028474729661E-34"
+        izz="8.31838207020424E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fl_caster_drive_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fl_caster_drive_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_caster_drive_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0125000649807505 0.0509997228892982 -0.0949999999962731"
+      rpy="0 0 0" />
+    <parent
+      link="fl_caster_steer_link" />
+    <child
+      link="fl_caster_drive_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="fr_caster_steer_link">
+    <inertial>
+      <origin
+        xyz="-8.20328107664636E-08 0.0240215551359711 -0.0417562634640246"
+        rpy="0 0 0" />
+      <mass
+        value="0.244903590708828" />
+      <inertia
+        ixx="0.000567629345448378"
+        ixy="1.41353154038152E-11"
+        ixz="2.02489285372629E-10"
+        iyy="0.000434075020350186"
+        iyz="0.000168623167398466"
+        izz="0.000349023170347094" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fr_caster_steer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fr_caster_steer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_caster_steer_joint"
+    type="continuous">
+    <origin
+      xyz="0.481500277110702 -0.292452549111751 0.135499999996273"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr_caster_steer_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fr_caster_drive_link">
+    <inertial>
+      <origin
+        xyz="0.0125 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.125726537996663" />
+      <inertia
+        ixx="0.000122363353105252"
+        ixy="-4.04158202907814E-20"
+        ixz="4.36201553424993E-20"
+        iyy="8.3183820702042E-05"
+        iyz="3.34028474729661E-34"
+        izz="8.31838207020425E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fr_caster_drive_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/fr_caster_drive_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_caster_drive_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0125000649807505 0.0509997228892982 -0.0949999999962731"
+      rpy="0 0 0" />
+    <parent
+      link="fr_caster_steer_link" />
+    <child
+      link="fr_caster_drive_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="bl_caster_steer_link">
+    <inertial>
+      <origin
+        xyz="-8.20328107664636E-08 0.024021555135971 -0.0417562634640246"
+        rpy="0 0 0" />
+      <mass
+        value="0.244903590708829" />
+      <inertia
+        ixx="0.00056762934544838"
+        ixy="1.41353145774775E-11"
+        ixz="2.02489286428408E-10"
+        iyy="0.000434075020350188"
+        iyz="0.000168623167398468"
+        izz="0.000349023170347095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/bl_caster_steer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/bl_caster_steer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_caster_steer_joint"
+    type="continuous">
+    <origin
+      xyz="-0.481499722889298 0.29554745088825 0.135499999996273"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="bl_caster_steer_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="bl_caster_drive_link">
+    <inertial>
+      <origin
+        xyz="0.0125000000000001 2.22044604925031E-16 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.125726537996663" />
+      <inertia
+        ixx="0.000122363353105252"
+        ixy="3.94548894128514E-21"
+        ixz="4.36201553424979E-20"
+        iyy="8.31838207020419E-05"
+        iyz="1.35525271560664E-20"
+        izz="8.31838207020424E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/bl_caster_drive_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/bl_caster_drive_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_caster_drive_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0125000649807505 0.0509997228892983 -0.0949999999962731"
+      rpy="0 0 0" />
+    <parent
+      link="bl_caster_steer_link" />
+    <child
+      link="bl_caster_drive_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="br_caster_steer_link">
+    <inertial>
+      <origin
+        xyz="-8.20328108774859E-08 0.0240215551359713 -0.0417562634640245"
+        rpy="0 0 0" />
+      <mass
+        value="0.244903590708828" />
+      <inertia
+        ixx="0.000567629345448379"
+        ixy="1.41353150668486E-11"
+        ixz="2.02489285660636E-10"
+        iyy="0.000434075020350187"
+        iyz="0.000168623167398467"
+        izz="0.000349023170347095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/br_caster_steer_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.823529411764706 0.823529411764706 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/br_caster_steer_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_caster_steer_joint"
+    type="continuous">
+    <origin
+      xyz="-0.481499722889298 -0.29245254911175 0.135499999996273"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="br_caster_steer_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="br_caster_drive_link">
+    <inertial>
+      <origin
+        xyz="0.0125 2.22044604925031E-16 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.125726537996663" />
+      <inertia
+        ixx="0.000122363353105252"
+        ixy="3.94548894128825E-21"
+        ixz="4.36201553424993E-20"
+        iyy="8.31838207020421E-05"
+        iyz="1.35525271560664E-20"
+        izz="8.31838207020426E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/br_caster_drive_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kfr_base_2/meshes/br_caster_drive_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_caster_drive_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0125000649807505 0.0509997228892983 -0.0949999999962731"
+      rpy="0 0 0" />
+    <parent
+      link="br_caster_steer_link" />
+    <child
+      link="br_caster_drive_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+
+
+<!--________________________________________________________________________________________-->
+<!--________________________________________________________________________________________-->
+
+
+  <gazebo reference="base_link">
+    <gravity>true</gravity>
+    <self_collide>false</self_collide>
+    <sensor name="base_contact_sensor" type="contact">
+      <always_on>true</always_on>
+      <update_rate>100.0</update_rate>
+      <contact>
+        <collision>base_link_collision</collision>
+        <topic>base_bumper</topic>
+      </contact>
+      <plugin filename="libgazebo_ros_bumper.so" name="base_gazebo_ros_bumper_controller">
+        <frameName>world</frameName>
+        <bumperTopicName>base_bumper</bumperTopicName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros_p3d.so" name="p3d_base_controller">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>base_pose_ground_truth</topicName>
+      <frameName>map</frameName>
+      <xyzOffsets>25.7 25.7 0</xyzOffsets>
+      <!-- initialize odometry for fake localization-->
+      <rpyOffsets>0 0 0</rpyOffsets>
+      <gaussianNoise>0.01</gaussianNoise>
+    </plugin>
+    <canonicalBody>base_footprint</canonicalBody>
+  </gazebo>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin filename="libhwi_switch_gazebo_ros_control.so" name="ros_control">
+      <robotNamespace>base</robotNamespace>
+      <filterJointsParam>joint_names</filterJointsParam>
+    </plugin>
+  </gazebo>
+
+</robot>
+
