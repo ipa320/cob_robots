@@ -61,9 +61,9 @@
     <origin xyz="${torso_cam3d_down_x} ${torso_cam3d_down_y} ${torso_cam3d_down_z}" rpy="${torso_cam3d_down_roll} ${torso_cam3d_down_pitch} ${torso_cam3d_down_yaw}" />
   </xacro:realsense_d435>
 
-  <xacro:head name="head" parent="torso_3_link" dof1="${True}" dof2="${True}" dof3="${True}">
+  <xacro:head_cad name="head" parent="torso_3_link" dof1="${True}" dof2="${True}" dof3="${True}">
     <origin xyz="${head_x} ${head_y} ${head_z}" rpy="${head_roll} ${head_pitch} ${head_yaw}" />
-  </xacro:head>
+  </xacro:head_cad>
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam" update_rate="3.5" height="1536" width="2048" > <!-- get this from config/head_cam.yaml -->
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
