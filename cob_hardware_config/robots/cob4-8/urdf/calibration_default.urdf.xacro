@@ -49,11 +49,11 @@
 
 	<!-- head sensors mount positions | relative to head_2_link -->
 	<xacro:property name="def_sensorring_x" value="0.0"/>
-	<xacro:property name="def_sensorring_y" value="-0.098"/>
-	<xacro:property name="def_sensorring_z" value="0.051"/>
+	<xacro:property name="def_sensorring_y" value="0.09849"/>
+	<xacro:property name="def_sensorring_z" value="0.04476"/>
 	<xacro:property name="def_sensorring_roll" value="0.349"/>
 	<xacro:property name="def_sensorring_pitch" value="0.0"/>
-	<xacro:property name="def_sensorring_yaw" value="0.0"/>
+	<xacro:property name="def_sensorring_yaw" value="-${M_PI}"/>
 
 	<!-- arm right mount positions | relative to torso_3_link -->
 	<xacro:property name="def_arm_right_x" value="0.0"/>
