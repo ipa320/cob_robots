@@ -35,6 +35,7 @@
   <exec_depend>cob_frame_tracker</exec_depend>
   <exec_depend>cob_hand_bridge</exec_depend>
   <exec_depend>cob_hardware_config</exec_depend>
+  <exec_depend>cob_hardware_emulation</exec_depend>
   <exec_depend>cob_helper_tools</exec_depend>
   <exec_depend>cob_image_flip</exec_depend>
   <exec_depend>cob_light</exec_depend>
