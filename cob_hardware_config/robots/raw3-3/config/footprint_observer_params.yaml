@@ -2,5 +2,5 @@
 footprint_source: /local_costmap_node/costmap
 
 #
-robot_base_frame: /base_link
+robot_base_frame: base_link
 epsilon: 0.01
