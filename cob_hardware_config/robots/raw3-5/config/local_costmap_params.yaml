@@ -1,6 +1,6 @@
 # global information
-global_frame: /base_link
-robot_base_frame: /base_footprint
+global_frame: base_link
+robot_base_frame: base_footprint
 update_frequency: 5.0
 publish_frequency: 5.0
 
