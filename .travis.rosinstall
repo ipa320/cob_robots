@@ -19,6 +19,10 @@
     uri: https://github.com/ipa320/cob_driver.git
     version: kinetic_dev
 - git:
+    local-name: cob_perception_common
+    uri: https://github.com/ipa320/cob_perception_common.git
+    version: indigo_dev
+- git:
     local-name: cob_supported_robots
     uri: https://github.com/ipa320/cob_supported_robots.git
     version: indigo_dev
