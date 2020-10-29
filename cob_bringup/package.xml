@@ -23,7 +23,7 @@
   <exec_depend>cob_bms_driver</exec_depend>
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_cam3d_throttle</exec_depend>
-  <!--exec_depend>cob_collision_monitor</exec_depend-->
+  <exec_depend>cob_collision_monitor</exec_depend>
   <exec_depend>cob_collision_velocity_filter</exec_depend>
   <exec_depend>cob_command_gui</exec_depend>
   <exec_depend>cob_control_mode_adapter</exec_depend>
