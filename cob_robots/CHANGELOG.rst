@@ -2,8 +2,8 @@
 Changelog for package cob_robots
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.5 (2020-12-02)
+------------------
 * Merge pull request `#812 <https://github.com/ipa320/cob_robots/issues/812>`_ from fmessmer/test_noetic
   test noetic
 * Bump CMake version to avoid CMP0048 warning
