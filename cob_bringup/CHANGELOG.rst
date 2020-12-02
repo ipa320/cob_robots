@@ -2,6 +2,27 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#812 <https://github.com/ipa320/cob_robots/issues/812>`_ from fmessmer/test_noetic
+  test noetic
+* Revert "comment rplidar"
+  This reverts commit 35cd5235ec046365b6ba48aa4ccf4e03afc4117f.
+* comment rplidar
+* Bump CMake version to avoid CMP0048 warning
+* Merge pull request `#814 <https://github.com/ipa320/cob_robots/issues/814>`_ from fmessmer/fix_catkin_lint
+  fix catkin lint
+* reactivate dependency for cob_collision_monitor
+* add missing exec_depend rgbd_launch
+* Merge pull request `#811 <https://github.com/ipa320/cob_robots/issues/811>`_ from floweisshardt/feature/cob4-3
+  add auto init to cob4-3
+* add auto init to cob4-3
+* Merge pull request `#795 <https://github.com/ipa320/cob_robots/issues/795>`_ from HannesBachter/update_cob4-8
+  update cob4-8 (kinetic + d435 cams)
+* update realsense serial_no
+* update cob4-8 (is now running kinetic with d435 cams)
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer, hyb, myuser@myrobot, robot@cob4-3
+
 0.7.4 (2020-03-18)
 ------------------
 * Merge pull request `#807 <https://github.com/ipa320/cob_robots/issues/807>`_ from fmessmer/remove_mimic_python

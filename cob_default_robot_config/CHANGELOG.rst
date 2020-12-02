@@ -2,6 +2,16 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#812 <https://github.com/ipa320/cob_robots/issues/812>`_ from fmessmer/test_noetic
+  test noetic
+* Bump CMake version to avoid CMP0048 warning
+* Merge pull request `#795 <https://github.com/ipa320/cob_robots/issues/795>`_ from HannesBachter/update_cob4-8
+  update cob4-8 (kinetic + d435 cams)
+* head joint configs for head with joint-2 on left side
+* Contributors: Felix Messmer, fmessmer, hyb
+
 0.7.4 (2020-03-18)
 ------------------
 

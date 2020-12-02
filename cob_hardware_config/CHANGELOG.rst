@@ -2,6 +2,27 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#812 <https://github.com/ipa320/cob_robots/issues/812>`_ from fmessmer/test_noetic
+  test noetic
+* Bump CMake version to avoid CMP0048 warning
+* Merge pull request `#810 <https://github.com/ipa320/cob_robots/issues/810>`_ from ipa-fog/feature/tf2_fix
+  canTransform argument target_frame in tf2 frame_ids cannot start with…
+* canTransform argument target_frame in tf2 frame_ids cannot start with a '/'
+* Merge pull request `#795 <https://github.com/ipa320/cob_robots/issues/795>`_ from HannesBachter/update_cob4-8
+  update cob4-8 (kinetic + d435 cams)
+* calibrate cob4-8 base
+* fix diagnostics_analyzers for cob4-8
+* correct mount position for sensorring
+* use cad-conform version of head
+* harmonize head urdf fix with update
+* remove legacy transformation and fix indent
+* Better comment plus 6 mm fix (from doing the math)
+* Fix on the urdf: sensorring's parent link moved to head_2_link (previously on head_3_link, which is not how the hardware works)
+* update cob4-8 (is now running kinetic with d435 cams)
+* Contributors: Benjamin Maidel, FOG, Felix Messmer, MattiaRacca, fmessmer, hyb, ipa-cob4-8, myuser@myrobot
+
 0.7.4 (2020-03-18)
 ------------------
 
