@@ -239,13 +239,14 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="sensorring_cam3d"/>
-			<arg name="device_id" value="#1"/>
-			<arg name="data_skip" value="0"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412070325"/>
 		</include>
+
 	</group>
 
 	<group>
