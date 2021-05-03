@@ -81,7 +81,6 @@
   <exec_depend>rosserial_python</exec_depend>
   <exec_depend>rosserial_server</exec_depend>
   <exec_depend>rostopic</exec_depend>
-  <exec_depend>rplidar_ros</exec_depend>
   <exec_depend>rviz</exec_depend>
   <!--exec_depend>sick_visionary_t_driver</exec_depend-->
   <exec_depend>spacenav_node</exec_depend>
