@@ -1,4 +1,8 @@
-<package format="2">
+<?xml version="1.0"?>
+<?xml-model
+  href="http://download.ros.org/schema/package_format3.xsd"
+  schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>cob_bringup</name>
   <version>0.7.5</version>
   <description>This package provides launch files for operating Care-O-bot.</description>
@@ -72,9 +76,13 @@
   <exec_depend>laser_filters</exec_depend>
   <exec_depend>nodelet</exec_depend>
   <!--exec_depend>openni_launch</exec_depend--> <!-- not released into noetic -->
+  <exec_depend condition="$ROS_DISTRO == kinetic">openni_launch</exec_depend>
+  <exec_depend condition="$ROS_DISTRO == melodic">openni_launch</exec_depend>
   <exec_depend>openni2_launch</exec_depend>
   <exec_depend>position_controllers</exec_depend>
   <!--exec_depend>realsense_camera</exec_depend--> <!-- not released into noetic -->
+  <exec_depend condition="$ROS_DISTRO == kinetic">realsense_camera</exec_depend>
+  <exec_depend condition="$ROS_DISTRO == melodic">realsense_camera</exec_depend>
   <!--exec_depend>realsense2_camera</exec_depend-->  <!-- not released into kinetic -->
   <exec_depend>rgbd_launch</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
