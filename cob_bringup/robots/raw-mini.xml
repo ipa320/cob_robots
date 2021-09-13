@@ -13,13 +13,6 @@
   </include>
 
   <!-- start hardware -->
-  <group unless="$(arg sim)">
-    <include file="$(find cob_bringup)/drivers/rplidar.launch">
-      <arg name="robot" value="$(arg robot)" />
-      <arg name="pkg_hardware_config" value="$(arg pkg_hardware_config)" />
-    </include>
-  </group>
-
   <include file="$(find cob_bringup)/components/raw_mini_base.launch">
     <arg name="robot" value="$(arg robot)" />
     <arg name="sim" value="$(arg sim)"/>
