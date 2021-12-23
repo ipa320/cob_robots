@@ -2,8 +2,8 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.6 (2021-12-23)
+------------------
 * Merge pull request `#820 <https://github.com/ipa320/cob_robots/issues/820>`_ from ipa-foj/fixup_cob4-25
   Fixup cob4-25
 * fixup cob4-25 for noetic
