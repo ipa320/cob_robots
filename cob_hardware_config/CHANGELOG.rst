@@ -2,6 +2,24 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#820 <https://github.com/ipa320/cob_robots/issues/820>`_ from ipa-foj/fixup_cob4-25
+  Fixup cob4-25
+* fixup cob4-25 for noetic
+* Merge pull request `#819 <https://github.com/ipa320/cob_robots/issues/819>`_ from ipa-foj/kinetic_dev
+  corrected cameras for cob4-7 urdf
+* removed old xacro arg
+* corrected cameras for cob4-7 urdf
+* Merge pull request `#817 <https://github.com/ipa320/cob_robots/issues/817>`_ from fmessmer/beverage_nav_test
+  NODE testing config
+* remove rplidar
+* dummy beverage robot for navigation - cob4-18 with torso cam3d bottom and top
+* Merge pull request `#816 <https://github.com/ipa320/cob_robots/issues/816>`_ from HannesBachter/update_cob4-8
+  Update cob4-8
+* D435 sensorring cam
+* Contributors: Felix Messmer, HannesBachter, fmessmer, foj, robot@cob4-25
+
 0.7.5 (2020-12-02)
 ------------------
 * Merge pull request `#812 <https://github.com/ipa320/cob_robots/issues/812>`_ from fmessmer/test_noetic

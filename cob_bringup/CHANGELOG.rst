@@ -2,6 +2,24 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#820 <https://github.com/ipa320/cob_robots/issues/820>`_ from ipa-foj/fixup_cob4-25
+  Fixup cob4-25
+* fixup cob4-25 for noetic
+* realsense2_camera released into noetic
+* Merge pull request `#817 <https://github.com/ipa320/cob_robots/issues/817>`_ from fmessmer/beverage_nav_test
+  NODE testing config
+* conditional dependencies
+* remove rplidar
+* tmp: comment unreleased dependencies
+* dummy beverage robot for navigation - cob4-18 with torso cam3d bottom and top
+* remove rplidar dependency
+* Merge pull request `#816 <https://github.com/ipa320/cob_robots/issues/816>`_ from HannesBachter/update_cob4-8
+  Update cob4-8
+* D435 sensorring cam
+* Contributors: Felix Messmer, HannesBachter, fmessmer, robot@cob4-25
+
 0.7.5 (2020-12-02)
 ------------------
 * Merge pull request `#812 <https://github.com/ipa320/cob_robots/issues/812>`_ from fmessmer/test_noetic

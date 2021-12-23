@@ -2,6 +2,9 @@
 Changelog for package cob_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.7.5 (2020-12-02)
 ------------------
 * Merge pull request `#812 <https://github.com/ipa320/cob_robots/issues/812>`_ from fmessmer/test_noetic

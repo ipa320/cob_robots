@@ -2,6 +2,16 @@
 Changelog for package cob_default_robot_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#820 <https://github.com/ipa320/cob_robots/issues/820>`_ from ipa-foj/fixup_cob4-25
+  Fixup cob4-25
+* fixup cob4-25 for noetic
+* Merge pull request `#816 <https://github.com/ipa320/cob_robots/issues/816>`_ from HannesBachter/update_cob4-8
+  Update cob4-8
+* update head joint config for Aalto
+* Contributors: Felix Messmer, HannesBachter, robot@cob4-25
+
 0.7.5 (2020-12-02)
 ------------------
 * Merge pull request `#812 <https://github.com/ipa320/cob_robots/issues/812>`_ from fmessmer/test_noetic
