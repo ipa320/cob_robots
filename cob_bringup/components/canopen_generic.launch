@@ -10,24 +10,36 @@
 
 	<arg name="cartesian_control" default="false"/>
 	<arg name="sim" default="false"/>
+	<arg name="emulator" default="false"/>
 
-	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="$(arg component_name)"/>
-		<arg name="can_device" value="$(arg can_device)"/>
-		<arg name="interval_ms" value="$(arg interval_ms)"/>
-		<arg name="use_external_sync" value="$(arg use_external_sync)"/>
-		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
-	</include>
+	<!-- start real HW or gazebo simulation -->
+	<group unless="$(arg emulator)">
+		<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="$(arg component_name)"/>
+			<arg name="can_device" value="$(arg can_device)"/>
+			<arg name="interval_ms" value="$(arg interval_ms)"/>
+			<arg name="use_external_sync" value="$(arg use_external_sync)"/>
+			<arg name="start_external_sync" value="$(arg start_external_sync)"/>
+		</include>
+		<include file="$(find cob_bringup)/controllers/generic_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="$(arg component_name)"/>
+		</include>
+		<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="$(arg component_name)"/>
+			<arg name="debug" value="false"/>
+		</include>
+	</group>
+
+	<!-- start emulator -->
+	<group if="$(arg emulator)">
+		<node pkg="cob_hardware_emulation" type="emulation_follow_joint_trajectory.py" ns="$(arg component_name)" name="emulator" output="screen">
+			<rosparam command="load" file="$(find cob_hardware_config)/robots/$(arg robot)/config/$(arg component_name)_controller.yaml"/>
+		</node>
+	</group>
+
+	<!-- common part used with real HW, gazebo simulation and emulator -->
 	<node if="$(arg sim)" ns="$(arg component_name)" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
-
-	<include file="$(find cob_bringup)/controllers/generic_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="$(arg component_name)"/>
-	</include>
-	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="$(arg component_name)"/>
-		<arg name="debug" value="false"/>
-	</include>
 </launch>
