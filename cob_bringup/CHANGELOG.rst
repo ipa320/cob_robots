@@ -2,6 +2,16 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#824 <https://github.com/ipa320/cob_robots/issues/824>`_ from fmessmer/add_cob4-30_ostwestfalen
+  add cob4-30 ostwestfalen
+* add cob4-30 ostwestfalen
+* Merge pull request `#823 <https://github.com/ipa320/cob_robots/issues/823>`_ from fmessmer/add_cob4-29_goettingen
+  add cob4-29 goettingen
+* add cob4-29 goettingen
+* Contributors: Felix Messmer, fmessmer
+
 0.7.7 (2022-07-29)
 ------------------
 
