@@ -155,7 +155,7 @@
 			<arg name="name" value="torso_cam3d_left"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="flip" value="true"/>
-			<arg name="serial_no" value="xxxxxxxxxxxx"/>
+			<arg name="serial_no" value="832112070558"/>
 		</include>
 
 		<include file="$(find cob_bringup)/drivers/light.launch">
@@ -189,7 +189,7 @@
 			<arg name="name" value="torso_cam3d_down"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="flip" value="true"/>
-			<arg name="serial_no" value="xxxxxxxxxxxx"/>
+			<arg name="serial_no" value="817512071609"/>
 		</include>
 	</group>
 
@@ -209,7 +209,7 @@
 			<arg name="name" value="torso_cam3d_right"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="flip" value="true"/>
-			<arg name="serial_no" value="xxxxxxxxxxxx"/>
+			<arg name="serial_no" value="831612072926"/>
 		</include>
 
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
@@ -248,7 +248,7 @@
 			<arg name="name" value="sensorring_cam3d"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="flip" value="true"/>
-			<arg name="serial_no" value="xxxxxxxxxxxx"/>
+			<arg name="serial_no" value="817412070599"/>
 		</include>
 
 		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
