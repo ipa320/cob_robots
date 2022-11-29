@@ -133,23 +133,6 @@
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
 
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="arm_left"/>
-			<arg name="can_device" value="can2"/>
-			<arg name="sim" value="$(arg sim)"/>
-			<arg name="use_external_sync" value="false"/>
-			<arg name="start_external_sync" value="false"/>
-		</include>
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="arm_right"/>
-			<arg name="can_device" value="can1"/>
-			<arg name="sim" value="$(arg sim)"/>
-			<arg name="use_external_sync" value="false"/>
-			<arg name="start_external_sync" value="false"/>
-		</include>
-
 		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_left"/>
@@ -191,6 +174,24 @@
 			<arg name="flip" value="true"/>
 			<arg name="serial_no" value="817512071609"/>
 		</include>
+
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="gripper_left"/>
+			<arg name="can_device" value="can0"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg name="use_external_sync" value="false"/>
+			<arg name="start_external_sync" value="false"/>
+		</include>
+
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="gripper_right"/>
+			<arg name="can_device" value="can1"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg name="use_external_sync" value="false"/>
+			<arg name="start_external_sync" value="false"/>
+		</include>
 	</group>
 
 	<group>
@@ -214,17 +215,16 @@
 
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="gripper_left"/>
-			<arg name="can_device" value="can1"/>
+			<arg name="component_name" value="arm_left"/>
+			<arg name="can_device" value="can0"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="use_external_sync" value="false"/>
 			<arg name="start_external_sync" value="false"/>
 		</include>
-
 		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
-			<arg name="component_name" value="gripper_right"/>
-			<arg name="can_device" value="can0"/>
+			<arg name="component_name" value="arm_right"/>
+			<arg name="can_device" value="can1"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="use_external_sync" value="false"/>
 			<arg name="start_external_sync" value="false"/>
