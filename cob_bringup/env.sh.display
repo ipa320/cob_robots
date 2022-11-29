@@ -7,6 +7,8 @@ if [ $(lsb_release -sc) == "trusty" ]; then
     export MY_ROS_DISTRO="indigo"
 elif [ $(lsb_release -sc) == "xenial" ]; then
     export MY_ROS_DISTRO="kinetic"
+elif [ $(lsb_release -sc) == "focal" ]; then
+    export MY_ROS_DISTRO="noetic"
 fi
 
 . /opt/ros/$MY_ROS_DISTRO/setup.sh

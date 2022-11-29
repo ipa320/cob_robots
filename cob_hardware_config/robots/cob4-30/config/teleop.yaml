@@ -1,4 +1,9 @@
 ##########
+
+# mode params
+joy_config_switch: "D" #"D" or "X" little switch on the back of the controller
+
+# The following is the button mapping for "D"-mode
 # common params
 run_factor: 2.0
 apply_ramp: false
@@ -6,11 +11,6 @@ joy_num_buttons: 12
 joy_num_axes: 6
 joy_num_modes: 4
 mode_switch_button: 8
-
-enable_light: true
-light_action_name: /light_torso/set_light
-enable_sound: true
-sound_action_name: /sound/say
 
 # axes
 axis_vx: 1
@@ -41,6 +41,12 @@ right_left_button: 4
 
 #mode4: Twist controller
 torso_twist_button: 1
+
+
+enable_light: true
+light_action_name: /light_torso/set_light
+enable_sound: true
+sound_action_name: /sound/say
 
 components: {
   base: {
