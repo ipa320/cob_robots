@@ -1,7 +1,7 @@
 devicestring: /dev/ttyLED
 devicedriver: stageprofi
 baudrate: 38400
-num_leds: 3
+num_leds: 72
 invert_output: false
 pubmarker: true
 marker_frame: base_link # marker will be publised at [0.5,0,0] with respect to marker_frame
