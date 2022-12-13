@@ -3,6 +3,9 @@
 
 	<arg name="sim" default="false"/>
 
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {io: {type: diagnostic_aggregator/AnalyzerGroup, path: IO, analyzers: {mimic: {type: diagnostic_aggregator/GenericAnalyzer, path: Mimic, contains: ['mimic']}}}}}</rosparam>
+
 	<!-- start mimic -->
 	<node pkg="cob_mimic" type="mimic" name="mimic" cwd="node" respawn="false">
 		<param name="sim" value="$(arg sim)"/>
