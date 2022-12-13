@@ -11,6 +11,9 @@
 	<!-- aggregator parameter -->
 	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)']}}}}}</rosparam>
 
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)']}}}}}</rosparam>
+
 	<!-- run scan unifier -->
 	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="$(arg name)" output="log">
 		<rosparam subst_value="True" param="input_scans">$(arg input_scans)</rosparam>
