@@ -5,18 +5,64 @@
 	<arg name="flip" default="true"/>
 	<arg name="sim" default="false"/>
 	<arg name="serial_no" default=""/>
+	<arg name="usb_port_id" default=""/>
+	<arg name="device_type" default=""/>
 
 	<!-- parameters to guarantee compatibility with sensorprocessing pipeline -->
 	<arg name="nodelet_manager" value="$(arg name)_nodelet_manager"/>
-	<arg name="num_worker_threads" default="4"/>
 	<arg name="rgb" value="rgb"/>
 
+	<!-- realsense device specific arguments-->
+	<arg name="depth_width"         default="640"/>
+	<arg name="depth_height"        default="480"/>
+	<arg name="enable_depth"        default="true"/>
+	<arg name="depth_fps"           default="15"/>
+	
+	<arg name="color_width"         default="640"/>
+	<arg name="color_height"        default="480"/>
+	<arg name="enable_color"        default="true"/>
+	<arg name="color_fps"           default="15"/>
+	
+	<arg name="enable_pointcloud"              default="true"/>
+	<arg name="enable_sync"                    default="false"/>
+	<arg name="align_depth"                    default="true"/>
+	<arg name="rgb_processing"                 default="false"/>
+	<arg name="depth_registered_processing"    default="false"/>
+
+
+	<!-- aggregator parameter -->
+	<!-- Projector Temperature + Asic Temperature -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name)_temperature: {type: diagnostic_aggregator/DiscardAnalyzer, path: $(arg name), contains: ['$(arg name)_nodelet_manager']}}}}}</rosparam>
+	<!-- Color Frequency Status -->
+	<rosparam if="$(arg enable_color)" ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name)_color: {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)_nodelet_manager_color']}}}}}</rosparam>
+	<!-- Depth Frequency Status -->
+	<rosparam if="$(arg enable_depth)" ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name)_depth: {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)_nodelet_manager_depth']}}}}}</rosparam>
+	<!-- Aligned Depth To Color Frequency Status -->
+	<rosparam if="$(arg align_depth)" ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name)_aligned: {type: diagnostic_aggregator/DiscardAnalyzer, path: $(arg name), contains: ['$(arg name)_nodelet_manager_aligned_depth_to_color']}}}}}</rosparam>
+
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/realsense_d400_rgbd.launch">
-		<arg name="namespace" value="$(arg name)"/>
-		<arg name="nodelet_manager" value="$(arg nodelet_manager)"/>
-		<arg name="num_worker_threads" value="$(arg num_worker_threads)"/>
-		<arg name="serial_no" value="$(arg serial_no)"/>
-                <arg name="rgb" value="$(arg rgb)"/>
+		<arg name="namespace"                   value="$(arg name)"/>
+		<arg name="nodelet_manager"             value="$(arg nodelet_manager)"/>
+		<arg name="serial_no"                   value="$(arg serial_no)"/>
+		<arg name="usb_port_id"                 value="$(arg usb_port_id)"/>
+		<arg name="device_type"                 value="$(arg device_type)"/>
+		<arg name="rgb"                         value="$(arg rgb)"/>
+
+		<arg name="depth_width"                 value="$(arg depth_width)"/>
+		<arg name="depth_height"                value="$(arg depth_height)"/>
+		<arg name="enable_depth"                value="$(arg enable_depth)"/>
+		<arg name="depth_fps"                   value="$(arg depth_fps)"/>
+
+		<arg name="color_width"                 value="$(arg color_width)"/>
+		<arg name="color_height"                value="$(arg color_height)"/>
+		<arg name="enable_color"                value="$(arg enable_color)"/>
+		<arg name="color_fps"                   value="$(arg color_fps)"/>
+
+		<arg name="enable_pointcloud"           value="$(arg enable_pointcloud)"/>
+		<arg name="enable_sync"                 value="$(arg enable_sync)"/>
+		<arg name="align_depth"                 value="$(arg align_depth)"/>
+		<arg name="rgb_processing"              value="$(arg rgb_processing)"/>
+		<arg name="depth_registered_processing" value="$(arg depth_registered_processing)"/>
 	</include>
 	<group ns="$(arg name)">
 		<include file="$(find cob_bringup)/tools/hz_monitor.launch">
