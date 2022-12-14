@@ -65,11 +65,6 @@
 		<arg name="depth_registered_processing" value="$(arg depth_registered_processing)"/>
 	</include>
 	<group ns="$(arg name)">
-		<include file="$(find cob_bringup)/tools/hz_monitor.launch">
-			<arg name="robot" value="$(arg robot)"/>
-			<arg name="yaml_name" value="$(arg name)"/>
-			<arg name="sim" value="$(arg sim)"/>
-		</include>
 		<include if="$(arg flip)" file="$(find cob_bringup)/drivers/image_flip_nodelet.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="camera_name" value="$(arg name)"/>

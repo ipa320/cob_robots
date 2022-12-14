@@ -25,5 +25,11 @@
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/ntp_monitor.yaml"/>
 	</node>
 
-
+	<!-- Monitor Network Usage -->
+	<node pkg="cob_monitoring" name="$(anon net_monitor)_$(arg pc)" type="net_monitor.py" output="screen">
+		<param name="diag_hostname" type="string" value="$(arg diag_hostname)"/>
+		<param name="net_level_warn" type="double" value="0.95"/>
+		<param name="net_capacity" type="int" value="128"/>
+		<param name="carrier_changes_threshold" type="int" value="20"/>
+	</node>
 </launch>

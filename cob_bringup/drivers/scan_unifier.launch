@@ -6,6 +6,7 @@
 	<arg name="name" default="$(anon scan_unifier)"/>
 	<arg name="input_scans"/>
 	<arg name="output_scan" default="/scan_unified"/>
+	<arg name="sim" default="false"/>
 
 	<!-- aggregator parameter -->
 	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)']}}}}}</rosparam>
@@ -24,5 +25,11 @@
 		<remap from="scan" to="$(arg output_scan)"/>
 		<remap from="scan_filtered" to="$(arg output_scan)_filtered"/>
 	</node>
+
+	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="yaml_name" value="$(arg name)"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
 
 </launch>
