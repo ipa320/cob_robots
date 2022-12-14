@@ -75,9 +75,7 @@
 		<!-- <include file="$(find cob_bringup)/tools/collision_monitor.launch"> -->
 		<node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
 
-		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
-			<arg name="robot" value="$(arg robot)"/>
-		</include>
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch"/>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>

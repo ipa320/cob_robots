@@ -32,9 +32,10 @@
 			<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 			</include-->
-			<include file="$(find cob_bringup)/drivers/openni.launch">
+			<!-- openni is no longer supported in noetic -->
+			<!--include file="$(find cob_bringup)/drivers/openni.launch">
 				<arg name="robot" value="$(arg robot)"/>
-			</include>
+			</include-->
 		</group>
 
 		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
@@ -83,9 +84,7 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
-			<arg name="robot" value="$(arg robot)"/>
-		</include>
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch"/>
 		<include file="$(find cob_bringup)/tools/teleop.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>

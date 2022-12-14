@@ -4,7 +4,6 @@
 	<node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator">
 		<param name="other_as_errors" type="bool" value="true" />
 	</node>
-
 	<node pkg="cob_dashboard" type="cob_dashboard_aggregator.py" name="dashboard_aggregator"/>
 
 </launch>
