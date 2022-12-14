@@ -6,6 +6,9 @@
 	<arg name="name"/>
 	<arg name="sim" default="false"/>
 
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)']}}}}}</rosparam>
+
 	<!-- load parameter -->
 	<rosparam ns="$(arg name)" command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg name).yaml"/>
 

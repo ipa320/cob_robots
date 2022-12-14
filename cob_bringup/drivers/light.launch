@@ -6,6 +6,9 @@
 	<arg name="component_name" default="light"/>
 	<arg name="sim_enabled" default="false"/>
 
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {io: {type: diagnostic_aggregator/AnalyzerGroup, path: IO, analyzers: {light: {type: diagnostic_aggregator/GenericAnalyzer, path: Light, contains: ['light']}}}}}</rosparam>
+
 	<!-- start light controller -->
 	<node pkg="cob_light" type="cob_light" name="$(arg component_name)" respawn="true" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name).yaml"/>

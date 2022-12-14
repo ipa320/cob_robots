@@ -8,7 +8,10 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
 	<arg name="reset_errors_before_recover" default="false"/>
-	<arg name="enable_stuck_detector" default="true"/>
+
+	<!-- enable either 'stuck_detector' or 'halt_detector' -->
+	<arg name="enable_stuck_detector" default="false"/>
+	<arg name="enable_halt_detector" default="true"/>
 
 	<arg name="component_name" value="base"/>
 	<arg name="interval_ms" value="20"/>
@@ -29,6 +32,12 @@
 		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
 		<arg name="reset_errors_before_recover" value="$(arg reset_errors_before_recover)"/>
 	</include>
+
+	<group if="$(arg enable_halt_detector)">
+                <node pkg="cob_base_controller_utils" type="cob_halt_detector" ns="$(arg component_name)" name="halt_detector" output="screen">
+                        <rosparam command="load" file="$(find cob_hardware_config)/robots/$(arg robot)/config/halt_detector.yaml" />
+                </node>
+        </group>
 
 	<group if="$(arg enable_stuck_detector)">
 		<include unless="$(arg sim)" file="$(find cob_base_controller_utils)/launch/stuck_detector.launch">

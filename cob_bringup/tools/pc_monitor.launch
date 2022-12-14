@@ -8,6 +8,10 @@
 	<arg name="enable_ntp_monitoring" default="true"/>
 	<arg name="ntp_server" default="de.pool.ntp.org"/>
 
+	<!-- aggregator parameter -->
+	<rosparam if="$(arg enable_ntp_monitoring)" ns="/diagnostic_aggregator" subst_value="True">{analyzers: {computers: {type: diagnostic_aggregator/AnalyzerGroup, path: Computers, analyzers: {$(arg pc): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg pc), contains: ['$(arg pc) CPU Info', '$(arg pc) CPU Usage', '$(arg pc) HD Usage', '$(arg pc) Memory Usage', '$(arg pc) Network Usage', '$(arg pc) NTP'], num_items: 6 }}}}}</rosparam>
+	<rosparam unless="$(arg enable_ntp_monitoring)" ns="/diagnostic_aggregator" subst_value="True">{analyzers: {computers: {type: diagnostic_aggregator/AnalyzerGroup, path: Computers, analyzers: {$(arg pc): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg pc), contains: ['$(arg pc) CPU Info', '$(arg pc) CPU Usage', '$(arg pc) HD Usage', '$(arg pc) Memory Usage', '$(arg pc) Network Usage'], num_items: 5 }}}}}</rosparam>
+
 	<!-- Monitor CPU (temp, usage) -->
 	<node pkg="cob_monitoring" name="$(anon cpu_monitor)" type="cpu_monitor.py" args="--diag-hostname=$(arg diag_hostname)" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/pc_monitor_$(arg pc).yaml"/>
@@ -21,5 +25,11 @@
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/ntp_monitor.yaml"/>
 	</node>
 
-
+	<!-- Monitor Network Usage -->
+	<node pkg="cob_monitoring" name="$(anon net_monitor)_$(arg pc)" type="net_monitor.py" output="screen">
+		<param name="diag_hostname" type="string" value="$(arg diag_hostname)"/>
+		<param name="net_level_warn" type="double" value="0.95"/>
+		<param name="net_capacity" type="int" value="128"/>
+		<param name="carrier_changes_threshold" type="int" value="20"/>
+	</node>
 </launch>

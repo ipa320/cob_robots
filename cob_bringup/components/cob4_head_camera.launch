@@ -5,6 +5,9 @@
 	<arg name="flip" default="true"/>
 	<arg name="sim" default="false"/>
 
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)']}}}}}</rosparam>
+
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/usb_camera_node.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="camera_name" value="$(arg name)"/>

@@ -9,3 +9,9 @@ core_temp_warn: 95 #Celsius
 core_temp_error: 97 #Celsius
 mem_warn: 25 #MB
 mem_error: 1 #MB
+check_thermal_throttling_events: True
+thermal_throttling_threshold: 1000
+check_idlejitter: True
+idlejitter_min_threshold: 50000
+idlejitter_max_threshold: 2000000
+idlejitter_average_threshold: 200000

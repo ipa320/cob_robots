@@ -3,9 +3,16 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="name" default="$(anon scan_unifier)"/>
+	<arg name="name" default="scan_unifier"/>
 	<arg name="input_scans"/>
 	<arg name="output_scan" default="/scan_unified"/>
+	<arg name="sim" default="false"/>
+
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)']}}}}}</rosparam>
+
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {$(arg name): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg name), contains: ['$(arg name)']}}}}}</rosparam>
 
 	<!-- run scan unifier -->
 	<node pkg="cob_scan_unifier" type="scan_unifier_node" name="$(arg name)" output="log">
@@ -21,5 +28,11 @@
 		<remap from="scan" to="$(arg output_scan)"/>
 		<remap from="scan_filtered" to="$(arg output_scan)_filtered"/>
 	</node>
+
+	<include file="$(find cob_bringup)/tools/hz_monitor.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="yaml_name" value="$(arg name)"/>
+		<arg name="sim" value="$(arg sim)"/>
+	</include>
 
 </launch>

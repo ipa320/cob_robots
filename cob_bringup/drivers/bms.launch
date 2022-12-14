@@ -5,6 +5,9 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="sim" default="false"/>
 
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {sensors: {type: diagnostic_aggregator/AnalyzerGroup, path: Sensors, analyzers: {bms: {type: diagnostic_aggregator/GenericAnalyzer, path: bms, contains: ['bms']}}}}}</rosparam>
+
 	<node unless="$(arg sim)" name="bms" pkg="cob_bms_driver" type="bms_driver_node" output="screen" clear_params="true">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/bms.yaml"/>
 	</node>

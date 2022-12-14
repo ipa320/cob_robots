@@ -6,6 +6,9 @@
 	<arg name="component_name" default="sound"/>
 	<arg name="voice" default="David"/>
 
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {io: {type: diagnostic_aggregator/AnalyzerGroup, path: IO, analyzers: {sound: {type: diagnostic_aggregator/GenericAnalyzer, path: Sound, contains: ['sound']}}}}}</rosparam>
+
 	<!-- start sound -->
 	<node pkg="cob_sound" type="sound" name="$(arg component_name)" respawn="false" output="screen">
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/sound.yaml"/>

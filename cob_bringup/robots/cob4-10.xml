@@ -86,9 +86,7 @@
 		<!-- <include file="$(find cob_bringup)/tools/collision_monitor.launch"> -->
 		<node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
 
-		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
-			<arg name="robot" value="$(arg robot)"/>
-		</include>
+		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch"/>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
@@ -202,12 +200,13 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
+		<!-- r200 is no longer supported in noetic -->
+		<!--include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_down"/>
 			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
-		</include>
+		</include-->
 	</group>
 
 	<group>

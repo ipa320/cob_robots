@@ -6,6 +6,9 @@
 	<arg name="host"/>
 	<arg name="sim" default="false"/>
 
+	<!-- aggregator parameter -->
+	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {safety: {type: diagnostic_aggregator/GenericAnalyzer, path: Safety, contains: ['safety']}}}</rosparam>
+
 	<node unless="$(arg sim)" ns="safety_controller" pkg="cob_safety_controller" type="safety_controller" name="safety_controller" respawn="false" output="screen">
 		<param name="host" value="$(arg host)"/>
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/flexisoft.yaml"/>
