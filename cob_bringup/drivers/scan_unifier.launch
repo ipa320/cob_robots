@@ -3,7 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
-	<arg name="name" default="$(anon scan_unifier)"/>
+	<arg name="name" default="scan_unifier"/>
 	<arg name="input_scans"/>
 	<arg name="output_scan" default="/scan_unified"/>
 	<arg name="sim" default="false"/>
