@@ -9,7 +9,7 @@
 	<arg name="driver_yaml" default="$(arg pkg_hardware_config)/robots/cob4/config/cob4_base_driver.yaml"/>
 	<arg name="controller_yaml" default="$(arg pkg_hardware_config)/robots/cob4/config/cob4_base_controller.yaml"/>
 
-    <!-- add diagnostics for cob base -->
+	<!-- add diagnostics for cob base -->
 	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {motors: {type: diagnostic_aggregator/AnalyzerGroup, path: Actuators, analyzers: {base: {type: diagnostic_aggregator/GenericAnalyzer, path: base, contains: ['base/']}}}}}</rosparam>
 
 	<include file="$(find cob_bringup)/components/ros_control_base.launch">

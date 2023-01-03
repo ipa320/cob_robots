@@ -7,11 +7,12 @@
 	<arg name="sim" default="false"/>
 	<arg name="serial_no" default=""/>
 
-	<include unless="$(arg sim)" file="$(find realsense_camera)/launch/r200_nodelet_rgbd.launch">
+	<!-- realsense_camera no longer supported in noetic -->
+	<!-- <include unless="$(arg sim)" file="$(find realsense_camera)/launch/r200_nodelet_rgbd.launch">
 		<arg name="camera" value="$(arg name)"/>
 		<arg name="num_worker_threads" value="$(arg num_worker_threads)" />
 		<arg name="serial_no" value="$(arg serial_no)" />
-	</include>
+	</include> -->
 	<group ns="$(arg name)">
 		<include file="$(find cob_bringup)/tools/hz_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>

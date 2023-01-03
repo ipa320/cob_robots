@@ -11,7 +11,7 @@
 	<arg name="cartesian_control" default="false"/>
 	<arg name="sim" default="false"/>
 
-    <!--  add diagnostics for component -->
+	<!-- add diagnostics for component -->
 	<rosparam ns="/diagnostic_aggregator" subst_value="True">{analyzers: {motors: {type: diagnostic_aggregator/AnalyzerGroup, path: Actuators, analyzers: {$(arg component_name): {type: diagnostic_aggregator/GenericAnalyzer, path: $(arg component_name), contains: ['$(arg component_name)/']}}}}}</rosparam>
 
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
