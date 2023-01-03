@@ -37,7 +37,7 @@
 
 	<!-- docker control -->
 	<node pkg="cob_docker_control" type="multi_station_docker_control.py" respawn="false" name="docker_control" output="screen" if="$(arg multi_station)">
-	  <rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/docking_stations.yaml"/>
+		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/docking_stations.yaml"/>
 	</node>
 
 	<!-- virtual charging and power usage for simulation -->
