@@ -2,8 +2,8 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.9 (2023-01-04)
+------------------
 * Merge pull request `#830 <https://github.com/ipa320/cob_robots/issues/830>`_ from fmessmer/fix/ci
   update ci
 * fix catkin_lint

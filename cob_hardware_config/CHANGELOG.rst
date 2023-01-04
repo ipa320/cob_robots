@@ -2,8 +2,8 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.9 (2023-01-04)
+------------------
 * Merge pull request `#829 <https://github.com/ipa320/cob_robots/issues/829>`_ from HannesBachter/setup_cob4-30
   setup cob4-30
 * use /dev/headcam as video device for head cam
