@@ -2,6 +2,32 @@
 Changelog for package cob_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#830 <https://github.com/ipa320/cob_robots/issues/830>`_ from fmessmer/fix/ci
+  update ci
+* fix catkin_lint
+* indentation
+* Merge pull request `#828 <https://github.com/ipa320/cob_robots/issues/828>`_ from HannesBachter/feature/diagnostics
+  Feature/diagnostics
+* fix roslaunch checks
+* use default name for scan unifier node
+* enable halt_detector
+* publish diagnostics in launchfiles of respective components
+* fix diagnostics
+* publish diagnostics in launchfiles of respective components
+* update launchfiles for D435
+* Merge pull request `#827 <https://github.com/ipa320/cob_robots/issues/827>`_ from floweisshardt/feature/diagnostics
+  add station reflector diagnostics
+* add station reflector diagnostics
+* Merge pull request `#826 <https://github.com/ipa320/cob_robots/issues/826>`_ from fmessmer/feature/cob4-29
+  Feature/cob4 29
+* assign arm and gripper to correct pc
+* cob4-29 realsense serial_no
+* cob4-30 realsense serial_no
+* fix cob_bringup env.sh for noetic
+* Contributors: Denis Lehmann, Felix Messmer, Florian Weisshardt, HannesBachter, floweisshardt, fmessmer, robot@cob4-29, robot@cob4-30
+
 0.7.8 (2022-11-17)
 ------------------
 * Merge pull request `#824 <https://github.com/ipa320/cob_robots/issues/824>`_ from fmessmer/add_cob4-30_ostwestfalen

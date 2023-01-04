@@ -2,6 +2,29 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#829 <https://github.com/ipa320/cob_robots/issues/829>`_ from HannesBachter/setup_cob4-30
+  setup cob4-30
+* use /dev/headcam as video device for head cam
+* Merge pull request `#828 <https://github.com/ipa320/cob_robots/issues/828>`_ from HannesBachter/feature/diagnostics
+  Feature/diagnostics
+* fix roslaunch checks
+* enable halt_detector
+* fix tf exceptions for invlid prefix
+* fix diagnostics
+* use /dev/headcam for head video
+* update number of leds
+* add new docking_stations structure
+* publish diagnostics in launchfiles of respective components
+* Merge pull request `#826 <https://github.com/ipa320/cob_robots/issues/826>`_ from fmessmer/feature/cob4-29
+  Feature/cob4 29
+* update teleop.yaml
+* calibrate cob4-29 base
+* update teleop.yaml
+* calibrate cob4-30 base
+* Contributors: Denis Lehmann, Felix Messmer, Florian Weisshardt, HannesBachter, floweisshardt, fmessmer, pgehring, robot@cob4-29, robot@cob4-30
+
 0.7.8 (2022-11-17)
 ------------------
 * Merge pull request `#824 <https://github.com/ipa320/cob_robots/issues/824>`_ from fmessmer/add_cob4-30_ostwestfalen
