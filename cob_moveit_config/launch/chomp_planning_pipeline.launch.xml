@@ -1,4 +1,6 @@
 <launch>
+  <arg name="robot"/>
+
   <!-- CHOMP Plugin for MoveIt! -->
   <arg name="planning_plugin" value="chomp_interface/CHOMPPlanner" />
 
@@ -26,5 +28,5 @@
   <param name="capabilities" value="$(arg capabilities)" />
   <param name="disable_capabilities" value="$(arg disable_capabilities)" />
 
-  <rosparam command="load" file="$(find cob4-30_moveit_config)/config/chomp_planning.yaml" />
+  <rosparam command="load" file="$(find cob_moveit_config)/robots/$(arg robot)/config/chomp_planning.yaml" />
 </launch>

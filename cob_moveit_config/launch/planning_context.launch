@@ -1,4 +1,6 @@
 <launch>
+  <arg name="robot"/>
+
   <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
   <arg name="load_robot_description" default="false"/>
 
@@ -6,20 +8,20 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro  '$(find cob_hardware_config)/robots/cob4-30/urdf/cob4-30.urdf.xacro'"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro  '$(find cob_hardware_config)/robots/$(arg robot)/urdf/$(arg robot).urdf.xacro'"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find cob4-30_moveit_config)/config/cob4-30.srdf" />
+  <param name="$(arg robot_description)_semantic" textfile="$(find cob_moveit_config)/robots/$(arg robot)/config/$(arg robot).srdf" />
 
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">
-    <rosparam command="load" file="$(find cob4-30_moveit_config)/config/joint_limits.yaml"/>
-    <rosparam command="load" file="$(find cob4-30_moveit_config)/config/cartesian_limits.yaml"/>
+    <rosparam command="load" file="$(find cob_moveit_config)/robots/$(arg robot)/config/joint_limits.yaml"/>
+    <rosparam command="load" file="$(find cob_moveit_config)/robots/$(arg robot)/config/cartesian_limits.yaml"/>
   </group>
 
   <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
   <group ns="$(arg robot_description)_kinematics">
-    <rosparam command="load" file="$(find cob4-30_moveit_config)/config/kinematics.yaml"/>
+    <rosparam command="load" file="$(find cob_moveit_config)/robots/$(arg robot)/config/kinematics.yaml"/>
 
   </group>
 

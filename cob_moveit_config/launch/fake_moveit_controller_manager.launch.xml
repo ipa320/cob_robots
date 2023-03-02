@@ -1,4 +1,5 @@
 <launch>
+  <arg name="robot"/>
 
   <!-- execute the trajectory in 'interpolate' mode or jump to goal position in 'last point' mode -->
   <arg name="fake_execution_type" default="interpolate" />
@@ -7,6 +8,6 @@
   <param name="moveit_controller_manager" value="moveit_fake_controller_manager/MoveItFakeControllerManager"/>
 
   <!-- The rest of the params are specific to this plugin -->
-  <rosparam subst_value="true" file="$(find cob4-30_moveit_config)/config/fake_controllers.yaml"/>
+  <rosparam subst_value="true" file="$(find cob_moveit_config)/robots/$(arg robot)/config/fake_controllers.yaml"/>
 
 </launch>
