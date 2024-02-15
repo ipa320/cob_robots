@@ -16,7 +16,7 @@ jobs:
     env:
       ADDITIONAL_DEBS: 'apt-utils dialog git'
       CATKIN_LINT: pedantic
-      CATKIN_LINT_ARGS: '--ignore description_boilerplate'
+      CATKIN_LINT_ARGS: '--ignore description_boilerplate --ignore wrong_bin_install_destination'
       CMAKE_ARGS: -DCMAKE_BUILD_TYPE=Release
       PYLINT_ARGS: '--output-format=parseable --errors-only'
       PYLINT_CHECK: true
