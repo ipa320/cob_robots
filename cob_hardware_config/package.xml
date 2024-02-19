@@ -1,6 +1,6 @@
 <package format="2">
   <name>cob_hardware_config</name>
-  <version>0.7.9</version>
+  <version>0.7.10</version>
   <description>This package contains configuration for each robot instance (e.g. cob4-X, raw3-X). There is a directory for each robot with configuration about urdf and hardware/device configurations.</description>
 
   <license>Apache 2.0</license>
