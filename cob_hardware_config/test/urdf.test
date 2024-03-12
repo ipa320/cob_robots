@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <arg name="robot"/>
-
-  <test test-name="$(arg robot)_test" pkg="cob_description" type="test_urdf.py" args="$(find cob_hardware_config)/robots/$(arg robot)/urdf/$(arg robot).urdf.xacro"/>
-
-</launch>

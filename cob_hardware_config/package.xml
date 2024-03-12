@@ -10,31 +10,31 @@
 
   <maintainer email="felixmessmer@gmail.com">Felix Messmer</maintainer>
   <author email="fxm@ipa.fhg.de">Felix Messmer</author>
-  <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
   <author email="fmw@ipa.fhg.de">Florian Weisshardt</author>
+  <author email="nhg@ipa.fhg.de">Nadia Hammoudeh Garcia</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>joint_state_publisher_gui</exec_depend>
   <exec_depend>cob_calibration_data</exec_depend>
   <exec_depend>cob_description</exec_depend>
   <exec_depend>cob_omni_drive_controller</exec_depend>
-  <exec_depend>costmap_2d</exec_depend>
-  <exec_depend>diagnostic_aggregator</exec_depend>
-  <exec_depend>joint_state_controller</exec_depend>
-  <exec_depend>joint_state_publisher</exec_depend>
-  <exec_depend>joint_state_publisher_gui</exec_depend>
-  <exec_depend>joint_trajectory_controller</exec_depend>
-  <exec_depend>laser_filters</exec_depend>
-  <exec_depend>position_controllers</exec_depend>
-  <exec_depend>raw_description</exec_depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>rviz</exec_depend>
-  <!--exec_depend>ur_description</exec_depend-->
-  <exec_depend>velocity_controllers</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>urdf</exec_depend>
   <exec_depend>xacro</exec_depend>
 
-  <test_depend>cob_supported_robots</test_depend>
-  <test_depend>roslaunch</test_depend>
-  <test_depend>rostest</test_depend>
+  <test_depend>ament_cmake_pytest</test_depend>
+  <test_depend>launch_testing_ament_cmake</test_depend>
+  <test_depend>launch_testing_ros</test_depend>
+  <test_depend>liburdfdom-tools</test_depend>
+  <test_depend>xacro</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>
